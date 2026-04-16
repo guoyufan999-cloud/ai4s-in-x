@@ -6,7 +6,12 @@ build-backend = "setuptools.build_meta"
 name = "ai4s-legitimacy"
 version = "0.1.0"
 description = "Research engineering pipeline for AI4S on Xiaohongshu"
+readme = "README.md"
 requires-python = ">=3.11,<3.12"
+authors = [
+    {name = "gxbeing"},
+]
+keywords = ["research-engineering", "xiao-hong-shu", "sqlite", "ai4s"]
 dependencies = [
     "pandas>=2.2",
     "matplotlib>=3.9",
@@ -17,7 +22,11 @@ dependencies = [
 dev = [
     "pytest>=8.3",
     "jupyterlab>=4.2",
+    "ruff>=0.11",
 ]
+
+[project.urls]
+Repository = "https://github.com/guoyufan999-cloud/ai4s-in-x"
 
 [project.scripts]
 ai4s-build-artifacts = "ai4s_legitimacy.cli.build_artifacts:main"
@@ -32,3 +41,10 @@ py-modules = []
 [tool.setuptools.packages.find]
 where = ["src"]
 include = ["ai4s_legitimacy*"]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F"]

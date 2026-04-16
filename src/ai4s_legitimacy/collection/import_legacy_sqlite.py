@@ -1,5 +1,3 @@
-from __future__ import annotations
-
 """
 输入：
 - archive/legacy_collection_runtime/data/db/ai4s_xhs.sqlite3
@@ -20,6 +18,8 @@ from __future__ import annotations
 - 研究型主库初始化
 - legacy 运行库向研究型数据库的第一次迁移
 """
+
+from __future__ import annotations
 
 import argparse
 import json

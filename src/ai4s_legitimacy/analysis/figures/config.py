@@ -3,7 +3,6 @@ from __future__ import annotations
 import json
 from calendar import monthrange
 from datetime import date, datetime
-from pathlib import Path
 from typing import Any, Mapping, Optional, Sequence
 
 from ai4s_legitimacy.config.research_scope import (
