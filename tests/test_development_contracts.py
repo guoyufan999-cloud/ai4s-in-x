@@ -66,3 +66,19 @@ def test_notebook_templates_are_unexecuted_and_not_formal_delivery_artifacts() -
         for cell in code_cells:
             assert cell["execution_count"] is None
             assert cell["outputs"] == []
+
+
+def test_planning_docs_keep_current_next_steps_in_sync_with_latest_head() -> None:
+    backlog_text = (ROOT / "tasks" / "backlog.md").read_text(encoding="utf-8")
+    roadmap_text = (ROOT / "tasks" / "roadmap.md").read_text(encoding="utf-8")
+
+    backlog_current = backlog_text.split("## 当前下一步入口", 1)[1].split("## P0", 1)[0]
+    roadmap_current = roadmap_text.split("## 当前下一步入口", 1)[1].split("## 阶段 1", 1)[0]
+
+    for current_entry in (backlog_current, roadmap_current):
+        assert "更贴近期刊排版的终稿版本" in current_entry
+        assert "analysis/excerpt_extraction.py" in current_entry
+        assert "ai_practice" in current_entry
+        assert "legitimacy" in current_entry
+        assert "import_legacy_sqlite" not in current_entry
+        assert "analysis/figures/queries" not in current_entry

@@ -3,8 +3,8 @@
 ## 当前下一步入口
 
 1. [优先] 进一步压缩投稿 clean 稿措辞，生成更贴近期刊排版的终稿版本
-2. [预备] 启动 `ai_practice` / `legitimacy` 手工细分编码后，再单独扩展对应 analysis views 与正式合同
-3. [预备] 进入下一轮可维护性重构，优先拆重 `import_legacy_sqlite` 与 `analysis/figures/queries`
+2. [预备] 进入下一轮可维护性重构，优先拆重 `analysis/excerpt_extraction.py`
+3. [预备] 启动 `ai_practice` / `legitimacy` 手工细分编码后，再单独扩展对应 analysis views 与正式合同
 
 ## P0：当前必须完成
 
@@ -32,5 +32,5 @@
 ## P3：后续扩展
 
 1. 启动 `ai_practice` / `legitimacy` 手工细分编码后，再单独扩展对应 analysis views 与正式合同
-2. 进入下一轮可维护性重构，优先拆重 `import_legacy_sqlite` 与 `analysis/figures/queries`
+2. 进入下一轮可维护性重构，优先拆重 `analysis/excerpt_extraction.py`，随后 `analysis/reporting.py` 与 `analysis/figures/manifest.py`
 3. 视研究问题与投稿反馈，再评估 grounded theory、第三轮结构修补或补充样本

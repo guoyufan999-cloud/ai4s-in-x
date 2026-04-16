@@ -17,6 +17,7 @@
 - 浏览器 profile、缓存、Cookie、本地登录态
 - `node_modules/`、前端构建产物、临时下载目录
 - 仅服务于本地运行的 `.sqlite3-wal`、`.sqlite3-shm`、日志和中间缓存
+- `data/raw/media_files/` 这类本地媒体缓存目录；它们可能是当前磁盘占用最大的部分，但不属于正式版本化资产
 - 放在 `archive/legacy_collection_runtime/data/db/` 与 `data/processed/` 下的本地 SQLite 文件本身；这些路径是运行约定，不是当前仓库自带交付物
 - `outputs/figures/` 顶层这类本地工作导出；正式版本化图件只保留在 `outputs/figures/paper_figures_submission/`
 - 无法作为研究事实引用、也不被当前交付链依赖的运行残留
@@ -24,6 +25,7 @@
 ## 当前执行规则
 
 - 研究主库与 legacy DB 继续使用固定本地路径，但 SQLite 文件本身默认由 `.gitignore` 拦截；仓库只版本化对应 README 与正式输出。
+- `data/raw/media/*.json` 可保留为轻量元数据快照；`data/raw/media_files/` 视为本地媒体缓存，默认由 `.gitignore` 拦截，可按磁盘压力自行清理或重建。
 - `outputs/reports/paper_materials/` 只保留正式投稿材料与稳定分析快照；工作稿和 LLM 中间稿统一放在 `docs/paper_working/`，不作为正式交付链的一部分。
 - `archive/legacy_collection_runtime/` 只保留 DB 历史事实源与最小 provenance 说明，不再保存 legacy 代码快照、脚本、配置或环境锁文件，也不承诺 archive 可直接运行。
 - `archive/legacy_specs/` 与 `archive/legacy_tests/` 只保留索引式说明或静态参考，不再保留会被误读为当前可执行规范的旧操作手册和测试集。

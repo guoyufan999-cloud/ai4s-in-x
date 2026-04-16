@@ -65,3 +65,14 @@ def test_only_submission_figure_bundle_is_versioned() -> None:
     figure_dir = ROOT / "outputs" / "figures"
     assert not list(figure_dir.glob("*.png"))
     assert (figure_dir / "paper_figures_submission" / "quality_v4").exists()
+
+
+def test_boundary_doc_describes_local_media_cache_as_non_versioned_asset() -> None:
+    boundary_text = (ROOT / "docs" / "repository_boundaries.md").read_text(encoding="utf-8")
+    gitignore_text = (ROOT / ".gitignore").read_text(encoding="utf-8")
+
+    assert "data/raw/media_files/" in boundary_text
+    assert "本地媒体缓存" in boundary_text
+    assert "可按磁盘压力自行清理或重建" in boundary_text
+    assert "data/raw/*" in gitignore_text
+    assert "!data/raw/media/" in gitignore_text
