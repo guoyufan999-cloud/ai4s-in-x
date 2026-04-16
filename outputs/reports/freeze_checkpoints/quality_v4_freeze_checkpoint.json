@@ -4,7 +4,6 @@
   "target_distinct_candidates": 0,
   "distinct_candidates": 5535,
   "target_reached": false,
-  "created_at": "2026-04-12T19:36:24.735447Z",
   "analyze_ran": false,
   "analyze_result": {},
   "collection_report_path": "outputs/reports/paper_materials/collection_status.snapshot.json",
@@ -114,18 +113,13 @@
     "results_path": "outputs/reports/paper_materials/paper_results_snapshot.md",
     "analysis_markdown_path": "outputs/reports/paper_materials/paper_analysis_snapshot.md",
     "analysis_json_path": "outputs/reports/paper_materials/paper_analysis_snapshot.json",
-    "chapter_draft_path": "outputs/reports/paper_materials/paper_results_chapter_draft.md",
-    "discussion_draft_path": "outputs/reports/paper_materials/paper_discussion_chapter_draft.md",
-    "conclusion_draft_path": "outputs/reports/paper_materials/paper_conclusion_chapter_draft.md",
-    "master_draft_path": "outputs/reports/paper_materials/paper_master_manuscript_draft.md",
     "manifest_path": "outputs/reports/paper_materials/paper_materials_manifest.json",
     "evidence_matrix_path": "outputs/reports/paper_materials/quality_v4_evidence_matrix.md",
     "formal_source_contract": {
       "core_results": "paper_scope_quality_v4",
       "tools_and_risk_figures": "paper_scope_quality_v4"
     },
-    "chart_count": 9,
-    "llm_enabled": false
+    "chart_count": 9
   },
   "next_step": "continue_quality_v4"
 }

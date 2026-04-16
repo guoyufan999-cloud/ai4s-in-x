@@ -6,7 +6,7 @@
 2. [已完成] 校验 `posts / comments / codes / codebook` 与 `data/data_schema.md` 一致
 3. [已完成] 把 `quality_v4` 关键正式结果与新研究型主库打通，并显式区分 `candidate / research / paper_quality_v4` 三套口径
 4. [已完成] 复核当前输出目录与正式论文材料路径，并统一到 `outputs/` 活跃交付链
-5. [已完成] 清理并归档剩余未分类历史文件（junk_review 建立、legacy exports 归档、DS_Store 清理）
+5. [已完成] 清理并归档剩余未分类历史文件（含当时的 `junk_review` 分流、legacy exports 归档与 `.DS_Store` 清理）
 
 ## P1：研究分析主线
 

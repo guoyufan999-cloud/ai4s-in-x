@@ -52,6 +52,12 @@ def test_paper_materials_manifest_uses_outputs_paths_and_source_contract() -> No
 
     assert manifest["coverage_end_date"] == "2026-04-10"
     assert "generated_at" not in manifest
+    assert "chapter_draft_path" not in manifest
+    assert "discussion_draft_path" not in manifest
+    assert "conclusion_draft_path" not in manifest
+    assert "master_draft_path" not in manifest
+    assert "llm_enabled" not in manifest
+    assert "llm_manifest_path" not in manifest
     assert manifest["formal_source_contract"]["core_results"] == "paper_scope_quality_v4"
     assert manifest["formal_source_contract"]["tools_and_risk_figures"] == "paper_scope_quality_v4"
     assert not Path(manifest["submission_figure_dir"]).is_absolute()
@@ -176,10 +182,16 @@ def test_active_artifacts_use_repo_relative_paths_and_new_freeze_checkpoint_loca
     freeze_checkpoint_json = json.loads(
         (FREEZE_CHECKPOINTS_DIR / "quality_v4_freeze_checkpoint.json").read_text(encoding="utf-8")
     )
+    assert "created_at" not in freeze_checkpoint_json
     assert not Path(freeze_checkpoint_json["collection_report_path"]).is_absolute()
     assert _resolve_repo_artifact_path(freeze_checkpoint_json["collection_report_path"]).exists()
     assert not Path(freeze_checkpoint_json["paper_materials"]["output_dir"]).is_absolute()
     assert _resolve_repo_artifact_path(freeze_checkpoint_json["paper_materials"]["manifest_path"]).exists()
+    assert "chapter_draft_path" not in freeze_checkpoint_json["paper_materials"]
+    assert "discussion_draft_path" not in freeze_checkpoint_json["paper_materials"]
+    assert "conclusion_draft_path" not in freeze_checkpoint_json["paper_materials"]
+    assert "master_draft_path" not in freeze_checkpoint_json["paper_materials"]
+    assert "llm_enabled" not in freeze_checkpoint_json["paper_materials"]
 
 
 def test_active_artifacts_do_not_embed_workspace_absolute_paths() -> None:
@@ -194,6 +206,13 @@ def test_active_artifacts_do_not_embed_workspace_absolute_paths() -> None:
     ]
     for path in targets:
         assert "/Users/guoyufan/ai4s in xhs" not in path.read_text(encoding="utf-8")
+
+
+def test_freeze_checkpoint_markdown_is_stable_and_formal_only() -> None:
+    text = (FREEZE_CHECKPOINTS_DIR / "quality_v4_freeze_checkpoint.md").read_text(encoding="utf-8")
+    assert "生成时间" not in text
+    assert "docs/paper_working/README.md" in text
+    assert "不属于 freeze contract" in text
 
 
 def test_active_paper_materials_distinguish_research_window_and_coverage_cutoff() -> None:

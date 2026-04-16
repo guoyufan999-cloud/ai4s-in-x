@@ -34,23 +34,23 @@
 - `data/`：研究数据层
   - `raw/`：原始公开资料、导入文件、历史媒体文件
   - `interim/`：清洗中间产物与迁移审计
-  - `processed/`：研究型主数据库等可分析产物
+  - `processed/`：研究型主库的本地约定路径与版本化说明
   - `external/`：词表、映射表、外部参考配置
 - `database/`：研究型数据库 schema、视图与说明
 - `src/`：围绕研究流程组织的代码
 - `codebook/`：编码框架、规则、判例与协商记录
-- `docs/`：文献札记、研究备忘录、会议记录、图件说明
+- `docs/`：文献札记、研究备忘录、会议记录、图件说明与本地维护文档
+- `docs/paper_working/`：版本化保留的工作稿与 LLM 中间稿，不属于正式交付链
 - `outputs/`：正式图表、表格、摘录和报告
 - `tasks/`：backlog、roadmap、changelog、迁移诊断
 - `archive/`：静态历史档案、legacy DB 索引与历史参考说明
-- `junk_review/`：当前用途不明、待后续判断的材料
 
 ## 数据流程概览
 
 当前活跃主线按研究工程语义组织为：
 
-1. 从 `archive/legacy_collection_runtime/data/db/ai4s_xhs.sqlite3` 这一份保留的历史运行库快照读取既有公开讨论材料。
-2. 将 legacy 库映射、匿名化并导入新的研究型主库 `data/processed/ai4s_legitimacy.sqlite3`。
+1. 在本地将 legacy 历史运行库放在 `archive/legacy_collection_runtime/data/db/ai4s_xhs.sqlite3`；该路径是约定位置，仓库版本化的是说明文件而不是 SQLite 文件本身。
+2. 将 legacy 库映射、匿名化并导入本地研究型主库 `data/processed/ai4s_legitimacy.sqlite3`；该主库同样默认由 `.gitignore` 拦截，不作为当前快照自带文件。
 3. 在研究型主库中围绕 `posts / comments / codes / codebook` 开展清洗、编码准备与分析。
 4. 将正式分析结果输出到 `outputs/`，作为论文写作和审稿回复的直接材料。
 
@@ -72,13 +72,16 @@
 1. 阅读 `research_brief.md`
 2. 阅读 `analysis_plan.md`
 3. 阅读 `compliance_and_ethics.md`
-4. 查看 `data/data_schema.md` 和 `database/schema.sql`
-5. 运行 `ai4s-import-legacy`，将 legacy 运行库迁入新的研究型主库
-6. 使用 `ai4s-build-artifacts` 或 `python -m src.analysis.*` 入口更新正式分析产物
+4. 查看 `data/data_schema.md`、`database/schema.sql`、`archive/legacy_collection_runtime/data/db/README.md` 与 `data/processed/README.md`
+5. 按上述两个 README 准备本地 legacy DB 与研究主库路径
+6. 运行 `ai4s-import-legacy`，将 legacy 运行库迁入新的研究型主库
+7. 使用 `ai4s-build-artifacts` 或 `python -m src.analysis.*` 入口更新正式分析产物
 
 `archive/` 当前不再保留 legacy 代码快照、旧测试或可直接运行的环境镜像；如需追溯历史运行来源，请查看 `archive/legacy_collection_runtime/README.md`、`archive/legacy_collection_runtime/PROVENANCE.md` 与 `archive/legacy_exports/README.md`。
 
 当前活跃的正式核验 JSON 默认落在 `outputs/reports/freeze_checkpoints/`，包括 `research_db_summary.json` 与 `quality_v4_consistency_report.json`；它们属于版本化正式产物，不再放在 `data/processed/` 或 `data/interim/` 下长期维护。
+
+当前正式投稿稿件、分析快照和图表 manifest 保留在 `outputs/reports/paper_materials/` 与 `outputs/figures/paper_figures_submission/quality_v4/`；工作稿和 LLM 中间稿统一放在 `docs/paper_working/`，不属于正式交付链。
 
 推荐入口：
 
@@ -96,8 +99,8 @@
 本地历史备份说明：
 
 - 当前活跃主线 `main` 已在 `2026-04-16` 收敛为瘦身后的单根快照提交，用于降低仓库体量并保证 GitHub 推送稳定。
-- 原先的本地提交链保留在 `backup/pre-clean-snapshot-20260416`，仅作为本地回退与审阅锚点，不作为默认开发或推送分支。
-- 如需查看旧历史，可运行 `git switch backup/pre-clean-snapshot-20260416`；返回当前主线时运行 `git switch main`。
+- 原先的本地提交链曾保留在 `backup/pre-clean-snapshot-20260416`；如该分支已在本地瘦身时删除，删除前的最后锚点 SHA 见 `docs/local_git_maintenance.md`。
+- 仓库不会自动删除备份分支或自动执行 `git gc`；如需评估旧历史对本地 `.git` 体积的影响、或显式回收空间，请查看 `docs/local_git_maintenance.md`。
 
 ## 当前状态与后续计划
 
@@ -110,4 +113,4 @@
 
 下一阶段的优先任务见 `tasks/backlog.md` 与 `tasks/roadmap.md`。
 
-仓库边界约束见 `docs/repository_boundaries.md`。
+仓库边界约束见 `docs/repository_boundaries.md`，本地 Git 维护说明见 `docs/local_git_maintenance.md`。

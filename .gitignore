@@ -19,6 +19,7 @@ venv/
 data/raw/*
 data/interim/*
 data/processed/*
+outputs/figures/*
 
 !data/raw/.gitkeep
 !data/raw/media/
@@ -28,8 +29,9 @@ data/processed/*
 !data/external/
 !data/external/query_dictionary_template_legacy.json
 !data/data_schema.md
-
-junk_review/
+!data/processed/README.md
+!outputs/figures/paper_figures_submission/
+!outputs/figures/paper_figures_submission/**
 
 archive/legacy_collection_runtime/data/chrome-profile/
 archive/legacy_collection_runtime/data/runtime_state/

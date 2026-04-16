@@ -1,6 +1,5 @@
 # QUALITY_V4 Freeze Checkpoint
 
-- 生成时间：`2026-04-12T19:36:24.735447Z`
 - 去重候选帖：`5535 / unknown`
 - 是否达到阶段目标：`no`
 - 正式帖子 / 正式评论：`3067 / 69880`
@@ -33,10 +32,13 @@
 - Paper results snapshot：`outputs/reports/paper_materials/paper_results_snapshot.md`
 - Paper analysis snapshot：`outputs/reports/paper_materials/paper_analysis_snapshot.md`
 - Evidence matrix：`outputs/reports/paper_materials/quality_v4_evidence_matrix.md`
+- Figure manifest：`outputs/figures/paper_figures_submission/quality_v4/paper_figures_submission_manifest.md`
+- 工作稿索引：`docs/paper_working/README.md`（版本化保留，但不属于 freeze contract）
 
 ## Delivery Contract
 - 核心样本规模、时间分布、学科分布、流程分布与评论态度结构：`paper_scope_quality_v4`
 - 工具生态与风险主题图：`paper_scope_quality_v4`
+- 正式版本化交付链只覆盖 `outputs/reports/paper_materials/`、`outputs/reports/freeze_checkpoints/` 与 `outputs/figures/paper_figures_submission/quality_v4/`
 
 ## Next Step
 - `continue_quality_v4`

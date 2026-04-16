@@ -48,3 +48,20 @@ def test_archive_runtime_cache_assets_are_not_kept_in_repo() -> None:
     assert not list(
         (ROOT / "archive" / "legacy_collection_runtime" / "data" / "db").glob("*.sqlite3-shm")
     )
+
+
+def test_working_drafts_live_under_docs_not_formal_outputs() -> None:
+    working_dir = ROOT / "docs" / "paper_working"
+    formal_dir = ROOT / "outputs" / "reports" / "paper_materials"
+    assert (working_dir / "README.md").exists()
+    assert (working_dir / "paper_master_manuscript_draft.md").exists()
+    assert (working_dir / "paper_master_manuscript_llm.md").exists()
+    assert not list(formal_dir.glob("paper_*_draft.md"))
+    assert not list(formal_dir.glob("paper_*_llm.md"))
+    assert not (formal_dir / "paper_master_manuscript_llm_merged.md").exists()
+
+
+def test_only_submission_figure_bundle_is_versioned() -> None:
+    figure_dir = ROOT / "outputs" / "figures"
+    assert not list(figure_dir.glob("*.png"))
+    assert (figure_dir / "paper_figures_submission" / "quality_v4").exists()
