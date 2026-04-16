@@ -41,6 +41,7 @@
 - `codebook/`：编码框架、规则、判例与协商记录
 - `docs/`：文献札记、研究备忘录、会议记录、图件说明与本地维护文档
 - `docs/paper_working/`：版本化保留的工作稿与 LLM 中间稿，不属于正式交付链
+- `notebooks/`：本地审查模板 notebook；默认不提交执行输出，不属于正式交付链
 - `outputs/`：正式图表、表格、摘录和报告
 - `tasks/`：backlog、roadmap、changelog、迁移诊断
 - `archive/`：静态历史档案、legacy DB 索引与历史参考说明
@@ -94,8 +95,9 @@
 
 开发验证建议：
 
-- 推荐使用 `./.venv/bin/python -B -m pytest -q`，避免在 `src/`、`tests/` 下生成 `__pycache__` / `.pyc`，让工作树更容易保持可提交态。
 - 标准 `src-layout` 依赖 editable 安装；首次拉起环境或拉到本轮重命名后，先执行 `./.venv/bin/pip install -e '.[dev]'`。
+- `requirements.dev.txt` 与 `environment.yml` 仅作为本地开发 convenience wrappers，不是真正锁定依赖的 manifests。
+- 推荐使用 `./.venv/bin/python -B -m pytest -q`，避免在 `src/`、`tests/` 下生成 `__pycache__` / `.pyc`，让工作树更容易保持可提交态。
 - 如果此前已经运行过默认测试命令，可在收尾时执行一次 `find src tests -type d -name '__pycache__' -prune -exec rm -rf {} +` 清理本地缓存。
 
 本地历史备份说明：

@@ -1,3 +1,5 @@
+# Convenience environment entrypoint for local development.
+# Primary setup remains `./.venv/bin/pip install -e '.[dev]'`.
 name: ai4s-legitimacy-project
 channels:
   - conda-forge

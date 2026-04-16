@@ -1,3 +1,0 @@
-# Deprecated: local development now installs from `pyproject.toml`.
-# Keep this file portable for `pip install -r requirements.lock`.
--e .[dev]
