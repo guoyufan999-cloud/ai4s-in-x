@@ -1,0 +1,20 @@
+[
+  {
+    "index": 1,
+    "type": "video",
+    "status": "failed",
+    "size": "Protocol \"blob:\" not supported. Expected \"http:\""
+  },
+  {
+    "index": 2,
+    "type": "image",
+    "status": "success",
+    "size": "54.5 KB"
+  },
+  {
+    "index": 3,
+    "type": "image",
+    "status": "success",
+    "size": "54.5 KB"
+  }
+]

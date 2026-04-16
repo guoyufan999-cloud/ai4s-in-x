@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ai4s-legitimacy"
+version = "0.1.0"
+description = "Research engineering pipeline for AI4S on Xiaohongshu"
+requires-python = ">=3.11,<3.12"
+dependencies = [
+    "pandas>=2.2",
+    "matplotlib>=3.9",
+    "numpy>=1.26",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.3",
+    "jupyterlab>=4.2",
+]
+
+[project.scripts]
+ai4s-build-artifacts = "src.cli.build_artifacts:main"
+ai4s-import-legacy = "src.cli.import_legacy:main"
+
+[tool.setuptools]
+py-modules = []
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["src*"]

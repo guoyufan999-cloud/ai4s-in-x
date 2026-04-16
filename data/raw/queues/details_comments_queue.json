@@ -1,0 +1,18 @@
+[
+  {
+    "note_id": "note-queued-false",
+    "canonical_url": "https://www.xiaohongshu.com/explore/note-queued-false",
+    "source_url": "https://www.xiaohongshu.com/search_result/note-queued-false",
+    "crawl_url": "https://www.xiaohongshu.com/search_result/note-queued-false",
+    "title": "标题 note-queued-false",
+    "sample_status": "false"
+  },
+  {
+    "note_id": "note-failed-true",
+    "canonical_url": "https://www.xiaohongshu.com/explore/note-failed-true",
+    "source_url": "https://www.xiaohongshu.com/search_result/note-failed-true",
+    "crawl_url": "https://www.xiaohongshu.com/search_result/note-failed-true",
+    "title": "标题 note-failed-true",
+    "sample_status": "true"
+  }
+]

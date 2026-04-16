@@ -1,0 +1,169 @@
+{
+  "metadata": {
+    "name": "ai4s_xiaohongshu_query_dictionary",
+    "version": "2026-03-30",
+    "notes": "Public template only. Extend locally after each harvest round."
+  },
+  "layers": {
+    "ai_core": [
+      "AI科研",
+      "AI辅助科研",
+      "AI做科研",
+      "AI+科研",
+      "AI4S",
+      "科学智能",
+      "智能科研",
+      "科研自动化",
+      "大模型科研",
+      "多模态科研"
+    ],
+    "tools": [
+      "ChatGPT",
+      "Claude",
+      "Gemini",
+      "Perplexity",
+      "Elicit",
+      "Consensus",
+      "Scite",
+      "Cursor",
+      "Copilot",
+      "DeepSeek",
+      "Kimi",
+      "豆包",
+      "通义",
+      "元宝",
+      "讯飞星火"
+    ],
+    "workflow": [
+      "选题",
+      "研究问题",
+      "文献检索",
+      "文献综述",
+      "实验设计",
+      "数据爬取",
+      "数据清洗",
+      "统计分析",
+      "代码生成",
+      "论文写作",
+      "投稿",
+      "回复审稿",
+      "学术汇报"
+    ],
+    "identity": [
+      "科研人员",
+      "研究者",
+      "大学老师",
+      "博士生",
+      "研究生",
+      "本科科研",
+      "实验室",
+      "课题组"
+    ],
+    "discipline": [
+      "生物",
+      "医学",
+      "临床",
+      "药学",
+      "护理",
+      "公共卫生",
+      "计算机",
+      "人工智能",
+      "电子",
+      "通信",
+      "机械",
+      "材料",
+      "化工",
+      "数学",
+      "物理",
+      "化学",
+      "环境",
+      "经济",
+      "管理",
+      "教育",
+      "心理",
+      "社会学",
+      "法学",
+      "传播",
+      "语言学",
+      "历史",
+      "哲学",
+      "设计"
+    ],
+    "scenarios": [
+      "开题",
+      "答辩",
+      "组会",
+      "基金申请",
+      "项目申报",
+      "返修",
+      "SCI写作",
+      "SSCI写作"
+    ],
+    "attitude_risk": [
+      "提效",
+      "好用",
+      "踩坑",
+      "幻觉",
+      "AI率",
+      "查重",
+      "学术不端",
+      "伦理"
+    ],
+    "outputs_tasks": [
+      "综述",
+      "实验报告",
+      "代码",
+      "爬虫",
+      "PPT",
+      "图表",
+      "问卷",
+      "访谈提纲",
+      "病例数据",
+      "实验数据"
+    ]
+  },
+  "templates": [
+    {
+      "name": "ai_core_workflow",
+      "left": "ai_core",
+      "right": "workflow",
+      "format": "{left} {right}"
+    },
+    {
+      "name": "tools_workflow",
+      "left": "tools",
+      "right": "workflow",
+      "format": "{left} {right}"
+    },
+    {
+      "name": "ai_core_discipline",
+      "left": "ai_core",
+      "right": "discipline",
+      "format": "{left} {right}"
+    },
+    {
+      "name": "tools_discipline",
+      "left": "tools",
+      "right": "discipline",
+      "format": "{left} {right}"
+    },
+    {
+      "name": "identity_ai_core",
+      "left": "identity",
+      "right": "ai_core",
+      "format": "{left} {right}"
+    },
+    {
+      "name": "attitude_tools",
+      "left": "attitude_risk",
+      "right": "tools",
+      "format": "{left} {right}"
+    },
+    {
+      "name": "scenario_tools",
+      "left": "scenarios",
+      "right": "tools",
+      "format": "{left} {right}"
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+[
+  {
+    "index": 1,
+    "type": "video",
+    "status": "failed",
+    "size": "Protocol \"blob:\" not supported. Expected \"http:\""
+  },
+  {
+    "index": 2,
+    "type": "image",
+    "status": "success",
+    "size": "43.3 KB"
+  },
+  {
+    "index": 3,
+    "type": "image",
+    "status": "success",
+    "size": "139.7 KB"
+  },
+  {
+    "index": 4,
+    "type": "image",
+    "status": "success",
+    "size": "139.7 KB"
+  },
+  {
+    "index": 5,
+    "type": "image",
+    "status": "success",
+    "size": "122.3 KB"
+  },
+  {
+    "index": 6,
+    "type": "image",
+    "status": "success",
+    "size": "33.4 KB"
+  },
+  {
+    "index": 7,
+    "type": "image",
+    "status": "success",
+    "size": "44.2 KB"
+  }
+]

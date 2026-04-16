@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" modified="2026-04-07T12:52:00Z" agent="Codex" version="24.7.17">
+  <diagram id="ai4s-er-page" name="Database ER">
+    <mxGraphModel dx="2200" dy="1400" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2200" pageHeight="1400" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <mxCell id="er-title" value="&lt;b&gt;AI4S 小红书项目数据库 ER 图&lt;/b&gt;&lt;br&gt;当前主库：ai4s_xhs.sqlite3" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=22;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="20" y="10" width="520" height="40" as="geometry" />
+        </mxCell>
+
+        <mxCell id="er-query-dictionary" value="&lt;b&gt;query_dictionary&lt;/b&gt;&lt;br&gt;PK: id&lt;br&gt;layer, term, enabled, source&lt;br&gt;查询词库正式层" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;align=left;spacingLeft=8;spacingTop=6;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="20" y="70" width="230" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="er-query-runs" value="&lt;b&gt;query_runs&lt;/b&gt;&lt;br&gt;PK: id&lt;br&gt;command, query_text, template_name&lt;br&gt;hits_total, new_hits, status&lt;br&gt;采集运行历史" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;align=left;spacingLeft=8;spacingTop=6;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="20" y="210" width="230" height="130" as="geometry" />
+        </mxCell>
+
+        <mxCell id="er-authors" value="&lt;b&gt;authors&lt;/b&gt;&lt;br&gt;PK: author_id&lt;br&gt;author_name, actor_type&lt;br&gt;institution_hint, discipline_hint&lt;br&gt;作者主表" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;align=left;spacingLeft=8;spacingTop=6;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="300" y="70" width="240" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="er-note-candidates" value="&lt;b&gt;note_candidates&lt;/b&gt;&lt;br&gt;PK: id&lt;br&gt;note_id, canonical_url&lt;br&gt;query_text, template_name, query_run_id&lt;br&gt;命中路径候选表" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;align=left;spacingLeft=8;spacingTop=6;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="300" y="230" width="240" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="er-author-notes" value="&lt;b&gt;author_notes&lt;/b&gt;&lt;br&gt;PK: id&lt;br&gt;author_id, note_id, source_kind&lt;br&gt;作者扩展命中关系" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;align=left;spacingLeft=8;spacingTop=6;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="300" y="390" width="240" height="100" as="geometry" />
+        </mxCell>
+
+        <mxCell id="er-note-details" value="&lt;b&gt;note_details&lt;/b&gt;&lt;br&gt;PK: note_id&lt;br&gt;title, full_text, publish_time&lt;br&gt;note_type, media_count, crawl_status&lt;br&gt;raw_payload_json&lt;br&gt;帖子详情主表" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;align=left;spacingLeft=8;spacingTop=6;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="620" y="220" width="270" height="160" as="geometry" />
+        </mxCell>
+
+        <mxCell id="er-comments" value="&lt;b&gt;comments&lt;/b&gt;&lt;br&gt;PK: comment_id&lt;br&gt;FK: note_id -&gt; note_details&lt;br&gt;parent_comment_id, comment_level&lt;br&gt;comment_text, comment_time&lt;br&gt;评论原始表" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;align=left;spacingLeft=8;spacingTop=6;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="970" y="60" width="270" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="er-media-assets" value="&lt;b&gt;media_assets&lt;/b&gt;&lt;br&gt;PK: id&lt;br&gt;FK: note_id -&gt; note_details&lt;br&gt;media_kind, extracted_text&lt;br&gt;transcript_text, keyframe_summary&lt;br&gt;媒体识别结果表" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;align=left;spacingLeft=8;spacingTop=6;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="970" y="250" width="270" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="er-rerun" value="&lt;b&gt;note_rerun_status&lt;/b&gt;&lt;br&gt;PK: note_id&lt;br&gt;accessibility_state, detail_status&lt;br&gt;comment_status, media_status&lt;br&gt;attempts, last_error_*&lt;br&gt;复跑监督状态" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;align=left;spacingLeft=8;spacingTop=6;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="970" y="430" width="270" height="150" as="geometry" />
+        </mxCell>
+
+        <mxCell id="er-coding-posts" value="&lt;b&gt;coding_labels_posts&lt;/b&gt;&lt;br&gt;PK: note_id&lt;br&gt;sample_status, actor_type&lt;br&gt;qs_broad_subject, workflow_primary&lt;br&gt;attitude_polarity, ai_tools_json&lt;br&gt;帖子规则编码" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;align=left;spacingLeft=8;spacingTop=6;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="1290" y="230" width="270" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="er-coding-comments" value="&lt;b&gt;coding_labels_comments&lt;/b&gt;&lt;br&gt;PK: comment_id&lt;br&gt;FK: inherited_note_id -&gt; note_details&lt;br&gt;qs_broad_subject, workflow_primary&lt;br&gt;attitude_polarity, controversy_type&lt;br&gt;评论规则编码" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;align=left;spacingLeft=8;spacingTop=6;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="1290" y="50" width="270" height="150" as="geometry" />
+        </mxCell>
+
+        <mxCell id="er-panels-posts" value="&lt;b&gt;analysis_panels_posts&lt;/b&gt;&lt;br&gt;PK: id&lt;br&gt;period_label, qs_broad_subject&lt;br&gt;workflow_primary, post_count&lt;br&gt;当前主分析聚合（帖子）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;align=left;spacingLeft=8;spacingTop=6;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="1610" y="240" width="250" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="er-panels-comments" value="&lt;b&gt;analysis_panels_comments&lt;/b&gt;&lt;br&gt;PK: id&lt;br&gt;period_label, qs_broad_subject&lt;br&gt;workflow_primary, attitude_polarity&lt;br&gt;当前主分析聚合（评论）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;align=left;spacingLeft=8;spacingTop=6;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="1610" y="70" width="250" height="130" as="geometry" />
+        </mxCell>
+
+        <mxCell id="er-grounded-runs" value="&lt;b&gt;grounded_runs&lt;/b&gt;&lt;br&gt;PK: id&lt;br&gt;stage, provider, model&lt;br&gt;status, prompt_version" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#cfe2f3;strokeColor=#6fa8dc;align=left;spacingLeft=8;spacingTop=6;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="20" y="700" width="230" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="er-grounded-units" value="&lt;b&gt;grounded_units&lt;/b&gt;&lt;br&gt;PK: unit_id&lt;br&gt;source_type, source_id, note_id&lt;br&gt;period_* , qs_broad_subject&lt;br&gt;句段级编码单位" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#cfe2f3;strokeColor=#6fa8dc;align=left;spacingLeft=8;spacingTop=6;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="290" y="700" width="250" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="er-grounded-codebook" value="&lt;b&gt;grounded_codebook&lt;/b&gt;&lt;br&gt;PK: code_id&lt;br&gt;canonical_code, stage&lt;br&gt;status, version, is_frozen&lt;br&gt;扎根理论码本" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#cfe2f3;strokeColor=#6fa8dc;align=left;spacingLeft=8;spacingTop=6;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="580" y="700" width="250" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="er-grounded-open" value="&lt;b&gt;grounded_open_codes&lt;/b&gt;&lt;br&gt;PK: id&lt;br&gt;FK: run_id -&gt; grounded_runs&lt;br&gt;FK: unit_id -&gt; grounded_units&lt;br&gt;开放编码结果" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#cfe2f3;strokeColor=#6fa8dc;align=left;spacingLeft=8;spacingTop=6;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="290" y="870" width="250" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="er-grounded-axial" value="&lt;b&gt;grounded_axial_links&lt;/b&gt;&lt;br&gt;PK: id&lt;br&gt;FK: run_id -&gt; grounded_runs&lt;br&gt;relation_type, from_code, to_code&lt;br&gt;主轴编码关系" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#cfe2f3;strokeColor=#6fa8dc;align=left;spacingLeft=8;spacingTop=6;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="580" y="870" width="250" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="er-grounded-selective" value="&lt;b&gt;grounded_selective_items&lt;/b&gt;&lt;br&gt;PK: id&lt;br&gt;FK: run_id -&gt; grounded_runs&lt;br&gt;core_category, storyline_summary&lt;br&gt;选择性编码结果" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#cfe2f3;strokeColor=#6fa8dc;align=left;spacingLeft=8;spacingTop=6;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="870" y="870" width="250" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="er-grounded-audit" value="&lt;b&gt;grounded_audit_traces&lt;/b&gt;&lt;br&gt;PK: id&lt;br&gt;FK: run_id -&gt; grounded_runs&lt;br&gt;prompt_version, input_reference&lt;br&gt;structured_output_json&lt;br&gt;审计追踪" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#cfe2f3;strokeColor=#6fa8dc;align=left;spacingLeft=8;spacingTop=6;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="1160" y="870" width="250" height="130" as="geometry" />
+        </mxCell>
+
+        <mxCell id="er-lost-found" value="&lt;b&gt;lost_and_found&lt;/b&gt;&lt;br&gt;非主业务表&lt;br&gt;SQLite 恢复/修复残留&lt;br&gt;不用于论文分析" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;dashed=1;align=left;spacingLeft=8;spacingTop=6;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="20" y="980" width="230" height="100" as="geometry" />
+        </mxCell>
+
+        <mxCell id="er-note-main" value="实线 = schema 内明确外键&#xa;虚线 = 业务逻辑上的主流程依赖" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="1610" y="390" width="250" height="70" as="geometry" />
+        </mxCell>
+
+        <mxCell id="er-edge-queryruns-candidates" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#666666;" edge="1" parent="1" source="er-query-runs" target="er-note-candidates">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="er-edge-authors-candidates" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#666666;" edge="1" parent="1" source="er-authors" target="er-note-candidates">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="er-edge-authors-authornotes" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#666666;" edge="1" parent="1" source="er-authors" target="er-author-notes">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="er-edge-authors-note-details" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#666666;" edge="1" parent="1" source="er-authors" target="er-note-details">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="er-edge-candidates-details" value="业务去重 / 详情补全" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#999999;dashed=1;fontSize=11;" edge="1" parent="1" source="er-note-candidates" target="er-note-details">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="er-edge-details-comments" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#666666;" edge="1" parent="1" source="er-note-details" target="er-comments">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="er-edge-details-media" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#666666;" edge="1" parent="1" source="er-note-details" target="er-media-assets">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="er-edge-details-rerun" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#666666;" edge="1" parent="1" source="er-note-details" target="er-rerun">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="er-edge-details-coding-posts" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#666666;" edge="1" parent="1" source="er-note-details" target="er-coding-posts">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="er-edge-comments-coding-comments" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#666666;" edge="1" parent="1" source="er-comments" target="er-coding-comments">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="er-edge-notedetails-coding-comments" value="inherited_note_id" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#999999;dashed=1;fontSize=11;" edge="1" parent="1" source="er-note-details" target="er-coding-comments">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="er-edge-coding-posts-panels-posts" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#666666;" edge="1" parent="1" source="er-coding-posts" target="er-panels-posts">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="er-edge-coding-comments-panels-comments" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#666666;" edge="1" parent="1" source="er-coding-comments" target="er-panels-comments">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="er-edge-details-grounded-units" value="source text" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#999999;dashed=1;fontSize=11;" edge="1" parent="1" source="er-note-details" target="er-grounded-units">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="er-edge-comments-grounded-units" value="source text" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#999999;dashed=1;fontSize=11;" edge="1" parent="1" source="er-comments" target="er-grounded-units">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="er-edge-grounded-runs-open" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#666666;" edge="1" parent="1" source="er-grounded-runs" target="er-grounded-open">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="er-edge-grounded-runs-axial" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#666666;" edge="1" parent="1" source="er-grounded-runs" target="er-grounded-axial">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="er-edge-grounded-runs-selective" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#666666;" edge="1" parent="1" source="er-grounded-runs" target="er-grounded-selective">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="er-edge-grounded-runs-audit" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#666666;" edge="1" parent="1" source="er-grounded-runs" target="er-grounded-audit">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="er-edge-grounded-units-open" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#666666;" edge="1" parent="1" source="er-grounded-units" target="er-grounded-open">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="er-edge-grounded-codebook-open" value="codebook version" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#999999;dashed=1;fontSize=11;" edge="1" parent="1" source="er-grounded-codebook" target="er-grounded-open">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="er-edge-grounded-codebook-axial" value="codebook version" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#999999;dashed=1;fontSize=11;" edge="1" parent="1" source="er-grounded-codebook" target="er-grounded-axial">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="er-edge-grounded-codebook-selective" value="codebook version" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#999999;dashed=1;fontSize=11;" edge="1" parent="1" source="er-grounded-codebook" target="er-grounded-selective">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+
+  <diagram id="ai4s-flow-page" name="Pipeline Flow">
+    <mxGraphModel dx="2200" dy="1400" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2200" pageHeight="1400" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <mxCell id="flow-title" value="&lt;b&gt;AI4S 小红书项目数据流图&lt;/b&gt;&lt;br&gt;从采集、复跑、媒体回补到规则编码与论文导出" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=22;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="20" y="10" width="720" height="44" as="geometry" />
+        </mxCell>
+
+        <mxCell id="flow-query-dict" value="&lt;b&gt;查询词库&lt;/b&gt;&lt;br&gt;query_dictionary / 配置 JSON" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="20" y="80" width="180" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="flow-harvest" value="&lt;b&gt;harvest_opencli&lt;/b&gt;&lt;br&gt;搜索采集 + 作者扩展" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="20" y="210" width="180" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="flow-opencli" value="&lt;b&gt;OpenCLI 工具箱&lt;/b&gt;&lt;br&gt;xiaohongshu search / user / download" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="260" y="80" width="210" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="flow-browser" value="&lt;b&gt;Google Chrome + CDP&lt;/b&gt;&lt;br&gt;容器内真实浏览器会话" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="520" y="80" width="220" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="flow-xhs" value="&lt;b&gt;小红书平台&lt;/b&gt;&lt;br&gt;搜索页 / 详情页 / 用户页 / 评论页" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="800" y="80" width="220" height="80" as="geometry" />
+        </mxCell>
+
+        <mxCell id="flow-candidate-store" value="&lt;b&gt;候选发现层&lt;/b&gt;&lt;br&gt;authors + note_candidates + author_notes" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="260" y="220" width="240" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="flow-crawl" value="&lt;b&gt;crawl_details_comments&lt;/b&gt;&lt;br&gt;详情抓取 + 评论同步" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="560" y="220" width="210" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="flow-detail-store" value="&lt;b&gt;详情/评论原始层&lt;/b&gt;&lt;br&gt;note_details + comments + raw payload" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="830" y="220" width="250" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="flow-rerun" value="&lt;b&gt;audit-note-accessibility / rerun-note-pass&lt;/b&gt;&lt;br&gt;风控识别、不可浏览重试、评论补抓" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="260" y="390" width="280" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="flow-rerun-store" value="&lt;b&gt;监督状态层&lt;/b&gt;&lt;br&gt;note_rerun_status" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="600" y="400" width="180" height="70" as="geometry" />
+        </mxCell>
+
+        <mxCell id="flow-backfill" value="&lt;b&gt;backfill-media-recognition&lt;/b&gt;&lt;br&gt;媒体审计 + OCR / 关键帧 / ASR" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="1110" y="220" width="240" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="flow-media-store" value="&lt;b&gt;媒体层&lt;/b&gt;&lt;br&gt;media_assets + 本地 media/raw 缓存" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="1390" y="220" width="230" height="80" as="geometry" />
+        </mxCell>
+
+        <mxCell id="flow-analyze" value="&lt;b&gt;analyze-and-code&lt;/b&gt;&lt;br&gt;规则编码 + 主面板重建" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="560" y="600" width="210" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="flow-coding-store" value="&lt;b&gt;编码层&lt;/b&gt;&lt;br&gt;coding_labels_posts + coding_labels_comments" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="830" y="600" width="250" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="flow-panels" value="&lt;b&gt;分析导出层&lt;/b&gt;&lt;br&gt;analysis_panels_* + CSV / Parquet / 图表 / freeze checkpoint" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="1130" y="590" width="290" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="flow-paper" value="&lt;b&gt;论文材料输出&lt;/b&gt;&lt;br&gt;paper_analysis_snapshot&lt;br&gt;results / discussion / conclusion drafts" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="1470" y="600" width="250" height="80" as="geometry" />
+        </mxCell>
+
+        <mxCell id="flow-grounded" value="&lt;b&gt;grounded-theory-run&lt;/b&gt;&lt;br&gt;discovery / formal / export" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="560" y="810" width="210" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="flow-grounded-store" value="&lt;b&gt;扎根理论层&lt;/b&gt;&lt;br&gt;grounded_runs / units / codebook / open / axial / selective / audit" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="830" y="800" width="360" height="100" as="geometry" />
+        </mxCell>
+
+        <mxCell id="flow-legend" value="实线 = 主数据写入流&#xa;虚线 = 监督/回流/重试" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="1470" y="760" width="230" height="70" as="geometry" />
+        </mxCell>
+
+        <mxCell id="flow-edge-dict-harvest" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#666666;" edge="1" parent="1" source="flow-query-dict" target="flow-harvest">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="flow-edge-harvest-opencli" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#666666;" edge="1" parent="1" source="flow-harvest" target="flow-opencli">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="flow-edge-opencli-browser" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#666666;" edge="1" parent="1" source="flow-opencli" target="flow-browser">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="flow-edge-browser-xhs" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#666666;" edge="1" parent="1" source="flow-browser" target="flow-xhs">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="flow-edge-opencli-candidates" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#666666;" edge="1" parent="1" source="flow-opencli" target="flow-candidate-store">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="flow-edge-candidates-crawl" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#666666;" edge="1" parent="1" source="flow-candidate-store" target="flow-crawl">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="flow-edge-crawl-details" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#666666;" edge="1" parent="1" source="flow-crawl" target="flow-detail-store">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="flow-edge-detail-backfill" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#666666;" edge="1" parent="1" source="flow-detail-store" target="flow-backfill">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="flow-edge-backfill-media" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#666666;" edge="1" parent="1" source="flow-backfill" target="flow-media-store">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="flow-edge-details-analyze" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#666666;" edge="1" parent="1" source="flow-detail-store" target="flow-analyze">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="flow-edge-media-analyze" value="media text" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#666666;fontSize=11;" edge="1" parent="1" source="flow-media-store" target="flow-analyze">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="flow-edge-analyze-coding" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#666666;" edge="1" parent="1" source="flow-analyze" target="flow-coding-store">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="flow-edge-coding-panels" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#666666;" edge="1" parent="1" source="flow-coding-store" target="flow-panels">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="flow-edge-panels-paper" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#666666;" edge="1" parent="1" source="flow-panels" target="flow-paper">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="flow-edge-details-rerunstore" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#666666;" edge="1" parent="1" source="flow-detail-store" target="flow-rerun-store">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="flow-edge-rerunstore-rerun" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#999999;dashed=1;" edge="1" parent="1" source="flow-rerun-store" target="flow-rerun">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="flow-edge-rerun-details" value="详情/评论回流" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#999999;dashed=1;fontSize=11;" edge="1" parent="1" source="flow-rerun" target="flow-detail-store">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="flow-edge-rerun-backfill" value="媒体回补触发" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#999999;dashed=1;fontSize=11;" edge="1" parent="1" source="flow-rerun-store" target="flow-backfill">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="flow-edge-details-grounded" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#666666;" edge="1" parent="1" source="flow-detail-store" target="flow-grounded">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="flow-edge-coding-grounded" value="分层抽样 / 冻结后映射" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#999999;dashed=1;fontSize=11;" edge="1" parent="1" source="flow-coding-store" target="flow-grounded">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="flow-edge-grounded-store" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#666666;" edge="1" parent="1" source="flow-grounded" target="flow-grounded-store">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="flow-edge-grounded-paper" value="机制模型材料" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#666666;fontSize=11;" edge="1" parent="1" source="flow-grounded-store" target="flow-paper">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

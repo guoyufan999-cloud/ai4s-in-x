@@ -1,0 +1,875 @@
+{
+  "coverage_end_date": "2026-04-10",
+  "time_diffusion": {
+    "halfyear_post_counts": [
+      {
+        "period_key": "2024H1",
+        "period_label": "2024H1",
+        "count": 52
+      },
+      {
+        "period_key": "2024H2",
+        "period_label": "2024H2",
+        "count": 125
+      },
+      {
+        "period_key": "2025H1",
+        "period_label": "2025H1",
+        "count": 383
+      },
+      {
+        "period_key": "2025H2",
+        "period_label": "2025H2",
+        "count": 738
+      },
+      {
+        "period_key": "2026H1",
+        "period_label": "2026H1(部分)",
+        "count": 1769
+      }
+    ],
+    "quarter_post_counts": [
+      {
+        "period_key": "2024Q1",
+        "period_label": "2024Q1",
+        "count": 15
+      },
+      {
+        "period_key": "2024Q2",
+        "period_label": "2024Q2",
+        "count": 37
+      },
+      {
+        "period_key": "2024Q3",
+        "period_label": "2024Q3",
+        "count": 39
+      },
+      {
+        "period_key": "2024Q4",
+        "period_label": "2024Q4",
+        "count": 86
+      },
+      {
+        "period_key": "2025Q1",
+        "period_label": "2025Q1",
+        "count": 210
+      },
+      {
+        "period_key": "2025Q2",
+        "period_label": "2025Q2",
+        "count": 173
+      },
+      {
+        "period_key": "2025Q3",
+        "period_label": "2025Q3",
+        "count": 239
+      },
+      {
+        "period_key": "2025Q4",
+        "period_label": "2025Q4",
+        "count": 499
+      },
+      {
+        "period_key": "2026Q1",
+        "period_label": "2026Q1",
+        "count": 1603
+      },
+      {
+        "period_key": "2026Q2",
+        "period_label": "2026Q2(部分)",
+        "count": 166
+      }
+    ],
+    "quarter_diffusion_breadth": [
+      {
+        "period_key": "2024Q1",
+        "period_label": "2024Q1",
+        "post_count": 15,
+        "active_cells": 13
+      },
+      {
+        "period_key": "2024Q2",
+        "period_label": "2024Q2",
+        "post_count": 37,
+        "active_cells": 13
+      },
+      {
+        "period_key": "2024Q3",
+        "period_label": "2024Q3",
+        "post_count": 39,
+        "active_cells": 16
+      },
+      {
+        "period_key": "2024Q4",
+        "period_label": "2024Q4",
+        "post_count": 86,
+        "active_cells": 27
+      },
+      {
+        "period_key": "2025Q1",
+        "period_label": "2025Q1",
+        "post_count": 210,
+        "active_cells": 39
+      },
+      {
+        "period_key": "2025Q2",
+        "period_label": "2025Q2",
+        "post_count": 173,
+        "active_cells": 34
+      },
+      {
+        "period_key": "2025Q3",
+        "period_label": "2025Q3",
+        "post_count": 239,
+        "active_cells": 37
+      },
+      {
+        "period_key": "2025Q4",
+        "period_label": "2025Q4",
+        "post_count": 499,
+        "active_cells": 43
+      },
+      {
+        "period_key": "2026Q1",
+        "period_label": "2026Q1",
+        "post_count": 1603,
+        "active_cells": 46
+      },
+      {
+        "period_key": "2026Q2",
+        "period_label": "2026Q2(部分)",
+        "post_count": 166,
+        "active_cells": 31
+      }
+    ]
+  },
+  "post_vs_comment": {
+    "post_attitudes": [
+      {
+        "label": "中性经验帖",
+        "count": 1659
+      },
+      {
+        "label": "积极但保留",
+        "count": 573
+      },
+      {
+        "label": "批判/担忧",
+        "count": 288
+      },
+      {
+        "label": "积极采用",
+        "count": 283
+      },
+      {
+        "label": "明确拒绝",
+        "count": 264
+      }
+    ],
+    "comment_attitudes": [
+      {
+        "label": "中性经验帖",
+        "count": 67392
+      },
+      {
+        "label": "积极采用",
+        "count": 1256
+      },
+      {
+        "label": "明确拒绝",
+        "count": 620
+      },
+      {
+        "label": "批判/担忧",
+        "count": 424
+      },
+      {
+        "label": "积极但保留",
+        "count": 188
+      }
+    ],
+    "post_risks": [
+      {
+        "label": "hallucination",
+        "count": 292
+      },
+      {
+        "label": "detection",
+        "count": 182
+      },
+      {
+        "label": "ethics",
+        "count": 105
+      }
+    ],
+    "comment_risks": [
+      {
+        "label": "detection",
+        "count": 649
+      },
+      {
+        "label": "hallucination",
+        "count": 525
+      },
+      {
+        "label": "ethics",
+        "count": 104
+      }
+    ],
+    "comment_controversies": [
+      {
+        "label": "none",
+        "count": 68721
+      },
+      {
+        "label": "risk",
+        "count": 1159
+      }
+    ]
+  },
+  "distribution": {
+    "subjects": [
+      {
+        "label": "Engineering & Technology",
+        "count": 1101
+      },
+      {
+        "label": "uncertain",
+        "count": 729
+      },
+      {
+        "label": "Arts & Humanities",
+        "count": 700
+      },
+      {
+        "label": "Natural Sciences",
+        "count": 201
+      },
+      {
+        "label": "Life Sciences & Medicine",
+        "count": 184
+      },
+      {
+        "label": "Social Sciences & Management",
+        "count": 152
+      }
+    ],
+    "workflows": [
+      {
+        "label": "文献检索与综述",
+        "count": 790
+      },
+      {
+        "label": "选题与问题定义",
+        "count": 697
+      },
+      {
+        "label": "编码/建模/统计分析",
+        "count": 530
+      },
+      {
+        "label": "uncertain",
+        "count": 435
+      },
+      {
+        "label": "研究设计与实验/方案制定",
+        "count": 255
+      },
+      {
+        "label": "论文写作/投稿/审稿回复",
+        "count": 200
+      },
+      {
+        "label": "数据获取与预处理",
+        "count": 114
+      },
+      {
+        "label": "学术交流与科研管理",
+        "count": 46
+      }
+    ],
+    "subject_workflow_top": [
+      {
+        "qs_broad_subject": "Arts & Humanities",
+        "workflow_primary": "选题与问题定义",
+        "count": 292
+      },
+      {
+        "qs_broad_subject": "Engineering & Technology",
+        "workflow_primary": "文献检索与综述",
+        "count": 245
+      },
+      {
+        "qs_broad_subject": "Engineering & Technology",
+        "workflow_primary": "选题与问题定义",
+        "count": 235
+      },
+      {
+        "qs_broad_subject": "Engineering & Technology",
+        "workflow_primary": "编码/建模/统计分析",
+        "count": 233
+      },
+      {
+        "qs_broad_subject": "Arts & Humanities",
+        "workflow_primary": "文献检索与综述",
+        "count": 207
+      },
+      {
+        "qs_broad_subject": "uncertain",
+        "workflow_primary": "文献检索与综述",
+        "count": 197
+      },
+      {
+        "qs_broad_subject": "uncertain",
+        "workflow_primary": "uncertain",
+        "count": 186
+      },
+      {
+        "qs_broad_subject": "Engineering & Technology",
+        "workflow_primary": "uncertain",
+        "count": 172
+      },
+      {
+        "qs_broad_subject": "uncertain",
+        "workflow_primary": "编码/建模/统计分析",
+        "count": 114
+      },
+      {
+        "qs_broad_subject": "Engineering & Technology",
+        "workflow_primary": "研究设计与实验/方案制定",
+        "count": 84
+      },
+      {
+        "qs_broad_subject": "Arts & Humanities",
+        "workflow_primary": "研究设计与实验/方案制定",
+        "count": 81
+      },
+      {
+        "qs_broad_subject": "uncertain",
+        "workflow_primary": "选题与问题定义",
+        "count": 79
+      }
+    ]
+  },
+  "workflow_attitudes": [
+    {
+      "group": "uncertain",
+      "items": [
+        {
+          "label": "中性经验帖",
+          "count": 336
+        },
+        {
+          "label": "积极采用",
+          "count": 40
+        },
+        {
+          "label": "批判/担忧",
+          "count": 26
+        }
+      ]
+    },
+    {
+      "group": "学术交流与科研管理",
+      "items": [
+        {
+          "label": "中性经验帖",
+          "count": 34
+        },
+        {
+          "label": "明确拒绝",
+          "count": 5
+        },
+        {
+          "label": "积极但保留",
+          "count": 3
+        }
+      ]
+    },
+    {
+      "group": "数据获取与预处理",
+      "items": [
+        {
+          "label": "中性经验帖",
+          "count": 53
+        },
+        {
+          "label": "积极但保留",
+          "count": 23
+        },
+        {
+          "label": "明确拒绝",
+          "count": 15
+        }
+      ]
+    },
+    {
+      "group": "文献检索与综述",
+      "items": [
+        {
+          "label": "中性经验帖",
+          "count": 373
+        },
+        {
+          "label": "积极但保留",
+          "count": 169
+        },
+        {
+          "label": "批判/担忧",
+          "count": 84
+        }
+      ]
+    },
+    {
+      "group": "研究设计与实验/方案制定",
+      "items": [
+        {
+          "label": "中性经验帖",
+          "count": 164
+        },
+        {
+          "label": "积极但保留",
+          "count": 34
+        },
+        {
+          "label": "明确拒绝",
+          "count": 24
+        }
+      ]
+    },
+    {
+      "group": "编码/建模/统计分析",
+      "items": [
+        {
+          "label": "中性经验帖",
+          "count": 331
+        },
+        {
+          "label": "明确拒绝",
+          "count": 55
+        },
+        {
+          "label": "积极但保留",
+          "count": 54
+        }
+      ]
+    },
+    {
+      "group": "论文写作/投稿/审稿回复",
+      "items": [
+        {
+          "label": "中性经验帖",
+          "count": 102
+        },
+        {
+          "label": "积极但保留",
+          "count": 62
+        },
+        {
+          "label": "积极采用",
+          "count": 16
+        }
+      ]
+    },
+    {
+      "group": "选题与问题定义",
+      "items": [
+        {
+          "label": "中性经验帖",
+          "count": 266
+        },
+        {
+          "label": "积极但保留",
+          "count": 218
+        },
+        {
+          "label": "批判/担忧",
+          "count": 102
+        }
+      ]
+    }
+  ],
+  "workflow_risks": [
+    {
+      "group": "uncertain",
+      "items": [
+        {
+          "label": "hallucination",
+          "count": 19
+        },
+        {
+          "label": "detection",
+          "count": 8
+        },
+        {
+          "label": "ethics",
+          "count": 8
+        }
+      ]
+    },
+    {
+      "group": "学术交流与科研管理",
+      "items": [
+        {
+          "label": "detection",
+          "count": 3
+        },
+        {
+          "label": "hallucination",
+          "count": 3
+        }
+      ]
+    },
+    {
+      "group": "数据获取与预处理",
+      "items": [
+        {
+          "label": "hallucination",
+          "count": 15
+        },
+        {
+          "label": "detection",
+          "count": 7
+        },
+        {
+          "label": "ethics",
+          "count": 3
+        }
+      ]
+    },
+    {
+      "group": "文献检索与综述",
+      "items": [
+        {
+          "label": "hallucination",
+          "count": 121
+        },
+        {
+          "label": "detection",
+          "count": 64
+        },
+        {
+          "label": "ethics",
+          "count": 19
+        }
+      ]
+    },
+    {
+      "group": "研究设计与实验/方案制定",
+      "items": [
+        {
+          "label": "hallucination",
+          "count": 25
+        },
+        {
+          "label": "detection",
+          "count": 8
+        },
+        {
+          "label": "ethics",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "group": "编码/建模/统计分析",
+      "items": [
+        {
+          "label": "hallucination",
+          "count": 30
+        },
+        {
+          "label": "detection",
+          "count": 22
+        },
+        {
+          "label": "ethics",
+          "count": 7
+        }
+      ]
+    },
+    {
+      "group": "论文写作/投稿/审稿回复",
+      "items": [
+        {
+          "label": "detection",
+          "count": 17
+        },
+        {
+          "label": "ethics",
+          "count": 8
+        },
+        {
+          "label": "hallucination",
+          "count": 4
+        }
+      ]
+    },
+    {
+      "group": "选题与问题定义",
+      "items": [
+        {
+          "label": "hallucination",
+          "count": 75
+        },
+        {
+          "label": "ethics",
+          "count": 58
+        },
+        {
+          "label": "detection",
+          "count": 53
+        }
+      ]
+    }
+  ],
+  "subject_tools": [
+    {
+      "group": "Arts & Humanities",
+      "items": [
+        {
+          "label": "ChatGPT",
+          "count": 196
+        },
+        {
+          "label": "Claude",
+          "count": 186
+        },
+        {
+          "label": "Gemini",
+          "count": 113
+        },
+        {
+          "label": "DeepSeek",
+          "count": 93
+        }
+      ]
+    },
+    {
+      "group": "Engineering & Technology",
+      "items": [
+        {
+          "label": "ChatGPT",
+          "count": 233
+        },
+        {
+          "label": "Claude",
+          "count": 197
+        },
+        {
+          "label": "Gemini",
+          "count": 125
+        },
+        {
+          "label": "DeepSeek",
+          "count": 84
+        }
+      ]
+    },
+    {
+      "group": "Life Sciences & Medicine",
+      "items": [
+        {
+          "label": "Gemini",
+          "count": 53
+        },
+        {
+          "label": "ChatGPT",
+          "count": 28
+        },
+        {
+          "label": "Claude",
+          "count": 18
+        },
+        {
+          "label": "DeepSeek",
+          "count": 15
+        }
+      ]
+    },
+    {
+      "group": "Natural Sciences",
+      "items": [
+        {
+          "label": "ChatGPT",
+          "count": 60
+        },
+        {
+          "label": "Claude",
+          "count": 37
+        },
+        {
+          "label": "Gemini",
+          "count": 26
+        },
+        {
+          "label": "DeepSeek",
+          "count": 17
+        }
+      ]
+    },
+    {
+      "group": "Social Sciences & Management",
+      "items": [
+        {
+          "label": "ChatGPT",
+          "count": 23
+        },
+        {
+          "label": "Claude",
+          "count": 19
+        },
+        {
+          "label": "DeepSeek",
+          "count": 13
+        },
+        {
+          "label": "Gemini",
+          "count": 9
+        }
+      ]
+    },
+    {
+      "group": "uncertain",
+      "items": [
+        {
+          "label": "ChatGPT",
+          "count": 130
+        },
+        {
+          "label": "Gemini",
+          "count": 109
+        },
+        {
+          "label": "DeepSeek",
+          "count": 80
+        },
+        {
+          "label": "Claude",
+          "count": 75
+        }
+      ]
+    }
+  ],
+  "time_tools": [
+    {
+      "group": "2024H1",
+      "items": [
+        {
+          "label": "ChatGPT",
+          "count": 34
+        },
+        {
+          "label": "Copilot",
+          "count": 5
+        },
+        {
+          "label": "Claude",
+          "count": 4
+        },
+        {
+          "label": "Gemini",
+          "count": 3
+        }
+      ]
+    },
+    {
+      "group": "2024H2",
+      "items": [
+        {
+          "label": "ChatGPT",
+          "count": 54
+        },
+        {
+          "label": "Copilot",
+          "count": 18
+        },
+        {
+          "label": "Claude",
+          "count": 12
+        },
+        {
+          "label": "Kimi",
+          "count": 12
+        }
+      ]
+    },
+    {
+      "group": "2025H1",
+      "items": [
+        {
+          "label": "DeepSeek",
+          "count": 125
+        },
+        {
+          "label": "ChatGPT",
+          "count": 117
+        },
+        {
+          "label": "Claude",
+          "count": 56
+        },
+        {
+          "label": "Gemini",
+          "count": 25
+        }
+      ]
+    },
+    {
+      "group": "2025H2",
+      "items": [
+        {
+          "label": "ChatGPT",
+          "count": 150
+        },
+        {
+          "label": "Gemini",
+          "count": 94
+        },
+        {
+          "label": "Claude",
+          "count": 72
+        },
+        {
+          "label": "DeepSeek",
+          "count": 66
+        }
+      ]
+    },
+    {
+      "group": "2026H1",
+      "items": [
+        {
+          "label": "Claude",
+          "count": 388
+        },
+        {
+          "label": "ChatGPT",
+          "count": 315
+        },
+        {
+          "label": "Gemini",
+          "count": 311
+        },
+        {
+          "label": "DeepSeek",
+          "count": 110
+        }
+      ]
+    }
+  ],
+  "uncertainty": {
+    "subject_posts": 729,
+    "subject_share": 0.237692,
+    "workflow_posts": 435,
+    "workflow_share": 0.141832
+  },
+  "suggested_sections": [
+    "应用扩散趋势",
+    "不同学科的 AI4S 切入路径",
+    "科研流程中的态度分化",
+    "工具生态演进",
+    "评论区的规范协商",
+    "平台表达的不确定性"
+  ]
+}

@@ -1,0 +1,212 @@
+[
+  {
+    "id": "69a6e9230000000022032f7f",
+    "title": "我是真学生",
+    "type": "normal",
+    "likes": "111",
+    "url": "https://www.xiaohongshu.com/user/profile/60d7c86e000000002002f721/69a6e9230000000022032f7f?xsec_token=ABNan_YCDSQwvYh4ogz5xGZC-vVJ6uTpHqDkkG1uXHgTk%3D&xsec_source=pc_user"
+  },
+  {
+    "id": "69537bbe000000001d03c861",
+    "title": "自动化科研代码仓库开源",
+    "type": "normal",
+    "likes": "997",
+    "url": "https://www.xiaohongshu.com/user/profile/60d7c86e000000002002f721/69537bbe000000001d03c861?xsec_token=AB73htWSjx4UOoYQSNyUrKhQUnAS9ljG5xq2M_P8rYmXU%3D&xsec_source=pc_user"
+  },
+  {
+    "id": "694128db000000001d03e89c",
+    "title": "ai 读综述提示词",
+    "type": "normal",
+    "likes": "321",
+    "url": "https://www.xiaohongshu.com/user/profile/60d7c86e000000002002f721/694128db000000001d03e89c?xsec_token=ABgULuqe7zCw9CXWgTZQc89r7JLvbWQr0PGYR_J6KFjI0%3D&xsec_source=pc_user"
+  },
+  {
+    "id": "692ae6c0000000001e0034f7",
+    "title": "给导师可视化你的代码",
+    "type": "video",
+    "likes": "231",
+    "url": "https://www.xiaohongshu.com/user/profile/60d7c86e000000002002f721/692ae6c0000000001e0034f7?xsec_token=ABwTMKkOp7JrY3bgVofy--EB45VTefVOzNQWb6iyFedEE%3D&xsec_source=pc_user"
+  },
+  {
+    "id": "69212e7f000000001e017e54",
+    "title": "读论文 prompt 分享",
+    "type": "normal",
+    "likes": "4833",
+    "url": "https://www.xiaohongshu.com/user/profile/60d7c86e000000002002f721/69212e7f000000001e017e54?xsec_token=ABj7VHjmND0j0YHEsFnw54jzJWh0_KkJ_Tfdc2El6urcQ%3D&xsec_source=pc_user"
+  },
+  {
+    "id": "690f0b7a0000000004016ae8",
+    "title": "速读十月 54 篇挂 arxiv 的 RAG 论文",
+    "type": "normal",
+    "likes": "726",
+    "url": "https://www.xiaohongshu.com/user/profile/60d7c86e000000002002f721/690f0b7a0000000004016ae8?xsec_token=ABEI-b6iR-nVl2gJrzJ2dTD1ewjrjFe5TNl1KhmhDN2BY%3D&xsec_source=pc_user"
+  },
+  {
+    "id": "68ea5a910000000004007863",
+    "title": "arxiv 2025.9 RAG 论文精选（19篇）",
+    "type": "normal",
+    "likes": "281",
+    "url": "https://www.xiaohongshu.com/user/profile/60d7c86e000000002002f721/68ea5a910000000004007863?xsec_token=ABwZRgPfbhjC0g7asDGfAtuHVmNUOyFmq5CPs6_xJq02Q%3D&xsec_source=pc_user"
+  },
+  {
+    "id": "68bfe2ba000000001c03da6d",
+    "title": "Meta力作，不掉点但加速30倍的RAG！",
+    "type": "normal",
+    "likes": "71",
+    "url": "https://www.xiaohongshu.com/user/profile/60d7c86e000000002002f721/68bfe2ba000000001c03da6d?xsec_token=ABsTxRRO7JkDcKiJb7_4ORfeVSsNLcD3oy5yPOjgApZcs%3D&xsec_source=pc_user"
+  },
+  {
+    "id": "68bea9fd000000001c00d864",
+    "title": "推理+RAG=知识助理 融合推理与RAG的综述",
+    "type": "normal",
+    "likes": "18",
+    "url": "https://www.xiaohongshu.com/user/profile/60d7c86e000000002002f721/68bea9fd000000001c00d864?xsec_token=ABZ_GkggSZyV83vBrxAzLVooe1ypAEve9e13nBmMDxgHc%3D&xsec_source=pc_user"
+  },
+  {
+    "id": "68be6263000000001d01173e",
+    "title": "在香港街头遇到安塞龙！",
+    "type": "normal",
+    "likes": "237",
+    "url": "https://www.xiaohongshu.com/user/profile/60d7c86e000000002002f721/68be6263000000001d01173e?xsec_token=ABZ_GkggSZyV83vBrxAzLVogDK79jIfYSRMZsRxYAWt1Q%3D&xsec_source=pc_user"
+  },
+  {
+    "id": "68a4889a000000001d03633d",
+    "title": "基于六度分隔定理的多跳推理：HopRAG",
+    "type": "normal",
+    "likes": "15",
+    "url": "https://www.xiaohongshu.com/user/profile/60d7c86e000000002002f721/68a4889a000000001d03633d?xsec_token=AB6RU6KeFBhrvEcoD94OG7Vom-ZGNO3E96R76_9MzjQR4%3D&xsec_source=pc_user"
+  },
+  {
+    "id": "68a30b4a000000001d021fa5",
+    "title": "微软提出，能检索全局信息的 Graph RAG",
+    "type": "normal",
+    "likes": "19",
+    "url": "https://www.xiaohongshu.com/user/profile/60d7c86e000000002002f721/68a30b4a000000001d021fa5?xsec_token=ABt7jIUSr4dfqY2aZnk_DJySuu3PbYxRFfHjoipuZwLk4%3D&xsec_source=pc_user"
+  },
+  {
+    "id": "689f084d000000001c013614",
+    "title": "自动判断是否需要 RAG 的方法 ICLR 2024",
+    "type": "normal",
+    "likes": "173",
+    "url": "https://www.xiaohongshu.com/user/profile/60d7c86e000000002002f721/689f084d000000001c013614?xsec_token=ABCgGshOzFP468RUtI0dChd-1bYgCSPuyiBWHJIMGZVxM%3D&xsec_source=pc_user"
+  },
+  {
+    "id": "689c6e45000000001c00d6a0",
+    "title": "缓存KV节省时间的RAG开山之作：RAGCache",
+    "type": "normal",
+    "likes": "90",
+    "url": "https://www.xiaohongshu.com/user/profile/60d7c86e000000002002f721/689c6e45000000001c00d6a0?xsec_token=ABZ1JsB7cU-MMtM8d5dnnn5va7eRnJtHujzB1-bihL-Vw%3D&xsec_source=pc_user"
+  },
+  {
+    "id": "689af74c000000001b03ef8e",
+    "title": "TA-RAG：能检索并综合长时间范围的RAG",
+    "type": "normal",
+    "likes": "28",
+    "url": "https://www.xiaohongshu.com/user/profile/60d7c86e000000002002f721/689af74c000000001b03ef8e?xsec_token=ABJoxvjhgexax_AuVORDVcE-vw_vQxljK4W4aAEftRyr8%3D&xsec_source=pc_user"
+  },
+  {
+    "id": "688f14ba00000000250107ef",
+    "title": "来找创新点！2025.5的 RAG 综述解读（2）",
+    "type": "normal",
+    "likes": "87",
+    "url": "https://www.xiaohongshu.com/user/profile/60d7c86e000000002002f721/688f14ba00000000250107ef?xsec_token=ABL52yuvFZxzI62YRQN59swfR3ENKiWKoyBUB421hpZ0s%3D&xsec_source=pc_user"
+  },
+  {
+    "id": "6888ed6d0000000025024217",
+    "title": "2025年5月的 RAG 综述解读（1）",
+    "type": "normal",
+    "likes": "50",
+    "url": "https://www.xiaohongshu.com/user/profile/60d7c86e000000002002f721/6888ed6d0000000025024217?xsec_token=ABoheFD2XPeKou7nxtMtDMLHgURoH8yWySeRozUaIQEKA%3D&xsec_source=pc_user"
+  },
+  {
+    "id": "6881cdc8000000000d025c73",
+    "title": "MTEN下签",
+    "type": "normal",
+    "likes": "7",
+    "url": "https://www.xiaohongshu.com/user/profile/60d7c86e000000002002f721/6881cdc8000000000d025c73?xsec_token=ABG5iiuwz6cJoqFIBLECouYLkAosji4J0SkpR2_TcqfuI%3D&xsec_source=pc_user"
+  },
+  {
+    "id": "687d28950000000010026b20",
+    "title": "小模型+大模型：两步走的RAG",
+    "type": "normal",
+    "likes": "380",
+    "url": "https://www.xiaohongshu.com/user/profile/60d7c86e000000002002f721/687d28950000000010026b20?xsec_token=ABynAIDHtzsAz_tUiY8fntbzwfBA7DZQurJapdxyn1diw%3D&xsec_source=pc_user"
+  },
+  {
+    "id": "687a6df4000000000b01cf05",
+    "title": "CAG: Don't Do RAG is All You Need",
+    "type": "normal",
+    "likes": "226",
+    "url": "https://www.xiaohongshu.com/user/profile/60d7c86e000000002002f721/687a6df4000000000b01cf05?xsec_token=ABNT4MFvvA6kt-k8xWeAN2WrKZjKCyTBCOK54xb6-xWoc%3D&xsec_source=pc_user"
+  },
+  {
+    "id": "686bcb5e0000000012015aa2",
+    "title": "全网寻找这位小米HR Sarah",
+    "type": "normal",
+    "likes": "6",
+    "url": "https://www.xiaohongshu.com/user/profile/60d7c86e000000002002f721/686bcb5e0000000012015aa2?xsec_token=ABPDZbXEIny9rpBR1lXk0JOedlKWtvapnJEIanKWopU_M%3D&xsec_source=pc_user"
+  },
+  {
+    "id": "68627c8a0000000011001f50",
+    "title": "香港RA求助！",
+    "type": "normal",
+    "likes": "29",
+    "url": "https://www.xiaohongshu.com/user/profile/60d7c86e000000002002f721/68627c8a0000000011001f50?xsec_token=ABjbCzEK0Sv_Xlf_GVNxNT7LUHeBoPTDVYsSJVGwS3Y-k%3D&xsec_source=pc_user"
+  },
+  {
+    "id": "685e23fb0000000010025dba",
+    "title": "97天全DIY考雅思套磁申到ra攻略",
+    "type": "normal",
+    "likes": "23",
+    "url": "https://www.xiaohongshu.com/user/profile/60d7c86e000000002002f721/685e23fb0000000010025dba?xsec_token=AB-cp8I3rubeWV8DSV9SHUP70rKiDulJ0Fp0WuxNVFpw4%3D&xsec_source=pc_user"
+  },
+  {
+    "id": "680e50510000000023012a77",
+    "title": "雅思低成本自学两个月上7经验",
+    "type": "normal",
+    "likes": "200",
+    "url": "https://www.xiaohongshu.com/user/profile/60d7c86e000000002002f721/680e50510000000023012a77?xsec_token=AB3gGBREmYiO543K8scLBVF9F8yMPuTXUZygbQxFaZyTc%3D&xsec_source=pc_user"
+  },
+  {
+    "id": "67e22b94000000001c00fa5a",
+    "title": "每天背两个小时单词，雅思阅读模考上8了",
+    "type": "normal",
+    "likes": "4",
+    "url": "https://www.xiaohongshu.com/user/profile/60d7c86e000000002002f721/67e22b94000000001c00fa5a?xsec_token=ABkY797xDhZ2_CAhJvFrc9fvmeis53AAzJmFRbXgImGo0%3D&xsec_source=pc_user"
+  },
+  {
+    "id": "67c177fc000000002a00fd82",
+    "title": "也是拿到国家级证书了",
+    "type": "normal",
+    "likes": "41",
+    "url": "https://www.xiaohongshu.com/user/profile/60d7c86e000000002002f721/67c177fc000000002a00fd82?xsec_token=ABtJ6ImQZjKu6Cuq-7H_Kmn3g4b8sPNhGpLuf5xxFaI3M%3D&xsec_source=pc_user"
+  },
+  {
+    "id": "67650e3a000000001300b98b",
+    "title": "本科最后一次奖学金",
+    "type": "normal",
+    "likes": "26",
+    "url": "https://www.xiaohongshu.com/user/profile/60d7c86e000000002002f721/67650e3a000000001300b98b?xsec_token=ABTJaW3vy-WGwVDLIkkw-MT6LEwP7-efBHIEw7Lb4x0sw%3D&xsec_source=pc_user"
+  },
+  {
+    "id": "66f972b5000000001902dbfe",
+    "title": "关于我在928被鸽了之后的一些想法",
+    "type": "normal",
+    "likes": "31",
+    "url": "https://www.xiaohongshu.com/user/profile/60d7c86e000000002002f721/66f972b5000000001902dbfe?xsec_token=ABjYvS7M9gLRRsSGs8aWtlurYrOD1xX327hEfWHn7fb9I%3D&xsec_source=pc_user"
+  },
+  {
+    "id": "66a1b3d1000000002701195f",
+    "title": "0多1少怎么办？",
+    "type": "normal",
+    "likes": "15",
+    "url": "https://www.xiaohongshu.com/user/profile/60d7c86e000000002002f721/66a1b3d1000000002701195f?xsec_token=ABwn_oA-GWUf_gMIrMswgxSz_2q8_AuXAwmAVbLWyhKTo%3D&xsec_source=pc_user"
+  },
+  {
+    "id": "6699fe860000000025006ff6",
+    "title": "一个指令实现服务器后台训模型",
+    "type": "normal",
+    "likes": "80",
+    "url": "https://www.xiaohongshu.com/user/profile/60d7c86e000000002002f721/6699fe860000000025006ff6?xsec_token=AB5XarI0qNuBWavoEjbtbCsubILEloMFr98GA5YO3geX8%3D&xsec_source=pc_user"
+  }
+]

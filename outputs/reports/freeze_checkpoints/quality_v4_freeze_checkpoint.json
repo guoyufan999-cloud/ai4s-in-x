@@ -1,0 +1,131 @@
+{
+  "status": "ok",
+  "checkpoint_stage": "quality_v4",
+  "target_distinct_candidates": 0,
+  "distinct_candidates": 5535,
+  "target_reached": false,
+  "created_at": "2026-04-12T19:36:24.735447Z",
+  "analyze_ran": false,
+  "analyze_result": {},
+  "collection_report_path": "outputs/reports/paper_materials/collection_status.snapshot.json",
+  "formal_posts": 3067,
+  "formal_comments": 69880,
+  "queued": 22,
+  "quality_watchlist": {
+    "uncertain_subject_posts": 729,
+    "uncertain_subject_share": 0.237692,
+    "uncertain_workflow_posts": 435,
+    "uncertain_workflow_share": 0.141832,
+    "weak_halfyears": [
+      "2024H1",
+      "2024H2",
+      "2025H1"
+    ],
+    "weak_subjects": [
+      "Social Sciences & Management",
+      "Life Sciences & Medicine",
+      "Natural Sciences"
+    ],
+    "weak_workflows": [
+      "学术交流与科研管理",
+      "数据获取与预处理",
+      "论文写作/投稿/审稿回复",
+      "研究设计与实验/方案制定"
+    ],
+    "thin_cells": [
+      {
+        "period_label": "2024H1",
+        "qs_broad_subject": "Arts & Humanities",
+        "workflow_primary": "研究设计与实验/方案制定",
+        "count": 1
+      },
+      {
+        "period_label": "2024H1",
+        "qs_broad_subject": "Engineering & Technology",
+        "workflow_primary": "uncertain",
+        "count": 1
+      },
+      {
+        "period_label": "2024H1",
+        "qs_broad_subject": "Engineering & Technology",
+        "workflow_primary": "研究设计与实验/方案制定",
+        "count": 1
+      },
+      {
+        "period_label": "2024H1",
+        "qs_broad_subject": "Life Sciences & Medicine",
+        "workflow_primary": "编码/建模/统计分析",
+        "count": 1
+      },
+      {
+        "period_label": "2024H1",
+        "qs_broad_subject": "Natural Sciences",
+        "workflow_primary": "数据获取与预处理",
+        "count": 1
+      },
+      {
+        "period_label": "2024H1",
+        "qs_broad_subject": "uncertain",
+        "workflow_primary": "数据获取与预处理",
+        "count": 1
+      },
+      {
+        "period_label": "2024H1",
+        "qs_broad_subject": "uncertain",
+        "workflow_primary": "文献检索与综述",
+        "count": 1
+      },
+      {
+        "period_label": "2024H1",
+        "qs_broad_subject": "uncertain",
+        "workflow_primary": "选题与问题定义",
+        "count": 1
+      },
+      {
+        "period_label": "2024H2",
+        "qs_broad_subject": "Arts & Humanities",
+        "workflow_primary": "研究设计与实验/方案制定",
+        "count": 1
+      },
+      {
+        "period_label": "2024H2",
+        "qs_broad_subject": "Engineering & Technology",
+        "workflow_primary": "uncertain",
+        "count": 1
+      },
+      {
+        "period_label": "2024H2",
+        "qs_broad_subject": "Engineering & Technology",
+        "workflow_primary": "数据获取与预处理",
+        "count": 1
+      },
+      {
+        "period_label": "2024H2",
+        "qs_broad_subject": "Engineering & Technology",
+        "workflow_primary": "论文写作/投稿/审稿回复",
+        "count": 1
+      }
+    ]
+  },
+  "paper_materials": {
+    "status": "ok",
+    "output_dir": "outputs/reports/paper_materials",
+    "methods_path": "outputs/reports/paper_materials/paper_methods_snapshot.md",
+    "results_path": "outputs/reports/paper_materials/paper_results_snapshot.md",
+    "analysis_markdown_path": "outputs/reports/paper_materials/paper_analysis_snapshot.md",
+    "analysis_json_path": "outputs/reports/paper_materials/paper_analysis_snapshot.json",
+    "chapter_draft_path": "outputs/reports/paper_materials/paper_results_chapter_draft.md",
+    "discussion_draft_path": "outputs/reports/paper_materials/paper_discussion_chapter_draft.md",
+    "conclusion_draft_path": "outputs/reports/paper_materials/paper_conclusion_chapter_draft.md",
+    "master_draft_path": "outputs/reports/paper_materials/paper_master_manuscript_draft.md",
+    "manifest_path": "outputs/reports/paper_materials/paper_materials_manifest.json",
+    "evidence_matrix_path": "outputs/reports/paper_materials/quality_v4_evidence_matrix.md",
+    "formal_source_contract": {
+      "core_results": "paper_scope_quality_v4",
+      "tools_and_risk_figures": "paper_scope_quality_v4"
+    },
+    "chart_count": 9,
+    "llm_enabled": false
+  },
+  "next_step": "continue_quality_v4"
+}
