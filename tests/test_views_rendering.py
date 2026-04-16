@@ -1,12 +1,13 @@
 from __future__ import annotations
 
+import ai4s_legitimacy.config.research_scope as research_scope
 from ai4s_legitimacy.analysis.figures.config import (
     format_halfyear_sequence_text,
     format_month_window_text,
     format_quarter_sequence_text,
 )
 from ai4s_legitimacy.config.research_scope import render_views_sql
-from ai4s_legitimacy.config.settings import VIEWS_PATH
+from ai4s_legitimacy.config.settings import VIEWS_PATH, VIEWS_TEMPLATE_PATH
 
 
 def _normalize_sql(text: str) -> str:
@@ -29,6 +30,11 @@ def test_render_views_sql_tracks_custom_research_window() -> None:
     assert "THEN '2023H2'" in rendered
     assert "THEN '2024H1'" in rendered
     assert "THEN '2026H1'" not in rendered
+
+
+def test_view_path_constants_come_from_shared_settings() -> None:
+    assert research_scope.VIEWS_TEMPLATE_PATH == VIEWS_TEMPLATE_PATH
+    assert research_scope.VIEWS_PATH == VIEWS_PATH
 
 
 def test_figure_window_helpers_follow_custom_research_window() -> None:

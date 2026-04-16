@@ -3,11 +3,7 @@ from __future__ import annotations
 from pathlib import Path
 from string import Template
 
-
-PROJECT_ROOT = Path(__file__).resolve().parents[3]
-DATABASE_DIR = PROJECT_ROOT / "database"
-VIEWS_TEMPLATE_PATH = DATABASE_DIR / "views.sql.template"
-VIEWS_RENDERED_PATH = DATABASE_DIR / "views.sql"
+from ai4s_legitimacy.config.settings import VIEWS_PATH, VIEWS_TEMPLATE_PATH
 
 RESEARCH_WINDOW_START = "2024-01-01"
 RESEARCH_WINDOW_END = "2026-06-30"
@@ -81,7 +77,7 @@ def render_views_sql(
 
 
 def write_rendered_views_sql(
-    output_path: Path = VIEWS_RENDERED_PATH,
+    output_path: Path = VIEWS_PATH,
     start_date: str = RESEARCH_WINDOW_START,
     end_date: str = RESEARCH_WINDOW_END,
 ) -> Path:

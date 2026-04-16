@@ -25,13 +25,48 @@ import argparse
 import json
 import sqlite3
 from collections import defaultdict
+from dataclasses import dataclass
 from pathlib import Path
+from typing import Any
 
-from ai4s_legitimacy.cleaning.normalization import hash_identifier, join_unique, mask_name, normalize_date, normalize_text, parse_engagement_text
-from ai4s_legitimacy.coding.codebook_seed import LEGACY_WORKFLOW_TO_STAGE_CODE, iter_codebook_rows, iter_legitimacy_lookup_rows, iter_workflow_lookup_rows
+from ai4s_legitimacy.cleaning.normalization import (
+    hash_identifier,
+    join_unique,
+    mask_name,
+    normalize_date,
+    normalize_text,
+    parse_engagement_text,
+)
+from ai4s_legitimacy.coding.codebook_seed import (
+    LEGACY_WORKFLOW_TO_STAGE_CODE,
+    iter_codebook_rows,
+    iter_legitimacy_lookup_rows,
+    iter_workflow_lookup_rows,
+)
 from ai4s_legitimacy.config.research_scope import render_views_sql
-from ai4s_legitimacy.config.settings import INTERIM_DIR, LEGACY_DB_PATH, PLATFORM_CODE, PLATFORM_NAME, RESEARCH_DB_PATH, SCHEMA_PATH
-from ai4s_legitimacy.utils.db import connect_sqlite_readonly, connect_sqlite_writable, init_sqlite_db
+from ai4s_legitimacy.config.settings import (
+    INTERIM_DIR,
+    LEGACY_DB_PATH,
+    PLATFORM_CODE,
+    PLATFORM_NAME,
+    RESEARCH_DB_PATH,
+    SCHEMA_PATH,
+)
+from ai4s_legitimacy.utils.db import (
+    connect_sqlite_readonly,
+    connect_sqlite_writable,
+    init_sqlite_db,
+)
+
+
+@dataclass(frozen=True)
+class LegacyLookups:
+    query_map: dict[str, str | None]
+    like_map: dict[str, int | None]
+    comment_count_map: dict[str, int]
+    author_name_map: dict[str, str]
+    post_label_map: dict[str, sqlite3.Row]
+    comment_label_map: dict[str, sqlite3.Row]
 
 
 def _load_query_map(legacy: sqlite3.Connection) -> dict[str, str | None]:
@@ -54,7 +89,9 @@ def _load_like_map(legacy: sqlite3.Connection) -> dict[str, int | None]:
 def _load_comment_count_map(legacy: sqlite3.Connection) -> dict[str, int]:
     return {
         str(row["note_id"]): int(row["count"])
-        for row in legacy.execute("SELECT note_id, COUNT(*) AS count FROM comments GROUP BY note_id")
+        for row in legacy.execute(
+            "SELECT note_id, COUNT(*) AS count FROM comments GROUP BY note_id"
+        )
     }
 
 
@@ -64,6 +101,23 @@ def _load_author_names(legacy: sqlite3.Connection) -> dict[str, str]:
         for row in legacy.execute("SELECT author_id, author_name FROM authors")
         if str(row["author_id"] or "").strip()
     }
+
+
+def _load_legacy_lookups(legacy: sqlite3.Connection) -> LegacyLookups:
+    return LegacyLookups(
+        query_map=_load_query_map(legacy),
+        like_map=_load_like_map(legacy),
+        comment_count_map=_load_comment_count_map(legacy),
+        author_name_map=_load_author_names(legacy),
+        post_label_map={
+            str(row["note_id"]): row
+            for row in legacy.execute("SELECT * FROM coding_labels_posts")
+        },
+        comment_label_map={
+            str(row["comment_id"]): row
+            for row in legacy.execute("SELECT * FROM coding_labels_comments")
+        },
+    )
 
 
 def _seed_theme_lookup_tables(research: sqlite3.Connection) -> None:
@@ -154,8 +208,13 @@ def _seed_support_tables(research: sqlite3.Connection) -> None:
     _seed_theme_lookup_tables(research)
 
 
-def _seed_source_queries(legacy: sqlite3.Connection, research: sqlite3.Connection) -> None:
-    for row in legacy.execute("SELECT layer, term, source FROM query_dictionary ORDER BY layer, term"):
+def _seed_source_queries(
+    legacy: sqlite3.Connection,
+    research: sqlite3.Connection,
+) -> None:
+    for row in legacy.execute(
+        "SELECT layer, term, source FROM query_dictionary ORDER BY layer, term"
+    ):
         research.execute(
             """
             INSERT OR IGNORE INTO source_queries (platform_code, query_text, query_layer, source_label)
@@ -188,6 +247,257 @@ def _insert_import_batch(research: sqlite3.Connection, source_db_path: Path) -> 
     return int(cursor.lastrowid)
 
 
+def _normalize_sample_status(value: str | None) -> str:
+    sample_status = normalize_text(value)
+    return sample_status if sample_status in {"true", "false", "review_needed"} else "review_needed"
+
+
+def _build_post_notes(
+    row: sqlite3.Row,
+    label: sqlite3.Row | None,
+) -> str | None:
+    return join_unique(
+        [
+            f"legacy_decided_by={normalize_text(label['decided_by'])}" if label else None,
+            f"legacy_review_override={int(label['review_override'])}" if label else None,
+            f"legacy_note_type={normalize_text(row['note_type'])}"
+            if normalize_text(row["note_type"])
+            else None,
+            f"legacy_media_count={int(row['media_count'])}",
+        ],
+        separator="; ",
+    )
+
+
+def _build_post_insert_values(
+    row: sqlite3.Row,
+    label: sqlite3.Row | None,
+    *,
+    batch_id: int,
+    lookups: LegacyLookups,
+) -> tuple[tuple[Any, ...], str | None]:
+    note_id = str(row["note_id"])
+    author_id = normalize_text(row["author_id"])
+    author_name = lookups.author_name_map.get(author_id or "", "")
+    workflow_stage = normalize_text(label["workflow_primary"]) if label else ""
+    values = (
+        note_id,
+        PLATFORM_CODE,
+        note_id,
+        normalize_text(row["crawl_status"]) or "unknown",
+        normalize_text(row["canonical_url"]) or normalize_text(row["source_url"]),
+        hash_identifier(author_id or normalize_text(row["canonical_url"])),
+        mask_name(author_name),
+        normalize_date(row["publish_time"]),
+        normalize_date(row["updated_at"]) or normalize_date(row["created_at"]),
+        normalize_text(row["title"]),
+        normalize_text(row["full_text"]),
+        lookups.like_map.get(note_id),
+        lookups.comment_count_map.get(note_id),
+        None,
+        lookups.query_map.get(note_id),
+        1,
+        _normalize_sample_status(label["sample_status"] if label else "review_needed"),
+        normalize_text(label["actor_type"]) if label else None,
+        normalize_text(label["qs_broad_subject"]) if label else None,
+        workflow_stage or None,
+        normalize_text(label["attitude_polarity"]) if label else None,
+        label["risk_themes_json"] if label else "[]",
+        label["ai_tools_json"] if label else "[]",
+        label["benefit_themes_json"] if label else "[]",
+        batch_id,
+        _build_post_notes(row, label),
+    )
+    return values, (workflow_stage or None)
+
+
+def _build_post_code_insert_values(
+    *,
+    note_id: str,
+    row: sqlite3.Row,
+    label: sqlite3.Row,
+    workflow_stage: str | None,
+) -> tuple[Any, ...]:
+    return (
+        note_id,
+        "post",
+        None,
+        LEGACY_WORKFLOW_TO_STAGE_CODE.get(workflow_stage or ""),
+        None,
+        None,
+        None,
+        normalize_text(label["decided_by"]) or "legacy_rule",
+        normalize_text(row["updated_at"]) or normalize_text(row["created_at"]) or "legacy",
+        0.85 if int(label["review_override"] or 0) else 0.65,
+        "Legacy post coding migrated. Fine-grained AI practice / legitimacy / boundary codes pending.",
+    )
+
+
+def _insert_posts(
+    legacy: sqlite3.Connection,
+    research: sqlite3.Connection,
+    *,
+    batch_id: int,
+    lookups: LegacyLookups,
+) -> int:
+    post_count = 0
+    for row in legacy.execute("SELECT * FROM note_details ORDER BY note_id"):
+        note_id = str(row["note_id"])
+        label = lookups.post_label_map.get(note_id)
+        post_values, workflow_stage = _build_post_insert_values(
+            row,
+            label,
+            batch_id=batch_id,
+            lookups=lookups,
+        )
+        research.execute(
+            """
+            INSERT INTO posts (
+                post_id, platform, legacy_note_id, legacy_crawl_status, post_url, author_id_hashed, author_name_masked,
+                post_date, capture_date, title, content_text, engagement_like, engagement_comment,
+                engagement_collect, keyword_query, is_public, sample_status, actor_type, qs_broad_subject,
+                workflow_stage, primary_legitimacy_stance, risk_themes_json, ai_tools_json, benefit_themes_json, import_batch_id, notes
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            """,
+            post_values,
+        )
+        if label:
+            research.execute(
+                """
+                INSERT INTO codes (
+                    record_id, record_type, parent_id, workflow_stage_code, ai_practice_code,
+                    legitimacy_code, boundary_negotiation_code, coder, coding_date, confidence, memo
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                """,
+                _build_post_code_insert_values(
+                    note_id=note_id,
+                    row=row,
+                    label=label,
+                    workflow_stage=workflow_stage,
+                ),
+            )
+        post_count += 1
+    return post_count
+
+
+def _build_comment_insert_values(
+    row: sqlite3.Row,
+    label: sqlite3.Row | None,
+    *,
+    batch_id: int,
+) -> tuple[Any, ...]:
+    return (
+        str(row["comment_id"]),
+        str(row["note_id"]),
+        normalize_text(row["parent_comment_id"]) or None,
+        normalize_date(row["comment_time"]),
+        normalize_text(row["comment_text"]),
+        hash_identifier(
+            normalize_text(row["commenter_id"]) or normalize_text(row["commenter_name"])
+        ),
+        normalize_text(label["attitude_polarity"]) if label else None,
+        normalize_text(label["controversy_type"]) if label else None,
+        label["benefit_themes_json"] if label else "[]",
+        1 if normalize_text(row["parent_comment_id"]) else 0,
+        batch_id,
+    )
+
+
+def _build_comment_code_insert_values(
+    row: sqlite3.Row,
+    label: sqlite3.Row,
+) -> tuple[Any, ...]:
+    workflow_stage = normalize_text(label["workflow_primary"])
+    controversy = normalize_text(label["controversy_type"])
+    return (
+        str(row["comment_id"]),
+        "comment",
+        str(row["note_id"]),
+        LEGACY_WORKFLOW_TO_STAGE_CODE.get(workflow_stage),
+        None,
+        None,
+        "boundary.assistance_vs_substitution" if controversy == "risk" else None,
+        "legacy_comment_inheritance",
+        normalize_text(row["updated_at"]) or normalize_text(row["created_at"]) or "legacy",
+        0.6,
+        "Legacy comment coding migrated. Stance retained; fine-grained legitimacy code pending manual review.",
+    )
+
+
+def _insert_comments(
+    legacy: sqlite3.Connection,
+    research: sqlite3.Connection,
+    *,
+    batch_id: int,
+    lookups: LegacyLookups,
+) -> int:
+    comment_count = 0
+    for row in legacy.execute("SELECT * FROM comments ORDER BY comment_id"):
+        label = lookups.comment_label_map.get(str(row["comment_id"]))
+        research.execute(
+            """
+            INSERT INTO comments (
+                comment_id, post_id, parent_comment_id, comment_date, comment_text,
+                commenter_id_hashed, stance, legitimacy_basis, benefit_themes_json, is_reply, import_batch_id
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            """,
+            _build_comment_insert_values(row, label, batch_id=batch_id),
+        )
+        if label:
+            research.execute(
+                """
+                INSERT INTO codes (
+                    record_id, record_type, parent_id, workflow_stage_code, ai_practice_code,
+                    legitimacy_code, boundary_negotiation_code, coder, coding_date, confidence, memo
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                """,
+                _build_comment_code_insert_values(row, label),
+            )
+        comment_count += 1
+    return comment_count
+
+
+def _update_import_batch_counts(
+    research: sqlite3.Connection,
+    *,
+    batch_id: int,
+    post_count: int,
+    comment_count: int,
+) -> None:
+    research.execute(
+        """
+        UPDATE import_batches
+        SET record_post_count=?, record_comment_count=?
+        WHERE batch_id=?
+        """,
+        (post_count, comment_count, batch_id),
+    )
+
+
+def _build_migration_summary(
+    *,
+    legacy_db_path: Path,
+    research_db_path: Path,
+    post_count: int,
+    comment_count: int,
+) -> dict[str, object]:
+    return {
+        "legacy_db_path": str(legacy_db_path),
+        "research_db_path": str(research_db_path),
+        "batch_name": "legacy_quality_v4_migration",
+        "posts_migrated": post_count,
+        "comments_migrated": comment_count,
+        "status": "ok",
+    }
+
+
+def _write_migration_summary(summary: dict[str, object]) -> Path:
+    INTERIM_DIR.mkdir(parents=True, exist_ok=True)
+    summary_path = INTERIM_DIR / "legacy_to_research_migration_summary.json"
+    summary_path.write_text(json.dumps(summary, ensure_ascii=False, indent=2), encoding="utf-8")
+    return summary_path
+
+
 def migrate_legacy_sqlite(
     legacy_db_path: Path = LEGACY_DB_PATH,
     research_db_path: Path = RESEARCH_DB_PATH,
@@ -206,183 +516,46 @@ def migrate_legacy_sqlite(
         SCHEMA_PATH,
         views_sql=render_views_sql(),
     )
-    with connect_sqlite_readonly(legacy_db_path) as legacy, connect_sqlite_writable(research_db_path) as research:
+    with connect_sqlite_readonly(legacy_db_path) as legacy, connect_sqlite_writable(
+        research_db_path
+    ) as research:
         batch_id = _insert_import_batch(research, legacy_db_path)
         _seed_support_tables(research)
         _seed_source_queries(legacy, research)
-
-        query_map = _load_query_map(legacy)
-        like_map = _load_like_map(legacy)
-        comment_count_map = _load_comment_count_map(legacy)
-        author_name_map = _load_author_names(legacy)
-        post_label_map = {
-            str(row["note_id"]): row
-            for row in legacy.execute("SELECT * FROM coding_labels_posts")
-        }
-        comment_label_map = {
-            str(row["comment_id"]): row
-            for row in legacy.execute("SELECT * FROM coding_labels_comments")
-        }
-
-        post_count = 0
-        for row in legacy.execute("SELECT * FROM note_details ORDER BY note_id"):
-            note_id = str(row["note_id"])
-            label = post_label_map.get(note_id)
-            author_id = normalize_text(row["author_id"])
-            author_name = author_name_map.get(author_id or "", "")
-            workflow_stage = normalize_text(label["workflow_primary"]) if label else ""
-            workflow_stage = workflow_stage or None
-            stance = normalize_text(label["attitude_polarity"]) if label else None
-            sample_status = normalize_text(label["sample_status"]) if label else "review_needed"
-            actor_type = normalize_text(label["actor_type"]) if label else None
-            notes = join_unique(
-                [
-                    f"legacy_decided_by={normalize_text(label['decided_by'])}" if label else None,
-                    f"legacy_review_override={int(label['review_override'])}" if label else None,
-                    f"legacy_note_type={normalize_text(row['note_type'])}" if normalize_text(row["note_type"]) else None,
-                    f"legacy_media_count={int(row['media_count'])}",
-                ],
-                separator="; ",
-            )
-            research.execute(
-                """
-                INSERT INTO posts (
-                    post_id, platform, legacy_note_id, legacy_crawl_status, post_url, author_id_hashed, author_name_masked,
-                    post_date, capture_date, title, content_text, engagement_like, engagement_comment,
-                    engagement_collect, keyword_query, is_public, sample_status, actor_type, qs_broad_subject,
-                    workflow_stage, primary_legitimacy_stance, risk_themes_json, ai_tools_json, benefit_themes_json, import_batch_id, notes
-                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-                """,
-                (
-                    note_id,
-                    PLATFORM_CODE,
-                    note_id,
-                    normalize_text(row["crawl_status"]) or "unknown",
-                    normalize_text(row["canonical_url"]) or normalize_text(row["source_url"]),
-                    hash_identifier(author_id or normalize_text(row["canonical_url"])),
-                    mask_name(author_name),
-                    normalize_date(row["publish_time"]),
-                    normalize_date(row["updated_at"]) or normalize_date(row["created_at"]),
-                    normalize_text(row["title"]),
-                    normalize_text(row["full_text"]),
-                    like_map.get(note_id),
-                    comment_count_map.get(note_id),
-                    None,
-                    query_map.get(note_id),
-                    1,
-                    sample_status if sample_status in {"true", "false", "review_needed"} else "review_needed",
-                    actor_type or None,
-                    normalize_text(label["qs_broad_subject"]) if label else None,
-                    workflow_stage,
-                    stance,
-                    label["risk_themes_json"] if label else '[]',
-                    label["ai_tools_json"] if label else '[]',
-                    label["benefit_themes_json"] if label else '[]',
-                    batch_id,
-                    notes,
-                ),
-            )
-            if label:
-                research.execute(
-                    """
-                    INSERT INTO codes (
-                        record_id, record_type, parent_id, workflow_stage_code, ai_practice_code,
-                        legitimacy_code, boundary_negotiation_code, coder, coding_date, confidence, memo
-                    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-                    """,
-                    (
-                        note_id,
-                        "post",
-                        None,
-                        LEGACY_WORKFLOW_TO_STAGE_CODE.get(workflow_stage or ""),
-                        None,
-                        None,
-                        None,
-                        normalize_text(label["decided_by"]) or "legacy_rule",
-                        normalize_text(row["updated_at"]) or normalize_text(row["created_at"]) or "legacy",
-                        0.85 if int(label["review_override"] or 0) else 0.65,
-                        "Legacy post coding migrated. Fine-grained AI practice / legitimacy / boundary codes pending.",
-                    ),
-                )
-            post_count += 1
-
-        comment_count = 0
-        for row in legacy.execute("SELECT * FROM comments ORDER BY comment_id"):
-            comment_id = str(row["comment_id"])
-            label = comment_label_map.get(comment_id)
-            research.execute(
-                """
-                INSERT INTO comments (
-                    comment_id, post_id, parent_comment_id, comment_date, comment_text,
-                    commenter_id_hashed, stance, legitimacy_basis, benefit_themes_json, is_reply, import_batch_id
-                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-                """,
-                (
-                    comment_id,
-                    str(row["note_id"]),
-                    normalize_text(row["parent_comment_id"]) or None,
-                    normalize_date(row["comment_time"]),
-                    normalize_text(row["comment_text"]),
-                    hash_identifier(normalize_text(row["commenter_id"]) or normalize_text(row["commenter_name"])),
-                    normalize_text(label["attitude_polarity"]) if label else None,
-                    normalize_text(label["controversy_type"]) if label else None,
-                    label["benefit_themes_json"] if label else '[]',
-                    1 if normalize_text(row["parent_comment_id"]) else 0,
-                    batch_id,
-                ),
-            )
-            if label:
-                workflow_stage = normalize_text(label["workflow_primary"])
-                controversy = normalize_text(label["controversy_type"])
-                research.execute(
-                    """
-                    INSERT INTO codes (
-                        record_id, record_type, parent_id, workflow_stage_code, ai_practice_code,
-                        legitimacy_code, boundary_negotiation_code, coder, coding_date, confidence, memo
-                    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-                    """,
-                    (
-                        comment_id,
-                        "comment",
-                        str(row["note_id"]),
-                        LEGACY_WORKFLOW_TO_STAGE_CODE.get(workflow_stage),
-                        None,
-                        None,
-                        "boundary.assistance_vs_substitution" if controversy == "risk" else None,
-                        "legacy_comment_inheritance",
-                        normalize_text(row["updated_at"]) or normalize_text(row["created_at"]) or "legacy",
-                        0.6,
-                        "Legacy comment coding migrated. Stance retained; fine-grained legitimacy code pending manual review.",
-                    ),
-                )
-            comment_count += 1
-
-        research.execute(
-            """
-            UPDATE import_batches
-            SET record_post_count=?, record_comment_count=?
-            WHERE batch_id=?
-            """,
-            (post_count, comment_count, batch_id),
+        lookups = _load_legacy_lookups(legacy)
+        post_count = _insert_posts(
+            legacy,
+            research,
+            batch_id=batch_id,
+            lookups=lookups,
+        )
+        comment_count = _insert_comments(
+            legacy,
+            research,
+            batch_id=batch_id,
+            lookups=lookups,
+        )
+        _update_import_batch_counts(
+            research,
+            batch_id=batch_id,
+            post_count=post_count,
+            comment_count=comment_count,
         )
         research.commit()
 
-    summary = {
-        "legacy_db_path": str(legacy_db_path),
-        "research_db_path": str(research_db_path),
-        "batch_name": "legacy_quality_v4_migration",
-        "posts_migrated": post_count,
-        "comments_migrated": comment_count,
-        "status": "ok",
-    }
-    INTERIM_DIR.mkdir(parents=True, exist_ok=True)
-    summary_path = INTERIM_DIR / "legacy_to_research_migration_summary.json"
-    summary_path.write_text(json.dumps(summary, ensure_ascii=False, indent=2), encoding="utf-8")
-    return summary_path
+    summary = _build_migration_summary(
+        legacy_db_path=legacy_db_path,
+        research_db_path=research_db_path,
+        post_count=post_count,
+        comment_count=comment_count,
+    )
+    return _write_migration_summary(summary)
 
 
 def build_parser() -> argparse.ArgumentParser:
-    parser = argparse.ArgumentParser(description="Migrate legacy AI4S runtime SQLite data into the research-oriented schema.")
+    parser = argparse.ArgumentParser(
+        description="Migrate legacy AI4S runtime SQLite data into the research-oriented schema."
+    )
     parser.add_argument("--legacy-db", type=Path, default=LEGACY_DB_PATH)
     parser.add_argument("--research-db", type=Path, default=RESEARCH_DB_PATH)
     parser.add_argument("--overwrite", action="store_true")
@@ -391,7 +564,11 @@ def build_parser() -> argparse.ArgumentParser:
 
 def main() -> None:
     args = build_parser().parse_args()
-    summary_path = migrate_legacy_sqlite(args.legacy_db, args.research_db, overwrite=args.overwrite)
+    summary_path = migrate_legacy_sqlite(
+        args.legacy_db,
+        args.research_db,
+        overwrite=args.overwrite,
+    )
     print(summary_path)
 
 
