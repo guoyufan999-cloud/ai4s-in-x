@@ -14,6 +14,67 @@ URL_PATTERN = re.compile(r"https?://\S+")
 EMAIL_PATTERN = re.compile(r"[\w.-]+@[\w.-]+\.\w+")
 ID_PATTERN = re.compile(r"(?:微信号|微信|wechat|联系方式|电话|手机)[:：]\s*\S+", re.IGNORECASE)
 
+WORKFLOW_STAGE_SQL = """
+    SELECT post_id, post_date, content_text
+    FROM vw_posts_paper_scope_quality_v4
+    WHERE workflow_stage = ?
+      AND content_text IS NOT NULL
+      AND length(trim(content_text)) > 0
+    ORDER BY length(content_text)
+    LIMIT ?
+"""
+
+POST_STANCE_SQL = """
+    SELECT post_id, post_date, content_text
+    FROM vw_posts_paper_scope_quality_v4
+    WHERE primary_legitimacy_stance = ?
+      AND content_text IS NOT NULL
+      AND length(trim(content_text)) > 0
+    ORDER BY length(content_text)
+    LIMIT ?
+"""
+
+COMMENT_STANCE_SQL = """
+    SELECT c.comment_id, c.comment_date, c.comment_text
+    FROM vw_comments_paper_scope_quality_v4 c
+    WHERE c.stance = ?
+      AND c.comment_text IS NOT NULL
+      AND length(trim(c.comment_text)) > 0
+    ORDER BY length(c.comment_text)
+    LIMIT ?
+"""
+
+BOUNDARY_CODE_SQL = """
+    SELECT c.comment_id, c.comment_date, c.comment_text
+    FROM vw_comments_paper_scope_quality_v4 c
+    JOIN codes cd ON cd.record_id = c.comment_id AND cd.record_type = 'comment'
+    WHERE cd.boundary_negotiation_code = ?
+      AND c.comment_text IS NOT NULL
+      AND length(trim(c.comment_text)) > 0
+    ORDER BY length(c.comment_text)
+    LIMIT ?
+"""
+
+DISTINCT_WORKFLOW_STAGES_SQL = """
+    SELECT DISTINCT workflow_stage
+    FROM vw_posts_paper_scope_quality_v4
+    WHERE workflow_stage IS NOT NULL
+"""
+
+DISTINCT_STANCES_SQL = """
+    SELECT DISTINCT primary_legitimacy_stance
+    FROM vw_posts_paper_scope_quality_v4
+    WHERE primary_legitimacy_stance IS NOT NULL
+"""
+
+DISTINCT_BOUNDARY_CODES_SQL = """
+    SELECT DISTINCT boundary_negotiation_code
+    FROM codes
+    WHERE record_type = 'comment'
+      AND boundary_negotiation_code IS NOT NULL
+      AND record_id IN (SELECT comment_id FROM vw_comments_paper_scope_quality_v4)
+"""
+
 
 def deidentify_text(text: str | None, max_chars: int = MAX_CHARS_DEFAULT) -> str:
     if not text:
@@ -26,6 +87,31 @@ def deidentify_text(text: str | None, max_chars: int = MAX_CHARS_DEFAULT) -> str
     if len(cleaned) > max_chars:
         cleaned = cleaned[:max_chars].rsplit(" ", 1)[0] + "..."
     return cleaned
+
+
+def _select_rows(
+    db_path: Path,
+    sql: str,
+    params: tuple[object, ...] = (),
+):
+    with connect_sqlite_readonly(db_path) as conn:
+        return conn.execute(sql, params).fetchall()
+
+
+def _query_workflow_stage_rows(stage: str, limit: int, db_path: Path):
+    return _select_rows(db_path, WORKFLOW_STAGE_SQL, (stage, limit))
+
+
+def _query_post_stance_rows(stance: str, limit: int, db_path: Path):
+    return _select_rows(db_path, POST_STANCE_SQL, (stance, limit))
+
+
+def _query_comment_stance_rows(stance: str, limit: int, db_path: Path):
+    return _select_rows(db_path, COMMENT_STANCE_SQL, (stance, limit))
+
+
+def _query_boundary_code_rows(code: str, limit: int, db_path: Path):
+    return _select_rows(db_path, BOUNDARY_CODE_SQL, (code, limit))
 
 
 def _build_excerpt_record(
@@ -44,33 +130,76 @@ def _build_excerpt_record(
     }
 
 
+def _build_excerpt_from_row(
+    row,
+    *,
+    record_id_key: str,
+    text_key: str,
+    date_key: str,
+    record_type: str,
+    coding_label: str,
+    max_chars: int,
+) -> dict[str, str]:
+    return _build_excerpt_record(
+        str(row[record_id_key]),
+        record_type,
+        coding_label,
+        deidentify_text(row[text_key], max_chars),
+        str(row[date_key]) if row[date_key] else None,
+    )
+
+
+def _build_post_excerpts(
+    rows,
+    *,
+    coding_label: str,
+    max_chars: int,
+) -> list[dict[str, str]]:
+    return [
+        _build_excerpt_from_row(
+            row,
+            record_id_key="post_id",
+            text_key="content_text",
+            date_key="post_date",
+            record_type="post",
+            coding_label=coding_label,
+            max_chars=max_chars,
+        )
+        for row in rows
+    ]
+
+
+def _build_comment_excerpts(
+    rows,
+    *,
+    coding_label: str,
+    max_chars: int,
+) -> list[dict[str, str]]:
+    return [
+        _build_excerpt_from_row(
+            row,
+            record_id_key="comment_id",
+            text_key="comment_text",
+            date_key="comment_date",
+            record_type="comment",
+            coding_label=coding_label,
+            max_chars=max_chars,
+        )
+        for row in rows
+    ]
+
+
 def extract_excerpts_by_workflow_stage(
     stage: str,
     max_chars: int = MAX_CHARS_DEFAULT,
     limit: int = 10,
     db_path: Path = RESEARCH_DB_PATH,
 ) -> list[dict[str, str]]:
-    with connect_sqlite_readonly(db_path) as conn:
-        rows = conn.execute(
-            """
-            SELECT post_id, post_date, content_text
-            FROM vw_posts_paper_scope_quality_v4
-            WHERE workflow_stage = ?
-              AND content_text IS NOT NULL
-              AND length(trim(content_text)) > 0
-            ORDER BY length(content_text)
-            LIMIT ?
-            """,
-            (stage, limit),
-        ).fetchall()
-    return [
-        _build_excerpt_record(
-            str(r["post_id"]), "post", stage,
-            deidentify_text(r["content_text"], max_chars),
-            str(r["post_date"]) if r["post_date"] else None,
-        )
-        for r in rows
-    ]
+    return _build_post_excerpts(
+        _query_workflow_stage_rows(stage, limit, db_path),
+        coding_label=stage,
+        max_chars=max_chars,
+    )
 
 
 def extract_excerpts_by_stance(
@@ -81,49 +210,16 @@ def extract_excerpts_by_stance(
     db_path: Path = RESEARCH_DB_PATH,
 ) -> list[dict[str, str]]:
     if record_type == "post":
-        with connect_sqlite_readonly(db_path) as conn:
-            rows = conn.execute(
-                """
-                SELECT post_id, post_date, content_text
-                FROM vw_posts_paper_scope_quality_v4
-                WHERE primary_legitimacy_stance = ?
-                  AND content_text IS NOT NULL
-                  AND length(trim(content_text)) > 0
-                ORDER BY length(content_text)
-                LIMIT ?
-                """,
-                (stance, limit),
-            ).fetchall()
-        return [
-            _build_excerpt_record(
-                str(r["post_id"]), "post", stance,
-                deidentify_text(r["content_text"], max_chars),
-                str(r["post_date"]) if r["post_date"] else None,
-            )
-            for r in rows
-        ]
-    else:
-        with connect_sqlite_readonly(db_path) as conn:
-            rows = conn.execute(
-                """
-                SELECT c.comment_id, c.comment_date, c.comment_text
-                FROM vw_comments_paper_scope_quality_v4 c
-                WHERE c.stance = ?
-                  AND c.comment_text IS NOT NULL
-                  AND length(trim(c.comment_text)) > 0
-                ORDER BY length(c.comment_text)
-                LIMIT ?
-                """,
-                (stance, limit),
-            ).fetchall()
-        return [
-            _build_excerpt_record(
-                str(r["comment_id"]), "comment", stance,
-                deidentify_text(r["comment_text"], max_chars),
-                str(r["comment_date"]) if r["comment_date"] else None,
-            )
-            for r in rows
-        ]
+        return _build_post_excerpts(
+            _query_post_stance_rows(stance, limit, db_path),
+            coding_label=stance,
+            max_chars=max_chars,
+        )
+    return _build_comment_excerpts(
+        _query_comment_stance_rows(stance, limit, db_path),
+        coding_label=stance,
+        max_chars=max_chars,
+    )
 
 
 def extract_excerpts_by_boundary_code(
@@ -132,28 +228,24 @@ def extract_excerpts_by_boundary_code(
     limit: int = 10,
     db_path: Path = RESEARCH_DB_PATH,
 ) -> list[dict[str, str]]:
-    with connect_sqlite_readonly(db_path) as conn:
-        rows = conn.execute(
-            """
-            SELECT c.comment_id, c.comment_date, c.comment_text
-            FROM vw_comments_paper_scope_quality_v4 c
-            JOIN codes cd ON cd.record_id = c.comment_id AND cd.record_type = 'comment'
-            WHERE cd.boundary_negotiation_code = ?
-              AND c.comment_text IS NOT NULL
-              AND length(trim(c.comment_text)) > 0
-            ORDER BY length(c.comment_text)
-            LIMIT ?
-            """,
-            (code, limit),
-        ).fetchall()
-    return [
-        _build_excerpt_record(
-            str(r["comment_id"]), "comment", code,
-            deidentify_text(r["comment_text"], max_chars),
-            str(r["comment_date"]) if r["comment_date"] else None,
-        )
-        for r in rows
-    ]
+    return _build_comment_excerpts(
+        _query_boundary_code_rows(code, limit, db_path),
+        coding_label=code,
+        max_chars=max_chars,
+    )
+
+
+def _render_excerpt_sections(excerpts: list[dict[str, str]]) -> list[str]:
+    lines: list[str] = []
+    for index, excerpt in enumerate(excerpts, start=1):
+        lines.append(f"## 摘录 {index}")
+        lines.append(f"- **记录类型**：{excerpt['record_type']}")
+        lines.append(f"- **记录 ID**：{excerpt['record_id']}")
+        lines.append(f"- **日期**：{excerpt['record_date']}")
+        lines.append("")
+        lines.append(f"> {excerpt['excerpt']}")
+        lines.append("")
+    return lines
 
 
 def format_excerpts_markdown(
@@ -176,14 +268,7 @@ def format_excerpts_markdown(
             "",
         ]
     )
-    for i, ex in enumerate(excerpts, start=1):
-        lines.append(f"## 摘录 {i}")
-        lines.append(f"- **记录类型**：{ex['record_type']}")
-        lines.append(f"- **记录 ID**：{ex['record_id']}")
-        lines.append(f"- **日期**：{ex['record_date']}")
-        lines.append("")
-        lines.append(f"> {ex['excerpt']}")
-        lines.append("")
+    lines.extend(_render_excerpt_sections(excerpts))
     return "\n".join(lines)
 
 
@@ -211,6 +296,122 @@ def _distinct_values(conn, sql: str) -> list[str]:
     return [str(row[0]) for row in conn.execute(sql).fetchall() if row[0] is not None]
 
 
+def _load_excerpt_categories(
+    db_path: Path,
+) -> tuple[list[str], list[str], list[str]]:
+    with connect_sqlite_readonly(db_path) as conn:
+        return (
+            _distinct_values(conn, DISTINCT_WORKFLOW_STAGES_SQL),
+            _distinct_values(conn, DISTINCT_STANCES_SQL),
+            _distinct_values(conn, DISTINCT_BOUNDARY_CODES_SQL),
+        )
+
+
+def _workflow_stage_slug(stage: str) -> str:
+    return f"workflow_{stage.replace('/', '_').replace(' ', '_')}"
+
+
+def _post_stance_slug(stance: str) -> str:
+    return f"post_stance_{stance.replace('/', '_').replace(' ', '_')}"
+
+
+def _comment_stance_slug(stance: str) -> str:
+    return f"comment_stance_{stance.replace('/', '_').replace(' ', '_')}"
+
+
+def _boundary_code_slug(code: str) -> str:
+    return f"boundary_{code.replace('.', '_')}"
+
+
+def _append_export_if_present(
+    generated: list[Path],
+    *,
+    category_slug: str,
+    excerpts: list[dict[str, str]],
+    output_dir: Path,
+    generated_at: str | None,
+) -> None:
+    if excerpts:
+        generated.append(
+            export_excerpts(
+                category_slug,
+                excerpts,
+                output_dir,
+                generated_at=generated_at,
+            )
+        )
+
+
+def _generate_workflow_excerpt_paths(
+    workflow_stages: list[str],
+    *,
+    db_path: Path,
+    output_dir: Path,
+    max_chars: int,
+    limit: int,
+    generated_at: str | None,
+) -> list[Path]:
+    generated: list[Path] = []
+    for stage in workflow_stages:
+        _append_export_if_present(
+            generated,
+            category_slug=_workflow_stage_slug(stage),
+            excerpts=extract_excerpts_by_workflow_stage(stage, max_chars, limit, db_path),
+            output_dir=output_dir,
+            generated_at=generated_at,
+        )
+    return generated
+
+
+def _generate_stance_excerpt_paths(
+    stances: list[str],
+    *,
+    db_path: Path,
+    output_dir: Path,
+    max_chars: int,
+    limit: int,
+    generated_at: str | None,
+) -> list[Path]:
+    generated: list[Path] = []
+    for stance in stances:
+        _append_export_if_present(
+            generated,
+            category_slug=_post_stance_slug(stance),
+            excerpts=extract_excerpts_by_stance(stance, "post", max_chars, limit, db_path),
+            output_dir=output_dir,
+            generated_at=generated_at,
+        )
+        _append_export_if_present(
+            generated,
+            category_slug=_comment_stance_slug(stance),
+            excerpts=extract_excerpts_by_stance(stance, "comment", max_chars, limit, db_path),
+            output_dir=output_dir,
+            generated_at=generated_at,
+        )
+    return generated
+
+
+def _generate_boundary_excerpt_paths(
+    boundary_codes: list[str],
+    *,
+    db_path: Path,
+    output_dir: Path,
+    max_chars: int,
+    limit: int,
+    generated_at: str | None,
+) -> list[Path]:
+    generated: list[Path] = []
+    for code in boundary_codes:
+        _append_export_if_present(
+            generated,
+            category_slug=_boundary_code_slug(code),
+            excerpts=extract_excerpts_by_boundary_code(code, max_chars, limit, db_path),
+            output_dir=output_dir,
+            generated_at=generated_at,
+        )
+    return generated
+
+
 def generate_all_excerpts(
     db_path: Path = RESEARCH_DB_PATH,
     output_dir: Path = EXCERPTS_DIR,
@@ -219,77 +420,35 @@ def generate_all_excerpts(
     *,
     generated_at: str | None = None,
 ) -> list[Path]:
-    generated: list[Path] = []
-    with connect_sqlite_readonly(db_path) as conn:
-        workflow_stages = _distinct_values(
-            conn,
-            "SELECT DISTINCT workflow_stage FROM vw_posts_paper_scope_quality_v4 WHERE workflow_stage IS NOT NULL",
+    workflow_stages, stances, boundary_codes = _load_excerpt_categories(db_path)
+    generated = _generate_workflow_excerpt_paths(
+        workflow_stages,
+        db_path=db_path,
+        output_dir=output_dir,
+        max_chars=max_chars,
+        limit=limit,
+        generated_at=generated_at,
+    )
+    generated.extend(
+        _generate_stance_excerpt_paths(
+            stances,
+            db_path=db_path,
+            output_dir=output_dir,
+            max_chars=max_chars,
+            limit=limit,
+            generated_at=generated_at,
         )
-        stances = _distinct_values(
-            conn,
-            "SELECT DISTINCT primary_legitimacy_stance FROM vw_posts_paper_scope_quality_v4 WHERE primary_legitimacy_stance IS NOT NULL",
+    )
+    generated.extend(
+        _generate_boundary_excerpt_paths(
+            boundary_codes,
+            db_path=db_path,
+            output_dir=output_dir,
+            max_chars=max_chars,
+            limit=limit,
+            generated_at=generated_at,
         )
-        boundary_codes = _distinct_values(
-            conn,
-            """
-            SELECT DISTINCT boundary_negotiation_code
-            FROM codes
-            WHERE record_type = 'comment'
-              AND boundary_negotiation_code IS NOT NULL
-              AND record_id IN (SELECT comment_id FROM vw_comments_paper_scope_quality_v4)
-            """,
-        )
-
-    for stage in workflow_stages:
-        slug = f"workflow_{stage.replace('/', '_').replace(' ', '_')}"
-        excerpts = extract_excerpts_by_workflow_stage(stage, max_chars, limit, db_path)
-        if excerpts:
-            generated.append(
-                export_excerpts(
-                    slug,
-                    excerpts,
-                    output_dir,
-                    generated_at=generated_at,
-                )
-            )
-
-    for stance in stances:
-        slug = f"post_stance_{stance.replace('/', '_').replace(' ', '_')}"
-        excerpts = extract_excerpts_by_stance(stance, "post", max_chars, limit, db_path)
-        if excerpts:
-            generated.append(
-                export_excerpts(
-                    slug,
-                    excerpts,
-                    output_dir,
-                    generated_at=generated_at,
-                )
-            )
-        slug_c = f"comment_stance_{stance.replace('/', '_').replace(' ', '_')}"
-        excerpts = extract_excerpts_by_stance(stance, "comment", max_chars, limit, db_path)
-        if excerpts:
-            generated.append(
-                export_excerpts(
-                    slug_c,
-                    excerpts,
-                    output_dir,
-                    generated_at=generated_at,
-                )
-            )
-
-    for code in boundary_codes:
-        slug = f"boundary_{code.replace('.', '_')}"
-        excerpts = extract_excerpts_by_boundary_code(code, max_chars, limit, db_path)
-        if excerpts:
-            generated.append(
-                export_excerpts(
-                    slug,
-                    excerpts,
-                    output_dir,
-                    generated_at=generated_at,
-                )
-            )
-
+    )
     return generated
 
 

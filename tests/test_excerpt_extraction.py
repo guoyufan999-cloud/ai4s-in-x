@@ -5,6 +5,7 @@ from pathlib import Path
 from ai4s_legitimacy.analysis.excerpt_extraction import (
     deidentify_text,
     export_excerpts,
+    extract_excerpts_by_boundary_code,
     extract_excerpts_by_stance,
     extract_excerpts_by_workflow_stage,
     format_excerpts_markdown,
@@ -50,21 +51,50 @@ def test_extract_and_format(tmp_path: Path) -> None:
         ) VALUES ('c1', 'p1', '我也是这样用AI的', '积极采用', '2024-01-01', 0, 1)
         """
     )
+    conn.execute(
+        """
+        INSERT INTO codes (
+            record_id, record_type, parent_id, boundary_negotiation_code,
+            coder, coding_date, confidence, memo
+        ) VALUES (
+            'c1', 'comment', 'p1', 'boundary.assistance_vs_substitution',
+            'tester', '2024-01-01', 1.0, 'test'
+        )
+        """
+    )
     conn.commit()
     conn.close()
 
-    excerpts = extract_excerpts_by_workflow_stage("选题与问题定义", limit=5, db_path=db_path)
-    assert len(excerpts) == 1
-    assert excerpts[0]["record_type"] == "post"
-    assert "AI" in excerpts[0]["excerpt"]
+    workflow_excerpts = extract_excerpts_by_workflow_stage("选题与问题定义", limit=5, db_path=db_path)
+    assert len(workflow_excerpts) == 1
+    assert workflow_excerpts[0]["record_type"] == "post"
+    assert "AI" in workflow_excerpts[0]["excerpt"]
 
-    excerpts = extract_excerpts_by_stance("积极采用", record_type="comment", limit=5, db_path=db_path)
-    assert len(excerpts) == 1
-    assert excerpts[0]["record_type"] == "comment"
+    comment_stance_excerpts = extract_excerpts_by_stance(
+        "积极采用",
+        record_type="comment",
+        limit=5,
+        db_path=db_path,
+    )
+    assert len(comment_stance_excerpts) == 1
+    assert comment_stance_excerpts[0]["record_type"] == "comment"
 
-    md = format_excerpts_markdown(excerpts, "test_label")
+    boundary_excerpts = extract_excerpts_by_boundary_code(
+        "boundary.assistance_vs_substitution",
+        limit=5,
+        db_path=db_path,
+    )
+    assert len(boundary_excerpts) == 1
+    assert boundary_excerpts[0]["record_type"] == "comment"
+    assert boundary_excerpts[0]["coding_label"] == "boundary.assistance_vs_substitution"
+
+    expected_keys = {"record_id", "record_type", "coding_label", "excerpt", "record_date"}
+    for record in workflow_excerpts + comment_stance_excerpts + boundary_excerpts:
+        assert set(record.keys()) == expected_keys
+
+    md = format_excerpts_markdown(comment_stance_excerpts, "test_label")
     md_with_timestamp = format_excerpts_markdown(
-        excerpts,
+        comment_stance_excerpts,
         "test_label",
         generated_at="2026-04-10T00:00:00",
     )
@@ -73,10 +103,14 @@ def test_extract_and_format(tmp_path: Path) -> None:
     assert "生成时间" not in md
     assert "生成时间：2026-04-10T00:00:00" in md_with_timestamp
 
-    default_export_path = export_excerpts("test_label_default", excerpts, output_dir=tmp_path / "exports")
+    default_export_path = export_excerpts(
+        "test_label_default",
+        comment_stance_excerpts,
+        output_dir=tmp_path / "exports",
+    )
     audited_export_path = export_excerpts(
         "test_label_audit",
-        excerpts,
+        comment_stance_excerpts,
         output_dir=tmp_path / "exports",
         generated_at="2026-04-10T00:00:00",
     )
@@ -87,3 +121,13 @@ def test_extract_and_format(tmp_path: Path) -> None:
     assert batch_paths
     for path in batch_paths:
         assert "生成时间" not in path.read_text(encoding="utf-8")
+
+    audited_batch_paths = generate_all_excerpts(
+        db_path=db_path,
+        output_dir=tmp_path / "batch_audit",
+        limit=5,
+        generated_at="2026-04-10T00:00:00",
+    )
+    assert audited_batch_paths
+    for path in audited_batch_paths:
+        assert "生成时间：2026-04-10T00:00:00" in path.read_text(encoding="utf-8")

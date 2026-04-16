@@ -1,12 +1,14 @@
 from __future__ import annotations
 
+import shutil
 import sqlite3
 from pathlib import Path
 
-from ai4s_legitimacy.analysis.figures.manifest import write_figure_manifest
+from ai4s_legitimacy.analysis.figures.manifest import BODY_PRIORITY, FIGURE_ENTRIES, write_figure_manifest
 from ai4s_legitimacy.analysis.figures.render import generate_submission_figures
 from ai4s_legitimacy.config.research_scope import render_views_sql
 from ai4s_legitimacy.config.settings import SCHEMA_PATH
+from ai4s_legitimacy.utils.paths import project_relative_path
 from ai4s_legitimacy.utils.db import init_sqlite_db
 
 
@@ -117,3 +119,42 @@ def test_figure_manifest_and_svg_drop_partial_suffix_at_period_end(tmp_path: Pat
     assert "2026Q2" in manifest_text
     assert "2026H1" in posts_by_period_svg
     assert "2026Q2" in posts_by_quarter_svg
+
+
+def test_figure_manifest_preserves_slug_count_and_repo_relative_paths(tmp_path: Path) -> None:
+    root = Path(__file__).resolve().parents[1]
+    figure_dir = root / ".pytest_manifest_contract" / tmp_path.name
+    figure_dir.mkdir(parents=True, exist_ok=True)
+    try:
+        generated_slugs = [entry.slug for entry in FIGURE_ENTRIES]
+        for slug in generated_slugs:
+            (figure_dir / f"{slug}.png").write_text("png", encoding="utf-8")
+            (figure_dir / f"{slug}.svg").write_text("svg", encoding="utf-8")
+
+        manifest_path = write_figure_manifest(
+            figure_dir=figure_dir,
+            generated_slugs=generated_slugs,
+            formal_posts=1,
+            formal_comments=1,
+            coverage_end_date="2026-04-10",
+        )
+
+        manifest_text = manifest_path.read_text(encoding="utf-8")
+
+        assert len(generated_slugs) == 9
+        assert BODY_PRIORITY == {
+            "posts_trend",
+            "posts_by_quarter",
+            "posts_heatmap",
+            "comments_attitude",
+            "tools_by_period",
+            "risk_themes_by_period",
+        }
+        assert "- 已生成图表：`9 / 9`" in manifest_text
+        assert manifest_text.count("- 来源标签：`paper_scope_quality_v4`") == 9
+        for slug in generated_slugs:
+            assert f"`{slug}`" in manifest_text
+            assert f"PNG：`{project_relative_path(figure_dir / (slug + '.png'))}`" in manifest_text
+            assert f"SVG：`{project_relative_path(figure_dir / (slug + '.svg'))}`" in manifest_text
+    finally:
+        shutil.rmtree(figure_dir, ignore_errors=True)
