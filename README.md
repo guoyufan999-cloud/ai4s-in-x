@@ -93,6 +93,12 @@
 - 推荐使用 `./.venv/bin/python -B -m pytest -q`，避免在 `src/`、`tests/` 下生成 `__pycache__` / `.pyc`，让工作树更容易保持可提交态。
 - 如果此前已经运行过默认测试命令，可在收尾时执行一次 `find src tests -type d -name '__pycache__' -prune -exec rm -rf {} +` 清理本地缓存。
 
+本地历史备份说明：
+
+- 当前活跃主线 `main` 已在 `2026-04-16` 收敛为瘦身后的单根快照提交，用于降低仓库体量并保证 GitHub 推送稳定。
+- 原先的本地提交链保留在 `backup/pre-clean-snapshot-20260416`，仅作为本地回退与审阅锚点，不作为默认开发或推送分支。
+- 如需查看旧历史，可运行 `git switch backup/pre-clean-snapshot-20260416`；返回当前主线时运行 `git switch main`。
+
 ## 当前状态与后续计划
 
 当前项目已经完成“从平台数据到正式论文基线”的第一阶段，重点不再是继续补抓，而是：
