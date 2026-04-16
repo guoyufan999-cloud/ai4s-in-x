@@ -20,9 +20,6 @@ DROP VIEW IF EXISTS vw_paper_quality_v4_workflow_legitimacy_cross;
 DROP VIEW IF EXISTS vw_paper_quality_v4_boundary_negotiation_summary;
 DROP VIEW IF EXISTS vw_paper_quality_v4_subject_workflow_cross;
 DROP VIEW IF EXISTS vw_paper_quality_v4_subject_legitimacy_cross;
-DROP VIEW IF EXISTS vw_paper_quality_v4_ai_practice_distribution;
-DROP VIEW IF EXISTS vw_paper_quality_v4_workflow_ai_practice_cross;
-DROP VIEW IF EXISTS vw_paper_quality_v4_legitimacy_dimension_distribution;
 DROP VIEW IF EXISTS vw_paper_quality_v4_comment_legitimacy_basis_distribution;
 DROP VIEW IF EXISTS vw_paper_quality_v4_halfyear_workflow;
 DROP VIEW IF EXISTS vw_paper_quality_v4_halfyear_subject;
@@ -233,36 +230,6 @@ SELECT
 FROM vw_posts_paper_scope_quality_v4 p
 GROUP BY COALESCE(p.qs_broad_subject, 'uncoded'), COALESCE(p.primary_legitimacy_stance, 'uncoded')
 ORDER BY post_count DESC, subject_label, legitimacy_stance;
-
-CREATE VIEW vw_paper_quality_v4_ai_practice_distribution AS
-SELECT
-    COALESCE(c.ai_practice_code, 'uncoded') AS ai_practice_code,
-    COUNT(*) AS post_count
-FROM codes c
-JOIN vw_posts_paper_scope_quality_v4 p ON p.post_id = c.record_id
-WHERE c.record_type = 'post'
-GROUP BY COALESCE(c.ai_practice_code, 'uncoded')
-ORDER BY post_count DESC, ai_practice_code;
-
-CREATE VIEW vw_paper_quality_v4_workflow_ai_practice_cross AS
-SELECT
-    COALESCE(p.workflow_stage, 'uncoded') AS workflow_stage,
-    COALESCE(c.ai_practice_code, 'uncoded') AS ai_practice_code,
-    COUNT(*) AS post_count
-FROM vw_posts_paper_scope_quality_v4 p
-JOIN codes c ON c.record_id = p.post_id AND c.record_type = 'post'
-GROUP BY COALESCE(p.workflow_stage, 'uncoded'), COALESCE(c.ai_practice_code, 'uncoded')
-ORDER BY workflow_stage, ai_practice_code;
-
-CREATE VIEW vw_paper_quality_v4_legitimacy_dimension_distribution AS
-SELECT
-    COALESCE(c.legitimacy_code, 'uncoded') AS legitimacy_code,
-    COUNT(*) AS coded_count
-FROM codes c
-WHERE c.record_type = 'post'
-  AND c.record_id IN (SELECT post_id FROM vw_posts_paper_scope_quality_v4)
-GROUP BY COALESCE(c.legitimacy_code, 'uncoded')
-ORDER BY coded_count DESC, legitimacy_code;
 
 CREATE VIEW vw_paper_quality_v4_comment_legitimacy_basis_distribution AS
 SELECT

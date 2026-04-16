@@ -132,7 +132,7 @@
 
 - 时间无法确定时使用 `NULL`，不使用伪日期
 - `engagement_collect` 当前无法稳定取得时允许为 `NULL`
-- 尚未进入人工细分编码的 `ai_practice_code / boundary_negotiation_code` 允许为 `NULL`
+- 尚未进入人工细分编码的 `ai_practice_code / legitimacy_code / boundary_negotiation_code` 允许为 `NULL`
 - `keyword_query` 若同一帖子命中多个检索词，可用连接文本保存摘要
 
 ## 六、当前正式使用的三套口径
@@ -181,6 +181,6 @@
 ## 八、当前设计的已知薄弱点
 
 - 新研究主库仍需从 legacy 库迁移生成，当前仓库中的历史运行库仍是更完整的原始来源
-- `AI 实践方式` 与 `边界协商机制` 的细粒度编码尚未全部回填到数据库，只完成了框架和迁移承接
+- `AI 实践方式`、`合法性判断维度` 与部分 `边界协商机制` 的细粒度编码尚未全部回填到数据库；当前活跃分析链不暴露对应 placeholder 视图，需待手工细分编码完成后再单独扩展
 - `engagement_collect` 等平台指标在 legacy 体系中并不完整，研究分析需谨慎解释
 - 正式论文图表与结果已经统一由研究主库 `paper_scope_quality_v4` 直接复现，但更细粒度的历史过程产物不再作为活跃主线接口保留

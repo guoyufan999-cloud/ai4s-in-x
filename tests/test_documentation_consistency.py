@@ -31,6 +31,15 @@ def test_database_and_boundary_docs_describe_static_archive_and_rendered_views()
     assert "docs/local_git_maintenance.md" in readme_text
 
 
+def test_active_docs_treat_manual_coding_fields_as_future_reserve() -> None:
+    schema_text = (ROOT / "data" / "data_schema.md").read_text(encoding="utf-8")
+    legacy_mapping_text = (ROOT / "codebook" / "legacy_mapping.md").read_text(encoding="utf-8")
+
+    assert "`ai_practice_code / legitimacy_code / boundary_negotiation_code`" in schema_text
+    assert "当前 `paper_scope_quality_v4` 的活跃分析链不再暴露" in legacy_mapping_text
+    assert "单独一轮中补充对应视图、分析逻辑与测试合同" in legacy_mapping_text
+
+
 def test_active_docs_describe_local_db_paths_as_ignored_assets() -> None:
     readme_text = (ROOT / "README.md").read_text(encoding="utf-8")
     boundary_text = (ROOT / "docs" / "repository_boundaries.md").read_text(encoding="utf-8")

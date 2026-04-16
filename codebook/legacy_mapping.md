@@ -114,4 +114,6 @@
 | `codes.legitimacy_code` | **全 NULL** | 10 | 效率正当性 / 专业能力边界 / 原创性 / 学术诚信 / 可解释性 / 可复现性 / 责任归属 / 工具适配性 / 学科规范一致性 / 教育·训练价值 |
 | `codes.boundary_negotiation_code` | **部分填充** | 6 | 仅 `boundary.assistance_vs_substitution`（来自 `controversy_type=risk` 的条件映射，1,363 条评论）。其余 5 个编码需人工补充 |
 
-人工编码完成后，P1-1 中创建的对应分析视图（`vw_paper_quality_v4_ai_practice_distribution`、`vw_paper_quality_v4_legitimacy_dimension_distribution` 等）将自动产生有效数据。
+当前 `paper_scope_quality_v4` 的活跃分析链不再暴露 `ai_practice` / `legitimacy` 对应的 distribution / cross 视图；这些字段目前只作为未来人工细分编码的预留位保留。
+
+后续若启动 `ai_practice` / `legitimacy` 的手工细分编码，应在单独一轮中补充对应视图、分析逻辑与测试合同，而不是继续把 placeholder 视图保留在活跃接口里。

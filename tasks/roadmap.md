@@ -1,5 +1,11 @@
 # Roadmap
 
+## 当前下一步入口
+
+- 压缩投稿 clean 稿措辞，生成更贴近期刊排版的终稿版本
+- 启动 `ai_practice` / `legitimacy` 手工细分编码后，再单独扩展对应 analysis views 与正式合同
+- 进入下一轮可维护性重构，优先拆重 `import_legacy_sqlite` 与 `analysis/figures/queries`
+
 ## 阶段 1：仓库重构与主库迁移
 
 - [已完成] 建立研究型目录结构
@@ -29,6 +35,6 @@
 
 ## 阶段 4：后续研究扩展
 
-- 评估 grounded theory 如何进入活跃主线
-- 评估是否需要第三轮结构修补
-- 视论文问题需要补充人工导入或新增案例
+- 启动 `ai_practice` / `legitimacy` 手工细分编码后，再单独扩展对应 analysis views 与正式合同
+- 进入下一轮可维护性重构，优先拆重 `import_legacy_sqlite` 与 `analysis/figures/queries`
+- 视研究问题与投稿反馈，再评估 grounded theory、第三轮结构修补或补充样本

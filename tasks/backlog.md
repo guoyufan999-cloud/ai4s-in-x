@@ -1,5 +1,11 @@
 # Backlog
 
+## 当前下一步入口
+
+1. [优先] 进一步压缩投稿 clean 稿措辞，生成更贴近期刊排版的终稿版本
+2. [预备] 启动 `ai_practice` / `legitimacy` 手工细分编码后，再单独扩展对应 analysis views 与正式合同
+3. [预备] 进入下一轮可维护性重构，优先拆重 `import_legacy_sqlite` 与 `analysis/figures/queries`
+
 ## P0：当前必须完成
 
 1. [已完成] 验证 legacy 数据向研究型主库的完整迁移
@@ -21,10 +27,10 @@
 1. [已完成] 在统一交付链上完成论文精修第一轮，形成 clean 版投稿阅读稿
 2. [已完成] 精修摘要、引言、讨论与结论的第二轮措辞与论证密度
 3. [已完成] 形成补充材料说明与方法透明度附录（内部版 + clean 版）
-4. [下一步优先] 视投稿需要，进一步压缩正文措辞并生成更贴近期刊排版的 clean 版终稿
+4. [下一步优先] 进一步压缩正文措辞并生成更贴近期刊排版的 clean 版终稿
 
 ## P3：后续扩展
 
-1. 视需要评估 grounded theory 路径如何接入新仓库
-2. 视研究阻断决定是否需要第三轮结构修补
-3. 视论文需求决定是否需要新增人工导入或补充样本
+1. 启动 `ai_practice` / `legitimacy` 手工细分编码后，再单独扩展对应 analysis views 与正式合同
+2. 进入下一轮可维护性重构，优先拆重 `import_legacy_sqlite` 与 `analysis/figures/queries`
+3. 视研究问题与投稿反馈，再评估 grounded theory、第三轮结构修补或补充样本
