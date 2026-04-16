@@ -12,9 +12,9 @@ from __future__ import annotations
 
 依赖：
 - Python 标准库 sqlite3
-- src.config.settings
-- src.cleaning.normalization
-- src.coding.codebook_seed
+- ai4s_legitimacy.config.settings
+- ai4s_legitimacy.cleaning.normalization
+- ai4s_legitimacy.coding.codebook_seed
 
 适用步骤：
 - 研究型主库初始化
@@ -27,11 +27,11 @@ import sqlite3
 from collections import defaultdict
 from pathlib import Path
 
-from src.cleaning.normalization import hash_identifier, join_unique, mask_name, normalize_date, normalize_text, parse_engagement_text
-from src.coding.codebook_seed import LEGACY_WORKFLOW_TO_STAGE_CODE, iter_codebook_rows, iter_legitimacy_lookup_rows, iter_workflow_lookup_rows
-from src.config.research_scope import render_views_sql
-from src.config.settings import INTERIM_DIR, LEGACY_DB_PATH, PLATFORM_CODE, PLATFORM_NAME, RESEARCH_DB_PATH, SCHEMA_PATH
-from src.utils.db import connect_sqlite_readonly, connect_sqlite_writable, init_sqlite_db
+from ai4s_legitimacy.cleaning.normalization import hash_identifier, join_unique, mask_name, normalize_date, normalize_text, parse_engagement_text
+from ai4s_legitimacy.coding.codebook_seed import LEGACY_WORKFLOW_TO_STAGE_CODE, iter_codebook_rows, iter_legitimacy_lookup_rows, iter_workflow_lookup_rows
+from ai4s_legitimacy.config.research_scope import render_views_sql
+from ai4s_legitimacy.config.settings import INTERIM_DIR, LEGACY_DB_PATH, PLATFORM_CODE, PLATFORM_NAME, RESEARCH_DB_PATH, SCHEMA_PATH
+from ai4s_legitimacy.utils.db import connect_sqlite_readonly, connect_sqlite_writable, init_sqlite_db
 
 
 def _load_query_map(legacy: sqlite3.Connection) -> dict[str, str | None]:

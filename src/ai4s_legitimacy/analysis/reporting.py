@@ -5,9 +5,9 @@ import json
 from pathlib import Path
 from typing import Any
 
-from src.analysis.figures.config import resolve_paper_scope_coverage_end_date
-from src.config.settings import RESEARCH_DB_PATH, RESEARCH_DB_SUMMARY_PATH
-from src.utils.db import connect_sqlite_readonly
+from ai4s_legitimacy.analysis.figures.config import resolve_paper_scope_coverage_end_date
+from ai4s_legitimacy.config.settings import RESEARCH_DB_PATH, RESEARCH_DB_SUMMARY_PATH
+from ai4s_legitimacy.utils.db import connect_sqlite_readonly
 
 
 def _rows_to_dicts(rows: list[Any]) -> list[dict[str, Any]]:

@@ -2,7 +2,7 @@
 
 ## 一、概述
 
-本文档记录 legacy 运行库中的标签字段如何映射到新的研究型主库。映射逻辑的代码实现位于 `src/collection/import_legacy_sqlite.py`，编码种子数据位于 `src/coding/codebook_seed.py`。
+本文档记录 legacy 运行库中的标签字段如何映射到新的研究型主库。映射逻辑的代码实现位于 `src/ai4s_legitimacy/collection/import_legacy_sqlite.py`，编码种子数据位于 `src/ai4s_legitimacy/coding/codebook_seed.py`。
 
 映射原则：
 1. 旧字段可以映射到新字段，但必须写明映射逻辑

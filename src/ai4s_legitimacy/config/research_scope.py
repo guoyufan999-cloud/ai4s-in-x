@@ -4,7 +4,7 @@ from pathlib import Path
 from string import Template
 
 
-PROJECT_ROOT = Path(__file__).resolve().parents[2]
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 DATABASE_DIR = PROJECT_ROOT / "database"
 VIEWS_TEMPLATE_PATH = DATABASE_DIR / "views.sql.template"
 VIEWS_RENDERED_PATH = DATABASE_DIR / "views.sql"

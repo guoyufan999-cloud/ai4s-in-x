@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from pathlib import Path
 
-from src.config.settings import PROJECT_ROOT
+from ai4s_legitimacy.config.settings import PROJECT_ROOT
 
 
 def project_relative_path(path: str | Path) -> str:

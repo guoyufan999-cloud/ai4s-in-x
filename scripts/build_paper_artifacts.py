@@ -11,7 +11,7 @@ PROJECT_ROOT = Path(__file__).resolve().parents[1]
 
 def main() -> None:
     result = subprocess.run(
-        [sys.executable, "-m", "src.cli.build_artifacts", *sys.argv[1:]],
+        [sys.executable, "-m", "ai4s_legitimacy.cli.build_artifacts", *sys.argv[1:]],
         check=False,
         cwd=PROJECT_ROOT,
     )

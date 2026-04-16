@@ -6,13 +6,13 @@ from datetime import date, datetime
 from pathlib import Path
 from typing import Any, Mapping, Optional, Sequence
 
-from src.config.research_scope import (
+from ai4s_legitimacy.config.research_scope import (
     RESEARCH_WINDOW_END,
     RESEARCH_WINDOW_START,
     build_half_year_windows,
     render_half_year_case_sql,
 )
-from src.config.settings import OUTPUTS_DIR
+from ai4s_legitimacy.config.settings import OUTPUTS_DIR
 
 
 HALF_YEAR_WINDOWS = build_half_year_windows()

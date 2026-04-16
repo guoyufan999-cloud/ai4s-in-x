@@ -3,11 +3,11 @@ from __future__ import annotations
 import sqlite3
 from pathlib import Path
 
-from src.analysis.figures.manifest import write_figure_manifest
-from src.analysis.figures.render import generate_submission_figures
-from src.config.research_scope import render_views_sql
-from src.config.settings import SCHEMA_PATH
-from src.utils.db import init_sqlite_db
+from ai4s_legitimacy.analysis.figures.manifest import write_figure_manifest
+from ai4s_legitimacy.analysis.figures.render import generate_submission_figures
+from ai4s_legitimacy.config.research_scope import render_views_sql
+from ai4s_legitimacy.config.settings import SCHEMA_PATH
+from ai4s_legitimacy.utils.db import init_sqlite_db
 
 
 def _seed_minimal_submission_db(db_path: Path) -> None:

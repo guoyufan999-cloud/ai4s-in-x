@@ -3,7 +3,7 @@ from __future__ import annotations
 from pathlib import Path
 from typing import Sequence
 
-from src.analysis.figures.config import (
+from ai4s_legitimacy.analysis.figures.config import (
     FORMAL_HALFYEAR_LABELS,
     format_halfyear_sequence_text,
     format_month_window_text,
@@ -13,7 +13,7 @@ from src.analysis.figures.config import (
     quarter_display,
     resolve_coverage_end_date,
 )
-from src.utils.paths import project_relative_path
+from ai4s_legitimacy.utils.paths import project_relative_path
 
 
 FIGURE_ENTRIES = [

@@ -10,6 +10,8 @@ def test_readme_uses_cli_import_entrypoint() -> None:
     text = (ROOT / "README.md").read_text(encoding="utf-8")
     assert "ai4s-import-legacy" in text
     assert "运行 `src/collection/import_legacy_sqlite.py`" not in text
+    assert "python -m src.analysis." not in text
+    assert "python -m ai4s_legitimacy.analysis." in text
 
 
 def test_active_docs_no_longer_claim_formal_figures_depend_on_legacy_exports() -> None:
@@ -46,5 +48,6 @@ def test_active_docs_describe_local_db_paths_as_ignored_assets() -> None:
 
 def test_readme_documents_bytecode_free_pytest_command() -> None:
     text = (ROOT / "README.md").read_text(encoding="utf-8")
+    assert "./.venv/bin/pip install -e '.[dev]'" in text
     assert "./.venv/bin/python -B -m pytest -q" in text
     assert "__pycache__" in text

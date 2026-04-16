@@ -4,8 +4,8 @@ import argparse
 import re
 from pathlib import Path
 
-from src.config.settings import OUTPUTS_DIR, RESEARCH_DB_PATH
-from src.utils.db import connect_sqlite_readonly
+from ai4s_legitimacy.config.settings import OUTPUTS_DIR, RESEARCH_DB_PATH
+from ai4s_legitimacy.utils.db import connect_sqlite_readonly
 
 
 EXCERPTS_DIR = OUTPUTS_DIR / "excerpts"

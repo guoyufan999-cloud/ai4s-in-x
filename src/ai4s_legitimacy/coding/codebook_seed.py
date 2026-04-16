@@ -99,6 +99,20 @@ _LEGITIMACY_EXAMPLES = {
 }
 
 
+def _require_example(
+    examples: dict[str, str],
+    *,
+    code_id: str,
+    code_group: str,
+) -> str:
+    try:
+        return examples[code_id]
+    except KeyError as exc:
+        raise ValueError(
+            f"missing example for {code_group}: {code_id}"
+        ) from exc
+
+
 def iter_codebook_rows() -> Iterable[CodebookRow]:
     for code_id, code_name, _, definition in WORKFLOW_STAGES:
         yield CodebookRow(
@@ -108,7 +122,11 @@ def iter_codebook_rows() -> Iterable[CodebookRow]:
             definition,
             "围绕该科研环节的讨论。",
             "与该环节无关的泛化讨论。",
-            _WORKFLOW_EXAMPLES.get(code_id, "示例待补"),
+            _require_example(
+                _WORKFLOW_EXAMPLES,
+                code_id=code_id,
+                code_group="workflow_stage",
+            ),
         )
     for row in AI_PRACTICES:
         yield row
@@ -120,7 +138,11 @@ def iter_codebook_rows() -> Iterable[CodebookRow]:
             definition,
             "直接以该标准判断 AI 使用是否合理。",
             "只表达一般态度、不涉及判断标准。",
-            _LEGITIMACY_EXAMPLES.get(code_id, "示例待补"),
+            _require_example(
+                _LEGITIMACY_EXAMPLES,
+                code_id=code_id,
+                code_group="legitimacy_dimension",
+            ),
         )
     for row in BOUNDARY_CODES:
         yield row

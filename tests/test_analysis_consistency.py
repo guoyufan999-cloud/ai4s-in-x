@@ -4,8 +4,8 @@ import json
 import sqlite3
 from pathlib import Path
 
-from src.analysis.quality_v4_consistency import evaluate_quality_v4_consistency
-from src.config.research_scope import render_views_sql
+from ai4s_legitimacy.analysis.quality_v4_consistency import evaluate_quality_v4_consistency
+from ai4s_legitimacy.config.research_scope import render_views_sql
 
 
 ROOT = Path(__file__).resolve().parents[1]

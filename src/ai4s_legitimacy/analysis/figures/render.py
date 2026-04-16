@@ -3,16 +3,16 @@ from __future__ import annotations
 from pathlib import Path
 from typing import Any
 
-from src.analysis.figures.config import (
+from ai4s_legitimacy.analysis.figures.config import (
     ATTITUDE_COLORS,
     FIGURE_DIR,
     RISK_COLORS,
     RESEARCH_WINDOW_START,
     resolve_paper_scope_coverage_end_date,
 )
-from src.analysis.figures.queries import load_submission_figure_data
-from src.config.settings import RESEARCH_DB_PATH
-from src.utils.db import connect_sqlite_readonly
+from ai4s_legitimacy.analysis.figures.queries import load_submission_figure_data
+from ai4s_legitimacy.config.settings import RESEARCH_DB_PATH
+from ai4s_legitimacy.utils.db import connect_sqlite_readonly
 
 
 def _save_figure(fig: Any, base_path: Path) -> dict[str, str]:
@@ -41,7 +41,7 @@ def generate_submission_figures(
     import numpy as np
     from matplotlib import font_manager
 
-    from src.analysis.figures.config import configure_style
+    from ai4s_legitimacy.analysis.figures.config import configure_style
 
     configure_style(matplotlib, font_manager)
     figure_dir.mkdir(parents=True, exist_ok=True)

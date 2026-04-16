@@ -2,10 +2,10 @@ from __future__ import annotations
 
 from pathlib import Path
 
-from src.config.research_scope import RESEARCH_WINDOW_END, RESEARCH_WINDOW_START
+from ai4s_legitimacy.config.research_scope import RESEARCH_WINDOW_END, RESEARCH_WINDOW_START
 
 
-PROJECT_ROOT = Path(__file__).resolve().parents[2]
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 DATA_DIR = PROJECT_ROOT / "data"
 RAW_DIR = DATA_DIR / "raw"
 INTERIM_DIR = DATA_DIR / "interim"

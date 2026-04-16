@@ -3,7 +3,7 @@ from __future__ import annotations
 from collections import defaultdict
 from typing import Any
 
-from src.analysis.figures.config import (
+from ai4s_legitimacy.analysis.figures.config import (
     ATTITUDE_ORDER,
     FORMAL_HALFYEAR_LABELS,
     RISK_PRIORITY,

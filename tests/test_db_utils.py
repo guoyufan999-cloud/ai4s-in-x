@@ -5,7 +5,7 @@ from pathlib import Path
 
 import pytest
 
-from src.utils.db import connect_sqlite_readonly
+from ai4s_legitimacy.utils.db import connect_sqlite_readonly
 
 
 def test_connect_sqlite_readonly_requires_existing_file_and_creates_no_parent_dirs(

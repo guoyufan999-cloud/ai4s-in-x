@@ -4,10 +4,10 @@ import json
 import sqlite3
 from pathlib import Path
 
-from src.cli.build_artifacts import run_build
-from src.config.research_scope import render_views_sql
-from src.config.settings import SCHEMA_PATH
-from src.utils.db import init_sqlite_db
+from ai4s_legitimacy.cli.build_artifacts import run_build
+from ai4s_legitimacy.config.research_scope import render_views_sql
+from ai4s_legitimacy.config.settings import SCHEMA_PATH
+from ai4s_legitimacy.utils.db import init_sqlite_db
 
 
 def _seed_minimal_paper_scope_db(db_path: Path) -> None:

@@ -4,14 +4,14 @@ import argparse
 from pathlib import Path
 from typing import Any
 
-from src.analysis.figure_generation import generate_submission_figures, write_figure_manifest
-from src.analysis.quality_v4_consistency import (
+from ai4s_legitimacy.analysis.figure_generation import generate_submission_figures, write_figure_manifest
+from ai4s_legitimacy.analysis.quality_v4_consistency import (
     evaluate_quality_v4_consistency,
     write_quality_v4_consistency_report,
 )
-from src.analysis.reporting import build_summary_payload, write_summary_payload
-from src.analysis.figures.config import FIGURE_DIR
-from src.config.settings import (
+from ai4s_legitimacy.analysis.reporting import build_summary_payload, write_summary_payload
+from ai4s_legitimacy.analysis.figures.config import FIGURE_DIR
+from ai4s_legitimacy.config.settings import (
     QUALITY_V4_CHECKPOINT,
     QUALITY_V4_CONSISTENCY_REPORT_PATH,
     RESEARCH_DB_PATH,

@@ -1,12 +1,12 @@
 from __future__ import annotations
 
-from src.analysis.figures.config import (
+from ai4s_legitimacy.analysis.figures.config import (
     format_halfyear_sequence_text,
     format_month_window_text,
     format_quarter_sequence_text,
 )
-from src.config.research_scope import render_views_sql
-from src.config.settings import VIEWS_PATH
+from ai4s_legitimacy.config.research_scope import render_views_sql
+from ai4s_legitimacy.config.settings import VIEWS_PATH
 
 
 def _normalize_sql(text: str) -> str:

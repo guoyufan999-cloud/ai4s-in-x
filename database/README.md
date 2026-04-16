@@ -32,8 +32,8 @@
 
 ## 视图维护规则
 
-研究时间窗和正式 paper-scope 规则已经集中到 Python 配置层。运行时初始化应优先使用 `src.config.research_scope.render_views_sql()` 的渲染结果，`database/views.sql` 只作为版本化审阅产物保留，不应手工维护。若调整正式时间窗或口径，应同时更新：
+研究时间窗和正式 paper-scope 规则已经集中到 Python 配置层。运行时初始化应优先使用 `ai4s_legitimacy.config.research_scope.render_views_sql()` 的渲染结果，`database/views.sql` 只作为版本化审阅产物保留，不应手工维护。若调整正式时间窗或口径，应同时更新：
 
-1. `src/config/research_scope.py`
+1. `src/ai4s_legitimacy/config/research_scope.py`
 2. `database/views.sql.template`
 3. `database/views.sql`

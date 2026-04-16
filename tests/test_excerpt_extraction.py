@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from pathlib import Path
 
-from src.analysis.excerpt_extraction import (
+from ai4s_legitimacy.analysis.excerpt_extraction import (
     deidentify_text,
     export_excerpts,
     extract_excerpts_by_stance,
@@ -10,8 +10,8 @@ from src.analysis.excerpt_extraction import (
     format_excerpts_markdown,
     generate_all_excerpts,
 )
-from src.config.research_scope import render_views_sql
-from src.utils.db import init_sqlite_db
+from ai4s_legitimacy.config.research_scope import render_views_sql
+from ai4s_legitimacy.utils.db import init_sqlite_db
 
 
 def test_deidentify_text() -> None:

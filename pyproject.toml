@@ -20,12 +20,15 @@ dev = [
 ]
 
 [project.scripts]
-ai4s-build-artifacts = "src.cli.build_artifacts:main"
-ai4s-import-legacy = "src.cli.import_legacy:main"
+ai4s-build-artifacts = "ai4s_legitimacy.cli.build_artifacts:main"
+ai4s-import-legacy = "ai4s_legitimacy.cli.import_legacy:main"
 
 [tool.setuptools]
 py-modules = []
 
+[tool.setuptools.package-dir]
+"" = "src"
+
 [tool.setuptools.packages.find]
-where = ["."]
-include = ["src*"]
+where = ["src"]
+include = ["ai4s_legitimacy*"]

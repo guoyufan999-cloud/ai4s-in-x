@@ -37,7 +37,7 @@
   - `processed/`：研究型主库的本地约定路径与版本化说明
   - `external/`：词表、映射表、外部参考配置
 - `database/`：研究型数据库 schema、视图与说明
-- `src/`：围绕研究流程组织的代码
+- `src/`：源码根目录；实际公共包名为 `ai4s_legitimacy`，实现位于 `src/ai4s_legitimacy/`
 - `codebook/`：编码框架、规则、判例与协商记录
 - `docs/`：文献札记、研究备忘录、会议记录、图件说明与本地维护文档
 - `docs/paper_working/`：版本化保留的工作稿与 LLM 中间稿，不属于正式交付链
@@ -74,8 +74,9 @@
 3. 阅读 `compliance_and_ethics.md`
 4. 查看 `data/data_schema.md`、`database/schema.sql`、`archive/legacy_collection_runtime/data/db/README.md` 与 `data/processed/README.md`
 5. 按上述两个 README 准备本地 legacy DB 与研究主库路径
-6. 运行 `ai4s-import-legacy`，将 legacy 运行库迁入新的研究型主库
-7. 使用 `ai4s-build-artifacts` 或 `python -m src.analysis.*` 入口更新正式分析产物
+6. 首次拉起开发环境或完成包名迁移后，先执行 `./.venv/bin/pip install -e '.[dev]'`
+7. 运行 `ai4s-import-legacy`，将 legacy 运行库迁入新的研究型主库
+8. 使用 `ai4s-build-artifacts` 或 `python -m ai4s_legitimacy.analysis.*` 入口更新正式分析产物
 
 `archive/` 当前不再保留 legacy 代码快照、旧测试或可直接运行的环境镜像；如需追溯历史运行来源，请查看 `archive/legacy_collection_runtime/README.md`、`archive/legacy_collection_runtime/PROVENANCE.md` 与 `archive/legacy_exports/README.md`。
 
@@ -87,13 +88,14 @@
 
 - `ai4s-import-legacy`
 - `ai4s-build-artifacts`
-- `python -m src.analysis.reporting`
-- `python -m src.analysis.quality_v4_consistency`
-- `python -m src.analysis.excerpt_extraction --batch`
+- `python -m ai4s_legitimacy.analysis.reporting`
+- `python -m ai4s_legitimacy.analysis.quality_v4_consistency`
+- `python -m ai4s_legitimacy.analysis.excerpt_extraction --batch`
 
 开发验证建议：
 
 - 推荐使用 `./.venv/bin/python -B -m pytest -q`，避免在 `src/`、`tests/` 下生成 `__pycache__` / `.pyc`，让工作树更容易保持可提交态。
+- 标准 `src-layout` 依赖 editable 安装；首次拉起环境或拉到本轮重命名后，先执行 `./.venv/bin/pip install -e '.[dev]'`。
 - 如果此前已经运行过默认测试命令，可在收尾时执行一次 `find src tests -type d -name '__pycache__' -prune -exec rm -rf {} +` 清理本地缓存。
 
 本地历史备份说明：

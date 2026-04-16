@@ -4,20 +4,20 @@ import argparse
 import json
 from pathlib import Path
 
-from src.config.research_scope import (
+from ai4s_legitimacy.config.research_scope import (
     PAPER_SCOPE_EXCLUDED_ACTOR_TYPES,
     PAPER_SCOPE_REQUIRED_CRAWL_STATUS,
     RESEARCH_WINDOW_END,
     RESEARCH_WINDOW_START,
     sql_string_list,
 )
-from src.config.settings import (
+from ai4s_legitimacy.config.settings import (
     QUALITY_V4_CHECKPOINT,
     QUALITY_V4_CONSISTENCY_REPORT_PATH,
     RESEARCH_DB_PATH,
 )
-from src.utils.db import connect_sqlite_readonly
-from src.utils.paths import project_relative_path
+from ai4s_legitimacy.utils.db import connect_sqlite_readonly
+from ai4s_legitimacy.utils.paths import project_relative_path
 
 
 EXCLUDED_ACTOR_VALUES_SQL = sql_string_list(PAPER_SCOPE_EXCLUDED_ACTOR_TYPES)
