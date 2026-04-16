@@ -222,6 +222,59 @@ def test_migrate_legacy_sqlite_imports_core_records_and_summary(
         )
 
 
+def test_legacy_lookup_and_prepare_helpers_keep_mapping_shapes(tmp_path: Path) -> None:
+    legacy_db_path = tmp_path / "legacy.sqlite3"
+    _create_minimal_legacy_db(legacy_db_path)
+
+    with legacy_import.connect_sqlite_readonly(legacy_db_path) as legacy:
+        lookups = legacy_import._load_legacy_lookups(legacy)
+
+        assert lookups.query_map["note-1"] == "AI科研 | ChatGPT"
+        assert lookups.like_map["note-1"] == 12000
+        assert lookups.comment_count_map["note-1"] == 1
+        assert lookups.author_name_map["author-1"] == "张三丰"
+        assert "note-1" in lookups.post_label_map
+        assert "comment-1" in lookups.comment_label_map
+
+        post_row = legacy.execute(
+            "SELECT * FROM note_details WHERE note_id = 'note-1'"
+        ).fetchone()
+        comment_row = legacy.execute(
+            "SELECT * FROM comments WHERE comment_id = 'comment-1'"
+        ).fetchone()
+
+        prepared_post = legacy_import._prepare_post_insert(
+            post_row,
+            lookups.post_label_map["note-1"],
+            batch_id=7,
+            lookups=lookups,
+        )
+        prepared_comment = legacy_import._prepare_comment_insert(
+            comment_row,
+            lookups.comment_label_map["comment-1"],
+            batch_id=7,
+        )
+
+    assert len(prepared_post.post_values) == 26
+    assert prepared_post.post_values[0] == "note-1"
+    assert prepared_post.post_values[1] == legacy_import.PLATFORM_CODE
+    assert prepared_post.post_values[15] == 1
+    assert prepared_post.post_values[24] == 7
+    assert prepared_post.code_values is not None
+    assert len(prepared_post.code_values) == 11
+    assert prepared_post.code_values[0] == "note-1"
+    assert prepared_post.code_values[3] == "workflow.research_design"
+
+    assert len(prepared_comment.comment_values) == 11
+    assert prepared_comment.comment_values[0] == "comment-1"
+    assert prepared_comment.comment_values[1] == "note-1"
+    assert prepared_comment.comment_values[10] == 7
+    assert prepared_comment.code_values is not None
+    assert len(prepared_comment.code_values) == 11
+    assert prepared_comment.code_values[0] == "comment-1"
+    assert prepared_comment.code_values[6] == "boundary.assistance_vs_substitution"
+
+
 def test_migrate_legacy_sqlite_requires_existing_legacy_db(tmp_path: Path) -> None:
     with pytest.raises(FileNotFoundError):
         legacy_import.migrate_legacy_sqlite(

@@ -38,6 +38,155 @@ class PeriodContext:
     halfyear_case_comment: str
 
 
+def _count_rows_by_label(
+    rows,
+    *,
+    label_key: str = "period_label",
+    count_key: str = "row_count",
+) -> dict[str, int]:
+    return {
+        str(row[label_key]): int(row[count_key])
+        for row in rows
+    }
+
+
+def _build_dual_count_dataset(
+    *,
+    order: list[str],
+    display_labels: list[str],
+    first_counts: dict[str, int],
+    second_counts: dict[str, int],
+    first_key: str,
+    second_key: str,
+) -> dict[str, Any] | None:
+    first_values = [first_counts.get(label, 0) for label in order]
+    second_values = [second_counts.get(label, 0) for label in order]
+    if not any(first_values) and not any(second_values):
+        return None
+    return {
+        "labels": order,
+        "display_labels": display_labels,
+        first_key: first_values,
+        second_key: second_values,
+    }
+
+
+def _ordered_present_categories(
+    present_categories: set[str],
+    preferred_order: list[str],
+) -> list[str]:
+    return [
+        category for category in preferred_order if category in present_categories
+    ] + sorted(
+        category
+        for category in present_categories
+        if category not in preferred_order
+    )
+
+
+def _accumulate_json_category_counts(
+    rows,
+    *,
+    json_field: str,
+) -> tuple[dict[str, dict[str, int]], dict[str, dict[str, int]], dict[str, int]]:
+    by_period: dict[str, dict[str, int]] = defaultdict(lambda: defaultdict(int))
+    by_quarter: dict[str, dict[str, int]] = defaultdict(lambda: defaultdict(int))
+    totals: dict[str, int] = defaultdict(int)
+    for row in rows:
+        period_label = str(row["period_label"] or "unknown")
+        quarter_label = infer_quarter(str(row["post_date"] or ""))
+        for category in parse_json_list(row[json_field]):
+            by_period[period_label][category] += 1
+            if quarter_label != "unknown":
+                by_quarter[quarter_label][category] += 1
+            totals[category] += 1
+    return by_period, by_quarter, totals
+
+
+def _top_categories(
+    totals: dict[str, int],
+    *,
+    limit: int = 5,
+) -> list[str]:
+    return [
+        category
+        for category, _ in sorted(
+            totals.items(),
+            key=lambda item: (-item[1], item[0]),
+        )[:limit]
+    ]
+
+
+def _priority_categories(
+    totals: dict[str, int],
+    *,
+    preferred_order: list[str],
+) -> list[str]:
+    categories = [category for category in preferred_order if category in totals]
+    categories.extend(
+        category
+        for category, _ in sorted(
+            totals.items(),
+            key=lambda item: (-item[1], item[0]),
+        )
+        if category not in categories
+    )
+    return categories
+
+
+def _collapse_categories_with_other(
+    categories: list[str],
+    *,
+    totals: dict[str, int],
+    limit: int = 5,
+) -> list[str]:
+    if len(categories) <= limit:
+        return categories
+    kept_categories = categories[:limit]
+    return kept_categories + (
+        ["其他"] if any(category not in kept_categories for category in totals) else []
+    )
+
+
+def _aggregate_category_counts(
+    raw_counts: dict[str, dict[str, int]],
+    *,
+    categories: list[str],
+) -> dict[str, dict[str, int]]:
+    aggregated_counts: dict[str, dict[str, int]] = defaultdict(lambda: defaultdict(int))
+    kept_categories = set(categories) - {"其他"}
+    has_other_bucket = "其他" in categories
+    for period_label, period_counts in raw_counts.items():
+        for category, row_count in period_counts.items():
+            target_category = category
+            if category not in kept_categories and has_other_bucket:
+                target_category = "其他"
+            aggregated_counts[period_label][target_category] += row_count
+    return aggregated_counts
+
+
+def _build_share_dataset(
+    *,
+    raw_counts: dict[str, dict[str, int]],
+    order: list[str],
+    display_labels: list[str],
+    categories: list[str],
+    palette: dict[str, str] | None = None,
+) -> dict[str, Any]:
+    dataset = {
+        "categories": categories,
+        "display_labels": display_labels,
+        "matrix": share_matrix(
+            _aggregate_category_counts(raw_counts, categories=categories),
+            order,
+            categories,
+        ),
+    }
+    if palette is not None:
+        dataset["palette"] = palette
+    return dataset
+
+
 def _resolve_period_context(coverage_end_date: str | None) -> PeriodContext:
     resolved_coverage_end_date = resolve_coverage_end_date(
         coverage_end_date,
@@ -99,20 +248,14 @@ def _build_posts_by_period_dataset(
         "JOIN vw_posts_paper_scope_quality_v4 p ON p.post_id = c.post_id "
         "GROUP BY period_label HAVING period_label IS NOT NULL"
     ).fetchall()
-    post_counts = {str(row["period_label"]): int(row["row_count"]) for row in post_rows}
-    comment_counts = {
-        str(row["period_label"]): int(row["row_count"]) for row in comment_rows
-    }
-    post_values = [post_counts.get(label, 0) for label in context.halfyear_order]
-    comment_values = [comment_counts.get(label, 0) for label in context.halfyear_order]
-    if not any(post_values) and not any(comment_values):
-        return None
-    return {
-        "labels": context.halfyear_order,
-        "display_labels": context.halfyear_display_labels,
-        "post_values": post_values,
-        "comment_values": comment_values,
-    }
+    return _build_dual_count_dataset(
+        order=context.halfyear_order,
+        display_labels=context.halfyear_display_labels,
+        first_counts=_count_rows_by_label(post_rows),
+        second_counts=_count_rows_by_label(comment_rows),
+        first_key="post_values",
+        second_key="comment_values",
+    )
 
 
 def _build_posts_by_quarter_dataset(
@@ -138,26 +281,14 @@ def _build_posts_by_quarter_dataset(
         "JOIN vw_posts_paper_scope_quality_v4 p ON p.post_id = c.post_id "
         "GROUP BY period_label ORDER BY period_label"
     ).fetchall()
-    quarter_post_counts = {
-        str(row["period_label"]): int(row["row_count"]) for row in quarter_post_rows
-    }
-    quarter_comment_counts = {
-        str(row["period_label"]): int(row["row_count"]) for row in quarter_comment_rows
-    }
-    quarter_post_values = [
-        quarter_post_counts.get(label, 0) for label in context.quarter_labels
-    ]
-    quarter_comment_values = [
-        quarter_comment_counts.get(label, 0) for label in context.quarter_labels
-    ]
-    if not any(quarter_post_values) and not any(quarter_comment_values):
-        return None
-    return {
-        "labels": context.quarter_labels,
-        "display_labels": context.quarter_display_labels,
-        "post_values": quarter_post_values,
-        "comment_values": quarter_comment_values,
-    }
+    return _build_dual_count_dataset(
+        order=context.quarter_labels,
+        display_labels=context.quarter_display_labels,
+        first_counts=_count_rows_by_label(quarter_post_rows),
+        second_counts=_count_rows_by_label(quarter_comment_rows),
+        first_key="post_values",
+        second_key="comment_values",
+    )
 
 
 def _build_posts_heatmap_dataset(
@@ -253,23 +384,19 @@ def _build_comments_attitude_dataset(
         attitude_counts[period_label][attitude_label] += int(row["row_count"])
         present_attitudes.add(attitude_label)
 
-    ordered_attitudes = [
-        attitude for attitude in ATTITUDE_ORDER if attitude in present_attitudes
-    ] + sorted(
-        attitude for attitude in present_attitudes if attitude not in ATTITUDE_ORDER
+    ordered_attitudes = _ordered_present_categories(
+        present_attitudes,
+        ATTITUDE_ORDER,
     )
     if not ordered_attitudes:
         return None
 
-    return {
-        "categories": ordered_attitudes,
-        "display_labels": context.halfyear_display_labels,
-        "matrix": share_matrix(
-            attitude_counts,
-            context.halfyear_order,
-            ordered_attitudes,
-        ),
-    }
+    return _build_share_dataset(
+        raw_counts=attitude_counts,
+        order=context.halfyear_order,
+        display_labels=context.halfyear_display_labels,
+        categories=ordered_attitudes,
+    )
 
 
 def _build_tools_datasets(
@@ -282,25 +409,15 @@ def _build_tools_datasets(
         "FROM vw_posts_paper_scope_quality_v4 "
         "WHERE post_date IS NOT NULL AND ai_tools_json IS NOT NULL AND ai_tools_json != '[]'"
     ).fetchall()
-    tools_by_period: dict[str, dict[str, int]] = defaultdict(lambda: defaultdict(int))
-    tools_by_quarter: dict[str, dict[str, int]] = defaultdict(lambda: defaultdict(int))
-    total_tools: dict[str, int] = defaultdict(int)
-    for row in tool_rows:
-        period_label = str(row["period_label"] or "unknown")
-        quarter_label = infer_quarter(str(row["post_date"] or ""))
-        for tool_name in parse_json_list(row["ai_tools_json"]):
-            tools_by_period[period_label][tool_name] += 1
-            if quarter_label != "unknown":
-                tools_by_quarter[quarter_label][tool_name] += 1
-            total_tools[tool_name] += 1
+    tools_by_period, tools_by_quarter, total_tools = _accumulate_json_category_counts(
+        tool_rows,
+        json_field="ai_tools_json",
+    )
 
     if not total_tools:
         return {}
 
-    top_tools = [
-        item[0]
-        for item in sorted(total_tools.items(), key=lambda item: (-item[1], item[0]))[:5]
-    ]
+    top_tools = _top_categories(total_tools)
     tool_categories = list(top_tools) + (
         ["其他"] if any(name not in top_tools for name in total_tools) else []
     )
@@ -309,45 +426,21 @@ def _build_tools_datasets(
         for index, tool_name in enumerate(top_tools)
     } | {"其他": "#A7B0BE"}
 
-    aggregated_halfyear_tools: dict[str, dict[str, int]] = defaultdict(
-        lambda: defaultdict(int)
-    )
-    for period_label in context.halfyear_order:
-        for tool_name, row_count in tools_by_period.get(period_label, {}).items():
-            aggregated_halfyear_tools[period_label][
-                tool_name if tool_name in top_tools else "其他"
-            ] += row_count
-
-    aggregated_quarter_tools: dict[str, dict[str, int]] = defaultdict(
-        lambda: defaultdict(int)
-    )
-    for period_label in context.quarter_labels:
-        for tool_name, row_count in tools_by_quarter.get(period_label, {}).items():
-            aggregated_quarter_tools[period_label][
-                tool_name if tool_name in top_tools else "其他"
-            ] += row_count
-
     return {
-        "tools_by_period": {
-            "categories": tool_categories,
-            "display_labels": context.halfyear_display_labels,
-            "matrix": share_matrix(
-                aggregated_halfyear_tools,
-                context.halfyear_order,
-                tool_categories,
-            ),
-            "palette": palette,
-        },
-        "tools_by_quarter": {
-            "categories": tool_categories,
-            "display_labels": context.quarter_display_labels,
-            "matrix": share_matrix(
-                aggregated_quarter_tools,
-                context.quarter_labels,
-                tool_categories,
-            ),
-            "palette": palette,
-        },
+        "tools_by_period": _build_share_dataset(
+            raw_counts=tools_by_period,
+            order=context.halfyear_order,
+            display_labels=context.halfyear_display_labels,
+            categories=tool_categories,
+            palette=palette,
+        ),
+        "tools_by_quarter": _build_share_dataset(
+            raw_counts=tools_by_quarter,
+            order=context.quarter_labels,
+            display_labels=context.quarter_display_labels,
+            categories=tool_categories,
+            palette=palette,
+        ),
     }
 
 
@@ -361,71 +454,54 @@ def _build_risk_theme_datasets(
         "FROM vw_posts_paper_scope_quality_v4 "
         "WHERE post_date IS NOT NULL AND risk_themes_json IS NOT NULL AND risk_themes_json != '[]'"
     ).fetchall()
-    risks_by_period: dict[str, dict[str, int]] = defaultdict(lambda: defaultdict(int))
-    risks_by_quarter: dict[str, dict[str, int]] = defaultdict(lambda: defaultdict(int))
-    total_risks: dict[str, int] = defaultdict(int)
-    for row in risk_rows:
-        period_label = str(row["period_label"] or "unknown")
-        quarter_label = infer_quarter(str(row["post_date"] or ""))
-        for risk_name in parse_json_list(row["risk_themes_json"]):
-            risks_by_period[period_label][risk_name] += 1
-            if quarter_label != "unknown":
-                risks_by_quarter[quarter_label][risk_name] += 1
-            total_risks[risk_name] += 1
+    risks_by_period, risks_by_quarter, total_risks = _accumulate_json_category_counts(
+        risk_rows,
+        json_field="risk_themes_json",
+    )
 
     if not total_risks:
         return {}
 
-    ordered_risks = [risk for risk in RISK_PRIORITY if risk in total_risks]
-    ordered_risks.extend(
-        risk
-        for risk, _ in sorted(total_risks.items(), key=lambda item: (-item[1], item[0]))
-        if risk not in ordered_risks
+    ordered_risks = _priority_categories(
+        total_risks,
+        preferred_order=RISK_PRIORITY,
     )
-    if len(ordered_risks) > 5:
-        kept_risks = ordered_risks[:5]
-        ordered_risks = kept_risks + (
-            ["其他"] if any(risk not in kept_risks for risk in ordered_risks) else []
-        )
-
-    aggregated_halfyear_risks: dict[str, dict[str, int]] = defaultdict(
-        lambda: defaultdict(int)
+    ordered_risks = _collapse_categories_with_other(
+        ordered_risks,
+        totals=total_risks,
     )
-    for period_label in context.halfyear_order:
-        for risk_name, row_count in risks_by_period.get(period_label, {}).items():
-            aggregated_halfyear_risks[period_label][
-                risk_name if risk_name in ordered_risks else "其他"
-            ] += row_count
-
-    aggregated_quarter_risks: dict[str, dict[str, int]] = defaultdict(
-        lambda: defaultdict(int)
-    )
-    for period_label in context.quarter_labels:
-        for risk_name, row_count in risks_by_quarter.get(period_label, {}).items():
-            aggregated_quarter_risks[period_label][
-                risk_name if risk_name in ordered_risks else "其他"
-            ] += row_count
 
     return {
-        "risk_themes_by_period": {
-            "categories": ordered_risks,
-            "display_labels": context.halfyear_display_labels,
-            "matrix": share_matrix(
-                aggregated_halfyear_risks,
-                context.halfyear_order,
-                ordered_risks,
-            ),
-        },
-        "risk_themes_by_quarter": {
-            "categories": ordered_risks,
-            "display_labels": context.quarter_display_labels,
-            "matrix": share_matrix(
-                aggregated_quarter_risks,
-                context.quarter_labels,
-                ordered_risks,
-            ),
-        },
+        "risk_themes_by_period": _build_share_dataset(
+            raw_counts=risks_by_period,
+            order=context.halfyear_order,
+            display_labels=context.halfyear_display_labels,
+            categories=ordered_risks,
+        ),
+        "risk_themes_by_quarter": _build_share_dataset(
+            raw_counts=risks_by_quarter,
+            order=context.quarter_labels,
+            display_labels=context.quarter_display_labels,
+            categories=ordered_risks,
+        ),
     }
+
+
+def _build_post_count_datasets(
+    connection,
+    *,
+    context: PeriodContext,
+) -> dict[str, dict[str, Any]]:
+    datasets: dict[str, dict[str, Any]] = {}
+    dataset = _build_posts_by_period_dataset(connection, context=context)
+    if dataset:
+        datasets["posts_by_period"] = dataset
+
+    dataset = _build_posts_by_quarter_dataset(connection, context=context)
+    if dataset:
+        datasets["posts_by_quarter"] = dataset
+
+    return datasets
 
 
 def load_submission_figure_data(
@@ -440,13 +516,7 @@ def load_submission_figure_data(
     if dataset:
         datasets["posts_trend"] = dataset
 
-    dataset = _build_posts_by_period_dataset(connection, context=context)
-    if dataset:
-        datasets["posts_by_period"] = dataset
-
-    dataset = _build_posts_by_quarter_dataset(connection, context=context)
-    if dataset:
-        datasets["posts_by_quarter"] = dataset
+    datasets.update(_build_post_count_datasets(connection, context=context))
 
     dataset = _build_posts_heatmap_dataset(connection, context=context)
     if dataset:

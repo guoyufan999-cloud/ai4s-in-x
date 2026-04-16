@@ -69,6 +69,48 @@ class LegacyLookups:
     comment_label_map: dict[str, sqlite3.Row]
 
 
+@dataclass(frozen=True)
+class PreparedPostInsert:
+    post_values: tuple[Any, ...]
+    code_values: tuple[Any, ...] | None
+
+
+@dataclass(frozen=True)
+class PreparedCommentInsert:
+    comment_values: tuple[Any, ...]
+    code_values: tuple[Any, ...] | None
+
+
+@dataclass(frozen=True)
+class MigrationCounts:
+    post_count: int
+    comment_count: int
+
+
+POST_INSERT_SQL = """
+    INSERT INTO posts (
+        post_id, platform, legacy_note_id, legacy_crawl_status, post_url, author_id_hashed, author_name_masked,
+        post_date, capture_date, title, content_text, engagement_like, engagement_comment,
+        engagement_collect, keyword_query, is_public, sample_status, actor_type, qs_broad_subject,
+        workflow_stage, primary_legitimacy_stance, risk_themes_json, ai_tools_json, benefit_themes_json, import_batch_id, notes
+    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+"""
+
+COMMENT_INSERT_SQL = """
+    INSERT INTO comments (
+        comment_id, post_id, parent_comment_id, comment_date, comment_text,
+        commenter_id_hashed, stance, legitimacy_basis, benefit_themes_json, is_reply, import_batch_id
+    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+"""
+
+CODE_INSERT_SQL = """
+    INSERT INTO codes (
+        record_id, record_type, parent_id, workflow_stage_code, ai_practice_code,
+        legitimacy_code, boundary_negotiation_code, coder, coding_date, confidence, memo
+    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+"""
+
+
 def _load_query_map(legacy: sqlite3.Connection) -> dict[str, str | None]:
     mapping: dict[str, list[str]] = defaultdict(list)
     for row in legacy.execute("SELECT note_id, query_text FROM note_candidates ORDER BY id"):
@@ -103,20 +145,34 @@ def _load_author_names(legacy: sqlite3.Connection) -> dict[str, str]:
     }
 
 
+def _load_row_map(
+    legacy: sqlite3.Connection,
+    *,
+    sql: str,
+    key_field: str,
+) -> dict[str, sqlite3.Row]:
+    return {
+        str(row[key_field]): row
+        for row in legacy.execute(sql)
+    }
+
+
 def _load_legacy_lookups(legacy: sqlite3.Connection) -> LegacyLookups:
     return LegacyLookups(
         query_map=_load_query_map(legacy),
         like_map=_load_like_map(legacy),
         comment_count_map=_load_comment_count_map(legacy),
         author_name_map=_load_author_names(legacy),
-        post_label_map={
-            str(row["note_id"]): row
-            for row in legacy.execute("SELECT * FROM coding_labels_posts")
-        },
-        comment_label_map={
-            str(row["comment_id"]): row
-            for row in legacy.execute("SELECT * FROM coding_labels_comments")
-        },
+        post_label_map=_load_row_map(
+            legacy,
+            sql="SELECT * FROM coding_labels_posts",
+            key_field="note_id",
+        ),
+        comment_label_map=_load_row_map(
+            legacy,
+            sql="SELECT * FROM coding_labels_comments",
+            key_field="comment_id",
+        ),
     )
 
 
@@ -229,6 +285,14 @@ def _seed_source_queries(
         )
 
 
+def _seed_research_reference_data(
+    legacy: sqlite3.Connection,
+    research: sqlite3.Connection,
+) -> None:
+    _seed_support_tables(research)
+    _seed_source_queries(legacy, research)
+
+
 def _insert_import_batch(research: sqlite3.Connection, source_db_path: Path) -> int:
     cursor = research.execute(
         """
@@ -333,7 +397,40 @@ def _build_post_code_insert_values(
     )
 
 
-def _insert_posts(
+def _prepare_post_insert(
+    row: sqlite3.Row,
+    label: sqlite3.Row | None,
+    *,
+    batch_id: int,
+    lookups: LegacyLookups,
+) -> PreparedPostInsert:
+    note_id = str(row["note_id"])
+    post_values, workflow_stage = _build_post_insert_values(
+        row,
+        label,
+        batch_id=batch_id,
+        lookups=lookups,
+    )
+    code_values = None
+    if label:
+        code_values = _build_post_code_insert_values(
+            note_id=note_id,
+            row=row,
+            label=label,
+            workflow_stage=workflow_stage,
+        )
+    return PreparedPostInsert(post_values=post_values, code_values=code_values)
+
+
+def _insert_post_row(research: sqlite3.Connection, post_values: tuple[Any, ...]) -> None:
+    research.execute(POST_INSERT_SQL, post_values)
+
+
+def _insert_code_row(research: sqlite3.Connection, code_values: tuple[Any, ...]) -> None:
+    research.execute(CODE_INSERT_SQL, code_values)
+
+
+def _migrate_posts(
     legacy: sqlite3.Connection,
     research: sqlite3.Connection,
     *,
@@ -344,38 +441,15 @@ def _insert_posts(
     for row in legacy.execute("SELECT * FROM note_details ORDER BY note_id"):
         note_id = str(row["note_id"])
         label = lookups.post_label_map.get(note_id)
-        post_values, workflow_stage = _build_post_insert_values(
+        prepared = _prepare_post_insert(
             row,
             label,
             batch_id=batch_id,
             lookups=lookups,
         )
-        research.execute(
-            """
-            INSERT INTO posts (
-                post_id, platform, legacy_note_id, legacy_crawl_status, post_url, author_id_hashed, author_name_masked,
-                post_date, capture_date, title, content_text, engagement_like, engagement_comment,
-                engagement_collect, keyword_query, is_public, sample_status, actor_type, qs_broad_subject,
-                workflow_stage, primary_legitimacy_stance, risk_themes_json, ai_tools_json, benefit_themes_json, import_batch_id, notes
-            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-            """,
-            post_values,
-        )
-        if label:
-            research.execute(
-                """
-                INSERT INTO codes (
-                    record_id, record_type, parent_id, workflow_stage_code, ai_practice_code,
-                    legitimacy_code, boundary_negotiation_code, coder, coding_date, confidence, memo
-                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-                """,
-                _build_post_code_insert_values(
-                    note_id=note_id,
-                    row=row,
-                    label=label,
-                    workflow_stage=workflow_stage,
-                ),
-            )
+        _insert_post_row(research, prepared.post_values)
+        if prepared.code_values is not None:
+            _insert_code_row(research, prepared.code_values)
         post_count += 1
     return post_count
 
@@ -424,7 +498,28 @@ def _build_comment_code_insert_values(
     )
 
 
-def _insert_comments(
+def _prepare_comment_insert(
+    row: sqlite3.Row,
+    label: sqlite3.Row | None,
+    *,
+    batch_id: int,
+) -> PreparedCommentInsert:
+    comment_values = _build_comment_insert_values(row, label, batch_id=batch_id)
+    code_values = _build_comment_code_insert_values(row, label) if label else None
+    return PreparedCommentInsert(
+        comment_values=comment_values,
+        code_values=code_values,
+    )
+
+
+def _insert_comment_row(
+    research: sqlite3.Connection,
+    comment_values: tuple[Any, ...],
+) -> None:
+    research.execute(COMMENT_INSERT_SQL, comment_values)
+
+
+def _migrate_comments(
     legacy: sqlite3.Connection,
     research: sqlite3.Connection,
     *,
@@ -434,25 +529,10 @@ def _insert_comments(
     comment_count = 0
     for row in legacy.execute("SELECT * FROM comments ORDER BY comment_id"):
         label = lookups.comment_label_map.get(str(row["comment_id"]))
-        research.execute(
-            """
-            INSERT INTO comments (
-                comment_id, post_id, parent_comment_id, comment_date, comment_text,
-                commenter_id_hashed, stance, legitimacy_basis, benefit_themes_json, is_reply, import_batch_id
-            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-            """,
-            _build_comment_insert_values(row, label, batch_id=batch_id),
-        )
-        if label:
-            research.execute(
-                """
-                INSERT INTO codes (
-                    record_id, record_type, parent_id, workflow_stage_code, ai_practice_code,
-                    legitimacy_code, boundary_negotiation_code, coder, coding_date, confidence, memo
-                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-                """,
-                _build_comment_code_insert_values(row, label),
-            )
+        prepared = _prepare_comment_insert(row, label, batch_id=batch_id)
+        _insert_comment_row(research, prepared.comment_values)
+        if prepared.code_values is not None:
+            _insert_code_row(research, prepared.code_values)
         comment_count += 1
     return comment_count
 
@@ -478,15 +558,14 @@ def _build_migration_summary(
     *,
     legacy_db_path: Path,
     research_db_path: Path,
-    post_count: int,
-    comment_count: int,
+    counts: MigrationCounts,
 ) -> dict[str, object]:
     return {
         "legacy_db_path": str(legacy_db_path),
         "research_db_path": str(research_db_path),
         "batch_name": "legacy_quality_v4_migration",
-        "posts_migrated": post_count,
-        "comments_migrated": comment_count,
+        "posts_migrated": counts.post_count,
+        "comments_migrated": counts.comment_count,
         "status": "ok",
     }
 
@@ -496,6 +575,38 @@ def _write_migration_summary(summary: dict[str, object]) -> Path:
     summary_path = INTERIM_DIR / "legacy_to_research_migration_summary.json"
     summary_path.write_text(json.dumps(summary, ensure_ascii=False, indent=2), encoding="utf-8")
     return summary_path
+
+
+def _run_legacy_migration(
+    legacy: sqlite3.Connection,
+    research: sqlite3.Connection,
+    *,
+    legacy_db_path: Path,
+) -> MigrationCounts:
+    batch_id = _insert_import_batch(research, legacy_db_path)
+    _seed_research_reference_data(legacy, research)
+    lookups = _load_legacy_lookups(legacy)
+    post_count = _migrate_posts(
+        legacy,
+        research,
+        batch_id=batch_id,
+        lookups=lookups,
+    )
+    comment_count = _migrate_comments(
+        legacy,
+        research,
+        batch_id=batch_id,
+        lookups=lookups,
+    )
+    counts = MigrationCounts(post_count=post_count, comment_count=comment_count)
+    _update_import_batch_counts(
+        research,
+        batch_id=batch_id,
+        post_count=counts.post_count,
+        comment_count=counts.comment_count,
+    )
+    research.commit()
+    return counts
 
 
 def migrate_legacy_sqlite(
@@ -519,35 +630,16 @@ def migrate_legacy_sqlite(
     with connect_sqlite_readonly(legacy_db_path) as legacy, connect_sqlite_writable(
         research_db_path
     ) as research:
-        batch_id = _insert_import_batch(research, legacy_db_path)
-        _seed_support_tables(research)
-        _seed_source_queries(legacy, research)
-        lookups = _load_legacy_lookups(legacy)
-        post_count = _insert_posts(
+        counts = _run_legacy_migration(
             legacy,
             research,
-            batch_id=batch_id,
-            lookups=lookups,
+            legacy_db_path=legacy_db_path,
         )
-        comment_count = _insert_comments(
-            legacy,
-            research,
-            batch_id=batch_id,
-            lookups=lookups,
-        )
-        _update_import_batch_counts(
-            research,
-            batch_id=batch_id,
-            post_count=post_count,
-            comment_count=comment_count,
-        )
-        research.commit()
 
     summary = _build_migration_summary(
         legacy_db_path=legacy_db_path,
         research_db_path=research_db_path,
-        post_count=post_count,
-        comment_count=comment_count,
+        counts=counts,
     )
     return _write_migration_summary(summary)
 

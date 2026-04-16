@@ -142,4 +142,54 @@ def test_load_submission_figure_data_exposes_dataset_contracts_and_other_buckets
     assert "积极采用" in datasets["comments_attitude"]["categories"]
     assert datasets["posts_trend"]["month_order"][0] == "2024-01"
     assert datasets["posts_heatmap"]["row_labels"]
+    assert set(datasets["tools_by_period"].keys()) == {
+        "categories",
+        "display_labels",
+        "matrix",
+        "palette",
+    }
+    assert set(datasets["risk_themes_by_period"].keys()) == {
+        "categories",
+        "display_labels",
+        "matrix",
+    }
+    assert len(datasets["comments_attitude"]["matrix"]) == len(
+        datasets["comments_attitude"]["categories"]
+    )
+    assert len(datasets["comments_attitude"]["matrix"][0]) == len(
+        datasets["comments_attitude"]["display_labels"]
+    )
+    assert len(datasets["posts_heatmap"]["matrix"]) == len(
+        datasets["posts_heatmap"]["row_labels"]
+    )
+    assert len(datasets["posts_heatmap"]["matrix"][0]) == len(
+        datasets["posts_heatmap"]["display_labels"]
+    )
 
+    tools_halfyear_labels = datasets["tools_by_period"]["display_labels"]
+    tools_halfyear_categories = datasets["tools_by_period"]["categories"]
+    tools_halfyear_matrix = datasets["tools_by_period"]["matrix"]
+    halfyear_index = tools_halfyear_labels.index("2026H1(部分)")
+    copilot_index = tools_halfyear_categories.index("Copilot")
+    tools_other_index = tools_halfyear_categories.index("其他")
+    assert tools_halfyear_matrix[copilot_index][halfyear_index] == 50.0
+    assert tools_halfyear_matrix[tools_other_index][halfyear_index] == 50.0
+
+    tools_quarter_labels = datasets["tools_by_quarter"]["display_labels"]
+    tools_quarter_other = datasets["tools_by_quarter"]["categories"].index("其他")
+    quarter_index = tools_quarter_labels.index("2026Q2(部分)")
+    assert datasets["tools_by_quarter"]["matrix"][tools_quarter_other][quarter_index] == 100.0
+
+    risk_halfyear_labels = datasets["risk_themes_by_period"]["display_labels"]
+    risk_halfyear_categories = datasets["risk_themes_by_period"]["categories"]
+    risk_halfyear_matrix = datasets["risk_themes_by_period"]["matrix"]
+    risk_halfyear_index = risk_halfyear_labels.index("2026H1(部分)")
+    bias_index = risk_halfyear_categories.index("bias")
+    risk_other_index = risk_halfyear_categories.index("其他")
+    assert risk_halfyear_matrix[bias_index][risk_halfyear_index] == 50.0
+    assert risk_halfyear_matrix[risk_other_index][risk_halfyear_index] == 50.0
+
+    risk_quarter_labels = datasets["risk_themes_by_quarter"]["display_labels"]
+    risk_quarter_other = datasets["risk_themes_by_quarter"]["categories"].index("其他")
+    risk_quarter_index = risk_quarter_labels.index("2026Q2(部分)")
+    assert datasets["risk_themes_by_quarter"]["matrix"][risk_quarter_other][risk_quarter_index] == 100.0
