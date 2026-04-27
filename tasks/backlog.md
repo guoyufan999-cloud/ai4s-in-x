@@ -2,9 +2,9 @@
 
 ## 当前下一步入口
 
-1. [优先] 进一步压缩投稿 clean 稿措辞，生成更贴近期刊排版的终稿版本
-2. [预备] 进入下一轮可维护性重构，优先拆重 `analysis/excerpt_extraction.py`
-3. [预备] 启动 `ai_practice` / `legitimacy` 手工细分编码后，再单独扩展对应 analysis views 与正式合同
+1. [优先] 启动 `quality_v5` 正式基线重建：先导出 `quality_v4` 一次性审计快照，再生成未编码 staging DB
+2. [优先] 对全部 `5535` 条候选帖执行 `rescreen_posts` 重筛，并通过 `review queue -> reviewed import` 逐步重建 `sample_status / actor_type`
+3. [优先] 在帖子、评论和细分编码三条 reviewed 队列上推进重标，完成后再重建 `quality_v5` 正式 artifacts
 
 ## P0：当前必须完成
 
@@ -27,10 +27,10 @@
 1. [已完成] 在统一交付链上完成论文精修第一轮，形成 clean 版投稿阅读稿
 2. [已完成] 精修摘要、引言、讨论与结论的第二轮措辞与论证密度
 3. [已完成] 形成补充材料说明与方法透明度附录（内部版 + clean 版）
-4. [下一步优先] 进一步压缩正文措辞并生成更贴近期刊排版的 clean 版终稿
+4. [挂起] `quality_v5` 正式基线稳定前，不继续推进 clean 稿终稿压缩
 
 ## P3：后续扩展
 
-1. 启动 `ai_practice` / `legitimacy` 手工细分编码后，再单独扩展对应 analysis views 与正式合同
-2. 进入下一轮可维护性重构，优先拆重 `analysis/excerpt_extraction.py`，随后 `analysis/reporting.py` 与 `analysis/figures/manifest.py`
-3. 视研究问题与投稿反馈，再评估 grounded theory、第三轮结构修补或补充样本
+1. [已完成] 完成 `analysis/figures/queries.py` 与 `analysis/figures/render.py` 的可维护性收口，工程底座达到当前阶段稳定点
+2. [进行中] 通过 `review queue -> reviewed import -> rebuild artifacts` 链重建 `ai_practice / legitimacy / boundary` 正式编码
+3. `quality_v5` 重建完成后，再评估是否转向 clean 稿终稿或研究扩展第二轮

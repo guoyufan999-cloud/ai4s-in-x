@@ -11,6 +11,7 @@
 - `docs/paper_working/` 中版本化保留的工作稿与 LLM 中间稿，但它们不属于正式交付链
 - `archive/legacy_collection_runtime/data/db/README.md` 与 `data/processed/README.md` 这类本地数据路径说明文件
 - `archive/legacy_collection_runtime/README.md`、`archive/legacy_collection_runtime/PROVENANCE.md`、`archive/legacy_exports/README.md`、`archive/legacy_specs/README.md`、`archive/legacy_tests/README.md` 这类静态档案说明
+- `archive/` 与 `outputs/tables/` 下已 canonicalize 的 JSONL 历史导出及其 provenance manifest
 
 ## 不应版本化的内容
 
@@ -25,10 +26,12 @@
 ## 当前执行规则
 
 - 研究主库与 legacy DB 继续使用固定本地路径，但 SQLite 文件本身默认由 `.gitignore` 拦截；仓库只版本化对应 README 与正式输出。
+- `REBASELINE_STAGING_DB_PATH` 当前指向 `data/processed/ai4s_legitimacy.sqlite3`；`data/processed/ai4s_legitimacy_quality_v5_staging.sqlite3` 若以 0B 文件出现，只是过期本地残留，不属于正式版本化资产。
 - `data/raw/media/*.json` 可保留为轻量元数据快照；`data/raw/media_files/` 视为本地媒体缓存，默认由 `.gitignore` 拦截，可按磁盘压力自行清理或重建。
 - `outputs/reports/paper_materials/` 只保留正式投稿材料与稳定分析快照；工作稿和 LLM 中间稿统一放在 `docs/paper_working/`，不作为正式交付链的一部分。
 - `archive/legacy_collection_runtime/` 只保留 DB 历史事实源与最小 provenance 说明，不再保存 legacy 代码快照、脚本、配置或环境锁文件，也不承诺 archive 可直接运行。
 - `archive/legacy_specs/` 与 `archive/legacy_tests/` 只保留索引式说明或静态参考，不再保留会被误读为当前可执行规范的旧操作手册和测试集。
 - `archive/legacy_exports/` 只保留索引式静态说明，不再保留大批 CSV / Parquet / rerun 过程目录。
-- `outputs/figures/` 顶层视为本地工作导出区，默认不做版本化；正式图包以 `outputs/figures/paper_figures_submission/quality_v4/` 为唯一稳定交付位置。
+- `archive/` 中机器可读历史导出允许被原地改写为 canonical JSONL，但必须同时写 provenance manifest，明确原路径、校验和与是否 lossless。
+- `outputs/figures/` 顶层视为本地工作导出区，默认不做版本化；活跃重建图包以 `outputs/figures/paper_figures_submission/quality_v5/` 为目标路径，`quality_v4/` 仅作为历史审计快照保留。
 - `database/views.sql` 是由 `database/views.sql.template` 渲染得到的版本化产物；研究时间窗或 paper-scope 规则调整后，应同步更新模板与渲染结果。

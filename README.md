@@ -4,20 +4,24 @@
 
 本仓库服务于论文《社交媒体中AI4S科研工作流的实践与合法性讨论》。项目核心任务不是单纯抓取平台内容，而是围绕研究问题建立一套可复现、可审计、可持续迭代的研究工程：从公开讨论材料的整理入库、清洗标准化、编码支持，到合法性分析和论文输出，形成完整链路。
 
-当前仓库以 `quality_v4` 作为唯一正式研究基线。围绕该基线生成的投稿版文稿、图表和方法说明，已经转入活跃主线。此前为自动采集、媒体补强、结构修补恢复服务的运行系统已被压缩为 `archive/` 中的静态历史档案，只保留 legacy SQLite 历史事实源与最小索引说明，不再作为默认推荐路径。
+当前仓库正在执行 `quality_v5` 正式基线重建。`quality_v4` 不再作为活跃编码主线，而是降级为一次性审计快照与历史对照；此前为自动采集、媒体补强、结构修补恢复服务的运行系统也已被压缩为 `archive/` 中的静态历史档案，只保留 legacy SQLite 历史事实源与最小索引说明，不再作为默认推荐路径。
 
 ## 研究主题
 
-本研究关注两个相互关联的问题：
+本研究关注的不是泛化的“AI 与科研”，而是三个相互联动的分析主线：
 
-1. AI 如何嵌入科研工作流的不同环节，并在社交媒体中被呈现为具体实践。
-2. 围绕这些实践，平台讨论如何形成差异化的合法性判断，以及这些判断如何通过边界协商被稳定下来。
+1. 科研工作流环节识别：AI 进入了科研生产、科研治理、科研训练与能力建构的哪些具体环节。
+2. 合法性评价识别：平台用户如何围绕这些具体实践形成正当性、可接受性与规范适配性的判断。
+3. 边界协商机制识别：讨论中如何划定合理辅助/不可接受替代、人机分工、科研规范与科研诚信边界。
 
 ## 当前状态
 
-- 当前正式论文基线：`quality_v4`
-- 当前正式帖子：`3067`
-- 当前正式评论：`69880`
+- 当前活跃重建阶段：`quality_v5`
+- 当前历史审计基线：`quality_v4`
+- `quality_v5` 本轮正式基线：post-only artifact refresh
+- `quality_v5` 正式帖子 / 正式评论：`514 / 0`
+- `comment_review_v2`：本轮明确 deferred；`formal_comments=0` 是设计选择，不是导入遗漏
+- `quality_v4` 审计快照帖子 / 评论：`3067 / 69880`
 - 当前不确定学科占比：`23.77%`
 - 当前不确定流程占比：`14.18%`
 - 现有 legacy 运行库中：
@@ -57,14 +61,14 @@
 
 ## 编码分析流程概览
 
-本研究的编码框架分为四层：
+当前活跃编码框架固定为四组：
 
-1. 科研工作流环节
-2. AI 实践方式
-3. 合法性判断维度
-4. 边界协商机制
+1. `A` 科研工作流环节
+2. `B` 合法性评价
+3. `C` 评价标准
+4. `D` 边界协商
 
-现阶段数据库中已保存 legacy 规则编码和两轮结构修补结果；新主线将这些既有标签转化为可审计的研究型编码表，并在 `codebook/` 中重写为面向研究问题的编码手册。
+编码顺序固定为：先判科研工作流环节，再判合法性评价，最后判边界协商。只要帖子能支持识别具体科研环节、合法性评价或边界协商之一，就进入研究候选；泛化“AI 与科研”讨论、纯产品介绍、普通学习办公和低信息帖子默认剔除。现阶段仓库保留了 `quality_v4` 历史编码结果与输出物用于审计追溯；`quality_v5` 主线则通过 staging DB、review queue 与 reviewed import 重新判定样本边界，并以 canonical JSONL、`reviewed_records.payload_json`、`claim_units` 归并摘要和 `outputs/tables/*.jsonl` 作为正式长期协议。
 
 ## 如何开始使用项目
 
@@ -76,20 +80,35 @@
 4. 查看 `data/data_schema.md`、`database/schema.sql`、`archive/legacy_collection_runtime/data/db/README.md` 与 `data/processed/README.md`
 5. 按上述两个 README 准备本地 legacy DB 与研究主库路径
 6. 首次拉起开发环境或完成包名迁移后，先执行 `./.venv/bin/pip install -e '.[dev]'`
-7. 运行 `ai4s-import-legacy`，将 legacy 运行库迁入新的研究型主库
-8. 使用 `ai4s-build-artifacts` 或 `python -m ai4s_legitimacy.analysis.*` 入口更新正式分析产物
+7. 运行 `ai4s-import-legacy --mode rebaseline_quality_v5_staging --audit-snapshot outputs/reports/freeze_checkpoints/quality_v4_audit_snapshot.json`，重建 `quality_v5` 本地研究主库并保留 `quality_v4` 审计快照；当前 `REBASELINE_STAGING_DB_PATH` 指向 `data/processed/ai4s_legitimacy.sqlite3`
+8. 使用 `ai4s-prepare-review-batches --phase rescreen_posts` 生成全量 review queue、按批次切分的 JSONL、`batch_00` reviewed 模板与判例 memo，再通过 `ai4s-import-reviewed-decisions` 回写人工审核完成的 reviewed 结果
+9. 对正式编码使用 `ai4s-prepare-review-batches --phase post_review_v2`；本轮 `quality_v5` 已接受 post-only 正式基线，`comment_review_v2` 暂不进入正式编码，后续若启动评论层正式结果再单独生成和导入对应队列。review template、reviewed import 与 artifacts 都统一使用 canonical JSONL；帖子/评论层字段只是 `claim_units` 的归并摘要，发生冲突时以 `claim_units` 为准。
+10. 对 `post_review_v2` 单个 batch 做 DeepSeek 预填时，先通过环境变量提供 `DEEPSEEK_API_KEY`，再执行 `ai4s-llm-prefill-post-review --queue data/interim/rebaseline_quality_v5/review_queues/post_review_v2.batch_00.jsonl`；输出会落到 `data/interim/rebaseline_quality_v5/reviewed/post_review_v2.batch_00.ai_draft.jsonl`，只生成 canonical 草稿，不会写库。
+11. 如需用 DeepSeek 做二次复筛，先通过环境变量提供 `DEEPSEEK_API_KEY`，再执行 `ai4s-llm-rescreen-posts --queue data/interim/rebaseline_quality_v5/review_queues/rescreen_posts.jsonl --shard-count 24 --shard-index 0` 跑单个 shard；全部 shard 完成后再执行 `ai4s-llm-rescreen-posts --queue data/interim/rebaseline_quality_v5/review_queues/rescreen_posts.jsonl --shard-count 24 --merge-only` 合并 full draft、delta、priority 包和分析报告。复筛口径固定为“AI + 具体科研环节 + 实践/评价/规范/边界信息之一”。
+12. 如需把版本化历史导出物统一回 canonical row，执行 `ai4s-backfill-canonical-history`
+13. 使用 `ai4s-build-artifacts` 或 `python -m ai4s_legitimacy.analysis.*` 入口重建 `quality_v5` 正式分析产物
 
 `archive/` 当前不再保留 legacy 代码快照、旧测试或可直接运行的环境镜像；如需追溯历史运行来源，请查看 `archive/legacy_collection_runtime/README.md`、`archive/legacy_collection_runtime/PROVENANCE.md` 与 `archive/legacy_exports/README.md`。
 
-当前活跃的正式核验 JSON 默认落在 `outputs/reports/freeze_checkpoints/`，包括 `research_db_summary.json` 与 `quality_v4_consistency_report.json`；它们属于版本化正式产物，不再放在 `data/processed/` 或 `data/interim/` 下长期维护。
+当前活跃的正式核验 JSON 默认落在 `outputs/reports/freeze_checkpoints/`，包括 `research_db_summary.json` 与 `quality_v5_consistency_report.json`；`quality_v4` 同目录文件仅作审计快照保留，不再作为活跃重建结果。
 
-当前正式投稿稿件、分析快照和图表 manifest 保留在 `outputs/reports/paper_materials/` 与 `outputs/figures/paper_figures_submission/quality_v4/`；工作稿和 LLM 中间稿统一放在 `docs/paper_working/`，不属于正式交付链。
+当前 `quality_v5` freeze checkpoint 明确采用 post-only formal scope：正式帖子为 `514` 条、正式评论为 `0` 条。评论层 `comment_review_v2` 的正式编码被延后，后续如需评论层正式结果，应重新准备评论队列、导入 reviewed 结果并重建 artifacts。
+
+当前活跃重建输出将逐步转入 `outputs/reports/paper_materials/` 与 `outputs/figures/paper_figures_submission/quality_v5/`；`quality_v4` 同路径内容保留为历史审计快照。工作稿和 LLM 中间稿统一放在 `docs/paper_working/`，不属于正式交付链。
 
 推荐入口：
 
 - `ai4s-import-legacy`
+- `ai4s-export-baseline-audit`
+- `ai4s-export-review-queue`
+- `ai4s-prepare-review-batches`
+- `ai4s-import-reviewed-decisions`
+- `ai4s-llm-prefill-post-review`
+- `ai4s-llm-rescreen-posts`
+- `ai4s-backfill-canonical-history`
 - `ai4s-build-artifacts`
 - `python -m ai4s_legitimacy.analysis.reporting`
+- `python -m ai4s_legitimacy.analysis.quality_v5_consistency`
 - `python -m ai4s_legitimacy.analysis.quality_v4_consistency`
 - `python -m ai4s_legitimacy.analysis.excerpt_extraction --batch`
 
@@ -113,7 +132,7 @@
 - 把 legacy 运行工程重构为研究工程仓库
 - 完成研究型主库迁移
 - 把编码框架、分析视图和输出路径全部研究问题化
-- 在 `quality_v4` 基线上继续精修论文正文与分析结果
+- 以 `quality_v5` staging 重建样本边界、主标签与细分编码，再重建正式结果与论文表述
 
 下一阶段的优先任务见 `tasks/backlog.md` 与 `tasks/roadmap.md`。
 

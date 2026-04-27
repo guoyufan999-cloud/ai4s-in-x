@@ -2,9 +2,9 @@
 
 ## 当前下一步入口
 
-- 压缩投稿 clean 稿措辞，生成更贴近期刊排版的终稿版本
-- 进入下一轮可维护性重构，优先拆重 `analysis/excerpt_extraction.py`
-- 启动 `ai_practice` / `legitimacy` 手工细分编码后，再单独扩展对应 analysis views 与正式合同
+- `quality_v5` 正式基线重建已经启动：先保留 `quality_v4` 审计快照，再通过 staging DB 重做样本边界与核心标签
+- 第一优先级是跑通 `review queue -> reviewed import -> rebuild artifacts`，而不是继续压 clean 稿
+- `quality_v5` reviewed 结果稳定后，再决定是回到终稿压缩，还是继续研究扩展第二轮
 
 ## 阶段 1：仓库重构与主库迁移
 
@@ -35,6 +35,7 @@
 
 ## 阶段 4：后续研究扩展
 
-- 进入下一轮可维护性重构，优先拆重 `analysis/excerpt_extraction.py`，随后 `analysis/reporting.py` 与 `analysis/figures/manifest.py`
-- 启动 `ai_practice` / `legitimacy` 手工细分编码后，再单独扩展对应 analysis views 与正式合同
-- 视研究问题与投稿反馈，再评估 grounded theory、第三轮结构修补或补充样本
+- [已完成] 完成 `analysis/figures/queries.py` 与 `analysis/figures/render.py` 的可维护性收口，工程底座达到当前阶段稳定点
+- [进行中] 重建 `quality_v5` staging：导出 `quality_v4` 审计快照、清空旧标签/旧 codes 迁移、导出待审队列
+- [进行中] 通过 reviewed 导入逐步重建 `sample_status / actor_type / subject / workflow / stance / themes / codes`
+- `quality_v5` 正式 artifacts 重建完成后，再评估终稿压缩、grounded theory 或补充样本

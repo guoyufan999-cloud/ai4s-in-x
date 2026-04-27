@@ -4,7 +4,7 @@
 
 - 这里的文件不是正式交付链，不应被 `paper_materials_manifest.json` 或 freeze checkpoint 当作正式合同字段引用
 - 正式投稿材料与稳定分析快照仍以 `outputs/reports/paper_materials/` 为准
-- 正式图表与图表说明仍以 `outputs/figures/paper_figures_submission/quality_v4/` 为准
+- 活跃重建图表与图表说明将转向 `outputs/figures/paper_figures_submission/quality_v5/`；`quality_v4/` 仍保留作历史审计快照
 
 当前收纳的工作稿包括：
 

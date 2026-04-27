@@ -20,7 +20,7 @@
 
 ### 1. `posts`
 
-用途：保存研究使用的帖子层记录，是分析“科研工作流环节”和“帖子层合法性判断”的核心表。
+用途：保存研究使用的帖子层记录，是识别 `AI4S 科研工作流实践—合法性评价—边界协商` 的核心表。当前活跃正式编码不再依赖单一 legacy 主标签，而是通过 canonical JSONL、`reviewed_records.payload_json` 和 `claim_units` 归并摘要回填和导出。
 
 | 字段 | 类型建议 | 含义 |
 |---|---|---|
@@ -43,14 +43,14 @@
 | `sample_status` | TEXT | 样本状态，保留 `true / false / review_needed` |
 | `actor_type` | TEXT | 作者角色类别 |
 | `qs_broad_subject` | TEXT | 宽学科归类 |
-| `workflow_stage` | TEXT | 当前迁移的工作流主环节 |
-| `primary_legitimacy_stance` | TEXT | 当前帖子层主要态度/合法性判断取向 |
+| `workflow_stage` | TEXT | legacy/过渡期工作流主标签，保留作历史参照 |
+| `primary_legitimacy_stance` | TEXT | legacy/过渡期帖子层主要态度标签，保留作历史参照 |
 | `import_batch_id` | INTEGER | 对应导入批次 |
 | `notes` | TEXT | 研究备注 |
 
 ### 2. `comments`
 
-用途：保存评论层记录，用于分析态度表达、合法性依据和边界协商。
+用途：保存评论层记录，用于分析合法性评价与边界协商；当前活跃口径下，评论不自动继承母帖的具体科研环节。
 
 | 字段 | 类型建议 | 含义 |
 |---|---|---|
@@ -60,14 +60,14 @@
 | `comment_date` | TEXT | 评论日期 |
 | `comment_text` | TEXT | 评论正文 |
 | `commenter_id_hashed` | TEXT | 哈希化评论者标识 |
-| `stance` | TEXT | 评论层态度取向 |
-| `legitimacy_basis` | TEXT | 评论中主要合法性依据或争议方向 |
+| `stance` | TEXT | legacy/过渡期评论态度取向，保留作历史参照 |
+| `legitimacy_basis` | TEXT | legacy/过渡期评论主要合法性依据，保留作历史参照 |
 | `is_reply` | INTEGER | 是否为回复 |
 | `import_batch_id` | INTEGER | 对应导入批次 |
 
 ### 3. `codes`
 
-用途：保存帖子或评论的结构化编码结果，支持多轮人工或半自动编码。
+用途：保存帖子或评论的结构化编码结果，支持多轮人工或半自动编码。当前活跃正式口径以 `reviewed_records.payload_json` 中的 canonical row 与 `claim_units` 为准；`codes` 更偏向历史迁移与辅助镜像。
 
 | 字段 | 类型建议 | 含义 |
 |---|---|---|
@@ -76,8 +76,8 @@
 | `record_type` | TEXT | `post / comment` |
 | `parent_id` | TEXT | 上位记录 ID，例如评论所属帖子 |
 | `workflow_stage_code` | TEXT | 工作流环节编码 |
-| `ai_practice_code` | TEXT | AI 实践方式编码 |
-| `legitimacy_code` | TEXT | 合法性判断编码 |
+| `ai_practice_code` | TEXT | 历史字段/占位字段，当前活跃口径不再把 AI 实践方式作为主轴 |
+| `legitimacy_code` | TEXT | 历史字段或辅助编码字段 |
 | `boundary_negotiation_code` | TEXT | 边界协商编码 |
 | `coder` | TEXT | 编码者或编码来源 |
 | `coding_date` | TEXT | 编码日期 |
@@ -120,6 +120,10 @@
 
 记录合法性判断维度的固定顺序、显示名称与定义。
 
+### `reviewed_records`
+
+当前活跃的 `post_review_v2 / comment_review_v2` 结构化审核结果保存在本表的 `payload_json` 中。它们使用统一的 canonical JSONL shape，帖子/评论层字段只是 `claim_units` 的归并摘要，是后续研究筛选、复核与材料库建设的正式接口。
+
 ## 四、主键与关联关系
 
 - `posts.post_id` 是帖子主键
@@ -151,20 +155,20 @@
 - 评论接口：`vw_comments_research_scope`
 - 用途：支持编码准备、结构核查和研究探索，不等于正式论文主结果
 
-### `paper_scope_quality_v4`
+### `paper_scope_quality_v5`
 
-- 定义：当前正式论文口径，严格对应 `quality_v4`
+- 定义：当前活跃重建口径，严格对应 `quality_v5`
 - 帖子规则：
   - `sample_status in ('true', 'review_needed')`
   - 排除 `tool_vendor_or_promotional`
   - `legacy_crawl_status='crawled'`
   - `post_date` 位于 `2024-01-01` 至 `2026-06-30`
 - 评论规则：
-  - 上级帖子已进入 `paper_scope_quality_v4`
+  - 上级帖子已进入 `paper_scope_quality_v5`
   - `comment_date` 位于 `2024-01-01` 至 `2026-06-30`
-- 帖子接口：`vw_posts_paper_scope_quality_v4`
-- 评论接口：`vw_comments_paper_scope_quality_v4`
-- 用途：当前论文图表、正式结果与投稿写作的唯一主接口
+- 帖子接口：`vw_posts_paper_scope_quality_v5`
+- 评论接口：`vw_comments_paper_scope_quality_v5`
+- 用途：`quality_v5` staging 经 reviewed 导入后，用于重建正式图表、结果与投稿写作主接口；`quality_v4` 仅保留为审计快照
 
 ## 七、清洗与标准化规则
 
@@ -175,12 +179,12 @@
 5. legacy `workflow_primary` 迁移到 `posts.workflow_stage` 和 `codes.workflow_stage_code`
 6. legacy `attitude_polarity` 迁移到 `posts.primary_legitimacy_stance` 或评论 `stance`
 7. legacy `controversy_type` 迁移到 `comments.legitimacy_basis` 或 `codes.boundary_negotiation_code`
-8. legacy `crawl_status` 迁移到 `posts.legacy_crawl_status`，用于复现 `quality_v4` 正式口径
+8. legacy `crawl_status` 迁移到 `posts.legacy_crawl_status`，用于复现 `quality_v5` 活跃重建口径，并保留 `quality_v4` 审计对照
 9. legacy `qs_broad_subject` 迁移到 `posts.qs_broad_subject`
 
 ## 八、当前设计的已知薄弱点
 
 - 新研究主库仍需从 legacy 库迁移生成，当前仓库中的历史运行库仍是更完整的原始来源
-- `AI 实践方式`、`合法性判断维度` 与部分 `边界协商机制` 的细粒度编码尚未全部回填到数据库；当前活跃分析链不暴露对应 placeholder 视图，需待手工细分编码完成后再单独扩展
+- 当前活跃正式分析不再以 `AI 实践方式` 为主轴；正式长期协议改为 canonical JSONL + `claim_units` + 轻派生摘要层
 - `engagement_collect` 等平台指标在 legacy 体系中并不完整，研究分析需谨慎解释
-- 正式论文图表与结果已经统一由研究主库 `paper_scope_quality_v4` 直接复现，但更细粒度的历史过程产物不再作为活跃主线接口保留
+- 正式论文图表与结果将由研究主库 `paper_scope_quality_v5` 重新复现；`quality_v4` 输出只作为历史审计快照保留

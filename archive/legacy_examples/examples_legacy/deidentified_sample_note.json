@@ -1,11 +1,1 @@
-{
-  "note_id": "example123",
-  "canonical_url": "https://www.xiaohongshu.com/explore/example123",
-  "title": "用 AI 做文献综述的经验",
-  "author_name": "匿名研究生",
-  "sample_status": "true",
-  "workflow_primary": "文献检索与综述",
-  "qs_broad_subject": "Social Sciences & Management",
-  "attitude_polarity": "积极但保留"
-}
-
+{"post_id": "example123", "task_batch_id": "", "coder_version": "", "platform": "xiaohongshu", "post_url": "https://www.xiaohongshu.com/explore/example123", "author_id": "", "created_at": "", "language": "zh", "thread_id": "", "parent_post_id": "", "reply_to_post_id": "", "quoted_post_id": "", "context_available": "否", "context_used": "none", "source_text": "用 AI 做文献综述的经验", "context_text": "", "decision": "纳入", "decision_reason": ["R12: Migrated from legacy note export."], "theme_summary": "用 AI 做文献综述的经验", "target_practice_summary": "文献调研与知识整合", "evidence_master": ["用 AI 做文献综述的经验"], "discursive_mode": "experience_share", "practice_status": "unclear", "speaker_position_claimed": "unclear", "workflow_dimension": {"primary_dimension": ["A1"], "secondary_stage": ["A1.2"], "evidence": ["用 AI 做文献综述的经验"]}, "legitimacy_evaluation": {"direction": ["B2"], "basis": [], "evidence": ["用 AI 做文献综述的经验"]}, "boundary_expression": {"present": "否", "boundary_content_codes": [], "boundary_expression_mode_codes": [], "evidence": []}, "interaction_level": {"event_present": "不适用", "interaction_role": "unclear", "target_claim_summary": "", "event_codes": [], "event_basis_codes": [], "event_outcome": "", "evidence": []}, "claim_units": [{"practice_unit": "文献调研与知识整合", "workflow_stage_codes": ["A1.2"], "legitimacy_codes": ["B2"], "basis_codes": [], "boundary_codes": [], "boundary_mode_codes": [], "evidence": ["用 AI 做文献综述的经验"]}], "mechanism_memo": {"eligible_for_mechanism_analysis": "否", "candidate_pattern_notes": [], "comparison_keys": ["A1.2"]}, "api_assistance": {"used": "否", "purpose": [], "api_confidence": "无", "adoption_note": ""}, "notes": {"multi_label": "否", "ambiguity": "否", "confidence": "低", "review_points": [], "dedup_group": "example123"}, "review_status": "reviewed", "record_type": "post", "record_id": "example123", "review_phase": "legacy_backfill", "run_id": "", "reviewer": "", "review_date": "", "model": "", "actor_type": "", "qs_broad_subject": "Social Sciences & Management"}

@@ -114,6 +114,6 @@
 | `codes.legitimacy_code` | **全 NULL** | 10 | 效率正当性 / 专业能力边界 / 原创性 / 学术诚信 / 可解释性 / 可复现性 / 责任归属 / 工具适配性 / 学科规范一致性 / 教育·训练价值 |
 | `codes.boundary_negotiation_code` | **部分填充** | 6 | 仅 `boundary.assistance_vs_substitution`（来自 `controversy_type=risk` 的条件映射，1,363 条评论）。其余 5 个编码需人工补充 |
 
-当前 `paper_scope_quality_v4` 的活跃分析链不再暴露 `ai_practice` / `legitimacy` 对应的 distribution / cross 视图；这些字段目前只作为未来人工细分编码的预留位保留。
+当前 `paper_scope_quality_v5` 的活跃重建链不再把 `ai_practice` 作为正式主轴；正式筛选与编码以 canonical JSONL 中的 `claim_units` 和帖子/评论层归并摘要为准，`quality_v4` 仅保留为历史审计快照。
 
-后续若启动 `ai_practice` / `legitimacy` 的手工细分编码，应在单独一轮中补充对应视图、分析逻辑与测试合同，而不是继续把 placeholder 视图保留在活跃接口里。
+后续若需要保留 `ai_practice` 历史字段，应明确视其为独立扩展轮次，而不是继续把它与当前活跃的 `A/B/C/D` 研究口径混用。
