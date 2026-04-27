@@ -1,0 +1,38 @@
+{
+  "task_batch_id": "external_xhs_opencli_2025plus_pilot100_v1",
+  "coder_version": "codex_ai4s_schema_v1",
+  "generated_at": "2026-04-21T13:03:32.655214+00:00",
+  "opencli_doctor": {
+    "daemon_running": true,
+    "extension_connected": true,
+    "connectivity_ok": true,
+    "raw_output": "opencli v1.4.1 doctor\n\n[OK] Daemon: running on port 19825\n[OK] Extension: connected\n[OK] Connectivity: connected in 0.0s\n\nSessions:\n  • site:xiaohongshu → window 1817868718, tabs=1, idle=75s\n  • default → window 1817868720, tabs=1, idle=120s\n\nEverything looks good!\n"
+  },
+  "provider_used": "opencli_xiaohongshu",
+  "fallback_used": false,
+  "query_template_metadata": {
+    "name": "ai4s_xiaohongshu_query_dictionary",
+    "version": "2026-03-30",
+    "notes": "Public template only. Extend locally after each harvest round."
+  },
+  "query_count": 1,
+  "max_coded_target": 2,
+  "min_included_target": 1,
+  "max_verified_limit": 4,
+  "row_count": 0,
+  "included_count": 0,
+  "review_needed_count": 0,
+  "excluded_count": 0,
+  "query_stats": [
+    {
+      "query": "AI科研 文献综述",
+      "query_name": "practice_ai_lit_review",
+      "category": "practice",
+      "search_provider": "opencli_xiaohongshu",
+      "search_hits": 0,
+      "verified_kept": 0
+    }
+  ],
+  "limitations": [],
+  "output_path": "outputs/tables/external_xhs_ai4s_smoketest_after_login.jsonl"
+}

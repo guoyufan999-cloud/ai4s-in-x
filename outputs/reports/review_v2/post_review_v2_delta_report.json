@@ -1,0 +1,18 @@
+{
+  "generated_at": "2026-04-27",
+  "decision_counts": {
+    "纳入": 635,
+    "剔除": 4241,
+    "待复核": 659
+  },
+  "claim_unit_distribution": {
+    "0": 4900,
+    "1": 633,
+    "2": 2
+  },
+  "key_changes": {
+    "old_true_to_new_false": [],
+    "old_false_to_new_true": [],
+    "old_review_needed_to_new_true": []
+  }
+}

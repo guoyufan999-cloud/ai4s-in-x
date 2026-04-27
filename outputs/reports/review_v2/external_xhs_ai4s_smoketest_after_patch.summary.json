@@ -1,0 +1,40 @@
+{
+  "task_batch_id": "external_xhs_opencli_2025plus_pilot100_v1",
+  "coder_version": "codex_ai4s_schema_v1",
+  "generated_at": "2026-04-21T17:30:04.037480+00:00",
+  "opencli_doctor": {
+    "daemon_running": true,
+    "extension_connected": false,
+    "connectivity_ok": false,
+    "raw_output": "opencli v1.4.1 doctor\n\n[OK] Daemon: running on port 19825\n[MISSING] Extension: not connected\n[FAIL] Connectivity: failed (Daemon is running but the Browser Extension is not connected.\nPlease install and enable the opencli Browser Bridge extension in Chrome.)\n\nIssues:\n  • Daemon is running but the Chrome extension is not connected.\nPlease install the opencli Browser Bridge extension:\n  1. Download from GitHub Releases\n  2. Open chrome://extensions/ → Enable Developer Mode\n  3. Click \"Load unpacked\" → select the extension folder\n  • Browser connectivity test failed: Daemon is running but the Browser Extension is not connected.\nPlease install and enable the opencli Browser Bridge extension in Chrome.\n"
+  },
+  "provider_used": "bing_fallback",
+  "fallback_used": true,
+  "query_template_metadata": {
+    "name": "ai4s_xiaohongshu_query_dictionary",
+    "version": "2026-03-30",
+    "notes": "Public template only. Extend locally after each harvest round."
+  },
+  "query_count": 1,
+  "max_coded_target": 2,
+  "min_included_target": 1,
+  "max_verified_limit": 4,
+  "row_count": 0,
+  "included_count": 0,
+  "review_needed_count": 0,
+  "excluded_count": 0,
+  "query_stats": [
+    {
+      "query": "AI科研 文献综述",
+      "query_name": "practice_ai_lit_review",
+      "category": "practice",
+      "search_provider": "bing_fallback",
+      "search_hits": 0,
+      "verified_kept": 0
+    }
+  ],
+  "limitations": [
+    "OpenCLI Browser Bridge was not connected; the run fell back to Bing discovery plus direct public-note fetch."
+  ],
+  "output_path": "outputs/tables/external_xhs_ai4s_smoketest_after_patch.jsonl"
+}

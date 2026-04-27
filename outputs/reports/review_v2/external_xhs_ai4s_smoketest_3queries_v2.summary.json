@@ -1,0 +1,54 @@
+{
+  "task_batch_id": "external_xhs_opencli_2025plus_pilot100_v1",
+  "coder_version": "codex_ai4s_schema_v1",
+  "generated_at": "2026-04-21T17:41:03.210817+00:00",
+  "opencli_doctor": {
+    "daemon_running": true,
+    "extension_connected": true,
+    "connectivity_ok": true,
+    "raw_output": "opencli v1.4.1 doctor\n\n[OK] Daemon: running on port 19825\n[OK] Extension: connected\n[OK] Connectivity: connected in 0.3s\n\nSessions:\n  • default → window 1817868876, tabs=1, idle=120s\n\nEverything looks good!\n"
+  },
+  "provider_used": "opencli_xiaohongshu",
+  "fallback_used": false,
+  "query_template_metadata": {
+    "name": "ai4s_xiaohongshu_query_dictionary",
+    "version": "2026-03-30",
+    "notes": "Public template only. Extend locally after each harvest round."
+  },
+  "query_count": 3,
+  "max_coded_target": 10,
+  "min_included_target": 3,
+  "max_verified_limit": 15,
+  "row_count": 1,
+  "included_count": 1,
+  "review_needed_count": 0,
+  "excluded_count": 0,
+  "query_stats": [
+    {
+      "query": "AI科研 文献综述",
+      "query_name": "practice_ai_lit_review",
+      "category": "practice",
+      "search_provider": "opencli_xiaohongshu",
+      "search_hits": 5,
+      "verified_kept": 1
+    },
+    {
+      "query": "AI辅助科研 文献检索",
+      "query_name": "practice_ai_lit_search",
+      "category": "practice",
+      "search_provider": "opencli_xiaohongshu",
+      "search_hits": 5,
+      "verified_kept": 0
+    },
+    {
+      "query": "ChatGPT 研究设计",
+      "query_name": "practice_chatgpt_design",
+      "category": "practice",
+      "search_provider": "opencli_xiaohongshu",
+      "search_hits": 5,
+      "verified_kept": 0
+    }
+  ],
+  "limitations": [],
+  "output_path": "outputs/tables/external_xhs_ai4s_smoketest_3queries_v2.jsonl"
+}

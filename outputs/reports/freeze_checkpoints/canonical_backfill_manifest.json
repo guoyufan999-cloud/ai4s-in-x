@@ -1,0 +1,3053 @@
+{
+  "generated_at_utc": "2026-04-22T18:58:22.153361+00:00",
+  "roots": [
+    "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/review_queues",
+    "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/reviewed",
+    "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions",
+    "/Users/guoyufan/ai4s in xhs/outputs/tables",
+    "archive"
+  ],
+  "converted_files": 273,
+  "skipped_files": 0,
+  "preserved_non_record_files": 29,
+  "preserved_empty_files": 5,
+  "converted_rows": 116122,
+  "entries": [
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/review_queues/post_review_v2.batch_00.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "9833b3899158816a6ef4ec237ddafba2b96bc115bfdc7062fdbca9879421cc1b",
+      "rewritten_sha256": "9833b3899158816a6ef4ec237ddafba2b96bc115bfdc7062fdbca9879421cc1b",
+      "records": 250,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:14.283145+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/review_queues/post_review_v2.batch_01.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "1c790a08350c00a19638ccebb836f6e8c69f8b1a7698fdd648b1bbf36257dcfd",
+      "rewritten_sha256": "1c790a08350c00a19638ccebb836f6e8c69f8b1a7698fdd648b1bbf36257dcfd",
+      "records": 250,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:14.299094+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/review_queues/post_review_v2.batch_02.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "0452117184a91289993ee2155a17808ffe3c789f5ed3fb15bcf452df65b1db6a",
+      "rewritten_sha256": "0452117184a91289993ee2155a17808ffe3c789f5ed3fb15bcf452df65b1db6a",
+      "records": 250,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:14.313022+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/review_queues/post_review_v2.batch_03.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "2e5ed2d67fb2ac398653c414c647af43e40de9e994b96565d621f3515aa26ad6",
+      "rewritten_sha256": "2e5ed2d67fb2ac398653c414c647af43e40de9e994b96565d621f3515aa26ad6",
+      "records": 250,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:14.326903+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/review_queues/post_review_v2.batch_04.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "1d3a45e9287944cedaf385daa588f78da22a70672620613f5829601d8086959f",
+      "rewritten_sha256": "1d3a45e9287944cedaf385daa588f78da22a70672620613f5829601d8086959f",
+      "records": 250,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:14.340223+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/review_queues/post_review_v2.batch_05.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "9b85a33e0fc1ce7f1255b8602247dfd14afcfdf02e12fbf1e3ba2b36ab3acefe",
+      "rewritten_sha256": "9b85a33e0fc1ce7f1255b8602247dfd14afcfdf02e12fbf1e3ba2b36ab3acefe",
+      "records": 250,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:14.355378+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/review_queues/post_review_v2.batch_06.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "a85557937dd7f21e9ea2f21a6d0e089823a06f4e801cbcdd567e265c3e9872f8",
+      "rewritten_sha256": "a85557937dd7f21e9ea2f21a6d0e089823a06f4e801cbcdd567e265c3e9872f8",
+      "records": 250,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:14.369211+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/review_queues/post_review_v2.batch_07.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "9f8ceedd3576c2421208635457e7c82e6b2b6150f89bde8234e9ab847dd32365",
+      "rewritten_sha256": "9f8ceedd3576c2421208635457e7c82e6b2b6150f89bde8234e9ab847dd32365",
+      "records": 250,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:14.382396+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/review_queues/post_review_v2.batch_08.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "4cbdb948be1bb4785c8b5f0af57e0f15a7f76f4f8342f60163a9cbac1cddc52e",
+      "rewritten_sha256": "4cbdb948be1bb4785c8b5f0af57e0f15a7f76f4f8342f60163a9cbac1cddc52e",
+      "records": 250,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:14.396574+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/review_queues/post_review_v2.batch_09.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "094e80fb884ae70e620473c98ea98eb16b25b70016aeb373ac6366dccf1d51cf",
+      "rewritten_sha256": "094e80fb884ae70e620473c98ea98eb16b25b70016aeb373ac6366dccf1d51cf",
+      "records": 250,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:14.409962+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/review_queues/post_review_v2.batch_10.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "4410859636dc8251d0fc70385ad7739bd48ccd13696bfb27c51299be7284ce41",
+      "rewritten_sha256": "4410859636dc8251d0fc70385ad7739bd48ccd13696bfb27c51299be7284ce41",
+      "records": 250,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:14.423147+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/review_queues/post_review_v2.batch_11.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "943f1fbe223529e7abb768fc63e641357706b8517eef44716ab715acfd17e7ad",
+      "rewritten_sha256": "943f1fbe223529e7abb768fc63e641357706b8517eef44716ab715acfd17e7ad",
+      "records": 250,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:14.437613+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/review_queues/post_review_v2.batch_12.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "ae179faecb926e6758f5090156e66bf6b928fc8ceb3e003c7bae55802dbd27a6",
+      "rewritten_sha256": "ae179faecb926e6758f5090156e66bf6b928fc8ceb3e003c7bae55802dbd27a6",
+      "records": 250,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:14.450659+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/review_queues/post_review_v2.batch_13.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "d470fb5bcf9af9c9d29b8610276fec868371d81d919782c4660faf36503f17c1",
+      "rewritten_sha256": "d470fb5bcf9af9c9d29b8610276fec868371d81d919782c4660faf36503f17c1",
+      "records": 250,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:14.463952+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/review_queues/post_review_v2.batch_14.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "a6a32e3ad1c08f7488879f3d6ce0b748cbccc8e16fd892f1f2ecbe11bb13cfb4",
+      "rewritten_sha256": "a6a32e3ad1c08f7488879f3d6ce0b748cbccc8e16fd892f1f2ecbe11bb13cfb4",
+      "records": 250,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:14.476791+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/review_queues/post_review_v2.batch_15.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "12025811e718b614b645a84550a7a05a4ac9a3a750a8e6391c1ed1a6e747d9ba",
+      "rewritten_sha256": "12025811e718b614b645a84550a7a05a4ac9a3a750a8e6391c1ed1a6e747d9ba",
+      "records": 250,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:14.490244+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/review_queues/post_review_v2.batch_16.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "69c84b682c0f50c9bf8b1302965a9fb8b52bbcd93b213e7b25b1df7191cc44ac",
+      "rewritten_sha256": "69c84b682c0f50c9bf8b1302965a9fb8b52bbcd93b213e7b25b1df7191cc44ac",
+      "records": 250,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:14.503524+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/review_queues/post_review_v2.batch_17.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "7677ea4ff8ac14d5cc1ba0eb4028bdffa5fd07ecf41a41ff2fbe9e996c96fc47",
+      "rewritten_sha256": "7677ea4ff8ac14d5cc1ba0eb4028bdffa5fd07ecf41a41ff2fbe9e996c96fc47",
+      "records": 250,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:14.516596+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/review_queues/post_review_v2.batch_18.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "24f455a7ac75ea47e150ac9776cb51888c8aa5fa56216b01126ed44a68048db5",
+      "rewritten_sha256": "24f455a7ac75ea47e150ac9776cb51888c8aa5fa56216b01126ed44a68048db5",
+      "records": 250,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:14.530722+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/review_queues/post_review_v2.batch_19.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "560e91659b3d21bf585a559fee57f30830cdf128260d04db7e807ac719e16e11",
+      "rewritten_sha256": "560e91659b3d21bf585a559fee57f30830cdf128260d04db7e807ac719e16e11",
+      "records": 250,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:14.543601+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/review_queues/post_review_v2.batch_20.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "1d5ce115b635ac6e2552671465df7e362ef1ce74ad038de43835dc154c9c5f4c",
+      "rewritten_sha256": "1d5ce115b635ac6e2552671465df7e362ef1ce74ad038de43835dc154c9c5f4c",
+      "records": 250,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:14.556824+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/review_queues/post_review_v2.batch_21.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "c5283114f738e7781b3f5e09f1d5891bedd0fe4cdb5d566a47c5077896f95da2",
+      "rewritten_sha256": "c5283114f738e7781b3f5e09f1d5891bedd0fe4cdb5d566a47c5077896f95da2",
+      "records": 250,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:14.569932+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/review_queues/post_review_v2.batch_22.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "359051d423f4375d1d6c85a000a9fdf11a572b9fb941c80fe21a637d79f6a8e4",
+      "rewritten_sha256": "359051d423f4375d1d6c85a000a9fdf11a572b9fb941c80fe21a637d79f6a8e4",
+      "records": 35,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:14.572205+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/review_queues/post_review_v2.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "af09c6dc0356e3de708a280ae9e53e516bb57e0693dc13da6e6a880380c7a300",
+      "rewritten_sha256": "af09c6dc0356e3de708a280ae9e53e516bb57e0693dc13da6e6a880380c7a300",
+      "records": 5535,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:14.899035+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/review_queues/post_review_v2.manifest.json",
+      "parse_mode": "json_object",
+      "original_sha256": "4df51ae7823b0de5ed8805cf162b49acd755b8415ceba527c45868c9326adc7a",
+      "rewritten_sha256": "4df51ae7823b0de5ed8805cf162b49acd755b8415ceba527c45868c9326adc7a",
+      "records": 1,
+      "status": "preserved_non_record",
+      "migrated_at_utc": "2026-04-22T18:58:14.902927+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/review_queues/rescreen_posts.batch_00.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "8afd8008b9d0c3a74f9fde08b4232d32e31b430eee51d4189e83ec0aa2207147",
+      "rewritten_sha256": "8afd8008b9d0c3a74f9fde08b4232d32e31b430eee51d4189e83ec0aa2207147",
+      "records": 250,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:14.920334+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/review_queues/rescreen_posts.batch_01.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "ca3c692920286459814ad35f03cc74959b21dc7d9920cdbe6f2bd3263a433429",
+      "rewritten_sha256": "ca3c692920286459814ad35f03cc74959b21dc7d9920cdbe6f2bd3263a433429",
+      "records": 250,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:14.934591+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/review_queues/rescreen_posts.batch_02.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "94722c6aa58ee8c22bb1db1372598d51414220eb45dd506d44b364649ad562e5",
+      "rewritten_sha256": "94722c6aa58ee8c22bb1db1372598d51414220eb45dd506d44b364649ad562e5",
+      "records": 250,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:14.947771+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/review_queues/rescreen_posts.batch_03.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "c38a3cba117081643a8145980ba60a27b65049044866dd68be62a7a985929bce",
+      "rewritten_sha256": "c38a3cba117081643a8145980ba60a27b65049044866dd68be62a7a985929bce",
+      "records": 250,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:14.960886+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/review_queues/rescreen_posts.batch_04.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "34cd57496d4e9354cf3581a5911b649fbc28136a3377c5475ff31a97d2425f29",
+      "rewritten_sha256": "34cd57496d4e9354cf3581a5911b649fbc28136a3377c5475ff31a97d2425f29",
+      "records": 250,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:14.973843+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/review_queues/rescreen_posts.batch_05.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "c44a38b84c697a376fbbc1641b1b17f556b7d2722e8e6a217297a17d35d5d687",
+      "rewritten_sha256": "c44a38b84c697a376fbbc1641b1b17f556b7d2722e8e6a217297a17d35d5d687",
+      "records": 250,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:14.987025+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/review_queues/rescreen_posts.batch_06.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "9ea9b0876a25627b07a9e7efe8dd6ccf2cfce4ba8f61be62f344d78b52c82197",
+      "rewritten_sha256": "9ea9b0876a25627b07a9e7efe8dd6ccf2cfce4ba8f61be62f344d78b52c82197",
+      "records": 250,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:14.999940+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/review_queues/rescreen_posts.batch_07.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "4aa39264152a4639b9f3d06c984b1f8d98709451d38e8f2e036d88ead22e9462",
+      "rewritten_sha256": "4aa39264152a4639b9f3d06c984b1f8d98709451d38e8f2e036d88ead22e9462",
+      "records": 250,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:15.012874+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/review_queues/rescreen_posts.batch_08.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "f7ff055d38ba3a1e9276aed45cfbc4315adf4d0313b59093dace3707c003b4d0",
+      "rewritten_sha256": "f7ff055d38ba3a1e9276aed45cfbc4315adf4d0313b59093dace3707c003b4d0",
+      "records": 250,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:15.027445+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/review_queues/rescreen_posts.batch_09.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "bf008ff6acf1f602a8eb11802211ed9d8e2b71bb644da506e587ce4418b0d4c7",
+      "rewritten_sha256": "bf008ff6acf1f602a8eb11802211ed9d8e2b71bb644da506e587ce4418b0d4c7",
+      "records": 250,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:15.040632+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/review_queues/rescreen_posts.batch_10.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "2ca7b7997520303a3e6efea7ba3420b6015bdf72e78076b4038e3928455237f0",
+      "rewritten_sha256": "2ca7b7997520303a3e6efea7ba3420b6015bdf72e78076b4038e3928455237f0",
+      "records": 250,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:15.053754+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/review_queues/rescreen_posts.batch_11.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "aa0212d04b8326ebf476107d0a12c52e6beb83678df6ed944736784132dd86d3",
+      "rewritten_sha256": "aa0212d04b8326ebf476107d0a12c52e6beb83678df6ed944736784132dd86d3",
+      "records": 250,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:15.066528+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/review_queues/rescreen_posts.batch_12.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "360fc12e1fa1e673d870d14fc6f5c7be1437bc6286c51725e015c85e0105eec6",
+      "rewritten_sha256": "360fc12e1fa1e673d870d14fc6f5c7be1437bc6286c51725e015c85e0105eec6",
+      "records": 250,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:15.079526+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/review_queues/rescreen_posts.batch_13.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "f39e3a571fbe71cc41cac0a35f0b3211b03226dda3256f59f6bf6488af59b0f5",
+      "rewritten_sha256": "f39e3a571fbe71cc41cac0a35f0b3211b03226dda3256f59f6bf6488af59b0f5",
+      "records": 250,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:15.092504+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/review_queues/rescreen_posts.batch_14.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "277e96651912f8e8ba9148c4856afa5eaa9bafc185b03ef65b17dbc13e234995",
+      "rewritten_sha256": "277e96651912f8e8ba9148c4856afa5eaa9bafc185b03ef65b17dbc13e234995",
+      "records": 250,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:15.105489+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/review_queues/rescreen_posts.batch_15.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "8a0335c5db2b4c9f8e229aa093b7497195b96517148e46c864fb7a7925705a3f",
+      "rewritten_sha256": "8a0335c5db2b4c9f8e229aa093b7497195b96517148e46c864fb7a7925705a3f",
+      "records": 250,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:15.119997+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/review_queues/rescreen_posts.batch_16.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "888c57f8f58865855bdf5b80861dd5317ea5cffe249b151dd692952ae0aaea24",
+      "rewritten_sha256": "888c57f8f58865855bdf5b80861dd5317ea5cffe249b151dd692952ae0aaea24",
+      "records": 250,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:15.133280+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/review_queues/rescreen_posts.batch_17.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "e8ecdc276bcc226492ceca5b82b6b5a18ed285d251076c3b0d8b1dce2ddadd01",
+      "rewritten_sha256": "e8ecdc276bcc226492ceca5b82b6b5a18ed285d251076c3b0d8b1dce2ddadd01",
+      "records": 250,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:15.146296+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/review_queues/rescreen_posts.batch_18.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "926b732329cc30cec9a053505e14e460f18380a634bc23ebf97a817a595822ed",
+      "rewritten_sha256": "926b732329cc30cec9a053505e14e460f18380a634bc23ebf97a817a595822ed",
+      "records": 250,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:15.159267+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/review_queues/rescreen_posts.batch_19.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "0ea1577c08d017a0d0f7c3ff21c481949751319bf68871d5e307482694c36487",
+      "rewritten_sha256": "0ea1577c08d017a0d0f7c3ff21c481949751319bf68871d5e307482694c36487",
+      "records": 250,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:15.172444+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/review_queues/rescreen_posts.batch_20.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "dcab5b4258ea2133a0fa66143f9fc3f11d933a2b0b6889209206cd148430fd52",
+      "rewritten_sha256": "dcab5b4258ea2133a0fa66143f9fc3f11d933a2b0b6889209206cd148430fd52",
+      "records": 250,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:15.185514+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/review_queues/rescreen_posts.batch_21.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "7683f042548b67b597a188724f4d84f24d598d7c6eebe7ec0b6b24372a0f3f31",
+      "rewritten_sha256": "7683f042548b67b597a188724f4d84f24d598d7c6eebe7ec0b6b24372a0f3f31",
+      "records": 250,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:15.199013+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/review_queues/rescreen_posts.batch_22.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "9720afd3a782167cebfe271b9ccab4b09b9daf0d7050c032c3f708631c519a0b",
+      "rewritten_sha256": "9720afd3a782167cebfe271b9ccab4b09b9daf0d7050c032c3f708631c519a0b",
+      "records": 35,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:15.201155+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/review_queues/rescreen_posts.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "18592c31bfcb2de56ee62a51e543d0ecd15343e5f3bfe1e7ac5d6402c3601a1f",
+      "rewritten_sha256": "18592c31bfcb2de56ee62a51e543d0ecd15343e5f3bfe1e7ac5d6402c3601a1f",
+      "records": 5535,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:15.525608+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/review_queues/rescreen_posts.manifest.json",
+      "parse_mode": "json_object",
+      "original_sha256": "d55b36e0d2d2f5ffea18f2bbb6ff76e02cfbd3dc50de841e06116bea5eb853ca",
+      "rewritten_sha256": "d55b36e0d2d2f5ffea18f2bbb6ff76e02cfbd3dc50de841e06116bea5eb853ca",
+      "records": 1,
+      "status": "preserved_non_record",
+      "migrated_at_utc": "2026-04-22T18:58:15.529348+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/reviewed/post_review_v2.batch_00.review_template.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "0b828c2ba57ab742b9f22438c6392c036c2ec37d310c97c8938e664d9c95d624",
+      "rewritten_sha256": "0b828c2ba57ab742b9f22438c6392c036c2ec37d310c97c8938e664d9c95d624",
+      "records": 250,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:15.548438+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/reviewed/rescreen_posts.batch_00.ai_draft.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "b74103401cfbdbee94099819ba93f0c9db12b9c23c2642752cda781fadbe71a9",
+      "rewritten_sha256": "b74103401cfbdbee94099819ba93f0c9db12b9c23c2642752cda781fadbe71a9",
+      "records": 250,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:15.561284+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/reviewed/rescreen_posts.batch_00.approved.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "69ae516108dd3042032d90ac697a31bb62f6d1a1996d895482af0e3405fad9e0",
+      "rewritten_sha256": "69ae516108dd3042032d90ac697a31bb62f6d1a1996d895482af0e3405fad9e0",
+      "records": 250,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:15.574233+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/reviewed/rescreen_posts.batch_00.review_template.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "3d1294a55643fd5e33c302211a36a5aeba5955b778c9d9cb826c05a1ed056427",
+      "rewritten_sha256": "3d1294a55643fd5e33c302211a36a5aeba5955b778c9d9cb826c05a1ed056427",
+      "records": 250,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:15.586705+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/reviewed/rescreen_posts.batch_00.spot_check.false_sample.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "9772ba209fd9ed6cb50b7f617a10f8072051cd98620f3d30ed7317379acaccef",
+      "rewritten_sha256": "9772ba209fd9ed6cb50b7f617a10f8072051cd98620f3d30ed7317379acaccef",
+      "records": 20,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:15.587979+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/reviewed/rescreen_posts.batch_00.spot_check.review_needed.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "ec22d6e098f4a1657274bd994470398d700c413846c0c9408551d3c3b8407218",
+      "rewritten_sha256": "ec22d6e098f4a1657274bd994470398d700c413846c0c9408551d3c3b8407218",
+      "records": 6,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:15.588428+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/reviewed/rescreen_posts.batch_00.spot_check.true.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "01ca54359c6bc47d5069123db51488ae3e2cdcc713f8677de9d1d34561084cb9",
+      "rewritten_sha256": "01ca54359c6bc47d5069123db51488ae3e2cdcc713f8677de9d1d34561084cb9",
+      "records": 28,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:15.590187+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/reviewed/rescreen_posts.batch_00.spot_check.vendor.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "6bb319fcbaab1a880364c8942fc688d7b46ff7933e9d5692451d93b99e43a16f",
+      "rewritten_sha256": "6bb319fcbaab1a880364c8942fc688d7b46ff7933e9d5692451d93b99e43a16f",
+      "records": 10,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:15.590847+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/reviewed/rescreen_posts.batch_01.ai_draft.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "b8c61b9c97b6801f7064956f06b1f18abd613aebba79d82a28e7800b2e1443a7",
+      "rewritten_sha256": "b8c61b9c97b6801f7064956f06b1f18abd613aebba79d82a28e7800b2e1443a7",
+      "records": 250,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:15.604562+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/reviewed/rescreen_posts.batch_01.approved.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "f2e7b0ab3ce1812d1c38fe25447542ba4f8caf487d8dd73331a0f85e72a773a7",
+      "rewritten_sha256": "f2e7b0ab3ce1812d1c38fe25447542ba4f8caf487d8dd73331a0f85e72a773a7",
+      "records": 250,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:15.620063+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/reviewed/rescreen_posts.batch_01.spot_check.false_sample.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "38e99340a67318c141ff0c61d2c5631f4aa850ba804173e40cde1435fdc74b00",
+      "rewritten_sha256": "38e99340a67318c141ff0c61d2c5631f4aa850ba804173e40cde1435fdc74b00",
+      "records": 20,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:15.621376+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/reviewed/rescreen_posts.batch_01.spot_check.review_needed.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "d878fb264189f07d79b3b99008ce49e6eb0df2abcf10f1957c366951448ed0eb",
+      "rewritten_sha256": "d878fb264189f07d79b3b99008ce49e6eb0df2abcf10f1957c366951448ed0eb",
+      "records": 20,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:15.622517+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/reviewed/rescreen_posts.batch_01.spot_check.true.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "f8112759c06b851120cb734d448c1803d5630548d49b7d34f2701dbf550fbcf9",
+      "rewritten_sha256": "f8112759c06b851120cb734d448c1803d5630548d49b7d34f2701dbf550fbcf9",
+      "records": 68,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:15.626957+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/reviewed/rescreen_posts.batch_01.spot_check.vendor.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "34f7b04507bcbbbf02953d4fb52f149fa9ac620ed3fe61183dd360b8c14b3518",
+      "rewritten_sha256": "34f7b04507bcbbbf02953d4fb52f149fa9ac620ed3fe61183dd360b8c14b3518",
+      "records": 29,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:15.628882+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/reviewed/rescreen_posts.batch_02.ai_draft.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "9fe85f70af35d6b8117eafed9c51b1b958c061ba93815958755f2f7e057a4f3a",
+      "rewritten_sha256": "9fe85f70af35d6b8117eafed9c51b1b958c061ba93815958755f2f7e057a4f3a",
+      "records": 250,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:15.643380+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/reviewed/rescreen_posts.batch_02.approved.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "8c7dfcb8a72ace4920f5197eb997afaad95429e7ee6b1e6499926c4724d821e9",
+      "rewritten_sha256": "8c7dfcb8a72ace4920f5197eb997afaad95429e7ee6b1e6499926c4724d821e9",
+      "records": 250,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:15.658368+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/reviewed/rescreen_posts.batch_02.spot_check.false_sample.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "e560f6128f686bc13f83002d400e439880a04b0f1d4dd0324062afc71d2e9baa",
+      "rewritten_sha256": "e560f6128f686bc13f83002d400e439880a04b0f1d4dd0324062afc71d2e9baa",
+      "records": 20,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:15.659737+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/reviewed/rescreen_posts.batch_02.spot_check.review_needed.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "8516879d5c049113bba85979c80e1d7e1b4224a1681f67239dd3acf4874d9298",
+      "rewritten_sha256": "8516879d5c049113bba85979c80e1d7e1b4224a1681f67239dd3acf4874d9298",
+      "records": 34,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:15.661749+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/reviewed/rescreen_posts.batch_02.spot_check.true.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "24ce2fc5b88468a7c6fd59ed33d7fa7489ce86bdaefc8b23928f138b6f9843be",
+      "rewritten_sha256": "24ce2fc5b88468a7c6fd59ed33d7fa7489ce86bdaefc8b23928f138b6f9843be",
+      "records": 87,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:15.667516+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/reviewed/rescreen_posts.batch_02.spot_check.vendor.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "9af7fc545aab5faf0544f16bbd6ab15d2583352088841c420b3f665f3d73d380",
+      "rewritten_sha256": "9af7fc545aab5faf0544f16bbd6ab15d2583352088841c420b3f665f3d73d380",
+      "records": 45,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:15.670305+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/reviewed/rescreen_posts.batch_03.ai_draft.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "8ed981e1ea53767768e4331ad53c071263ba810bfbd474290fe2d743f5ac7b7c",
+      "rewritten_sha256": "8ed981e1ea53767768e4331ad53c071263ba810bfbd474290fe2d743f5ac7b7c",
+      "records": 250,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:15.684879+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/reviewed/rescreen_posts.batch_03.approved.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "fa455d88ad8aa8b177d78453cf87a96993c19b71f1dbf57d0114cafb7414932c",
+      "rewritten_sha256": "fa455d88ad8aa8b177d78453cf87a96993c19b71f1dbf57d0114cafb7414932c",
+      "records": 250,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:15.699935+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/reviewed/rescreen_posts.batch_03.spot_check.false_sample.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "5c6672fe4c4cffe8dd98bd6ad5f57eb36b1451ad6aa0481c5056cef96ec1f16e",
+      "rewritten_sha256": "5c6672fe4c4cffe8dd98bd6ad5f57eb36b1451ad6aa0481c5056cef96ec1f16e",
+      "records": 20,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:15.701484+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/reviewed/rescreen_posts.batch_03.spot_check.review_needed.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "c0de1e61fed2a814c408032ab43a8c79d0221f731e61f598583386c6823d3736",
+      "rewritten_sha256": "c0de1e61fed2a814c408032ab43a8c79d0221f731e61f598583386c6823d3736",
+      "records": 10,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:15.702194+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/reviewed/rescreen_posts.batch_03.spot_check.true.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "9a3999f0caf4b8c6cbb5568df872f6cbdb4c23f51d24053b463a9adcfac2d78d",
+      "rewritten_sha256": "9a3999f0caf4b8c6cbb5568df872f6cbdb4c23f51d24053b463a9adcfac2d78d",
+      "records": 98,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:15.708386+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/reviewed/rescreen_posts.batch_03.spot_check.vendor.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "fee50431ca04f0d651e6104feaa282e88be5f3ed349aec5b012c19b7e54da398",
+      "rewritten_sha256": "fee50431ca04f0d651e6104feaa282e88be5f3ed349aec5b012c19b7e54da398",
+      "records": 49,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:15.711767+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/reviewed/rescreen_posts.batch_04.ai_draft.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "e673e9be22ef00b2951e0ec8d741398ee5d6d22212c85b0d0b1a5504e8be9137",
+      "rewritten_sha256": "e673e9be22ef00b2951e0ec8d741398ee5d6d22212c85b0d0b1a5504e8be9137",
+      "records": 250,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:15.727318+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/reviewed/rescreen_posts.batch_04.approved.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "0ac8395a254f7120acd67bc93b3357d3b4109ca4b683f7bc9879277597fd1670",
+      "rewritten_sha256": "0ac8395a254f7120acd67bc93b3357d3b4109ca4b683f7bc9879277597fd1670",
+      "records": 250,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:15.741950+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/reviewed/rescreen_posts.batch_04.spot_check.false_sample.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "5dc36da885df4523083f34eb1a2e2b9d9a5fb86b744aba3ef2d5aa1065091a85",
+      "rewritten_sha256": "5dc36da885df4523083f34eb1a2e2b9d9a5fb86b744aba3ef2d5aa1065091a85",
+      "records": 20,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:15.743296+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/reviewed/rescreen_posts.batch_04.spot_check.review_needed.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "b0464012191fa54f44b14d85dea6cb3421d44557d0632d6d5baf37428d1d7730",
+      "rewritten_sha256": "b0464012191fa54f44b14d85dea6cb3421d44557d0632d6d5baf37428d1d7730",
+      "records": 10,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:15.743973+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/reviewed/rescreen_posts.batch_04.spot_check.true.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "6fb648600be8bbc6218c63cbecd13a449f032a6ac0433ef8f97cc3c57296556e",
+      "rewritten_sha256": "6fb648600be8bbc6218c63cbecd13a449f032a6ac0433ef8f97cc3c57296556e",
+      "records": 74,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:15.748833+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/reviewed/rescreen_posts.batch_04.spot_check.vendor.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "dc8b1f588555e5af2a4400ede1b0bf969ecc004988e6e79171b2511525d7b47c",
+      "rewritten_sha256": "dc8b1f588555e5af2a4400ede1b0bf969ecc004988e6e79171b2511525d7b47c",
+      "records": 46,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:15.751871+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/reviewed/rescreen_posts.batch_05.ai_draft.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "756415e31a31f3c52fbf5b448d8cdafaf5027d8a84bad242602ef212fef2cbb9",
+      "rewritten_sha256": "756415e31a31f3c52fbf5b448d8cdafaf5027d8a84bad242602ef212fef2cbb9",
+      "records": 250,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:15.765894+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/reviewed/rescreen_posts.batch_05.approved.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "a1287a1a5f8a75676305e7a50deab8f5e6b5ab8ac1ea98cc68408022d505b9c8",
+      "rewritten_sha256": "a1287a1a5f8a75676305e7a50deab8f5e6b5ab8ac1ea98cc68408022d505b9c8",
+      "records": 250,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:15.780462+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/reviewed/rescreen_posts.batch_05.spot_check.false_sample.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "997c78da6ee8159d3858d1606f604a0cd273e3388afcb48247fd1079ae206bb9",
+      "rewritten_sha256": "997c78da6ee8159d3858d1606f604a0cd273e3388afcb48247fd1079ae206bb9",
+      "records": 20,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:15.781928+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/reviewed/rescreen_posts.batch_05.spot_check.review_needed.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "18fa6afffee372223d3f6db6a8a2ff7075e4fc4e8857fd654ed1038c365c2bf9",
+      "rewritten_sha256": "18fa6afffee372223d3f6db6a8a2ff7075e4fc4e8857fd654ed1038c365c2bf9",
+      "records": 10,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:15.782572+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/reviewed/rescreen_posts.batch_05.spot_check.true.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "a4d89e834283992a0772e10e8b6336db181e6513774e90f21836c21e252e8ec5",
+      "rewritten_sha256": "a4d89e834283992a0772e10e8b6336db181e6513774e90f21836c21e252e8ec5",
+      "records": 56,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:15.786357+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/reviewed/rescreen_posts.batch_05.spot_check.vendor.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "d91911fde5afc056cd6ca01bbeb4c085997da703524f07576c62d4a674a29f21",
+      "rewritten_sha256": "d91911fde5afc056cd6ca01bbeb4c085997da703524f07576c62d4a674a29f21",
+      "records": 26,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:15.788225+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/reviewed/rescreen_posts.batch_06.ai_draft.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "3d474e242bf219d5a7c04867215dd8b7df0401360d8e1ed1c940aa52e86157d3",
+      "rewritten_sha256": "3d474e242bf219d5a7c04867215dd8b7df0401360d8e1ed1c940aa52e86157d3",
+      "records": 250,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:15.801737+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/reviewed/rescreen_posts.batch_06.approved.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "6d0becdcbbf8f38dcbdc0a376b77e962ac9d7308b6c12c01f4d92d40f7a32c01",
+      "rewritten_sha256": "6d0becdcbbf8f38dcbdc0a376b77e962ac9d7308b6c12c01f4d92d40f7a32c01",
+      "records": 250,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:15.815920+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/reviewed/rescreen_posts.batch_06.spot_check.false_sample.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "d1d48c16f25662edff7ecd3be27d118535446f976e9462e13b64741f62f72b5f",
+      "rewritten_sha256": "d1d48c16f25662edff7ecd3be27d118535446f976e9462e13b64741f62f72b5f",
+      "records": 20,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:15.817340+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/reviewed/rescreen_posts.batch_06.spot_check.review_needed.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "6e80a9609d1ebfbe05416404551a82d000fdbae4063a8d5a0dd8ea121dc4d1ee",
+      "rewritten_sha256": "6e80a9609d1ebfbe05416404551a82d000fdbae4063a8d5a0dd8ea121dc4d1ee",
+      "records": 8,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:15.817908+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/reviewed/rescreen_posts.batch_06.spot_check.true.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "8d3e4a26c40b4e4283f5d223adf25acc2b17523bac9c1a98af7f56a5d9ebc96c",
+      "rewritten_sha256": "8d3e4a26c40b4e4283f5d223adf25acc2b17523bac9c1a98af7f56a5d9ebc96c",
+      "records": 26,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:15.819722+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/reviewed/rescreen_posts.batch_06.spot_check.vendor.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "a1ff5718e3729ccd4c468fb6bd7a0414a958efb6700345f3de79fc2b3f151bc8",
+      "rewritten_sha256": "a1ff5718e3729ccd4c468fb6bd7a0414a958efb6700345f3de79fc2b3f151bc8",
+      "records": 18,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:15.821023+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/reviewed/rescreen_posts.batch_07.ai_draft.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "fd1f00b39ac94743d23d14f7f5083a3407e7c39996a9c91f34a71e37dd2c4f40",
+      "rewritten_sha256": "fd1f00b39ac94743d23d14f7f5083a3407e7c39996a9c91f34a71e37dd2c4f40",
+      "records": 250,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:15.836023+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/reviewed/rescreen_posts.batch_07.approved.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "cf29de5e463958ea3fb738bf3661422e823bc7938c78e37fb1017e1191027653",
+      "rewritten_sha256": "cf29de5e463958ea3fb738bf3661422e823bc7938c78e37fb1017e1191027653",
+      "records": 250,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:15.850025+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/reviewed/rescreen_posts.batch_07.spot_check.false_sample.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "9e180551bd7281856634f48ab68956cb821c8aa4701b34195f13e8cdd340784b",
+      "rewritten_sha256": "9e180551bd7281856634f48ab68956cb821c8aa4701b34195f13e8cdd340784b",
+      "records": 20,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:15.851483+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/reviewed/rescreen_posts.batch_07.spot_check.review_needed.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "4c6b0305c3bc782678dc88f9d7dd0c7357bfef79aefd4802dfff5371129cfbe7",
+      "rewritten_sha256": "4c6b0305c3bc782678dc88f9d7dd0c7357bfef79aefd4802dfff5371129cfbe7",
+      "records": 8,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:15.852016+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/reviewed/rescreen_posts.batch_07.spot_check.true.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "c678f9210eee40ea9a02b3d299818a5f46e0479cd21826aae50dac8a1fa84786",
+      "rewritten_sha256": "c678f9210eee40ea9a02b3d299818a5f46e0479cd21826aae50dac8a1fa84786",
+      "records": 36,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:15.854490+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/reviewed/rescreen_posts.batch_07.spot_check.vendor.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "95fb9f97b822839caebe473493b83db23855515b1a3decdd0ca81708df3eb87f",
+      "rewritten_sha256": "95fb9f97b822839caebe473493b83db23855515b1a3decdd0ca81708df3eb87f",
+      "records": 14,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:15.855444+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/reviewed/rescreen_posts.batch_08.ai_draft.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "56c643dc49190ee6fe7a68e7a7f58f7f303884160259fc796b54e2ad6b1d0212",
+      "rewritten_sha256": "56c643dc49190ee6fe7a68e7a7f58f7f303884160259fc796b54e2ad6b1d0212",
+      "records": 250,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:15.869391+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/reviewed/rescreen_posts.batch_08.approved.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "44f7a675534d25608775ac12b0729820916cbde3e62428ab519f2b09b6201d01",
+      "rewritten_sha256": "44f7a675534d25608775ac12b0729820916cbde3e62428ab519f2b09b6201d01",
+      "records": 250,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:15.883297+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/reviewed/rescreen_posts.batch_08.spot_check.false_sample.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "44ed6d8a6cc0c771bb7b60dc82b702b1377c99a2506b46e7b919464bb111ea9d",
+      "rewritten_sha256": "44ed6d8a6cc0c771bb7b60dc82b702b1377c99a2506b46e7b919464bb111ea9d",
+      "records": 20,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:15.884716+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/reviewed/rescreen_posts.batch_08.spot_check.review_needed.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "f6fc7a4ac192743dbb43c21b7a0630be97d09fcad52f52cfdb93dd92a2ee1700",
+      "rewritten_sha256": "f6fc7a4ac192743dbb43c21b7a0630be97d09fcad52f52cfdb93dd92a2ee1700",
+      "records": 10,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:15.885304+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/reviewed/rescreen_posts.batch_08.spot_check.true.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "a30e423094925abfdc8b9ffa20a43b70f4e1f9d7c924f4e5f8bf946e081035de",
+      "rewritten_sha256": "a30e423094925abfdc8b9ffa20a43b70f4e1f9d7c924f4e5f8bf946e081035de",
+      "records": 33,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:15.887458+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/reviewed/rescreen_posts.batch_08.spot_check.vendor.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "350466c5955b1ad80fc46f83bc5e35113b0f6d4b99518f550a9891eeea54fdb1",
+      "rewritten_sha256": "350466c5955b1ad80fc46f83bc5e35113b0f6d4b99518f550a9891eeea54fdb1",
+      "records": 15,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:15.888479+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/reviewed/rescreen_posts.batch_09.ai_draft.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "3660dfd3468bf00eaa50c79bbf1197865e679204ec89abe07a40a9bafb593539",
+      "rewritten_sha256": "3660dfd3468bf00eaa50c79bbf1197865e679204ec89abe07a40a9bafb593539",
+      "records": 250,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:15.902212+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/reviewed/rescreen_posts.batch_09.approved.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "a78178218d31e0ef50db39cb7a1f9ce75b366634d98c76ca4368d9051368c883",
+      "rewritten_sha256": "a78178218d31e0ef50db39cb7a1f9ce75b366634d98c76ca4368d9051368c883",
+      "records": 250,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:15.916508+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/reviewed/rescreen_posts.batch_09.spot_check.false_sample.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "1f830bc208a26f23b3d1eb0d6af321c547b46b67efcc5a25b1e1de3bc28e1c62",
+      "rewritten_sha256": "1f830bc208a26f23b3d1eb0d6af321c547b46b67efcc5a25b1e1de3bc28e1c62",
+      "records": 20,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:15.917797+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/reviewed/rescreen_posts.batch_09.spot_check.review_needed.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "9a2c312cc6326430d0d4e1130a034ac6035ad4e7fe920d81e9f514584f682b01",
+      "rewritten_sha256": "9a2c312cc6326430d0d4e1130a034ac6035ad4e7fe920d81e9f514584f682b01",
+      "records": 10,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:15.918400+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/reviewed/rescreen_posts.batch_09.spot_check.true.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "f0ce5c17ca67605d8448883219cbe5a410b6302bccd9ada67b322426db8141cd",
+      "rewritten_sha256": "f0ce5c17ca67605d8448883219cbe5a410b6302bccd9ada67b322426db8141cd",
+      "records": 25,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:15.920107+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/reviewed/rescreen_posts.batch_09.spot_check.vendor.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "ff79266d074bfea5f61f274d4737ad075d1e2ac886c58aa9a3621e50e0864fb1",
+      "rewritten_sha256": "ff79266d074bfea5f61f274d4737ad075d1e2ac886c58aa9a3621e50e0864fb1",
+      "records": 18,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:15.921303+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/reviewed/rescreen_posts.batch_10.ai_draft.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "7ecfe9594fbf9c11d961bcf572bcb18c0fe53b8e6ed1dfab2b3c2f570f9d82de",
+      "rewritten_sha256": "7ecfe9594fbf9c11d961bcf572bcb18c0fe53b8e6ed1dfab2b3c2f570f9d82de",
+      "records": 250,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:15.936272+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/reviewed/rescreen_posts.batch_10.approved.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "5d2647ff7681b36dd707e82921c36f86c6d79cee42e1aae3df921c31e10d8e1a",
+      "rewritten_sha256": "5d2647ff7681b36dd707e82921c36f86c6d79cee42e1aae3df921c31e10d8e1a",
+      "records": 250,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:15.950364+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/reviewed/rescreen_posts.batch_10.spot_check.false_sample.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "a73ef2d80d1d67bfe455f9b047e099f98abe01f024c079b96a7b01cd2082ec91",
+      "rewritten_sha256": "a73ef2d80d1d67bfe455f9b047e099f98abe01f024c079b96a7b01cd2082ec91",
+      "records": 20,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:15.951761+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/reviewed/rescreen_posts.batch_10.spot_check.review_needed.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "da799e77221103335e3cdb654d1c2e4f4f1039381bad06691a948f5a948186d7",
+      "rewritten_sha256": "da799e77221103335e3cdb654d1c2e4f4f1039381bad06691a948f5a948186d7",
+      "records": 19,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:15.952851+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/reviewed/rescreen_posts.batch_10.spot_check.true.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "4ba3143a58011fee6bb394cf609f82ba668c058448dcd097d570e66a7deb2aaa",
+      "rewritten_sha256": "4ba3143a58011fee6bb394cf609f82ba668c058448dcd097d570e66a7deb2aaa",
+      "records": 40,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:15.955374+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/reviewed/rescreen_posts.batch_10.spot_check.vendor.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "de3baaa470dea5c1b38c6869fccce389f1f47f01e4ad7a987c1c7bd5c6dd4507",
+      "rewritten_sha256": "de3baaa470dea5c1b38c6869fccce389f1f47f01e4ad7a987c1c7bd5c6dd4507",
+      "records": 8,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:15.955973+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/reviewed/rescreen_posts.batch_11.ai_draft.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "a32008ca3e5a7ada972d7ccee48a6079a90257d4c4eb4ee4c4f9bc8cc234ad6b",
+      "rewritten_sha256": "a32008ca3e5a7ada972d7ccee48a6079a90257d4c4eb4ee4c4f9bc8cc234ad6b",
+      "records": 250,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:15.969544+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/reviewed/rescreen_posts.batch_11.approved.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "6647c9aa6b374467dd7667e212a250216c168956f3ef4bfee28692fd27a1daec",
+      "rewritten_sha256": "6647c9aa6b374467dd7667e212a250216c168956f3ef4bfee28692fd27a1daec",
+      "records": 250,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:15.983247+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/reviewed/rescreen_posts.batch_11.spot_check.false_sample.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "d55cc09b3fc94de5c973602515ccc29a63e9d6853bafe22f7bfa183b932edac6",
+      "rewritten_sha256": "d55cc09b3fc94de5c973602515ccc29a63e9d6853bafe22f7bfa183b932edac6",
+      "records": 20,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:15.984502+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/reviewed/rescreen_posts.batch_11.spot_check.review_needed.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "1105cf6d2bf8206d1886d689b3457acd6899352195765bc4d107f4d454362abb",
+      "rewritten_sha256": "1105cf6d2bf8206d1886d689b3457acd6899352195765bc4d107f4d454362abb",
+      "records": 8,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:15.984982+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/reviewed/rescreen_posts.batch_11.spot_check.true.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "2b9436ff52e9d683b8e120593751f9a2ed0c91edd5dc6fdc2feddd6e68e8f874",
+      "rewritten_sha256": "2b9436ff52e9d683b8e120593751f9a2ed0c91edd5dc6fdc2feddd6e68e8f874",
+      "records": 40,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:15.987613+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/reviewed/rescreen_posts.batch_11.spot_check.vendor.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "69916b83c25e51931c9849057e8a729f507883ada75863478383ff91719d48eb",
+      "rewritten_sha256": "69916b83c25e51931c9849057e8a729f507883ada75863478383ff91719d48eb",
+      "records": 11,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:15.988392+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/reviewed/rescreen_posts.batch_12.ai_draft.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "aa17cda608120dbb3202e8b6cc8d1604e372b4251169f198f9f5e4be55546e99",
+      "rewritten_sha256": "aa17cda608120dbb3202e8b6cc8d1604e372b4251169f198f9f5e4be55546e99",
+      "records": 250,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:16.002372+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/reviewed/rescreen_posts.batch_12.approved.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "39f81cbfa511748bafa7485c07ecd68c3715c790f1b41cb490f32a9448f12d5f",
+      "rewritten_sha256": "39f81cbfa511748bafa7485c07ecd68c3715c790f1b41cb490f32a9448f12d5f",
+      "records": 250,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:16.016910+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/reviewed/rescreen_posts.batch_12.spot_check.false_sample.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "b0a2cdd1e09e69315d11693954a52ee8ffc2e909391441c04a1803ddc2ea4c5b",
+      "rewritten_sha256": "b0a2cdd1e09e69315d11693954a52ee8ffc2e909391441c04a1803ddc2ea4c5b",
+      "records": 20,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:16.018273+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/reviewed/rescreen_posts.batch_12.spot_check.review_needed.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "f701a7bf4c44efa42bbe10b19d837bda2a615071417b66e522f49afbbc81e095",
+      "rewritten_sha256": "f701a7bf4c44efa42bbe10b19d837bda2a615071417b66e522f49afbbc81e095",
+      "records": 6,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:16.018746+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/reviewed/rescreen_posts.batch_12.spot_check.true.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "40d56c263911c6910348047ad782e463d9e891eca1853572855adb9039b6f020",
+      "rewritten_sha256": "40d56c263911c6910348047ad782e463d9e891eca1853572855adb9039b6f020",
+      "records": 47,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:16.021964+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/reviewed/rescreen_posts.batch_12.spot_check.vendor.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "1b0e84e5d409cce9b5d11477e8b93f62ee9e98982bd2953e5ff771eb8bccff21",
+      "rewritten_sha256": "1b0e84e5d409cce9b5d11477e8b93f62ee9e98982bd2953e5ff771eb8bccff21",
+      "records": 10,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:16.022782+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/reviewed/rescreen_posts.batch_13.ai_draft.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "d0821a70fae6f0f2f686c7eba6c03985eff598c83dd204e84f1847d8f374abe8",
+      "rewritten_sha256": "d0821a70fae6f0f2f686c7eba6c03985eff598c83dd204e84f1847d8f374abe8",
+      "records": 250,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:16.038219+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/reviewed/rescreen_posts.batch_13.approved.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "c4f12ebc584602a5a9ad538b78570e73cb02348a6861099c5491c1712acd81ba",
+      "rewritten_sha256": "c4f12ebc584602a5a9ad538b78570e73cb02348a6861099c5491c1712acd81ba",
+      "records": 250,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:16.052408+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/reviewed/rescreen_posts.batch_13.spot_check.false_sample.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "63a71799534c3397dc850d4d6f1236c4728ec5a0d8be7005d2d2e4091daa8147",
+      "rewritten_sha256": "63a71799534c3397dc850d4d6f1236c4728ec5a0d8be7005d2d2e4091daa8147",
+      "records": 20,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:16.053746+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/reviewed/rescreen_posts.batch_13.spot_check.review_needed.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "31b2313d53beae9322bb69d05e399b596c1af4630c60ec66fe83a94d3f5d8ebb",
+      "rewritten_sha256": "31b2313d53beae9322bb69d05e399b596c1af4630c60ec66fe83a94d3f5d8ebb",
+      "records": 10,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:16.054356+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/reviewed/rescreen_posts.batch_13.spot_check.true.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "a06d54bbefe55430b77a6ee1537a537a5fb4a0d7018cfefa6dd3465650dadf5c",
+      "rewritten_sha256": "a06d54bbefe55430b77a6ee1537a537a5fb4a0d7018cfefa6dd3465650dadf5c",
+      "records": 56,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:16.058093+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/reviewed/rescreen_posts.batch_13.spot_check.vendor.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "fa00d57d84e1bba1241b91a73e0c277d823520a9c0766ddab100268d1e454cc5",
+      "rewritten_sha256": "fa00d57d84e1bba1241b91a73e0c277d823520a9c0766ddab100268d1e454cc5",
+      "records": 4,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:16.058537+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/reviewed/rescreen_posts.batch_14.ai_draft.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "f972f4f6486a554c35e33a21211a6b01764c1140c7360156075750a3e12dd9a0",
+      "rewritten_sha256": "f972f4f6486a554c35e33a21211a6b01764c1140c7360156075750a3e12dd9a0",
+      "records": 250,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:16.072528+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/reviewed/rescreen_posts.batch_14.approved.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "f972f4f6486a554c35e33a21211a6b01764c1140c7360156075750a3e12dd9a0",
+      "rewritten_sha256": "f972f4f6486a554c35e33a21211a6b01764c1140c7360156075750a3e12dd9a0",
+      "records": 250,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:16.087031+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/reviewed/rescreen_posts.batch_15.ai_draft.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "dfc39026e8a9394249acc4b0167cf7d766095d03fd363dd36c01a2f745590681",
+      "rewritten_sha256": "dfc39026e8a9394249acc4b0167cf7d766095d03fd363dd36c01a2f745590681",
+      "records": 250,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:16.101568+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/reviewed/rescreen_posts.batch_15.approved.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "dfc39026e8a9394249acc4b0167cf7d766095d03fd363dd36c01a2f745590681",
+      "rewritten_sha256": "dfc39026e8a9394249acc4b0167cf7d766095d03fd363dd36c01a2f745590681",
+      "records": 250,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:16.116042+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/reviewed/rescreen_posts.batch_16.ai_draft.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "dc83e7b1e8828a95770c1d58268a8a4934844849a45366105b1685371ce6e7c8",
+      "rewritten_sha256": "dc83e7b1e8828a95770c1d58268a8a4934844849a45366105b1685371ce6e7c8",
+      "records": 250,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:16.130638+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/reviewed/rescreen_posts.batch_16.approved.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "dc83e7b1e8828a95770c1d58268a8a4934844849a45366105b1685371ce6e7c8",
+      "rewritten_sha256": "dc83e7b1e8828a95770c1d58268a8a4934844849a45366105b1685371ce6e7c8",
+      "records": 250,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:16.146286+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/reviewed/rescreen_posts.batch_17.ai_draft.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "99b781725cf06d3c8bbce0202e8643d100c767db3540093543c635a2ae696d35",
+      "rewritten_sha256": "99b781725cf06d3c8bbce0202e8643d100c767db3540093543c635a2ae696d35",
+      "records": 250,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:16.160851+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/reviewed/rescreen_posts.batch_17.approved.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "99b781725cf06d3c8bbce0202e8643d100c767db3540093543c635a2ae696d35",
+      "rewritten_sha256": "99b781725cf06d3c8bbce0202e8643d100c767db3540093543c635a2ae696d35",
+      "records": 250,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:16.175209+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/reviewed/rescreen_posts.batch_18.ai_draft.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "49656b40838ea03d5bfc7a602af6dae9abf873b8b61159239c16b3ca8932d261",
+      "rewritten_sha256": "49656b40838ea03d5bfc7a602af6dae9abf873b8b61159239c16b3ca8932d261",
+      "records": 250,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:16.189680+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/reviewed/rescreen_posts.batch_18.approved.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "49656b40838ea03d5bfc7a602af6dae9abf873b8b61159239c16b3ca8932d261",
+      "rewritten_sha256": "49656b40838ea03d5bfc7a602af6dae9abf873b8b61159239c16b3ca8932d261",
+      "records": 250,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:16.204078+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/reviewed/rescreen_posts.batch_19.ai_draft.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "de5c0c04b1eaca1b3725bc19b41b58a3f4d5a2f9661a218a0f0155624ab1f5e1",
+      "rewritten_sha256": "de5c0c04b1eaca1b3725bc19b41b58a3f4d5a2f9661a218a0f0155624ab1f5e1",
+      "records": 250,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:16.218546+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/reviewed/rescreen_posts.batch_19.approved.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "de5c0c04b1eaca1b3725bc19b41b58a3f4d5a2f9661a218a0f0155624ab1f5e1",
+      "rewritten_sha256": "de5c0c04b1eaca1b3725bc19b41b58a3f4d5a2f9661a218a0f0155624ab1f5e1",
+      "records": 250,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:16.233096+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/reviewed/rescreen_posts.batch_20.ai_draft.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "f1a89f1fcc8e19942e15fb99b2b04ad48d810c028b968177237ce3f2ddc13ffc",
+      "rewritten_sha256": "f1a89f1fcc8e19942e15fb99b2b04ad48d810c028b968177237ce3f2ddc13ffc",
+      "records": 250,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:16.248876+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/reviewed/rescreen_posts.batch_20.approved.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "f1a89f1fcc8e19942e15fb99b2b04ad48d810c028b968177237ce3f2ddc13ffc",
+      "rewritten_sha256": "f1a89f1fcc8e19942e15fb99b2b04ad48d810c028b968177237ce3f2ddc13ffc",
+      "records": 250,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:16.263616+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/reviewed/rescreen_posts.batch_21.ai_draft.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "8c9747a04bdb9f68bdde947b80a6313cfe2f9dfb732e2090e38fa643c6993582",
+      "rewritten_sha256": "8c9747a04bdb9f68bdde947b80a6313cfe2f9dfb732e2090e38fa643c6993582",
+      "records": 250,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:16.278224+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/reviewed/rescreen_posts.batch_21.approved.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "8c9747a04bdb9f68bdde947b80a6313cfe2f9dfb732e2090e38fa643c6993582",
+      "rewritten_sha256": "8c9747a04bdb9f68bdde947b80a6313cfe2f9dfb732e2090e38fa643c6993582",
+      "records": 250,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:16.292991+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/reviewed/rescreen_posts.batch_22.ai_draft.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "a871242bf92f03a0d090479300a2bc886bd37ede98e74fd07ad4f8d95e31b765",
+      "rewritten_sha256": "a871242bf92f03a0d090479300a2bc886bd37ede98e74fd07ad4f8d95e31b765",
+      "records": 35,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:16.295364+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/reviewed/rescreen_posts.batch_22.approved.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "a871242bf92f03a0d090479300a2bc886bd37ede98e74fd07ad4f8d95e31b765",
+      "rewritten_sha256": "a871242bf92f03a0d090479300a2bc886bd37ede98e74fd07ad4f8d95e31b765",
+      "records": 35,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:16.297526+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/qv5_rescreen_deepseek_full_v1.delta_only.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "9480984e27af96d6f7fd1e7a6a368117ddc558c46d138bc2ff127f08d8fb31ea",
+      "rewritten_sha256": "9480984e27af96d6f7fd1e7a6a368117ddc558c46d138bc2ff127f08d8fb31ea",
+      "records": 4849,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:16.603256+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/qv5_rescreen_deepseek_full_v1.full_draft.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "6dd7f698a04075d03ee267387f41a5b791e7be02a4896b353c6b28ef37635357",
+      "rewritten_sha256": "6dd7f698a04075d03ee267387f41a5b791e7be02a4896b353c6b28ef37635357",
+      "records": 5535,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:17.000905+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/qv5_rescreen_deepseek_full_v1.priority.promoted_to_true_or_review_needed.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "rewritten_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "records": 0,
+      "status": "preserved_empty",
+      "migrated_at_utc": "2026-04-22T18:58:17.004860+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/qv5_rescreen_deepseek_full_v1.priority.reverted_positive_to_false.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "9e9adc5b7e793d6f66d1f0cb5bf58c4e8f2bfe76a4a40721756fd56d0c6cac78",
+      "rewritten_sha256": "9e9adc5b7e793d6f66d1f0cb5bf58c4e8f2bfe76a4a40721756fd56d0c6cac78",
+      "records": 3949,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:17.252969+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/qv5_rescreen_deepseek_full_v1.priority.true_or_review_needed.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "4b6f7b2ffc69fd6db3d6e40dd4256fe855c4664bdb39e9e243140fa093cf05d4",
+      "rewritten_sha256": "4b6f7b2ffc69fd6db3d6e40dd4256fe855c4664bdb39e9e243140fa093cf05d4",
+      "records": 1586,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:17.389151+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/qv5_rescreen_deepseek_full_v1.summary.json",
+      "parse_mode": "json_object",
+      "original_sha256": "976cde5d7d9f9bb075aca1d07cb902c89114e322bd5bec17c01e35d5662415df",
+      "rewritten_sha256": "976cde5d7d9f9bb075aca1d07cb902c89114e322bd5bec17c01e35d5662415df",
+      "records": 1,
+      "status": "preserved_non_record",
+      "migrated_at_utc": "2026-04-22T18:58:17.390726+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/qv5_rescreen_deepseek_full_v1.vs_current_db.delta.actor_only.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "0d4aa8dc6ee3a8c1a198d0dd83fba3c9225dd238c6ab18cb860f74c195841c21",
+      "rewritten_sha256": "0d4aa8dc6ee3a8c1a198d0dd83fba3c9225dd238c6ab18cb860f74c195841c21",
+      "records": 1787,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:17.510951+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/qv5_rescreen_deepseek_full_v1.vs_current_db.delta.both_changed.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "cecf82e60924aa60ef3085e4d66a78c625bb330adc68b07033ebf622eeabf716",
+      "rewritten_sha256": "cecf82e60924aa60ef3085e4d66a78c625bb330adc68b07033ebf622eeabf716",
+      "records": 532,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:17.549356+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/qv5_rescreen_deepseek_full_v1.vs_current_db.delta.status_only.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "86b56fe80c2dcc28ea030ba7745b8019146be0af7251d2ca68765070131b30d1",
+      "rewritten_sha256": "86b56fe80c2dcc28ea030ba7745b8019146be0af7251d2ca68765070131b30d1",
+      "records": 850,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:17.598107+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/qv5_rescreen_deepseek_full_v1.vs_current_db.delta_only.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "90f526c2ac196d9e954412771733e15d0f7288c5d5a191ab26912582e90598f2",
+      "rewritten_sha256": "90f526c2ac196d9e954412771733e15d0f7288c5d5a191ab26912582e90598f2",
+      "records": 3169,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:17.800582+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/qv5_rescreen_deepseek_full_v1.vs_current_db.full_draft.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "6dd7f698a04075d03ee267387f41a5b791e7be02a4896b353c6b28ef37635357",
+      "rewritten_sha256": "6dd7f698a04075d03ee267387f41a5b791e7be02a4896b353c6b28ef37635357",
+      "records": 5535,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:18.199770+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/qv5_rescreen_deepseek_full_v1.vs_current_db.priority.promoted_to_true_or_review_needed.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "ab8da71e9094e47219c289a5d1e0fd56249d9c12a0f167ffda77347ea99fbf53",
+      "rewritten_sha256": "ab8da71e9094e47219c289a5d1e0fd56249d9c12a0f167ffda77347ea99fbf53",
+      "records": 754,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:18.257514+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/qv5_rescreen_deepseek_full_v1.vs_current_db.priority.reverted_positive_to_false.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "8428bae75fd087f4dcf3040bf19d43ae0a0fd3258090765afdddb84ca0237cb6",
+      "rewritten_sha256": "8428bae75fd087f4dcf3040bf19d43ae0a0fd3258090765afdddb84ca0237cb6",
+      "records": 341,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:18.277902+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/qv5_rescreen_deepseek_full_v1.vs_current_db.priority.true_or_review_needed.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "6d10bbdde9ceaa67305c467a0944aac1a4d105674db57f933ac478f35336f1ee",
+      "rewritten_sha256": "6d10bbdde9ceaa67305c467a0944aac1a4d105674db57f933ac478f35336f1ee",
+      "records": 1586,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:18.378070+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/qv5_rescreen_deepseek_full_v1.vs_current_db.promoted_first_pass.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "7a51b8a1e4634ffb4480826c38a5884dbb15c4f7d1122b036328db2dbe430816",
+      "rewritten_sha256": "7a51b8a1e4634ffb4480826c38a5884dbb15c4f7d1122b036328db2dbe430816",
+      "records": 754,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:18.436302+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/qv5_rescreen_deepseek_full_v1.vs_current_db.promoted_groups/01_legitimacy_and_boundary.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "71378e732379cc5de7a1e42278b064c7d99e38f5d596b0be6bf73b4a320ec1ed",
+      "rewritten_sha256": "71378e732379cc5de7a1e42278b064c7d99e38f5d596b0be6bf73b4a320ec1ed",
+      "records": 217,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:18.451851+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/qv5_rescreen_deepseek_full_v1.vs_current_db.promoted_groups/02_ideation_and_research_design.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "061ff1e092b79f17249fde53a7edae86d3f59d226d50a82008881cbf39b2c973",
+      "rewritten_sha256": "061ff1e092b79f17249fde53a7edae86d3f59d226d50a82008881cbf39b2c973",
+      "records": 236,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:18.466741+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/qv5_rescreen_deepseek_full_v1.vs_current_db.promoted_groups/03_literature_review_and_reading.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "8e1d1439fe6e6a269ea37a361220ff2b869253ec3ea5c550bee617bd05a0397d",
+      "rewritten_sha256": "8e1d1439fe6e6a269ea37a361220ff2b869253ec3ea5c550bee617bd05a0397d",
+      "records": 78,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:18.471629+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/qv5_rescreen_deepseek_full_v1.vs_current_db.promoted_groups/04_paper_writing_and_prompting.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "67a51ca0e14df70c8cf111d6bc25ad9891541a5980c7c5ca21b9f41213f2fbdc",
+      "rewritten_sha256": "67a51ca0e14df70c8cf111d6bc25ad9891541a5980c7c5ca21b9f41213f2fbdc",
+      "records": 145,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:18.480559+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/qv5_rescreen_deepseek_full_v1.vs_current_db.promoted_groups/05_analysis_coding_and_tools.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "0a044a0265a8610c1cca0a75dd9544ca67330ed7698c18b2a05031243ee3ea90",
+      "rewritten_sha256": "0a044a0265a8610c1cca0a75dd9544ca67330ed7698c18b2a05031243ee3ea90",
+      "records": 48,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:18.483573+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/qv5_rescreen_deepseek_full_v1.vs_current_db.promoted_groups/06_other_positive_candidates.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "32ece0c62022f3996c9d5882ac0694cb046d151c822615b6bd16777bbb18cc10",
+      "rewritten_sha256": "32ece0c62022f3996c9d5882ac0694cb046d151c822615b6bd16777bbb18cc10",
+      "records": 30,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:18.485351+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/qv5_rescreen_deepseek_full_v1.vs_current_db.promoted_groups.summary.json",
+      "parse_mode": "json_object",
+      "original_sha256": "792f597f5eaff87454e0035d20fcc111a7204d08309dd527edb63346b9306839",
+      "rewritten_sha256": "792f597f5eaff87454e0035d20fcc111a7204d08309dd527edb63346b9306839",
+      "records": 1,
+      "status": "preserved_non_record",
+      "migrated_at_utc": "2026-04-22T18:58:18.485421+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/qv5_rescreen_deepseek_full_v1.vs_current_db.summary.json",
+      "parse_mode": "json_object",
+      "original_sha256": "9b126300b72f7a17d3b5627dd50afa841d0ebf8e1ef27a66272d22528a158361",
+      "rewritten_sha256": "9b126300b72f7a17d3b5627dd50afa841d0ebf8e1ef27a66272d22528a158361",
+      "records": 1,
+      "status": "preserved_non_record",
+      "migrated_at_utc": "2026-04-22T18:58:18.485471+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/shards/shard_00_of_24/shard_00_of_24.delta_only.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "3914506ccc1909865e09d5b8995386030595bfdd50a88436d435af2bb2652c12",
+      "rewritten_sha256": "3914506ccc1909865e09d5b8995386030595bfdd50a88436d435af2bb2652c12",
+      "records": 212,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:18.496275+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/shards/shard_00_of_24/shard_00_of_24.full_draft.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "c5309df482156810ef44db5912aabfef426caead2f4b7a914e59faacdfb4ba8d",
+      "rewritten_sha256": "c5309df482156810ef44db5912aabfef426caead2f4b7a914e59faacdfb4ba8d",
+      "records": 230,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:18.510227+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/shards/shard_00_of_24/shard_00_of_24.priority.reverted_positive_to_false.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "b19de887ec91b2f40932b84508817ab5df582f2a5da3408b9d3d0c7fd7458b91",
+      "rewritten_sha256": "b19de887ec91b2f40932b84508817ab5df582f2a5da3408b9d3d0c7fd7458b91",
+      "records": 203,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:18.520714+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/shards/shard_00_of_24/shard_00_of_24.priority.true_or_review_needed.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "bcd60d077c519025e988a1c5e0ecb43fe2669a418be0a34528c7f222ee8562bd",
+      "rewritten_sha256": "bcd60d077c519025e988a1c5e0ecb43fe2669a418be0a34528c7f222ee8562bd",
+      "records": 27,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:18.522287+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/shards/shard_00_of_24/shard_00_of_24.summary.json",
+      "parse_mode": "json_object",
+      "original_sha256": "219b8f31394023eec225caa0b717e557c4ed51b047a2ec7cb4e24be973cd0930",
+      "rewritten_sha256": "219b8f31394023eec225caa0b717e557c4ed51b047a2ec7cb4e24be973cd0930",
+      "records": 1,
+      "status": "preserved_non_record",
+      "migrated_at_utc": "2026-04-22T18:58:18.522349+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/shards/shard_01_of_24/shard_01_of_24.delta_only.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "47ae04298e626d98115422677229176faf4fb35c1a12d28759b93f495dfd432c",
+      "rewritten_sha256": "47ae04298e626d98115422677229176faf4fb35c1a12d28759b93f495dfd432c",
+      "records": 205,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:18.533574+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/shards/shard_01_of_24/shard_01_of_24.full_draft.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "bf02241e197bcd1e0feb47289deb111a6611c7069e3f86e0509eabe8c7e9fe85",
+      "rewritten_sha256": "bf02241e197bcd1e0feb47289deb111a6611c7069e3f86e0509eabe8c7e9fe85",
+      "records": 231,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:18.546443+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/shards/shard_01_of_24/shard_01_of_24.priority.reverted_positive_to_false.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "a70d1541045dd756432e96214956deebf306d16e2a3ab8671ba58a212888843b",
+      "rewritten_sha256": "a70d1541045dd756432e96214956deebf306d16e2a3ab8671ba58a212888843b",
+      "records": 168,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:18.555402+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/shards/shard_01_of_24/shard_01_of_24.priority.true_or_review_needed.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "b1061641d6c9990a03813f26842e27c3f96e7e83483d6881aeebc62d2d0e9344",
+      "rewritten_sha256": "b1061641d6c9990a03813f26842e27c3f96e7e83483d6881aeebc62d2d0e9344",
+      "records": 63,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:18.559569+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/shards/shard_01_of_24/shard_01_of_24.summary.json",
+      "parse_mode": "json_object",
+      "original_sha256": "1e8694375cb22784437815dcdf521c7c872169307315d355231d3256bd3399df",
+      "rewritten_sha256": "1e8694375cb22784437815dcdf521c7c872169307315d355231d3256bd3399df",
+      "records": 1,
+      "status": "preserved_non_record",
+      "migrated_at_utc": "2026-04-22T18:58:18.559647+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/shards/shard_02_of_24/shard_02_of_24.delta_only.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "736d2a5f816fe5b1ef92c761596c04e4fcb571d7461f4f26c58f56bdf3b6e8d6",
+      "rewritten_sha256": "736d2a5f816fe5b1ef92c761596c04e4fcb571d7461f4f26c58f56bdf3b6e8d6",
+      "records": 193,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:18.571205+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/shards/shard_02_of_24/shard_02_of_24.full_draft.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "d2a2d80156aa05309a47954f552085485bdf3f6c9a590d2c2e1688d6a7f8994f",
+      "rewritten_sha256": "d2a2d80156aa05309a47954f552085485bdf3f6c9a590d2c2e1688d6a7f8994f",
+      "records": 230,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:18.584740+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/shards/shard_02_of_24/shard_02_of_24.priority.reverted_positive_to_false.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "d0bfab517678f44994932f76e24ea9d3a951fd0c3aa173cf5f9eee54419fc6e5",
+      "rewritten_sha256": "d0bfab517678f44994932f76e24ea9d3a951fd0c3aa173cf5f9eee54419fc6e5",
+      "records": 143,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:18.593011+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/shards/shard_02_of_24/shard_02_of_24.priority.true_or_review_needed.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "df52aa73a5ee94d03166b5a254e4b0d9f7e86550ab21d6d172ff6c76bbdc0f37",
+      "rewritten_sha256": "df52aa73a5ee94d03166b5a254e4b0d9f7e86550ab21d6d172ff6c76bbdc0f37",
+      "records": 87,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:18.598806+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/shards/shard_02_of_24/shard_02_of_24.summary.json",
+      "parse_mode": "json_object",
+      "original_sha256": "4e3f429734917137143c0f4a20104cb99bc8f424238c008384a57c361156cd85",
+      "rewritten_sha256": "4e3f429734917137143c0f4a20104cb99bc8f424238c008384a57c361156cd85",
+      "records": 1,
+      "status": "preserved_non_record",
+      "migrated_at_utc": "2026-04-22T18:58:18.598899+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/shards/shard_03_of_24/shard_03_of_24.delta_only.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "16eab1a950dfde20fc6c278a353739f7ae1ce0614db67f7043a5b490de482eb1",
+      "rewritten_sha256": "16eab1a950dfde20fc6c278a353739f7ae1ce0614db67f7043a5b490de482eb1",
+      "records": 196,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:18.611902+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/shards/shard_03_of_24/shard_03_of_24.full_draft.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "2aa462114538aa6bcc788c5c9ad781a9aaa85fb0d800af0c6b67711f473204ff",
+      "rewritten_sha256": "2aa462114538aa6bcc788c5c9ad781a9aaa85fb0d800af0c6b67711f473204ff",
+      "records": 231,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:18.625545+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/shards/shard_03_of_24/shard_03_of_24.priority.reverted_positive_to_false.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "7e431a82fed73fe3e05cc0700834b74c8570b857600284d812c20f1c567b7244",
+      "rewritten_sha256": "7e431a82fed73fe3e05cc0700834b74c8570b857600284d812c20f1c567b7244",
+      "records": 146,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:18.633958+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/shards/shard_03_of_24/shard_03_of_24.priority.true_or_review_needed.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "034cad3cc6c239566e6505b5e4b7764ab8ebcffd11b8908434db9c87e91c7805",
+      "rewritten_sha256": "034cad3cc6c239566e6505b5e4b7764ab8ebcffd11b8908434db9c87e91c7805",
+      "records": 85,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:18.639690+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/shards/shard_03_of_24/shard_03_of_24.summary.json",
+      "parse_mode": "json_object",
+      "original_sha256": "8630623c6b407aac3a99a743ca0430ca99fa6b9e28fd93b40025f563dd73ea72",
+      "rewritten_sha256": "8630623c6b407aac3a99a743ca0430ca99fa6b9e28fd93b40025f563dd73ea72",
+      "records": 1,
+      "status": "preserved_non_record",
+      "migrated_at_utc": "2026-04-22T18:58:18.639789+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/shards/shard_04_of_24/shard_04_of_24.delta_only.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "1ff2afb71cf58365ac6a58b7fd3456b3da6246ad662b3664c0b2ac4635b0ea35",
+      "rewritten_sha256": "1ff2afb71cf58365ac6a58b7fd3456b3da6246ad662b3664c0b2ac4635b0ea35",
+      "records": 200,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:18.651502+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/shards/shard_04_of_24/shard_04_of_24.full_draft.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "ea0e8599fee2691e8b4c922482c42b67bfc2be5f64c531bc8b85b86b2156312c",
+      "rewritten_sha256": "ea0e8599fee2691e8b4c922482c42b67bfc2be5f64c531bc8b85b86b2156312c",
+      "records": 231,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:18.665244+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/shards/shard_04_of_24/shard_04_of_24.priority.reverted_positive_to_false.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "07070c5d7577e0bea8df03427b535867009817a6e33a8e541d67f11d4becdecb",
+      "rewritten_sha256": "07070c5d7577e0bea8df03427b535867009817a6e33a8e541d67f11d4becdecb",
+      "records": 153,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:18.673803+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/shards/shard_04_of_24/shard_04_of_24.priority.true_or_review_needed.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "df49bd3ac5cd6fe11193d0127c2fcf4ccc24f7f28aae525b9c88c870d2a28be4",
+      "rewritten_sha256": "df49bd3ac5cd6fe11193d0127c2fcf4ccc24f7f28aae525b9c88c870d2a28be4",
+      "records": 78,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:18.679154+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/shards/shard_04_of_24/shard_04_of_24.summary.json",
+      "parse_mode": "json_object",
+      "original_sha256": "c7aa79ce53145b93e4e5e6b65890d8c975561dd64438ef1a30d66d019683086d",
+      "rewritten_sha256": "c7aa79ce53145b93e4e5e6b65890d8c975561dd64438ef1a30d66d019683086d",
+      "records": 1,
+      "status": "preserved_non_record",
+      "migrated_at_utc": "2026-04-22T18:58:18.679248+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/shards/shard_05_of_24/shard_05_of_24.delta_only.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "f00a79fa72d0e2714b9a2e5f82ed941c15f5153f325d42d88b907643d8a413f9",
+      "rewritten_sha256": "f00a79fa72d0e2714b9a2e5f82ed941c15f5153f325d42d88b907643d8a413f9",
+      "records": 203,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:18.691000+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/shards/shard_05_of_24/shard_05_of_24.full_draft.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "760b1ce446885243d740a80e50e28e6624337e41da3e1a807808e74b00c820bd",
+      "rewritten_sha256": "760b1ce446885243d740a80e50e28e6624337e41da3e1a807808e74b00c820bd",
+      "records": 230,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:18.704667+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/shards/shard_05_of_24/shard_05_of_24.priority.reverted_positive_to_false.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "0d169e88288f219abab81034377ec18265b98fa0652b6b8976b849f1f0a2ea29",
+      "rewritten_sha256": "0d169e88288f219abab81034377ec18265b98fa0652b6b8976b849f1f0a2ea29",
+      "records": 165,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:18.715327+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/shards/shard_05_of_24/shard_05_of_24.priority.true_or_review_needed.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "82693dc49479e298269be89bae3970f77a33f84e24d0e6161fa1a028f0864fc8",
+      "rewritten_sha256": "82693dc49479e298269be89bae3970f77a33f84e24d0e6161fa1a028f0864fc8",
+      "records": 65,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:18.719743+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/shards/shard_05_of_24/shard_05_of_24.summary.json",
+      "parse_mode": "json_object",
+      "original_sha256": "55b1201369ee944a773a08a9628f7a01fce4a28eeea7abc43aff05cb6fa76a11",
+      "rewritten_sha256": "55b1201369ee944a773a08a9628f7a01fce4a28eeea7abc43aff05cb6fa76a11",
+      "records": 1,
+      "status": "preserved_non_record",
+      "migrated_at_utc": "2026-04-22T18:58:18.719829+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/shards/shard_06_of_24/shard_06_of_24.delta_only.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "c09f9af80f5a7fcf99bb05290ceffc516ecf1213b3036f208a0c1f6e5c1ec760",
+      "rewritten_sha256": "c09f9af80f5a7fcf99bb05290ceffc516ecf1213b3036f208a0c1f6e5c1ec760",
+      "records": 219,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:18.732588+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/shards/shard_06_of_24/shard_06_of_24.full_draft.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "6521acb8bfe3ac0a8445bef3d4fc2831a1ad2443708190d75fca0d0db3498af5",
+      "rewritten_sha256": "6521acb8bfe3ac0a8445bef3d4fc2831a1ad2443708190d75fca0d0db3498af5",
+      "records": 231,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:18.746564+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/shards/shard_06_of_24/shard_06_of_24.priority.reverted_positive_to_false.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "d59a1f679fc8a083656e861a87b5348a658af4a270b2124cd539dde1608225a2",
+      "rewritten_sha256": "d59a1f679fc8a083656e861a87b5348a658af4a270b2124cd539dde1608225a2",
+      "records": 172,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:18.756437+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/shards/shard_06_of_24/shard_06_of_24.priority.true_or_review_needed.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "7d6d6b47558dcf5b9c8bf8757e531460d7ea02263149a75c7b6433fd7d1a84fe",
+      "rewritten_sha256": "7d6d6b47558dcf5b9c8bf8757e531460d7ea02263149a75c7b6433fd7d1a84fe",
+      "records": 59,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:18.760551+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/shards/shard_06_of_24/shard_06_of_24.summary.json",
+      "parse_mode": "json_object",
+      "original_sha256": "d66fc762c2d6cd56a1cf9902f52fe31bbdcb89c879b2ce3bd2318640cc1d7471",
+      "rewritten_sha256": "d66fc762c2d6cd56a1cf9902f52fe31bbdcb89c879b2ce3bd2318640cc1d7471",
+      "records": 1,
+      "status": "preserved_non_record",
+      "migrated_at_utc": "2026-04-22T18:58:18.760636+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/shards/shard_07_of_24/shard_07_of_24.delta_only.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "d7b57142bd07d5a9997c3144b2fc18295730ed5b2781794009c30c5e3cbe8cba",
+      "rewritten_sha256": "d7b57142bd07d5a9997c3144b2fc18295730ed5b2781794009c30c5e3cbe8cba",
+      "records": 207,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:18.772608+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/shards/shard_07_of_24/shard_07_of_24.full_draft.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "12f6ff7fc19c86ed637c0b32140c2c6209cf8ee56105d9e48c8f0b00d5576737",
+      "rewritten_sha256": "12f6ff7fc19c86ed637c0b32140c2c6209cf8ee56105d9e48c8f0b00d5576737",
+      "records": 231,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:18.786194+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/shards/shard_07_of_24/shard_07_of_24.priority.reverted_positive_to_false.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "6e53c9972c4d7f9d7157d86f7d928917aec230e946f5bafc2c78f5de4083383f",
+      "rewritten_sha256": "6e53c9972c4d7f9d7157d86f7d928917aec230e946f5bafc2c78f5de4083383f",
+      "records": 167,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:18.795339+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/shards/shard_07_of_24/shard_07_of_24.priority.true_or_review_needed.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "f9b5f32405a89a0a171dce4fbb58cf54fbf103330f166f42d5563bf18439a58d",
+      "rewritten_sha256": "f9b5f32405a89a0a171dce4fbb58cf54fbf103330f166f42d5563bf18439a58d",
+      "records": 64,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:18.799537+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/shards/shard_07_of_24/shard_07_of_24.summary.json",
+      "parse_mode": "json_object",
+      "original_sha256": "5d059f8c301f7ecf7559f992b6d25852d7c397245ca14a710f473a541147de7d",
+      "rewritten_sha256": "5d059f8c301f7ecf7559f992b6d25852d7c397245ca14a710f473a541147de7d",
+      "records": 1,
+      "status": "preserved_non_record",
+      "migrated_at_utc": "2026-04-22T18:58:18.799616+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/shards/shard_08_of_24/shard_08_of_24.delta_only.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "2a7649a186fbb423de404849c23ec3f66ab3a9adf35c691bf2dee5cf313ce858",
+      "rewritten_sha256": "2a7649a186fbb423de404849c23ec3f66ab3a9adf35c691bf2dee5cf313ce858",
+      "records": 203,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:18.810957+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/shards/shard_08_of_24/shard_08_of_24.full_draft.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "a16182305c2aa099452d012dfabf24a1838c3baafb486b8f0e8141d60a9afa7c",
+      "rewritten_sha256": "a16182305c2aa099452d012dfabf24a1838c3baafb486b8f0e8141d60a9afa7c",
+      "records": 230,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:18.825447+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/shards/shard_08_of_24/shard_08_of_24.priority.reverted_positive_to_false.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "c620b02b84e5261a6dccabbd7877d1694fd3f22d3fa5185bff6755cf7a4d2b7a",
+      "rewritten_sha256": "c620b02b84e5261a6dccabbd7877d1694fd3f22d3fa5185bff6755cf7a4d2b7a",
+      "records": 172,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:18.834982+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/shards/shard_08_of_24/shard_08_of_24.priority.true_or_review_needed.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "145c41faa61bc18a0c10d8d617178a46fffdbd6373959d2667daa8be4b15618d",
+      "rewritten_sha256": "145c41faa61bc18a0c10d8d617178a46fffdbd6373959d2667daa8be4b15618d",
+      "records": 58,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:18.838774+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/shards/shard_08_of_24/shard_08_of_24.summary.json",
+      "parse_mode": "json_object",
+      "original_sha256": "fdbd88afea6ff2bb4bba7640cfcb2d5a8288f569be8f209aec6119d140e1f398",
+      "rewritten_sha256": "fdbd88afea6ff2bb4bba7640cfcb2d5a8288f569be8f209aec6119d140e1f398",
+      "records": 1,
+      "status": "preserved_non_record",
+      "migrated_at_utc": "2026-04-22T18:58:18.838853+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/shards/shard_09_of_24/shard_09_of_24.delta_only.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "47691c3038fa25996e79cc83b68e0643a82ee62ce679b501320ef4c2fc2e115b",
+      "rewritten_sha256": "47691c3038fa25996e79cc83b68e0643a82ee62ce679b501320ef4c2fc2e115b",
+      "records": 194,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:18.849756+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/shards/shard_09_of_24/shard_09_of_24.full_draft.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "5bd552721f792d4b10b82ccd8b62e39b66238ef26b0ff4ca2532a99198a6779b",
+      "rewritten_sha256": "5bd552721f792d4b10b82ccd8b62e39b66238ef26b0ff4ca2532a99198a6779b",
+      "records": 231,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:18.862725+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/shards/shard_09_of_24/shard_09_of_24.priority.reverted_positive_to_false.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "1a03fbc6c691ae2e815045c4f25ef1728092b7e448c867b41019fb8e39560440",
+      "rewritten_sha256": "1a03fbc6c691ae2e815045c4f25ef1728092b7e448c867b41019fb8e39560440",
+      "records": 168,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:18.872454+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/shards/shard_09_of_24/shard_09_of_24.priority.true_or_review_needed.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "885df5bc12346a63f716a00fb0f4895ce531a5bd921903c8032c1d08e1887dd0",
+      "rewritten_sha256": "885df5bc12346a63f716a00fb0f4895ce531a5bd921903c8032c1d08e1887dd0",
+      "records": 63,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:18.876451+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/shards/shard_09_of_24/shard_09_of_24.summary.json",
+      "parse_mode": "json_object",
+      "original_sha256": "8e11ef35dc6a7cde447affbd46576a3003cbc389b7394492e73cf34e698f1fee",
+      "rewritten_sha256": "8e11ef35dc6a7cde447affbd46576a3003cbc389b7394492e73cf34e698f1fee",
+      "records": 1,
+      "status": "preserved_non_record",
+      "migrated_at_utc": "2026-04-22T18:58:18.876527+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/shards/shard_10_of_24/shard_10_of_24.delta_only.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "2993895188d89f35037a774130d1c95f2924d01f9b5f16bba9e27b8f4fc6410f",
+      "rewritten_sha256": "2993895188d89f35037a774130d1c95f2924d01f9b5f16bba9e27b8f4fc6410f",
+      "records": 204,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:18.888050+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/shards/shard_10_of_24/shard_10_of_24.full_draft.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "05d89bc50bc89eeb2d9990d44de07282ab2ba212e53760be6fea739edef3f719",
+      "rewritten_sha256": "05d89bc50bc89eeb2d9990d44de07282ab2ba212e53760be6fea739edef3f719",
+      "records": 230,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:18.900971+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/shards/shard_10_of_24/shard_10_of_24.priority.reverted_positive_to_false.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "d88d1c3c149997107e40d72b3f04fd25ce38638ed3dccce389a1edca73498cb5",
+      "rewritten_sha256": "d88d1c3c149997107e40d72b3f04fd25ce38638ed3dccce389a1edca73498cb5",
+      "records": 168,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:18.910308+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/shards/shard_10_of_24/shard_10_of_24.priority.true_or_review_needed.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "d003a4225c98cd02f58daeb953f59f05cbadb959723fb674f503fb0cae92ec61",
+      "rewritten_sha256": "d003a4225c98cd02f58daeb953f59f05cbadb959723fb674f503fb0cae92ec61",
+      "records": 62,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:18.914473+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/shards/shard_10_of_24/shard_10_of_24.summary.json",
+      "parse_mode": "json_object",
+      "original_sha256": "82c7268e50aa5ba77f80557be45a51afd4be58c322639df04067a726f2a6fea5",
+      "rewritten_sha256": "82c7268e50aa5ba77f80557be45a51afd4be58c322639df04067a726f2a6fea5",
+      "records": 1,
+      "status": "preserved_non_record",
+      "migrated_at_utc": "2026-04-22T18:58:18.914548+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/shards/shard_11_of_24/shard_11_of_24.delta_only.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "40f32e9bdfdc7b467910c1c271f430d9300c103c36ec63ef1d73d7058c907a0d",
+      "rewritten_sha256": "40f32e9bdfdc7b467910c1c271f430d9300c103c36ec63ef1d73d7058c907a0d",
+      "records": 201,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:18.927302+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/shards/shard_11_of_24/shard_11_of_24.full_draft.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "f3f6ffa0f0a90d6583ba556194977ec59495908f9b50e47fc8da271e4d1f1948",
+      "rewritten_sha256": "f3f6ffa0f0a90d6583ba556194977ec59495908f9b50e47fc8da271e4d1f1948",
+      "records": 231,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:18.940539+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/shards/shard_11_of_24/shard_11_of_24.priority.reverted_positive_to_false.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "93d637b2ab7b698c04864226723696ffd1bc8fb5efa15f82e641033af3ca1147",
+      "rewritten_sha256": "93d637b2ab7b698c04864226723696ffd1bc8fb5efa15f82e641033af3ca1147",
+      "records": 168,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:18.950190+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/shards/shard_11_of_24/shard_11_of_24.priority.true_or_review_needed.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "a1fdaabae5233fdb6a26717df246d4c5e7a3d44350ccdabc271744accdc14dd0",
+      "rewritten_sha256": "a1fdaabae5233fdb6a26717df246d4c5e7a3d44350ccdabc271744accdc14dd0",
+      "records": 63,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:18.954404+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/shards/shard_11_of_24/shard_11_of_24.summary.json",
+      "parse_mode": "json_object",
+      "original_sha256": "79e19d9f94deb7d694da902dbab334b195c37703a7e5f2fd115c5b7351a75104",
+      "rewritten_sha256": "79e19d9f94deb7d694da902dbab334b195c37703a7e5f2fd115c5b7351a75104",
+      "records": 1,
+      "status": "preserved_non_record",
+      "migrated_at_utc": "2026-04-22T18:58:18.954479+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/shards/shard_12_of_24/shard_12_of_24.delta_only.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "b1850ceb3b08adf53b184c200a329424e32fa5fd5f6faf710a3dbbc8a04eca00",
+      "rewritten_sha256": "b1850ceb3b08adf53b184c200a329424e32fa5fd5f6faf710a3dbbc8a04eca00",
+      "records": 187,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:18.964972+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/shards/shard_12_of_24/shard_12_of_24.full_draft.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "ffa49ca40f454bc1f77206ebac46e51349530ca44e4cad087265446ef8c34390",
+      "rewritten_sha256": "ffa49ca40f454bc1f77206ebac46e51349530ca44e4cad087265446ef8c34390",
+      "records": 231,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:18.977997+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/shards/shard_12_of_24/shard_12_of_24.priority.reverted_positive_to_false.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "48c2f830629dacceb9da94ee4621b0fa25f2ec7db67adeb96ff3705a83762259",
+      "rewritten_sha256": "48c2f830629dacceb9da94ee4621b0fa25f2ec7db67adeb96ff3705a83762259",
+      "records": 161,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:18.986866+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/shards/shard_12_of_24/shard_12_of_24.priority.true_or_review_needed.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "8a2797d62982b9ed00c0ac9b07b3bdd49109a7d626bab5e356b732f1f8d35583",
+      "rewritten_sha256": "8a2797d62982b9ed00c0ac9b07b3bdd49109a7d626bab5e356b732f1f8d35583",
+      "records": 70,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:18.991435+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/shards/shard_12_of_24/shard_12_of_24.summary.json",
+      "parse_mode": "json_object",
+      "original_sha256": "d952b2a60fa25b62108a90bcaf070f7e93678bf5dad2f385df42259675660e1e",
+      "rewritten_sha256": "d952b2a60fa25b62108a90bcaf070f7e93678bf5dad2f385df42259675660e1e",
+      "records": 1,
+      "status": "preserved_non_record",
+      "migrated_at_utc": "2026-04-22T18:58:18.991512+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/shards/shard_13_of_24/shard_13_of_24.delta_only.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "ace8341af39a4d0f63534009214159ab837761d20f6d55d060eab21f9f73a59a",
+      "rewritten_sha256": "ace8341af39a4d0f63534009214159ab837761d20f6d55d060eab21f9f73a59a",
+      "records": 207,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:19.003277+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/shards/shard_13_of_24/shard_13_of_24.full_draft.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "8817a1984a653d21fca7d2128bdd68d86df1d706c3208cb28755e8072f57d8ed",
+      "rewritten_sha256": "8817a1984a653d21fca7d2128bdd68d86df1d706c3208cb28755e8072f57d8ed",
+      "records": 230,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:19.016370+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/shards/shard_13_of_24/shard_13_of_24.priority.reverted_positive_to_false.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "302c16ec6bc9af01ac829c62308afa717bcb5f19c179317ccb448ca913fac6fa",
+      "rewritten_sha256": "302c16ec6bc9af01ac829c62308afa717bcb5f19c179317ccb448ca913fac6fa",
+      "records": 164,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:19.025722+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/shards/shard_13_of_24/shard_13_of_24.priority.true_or_review_needed.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "ff7bd0def1f3ec5c3be485b78b55a05c9fa5d70200ee20c31c86ae37c94fb41c",
+      "rewritten_sha256": "ff7bd0def1f3ec5c3be485b78b55a05c9fa5d70200ee20c31c86ae37c94fb41c",
+      "records": 66,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:19.031279+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/shards/shard_13_of_24/shard_13_of_24.summary.json",
+      "parse_mode": "json_object",
+      "original_sha256": "98a13f4126bb4c60a451af0c923646006dba7656010440ac304a870348e75561",
+      "rewritten_sha256": "98a13f4126bb4c60a451af0c923646006dba7656010440ac304a870348e75561",
+      "records": 1,
+      "status": "preserved_non_record",
+      "migrated_at_utc": "2026-04-22T18:58:19.031363+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/shards/shard_14_of_24/shard_14_of_24.delta_only.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "4516221abbbf8a44a7d04c7e18c74339564b528d18608d2ed66108ea8f1a5a1d",
+      "rewritten_sha256": "4516221abbbf8a44a7d04c7e18c74339564b528d18608d2ed66108ea8f1a5a1d",
+      "records": 201,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:19.042893+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/shards/shard_14_of_24/shard_14_of_24.full_draft.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "81bbe3e1e717770dc02ac2b843f02da63ede1cdc6038fcd76a106a6a9574b402",
+      "rewritten_sha256": "81bbe3e1e717770dc02ac2b843f02da63ede1cdc6038fcd76a106a6a9574b402",
+      "records": 231,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:19.056313+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/shards/shard_14_of_24/shard_14_of_24.priority.reverted_positive_to_false.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "4200af569588b05e8453637cf0ce75065af0c3cfe637e4a53c5a00c1d87cc3c6",
+      "rewritten_sha256": "4200af569588b05e8453637cf0ce75065af0c3cfe637e4a53c5a00c1d87cc3c6",
+      "records": 159,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:19.065331+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/shards/shard_14_of_24/shard_14_of_24.priority.true_or_review_needed.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "9bbc51a05fbd67f4b69b80cea65b13711b632d9254258109feec5f2b9a8dda94",
+      "rewritten_sha256": "9bbc51a05fbd67f4b69b80cea65b13711b632d9254258109feec5f2b9a8dda94",
+      "records": 72,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:19.070133+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/shards/shard_14_of_24/shard_14_of_24.summary.json",
+      "parse_mode": "json_object",
+      "original_sha256": "5e8812c601f46cf75a900b6f3b6a4c2940379be2e55c524c7e7785a5b4a1f822",
+      "rewritten_sha256": "5e8812c601f46cf75a900b6f3b6a4c2940379be2e55c524c7e7785a5b4a1f822",
+      "records": 1,
+      "status": "preserved_non_record",
+      "migrated_at_utc": "2026-04-22T18:58:19.070225+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/shards/shard_15_of_24/shard_15_of_24.delta_only.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "a0f2e197e17b873c456348a84b57041a2819cd7ce292498510a59f9c61ab56ee",
+      "rewritten_sha256": "a0f2e197e17b873c456348a84b57041a2819cd7ce292498510a59f9c61ab56ee",
+      "records": 190,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:19.080620+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/shards/shard_15_of_24/shard_15_of_24.full_draft.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "f767aa0e498e2226469a5b3b11b10e5de26eda135637f75f9e1a54e3f6646225",
+      "rewritten_sha256": "f767aa0e498e2226469a5b3b11b10e5de26eda135637f75f9e1a54e3f6646225",
+      "records": 231,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:19.093847+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/shards/shard_15_of_24/shard_15_of_24.priority.reverted_positive_to_false.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "a023cb9b173c5639105430bc6a794237bd094dacfec046f84ebfc2e4cae5dbd0",
+      "rewritten_sha256": "a023cb9b173c5639105430bc6a794237bd094dacfec046f84ebfc2e4cae5dbd0",
+      "records": 163,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:19.102752+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/shards/shard_15_of_24/shard_15_of_24.priority.true_or_review_needed.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "531d3bf3d0a275bb3555f994b1bc263c7110c004cb1301c16bd8956babf756cb",
+      "rewritten_sha256": "531d3bf3d0a275bb3555f994b1bc263c7110c004cb1301c16bd8956babf756cb",
+      "records": 68,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:19.107094+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/shards/shard_15_of_24/shard_15_of_24.summary.json",
+      "parse_mode": "json_object",
+      "original_sha256": "b97147585804c44bd0d14c526eedd4d07a77c6d8aae2cd59995795615b9211bf",
+      "rewritten_sha256": "b97147585804c44bd0d14c526eedd4d07a77c6d8aae2cd59995795615b9211bf",
+      "records": 1,
+      "status": "preserved_non_record",
+      "migrated_at_utc": "2026-04-22T18:58:19.107183+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/shards/shard_16_of_24/shard_16_of_24.delta_only.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "2501b8a81938eea8a6be602c44fecf72e462eb4f6deef19eaa587faa3355d3ea",
+      "rewritten_sha256": "2501b8a81938eea8a6be602c44fecf72e462eb4f6deef19eaa587faa3355d3ea",
+      "records": 218,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:19.119859+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/shards/shard_16_of_24/shard_16_of_24.full_draft.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "fd76568e234d008766b9bcb1cb74ce3cbc5d351eeebacda1b59abc731ed944ec",
+      "rewritten_sha256": "fd76568e234d008766b9bcb1cb74ce3cbc5d351eeebacda1b59abc731ed944ec",
+      "records": 230,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:19.135057+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/shards/shard_16_of_24/shard_16_of_24.priority.reverted_positive_to_false.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "0fa7c98a4e21df94c10c735ec501ba9a5f407a7075776d9af6218e24e4254fbd",
+      "rewritten_sha256": "0fa7c98a4e21df94c10c735ec501ba9a5f407a7075776d9af6218e24e4254fbd",
+      "records": 173,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:19.144997+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/shards/shard_16_of_24/shard_16_of_24.priority.true_or_review_needed.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "c1475efc557fabca8786db326749ea3c2e0765655615a001f39667ea86e88984",
+      "rewritten_sha256": "c1475efc557fabca8786db326749ea3c2e0765655615a001f39667ea86e88984",
+      "records": 57,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:19.148998+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/shards/shard_16_of_24/shard_16_of_24.summary.json",
+      "parse_mode": "json_object",
+      "original_sha256": "7d34ce353a1d87bbb8f13156c71e4ff3fa1d1750342f8c9e88e881196b0528cd",
+      "rewritten_sha256": "7d34ce353a1d87bbb8f13156c71e4ff3fa1d1750342f8c9e88e881196b0528cd",
+      "records": 1,
+      "status": "preserved_non_record",
+      "migrated_at_utc": "2026-04-22T18:58:19.149085+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/shards/shard_17_of_24/shard_17_of_24.delta_only.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "bdc54ed053fc3da546da44e5dc2322ba467f68101418019ec7c0240b3fb4c5de",
+      "rewritten_sha256": "bdc54ed053fc3da546da44e5dc2322ba467f68101418019ec7c0240b3fb4c5de",
+      "records": 198,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:19.160559+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/shards/shard_17_of_24/shard_17_of_24.full_draft.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "ac973767ca3ba43dd316223f8792c66d5e6a6b9379c3342120d8161194452a1b",
+      "rewritten_sha256": "ac973767ca3ba43dd316223f8792c66d5e6a6b9379c3342120d8161194452a1b",
+      "records": 231,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:19.174460+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/shards/shard_17_of_24/shard_17_of_24.priority.reverted_positive_to_false.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "51464d928c606fe79b7fca7a90ce9dd0b3ce889cb3b0e7652a768cc79ae343ea",
+      "rewritten_sha256": "51464d928c606fe79b7fca7a90ce9dd0b3ce889cb3b0e7652a768cc79ae343ea",
+      "records": 162,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:19.183693+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/shards/shard_17_of_24/shard_17_of_24.priority.true_or_review_needed.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "7335131f41c1273f7fde2fc3a9cc6cd1af4e9c9ace182630c725dc4db13bc0fd",
+      "rewritten_sha256": "7335131f41c1273f7fde2fc3a9cc6cd1af4e9c9ace182630c725dc4db13bc0fd",
+      "records": 69,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:19.188256+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/shards/shard_17_of_24/shard_17_of_24.summary.json",
+      "parse_mode": "json_object",
+      "original_sha256": "1dd0bb62fd2d1983bff1f54baf0067165b631ddb3e3c068e702bd8ab89b0ce57",
+      "rewritten_sha256": "1dd0bb62fd2d1983bff1f54baf0067165b631ddb3e3c068e702bd8ab89b0ce57",
+      "records": 1,
+      "status": "preserved_non_record",
+      "migrated_at_utc": "2026-04-22T18:58:19.188345+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/shards/shard_18_of_24/shard_18_of_24.delta_only.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "5d93fe9f6d2e7b9d6305fd8355dead8bcb371695431309c2a7e17f1c8ac27f7a",
+      "rewritten_sha256": "5d93fe9f6d2e7b9d6305fd8355dead8bcb371695431309c2a7e17f1c8ac27f7a",
+      "records": 202,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:19.199876+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/shards/shard_18_of_24/shard_18_of_24.full_draft.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "6ce6f7387bf1ce1bf109ed1c3e394442e7065cbb296cf19e3d1823eb9e124391",
+      "rewritten_sha256": "6ce6f7387bf1ce1bf109ed1c3e394442e7065cbb296cf19e3d1823eb9e124391",
+      "records": 230,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:19.213488+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/shards/shard_18_of_24/shard_18_of_24.priority.reverted_positive_to_false.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "6585284a4667ea22eb20924f961f176588c761e675ab27eb5c7f3f95c406fd7d",
+      "rewritten_sha256": "6585284a4667ea22eb20924f961f176588c761e675ab27eb5c7f3f95c406fd7d",
+      "records": 158,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:19.222388+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/shards/shard_18_of_24/shard_18_of_24.priority.true_or_review_needed.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "601a185dd3230d37c6c8b7dc9a7c33012c4760837488f65649fba05f58f8749c",
+      "rewritten_sha256": "601a185dd3230d37c6c8b7dc9a7c33012c4760837488f65649fba05f58f8749c",
+      "records": 72,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:19.227108+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/shards/shard_18_of_24/shard_18_of_24.summary.json",
+      "parse_mode": "json_object",
+      "original_sha256": "a9646e9742481861269fbb31929d9aaa0acfcff7a0f637abb9e8c99599ed3ee9",
+      "rewritten_sha256": "a9646e9742481861269fbb31929d9aaa0acfcff7a0f637abb9e8c99599ed3ee9",
+      "records": 1,
+      "status": "preserved_non_record",
+      "migrated_at_utc": "2026-04-22T18:58:19.227197+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/shards/shard_19_of_24/shard_19_of_24.delta_only.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "90ec2b08613dfd4fb7d997a527846ba377f0951438d8b636a1c5bc98d45750d5",
+      "rewritten_sha256": "90ec2b08613dfd4fb7d997a527846ba377f0951438d8b636a1c5bc98d45750d5",
+      "records": 194,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:19.239806+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/shards/shard_19_of_24/shard_19_of_24.full_draft.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "3fbe222dce49e76f5a110fe75b82ce513c4e78628a0e93fb2bc827ab533b6f54",
+      "rewritten_sha256": "3fbe222dce49e76f5a110fe75b82ce513c4e78628a0e93fb2bc827ab533b6f54",
+      "records": 231,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:19.253825+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/shards/shard_19_of_24/shard_19_of_24.priority.reverted_positive_to_false.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "6ac1b0623b99342fa5a5874035bfdce869f80b2c028bbc3b470de1dc2e6f687e",
+      "rewritten_sha256": "6ac1b0623b99342fa5a5874035bfdce869f80b2c028bbc3b470de1dc2e6f687e",
+      "records": 160,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:19.262881+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/shards/shard_19_of_24/shard_19_of_24.priority.true_or_review_needed.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "a891a8029916ca989ffc6ab9d6f1ba4ed289263fc566d451622f2f3952957a0c",
+      "rewritten_sha256": "a891a8029916ca989ffc6ab9d6f1ba4ed289263fc566d451622f2f3952957a0c",
+      "records": 71,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:19.267475+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/shards/shard_19_of_24/shard_19_of_24.summary.json",
+      "parse_mode": "json_object",
+      "original_sha256": "60beafc4a1d70ee34e5952316d30d218f65d2fc21004aff12213f0e23342e441",
+      "rewritten_sha256": "60beafc4a1d70ee34e5952316d30d218f65d2fc21004aff12213f0e23342e441",
+      "records": 1,
+      "status": "preserved_non_record",
+      "migrated_at_utc": "2026-04-22T18:58:19.267564+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/shards/shard_20_of_24/shard_20_of_24.delta_only.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "c34a90bffd2d1de7a8a75d89ffe0cd4e7fa7714c2623c0544e0c801780807bf8",
+      "rewritten_sha256": "c34a90bffd2d1de7a8a75d89ffe0cd4e7fa7714c2623c0544e0c801780807bf8",
+      "records": 195,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:19.279103+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/shards/shard_20_of_24/shard_20_of_24.full_draft.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "44faeba06b79efe61be7e777d8a49880b159cc4da909636b7c9ccc8a02d324f6",
+      "rewritten_sha256": "44faeba06b79efe61be7e777d8a49880b159cc4da909636b7c9ccc8a02d324f6",
+      "records": 231,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:19.292607+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/shards/shard_20_of_24/shard_20_of_24.priority.reverted_positive_to_false.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "532b097cc864b74068f0062f23ec63802c96c05566b00054aa16954e018c5436",
+      "rewritten_sha256": "532b097cc864b74068f0062f23ec63802c96c05566b00054aa16954e018c5436",
+      "records": 165,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:19.302415+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/shards/shard_20_of_24/shard_20_of_24.priority.true_or_review_needed.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "aa1304cf9a790bda92cd173d23d78f8c8c1c77aed55e36f13fce67989f90fd98",
+      "rewritten_sha256": "aa1304cf9a790bda92cd173d23d78f8c8c1c77aed55e36f13fce67989f90fd98",
+      "records": 66,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:19.306649+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/shards/shard_20_of_24/shard_20_of_24.summary.json",
+      "parse_mode": "json_object",
+      "original_sha256": "6aec2dacbd6fbadb3b292edd89958e841726cc195e7a90994ecbf47c9311e4fd",
+      "rewritten_sha256": "6aec2dacbd6fbadb3b292edd89958e841726cc195e7a90994ecbf47c9311e4fd",
+      "records": 1,
+      "status": "preserved_non_record",
+      "migrated_at_utc": "2026-04-22T18:58:19.306736+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/shards/shard_21_of_24/shard_21_of_24.delta_only.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "10e9ad0c285ee6e8b1931d65f7e80bb8146e80623e6d53eb41fc3e6dfb17b01b",
+      "rewritten_sha256": "10e9ad0c285ee6e8b1931d65f7e80bb8146e80623e6d53eb41fc3e6dfb17b01b",
+      "records": 204,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:19.318834+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/shards/shard_21_of_24/shard_21_of_24.full_draft.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "f02c6fac546710173e200cee6dba6a5ecfd722220f52415a89602df012175421",
+      "rewritten_sha256": "f02c6fac546710173e200cee6dba6a5ecfd722220f52415a89602df012175421",
+      "records": 230,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:19.332230+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/shards/shard_21_of_24/shard_21_of_24.priority.reverted_positive_to_false.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "49ae01cbe9c51e6d0d7cb4dd2489f02c7aeff49034687a2e10f186c04cd20110",
+      "rewritten_sha256": "49ae01cbe9c51e6d0d7cb4dd2489f02c7aeff49034687a2e10f186c04cd20110",
+      "records": 162,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:19.341225+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/shards/shard_21_of_24/shard_21_of_24.priority.true_or_review_needed.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "5d59b21f60172cdc45282a8c1fb70c8adcb7e89e57b83e043c057d44b644f7d1",
+      "rewritten_sha256": "5d59b21f60172cdc45282a8c1fb70c8adcb7e89e57b83e043c057d44b644f7d1",
+      "records": 68,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:19.346716+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/shards/shard_21_of_24/shard_21_of_24.summary.json",
+      "parse_mode": "json_object",
+      "original_sha256": "7154f76cc851b1d27476a58a382995c1e88b2af521822a3ba95e6730339a86a9",
+      "rewritten_sha256": "7154f76cc851b1d27476a58a382995c1e88b2af521822a3ba95e6730339a86a9",
+      "records": 1,
+      "status": "preserved_non_record",
+      "migrated_at_utc": "2026-04-22T18:58:19.346797+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/shards/shard_22_of_24/shard_22_of_24.delta_only.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "ec94eb8f39c58ec96ac5ba36a4b2bbde2c24c4795fbee7a8d866b8d9a9a09156",
+      "rewritten_sha256": "ec94eb8f39c58ec96ac5ba36a4b2bbde2c24c4795fbee7a8d866b8d9a9a09156",
+      "records": 201,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:19.358514+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/shards/shard_22_of_24/shard_22_of_24.full_draft.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "c4fca429d07d787eaeeeaa010fe92f9bb619b59cc5c0e611ad800a536bfea874",
+      "rewritten_sha256": "c4fca429d07d787eaeeeaa010fe92f9bb619b59cc5c0e611ad800a536bfea874",
+      "records": 231,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:19.372009+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/shards/shard_22_of_24/shard_22_of_24.priority.reverted_positive_to_false.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "0d9806cb8fadf54089d1a7c377c1ec7cadd095656f8dd21a5f3199b4b920bd83",
+      "rewritten_sha256": "0d9806cb8fadf54089d1a7c377c1ec7cadd095656f8dd21a5f3199b4b920bd83",
+      "records": 166,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:19.381778+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/shards/shard_22_of_24/shard_22_of_24.priority.true_or_review_needed.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "8b1869dbf25e340ff090fdf4e8fa8e16982c27b4afc454e27b154ba2ae23f9b7",
+      "rewritten_sha256": "8b1869dbf25e340ff090fdf4e8fa8e16982c27b4afc454e27b154ba2ae23f9b7",
+      "records": 65,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:19.386045+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/shards/shard_22_of_24/shard_22_of_24.summary.json",
+      "parse_mode": "json_object",
+      "original_sha256": "1848f74aae6689afbf7b7896d76c14666af51e6b850c55c13e2db4e6c196898c",
+      "rewritten_sha256": "1848f74aae6689afbf7b7896d76c14666af51e6b850c55c13e2db4e6c196898c",
+      "records": 1,
+      "status": "preserved_non_record",
+      "migrated_at_utc": "2026-04-22T18:58:19.386123+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/shards/shard_23_of_24/shard_23_of_24.delta_only.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "8f05a9df73f11b2dd25713e0f56faa9004d694f45843e649db128e0efacd88fe",
+      "rewritten_sha256": "8f05a9df73f11b2dd25713e0f56faa9004d694f45843e649db128e0efacd88fe",
+      "records": 215,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:19.398928+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/shards/shard_23_of_24/shard_23_of_24.full_draft.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "e0b63fbfc3f7ee86e908b76b5828433b009af39dc996eb3d094a2755086e6093",
+      "rewritten_sha256": "e0b63fbfc3f7ee86e908b76b5828433b009af39dc996eb3d094a2755086e6093",
+      "records": 231,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:19.412727+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/shards/shard_23_of_24/shard_23_of_24.priority.reverted_positive_to_false.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "4e34b84c5c7b0a6c98379d3114ec3d159a9bad99631328fb3779493de06ae7f3",
+      "rewritten_sha256": "4e34b84c5c7b0a6c98379d3114ec3d159a9bad99631328fb3779493de06ae7f3",
+      "records": 163,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:19.422130+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/shards/shard_23_of_24/shard_23_of_24.priority.true_or_review_needed.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "eed3470b38fedccd068601f3982c922cdb817db3dd73b37c931b426785f6fa44",
+      "rewritten_sha256": "eed3470b38fedccd068601f3982c922cdb817db3dd73b37c931b426785f6fa44",
+      "records": 68,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:19.427060+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/data/interim/rebaseline_quality_v5/suggestions/qv5_rescreen_deepseek_full_v1/shards/shard_23_of_24/shard_23_of_24.summary.json",
+      "parse_mode": "json_object",
+      "original_sha256": "b656e25bb0fa5305f410194a7b306817e764ddbaf29ea7e7508b924aa7fb5c95",
+      "rewritten_sha256": "b656e25bb0fa5305f410194a7b306817e764ddbaf29ea7e7508b924aa7fb5c95",
+      "records": 1,
+      "status": "preserved_non_record",
+      "migrated_at_utc": "2026-04-22T18:58:19.427138+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/outputs/tables/comment_review_v2_master.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "89872ba5f781504b6dab8692309f138e742850f6995a894742f177684d2bb00b",
+      "rewritten_sha256": "89872ba5f781504b6dab8692309f138e742850f6995a894742f177684d2bb00b",
+      "records": 27408,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:21.366481+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/outputs/tables/external_xhs_ai4s_2025plus_pilot100.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "e57bd1ef74901fe386f0c041780652f9e4fc893236623a3eca764753d7e1e4a0",
+      "rewritten_sha256": "e57bd1ef74901fe386f0c041780652f9e4fc893236623a3eca764753d7e1e4a0",
+      "records": 100,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:21.425147+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/outputs/tables/external_xhs_ai4s_smoketest.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "rewritten_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "records": 0,
+      "status": "preserved_empty",
+      "migrated_at_utc": "2026-04-22T18:58:21.425266+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/outputs/tables/external_xhs_ai4s_smoketest_3queries.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "2ce775155d7357b6f6e7b5d060d19739a28e3f7a5145da70ea57c648016284de",
+      "rewritten_sha256": "2ce775155d7357b6f6e7b5d060d19739a28e3f7a5145da70ea57c648016284de",
+      "records": 1,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:21.425881+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/outputs/tables/external_xhs_ai4s_smoketest_3queries_v2.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "39cbb66acf49a54c624d19fb3b59fed5f77b6be9cdef9b67408fddbee2b8c967",
+      "rewritten_sha256": "39cbb66acf49a54c624d19fb3b59fed5f77b6be9cdef9b67408fddbee2b8c967",
+      "records": 1,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:21.426119+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/outputs/tables/external_xhs_ai4s_smoketest_after_login.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "rewritten_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "records": 0,
+      "status": "preserved_empty",
+      "migrated_at_utc": "2026-04-22T18:58:21.426161+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/outputs/tables/external_xhs_ai4s_smoketest_after_patch.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "rewritten_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "records": 0,
+      "status": "preserved_empty",
+      "migrated_at_utc": "2026-04-22T18:58:21.426192+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/outputs/tables/external_xhs_ai4s_smoketest_after_patch2.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "rewritten_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "records": 0,
+      "status": "preserved_empty",
+      "migrated_at_utc": "2026-04-22T18:58:21.426223+00:00"
+    },
+    {
+      "path": "/Users/guoyufan/ai4s in xhs/outputs/tables/post_review_v2_master.jsonl",
+      "parse_mode": "jsonl",
+      "original_sha256": "e894cbe036bd13ae41dc4fa953a4e491a86fb0019de8876eed1a2b07bca16797",
+      "rewritten_sha256": "e894cbe036bd13ae41dc4fa953a4e491a86fb0019de8876eed1a2b07bca16797",
+      "records": 5535,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:22.132225+00:00"
+    },
+    {
+      "path": "archive/legacy_examples/examples_legacy/deidentified_sample_note.json",
+      "parse_mode": "json_object",
+      "original_sha256": "c5f6e4b6878085119f6e5ca664466b4ca3f404f58bbc93cbfadf9bcb6fd1750f",
+      "rewritten_sha256": "c5f6e4b6878085119f6e5ca664466b4ca3f404f58bbc93cbfadf9bcb6fd1750f",
+      "records": 1,
+      "lossless": true,
+      "status": "migrated",
+      "migrated_at_utc": "2026-04-22T18:58:22.153337+00:00"
+    }
+  ]
+}

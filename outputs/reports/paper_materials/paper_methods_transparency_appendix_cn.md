@@ -1,31 +1,13 @@
-# 方法透明度与补充材料说明附录（内部审计版）
+# 方法透明度与补充材料说明（quality_v5 active）
 
-## A1 正式基线与样本形成
+- 当前正式基线：`quality_v5 正式重建基线`
+- 研究时间窗：`2024-01-01` 至 `2026-06-30`
+- 正式覆盖截止日：`2026-04-10`
+- 当前状态：`post_review_v2_imported_post_only`
+- 当前正式帖子 / 正式评论：`514 / 0`
+- 当前 canonical corpus：帖子 `5535` 条，评论 `12362` 条
 
-本附录用于集中说明 `quality_v4` 正式基线、样本形成路径、结构修补、评论继承审计以及当前图表来源契约，作为投稿版正文之外的可审计补充说明。当前项目保留三套并行但边界清晰的分析口径：`candidate_scope` 用于保存全量候选材料，`research_scope` 用于保留研究准备阶段的可分析样本，`paper_scope_quality_v4` 则是当前论文主结果的唯一正式口径。按照这一口径，数据库中共保留 `5535` 个去重候选帖，在 `quality_v4` 冻结版下形成 `3067` 条正式帖子和 `69880` 条正式评论；后续正文中的样本规模、时间分布、学科分布、流程分布与评论态度结构，均以 `paper_scope_quality_v4` 为正式来源。
-
-从样本形成逻辑看，`candidate_scope` 对应的是较宽口径的历史保留层，`research_scope` 则承接经基础过滤后仍具研究价值的准备样本，而 `paper_scope_quality_v4` 是在第二轮结构修补和边界收紧之后形成的论文主样本。由此，`5535 / 3067 / 69880` 并非三个彼此孤立的数字，而是“候选材料—研究准备—正式论文样本”这三层关系的结果。当前正式核验接口包括 `quality_v4_freeze_checkpoint.json`、`quality_v4_evidence_matrix.md`、`paper_materials_manifest.json` 以及研究主库导出的 summary / consistency 报告，这些文件共同构成 `quality_v4` 的 freeze contract。
-
-## A2 两轮结构修补与样本边界收紧
-
-为提高正式结果的结构稳定性，项目在初步冻结后继续实施两轮结构修补，其中对 `quality_v4` 影响最大的，是基于 `quality_v3` 进行的第二轮结构修补。该轮 round2 merged review 共覆盖 `235` 条高价值样本，其中 `223` 条实现自动回填，`0` 条进入强制人工冲突收口；同时有 `194` 条帖子被改写为 `override_sample_status=false`，另有 `6` 条被识别为宣传或推广型 actor。这里需要特别强调的是，移出主样本并不等于删除数据。相关帖子仍保留在数据库、review 记录和补充说明链路中，只是不再进入论文主结果统计。
-
-这一轮边界收紧的核心作用，在于将模板化汇报帖、泛工具清单、泛效率帖、非明确科研任务语境的经验帖等边界材料，从论文主结果中分离出来，使正式样本更集中地反映“明确科研任务 / 科研流程”语境中的 AI4S 讨论。相较 `quality_v3`，`quality_v4` 的正式帖子数减少 `526` 条，正式评论数减少 `6376` 条，但学科不确定占比从 `29.22%` 降至 `23.77%`，流程不确定占比从 `19.43%` 降至 `14.18%`。因此，`quality_v4` 相比前一版的主要改进并非样本扩张，而是样本边界更清晰、结构不确定性更低。
-
-## A3 评论继承审计与质量控制
-
-在主帖结构修补完成后，项目没有对评论层逐条重新编码，而是采用“主帖回灌后评论按既有规则统一继承重算”的路径，以保持评论层与主帖正式口径的一致性。考虑到边界收紧和标签改写可能对评论分析造成传导影响，研究进一步生成评论继承审计，对 `sample_status_false`、`subject_changed` 和 `workflow_changed` 三类高风险变动分别进行抽样核查。当前审计记录共 `3` 条，分别对应三类核心情形，用以验证评论继承逻辑在第二轮结构修补后的稳定性。
-
-这一审计设计的目的，不是将评论层改造成逐条深修项目，而是在维持正式论文主线稳定的前提下，确认主帖 override 不会系统性破坏评论层的基本分析逻辑。现有审计结果表明，评论层虽然仍应保持解释审慎，但其继承链条未出现足以推翻当前正式结果的明显结构性失真。因此，评论层仍被视为理解 AI4S 差异化合法性判断与边界协商的必要证据，而不是正文之外的附属材料。
-
-## A4 图表来源契约与临时桥接
-
-当前投稿交付链采用显式来源契约，以避免正文统计、图表与历史分析导出混用。按照 `quality_v4_evidence_matrix.md` 的登记规则，正文中的样本规模、时间分布、学科分布、流程分布、评论态度，以及对应的图1至图4，均由 `paper_scope_quality_v4` 直接复现；这部分结果可由研究主库正式视图、freeze checkpoint 和 consistency 报告共同交叉核验。
-
-与此同时，工具生态与风险主题两组正文图表也已从 `legacy_bridge_temp` 桥接状态迁入研究主库 `paper_scope_quality_v4` 正式视图。也就是说，图5与图6及其相关数字，现已统一由研究主库的 `ai_tools_json` 与 `risk_themes_json` 字段直接复现，不再依赖 legacy 分析导出。这标志着当前投稿交付链上的全部核心图表与统计均已闭合到研究主库，legacy 桥接技术债已清零。
-
-## A5 残余限制与补充材料使用方式
-
-尽管 `quality_v4` 已经成为当前正式论文基线，项目仍保留少量可解释但尚未完全清零的尾部债务。当前采集层仍有 `queued=22`，并存在 `temporarily_unavailable_300031=43` 的平台可访问性残余；媒体审计下 `formal_media_gap=2218`，说明部分正式样本仍未形成完整媒体识别链。这些事实在当前研究设计中被统一视为方法限制，而不是重新打开数据主线的理由。换言之，它们提醒我们对特定弱单元格和媒体尾部结果保持解释审慎，但并不足以否定 `quality_v4` 的正式结果地位。
-
-在阅读顺序上，正文负责呈现主结果与主论证；本附录负责集中说明样本形成、边界收紧、评论继承审计与图表来源契约；`quality_v4_evidence_matrix.md` 负责逐项登记核心数字和正文图来源；`quality_v4_freeze_checkpoint.json/.md` 则记录正式冻结状态与 source contract。若读者希望追溯某一数字、图表或方法限制的具体来源，应以“正文 -> 本附录 -> evidence matrix -> freeze checkpoint”作为优先检索路径。
+本附录记录 active baseline 的真实合同状态。当前 summary、consistency、canonical corpus、freeze checkpoint 与图表 manifest 全部对应 `paper_scope_quality_v5`；本轮正式基线采用帖子层 post-only 口径，正式样本为 `514 / 0`，评论层正式编码 deferred。
+历史 `quality_v4` 的 freeze、图包和 evidence matrix 继续保留，但只作为 `legacy_audit_snapshot` 使用。
+- pending contract：`outputs/reports/paper_materials/quality_v5_pending_contract.md`
+- backfill contract：`docs/canonical_backfill_contract.md`

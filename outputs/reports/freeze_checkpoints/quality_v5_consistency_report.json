@@ -1,0 +1,42 @@
+{
+  "reference_source": "outputs/reports/freeze_checkpoints/quality_v5_freeze_checkpoint.json",
+  "research_db_path": "data/processed/ai4s_legitimacy.sqlite3",
+  "matching_rule": "compare quality_v5 checkpoint counts with paper-scope views in the research DB",
+  "reference": {
+    "checkpoint_stage": "quality_v5",
+    "formal_posts": 514,
+    "formal_comments": 0,
+    "queued": 5535
+  },
+  "scope_counts": {
+    "candidate_comments": 106543,
+    "candidate_posts": 5535,
+    "paper_quality_v5_comments": 0,
+    "paper_quality_v5_posts": 514,
+    "research_comments": 30640,
+    "research_posts": 1294
+  },
+  "observed_paper_scope": {
+    "formal_posts": 514,
+    "formal_comments": 0
+  },
+  "delta": {
+    "paper_posts_minus_checkpoint": 0,
+    "paper_comments_minus_checkpoint": 0
+  },
+  "research_to_paper_exclusion": {
+    "posts": {
+      "excluded_actor": 213,
+      "not_crawled": 22,
+      "outside_research_window": 1,
+      "paper_scope": 1058
+    },
+    "comments": {
+      "excluded_actor": 4737,
+      "outside_research_window": 78,
+      "paper_scope": 25823,
+      "post_not_crawled": 2
+    }
+  },
+  "status": "aligned"
+}

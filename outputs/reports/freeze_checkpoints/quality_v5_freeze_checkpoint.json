@@ -1,0 +1,34 @@
+{
+  "status": "post_review_v2_imported_post_only",
+  "checkpoint_stage": "quality_v5",
+  "target_distinct_candidates": 5535,
+  "distinct_candidates": 5535,
+  "target_reached": true,
+  "analyze_ran": true,
+  "analyze_result": {
+    "formal_source_contract": "paper_scope_quality_v5",
+    "formal_posts": 514,
+    "formal_comments": 0,
+    "coverage_end_date": "2026-04-10"
+  },
+  "collection_report_path": "outputs/reports/paper_materials/collection_status.snapshot.json",
+  "formal_posts": 514,
+  "formal_comments": 0,
+  "queued": 5535,
+  "quality_watchlist": {
+    "note": "post_review_v2 strict reviewed runs are imported for the post-only quality_v5 baseline; comment_review_v2 formal coding is intentionally deferred in this round.",
+    "formal_comments_zero_reason": "formal_comments=0 is a design choice for this post-only artifact refresh, not a missing import."
+  },
+  "paper_materials": {
+    "status": "post_only_formal_scope",
+    "output_dir": "outputs/reports/paper_materials",
+    "manifest_path": "outputs/reports/paper_materials/paper_materials_manifest.json",
+    "formal_source_contract": {
+      "core_results": "paper_scope_quality_v5",
+      "tools_and_risk_figures": "paper_scope_quality_v5"
+    },
+    "chart_count": 4,
+    "comment_scope_note": "comment_review_v2 is intentionally not part of formal coding in this refresh."
+  },
+  "next_step": "defer_comment_review_v2_or_prepare_future_comment_queue"
+}
