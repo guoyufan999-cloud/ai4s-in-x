@@ -3,7 +3,6 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
-
 ROOT = Path(__file__).resolve().parents[1]
 NOTEBOOK_DIR = ROOT / "notebooks"
 TEMPLATE_FIELDS = (
@@ -46,7 +45,18 @@ def test_dependency_helper_files_and_lock_snapshot_are_documented() -> None:
     assert "docs/runtime_environment_snapshot.md" in readme_text
     assert "requirements.txt" not in readme_text
     assert "pip freeze --exclude-editable" in runtime_snapshot_text
-    assert "105 passed" in runtime_snapshot_text
+    assert "./.venv/bin/python -m mypy" in runtime_snapshot_text
+    assert "111 passed" in runtime_snapshot_text
+    assert "mypy clean" in runtime_snapshot_text
+
+
+def test_repo_and_artifact_health_scripts_are_available() -> None:
+    repo_health = ROOT / "scripts" / "repo_health.py"
+    artifact_health = ROOT / "scripts" / "artifact_health.py"
+
+    assert repo_health.exists()
+    assert artifact_health.exists()
+    assert "run_health_checks" in artifact_health.read_text(encoding="utf-8")
 
 
 def test_notebook_templates_are_unexecuted_and_not_formal_delivery_artifacts() -> None:

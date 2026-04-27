@@ -33,6 +33,7 @@ The local editable package `ai4s-legitimacy` is excluded from the lock because t
 - `certifi==2026.2.25`
 - `pytest==9.0.3`
 - `ruff==0.15.10`
+- `mypy==1.20.2`
 
 ## Baseline Verification Commands
 
@@ -41,7 +42,8 @@ The current snapshot was verified with:
 ```bash
 ./.venv/bin/python -B -m pytest -q
 ./.venv/bin/ruff check .
+./.venv/bin/python -m mypy
 ./.venv/bin/pip check
 ```
 
-Current expected result: `105 passed`, Ruff clean, and no broken requirements.
+Current expected result: `111 passed`, Ruff clean, mypy clean, and no broken requirements.
