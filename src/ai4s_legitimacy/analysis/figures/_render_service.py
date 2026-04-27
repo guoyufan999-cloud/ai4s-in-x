@@ -27,8 +27,9 @@ def _load_figure_datasets(
     *,
     db_path: Path,
     coverage_end_date: str | None,
+    immutable: bool,
 ) -> tuple[str, dict[str, dict[str, Any]]]:
-    with connect_sqlite_readonly(db_path) as connection:
+    with connect_sqlite_readonly(db_path, immutable=immutable) as connection:
         resolved_coverage_end_date = (
             coverage_end_date or resolve_paper_scope_coverage_end_date(connection)
         )
@@ -212,12 +213,14 @@ def generate_submission_figures(
     db_path: Path = RESEARCH_DB_PATH,
     figure_dir: Path = FIGURE_DIR,
     coverage_end_date: str | None = None,
+    immutable: bool = False,
 ) -> dict[str, Any]:
     plt, np = configure_matplotlib()
     figure_dir.mkdir(parents=True, exist_ok=True)
     resolved_coverage_end_date, datasets = _load_figure_datasets(
         db_path=db_path,
         coverage_end_date=coverage_end_date,
+        immutable=immutable,
     )
     generated = _render_generated_figures(
         plt,

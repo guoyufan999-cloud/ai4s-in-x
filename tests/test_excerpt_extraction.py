@@ -22,7 +22,7 @@ from ai4s_legitimacy.analysis.excerpt_extraction import (
 )
 from ai4s_legitimacy.config.research_scope import render_views_sql
 from ai4s_legitimacy.config.settings import RESEARCH_DB_PATH
-from ai4s_legitimacy.utils.db import init_sqlite_db
+from ai4s_legitimacy.utils.db import checkpoint_sqlite_wal, init_sqlite_db
 
 
 GENERATED_AT = "2026-04-10T00:00:00"
@@ -107,6 +107,7 @@ def _create_excerpt_test_db(tmp_path: Path) -> Path:
     )
     conn.commit()
     conn.close()
+    checkpoint_sqlite_wal(db_path)
     return db_path
 
 

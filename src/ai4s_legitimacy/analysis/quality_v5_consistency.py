@@ -97,9 +97,10 @@ def evaluate_quality_v5_consistency(
     db_path: Path = RESEARCH_DB_PATH,
     *,
     generated_at_utc: str | None = None,
+    immutable: bool = False,
 ) -> dict[str, object]:
     checkpoint = json.loads(checkpoint_path.read_text(encoding="utf-8"))
-    with connect_sqlite_readonly(db_path) as connection:
+    with connect_sqlite_readonly(db_path, immutable=immutable) as connection:
         scope_counts = _scope_counts(connection)
         post_reason_breakdown = _post_reason_breakdown(connection)
         comment_reason_breakdown = _comment_reason_breakdown(connection)
@@ -158,11 +159,13 @@ def export_quality_v5_consistency(
     db_path: Path = RESEARCH_DB_PATH,
     *,
     generated_at_utc: str | None = None,
+    immutable: bool = False,
 ) -> Path:
     report = evaluate_quality_v5_consistency(
         checkpoint_path=checkpoint_path,
         db_path=db_path,
         generated_at_utc=generated_at_utc,
+        immutable=immutable,
     )
     output = output_path or ACTIVE_CONSISTENCY_REPORT_PATH
     return write_quality_v5_consistency_report(report, output)

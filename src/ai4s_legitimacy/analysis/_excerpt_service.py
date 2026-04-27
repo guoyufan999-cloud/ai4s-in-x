@@ -26,7 +26,7 @@ def _select_rows(
     sql: str,
     params: tuple[object, ...] = (),
 ) -> list[Any]:
-    with connect_sqlite_readonly(db_path) as conn:
+    with connect_sqlite_readonly(db_path, immutable=True) as conn:
         return conn.execute(sql, params).fetchall()
 
 
@@ -192,7 +192,7 @@ def _load_batch_category_groups(
     db_path: Path,
     batch_specs: Sequence[ExcerptBatchSpec],
 ) -> list[list[str]]:
-    with connect_sqlite_readonly(db_path) as conn:
+    with connect_sqlite_readonly(db_path, immutable=True) as conn:
         return [
             _distinct_values_from_connection(conn, batch_spec.distinct_values_sql)
             for batch_spec in batch_specs
@@ -237,7 +237,7 @@ def generate_all_excerpts(
 ) -> list[Path]:
     generated: list[Path] = []
     category_groups = _load_batch_category_groups(db_path, BATCH_EXPORT_SPECS)
-    for batch_spec, category_values in zip(BATCH_EXPORT_SPECS, category_groups):
+    for batch_spec, category_values in zip(BATCH_EXPORT_SPECS, category_groups, strict=True):
         generated.extend(
             _generate_excerpt_paths_for_batch_spec(
                 category_values,

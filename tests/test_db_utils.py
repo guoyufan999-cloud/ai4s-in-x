@@ -33,3 +33,18 @@ def test_connect_sqlite_readonly_does_not_create_wal_or_shm_files(
     assert db_path.exists()
     assert not db_path.with_suffix(".sqlite3-wal").exists()
     assert not db_path.with_suffix(".sqlite3-shm").exists()
+
+
+def test_connect_sqlite_readonly_accepts_immutable_mode(tmp_path: Path) -> None:
+    db_path = tmp_path / "readonly.sqlite3"
+    with sqlite3.connect(db_path) as connection:
+        connection.execute("CREATE TABLE sample (id INTEGER PRIMARY KEY, value TEXT)")
+        connection.execute("INSERT INTO sample (value) VALUES ('ok')")
+        connection.commit()
+
+    with connect_sqlite_readonly(db_path, immutable=True) as connection:
+        row = connection.execute("SELECT value FROM sample").fetchone()
+        assert row["value"] == "ok"
+
+    assert not db_path.with_suffix(".sqlite3-wal").exists()
+    assert not db_path.with_suffix(".sqlite3-shm").exists()

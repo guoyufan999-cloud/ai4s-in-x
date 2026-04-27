@@ -36,18 +36,26 @@ __all__ = [
 ]
 
 
-def summarize_scope_counts(db_path: Path = RESEARCH_DB_PATH) -> dict[str, int]:
-    with connect_sqlite_readonly(db_path) as connection:
+def summarize_scope_counts(db_path: Path = RESEARCH_DB_PATH, *, immutable: bool = False) -> dict[str, int]:
+    with connect_sqlite_readonly(db_path, immutable=immutable) as connection:
         return _summarize_scope_counts(connection)
 
 
-def summarize_paper_quality_v4_cross_tabs(db_path: Path = RESEARCH_DB_PATH) -> dict[str, Any]:
-    with connect_sqlite_readonly(db_path) as connection:
+def summarize_paper_quality_v4_cross_tabs(
+    db_path: Path = RESEARCH_DB_PATH,
+    *,
+    immutable: bool = False,
+) -> dict[str, Any]:
+    with connect_sqlite_readonly(db_path, immutable=immutable) as connection:
         return _summarize_paper_quality_v4_cross_tabs(connection)
 
 
-def summarize_paper_quality_v4(db_path: Path = RESEARCH_DB_PATH) -> dict[str, Any]:
-    with connect_sqlite_readonly(db_path) as connection:
+def summarize_paper_quality_v4(
+    db_path: Path = RESEARCH_DB_PATH,
+    *,
+    immutable: bool = False,
+) -> dict[str, Any]:
+    with connect_sqlite_readonly(db_path, immutable=immutable) as connection:
         scope_counts, coverage_end_date = _resolve_summary_context(
             connection,
             resolve_coverage_end_date=resolve_paper_scope_coverage_end_date,
@@ -59,32 +67,46 @@ def summarize_paper_quality_v4(db_path: Path = RESEARCH_DB_PATH) -> dict[str, An
         )
 
 
-def summarize_paper_quality_v5_cross_tabs(db_path: Path = RESEARCH_DB_PATH) -> dict[str, Any]:
-    return summarize_paper_quality_v4_cross_tabs(db_path=db_path)
+def summarize_paper_quality_v5_cross_tabs(
+    db_path: Path = RESEARCH_DB_PATH,
+    *,
+    immutable: bool = False,
+) -> dict[str, Any]:
+    return summarize_paper_quality_v4_cross_tabs(db_path=db_path, immutable=immutable)
 
 
-def summarize_paper_quality_v5(db_path: Path = RESEARCH_DB_PATH) -> dict[str, Any]:
-    return summarize_paper_quality_v4(db_path=db_path)
+def summarize_paper_quality_v5(
+    db_path: Path = RESEARCH_DB_PATH,
+    *,
+    immutable: bool = False,
+) -> dict[str, Any]:
+    return summarize_paper_quality_v4(db_path=db_path, immutable=immutable)
 
 
 def summarize_active_paper_quality_cross_tabs(
     db_path: Path = RESEARCH_DB_PATH,
+    *,
+    immutable: bool = False,
 ) -> dict[str, Any]:
-    return summarize_paper_quality_v5_cross_tabs(db_path=db_path)
+    return summarize_paper_quality_v5_cross_tabs(db_path=db_path, immutable=immutable)
 
 
-def summarize_active_paper_quality(db_path: Path = RESEARCH_DB_PATH) -> dict[str, Any]:
-    return summarize_paper_quality_v5(db_path=db_path)
+def summarize_active_paper_quality(
+    db_path: Path = RESEARCH_DB_PATH,
+    *,
+    immutable: bool = False,
+) -> dict[str, Any]:
+    return summarize_paper_quality_v5(db_path=db_path, immutable=immutable)
 
 
-def summarize_research_db(db_path: Path = RESEARCH_DB_PATH) -> dict[str, Any]:
-    with connect_sqlite_readonly(db_path) as connection:
+def summarize_research_db(db_path: Path = RESEARCH_DB_PATH, *, immutable: bool = False) -> dict[str, Any]:
+    with connect_sqlite_readonly(db_path, immutable=immutable) as connection:
         scope_counts = _summarize_scope_counts(connection)
         return _summarize_research_db(connection, scope_counts=scope_counts)
 
 
-def build_summary_payload(db_path: Path = RESEARCH_DB_PATH) -> dict[str, Any]:
-    with connect_sqlite_readonly(db_path) as connection:
+def build_summary_payload(db_path: Path = RESEARCH_DB_PATH, *, immutable: bool = False) -> dict[str, Any]:
+    with connect_sqlite_readonly(db_path, immutable=immutable) as connection:
         return _build_summary_payload_from_connection(
             connection,
             resolve_coverage_end_date=resolve_paper_scope_coverage_end_date,
@@ -94,9 +116,11 @@ def build_summary_payload(db_path: Path = RESEARCH_DB_PATH) -> dict[str, Any]:
 def export_summary_json(
     db_path: Path = RESEARCH_DB_PATH,
     output_path: Path | None = None,
+    *,
+    immutable: bool = False,
 ) -> Path:
     output = output_path or RESEARCH_DB_SUMMARY_PATH
-    return write_summary_payload(build_summary_payload(db_path=db_path), output)
+    return write_summary_payload(build_summary_payload(db_path=db_path, immutable=immutable), output)
 
 
 def build_parser() -> argparse.ArgumentParser:

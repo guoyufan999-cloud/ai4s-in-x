@@ -35,6 +35,7 @@ from ai4s_legitimacy.config.settings import (
     SCHEMA_PATH,
 )
 from ai4s_legitimacy.utils.db import (
+    checkpoint_sqlite_wal,
     connect_sqlite_readonly,
     connect_sqlite_writable,
     init_sqlite_db,
@@ -160,6 +161,7 @@ def migrate_legacy_sqlite(
             lookups=_load_legacy_lookups(legacy),
             mode=mode,
         )
+    checkpoint_sqlite_wal(research_db_path)
 
     summary = _build_migration_summary(
         legacy_db_path=legacy_db_path,

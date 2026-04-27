@@ -10,11 +10,14 @@ def _configure_connection(connection: sqlite3.Connection) -> sqlite3.Connection:
     return connection
 
 
-def connect_sqlite_readonly(db_path: Path) -> sqlite3.Connection:
+def connect_sqlite_readonly(db_path: Path, *, immutable: bool = False) -> sqlite3.Connection:
     db_path = Path(db_path)
     if not db_path.exists():
         raise FileNotFoundError(f"SQLite DB not found for readonly access: {db_path}")
-    uri = f"{db_path.absolute().as_uri()}?mode=ro"
+    query = "mode=ro"
+    if immutable:
+        query += "&immutable=1"
+    uri = f"{db_path.absolute().as_uri()}?{query}"
     connection = sqlite3.connect(uri, uri=True)
     _configure_connection(connection)
     connection.execute("PRAGMA query_only = ON")
@@ -38,6 +41,14 @@ def connect_sqlite_writable(
     return connection
 
 
+def checkpoint_sqlite_wal(db_path: Path) -> None:
+    db_path = Path(db_path)
+    if not db_path.exists():
+        return
+    with sqlite3.connect(str(db_path)) as connection:
+        connection.execute("PRAGMA wal_checkpoint(TRUNCATE)")
+
+
 def init_sqlite_db(
     db_path: Path,
     schema_path: Path,
@@ -52,3 +63,4 @@ def init_sqlite_db(
         elif views_path and views_path.exists():
             connection.executescript(views_path.read_text(encoding="utf-8"))
         connection.commit()
+        connection.execute("PRAGMA wal_checkpoint(TRUNCATE)")
