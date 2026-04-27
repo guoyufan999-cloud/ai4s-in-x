@@ -112,7 +112,7 @@ def _write_markdown(path: Path, content: str) -> Path:
 
 
 def _top_query_patterns(rows: Sequence[dict[str, Any]], *, limit: int = 10) -> list[tuple[str, int]]:
-    counter = Counter()
+    counter: Counter[str] = Counter()
     for row in rows:
         query = str(row.get("keyword_query") or "").strip() or "<empty>"
         counter[query] += 1
