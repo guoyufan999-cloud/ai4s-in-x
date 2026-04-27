@@ -27,6 +27,7 @@ def test_rendered_views_sql_matches_checked_in_artifact() -> None:
 def test_render_views_sql_tracks_custom_research_window() -> None:
     rendered = render_views_sql(start_date="2023-07-01", end_date="2024-06-30")
     assert "BETWEEN '2023-07-01' AND '2024-06-30'" in rendered
+    assert "WHERE c.comment_date IS NOT NULL" in rendered
     assert "THEN '2023H2'" in rendered
     assert "THEN '2024H1'" in rendered
     assert "THEN '2026H1'" not in rendered
@@ -36,12 +37,12 @@ def test_rendered_views_sql_no_longer_exposes_placeholder_coding_views() -> None
     rendered = render_views_sql()
     checked_in = VIEWS_PATH.read_text(encoding="utf-8")
 
-    assert "vw_paper_quality_v4_ai_practice_distribution" not in rendered
-    assert "vw_paper_quality_v4_workflow_ai_practice_cross" not in rendered
-    assert "vw_paper_quality_v4_legitimacy_dimension_distribution" not in rendered
-    assert "vw_paper_quality_v4_ai_practice_distribution" not in checked_in
-    assert "vw_paper_quality_v4_workflow_ai_practice_cross" not in checked_in
-    assert "vw_paper_quality_v4_legitimacy_dimension_distribution" not in checked_in
+    assert "vw_paper_quality_v5_ai_practice_distribution" not in rendered
+    assert "vw_paper_quality_v5_workflow_ai_practice_cross" not in rendered
+    assert "vw_paper_quality_v5_legitimacy_dimension_distribution" not in rendered
+    assert "vw_paper_quality_v5_ai_practice_distribution" not in checked_in
+    assert "vw_paper_quality_v5_workflow_ai_practice_cross" not in checked_in
+    assert "vw_paper_quality_v5_legitimacy_dimension_distribution" not in checked_in
 
 
 def test_view_path_constants_come_from_shared_settings() -> None:

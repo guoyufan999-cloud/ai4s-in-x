@@ -12,6 +12,13 @@ def test_project_uses_project_specific_python_package_namespace() -> None:
     package = importlib.import_module("ai4s_legitimacy")
     build_module = importlib.import_module("ai4s_legitimacy.cli.build_artifacts")
     importlib.import_module("ai4s_legitimacy.cli.import_legacy")
+    importlib.import_module("ai4s_legitimacy.cli.export_baseline_audit")
+    importlib.import_module("ai4s_legitimacy.cli.export_review_queue")
+    importlib.import_module("ai4s_legitimacy.cli.prepare_review_batches")
+    importlib.import_module("ai4s_legitimacy.cli.import_reviewed")
+    importlib.import_module("ai4s_legitimacy.cli.llm_rescreen_posts")
+    importlib.import_module("ai4s_legitimacy.cli.llm_prefill_post_review")
+    importlib.import_module("ai4s_legitimacy.cli.external_xhs_opencli_pilot")
 
     assert package.__file__ is not None
     assert build_module.__file__ is not None
@@ -20,6 +27,13 @@ def test_project_uses_project_specific_python_package_namespace() -> None:
     scripts = pyproject["project"]["scripts"]
     assert scripts["ai4s-build-artifacts"] == "ai4s_legitimacy.cli.build_artifacts:main"
     assert scripts["ai4s-import-legacy"] == "ai4s_legitimacy.cli.import_legacy:main"
+    assert scripts["ai4s-export-baseline-audit"] == "ai4s_legitimacy.cli.export_baseline_audit:main"
+    assert scripts["ai4s-export-review-queue"] == "ai4s_legitimacy.cli.export_review_queue:main"
+    assert scripts["ai4s-prepare-review-batches"] == "ai4s_legitimacy.cli.prepare_review_batches:main"
+    assert scripts["ai4s-import-reviewed-decisions"] == "ai4s_legitimacy.cli.import_reviewed:main"
+    assert scripts["ai4s-llm-rescreen-posts"] == "ai4s_legitimacy.cli.llm_rescreen_posts:main"
+    assert scripts["ai4s-llm-prefill-post-review"] == "ai4s_legitimacy.cli.llm_prefill_post_review:main"
+    assert scripts["ai4s-external-xhs-opencli-pilot"] == "ai4s_legitimacy.cli.external_xhs_opencli_pilot:main"
     assert pyproject["tool"]["setuptools"]["package-dir"][""] == "src"
     assert pyproject["tool"]["setuptools"]["packages"]["find"]["where"] == ["src"]
     assert pyproject["tool"]["setuptools"]["packages"]["find"]["include"] == [

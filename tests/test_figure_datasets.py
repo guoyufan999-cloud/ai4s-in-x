@@ -74,13 +74,24 @@ def _seed_diverse_submission_db(db_path: Path) -> None:
                 INSERT INTO posts (
                     post_id, platform, legacy_crawl_status, post_date, sample_status,
                     actor_type, qs_broad_subject, workflow_stage, primary_legitimacy_stance,
+                    decision, review_status,
                     title, content_text, ai_tools_json, risk_themes_json, benefit_themes_json,
                     import_batch_id
                 ) VALUES (?, 'xiaohongshu', 'crawled', ?, 'true',
                          'graduate_student', ?, ?, '积极采用',
+                         '纳入', 'reviewed',
                          '标题', '内容', ?, ?, '["efficiency"]', 1)
                 """,
                 (post_id, post_date, subject, workflow, tools_json, risks_json),
+            )
+            connection.execute(
+                """
+                INSERT INTO claim_units (
+                    record_type, record_id, claim_index, practice_unit,
+                    workflow_stage_codes_json, legitimacy_codes_json, evidence_json
+                ) VALUES (?, ?, 0, 'AI科研实践', '["A1.1"]', '["B1"]', '["内容"]')
+                """,
+                ("post", post_id),
             )
 
         comments = [
@@ -90,16 +101,27 @@ def _seed_diverse_submission_db(db_path: Path) -> None:
             ("c4", "p4", "2025-10-02", "中性经验帖", "工具适配性"),
             ("c5", "p5", "2026-02-15", "明确拒绝", "教育/训练价值"),
             ("c6", "p6", "2026-04-10", "积极采用", "效率正当性"),
+            ("c_missing", "p6", None, "积极采用", "效率正当性"),
         ]
         for comment_id, post_id, comment_date, stance, legitimacy_basis in comments:
             connection.execute(
                 """
                 INSERT INTO comments (
                     comment_id, post_id, comment_date, comment_text, stance,
-                    legitimacy_basis, benefit_themes_json, is_reply, import_batch_id
-                ) VALUES (?, ?, ?, 'comment', ?, ?, '["efficiency"]', 0, 1)
+                    legitimacy_basis, benefit_themes_json, is_reply, import_batch_id,
+                    decision, review_status
+                ) VALUES (?, ?, ?, 'comment', ?, ?, '["efficiency"]', 0, 1, '纳入', 'reviewed')
                 """,
                 (comment_id, post_id, comment_date, stance, legitimacy_basis),
+            )
+            connection.execute(
+                """
+                INSERT INTO claim_units (
+                    record_type, record_id, claim_index, practice_unit,
+                    workflow_stage_codes_json, legitimacy_codes_json, evidence_json
+                ) VALUES (?, ?, 0, '评论回应AI实践', '["A1.1"]', '["B1"]', '["comment"]')
+                """,
+                ("comment", comment_id),
             )
         connection.commit()
 

@@ -152,6 +152,9 @@ def _create_minimal_legacy_db(db_path: Path) -> None:
         connection.execute(
             "INSERT INTO query_dictionary VALUES ('topic', 'AI科研', 'manual_seed')"
         )
+        connection.execute(
+            "INSERT INTO query_dictionary VALUES ('tool', 'AI科研', 'legacy_seed')"
+        )
         connection.commit()
 
 
@@ -168,6 +171,7 @@ def test_migrate_legacy_sqlite_imports_core_records_and_summary(
     summary_path = legacy_import.migrate_legacy_sqlite(
         legacy_db_path=legacy_db_path,
         research_db_path=research_db_path,
+        mode_name="legacy_quality_v4_migration",
     )
 
     assert summary_path == summary_dir / "legacy_to_research_migration_summary.json"
@@ -214,12 +218,23 @@ def test_migrate_legacy_sqlite_imports_core_records_and_summary(
         comment_code = connection.execute(
             "SELECT * FROM codes WHERE record_type = 'comment'"
         ).fetchone()
-        assert post_code["workflow_stage_code"] == "workflow.research_design"
-        assert comment_code["workflow_stage_code"] == "workflow.research_design"
+        source_queries = connection.execute(
+            """
+            SELECT query_text, query_layer, source_label
+            FROM source_queries
+            ORDER BY query_layer, source_label
+            """
+        ).fetchall()
+        assert post_code["workflow_stage_code"] == "A1.3"
+        assert comment_code["workflow_stage_code"] == "A1.3"
         assert (
             comment_code["boundary_negotiation_code"]
             == "boundary.assistance_vs_substitution"
         )
+        assert [tuple(row) for row in source_queries] == [
+            ("AI科研", "tool", "legacy_seed"),
+            ("AI科研", "topic", "manual_seed"),
+        ]
 
 
 def test_legacy_lookup_and_prepare_helpers_keep_mapping_shapes(tmp_path: Path) -> None:
@@ -255,24 +270,26 @@ def test_legacy_lookup_and_prepare_helpers_keep_mapping_shapes(tmp_path: Path) -
             batch_id=7,
         )
 
-    assert len(prepared_post.post_values) == 26
+    assert len(prepared_post.post_values) == 33
     assert prepared_post.post_values[0] == "note-1"
     assert prepared_post.post_values[1] == legacy_import.PLATFORM_CODE
     assert prepared_post.post_values[15] == 1
-    assert prepared_post.post_values[24] == 7
+    assert prepared_post.post_values[31] == 7
     assert prepared_post.code_values is not None
-    assert len(prepared_post.code_values) == 11
+    assert len(prepared_post.code_values) == 12
     assert prepared_post.code_values[0] == "note-1"
-    assert prepared_post.code_values[3] == "workflow.research_design"
+    assert prepared_post.code_values[3] == "P"
+    assert prepared_post.code_values[4] == "A1.3"
 
-    assert len(prepared_comment.comment_values) == 11
+    assert len(prepared_comment.comment_values) == 18
     assert prepared_comment.comment_values[0] == "comment-1"
     assert prepared_comment.comment_values[1] == "note-1"
-    assert prepared_comment.comment_values[10] == 7
+    assert prepared_comment.comment_values[17] == 7
     assert prepared_comment.code_values is not None
-    assert len(prepared_comment.code_values) == 11
+    assert len(prepared_comment.code_values) == 12
     assert prepared_comment.code_values[0] == "comment-1"
-    assert prepared_comment.code_values[6] == "boundary.assistance_vs_substitution"
+    assert prepared_comment.code_values[6] == 1
+    assert prepared_comment.code_values[7] == "boundary.assistance_vs_substitution"
 
 
 def test_migrate_legacy_sqlite_requires_existing_legacy_db(tmp_path: Path) -> None:
@@ -296,3 +313,49 @@ def test_migrate_legacy_sqlite_refuses_existing_research_db_without_overwrite(
             legacy_db_path=legacy_db_path,
             research_db_path=research_db_path,
         )
+
+
+def test_rebaseline_quality_v5_mode_resets_labels_and_codes(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    legacy_db_path = tmp_path / "legacy.sqlite3"
+    research_db_path = tmp_path / "rebaseline.sqlite3"
+    summary_dir = tmp_path / "interim"
+    _create_minimal_legacy_db(legacy_db_path)
+    monkeypatch.setattr(legacy_import, "INTERIM_DIR", summary_dir)
+
+    summary_path = legacy_import.migrate_legacy_sqlite(
+        legacy_db_path=legacy_db_path,
+        research_db_path=research_db_path,
+        mode_name="rebaseline_quality_v5_staging",
+    )
+
+    assert summary_path == summary_dir / "rebaseline_quality_v5" / "rebaseline_quality_v5_staging_summary.json"
+    summary = json.loads(summary_path.read_text(encoding="utf-8"))
+    assert summary["batch_name"] == "rebaseline_quality_v5_staging"
+    assert summary["mode"] == "rebaseline_quality_v5_staging"
+    assert summary["preserve_legacy_labels"] is False
+
+    with connect_sqlite_readonly(research_db_path) as connection:
+        post = connection.execute("SELECT * FROM posts").fetchone()
+        assert post["sample_status"] == "review_needed"
+        assert post["actor_type"] is None
+        assert post["workflow_stage"] is None
+        assert post["primary_legitimacy_stance"] is None
+        assert post["risk_themes_json"] == "[]"
+        assert post["ai_tools_json"] == "[]"
+        assert post["benefit_themes_json"] == "[]"
+
+        comment = connection.execute("SELECT * FROM comments").fetchone()
+        assert comment["stance"] is None
+        assert comment["legitimacy_basis"] is None
+        assert comment["benefit_themes_json"] == "[]"
+
+        assert connection.execute("SELECT COUNT(*) FROM codes").fetchone()[0] == 0
+
+        batch = connection.execute(
+            "SELECT batch_name, source_freeze_version FROM import_batches"
+        ).fetchone()
+        assert batch["batch_name"] == "rebaseline_quality_v5_staging"
+        assert batch["source_freeze_version"] == "quality_v5"

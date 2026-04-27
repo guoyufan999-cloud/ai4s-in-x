@@ -76,9 +76,13 @@ def test_planning_docs_keep_current_next_steps_in_sync_with_latest_head() -> Non
     roadmap_current = roadmap_text.split("## 当前下一步入口", 1)[1].split("## 阶段 1", 1)[0]
 
     for current_entry in (backlog_current, roadmap_current):
-        assert "更贴近期刊排版的终稿版本" in current_entry
-        assert "analysis/excerpt_extraction.py" in current_entry
-        assert "ai_practice" in current_entry
-        assert "legitimacy" in current_entry
-        assert "import_legacy_sqlite" not in current_entry
-        assert "analysis/figures/queries" not in current_entry
+        assert "quality_v5" in current_entry
+        assert "staging" in current_entry
+        assert "review queue" in current_entry
+        assert "reviewed import" in current_entry
+        assert "analysis/figures/queries.py" not in current_entry
+        assert "analysis/figures/render.py" not in current_entry
+        assert "collection/import_legacy_sqlite.py" not in current_entry
+        assert "analysis/excerpt_extraction.py" not in current_entry
+        assert "analysis/reporting.py" not in current_entry
+        assert "analysis/figures/manifest.py" not in current_entry

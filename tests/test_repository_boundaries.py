@@ -64,6 +64,7 @@ def test_working_drafts_live_under_docs_not_formal_outputs() -> None:
 def test_only_submission_figure_bundle_is_versioned() -> None:
     figure_dir = ROOT / "outputs" / "figures"
     assert not list(figure_dir.glob("*.png"))
+    assert (figure_dir / "paper_figures_submission" / "quality_v5").exists()
     assert (figure_dir / "paper_figures_submission" / "quality_v4").exists()
 
 

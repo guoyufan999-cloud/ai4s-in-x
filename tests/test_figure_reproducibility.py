@@ -26,11 +26,13 @@ def _seed_minimal_submission_db(db_path: Path) -> None:
             INSERT INTO posts (
                 post_id, platform, legacy_crawl_status, post_date, sample_status,
                 actor_type, qs_broad_subject, workflow_stage, primary_legitimacy_stance,
+                decision, review_status,
                 title, content_text, ai_tools_json, risk_themes_json, benefit_themes_json,
                 import_batch_id
             ) VALUES (
                 'p1', 'xiaohongshu', 'crawled', '2026-04-10', 'true',
                 'graduate_student', 'Engineering & Technology', '选题与问题定义', '积极采用',
+                '纳入', 'reviewed',
                 '标题', '和AI讨论课题思路', '["ChatGPT"]', '["detection"]', '["efficiency"]',
                 1
             )
@@ -40,10 +42,34 @@ def _seed_minimal_submission_db(db_path: Path) -> None:
             """
             INSERT INTO comments (
                 comment_id, post_id, comment_date, comment_text, stance,
-                legitimacy_basis, benefit_themes_json, is_reply, import_batch_id
+                legitimacy_basis, benefit_themes_json, is_reply, import_batch_id,
+                decision, review_status
             ) VALUES (
                 'c1', 'p1', '2026-04-10', '我也是这样用AI的', '积极采用',
-                '效率正当性', '["efficiency"]', 0, 1
+                '效率正当性', '["efficiency"]', 0, 1,
+                '纳入', 'reviewed'
+            )
+            """
+        )
+        connection.execute(
+            """
+            INSERT INTO claim_units (
+                record_type, record_id, claim_index, practice_unit,
+                workflow_stage_codes_json, legitimacy_codes_json, evidence_json
+            ) VALUES (
+                'post', 'p1', 0, 'AI辅助研究构思',
+                '["A1.1"]', '["B1"]', '["和AI讨论课题思路"]'
+            )
+            """
+        )
+        connection.execute(
+            """
+            INSERT INTO claim_units (
+                record_type, record_id, claim_index, practice_unit,
+                workflow_stage_codes_json, legitimacy_codes_json, evidence_json
+            ) VALUES (
+                'comment', 'c1', 0, '评论回应AI使用',
+                '["A1.1"]', '["B1"]', '["我也是这样用AI的"]'
             )
             """
         )
@@ -151,7 +177,7 @@ def test_figure_manifest_preserves_slug_count_and_repo_relative_paths(tmp_path: 
             "risk_themes_by_period",
         }
         assert "- 已生成图表：`9 / 9`" in manifest_text
-        assert manifest_text.count("- 来源标签：`paper_scope_quality_v4`") == 9
+        assert manifest_text.count("- 来源标签：`paper_scope_quality_v5`") == 9
         for slug in generated_slugs:
             assert f"`{slug}`" in manifest_text
             assert f"PNG：`{project_relative_path(figure_dir / (slug + '.png'))}`" in manifest_text

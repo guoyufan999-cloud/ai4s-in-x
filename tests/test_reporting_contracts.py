@@ -23,11 +23,13 @@ def _seed_minimal_reporting_db(db_path: Path) -> None:
             INSERT INTO posts (
                 post_id, platform, legacy_crawl_status, post_date, sample_status,
                 actor_type, qs_broad_subject, workflow_stage, primary_legitimacy_stance,
+                decision, review_status,
                 title, content_text, ai_tools_json, risk_themes_json, benefit_themes_json,
                 import_batch_id
             ) VALUES (
                 'p1', 'xiaohongshu', 'crawled', '2024-01-15', 'true',
                 'graduate_student', 'Engineering & Technology', '选题与问题定义', '积极采用',
+                '纳入', 'reviewed',
                 '标题', '和AI讨论课题思路', '["ChatGPT"]', '["detection"]', '["efficiency"]',
                 1
             )
@@ -37,10 +39,34 @@ def _seed_minimal_reporting_db(db_path: Path) -> None:
             """
             INSERT INTO comments (
                 comment_id, post_id, comment_date, comment_text, stance,
-                legitimacy_basis, benefit_themes_json, is_reply, import_batch_id
+                legitimacy_basis, benefit_themes_json, is_reply, import_batch_id,
+                decision, review_status
             ) VALUES (
                 'c1', 'p1', '2024-01-16', '我也是这样用AI的', '积极采用',
-                '效率正当性', '["efficiency"]', 0, 1
+                '效率正当性', '["efficiency"]', 0, 1,
+                '纳入', 'reviewed'
+            )
+            """
+        )
+        connection.execute(
+            """
+            INSERT INTO claim_units (
+                record_type, record_id, claim_index, practice_unit,
+                workflow_stage_codes_json, legitimacy_codes_json, evidence_json
+            ) VALUES (
+                'post', 'p1', 0, 'AI辅助研究构思',
+                '["A1.1"]', '["B1"]', '["和AI讨论课题思路"]'
+            )
+            """
+        )
+        connection.execute(
+            """
+            INSERT INTO claim_units (
+                record_type, record_id, claim_index, practice_unit,
+                workflow_stage_codes_json, legitimacy_codes_json, evidence_json
+            ) VALUES (
+                'comment', 'c1', 0, '评论回应AI使用',
+                '["A1.1"]', '["B1"]', '["我也是这样用AI的"]'
             )
             """
         )
@@ -64,7 +90,7 @@ def test_build_summary_payload_keeps_contract_shape_and_core_series(tmp_path: Pa
 
     payload = build_summary_payload(db_path=db_path)
 
-    assert list(payload.keys()) == ["research_db", "paper_quality_v4"]
+    assert list(payload.keys()) == ["research_db", "paper_quality_v5"]
     assert list(payload["research_db"].keys()) == [
         "posts",
         "comments",
@@ -73,7 +99,7 @@ def test_build_summary_payload_keeps_contract_shape_and_core_series(tmp_path: Pa
         "sample_status",
         "scope_counts",
     ]
-    assert list(payload["paper_quality_v4"].keys()) == [
+    assert list(payload["paper_quality_v5"].keys()) == [
         "scope_counts",
         "formal_posts",
         "formal_comments",
@@ -85,7 +111,7 @@ def test_build_summary_payload_keeps_contract_shape_and_core_series(tmp_path: Pa
         "comment_stance_by_month",
         "cross_tabs",
     ]
-    assert list(payload["paper_quality_v4"]["cross_tabs"].keys()) == [
+    assert list(payload["paper_quality_v5"]["cross_tabs"].keys()) == [
         "workflow_legitimacy",
         "subject_workflow",
         "subject_legitimacy",
@@ -99,23 +125,23 @@ def test_build_summary_payload_keeps_contract_shape_and_core_series(tmp_path: Pa
     assert payload["research_db"]["comments"] == 1
     assert payload["research_db"]["codes"] == 1
     assert payload["research_db"]["sample_status"] == {"true": 1}
-    assert payload["paper_quality_v4"]["formal_posts"] == 1
-    assert payload["paper_quality_v4"]["formal_comments"] == 1
-    assert payload["paper_quality_v4"]["coverage_end_date"] == "2024-01-16"
-    assert payload["paper_quality_v4"]["monthly_posts_by_workflow"] == [
+    assert payload["paper_quality_v5"]["formal_posts"] == 1
+    assert payload["paper_quality_v5"]["formal_comments"] == 1
+    assert payload["paper_quality_v5"]["coverage_end_date"] == "2024-01-16"
+    assert payload["paper_quality_v5"]["monthly_posts_by_workflow"] == [
         {"period_month": "2024-01", "workflow_stage": "选题与问题定义", "post_count": 1}
     ]
-    assert payload["paper_quality_v4"]["comment_stance_distribution"] == [
+    assert payload["paper_quality_v5"]["comment_stance_distribution"] == [
         {"label": "积极采用", "comment_count": 1}
     ]
-    assert payload["paper_quality_v4"]["cross_tabs"]["workflow_legitimacy"] == [
+    assert payload["paper_quality_v5"]["cross_tabs"]["workflow_legitimacy"] == [
         {
             "workflow_stage": "选题与问题定义",
             "legitimacy_stance": "积极采用",
             "post_count": 1,
         }
     ]
-    assert payload["paper_quality_v4"]["cross_tabs"]["boundary_negotiation"] == [
+    assert payload["paper_quality_v5"]["cross_tabs"]["boundary_negotiation"] == [
         {
             "boundary_negotiation_code": "boundary.assistance_vs_substitution",
             "coded_count": 1,

@@ -3,6 +3,8 @@ from __future__ import annotations
 import sqlite3
 from pathlib import Path
 
+import pytest
+
 from ai4s_legitimacy.config.research_scope import render_views_sql
 
 
@@ -23,7 +25,8 @@ def test_schema_creates_core_tables(tmp_path: Path) -> None:
             ).fetchall()
         }
         assert {"posts", "comments", "codes", "codebook", "import_batches",
-                "ai_tools_lookup", "risk_themes_lookup", "benefit_themes_lookup"} <= tables
+                "ai_tools_lookup", "risk_themes_lookup", "benefit_themes_lookup",
+                "review_runs", "reviewed_records", "source_queries"} <= tables
         views = {
             row[0]
             for row in connection.execute(
@@ -33,25 +36,91 @@ def test_schema_creates_core_tables(tmp_path: Path) -> None:
         assert {
             "vw_posts_candidate_scope",
             "vw_posts_research_scope",
-            "vw_posts_paper_scope_quality_v4",
+            "vw_posts_paper_scope_quality_v5",
             "vw_comments_candidate_scope",
             "vw_comments_research_scope",
-            "vw_comments_paper_scope_quality_v4",
+            "vw_comments_paper_scope_quality_v5",
             "vw_scope_counts",
             "vw_posts_by_month_workflow",
             "vw_comments_by_month_legitimacy",
             "vw_workflow_legitimacy_cross",
             "vw_boundary_negotiation_summary",
-            "vw_paper_quality_v4_post_ai_tools",
-            "vw_paper_quality_v4_post_risk_themes",
-            "vw_paper_quality_v4_post_benefit_themes",
-            "vw_paper_quality_v4_workflow_legitimacy_cross",
-            "vw_paper_quality_v4_boundary_negotiation_summary",
-            "vw_paper_quality_v4_subject_workflow_cross",
-            "vw_paper_quality_v4_subject_legitimacy_cross",
-            "vw_paper_quality_v4_comment_legitimacy_basis_distribution",
-            "vw_paper_quality_v4_halfyear_workflow",
-            "vw_paper_quality_v4_halfyear_subject",
+            "vw_paper_quality_v5_post_ai_tools",
+            "vw_paper_quality_v5_post_risk_themes",
+            "vw_paper_quality_v5_post_benefit_themes",
+            "vw_paper_quality_v5_workflow_legitimacy_cross",
+            "vw_paper_quality_v5_boundary_negotiation_summary",
+            "vw_paper_quality_v5_subject_workflow_cross",
+            "vw_paper_quality_v5_subject_legitimacy_cross",
+            "vw_paper_quality_v5_comment_legitimacy_basis_distribution",
+            "vw_paper_quality_v5_halfyear_workflow",
+            "vw_paper_quality_v5_halfyear_subject",
         } <= views
+    finally:
+        connection.close()
+
+
+def test_codes_triggers_enforce_record_integrity_and_cleanup(tmp_path: Path) -> None:
+    db_path = tmp_path / "research_with_code_triggers.sqlite3"
+    connection = sqlite3.connect(db_path)
+    try:
+        connection.executescript(SCHEMA_PATH.read_text(encoding="utf-8"))
+        connection.executescript(render_views_sql())
+        connection.execute(
+            """
+            INSERT INTO posts (
+                post_id, platform, legacy_crawl_status, post_date, sample_status
+            ) VALUES ('p1', 'xiaohongshu', 'crawled', '2025-01-15', 'true')
+            """
+        )
+        connection.execute(
+            """
+            INSERT INTO comments (
+                comment_id, post_id, comment_date, comment_text
+            ) VALUES ('c1', 'p1', '2025-01-16', 'comment')
+            """
+        )
+        connection.execute(
+            """
+            INSERT INTO codes (
+                record_id, record_type, coder, coding_date
+            ) VALUES ('p1', 'post', 'tester', '2025-01-15')
+            """
+        )
+        connection.execute(
+            """
+            INSERT INTO codes (
+                record_id, record_type, parent_id, coder, coding_date
+            ) VALUES ('c1', 'comment', 'p1', 'tester', '2025-01-16')
+            """
+        )
+
+        with pytest.raises(
+            sqlite3.IntegrityError,
+            match="codes.record_id must reference an existing comment",
+        ):
+            connection.execute(
+                """
+                INSERT INTO codes (
+                    record_id, record_type, coder, coding_date
+                ) VALUES ('missing-comment', 'comment', 'tester', '2025-01-16')
+                """
+            )
+
+        connection.execute("DELETE FROM comments WHERE comment_id = 'c1'")
+        assert (
+            connection.execute(
+                "SELECT COUNT(*) FROM codes WHERE record_type = 'comment'"
+            ).fetchone()[0]
+            == 0
+        )
+
+        connection.execute("DELETE FROM posts WHERE post_id = 'p1'")
+        assert (
+            connection.execute(
+                "SELECT COUNT(*) FROM codes WHERE record_type = 'post'"
+            ).fetchone()[0]
+            == 0
+        )
     finally:
         connection.close()
