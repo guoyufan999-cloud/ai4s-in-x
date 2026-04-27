@@ -19,17 +19,22 @@ def _load_notebook(path: Path) -> dict[str, object]:
     return json.loads(path.read_text(encoding="utf-8"))
 
 
-def test_dependency_helper_files_are_convenience_wrappers_not_lockfiles() -> None:
+def test_dependency_helper_files_and_lock_snapshot_are_documented() -> None:
     assert not (ROOT / "requirements.lock").exists()
     assert not (ROOT / "requirements.txt").exists()
 
     requirements_dev = ROOT / "requirements.dev.txt"
     environment_yml = ROOT / "environment.yml"
+    requirements_lock = ROOT / "requirements.lock.txt"
+    runtime_snapshot = ROOT / "docs" / "runtime_environment_snapshot.md"
     readme_text = (ROOT / "README.md").read_text(encoding="utf-8")
 
     assert requirements_dev.exists()
+    assert requirements_lock.exists()
+    assert runtime_snapshot.exists()
     requirements_dev_text = requirements_dev.read_text(encoding="utf-8")
     environment_yml_text = environment_yml.read_text(encoding="utf-8")
+    runtime_snapshot_text = runtime_snapshot.read_text(encoding="utf-8")
 
     assert "requirements.lock" not in requirements_dev_text
     assert "lockfile" not in requirements_dev_text.lower()
@@ -37,7 +42,11 @@ def test_dependency_helper_files_are_convenience_wrappers_not_lockfiles() -> Non
     assert "convenience" in environment_yml_text.lower()
     assert "./.venv/bin/pip install -e '.[dev]'" in readme_text
     assert "requirements.dev.txt" in readme_text
+    assert "requirements.lock.txt" in readme_text
+    assert "docs/runtime_environment_snapshot.md" in readme_text
     assert "requirements.txt" not in readme_text
+    assert "pip freeze --exclude-editable" in runtime_snapshot_text
+    assert "105 passed" in runtime_snapshot_text
 
 
 def test_notebook_templates_are_unexecuted_and_not_formal_delivery_artifacts() -> None:
@@ -77,9 +86,11 @@ def test_planning_docs_keep_current_next_steps_in_sync_with_latest_head() -> Non
 
     for current_entry in (backlog_current, roadmap_current):
         assert "quality_v5" in current_entry
-        assert "staging" in current_entry
-        assert "review queue" in current_entry
-        assert "reviewed import" in current_entry
+        assert "post-only" in current_entry
+        assert "514" in current_entry
+        assert "正式评论 `0`" in current_entry
+        assert "comment_review_v2" in current_entry
+        assert "staging" not in current_entry
         assert "analysis/figures/queries.py" not in current_entry
         assert "analysis/figures/render.py" not in current_entry
         assert "collection/import_legacy_sqlite.py" not in current_entry

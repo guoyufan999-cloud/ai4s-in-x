@@ -9,7 +9,7 @@ from ai4s_legitimacy.collection.llm_prefill_post_review import (
     PostReviewBatchPrefiller,
     generate_post_review_prefill_draft,
 )
-from ai4s_legitimacy.collection.llm_rescreen_posts import DeepSeekClient
+from ai4s_legitimacy.collection.deepseek_client import DeepSeekClient
 
 
 class _FakeResponse:

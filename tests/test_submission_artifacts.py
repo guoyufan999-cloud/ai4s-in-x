@@ -39,7 +39,7 @@ def test_active_delivery_manifests_no_longer_point_to_data_exports() -> None:
         ROOT / "outputs" / "figures" / "paper_figures_submission" / "quality_v5" / "paper_figures_submission_manifest.md",
         FREEZE_CHECKPOINTS_DIR / "quality_v5_freeze_checkpoint.md",
         ROOT / "outputs" / "reports" / "paper_materials" / "paper_results_snapshot.md",
-        ROOT / "outputs" / "reports" / "paper_materials" / "quality_v5_pending_contract.md",
+        ROOT / "outputs" / "reports" / "paper_materials" / "quality_v5_post_only_contract.md",
     ]
     for path in text_targets:
         text = path.read_text(encoding="utf-8")
@@ -288,7 +288,7 @@ def test_active_quality_v5_materials_use_post_only_contract() -> None:
         / "reports"
         / "paper_materials"
         / "paper_conclusion_chapter_submission_cn_clean.md",
-        ROOT / "outputs" / "reports" / "paper_materials" / "quality_v5_pending_contract.md",
+        ROOT / "outputs" / "reports" / "paper_materials" / "quality_v5_post_only_contract.md",
     ]
     for path in targets:
         text = path.read_text(encoding="utf-8")
