@@ -2,22 +2,30 @@ from __future__ import annotations
 
 import argparse
 import json
-import os
-import ssl
-import time
 from collections import Counter
 from concurrent.futures import ThreadPoolExecutor, as_completed
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 from datetime import date
 from pathlib import Path
 from typing import Any, Callable, Sequence
-from urllib import error as urllib_error
-from urllib import request as urllib_request
 
 from ai4s_legitimacy.collection._canonical_review import canonicalize_review_row
+from ai4s_legitimacy.collection._jsonl import (
+    load_jsonl as _load_jsonl,
+    trim_text as _trim_text,
+    write_jsonl as _write_jsonl,
+)
 from ai4s_legitimacy.collection.canonical_schema import (
     format_decision_reason,
     sample_status_to_decision,
+)
+from ai4s_legitimacy.collection.deepseek_client import (
+    DEFAULT_CHAT_MODEL,
+    DEFAULT_DEEPSEEK_BASE_URL,
+    DEFAULT_MAX_RETRIES,
+    DEFAULT_REASONER_MODEL,
+    DEFAULT_TIMEOUT_SECONDS,
+    DeepSeekClient,
 )
 from ai4s_legitimacy.collection.review_queue import export_review_queue
 from ai4s_legitimacy.config.formal_baseline import (
@@ -28,11 +36,6 @@ from ai4s_legitimacy.config.formal_baseline import (
 from ai4s_legitimacy.config.research_baseline import screening_prompt_context
 
 
-DEFAULT_DEEPSEEK_BASE_URL = "https://api.deepseek.com"
-DEFAULT_CHAT_MODEL = "deepseek-chat"
-DEFAULT_REASONER_MODEL = "deepseek-reasoner"
-DEFAULT_TIMEOUT_SECONDS = 60.0
-DEFAULT_MAX_RETRIES = 3
 DEFAULT_STAGE1_BATCH_SIZE = 8
 DEFAULT_STAGE2_BATCH_SIZE = 4
 DEFAULT_MAX_WORKERS = 6
@@ -180,38 +183,6 @@ AI_TERMS = (
     "gemini",
     "智能体",
 )
-
-
-def _build_ssl_context() -> ssl.SSLContext:
-    try:
-        import certifi
-    except ImportError:
-        return ssl.create_default_context()
-    return ssl.create_default_context(cafile=certifi.where())
-
-
-def _load_jsonl(path: Path) -> list[dict[str, Any]]:
-    rows: list[dict[str, Any]] = []
-    for raw_line in path.read_text(encoding="utf-8").splitlines():
-        line = raw_line.strip()
-        if line:
-            rows.append(json.loads(line))
-    return rows
-
-
-def _write_jsonl(path: Path, rows: Sequence[dict[str, Any]]) -> Path:
-    path.parent.mkdir(parents=True, exist_ok=True)
-    with path.open("w", encoding="utf-8") as handle:
-        for row in rows:
-            handle.write(json.dumps(row, ensure_ascii=False) + "\n")
-    return path
-
-
-def _trim_text(value: Any, *, max_chars: int) -> str:
-    text = str(value or "").strip()
-    if len(text) <= max_chars:
-        return text
-    return text[: max_chars - 1] + "…"
 
 
 def _normalize_current_status(value: Any) -> str:
@@ -576,91 +547,6 @@ def _validate_queue_rows(rows: Sequence[dict[str, Any]]) -> None:
             )
         if not str(row.get("post_id") or row.get("record_id") or "").strip():
             raise ValueError("Each queue row must contain post_id or record_id")
-
-
-@dataclass(slots=True)
-class DeepSeekClient:
-    api_key: str
-    base_url: str = DEFAULT_DEEPSEEK_BASE_URL
-    timeout_seconds: float = DEFAULT_TIMEOUT_SECONDS
-    max_retries: int = DEFAULT_MAX_RETRIES
-    transport: Callable[..., Any] = field(default=urllib_request.urlopen, repr=False)
-    ssl_context: ssl.SSLContext = field(default_factory=_build_ssl_context, repr=False)
-
-    @classmethod
-    def from_env(cls) -> DeepSeekClient:
-        api_key = os.environ.get("DEEPSEEK_API_KEY", "").strip()
-        if not api_key:
-            raise ValueError("DEEPSEEK_API_KEY is required for ai4s-llm-rescreen-posts")
-        return cls(
-            api_key=api_key,
-            base_url=os.environ.get("DEEPSEEK_BASE_URL", DEFAULT_DEEPSEEK_BASE_URL).strip()
-            or DEFAULT_DEEPSEEK_BASE_URL,
-        )
-
-    def complete_json(
-        self,
-        *,
-        model: str,
-        messages: Sequence[dict[str, str]],
-    ) -> dict[str, Any]:
-        url = self.base_url.rstrip("/") + "/chat/completions"
-        payload = {
-            "model": model,
-            "messages": list(messages),
-            "temperature": 0,
-            "response_format": {"type": "json_object"},
-        }
-        body = json.dumps(payload, ensure_ascii=False).encode("utf-8")
-        headers = {
-            "Authorization": f"Bearer {self.api_key}",
-            "Content-Type": "application/json",
-            "Accept": "application/json",
-            "User-Agent": "ai4s-legitimacy/0.1.0",
-        }
-        last_error: Exception | None = None
-        for attempt in range(1, self.max_retries + 1):
-            try:
-                request = urllib_request.Request(url, data=body, headers=headers, method="POST")
-                with self.transport(
-                    request,
-                    timeout=self.timeout_seconds,
-                    context=self.ssl_context,
-                ) as response:
-                    payload = json.loads(response.read().decode("utf-8"))
-                message = payload["choices"][0]["message"]
-                content = str(message.get("content") or "").strip()
-                if not content:
-                    raise ValueError("DeepSeek JSON output was empty")
-                return {
-                    "parsed": json.loads(content),
-                    "model": str(payload.get("model") or model),
-                }
-            except urllib_error.HTTPError as exc:
-                last_error = exc
-                if exc.code not in {429, 500, 502, 503, 504} or attempt == self.max_retries:
-                    break
-                time.sleep(1.5 * attempt)
-            except (
-                urllib_error.URLError,
-                TimeoutError,
-                json.JSONDecodeError,
-                KeyError,
-                ValueError,
-            ) as exc:
-                last_error = exc
-                if attempt == self.max_retries:
-                    break
-                time.sleep(1.0 * attempt)
-        detail = ""
-        if isinstance(last_error, urllib_error.HTTPError):
-            detail = f"HTTP {last_error.code}: {last_error.reason}"
-        elif last_error is not None:
-            detail = str(last_error).strip()
-        suffix = f" ({detail})" if detail else ""
-        raise RuntimeError(
-            f"DeepSeek request failed after {self.max_retries} attempts{suffix}"
-        ) from last_error
 
 
 @dataclass(slots=True)

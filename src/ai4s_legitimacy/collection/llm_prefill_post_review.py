@@ -11,6 +11,11 @@ from pathlib import Path
 from typing import Any, Callable, Sequence
 
 from ai4s_legitimacy.collection._canonical_review import canonicalize_review_row
+from ai4s_legitimacy.collection._jsonl import (
+    load_jsonl as _load_jsonl,
+    trim_text as _trim_text,
+    write_jsonl as _write_jsonl,
+)
 from ai4s_legitimacy.collection.canonical_schema import (
     AMBIGUITY_VALUES,
     BOUNDARY_CONTENT_LABELS,
@@ -34,7 +39,7 @@ from ai4s_legitimacy.collection.canonical_schema import (
     normalize_claim_units,
     validate_canonical_row,
 )
-from ai4s_legitimacy.collection.llm_rescreen_posts import (
+from ai4s_legitimacy.collection.deepseek_client import (
     DEFAULT_CHAT_MODEL,
     DEFAULT_DEEPSEEK_BASE_URL,
     DEFAULT_MAX_RETRIES,
@@ -86,30 +91,6 @@ QS_SUBJECT_VALUES = (
     "Social Sciences & Management",
     "uncertain",
 )
-
-
-def _load_jsonl(path: Path) -> list[dict[str, Any]]:
-    rows: list[dict[str, Any]] = []
-    for raw_line in path.read_text(encoding="utf-8").splitlines():
-        line = raw_line.strip()
-        if line:
-            rows.append(json.loads(line))
-    return rows
-
-
-def _write_jsonl(path: Path, rows: Sequence[dict[str, Any]]) -> Path:
-    path.parent.mkdir(parents=True, exist_ok=True)
-    with path.open("w", encoding="utf-8") as handle:
-        for row in rows:
-            handle.write(json.dumps(row, ensure_ascii=False) + "\n")
-    return path
-
-
-def _trim_text(value: Any, *, max_chars: int) -> str:
-    text = str(value or "").strip()
-    if len(text) <= max_chars:
-        return text
-    return text[: max_chars - 1] + "…"
 
 
 def _slugify(value: str) -> str:
