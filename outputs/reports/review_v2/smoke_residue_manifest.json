@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "status": "historical_smoke_residue",
+  "scope_note": "These zero-byte external XHS OpenCLI smoke outputs are retained only to document failed or empty smoke runs. They are not formal outputs/tables artifacts and are excluded from the quality_v5 formal corpus.",
+  "moved_from": "outputs/tables",
+  "residue_dir": "outputs/reports/review_v2/smoke_residue",
+  "files": [
+    {
+      "path": "outputs/reports/review_v2/smoke_residue/external_xhs_ai4s_smoketest.jsonl",
+      "bytes": 0,
+      "summary_path": "outputs/reports/review_v2/external_xhs_ai4s_smoketest.summary.json"
+    },
+    {
+      "path": "outputs/reports/review_v2/smoke_residue/external_xhs_ai4s_smoketest_after_login.jsonl",
+      "bytes": 0,
+      "summary_path": "outputs/reports/review_v2/external_xhs_ai4s_smoketest_after_login.summary.json"
+    },
+    {
+      "path": "outputs/reports/review_v2/smoke_residue/external_xhs_ai4s_smoketest_after_patch.jsonl",
+      "bytes": 0,
+      "summary_path": "outputs/reports/review_v2/external_xhs_ai4s_smoketest_after_patch.summary.json"
+    },
+    {
+      "path": "outputs/reports/review_v2/smoke_residue/external_xhs_ai4s_smoketest_after_patch2.jsonl",
+      "bytes": 0,
+      "summary_path": "outputs/reports/review_v2/external_xhs_ai4s_smoketest_after_patch2.summary.json"
+    }
+  ]
+}

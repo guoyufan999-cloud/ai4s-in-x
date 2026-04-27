@@ -8,4 +8,4 @@
 - 当前 canonical corpus：帖子 `5535` 条，评论 `12362` 条
 
 当前方法状态不是重新定义研究问题，而是完成从旧 `quality_v4` 到 canonical `quality_v5` 的活跃迁移。
-在正式 reviewed 结果尚未导入前，活跃方法口径只承认 rescreen 完成、formal review 待完成这一事实。
+严格版 `post_review_v2` reviewed 结果已经导入并刷新 artifacts；本轮方法口径只承认帖子层 post-only 正式结果，评论层正式编码 deferred。

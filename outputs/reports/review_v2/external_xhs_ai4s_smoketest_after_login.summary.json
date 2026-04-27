@@ -34,5 +34,5 @@
     }
   ],
   "limitations": [],
-  "output_path": "outputs/tables/external_xhs_ai4s_smoketest_after_login.jsonl"
+  "output_path": "outputs/reports/review_v2/smoke_residue/external_xhs_ai4s_smoketest_after_login.jsonl"
 }

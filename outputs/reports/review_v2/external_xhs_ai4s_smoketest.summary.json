@@ -44,5 +44,5 @@
   "limitations": [
     "OpenCLI Browser Bridge was not connected; the run fell back to Bing discovery plus direct public-note fetch."
   ],
-  "output_path": "outputs/tables/external_xhs_ai4s_smoketest.jsonl"
+  "output_path": "outputs/reports/review_v2/smoke_residue/external_xhs_ai4s_smoketest.jsonl"
 }
