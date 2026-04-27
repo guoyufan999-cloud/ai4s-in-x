@@ -43,8 +43,9 @@ The current snapshot was verified with:
 ./.venv/bin/python -B -m pytest -q
 ./.venv/bin/ruff check .
 ./.venv/bin/python -m mypy
+./.venv/bin/python -B scripts/artifact_health.py --json --allow-missing-source-db
 ./.venv/bin/python -B scripts/repo_health.py --json --allow-missing-source-db
 ./.venv/bin/pip check
 ```
 
-Current expected result: `113 passed`, Ruff clean, mypy clean, repo_health ok, and no broken requirements.
+Current expected result: `114 passed`, Ruff clean, mypy clean, artifact_health ok, repo_health ok, and no broken requirements.

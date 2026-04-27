@@ -46,14 +46,18 @@ def test_dependency_helper_files_and_lock_snapshot_are_documented() -> None:
     assert "requirements.txt" not in readme_text
     assert "pip freeze --exclude-editable" in runtime_snapshot_text
     assert "./.venv/bin/python -m mypy" in runtime_snapshot_text
+    assert "scripts/artifact_health.py --json --allow-missing-source-db" in runtime_snapshot_text
     assert "scripts/repo_health.py --json --allow-missing-source-db" in runtime_snapshot_text
-    assert "113 passed" in runtime_snapshot_text
+    assert "114 passed" in runtime_snapshot_text
     assert "mypy clean" in runtime_snapshot_text
+    assert "artifact_health ok" in runtime_snapshot_text
     assert "repo_health ok" in runtime_snapshot_text
 
     assert "活跃正式交付链已经稳定在 `quality_v5` post-only formal baseline" in readme_text
     assert "当前活跃正式输出已经统一到" in readme_text
+    assert "scripts/artifact_health.py --json --allow-missing-source-db" in readme_text
     assert "scripts/repo_health.py --json --allow-missing-source-db" in readme_text
+    assert "只检查 formal counts、provenance、0B tracked files 与 WAL/SHM" in readme_text
 
 
 def test_repo_and_artifact_health_scripts_are_available() -> None:
@@ -62,7 +66,9 @@ def test_repo_and_artifact_health_scripts_are_available() -> None:
 
     assert repo_health.exists()
     assert artifact_health.exists()
-    assert "run_health_checks" in artifact_health.read_text(encoding="utf-8")
+    artifact_health_text = artifact_health.read_text(encoding="utf-8")
+    assert "ARTIFACT_CHECK_NAMES" in artifact_health_text
+    assert "artifact_health:" in artifact_health_text
 
 
 def test_ci_runs_repo_health_with_locked_environment() -> None:

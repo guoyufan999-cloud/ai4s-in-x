@@ -117,7 +117,8 @@
 - 标准 `src-layout` 依赖 editable 安装；首次拉起环境或拉到本轮重命名后，先执行 `./.venv/bin/pip install -e '.[dev]'`。
 - `requirements.dev.txt` 与 `environment.yml` 仅作为本地开发 convenience wrappers；当前可复现版本快照见 `requirements.lock.txt` 与 `docs/runtime_environment_snapshot.md`。
 - 推荐使用 `./.venv/bin/python -B -m pytest -q`，避免在 `src/`、`tests/` 下生成 `__pycache__` / `.pyc`，让工作树更容易保持可提交态。
-- 正式交付链验收建议至少执行：`./.venv/bin/ruff check .`、`./.venv/bin/python -m mypy`、`./.venv/bin/python -B -m pytest -q`、`./.venv/bin/python -B scripts/repo_health.py --json --allow-missing-source-db`。
+- 正式交付链验收建议至少执行：`./.venv/bin/ruff check .`、`./.venv/bin/python -m mypy`、`./.venv/bin/python -B -m pytest -q`、`./.venv/bin/python -B scripts/artifact_health.py --json --allow-missing-source-db`、`./.venv/bin/python -B scripts/repo_health.py --json --allow-missing-source-db`。
+- `scripts/artifact_health.py` 只检查 formal counts、provenance、0B tracked files 与 WAL/SHM；`scripts/repo_health.py` 在此基础上额外盘点 ignored local cache 体量。
 - 如果此前已经运行过默认测试命令，可在收尾时执行一次 `find src tests -type d -name '__pycache__' -prune -exec rm -rf {} +` 清理本地缓存。
 
 本地历史备份说明：

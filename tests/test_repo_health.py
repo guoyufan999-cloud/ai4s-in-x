@@ -8,6 +8,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 REPO_HEALTH_SCRIPT = ROOT / "scripts" / "repo_health.py"
+ARTIFACT_HEALTH_SCRIPT = ROOT / "scripts" / "artifact_health.py"
 
 
 def _sha256(path: Path) -> str:
@@ -123,6 +124,15 @@ def _run_repo_health(root: Path) -> subprocess.CompletedProcess[str]:
     )
 
 
+def _run_artifact_health(root: Path) -> subprocess.CompletedProcess[str]:
+    return subprocess.run(
+        [sys.executable, str(ARTIFACT_HEALTH_SCRIPT), "--root", str(root), "--json"],
+        check=False,
+        capture_output=True,
+        text=True,
+    )
+
+
 def test_repo_health_accepts_formal_fixture_and_manifested_zero_byte_residue(tmp_path: Path) -> None:
     _create_health_fixture(tmp_path)
 
@@ -148,3 +158,20 @@ def test_repo_health_rejects_unmanifested_zero_byte_tracked_file(tmp_path: Path)
     assert process.returncode == 1
     assert payload["status"] == "fail"
     assert "outputs/tables/bad_empty.jsonl" in payload["failures"]["zero_byte_tracked_files"]
+
+
+def test_artifact_health_runs_only_artifact_checks(tmp_path: Path) -> None:
+    _create_health_fixture(tmp_path)
+
+    process = _run_artifact_health(tmp_path)
+    payload = json.loads(process.stdout)
+
+    assert process.returncode == 0
+    assert payload["status"] == "ok"
+    assert set(payload["checks"]) == {
+        "formal_counts",
+        "provenance",
+        "zero_byte_tracked_files",
+        "wal_shm",
+    }
+    assert "ignored_cache_size" not in payload["checks"]

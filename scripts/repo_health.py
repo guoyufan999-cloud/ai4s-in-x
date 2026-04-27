@@ -16,6 +16,13 @@ CONSISTENCY_PATH = Path("outputs/reports/freeze_checkpoints/quality_v5_consisten
 PROVENANCE_PATH = Path("outputs/reports/freeze_checkpoints/quality_v5_artifact_provenance.json")
 SMOKE_RESIDUE_MANIFEST_PATH = Path("outputs/reports/review_v2/smoke_residue_manifest.json")
 PRUNE_DIR_NAMES = {".git", ".venv", "venv", "__pycache__", ".pytest_cache", ".ruff_cache"}
+ARTIFACT_CHECK_NAMES = (
+    "formal_counts",
+    "provenance",
+    "zero_byte_tracked_files",
+    "wal_shm",
+)
+REPO_CHECK_NAMES = ARTIFACT_CHECK_NAMES + ("ignored_cache_size",)
 
 
 class IgnoredEntry(TypedDict):
@@ -237,17 +244,31 @@ def run_health_checks(
     *,
     allow_missing_source_db: bool = False,
     max_ignored_cache_mib: float | None = None,
+    check_names: tuple[str, ...] | None = None,
 ) -> dict[str, Any]:
     root = root.resolve()
-    checks = {
-        "formal_counts": _check_formal_counts(root),
-        "provenance": _check_provenance(root, allow_missing_source_db=allow_missing_source_db),
-        "zero_byte_tracked_files": _check_zero_byte_tracked_files(root),
-        "wal_shm": _check_wal_shm(root),
-        "ignored_cache_size": _check_ignored_cache_size(
+    available_checks = {
+        "formal_counts": lambda: _check_formal_counts(root),
+        "provenance": lambda: _check_provenance(
+            root,
+            allow_missing_source_db=allow_missing_source_db,
+        ),
+        "zero_byte_tracked_files": lambda: _check_zero_byte_tracked_files(root),
+        "wal_shm": lambda: _check_wal_shm(root),
+        "ignored_cache_size": lambda: _check_ignored_cache_size(
             root,
             max_ignored_cache_mib=max_ignored_cache_mib,
         ),
+    }
+    selected_check_names = check_names or REPO_CHECK_NAMES
+    unknown_checks = [name for name in selected_check_names if name not in available_checks]
+    if unknown_checks:
+        unknown = ", ".join(sorted(unknown_checks))
+        raise ValueError(f"Unknown health check names: {unknown}")
+
+    checks = {
+        name: available_checks[name]()
+        for name in selected_check_names
     }
     failures = {
         name: check["failures"]
