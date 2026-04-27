@@ -736,7 +736,7 @@ def _prefill_batch_rows(
                     reviewer=reviewer,
                     review_date=review_date,
                 )
-                for row, item in zip(batch_rows, normalized_items)
+                for row, item in zip(batch_rows, normalized_items, strict=True)
             ],
             None,
         )
