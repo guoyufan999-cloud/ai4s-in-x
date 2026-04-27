@@ -103,6 +103,10 @@ def _sha256(path: Path) -> str:
     return digest.hexdigest()
 
 
+def _checksum_snapshot(*paths: Path) -> dict[str, str]:
+    return {str(path): _sha256(path) for path in paths}
+
+
 def _create_minimal_legacy_db(db_path: Path) -> None:
     with sqlite3.connect(db_path) as connection:
         connection.executescript(
@@ -415,3 +419,77 @@ def test_legacy_import_and_build_artifacts_stay_smoke_test_compatible(
     assert result["summary"]["paper_quality_v5"]["formal_comments"] == 0
     assert result["summary"]["paper_quality_v5"]["coverage_end_date"] == "2026-04-10"
     assert result["figures"]["figure_count"] >= 0
+
+
+def test_run_build_skip_figures_stays_checksum_stable_across_repeated_runs(tmp_path: Path) -> None:
+    db_path = tmp_path / "research.sqlite3"
+    checkpoint_path = tmp_path / "checkpoint.json"
+    summary_output = tmp_path / "out" / "summary.json"
+    consistency_output = tmp_path / "out" / "consistency.json"
+    provenance_output = tmp_path / "out" / "provenance.json"
+    post_master_path = tmp_path / "review_v2" / "post_review_v2_master.jsonl"
+    comment_master_path = tmp_path / "review_v2" / "comment_review_v2_master.jsonl"
+    delta_report_path = tmp_path / "review_v2" / "post_review_v2_delta_report.json"
+
+    _seed_minimal_paper_scope_db(db_path)
+    checkpoint_path.write_text(
+        json.dumps(
+            {
+                "checkpoint_stage": "quality_v5",
+                "formal_posts": 1,
+                "formal_comments": 1,
+                "queued": 0,
+            },
+            ensure_ascii=False,
+            indent=2,
+        ),
+        encoding="utf-8",
+    )
+
+    first_result = run_build(
+        db_path=db_path,
+        checkpoint_path=checkpoint_path,
+        summary_output=summary_output,
+        consistency_output=consistency_output,
+        provenance_output=provenance_output,
+        review_v2_post_output_path=post_master_path,
+        review_v2_comment_output_path=comment_master_path,
+        review_v2_delta_output_path=delta_report_path,
+        skip_figures=True,
+    )
+    first_checksums = _checksum_snapshot(
+        summary_output,
+        consistency_output,
+        provenance_output,
+        post_master_path,
+        comment_master_path,
+        delta_report_path,
+    )
+
+    second_result = run_build(
+        db_path=db_path,
+        checkpoint_path=checkpoint_path,
+        summary_output=summary_output,
+        consistency_output=consistency_output,
+        provenance_output=provenance_output,
+        review_v2_post_output_path=post_master_path,
+        review_v2_comment_output_path=comment_master_path,
+        review_v2_delta_output_path=delta_report_path,
+        skip_figures=True,
+    )
+    second_checksums = _checksum_snapshot(
+        summary_output,
+        consistency_output,
+        provenance_output,
+        post_master_path,
+        comment_master_path,
+        delta_report_path,
+    )
+
+    assert first_result["figures_skipped"] is True
+    assert second_result["figures_skipped"] is True
+    assert first_result["summary"] == second_result["summary"]
+    assert first_result["consistency"] == second_result["consistency"]
+    assert first_result["review_v2"] == second_result["review_v2"]
+    assert first_result["provenance"] == second_result["provenance"]
+    assert first_checksums == second_checksums
