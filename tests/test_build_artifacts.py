@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 import sqlite3
+import hashlib
 from pathlib import Path
 
 import pytest
@@ -15,7 +16,7 @@ from ai4s_legitimacy.collection.review_v2_artifacts import (
 )
 from ai4s_legitimacy.config.research_scope import render_views_sql
 from ai4s_legitimacy.config.settings import SCHEMA_PATH
-from ai4s_legitimacy.utils.db import init_sqlite_db
+from ai4s_legitimacy.utils.db import checkpoint_sqlite_wal, init_sqlite_db
 
 
 def _seed_minimal_paper_scope_db(db_path: Path) -> None:
@@ -91,6 +92,15 @@ def _seed_minimal_paper_scope_db(db_path: Path) -> None:
             """
         )
         connection.commit()
+    checkpoint_sqlite_wal(db_path)
+
+
+def _sha256(path: Path) -> str:
+    digest = hashlib.sha256()
+    with path.open("rb") as handle:
+        for chunk in iter(lambda: handle.read(1024 * 1024), b""):
+            digest.update(chunk)
+    return digest.hexdigest()
 
 
 def _create_minimal_legacy_db(db_path: Path) -> None:
@@ -241,6 +251,7 @@ def test_run_build_routes_all_outputs_to_the_same_custom_db(tmp_path: Path) -> N
     checkpoint_path = tmp_path / "checkpoint.json"
     summary_output = tmp_path / "out" / "summary.json"
     consistency_output = tmp_path / "out" / "consistency.json"
+    provenance_output = tmp_path / "out" / "provenance.json"
     figure_dir = tmp_path / "figures"
     post_master_path = tmp_path / "review_v2" / "post_review_v2_master.jsonl"
     comment_master_path = tmp_path / "review_v2" / "comment_review_v2_master.jsonl"
@@ -266,6 +277,7 @@ def test_run_build_routes_all_outputs_to_the_same_custom_db(tmp_path: Path) -> N
         checkpoint_path=checkpoint_path,
         summary_output=summary_output,
         consistency_output=consistency_output,
+        provenance_output=provenance_output,
         figure_dir=figure_dir,
         review_v2_post_output_path=post_master_path,
         review_v2_comment_output_path=comment_master_path,
@@ -295,9 +307,11 @@ def test_run_build_routes_all_outputs_to_the_same_custom_db(tmp_path: Path) -> N
     assert result["review_v2"]["post_master_path"] == str(post_master_path)
     assert result["review_v2"]["comment_master_path"] == str(comment_master_path)
     assert result["review_v2"]["delta_report_path"] == str(delta_report_path)
+    assert result["provenance_path"] == str(provenance_output)
     assert post_master_path.exists()
     assert comment_master_path.exists()
     assert delta_report_path.exists()
+    assert provenance_output.exists()
     assert str(POST_MASTER_PATH) not in {
         result["review_v2"]["post_master_path"],
         result["review_v2"]["comment_master_path"],
@@ -306,14 +320,37 @@ def test_run_build_routes_all_outputs_to_the_same_custom_db(tmp_path: Path) -> N
 
     summary_payload = json.loads(summary_output.read_text(encoding="utf-8"))
     consistency_payload = json.loads(consistency_output.read_text(encoding="utf-8"))
+    delta_payload = json.loads(delta_report_path.read_text(encoding="utf-8"))
+    provenance_payload = json.loads(provenance_output.read_text(encoding="utf-8"))
     assert summary_payload["research_db"]["posts"] == 1
     assert summary_payload["paper_quality_v5"]["formal_posts"] == 1
     assert summary_payload["paper_quality_v5"]["coverage_end_date"] == "2024-01-16"
     assert consistency_payload["research_db_path"] == str(db_path)
     assert consistency_payload["status"] == "aligned"
     assert "generated_at_utc" not in consistency_payload
+    assert "generated_at" not in delta_payload
+    assert "generated_at" not in provenance_output.read_text(encoding="utf-8")
+    assert provenance_payload["formal_stage"] == "quality_v5"
+    assert provenance_payload["formal_posts"] == 1
+    assert provenance_payload["formal_comments"] == 1
+    assert provenance_payload["source_db"]["sha256"] == _sha256(db_path)
+    assert provenance_payload["files"]["summary"]["sha256"] == _sha256(summary_output)
+    assert provenance_payload["files"]["post_review_v2_master"]["line_count"] == 1
     manifest_text = Path(result["figure_manifest_path"]).read_text(encoding="utf-8")
     assert "- 正式覆盖截止日：`2024-01-16`" in manifest_text
+
+    repeated_result = run_build(
+        db_path=db_path,
+        checkpoint_path=checkpoint_path,
+        summary_output=summary_output,
+        consistency_output=consistency_output,
+        provenance_output=provenance_output,
+        figure_dir=figure_dir,
+        review_v2_post_output_path=post_master_path,
+        review_v2_comment_output_path=comment_master_path,
+        review_v2_delta_output_path=delta_report_path,
+    )
+    assert repeated_result["provenance"] == provenance_payload
 
 
 def test_legacy_import_and_build_artifacts_stay_smoke_test_compatible(
@@ -325,6 +362,7 @@ def test_legacy_import_and_build_artifacts_stay_smoke_test_compatible(
     checkpoint_path = tmp_path / "checkpoint.json"
     summary_output = tmp_path / "out" / "summary.json"
     consistency_output = tmp_path / "out" / "consistency.json"
+    provenance_output = tmp_path / "out" / "provenance.json"
     figure_dir = tmp_path / "figures"
     post_master_path = tmp_path / "review_v2" / "post_review_v2_master.jsonl"
     comment_master_path = tmp_path / "review_v2" / "comment_review_v2_master.jsonl"
@@ -356,6 +394,7 @@ def test_legacy_import_and_build_artifacts_stay_smoke_test_compatible(
         checkpoint_path=checkpoint_path,
         summary_output=summary_output,
         consistency_output=consistency_output,
+        provenance_output=provenance_output,
         figure_dir=figure_dir,
         review_v2_post_output_path=post_master_path,
         review_v2_comment_output_path=comment_master_path,
@@ -367,6 +406,7 @@ def test_legacy_import_and_build_artifacts_stay_smoke_test_compatible(
     assert post_master_path.exists()
     assert comment_master_path.exists()
     assert delta_report_path.exists()
+    assert provenance_output.exists()
     assert result["review_v2"]["post_master_path"] != str(POST_MASTER_PATH)
     assert result["review_v2"]["comment_master_path"] != str(COMMENT_MASTER_PATH)
     assert result["review_v2"]["delta_report_path"] != str(DELTA_REPORT_PATH)

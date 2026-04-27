@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "formal_stage": "quality_v5",
+  "formal_stage_status": "post_review_v2_imported_post_only",
+  "consistency_status": "aligned",
+  "formal_posts": 514,
+  "formal_comments": 0,
+  "coverage_end_date": "2026-04-10",
+  "source_db": {
+    "path": "data/processed/ai4s_legitimacy.sqlite3",
+    "sha256": "aa0ecc5f9002ec7786d8e08ffc7cdc8f631c42036a4b84effa27fe2e8fb0a306",
+    "bytes": 89395200
+  },
+  "build_command": {
+    "entrypoint": "ai4s-build-artifacts",
+    "module": "ai4s_legitimacy.cli.build_artifacts",
+    "skip_figures": true
+  },
+  "files": {
+    "summary": {
+      "path": "outputs/reports/freeze_checkpoints/research_db_summary.json",
+      "exists": true,
+      "sha256": "f98aca54da732f900c95ec9b5f4b2c47c45c072c5b0ab155ae788b68b8d175fc",
+      "bytes": 44382,
+      "line_count": 1596
+    },
+    "consistency": {
+      "path": "outputs/reports/freeze_checkpoints/quality_v5_consistency_report.json",
+      "exists": true,
+      "sha256": "e721c0ac65174c962dd9c4d5f1380141a4f859ae879b77f1023768f806049de7",
+      "bytes": 1138,
+      "line_count": 42
+    },
+    "post_review_v2_master": {
+      "path": "outputs/tables/post_review_v2_master.jsonl",
+      "exists": true,
+      "sha256": "fb5c1833b10c2567d64a836506ba8d75007ef0a1d9ac3707bc66daed69d4d26b",
+      "bytes": 37874865,
+      "line_count": 5535
+    },
+    "comment_review_v2_master": {
+      "path": "outputs/tables/comment_review_v2_master.jsonl",
+      "exists": true,
+      "sha256": "1718b53670d1f402d2e2bede8f9fba3c6e51043cfd635718db0a01452e8e164e",
+      "bytes": 26058000,
+      "line_count": 12362
+    },
+    "post_review_v2_delta_report": {
+      "path": "outputs/reports/review_v2/post_review_v2_delta_report.json",
+      "exists": true,
+      "sha256": "596ff89324674cd95896133c5b5c49c70ed9699b839f74ab66caabb57b5bd7d7",
+      "bytes": 296,
+      "line_count": 17
+    },
+    "figure_manifest": {
+      "path": "outputs/figures/paper_figures_submission/quality_v5/paper_figures_submission_manifest.md",
+      "exists": true,
+      "sha256": "c96733ecbf3bcdfb2f4f74e0d13dc1db4a19074c727924442c3e3feafdfb8aea",
+      "bytes": 5819,
+      "line_count": 92
+    },
+    "paper_materials_manifest": {
+      "path": "outputs/reports/paper_materials/paper_materials_manifest.json",
+      "exists": true,
+      "sha256": "dbb294015274ab67fb102adc3363db495557087910e6f8b8548af3354d2b1397",
+      "bytes": 3413,
+      "line_count": 46
+    }
+  }
+}

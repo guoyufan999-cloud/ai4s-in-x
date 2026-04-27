@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 import json
-from datetime import date
 from pathlib import Path
 from typing import Any
 
@@ -550,7 +549,6 @@ def _build_delta_report(post_records: list[dict[str, Any]]) -> dict[str, Any]:
         elif old_status == "review_needed" and decision == "纳入":
             changes["old_review_needed_to_new_true"].append(entry)
     return {
-        "generated_at": date.today().isoformat(),
         "decision_counts": decision_counts,
         "claim_unit_distribution": claim_unit_distribution,
         "key_changes": changes,
@@ -564,8 +562,9 @@ def build_review_v2_artifacts(
     post_output_path: Path = POST_MASTER_PATH,
     comment_output_path: Path = COMMENT_MASTER_PATH,
     delta_output_path: Path = DELTA_REPORT_PATH,
+    immutable: bool = False,
 ) -> dict[str, Any]:
-    with connect_sqlite_readonly(db_path) as connection:
+    with connect_sqlite_readonly(db_path, immutable=immutable) as connection:
         post_records = _build_post_records(connection, suggestions_dir)
         included_post_ids = {
             str(row["post_id"])

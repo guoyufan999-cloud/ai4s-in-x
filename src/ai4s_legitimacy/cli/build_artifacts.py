@@ -4,7 +4,12 @@ import argparse
 from pathlib import Path
 from typing import Any
 
+from ai4s_legitimacy.analysis.artifact_provenance import (
+    build_artifact_provenance,
+    write_artifact_provenance,
+)
 from ai4s_legitimacy.analysis.figure_generation import generate_submission_figures, write_figure_manifest
+from ai4s_legitimacy.analysis.figures.config import FIGURE_DIR
 from ai4s_legitimacy.analysis.quality_v5_consistency import (
     evaluate_quality_v5_consistency,
     write_quality_v5_consistency_report,
@@ -16,8 +21,8 @@ from ai4s_legitimacy.collection.review_v2_artifacts import (
     POST_MASTER_PATH,
     build_review_v2_artifacts,
 )
-from ai4s_legitimacy.analysis.figures.config import FIGURE_DIR
 from ai4s_legitimacy.config.formal_baseline import (
+    ACTIVE_ARTIFACT_PROVENANCE_PATH,
     ACTIVE_CHECKPOINT_PATH,
     ACTIVE_CONSISTENCY_REPORT_PATH,
     ACTIVE_FORMAL_SUMMARY_KEY,
@@ -41,6 +46,11 @@ def build_parser() -> argparse.ArgumentParser:
         type=Path,
         default=ACTIVE_CONSISTENCY_REPORT_PATH,
     )
+    parser.add_argument(
+        "--provenance-output",
+        type=Path,
+        default=ACTIVE_ARTIFACT_PROVENANCE_PATH,
+    )
     parser.add_argument("--figure-dir", type=Path, default=FIGURE_DIR)
     parser.add_argument(
         "--skip-figures",
@@ -56,6 +66,7 @@ def run_build(
     checkpoint_path: Path = ACTIVE_CHECKPOINT_PATH,
     summary_output: Path = RESEARCH_DB_SUMMARY_PATH,
     consistency_output: Path = ACTIVE_CONSISTENCY_REPORT_PATH,
+    provenance_output: Path = ACTIVE_ARTIFACT_PROVENANCE_PATH,
     figure_dir: Path = FIGURE_DIR,
     review_v2_post_output_path: Path = POST_MASTER_PATH,
     review_v2_comment_output_path: Path = COMMENT_MASTER_PATH,
@@ -65,12 +76,13 @@ def run_build(
     if not db_path.exists():
         raise FileNotFoundError(f"Research DB not found at {db_path}")
 
-    summary_payload = build_summary_payload(db_path=db_path)
+    summary_payload = build_summary_payload(db_path=db_path, immutable=True)
     summary_path = write_summary_payload(summary_payload, summary_output)
 
     consistency_report = evaluate_quality_v5_consistency(
         checkpoint_path=checkpoint_path,
         db_path=db_path,
+        immutable=True,
     )
     consistency_path = write_quality_v5_consistency_report(
         consistency_report,
@@ -83,6 +95,7 @@ def run_build(
         post_output_path=review_v2_post_output_path,
         comment_output_path=review_v2_comment_output_path,
         delta_output_path=review_v2_delta_output_path,
+        immutable=True,
     )
     result: dict[str, Any] = {
         "db_path": str(db_path),
@@ -95,23 +108,39 @@ def run_build(
         "canonical_corpus": canonical_corpus,
         "review_v2": canonical_corpus,
     }
-    if skip_figures:
-        return result
+    figure_manifest_path = figure_dir / "paper_figures_submission_manifest.md"
 
-    figure_result = generate_submission_figures(
+    if not skip_figures:
+        figure_result = generate_submission_figures(
+            db_path=db_path,
+            figure_dir=figure_dir,
+            coverage_end_date=formal_summary["coverage_end_date"],
+            immutable=True,
+        )
+        figure_manifest_path = write_figure_manifest(
+            figure_dir=Path(figure_result["figure_dir"]),
+            generated_slugs=figure_result["generated_slugs"],
+            formal_posts=int(formal_summary["formal_posts"]),
+            formal_comments=int(formal_summary["formal_comments"]),
+            coverage_end_date=formal_summary["coverage_end_date"],
+        )
+        result["figures"] = figure_result
+        result["figure_manifest_path"] = str(figure_manifest_path)
+
+    provenance = build_artifact_provenance(
         db_path=db_path,
-        figure_dir=figure_dir,
-        coverage_end_date=formal_summary["coverage_end_date"],
+        checkpoint_path=checkpoint_path,
+        summary_payload=summary_payload,
+        consistency_report=consistency_report,
+        summary_path=summary_path,
+        consistency_path=consistency_path,
+        canonical_corpus=canonical_corpus,
+        skip_figures=skip_figures,
+        figure_manifest_path=figure_manifest_path,
     )
-    figure_manifest_path = write_figure_manifest(
-        figure_dir=Path(figure_result["figure_dir"]),
-        generated_slugs=figure_result["generated_slugs"],
-        formal_posts=int(formal_summary["formal_posts"]),
-        formal_comments=int(formal_summary["formal_comments"]),
-        coverage_end_date=formal_summary["coverage_end_date"],
-    )
-    result["figures"] = figure_result
-    result["figure_manifest_path"] = str(figure_manifest_path)
+    provenance_path = write_artifact_provenance(provenance, provenance_output)
+    result["provenance"] = provenance
+    result["provenance_path"] = str(provenance_path)
     return result
 
 
@@ -122,6 +151,7 @@ def main() -> None:
         checkpoint_path=args.checkpoint,
         summary_output=args.summary_output,
         consistency_output=args.consistency_output,
+        provenance_output=args.provenance_output,
         figure_dir=args.figure_dir,
         skip_figures=args.skip_figures,
     )
@@ -149,6 +179,8 @@ def main() -> None:
     )
     print(f"    -> {review_v2['comment_master_path']}  (comments={review_v2['comment_rows']})")
     print(f"    -> {review_v2['delta_report_path']}")
+    print("  [artifact provenance]")
+    print(f"    -> {result['provenance_path']}")
 
     if result["figures_skipped"]:
         print("  [submission figures (skipped)]")
