@@ -6,8 +6,7 @@ import sqlite3
 from pathlib import Path
 from typing import Any
 
-from ai4s_legitimacy.config.formal_baseline import paper_scope_view
-from ai4s_legitimacy.config.formal_baseline import LEGACY_AUDIT_SNAPSHOT_PATH
+from ai4s_legitimacy.config.formal_baseline import LEGACY_AUDIT_SNAPSHOT_PATH, paper_scope_view
 from ai4s_legitimacy.config.settings import (
     OUTPUTS_DIR,
     QUALITY_V4_CHECKPOINT,
@@ -17,7 +16,6 @@ from ai4s_legitimacy.config.settings import (
 )
 from ai4s_legitimacy.utils.db import connect_sqlite_readonly
 from ai4s_legitimacy.utils.paths import project_relative_path
-
 
 LEGACY_POST_VIEW = "vw_posts_paper_scope_quality_v4"
 LEGACY_COMMENT_VIEW = "vw_comments_paper_scope_quality_v4"

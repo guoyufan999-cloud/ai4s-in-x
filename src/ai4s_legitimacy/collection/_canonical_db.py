@@ -12,7 +12,6 @@ from ai4s_legitimacy.collection.canonical_schema import (
 
 from ._review_db import json_dumps, table_columns
 
-
 POST_CANONICAL_COLUMNS = {
     "task_batch_id": "TEXT",
     "coder_version": "TEXT",

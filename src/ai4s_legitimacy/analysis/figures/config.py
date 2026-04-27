@@ -13,7 +13,6 @@ from ai4s_legitimacy.config.research_scope import (
     render_half_year_case_sql,
 )
 
-
 HALF_YEAR_WINDOWS = build_half_year_windows()
 FORMAL_HALFYEAR_LABELS = tuple(label for label, _, _ in HALF_YEAR_WINDOWS)
 FIGURE_DIR = ACTIVE_FIGURE_DIR

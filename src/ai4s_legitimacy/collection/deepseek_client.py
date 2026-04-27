@@ -9,7 +9,6 @@ from typing import Any, Callable, Sequence
 from urllib import error as urllib_error
 from urllib import request as urllib_request
 
-
 DEFAULT_DEEPSEEK_BASE_URL = "https://api.deepseek.com"
 DEFAULT_CHAT_MODEL = "deepseek-chat"
 DEFAULT_REASONER_MODEL = "deepseek-reasoner"

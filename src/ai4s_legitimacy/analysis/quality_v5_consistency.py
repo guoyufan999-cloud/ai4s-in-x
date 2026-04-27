@@ -22,7 +22,6 @@ from ai4s_legitimacy.config.settings import RESEARCH_DB_PATH
 from ai4s_legitimacy.utils.db import connect_sqlite_readonly
 from ai4s_legitimacy.utils.paths import project_relative_path
 
-
 EXCLUDED_ACTOR_VALUES_SQL = sql_string_list(PAPER_SCOPE_EXCLUDED_ACTOR_TYPES)
 
 

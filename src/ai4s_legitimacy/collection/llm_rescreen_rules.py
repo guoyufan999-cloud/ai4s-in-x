@@ -5,7 +5,6 @@ from typing import Any
 
 from ai4s_legitimacy.collection._jsonl import trim_text as _trim_text
 
-
 CONFIDENCE_THRESHOLD = 0.85
 
 SAMPLE_STATUS_VALUES = {"true", "false", "review_needed"}

@@ -3,9 +3,9 @@ from __future__ import annotations
 from datetime import date
 
 from ai4s_legitimacy.collection.external_xhs_opencli_pilot import (
+    TASK_BATCH_ID,
     PagePayload,
     SearchCandidate,
-    TASK_BATCH_ID,
     _canonical_url,
     _extract_note_id,
     _parse_doctor_output,

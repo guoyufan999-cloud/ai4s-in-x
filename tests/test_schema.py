@@ -7,7 +7,6 @@ import pytest
 
 from ai4s_legitimacy.config.research_scope import render_views_sql
 
-
 ROOT = Path(__file__).resolve().parents[1]
 SCHEMA_PATH = ROOT / "database" / "schema.sql"
 

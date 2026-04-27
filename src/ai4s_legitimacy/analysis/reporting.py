@@ -18,7 +18,6 @@ from ai4s_legitimacy.config.formal_baseline import ACTIVE_FORMAL_SUMMARY_KEY
 from ai4s_legitimacy.config.settings import RESEARCH_DB_PATH, RESEARCH_DB_SUMMARY_PATH
 from ai4s_legitimacy.utils.db import connect_sqlite_readonly
 
-
 __all__ = [
     "build_parser",
     "build_summary_payload",

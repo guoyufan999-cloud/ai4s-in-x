@@ -10,10 +10,10 @@ import pytest
 
 from ai4s_legitimacy.collection.deepseek_client import DeepSeekClient
 from ai4s_legitimacy.collection.llm_rescreen_posts import (
-    generate_llm_rescreen_draft,
     _apply_guardrails,
     _stage1_system_prompt,
     _stage2_system_prompt,
+    generate_llm_rescreen_draft,
 )
 
 

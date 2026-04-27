@@ -7,7 +7,6 @@ from typing import Literal
 from ai4s_legitimacy.config.formal_baseline import paper_scope_view
 from ai4s_legitimacy.config.settings import OUTPUTS_DIR
 
-
 EXCERPTS_DIR = OUTPUTS_DIR / "excerpts"
 MAX_CHARS_DEFAULT = 120
 ExcerptRecordType = Literal["post", "comment"]

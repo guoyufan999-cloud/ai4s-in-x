@@ -6,8 +6,8 @@ from pathlib import Path
 from ._legacy_import_contracts import (
     CODE_INSERT_SQL,
     COMMENT_INSERT_SQL,
-    LegacyImportMode,
     POST_INSERT_SQL,
+    LegacyImportMode,
     LegacyLookups,
     MigrationCounts,
 )

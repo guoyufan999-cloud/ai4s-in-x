@@ -17,7 +17,6 @@ from ._review_db import (
 )
 from .canonical_schema import DECISION_VALUES, canonical_record_identity, validate_canonical_row
 
-
 APPROVED_REVIEW_STATUSES = {"approved", "reviewed", "revised"}
 REVIEW_DECISION_SAMPLE_STATUSES = {"true", "false", "review_needed"}
 REVIEW_DECISION_INCLUSION_VALUES = {"纳入", "剔除", "待复核"}

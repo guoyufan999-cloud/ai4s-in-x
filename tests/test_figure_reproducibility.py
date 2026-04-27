@@ -4,12 +4,16 @@ import shutil
 import sqlite3
 from pathlib import Path
 
-from ai4s_legitimacy.analysis.figures.manifest import BODY_PRIORITY, FIGURE_ENTRIES, write_figure_manifest
+from ai4s_legitimacy.analysis.figures.manifest import (
+    BODY_PRIORITY,
+    FIGURE_ENTRIES,
+    write_figure_manifest,
+)
 from ai4s_legitimacy.analysis.figures.render import generate_submission_figures
 from ai4s_legitimacy.config.research_scope import render_views_sql
 from ai4s_legitimacy.config.settings import SCHEMA_PATH
-from ai4s_legitimacy.utils.paths import project_relative_path
 from ai4s_legitimacy.utils.db import init_sqlite_db
+from ai4s_legitimacy.utils.paths import project_relative_path
 
 
 def _seed_minimal_submission_db(db_path: Path) -> None:

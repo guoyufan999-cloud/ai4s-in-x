@@ -9,64 +9,167 @@ from typing import Any
 
 from ai4s_legitimacy.collection.external_xhs_coding import (
     CODER_VERSION as CODER_VERSION,
+)
+from ai4s_legitimacy.collection.external_xhs_coding import (
     TASK_BATCH_ID as TASK_BATCH_ID,
+)
+from ai4s_legitimacy.collection.external_xhs_coding import (
     _choose_basis_codes as _choose_basis_codes,
+)
+from ai4s_legitimacy.collection.external_xhs_coding import (
     _choose_boundary_codes as _choose_boundary_codes,
+)
+from ai4s_legitimacy.collection.external_xhs_coding import (
     _choose_boundary_mode_codes as _choose_boundary_mode_codes,
+)
+from ai4s_legitimacy.collection.external_xhs_coding import (
     _choose_legitimacy as _choose_legitimacy,
+)
+from ai4s_legitimacy.collection.external_xhs_coding import (
     _choose_workflow_codes as _choose_workflow_codes,
+)
+from ai4s_legitimacy.collection.external_xhs_coding import (
     _collect_evidence as _collect_evidence,
+)
+from ai4s_legitimacy.collection.external_xhs_coding import (
     _confidence as _confidence,
+)
+from ai4s_legitimacy.collection.external_xhs_coding import (
     _decision_for_page as _decision_for_page,
+)
+from ai4s_legitimacy.collection.external_xhs_coding import (
     _discursive_mode as _discursive_mode,
+)
+from ai4s_legitimacy.collection.external_xhs_coding import (
     _format_decision_reason as _format_decision_reason,
+)
+from ai4s_legitimacy.collection.external_xhs_coding import (
     _looks_like_generic_tool_roundup as _looks_like_generic_tool_roundup,
+)
+from ai4s_legitimacy.collection.external_xhs_coding import (
     _make_claim_units as _make_claim_units,
+)
+from ai4s_legitimacy.collection.external_xhs_coding import (
     _practice_status as _practice_status,
+)
+from ai4s_legitimacy.collection.external_xhs_coding import (
     _review_points as _review_points,
+)
+from ai4s_legitimacy.collection.external_xhs_coding import (
     _speaker_position as _speaker_position,
+)
+from ai4s_legitimacy.collection.external_xhs_coding import (
     _target_practice_summary as _target_practice_summary,
+)
+from ai4s_legitimacy.collection.external_xhs_coding import (
     _theme_summary as _theme_summary,
+)
+from ai4s_legitimacy.collection.external_xhs_coding import (
     encode_page as encode_page,
 )
 from ai4s_legitimacy.collection.external_xhs_runtime import (
     DEFAULT_END_DATE as DEFAULT_END_DATE,
+)
+from ai4s_legitimacy.collection.external_xhs_runtime import (
     OPENCLI_TIMEOUT_SECONDS as OPENCLI_TIMEOUT_SECONDS,
+)
+from ai4s_legitimacy.collection.external_xhs_runtime import (
     DoctorStatus as DoctorStatus,
+)
+from ai4s_legitimacy.collection.external_xhs_runtime import (
     PagePayload as PagePayload,
+)
+from ai4s_legitimacy.collection.external_xhs_runtime import (
     PilotQuery as PilotQuery,
+)
+from ai4s_legitimacy.collection.external_xhs_runtime import (
     SearchCandidate as SearchCandidate,
+)
+from ai4s_legitimacy.collection.external_xhs_runtime import (
     _build_ssl_context as _build_ssl_context,
+)
+from ai4s_legitimacy.collection.external_xhs_runtime import (
     _canonical_url as _canonical_url,
+)
+from ai4s_legitimacy.collection.external_xhs_runtime import (
     _contains_any as _contains_any,
+)
+from ai4s_legitimacy.collection.external_xhs_runtime import (
     _dedupe_url_key as _dedupe_url_key,
+)
+from ai4s_legitimacy.collection.external_xhs_runtime import (
     _extract_date as _extract_date,
+)
+from ai4s_legitimacy.collection.external_xhs_runtime import (
     _extract_html_title as _extract_html_title,
+)
+from ai4s_legitimacy.collection.external_xhs_runtime import (
     _extract_json_like_field as _extract_json_like_field,
+)
+from ai4s_legitimacy.collection.external_xhs_runtime import (
     _extract_meta as _extract_meta,
+)
+from ai4s_legitimacy.collection.external_xhs_runtime import (
     _extract_note_id as _extract_note_id,
+)
+from ai4s_legitimacy.collection.external_xhs_runtime import (
     _extract_structured_note_fields as _extract_structured_note_fields,
+)
+from ai4s_legitimacy.collection.external_xhs_runtime import (
     _extract_xhs_body_text as _extract_xhs_body_text,
+)
+from ai4s_legitimacy.collection.external_xhs_runtime import (
     _fetch_public_note_direct as _fetch_public_note_direct,
+)
+from ai4s_legitimacy.collection.external_xhs_runtime import (
     _load_existing_post_urls as _load_existing_post_urls,
+)
+from ai4s_legitimacy.collection.external_xhs_runtime import (
     _normalize_date as _normalize_date,
+)
+from ai4s_legitimacy.collection.external_xhs_runtime import (
     _normalize_space as _normalize_space,
+)
+from ai4s_legitimacy.collection.external_xhs_runtime import (
     _normalize_timestamp as _normalize_timestamp,
+)
+from ai4s_legitimacy.collection.external_xhs_runtime import (
     _parse_doctor_output as _parse_doctor_output,
+)
+from ai4s_legitimacy.collection.external_xhs_runtime import (
     _parse_search_author_and_date as _parse_search_author_and_date,
+)
+from ai4s_legitimacy.collection.external_xhs_runtime import (
     _run_opencli as _run_opencli,
+)
+from ai4s_legitimacy.collection.external_xhs_runtime import (
     _search_with_bing as _search_with_bing,
+)
+from ai4s_legitimacy.collection.external_xhs_runtime import (
     _search_with_opencli as _search_with_opencli,
+)
+from ai4s_legitimacy.collection.external_xhs_runtime import (
     _sentence_for_keywords as _sentence_for_keywords,
+)
+from ai4s_legitimacy.collection.external_xhs_runtime import (
     _sha1 as _sha1,
+)
+from ai4s_legitimacy.collection.external_xhs_runtime import (
     _split_sentences as _split_sentences,
+)
+from ai4s_legitimacy.collection.external_xhs_runtime import (
     _strip_html as _strip_html,
+)
+from ai4s_legitimacy.collection.external_xhs_runtime import (
     _unescape_xhs_text as _unescape_xhs_text,
+)
+from ai4s_legitimacy.collection.external_xhs_runtime import (
     build_fixed_queries as build_fixed_queries,
+)
+from ai4s_legitimacy.collection.external_xhs_runtime import (
     check_opencli_prerequisite as check_opencli_prerequisite,
 )
 from ai4s_legitimacy.config.settings import LEGACY_QUERY_TEMPLATE, OUTPUTS_DIR, RESEARCH_DB_PATH
-
 
 DEFAULT_OUTPUT_PATH = OUTPUTS_DIR / "tables" / "external_xhs_ai4s_2025plus_pilot100.jsonl"
 DEFAULT_SUMMARY_PATH = (

@@ -30,9 +30,11 @@ from ai4s_legitimacy.config.research_scope import render_views_sql
 from ai4s_legitimacy.config.settings import (
     INTERIM_DIR,
     LEGACY_DB_PATH,
-    PLATFORM_CODE as SETTINGS_PLATFORM_CODE,
     RESEARCH_DB_PATH,
     SCHEMA_PATH,
+)
+from ai4s_legitimacy.config.settings import (
+    PLATFORM_CODE as SETTINGS_PLATFORM_CODE,
 )
 from ai4s_legitimacy.utils.db import (
     checkpoint_sqlite_wal,
@@ -44,8 +46,8 @@ from ai4s_legitimacy.utils.db import (
 from ._legacy_import_contracts import (
     LEGACY_IMPORT_MODES,
     REBASELINE_QUALITY_V5_MODE,
-    LegacyLookups,
     LegacyImportMode,
+    LegacyLookups,
     MigrationCounts,
     PreparedCommentInsert,
     PreparedPostInsert,
@@ -53,7 +55,6 @@ from ._legacy_import_contracts import (
 from ._legacy_import_lookups import load_legacy_lookups
 from ._legacy_import_records import prepare_comment_insert, prepare_post_insert
 from ._legacy_import_run import run_legacy_migration
-
 
 PLATFORM_CODE = SETTINGS_PLATFORM_CODE
 

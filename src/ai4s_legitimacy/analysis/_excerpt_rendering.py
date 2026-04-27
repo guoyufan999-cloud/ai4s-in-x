@@ -6,7 +6,6 @@ from pathlib import Path
 
 from ai4s_legitimacy.analysis._excerpt_specs import EXCERPTS_DIR, MAX_CHARS_DEFAULT
 
-
 URL_PATTERN = re.compile(r"https?://\S+")
 EMAIL_PATTERN = re.compile(r"[\w.-]+@[\w.-]+\.\w+")
 ID_PATTERN = re.compile(r"(?:微信号|微信|wechat|联系方式|电话|手机)[:：]\s*\S+", re.IGNORECASE)

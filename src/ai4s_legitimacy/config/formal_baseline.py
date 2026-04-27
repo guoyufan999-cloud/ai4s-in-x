@@ -9,7 +9,6 @@ from ai4s_legitimacy.config.settings import (
     RESEARCH_DB_PATH,
 )
 
-
 ACTIVE_FORMAL_STAGE = "quality_v5"
 LEGACY_AUDIT_STAGE = "quality_v4"
 

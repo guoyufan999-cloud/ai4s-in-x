@@ -8,7 +8,10 @@ from ai4s_legitimacy.analysis.artifact_provenance import (
     build_artifact_provenance,
     write_artifact_provenance,
 )
-from ai4s_legitimacy.analysis.figure_generation import generate_submission_figures, write_figure_manifest
+from ai4s_legitimacy.analysis.figure_generation import (
+    generate_submission_figures,
+    write_figure_manifest,
+)
 from ai4s_legitimacy.analysis.figures.config import FIGURE_DIR
 from ai4s_legitimacy.analysis.quality_v5_consistency import (
     evaluate_quality_v5_consistency,

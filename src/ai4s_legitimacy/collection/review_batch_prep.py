@@ -10,8 +10,8 @@ from ai4s_legitimacy.collection.review_queue import export_review_queue
 from ai4s_legitimacy.config.formal_baseline import (
     ACTIVE_FORMAL_STAGE,
     REBASELINE_MEMOS_DIR,
-    REBASELINE_REVIEWED_DIR,
     REBASELINE_REVIEW_QUEUE_DIR,
+    REBASELINE_REVIEWED_DIR,
     REBASELINE_STAGING_DB_PATH,
     paper_scope_view,
 )
@@ -20,7 +20,6 @@ from ai4s_legitimacy.config.research_baseline import (
     SCREENING_SELF_CHECKS,
 )
 from ai4s_legitimacy.utils.db import connect_sqlite_readonly
-
 
 DEFAULT_BATCH_SIZE = 250
 DEFAULT_REVIEWER = "guoyufan"

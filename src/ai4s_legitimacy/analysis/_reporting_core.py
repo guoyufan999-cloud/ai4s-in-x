@@ -12,7 +12,6 @@ from ai4s_legitimacy.config.formal_baseline import (
     paper_scope_view,
 )
 
-
 PAPER_QUALITY_V4_DISTRIBUTION_QUERIES: dict[str, str] = {
     "monthly_posts_by_workflow": f"""
         SELECT period_month, workflow_stage, post_count

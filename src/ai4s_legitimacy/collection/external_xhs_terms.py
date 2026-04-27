@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-
 AI_CORE_TERMS = (
     "ai",
     "人工智能",

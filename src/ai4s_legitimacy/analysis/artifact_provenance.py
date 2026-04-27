@@ -13,7 +13,6 @@ from ai4s_legitimacy.config.formal_baseline import (
 from ai4s_legitimacy.config.settings import OUTPUTS_DIR, RESEARCH_DB_PATH
 from ai4s_legitimacy.utils.paths import project_relative_path
 
-
 PAPER_MATERIALS_MANIFEST_PATH = (
     OUTPUTS_DIR / "reports" / "paper_materials" / "paper_materials_manifest.json"
 )

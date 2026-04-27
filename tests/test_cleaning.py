@@ -1,6 +1,13 @@
 from __future__ import annotations
 
-from ai4s_legitimacy.cleaning.normalization import hash_identifier, join_unique, mask_name, normalize_date, normalize_text, parse_engagement_text
+from ai4s_legitimacy.cleaning.normalization import (
+    hash_identifier,
+    join_unique,
+    mask_name,
+    normalize_date,
+    normalize_text,
+    parse_engagement_text,
+)
 
 
 def test_normalize_text_collapses_whitespace() -> None:

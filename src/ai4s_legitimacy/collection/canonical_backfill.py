@@ -8,20 +8,19 @@ from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any, Iterable
 
+from ai4s_legitimacy.coding.codebook_seed import LEGACY_WORKFLOW_TO_STAGE_CODE
 from ai4s_legitimacy.collection._canonical_review import canonicalize_review_row
 from ai4s_legitimacy.collection.canonical_schema import (
     format_decision_reason,
     sample_status_to_decision,
     validate_canonical_row,
 )
-from ai4s_legitimacy.coding.codebook_seed import LEGACY_WORKFLOW_TO_STAGE_CODE
 from ai4s_legitimacy.config.formal_baseline import (
-    REBASELINE_REVIEWED_DIR,
     REBASELINE_REVIEW_QUEUE_DIR,
+    REBASELINE_REVIEWED_DIR,
     REBASELINE_SUGGESTIONS_DIR,
 )
 from ai4s_legitimacy.config.settings import OUTPUTS_DIR
-
 
 DEFAULT_MANIFEST_PATH = (
     OUTPUTS_DIR / "reports" / "freeze_checkpoints" / "canonical_backfill_manifest.json"

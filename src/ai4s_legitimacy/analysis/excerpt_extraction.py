@@ -23,7 +23,6 @@ from ai4s_legitimacy.analysis._excerpt_specs import (
 )
 from ai4s_legitimacy.config.settings import RESEARCH_DB_PATH
 
-
 __all__ = [
     "EXCERPTS_DIR",
     "MAX_CHARS_DEFAULT",

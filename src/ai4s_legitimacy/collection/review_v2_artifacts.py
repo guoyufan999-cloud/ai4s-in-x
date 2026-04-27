@@ -17,7 +17,6 @@ from ._review_db import ensure_json_list, first_nonempty, load_reviewed_payloads
 from .canonical_schema import decision_to_sample_status, validate_canonical_row
 from .review_queue import _load_suggestion_index
 
-
 TABLES_DIR = OUTPUTS_DIR / "tables"
 REPORTS_DIR = OUTPUTS_DIR / "reports" / "review_v2"
 POST_MASTER_PATH = TABLES_DIR / "post_review_v2_master.jsonl"

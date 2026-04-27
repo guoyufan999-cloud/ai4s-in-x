@@ -6,8 +6,8 @@ from typing import Any, Callable, Mapping
 from ai4s_legitimacy.analysis.figures.config import (
     ATTITUDE_COLORS,
     FIGURE_DIR,
-    RISK_COLORS,
     RESEARCH_WINDOW_START,
+    RISK_COLORS,
     resolve_paper_scope_coverage_end_date,
 )
 from ai4s_legitimacy.analysis.figures.queries import load_submission_figure_data

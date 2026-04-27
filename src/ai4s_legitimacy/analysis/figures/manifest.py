@@ -7,7 +7,6 @@ from ai4s_legitimacy.analysis.figures._manifest_entries import (
 )
 from ai4s_legitimacy.analysis.figures._manifest_writer import write_figure_manifest
 
-
 __all__ = [
     "BODY_PRIORITY",
     "FIGURE_ENTRIES",

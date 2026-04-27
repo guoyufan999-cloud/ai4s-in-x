@@ -17,7 +17,6 @@ import certifi
 
 from ai4s_legitimacy.utils.db import connect_sqlite_readonly
 
-
 DEFAULT_END_DATE = date(2026, 4, 21)
 OPENCLI_TIMEOUT_SECONDS = 45
 

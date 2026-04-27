@@ -24,6 +24,7 @@ dev = [
     "pytest>=8.3",
     "jupyterlab>=4.2",
     "ruff>=0.11",
+    "mypy>=1.20",
 ]
 
 [project.urls]
@@ -56,4 +57,22 @@ target-version = "py311"
 line-length = 100
 
 [tool.ruff.lint]
-select = ["E4", "E7", "E9", "F", "B"]
+select = ["E4", "E7", "E9", "F", "B", "I"]
+
+[tool.mypy]
+python_version = "3.11"
+check_untyped_defs = true
+warn_unused_ignores = true
+no_implicit_optional = true
+files = [
+    "scripts/repo_health.py",
+    "scripts/artifact_health.py",
+    "src/ai4s_legitimacy/collection/canonical_utils.py",
+    "src/ai4s_legitimacy/collection/canonical_claim_units.py",
+    "src/ai4s_legitimacy/collection/canonical_rows.py",
+    "src/ai4s_legitimacy/collection/canonical_schema.py",
+    "src/ai4s_legitimacy/collection/llm_prefill_normalization.py",
+    "src/ai4s_legitimacy/collection/llm_prefill_prompts.py",
+    "src/ai4s_legitimacy/collection/llm_prefill_canonical.py",
+    "src/ai4s_legitimacy/collection/llm_prefill_post_review.py",
+]

@@ -14,7 +14,6 @@ from ai4s_legitimacy.collection.llm_rescreen_rules import (
     _normalize_current_status,
 )
 
-
 REVIEW_PHASE = "rescreen_posts"
 
 

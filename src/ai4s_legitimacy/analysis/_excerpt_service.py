@@ -10,12 +10,12 @@ from ai4s_legitimacy.analysis._excerpt_specs import (
     BOUNDARY_CODE_QUERY_SPEC,
     COMMENT_STANCE_QUERY_SPEC,
     EXCERPTS_DIR,
-    ExcerptBatchSpec,
-    ExcerptQuerySpec,
-    ExcerptRecordType,
     MAX_CHARS_DEFAULT,
     POST_STANCE_QUERY_SPEC,
     WORKFLOW_STAGE_QUERY_SPEC,
+    ExcerptBatchSpec,
+    ExcerptQuerySpec,
+    ExcerptRecordType,
 )
 from ai4s_legitimacy.config.settings import RESEARCH_DB_PATH
 from ai4s_legitimacy.utils.db import connect_sqlite_readonly

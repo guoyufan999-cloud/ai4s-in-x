@@ -2,7 +2,6 @@ from __future__ import annotations
 
 from typing import Sequence
 
-
 RESEARCH_CORE = (
     "社交媒体中呈现出哪些 AI4S 科研工作流实践",
     "这些实践嵌入科研生产、科研治理、科研训练与能力建构的哪些具体环节",

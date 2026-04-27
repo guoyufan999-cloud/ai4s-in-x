@@ -15,7 +15,6 @@ from ai4s_legitimacy.utils.db import connect_sqlite_readonly
 from ._canonical_review import canonicalize_review_row
 from ._review_db import coalesce_mapping_value, load_reviewed_payloads
 
-
 REVIEW_PHASES = (
     "rescreen_posts",
     "post_review",

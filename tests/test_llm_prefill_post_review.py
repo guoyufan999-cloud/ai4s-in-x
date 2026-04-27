@@ -5,11 +5,11 @@ from pathlib import Path
 from typing import Any
 
 from ai4s_legitimacy.collection.canonical_schema import validate_canonical_row
+from ai4s_legitimacy.collection.deepseek_client import DeepSeekClient
 from ai4s_legitimacy.collection.llm_prefill_post_review import (
     PostReviewBatchPrefiller,
     generate_post_review_prefill_draft,
 )
-from ai4s_legitimacy.collection.deepseek_client import DeepSeekClient
 
 
 class _FakeResponse:

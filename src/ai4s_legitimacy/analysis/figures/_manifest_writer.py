@@ -6,10 +6,10 @@ from typing import Sequence
 from ai4s_legitimacy.analysis.figures._manifest_entries import FIGURE_ENTRIES
 from ai4s_legitimacy.analysis.figures.config import (
     FORMAL_HALFYEAR_LABELS,
+    formal_quarter_labels,
     format_halfyear_sequence_text,
     format_month_window_text,
     format_quarter_sequence_text,
-    formal_quarter_labels,
     halfyear_display,
     quarter_display,
     resolve_coverage_end_date,

@@ -15,7 +15,6 @@ from ai4s_legitimacy.collection.canonical_schema import (
     sample_status_to_decision,
 )
 
-
 WORKFLOW_STAGE_BY_LABEL = {label: code for code, label in WORKFLOW_STAGE_LABELS.items()}
 
 

@@ -7,7 +7,6 @@ from pathlib import Path
 from ai4s_legitimacy.analysis.quality_v5_consistency import evaluate_quality_v5_consistency
 from ai4s_legitimacy.config.research_scope import render_views_sql
 
-
 ROOT = Path(__file__).resolve().parents[1]
 SCHEMA_PATH = ROOT / "database" / "schema.sql"
 

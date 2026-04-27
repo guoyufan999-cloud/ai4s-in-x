@@ -6,8 +6,8 @@ from pathlib import Path
 from ai4s_legitimacy.cleaning.normalization import normalize_text
 from ai4s_legitimacy.coding.codebook_seed import (
     iter_codebook_rows,
-    iter_workflow_domain_lookup_rows,
     iter_legitimacy_lookup_rows,
+    iter_workflow_domain_lookup_rows,
     iter_workflow_lookup_rows,
 )
 from ai4s_legitimacy.config.settings import PLATFORM_CODE, PLATFORM_NAME

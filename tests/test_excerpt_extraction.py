@@ -24,7 +24,6 @@ from ai4s_legitimacy.config.research_scope import render_views_sql
 from ai4s_legitimacy.config.settings import RESEARCH_DB_PATH
 from ai4s_legitimacy.utils.db import checkpoint_sqlite_wal, init_sqlite_db
 
-
 GENERATED_AT = "2026-04-10T00:00:00"
 EXPECTED_RECORD_KEYS = {
     "record_id",

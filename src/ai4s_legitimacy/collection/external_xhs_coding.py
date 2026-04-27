@@ -30,7 +30,6 @@ from ai4s_legitimacy.collection.external_xhs_terms import (
     WORKFLOW_PATTERNS,
 )
 
-
 TASK_BATCH_ID = "external_xhs_opencli_2025plus_pilot100_v1"
 CODER_VERSION = "codex_ai4s_schema_v1"
 
