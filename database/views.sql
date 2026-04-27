@@ -3,26 +3,26 @@ DROP VIEW IF EXISTS vw_boundary_negotiation_summary;
 DROP VIEW IF EXISTS vw_workflow_legitimacy_cross;
 DROP VIEW IF EXISTS vw_comments_by_month_legitimacy;
 DROP VIEW IF EXISTS vw_posts_by_month_workflow;
-DROP VIEW IF EXISTS vw_paper_quality_v4_comments_by_month_stance;
-DROP VIEW IF EXISTS vw_paper_quality_v4_workflow_distribution;
-DROP VIEW IF EXISTS vw_paper_quality_v4_subject_distribution;
-DROP VIEW IF EXISTS vw_paper_quality_v4_posts_by_month_workflow;
-DROP VIEW IF EXISTS vw_comments_paper_scope_quality_v4;
+DROP VIEW IF EXISTS vw_paper_quality_v5_comments_by_month_stance;
+DROP VIEW IF EXISTS vw_paper_quality_v5_workflow_distribution;
+DROP VIEW IF EXISTS vw_paper_quality_v5_subject_distribution;
+DROP VIEW IF EXISTS vw_paper_quality_v5_posts_by_month_workflow;
+DROP VIEW IF EXISTS vw_comments_paper_scope_quality_v5;
 DROP VIEW IF EXISTS vw_comments_research_scope;
 DROP VIEW IF EXISTS vw_comments_candidate_scope;
-DROP VIEW IF EXISTS vw_posts_paper_scope_quality_v4;
+DROP VIEW IF EXISTS vw_posts_paper_scope_quality_v5;
 DROP VIEW IF EXISTS vw_posts_research_scope;
 DROP VIEW IF EXISTS vw_posts_candidate_scope;
-DROP VIEW IF EXISTS vw_paper_quality_v4_post_ai_tools;
-DROP VIEW IF EXISTS vw_paper_quality_v4_post_risk_themes;
-DROP VIEW IF EXISTS vw_paper_quality_v4_post_benefit_themes;
-DROP VIEW IF EXISTS vw_paper_quality_v4_workflow_legitimacy_cross;
-DROP VIEW IF EXISTS vw_paper_quality_v4_boundary_negotiation_summary;
-DROP VIEW IF EXISTS vw_paper_quality_v4_subject_workflow_cross;
-DROP VIEW IF EXISTS vw_paper_quality_v4_subject_legitimacy_cross;
-DROP VIEW IF EXISTS vw_paper_quality_v4_comment_legitimacy_basis_distribution;
-DROP VIEW IF EXISTS vw_paper_quality_v4_halfyear_workflow;
-DROP VIEW IF EXISTS vw_paper_quality_v4_halfyear_subject;
+DROP VIEW IF EXISTS vw_paper_quality_v5_post_ai_tools;
+DROP VIEW IF EXISTS vw_paper_quality_v5_post_risk_themes;
+DROP VIEW IF EXISTS vw_paper_quality_v5_post_benefit_themes;
+DROP VIEW IF EXISTS vw_paper_quality_v5_workflow_legitimacy_cross;
+DROP VIEW IF EXISTS vw_paper_quality_v5_boundary_negotiation_summary;
+DROP VIEW IF EXISTS vw_paper_quality_v5_subject_workflow_cross;
+DROP VIEW IF EXISTS vw_paper_quality_v5_subject_legitimacy_cross;
+DROP VIEW IF EXISTS vw_paper_quality_v5_comment_legitimacy_basis_distribution;
+DROP VIEW IF EXISTS vw_paper_quality_v5_halfyear_workflow;
+DROP VIEW IF EXISTS vw_paper_quality_v5_halfyear_subject;
 
 CREATE VIEW vw_posts_candidate_scope AS
 SELECT
@@ -50,7 +50,9 @@ SELECT
     risk_themes_json,
     ai_tools_json,
     import_batch_id,
-    notes
+    notes,
+    decision,
+    review_status
 FROM posts;
 
 CREATE VIEW vw_posts_research_scope AS
@@ -58,12 +60,22 @@ SELECT *
 FROM vw_posts_candidate_scope
 WHERE sample_status IN ('true', 'review_needed');
 
-CREATE VIEW vw_posts_paper_scope_quality_v4 AS
+CREATE VIEW vw_posts_paper_scope_quality_v5 AS
 SELECT *
 FROM vw_posts_research_scope
-WHERE COALESCE(NULLIF(actor_type, ''), 'uncertain') NOT IN ('tool_vendor_or_promotional')
+WHERE decision = '纳入'
+  AND EXISTS (
+      SELECT 1
+      FROM claim_units cu
+      WHERE cu.record_type = 'post'
+        AND cu.record_id = vw_posts_research_scope.post_id
+  )
+  AND COALESCE(NULLIF(actor_type, ''), 'uncertain') NOT IN ('tool_vendor_or_promotional')
   AND legacy_crawl_status = 'crawled'
-  AND post_date BETWEEN '2024-01-01' AND '2026-06-30';
+  AND post_date BETWEEN '2024-01-01' AND '2026-06-30'
+  AND qs_broad_subject IS NOT NULL
+  AND workflow_stage IS NOT NULL
+  AND primary_legitimacy_stance IS NOT NULL;
 
 CREATE VIEW vw_comments_candidate_scope AS
 SELECT
@@ -76,7 +88,9 @@ SELECT
     stance,
     legitimacy_basis,
     is_reply,
-    import_batch_id
+    import_batch_id,
+    decision,
+    review_status
 FROM comments;
 
 CREATE VIEW vw_comments_research_scope AS
@@ -84,43 +98,52 @@ SELECT c.*
 FROM vw_comments_candidate_scope c
 JOIN vw_posts_research_scope p ON p.post_id = c.post_id;
 
-CREATE VIEW vw_comments_paper_scope_quality_v4 AS
+CREATE VIEW vw_comments_paper_scope_quality_v5 AS
 SELECT c.*
 FROM vw_comments_candidate_scope c
-JOIN vw_posts_paper_scope_quality_v4 p ON p.post_id = c.post_id
-WHERE c.comment_date BETWEEN '2024-01-01' AND '2026-06-30';
+JOIN vw_posts_paper_scope_quality_v5 p ON p.post_id = c.post_id
+WHERE c.comment_date IS NOT NULL
+  AND c.comment_date BETWEEN '2024-01-01' AND '2026-06-30'
+  AND c.decision = '纳入'
+  AND EXISTS (
+      SELECT 1
+      FROM claim_units cu
+      WHERE cu.record_type IN ('comment', 'reply')
+        AND cu.record_id = c.comment_id
+  )
+  AND c.stance IS NOT NULL;
 
-CREATE VIEW vw_paper_quality_v4_posts_by_month_workflow AS
+CREATE VIEW vw_paper_quality_v5_posts_by_month_workflow AS
 SELECT
     substr(post_date, 1, 7) AS period_month,
     COALESCE(workflow_stage, 'uncoded') AS workflow_stage,
     COUNT(*) AS post_count
-FROM vw_posts_paper_scope_quality_v4
+FROM vw_posts_paper_scope_quality_v5
 GROUP BY substr(post_date, 1, 7), COALESCE(workflow_stage, 'uncoded')
 ORDER BY period_month, workflow_stage;
 
-CREATE VIEW vw_paper_quality_v4_subject_distribution AS
+CREATE VIEW vw_paper_quality_v5_subject_distribution AS
 SELECT
     COALESCE(qs_broad_subject, 'uncoded') AS subject_label,
     COUNT(*) AS post_count
-FROM vw_posts_paper_scope_quality_v4
+FROM vw_posts_paper_scope_quality_v5
 GROUP BY COALESCE(qs_broad_subject, 'uncoded')
 ORDER BY post_count DESC, subject_label;
 
-CREATE VIEW vw_paper_quality_v4_workflow_distribution AS
+CREATE VIEW vw_paper_quality_v5_workflow_distribution AS
 SELECT
     COALESCE(workflow_stage, 'uncoded') AS workflow_stage,
     COUNT(*) AS post_count
-FROM vw_posts_paper_scope_quality_v4
+FROM vw_posts_paper_scope_quality_v5
 GROUP BY COALESCE(workflow_stage, 'uncoded')
 ORDER BY post_count DESC, workflow_stage;
 
-CREATE VIEW vw_paper_quality_v4_comments_by_month_stance AS
+CREATE VIEW vw_paper_quality_v5_comments_by_month_stance AS
 SELECT
     substr(comment_date, 1, 7) AS period_month,
     COALESCE(stance, 'uncoded') AS stance,
     COUNT(*) AS comment_count
-FROM vw_comments_paper_scope_quality_v4
+FROM vw_comments_paper_scope_quality_v5
 GROUP BY substr(comment_date, 1, 7), COALESCE(stance, 'uncoded')
 ORDER BY period_month, stance;
 
@@ -165,91 +188,81 @@ SELECT 'candidate_posts' AS scope_name, COUNT(*) AS row_count FROM vw_posts_cand
 UNION ALL
 SELECT 'research_posts', COUNT(*) FROM vw_posts_research_scope
 UNION ALL
-SELECT 'paper_quality_v4_posts', COUNT(*) FROM vw_posts_paper_scope_quality_v4
+SELECT 'paper_quality_v5_posts', COUNT(*) FROM vw_posts_paper_scope_quality_v5
 UNION ALL
 SELECT 'candidate_comments', COUNT(*) FROM vw_comments_candidate_scope
 UNION ALL
 SELECT 'research_comments', COUNT(*) FROM vw_comments_research_scope
 UNION ALL
-SELECT 'paper_quality_v4_comments', COUNT(*) FROM vw_comments_paper_scope_quality_v4;
+SELECT 'paper_quality_v5_comments', COUNT(*) FROM vw_comments_paper_scope_quality_v5;
 
--- JSON-parsing views for tools/risk/benefit themes (paper_scope_quality_v4)
-
-CREATE VIEW vw_paper_quality_v4_post_ai_tools AS
+CREATE VIEW vw_paper_quality_v5_post_ai_tools AS
 SELECT
     p.post_id,
     j.value AS tool_key
-FROM vw_posts_paper_scope_quality_v4 p, json_each(p.ai_tools_json) j
+FROM vw_posts_paper_scope_quality_v5 p, json_each(p.ai_tools_json) j
 WHERE p.ai_tools_json IS NOT NULL AND p.ai_tools_json != '[]';
 
-CREATE VIEW vw_paper_quality_v4_post_risk_themes AS
+CREATE VIEW vw_paper_quality_v5_post_risk_themes AS
 SELECT
     p.post_id,
     j.value AS risk_key
-FROM vw_posts_paper_scope_quality_v4 p, json_each(p.risk_themes_json) j
+FROM vw_posts_paper_scope_quality_v5 p, json_each(p.risk_themes_json) j
 WHERE p.risk_themes_json IS NOT NULL AND p.risk_themes_json != '[]';
 
-CREATE VIEW vw_paper_quality_v4_post_benefit_themes AS
+CREATE VIEW vw_paper_quality_v5_post_benefit_themes AS
 SELECT
     p.post_id,
     j.value AS benefit_key
-FROM vw_posts_paper_scope_quality_v4 p, json_each(p.benefit_themes_json) j
+FROM vw_posts_paper_scope_quality_v5 p, json_each(p.benefit_themes_json) j
 WHERE p.benefit_themes_json IS NOT NULL AND p.benefit_themes_json != '[]';
 
--- ── Cross-tabulation views for paper_scope_quality_v4 ──────────────
-
--- HIGH: workflow × legitimacy stance
-CREATE VIEW vw_paper_quality_v4_workflow_legitimacy_cross AS
+CREATE VIEW vw_paper_quality_v5_workflow_legitimacy_cross AS
 SELECT
     COALESCE(p.workflow_stage, 'uncoded') AS workflow_stage,
     COALESCE(p.primary_legitimacy_stance, 'uncoded') AS legitimacy_stance,
     COUNT(*) AS post_count
-FROM vw_posts_paper_scope_quality_v4 p
+FROM vw_posts_paper_scope_quality_v5 p
 GROUP BY COALESCE(p.workflow_stage, 'uncoded'), COALESCE(p.primary_legitimacy_stance, 'uncoded')
 ORDER BY workflow_stage, legitimacy_stance;
 
--- HIGH: boundary negotiation summary (paper scope)
-CREATE VIEW vw_paper_quality_v4_boundary_negotiation_summary AS
+CREATE VIEW vw_paper_quality_v5_boundary_negotiation_summary AS
 SELECT
     COALESCE(c.boundary_negotiation_code, 'uncoded') AS boundary_negotiation_code,
     COUNT(*) AS coded_count
 FROM codes c
-JOIN vw_comments_paper_scope_quality_v4 cm ON cm.comment_id = c.record_id
+JOIN vw_comments_paper_scope_quality_v5 cm ON cm.comment_id = c.record_id
 WHERE c.record_type = 'comment'
 GROUP BY COALESCE(c.boundary_negotiation_code, 'uncoded')
 ORDER BY coded_count DESC, boundary_negotiation_code;
 
--- HIGH: subject × workflow cross
-CREATE VIEW vw_paper_quality_v4_subject_workflow_cross AS
+CREATE VIEW vw_paper_quality_v5_subject_workflow_cross AS
 SELECT
     COALESCE(p.qs_broad_subject, 'uncoded') AS subject_label,
     COALESCE(p.workflow_stage, 'uncoded') AS workflow_stage,
     COUNT(*) AS post_count
-FROM vw_posts_paper_scope_quality_v4 p
+FROM vw_posts_paper_scope_quality_v5 p
 GROUP BY COALESCE(p.qs_broad_subject, 'uncoded'), COALESCE(p.workflow_stage, 'uncoded')
 ORDER BY post_count DESC, subject_label, workflow_stage;
 
--- HIGH: subject × legitimacy cross
-CREATE VIEW vw_paper_quality_v4_subject_legitimacy_cross AS
+CREATE VIEW vw_paper_quality_v5_subject_legitimacy_cross AS
 SELECT
     COALESCE(p.qs_broad_subject, 'uncoded') AS subject_label,
     COALESCE(p.primary_legitimacy_stance, 'uncoded') AS legitimacy_stance,
     COUNT(*) AS post_count
-FROM vw_posts_paper_scope_quality_v4 p
+FROM vw_posts_paper_scope_quality_v5 p
 GROUP BY COALESCE(p.qs_broad_subject, 'uncoded'), COALESCE(p.primary_legitimacy_stance, 'uncoded')
 ORDER BY post_count DESC, subject_label, legitimacy_stance;
 
--- MEDIUM: comment legitimacy basis distribution
-CREATE VIEW vw_paper_quality_v4_comment_legitimacy_basis_distribution AS
+CREATE VIEW vw_paper_quality_v5_comment_legitimacy_basis_distribution AS
 SELECT
     COALESCE(cm.legitimacy_basis, 'uncoded') AS legitimacy_basis,
     COUNT(*) AS comment_count
-FROM vw_comments_paper_scope_quality_v4 cm
+FROM vw_comments_paper_scope_quality_v5 cm
 GROUP BY COALESCE(cm.legitimacy_basis, 'uncoded')
 ORDER BY comment_count DESC, legitimacy_basis;
 
--- LOW: half-year workflow
-CREATE VIEW vw_paper_quality_v4_halfyear_workflow AS
+CREATE VIEW vw_paper_quality_v5_halfyear_workflow AS
 SELECT
     CASE
         WHEN post_date BETWEEN '2024-01-01' AND '2024-06-30' THEN '2024H1'
@@ -260,14 +273,13 @@ SELECT
     END AS half_year,
     COALESCE(workflow_stage, 'uncoded') AS workflow_stage,
     COUNT(*) AS post_count
-FROM vw_posts_paper_scope_quality_v4
+FROM vw_posts_paper_scope_quality_v5
 WHERE post_date IS NOT NULL
 GROUP BY half_year, COALESCE(workflow_stage, 'uncoded')
 HAVING half_year IS NOT NULL
 ORDER BY half_year, workflow_stage;
 
--- LOW: half-year subject
-CREATE VIEW vw_paper_quality_v4_halfyear_subject AS
+CREATE VIEW vw_paper_quality_v5_halfyear_subject AS
 SELECT
     CASE
         WHEN post_date BETWEEN '2024-01-01' AND '2024-06-30' THEN '2024H1'
@@ -278,7 +290,7 @@ SELECT
     END AS half_year,
     COALESCE(qs_broad_subject, 'uncoded') AS subject_label,
     COUNT(*) AS post_count
-FROM vw_posts_paper_scope_quality_v4
+FROM vw_posts_paper_scope_quality_v5
 WHERE post_date IS NOT NULL
 GROUP BY half_year, COALESCE(qs_broad_subject, 'uncoded')
 HAVING half_year IS NOT NULL

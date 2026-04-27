@@ -16,6 +16,7 @@ dependencies = [
     "pandas>=2.2",
     "matplotlib>=3.9",
     "numpy>=1.26",
+    "certifi>=2026.0.0",
 ]
 
 [project.optional-dependencies]
@@ -31,6 +32,14 @@ Repository = "https://github.com/guoyufan999-cloud/ai4s-in-x"
 [project.scripts]
 ai4s-build-artifacts = "ai4s_legitimacy.cli.build_artifacts:main"
 ai4s-import-legacy = "ai4s_legitimacy.cli.import_legacy:main"
+ai4s-export-baseline-audit = "ai4s_legitimacy.cli.export_baseline_audit:main"
+ai4s-export-review-queue = "ai4s_legitimacy.cli.export_review_queue:main"
+ai4s-prepare-review-batches = "ai4s_legitimacy.cli.prepare_review_batches:main"
+ai4s-import-reviewed-decisions = "ai4s_legitimacy.cli.import_reviewed:main"
+ai4s-llm-rescreen-posts = "ai4s_legitimacy.cli.llm_rescreen_posts:main"
+ai4s-llm-prefill-post-review = "ai4s_legitimacy.cli.llm_prefill_post_review:main"
+ai4s-external-xhs-opencli-pilot = "ai4s_legitimacy.cli.external_xhs_opencli_pilot:main"
+ai4s-backfill-canonical-history = "ai4s_legitimacy.cli.backfill_canonical:main"
 
 [tool.setuptools]
 py-modules = []

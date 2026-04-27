@@ -5,18 +5,18 @@ from calendar import monthrange
 from datetime import date, datetime
 from typing import Any, Mapping, Optional, Sequence
 
+from ai4s_legitimacy.config.formal_baseline import ACTIVE_FIGURE_DIR, paper_scope_view
 from ai4s_legitimacy.config.research_scope import (
     RESEARCH_WINDOW_END,
     RESEARCH_WINDOW_START,
     build_half_year_windows,
     render_half_year_case_sql,
 )
-from ai4s_legitimacy.config.settings import OUTPUTS_DIR
 
 
 HALF_YEAR_WINDOWS = build_half_year_windows()
 FORMAL_HALFYEAR_LABELS = tuple(label for label, _, _ in HALF_YEAR_WINDOWS)
-FIGURE_DIR = OUTPUTS_DIR / "figures" / "paper_figures_submission" / "quality_v4"
+FIGURE_DIR = ACTIVE_FIGURE_DIR
 
 SUBJECT_ORDER = [
     "Engineering & Technology",
@@ -100,20 +100,33 @@ def resolve_coverage_end_date(
 
 def resolve_paper_scope_coverage_end_date(connection) -> str:
     row = connection.execute(
-        """
+        f"""
         SELECT MAX(coverage_date) AS coverage_end_date
         FROM (
             SELECT post_date AS coverage_date
-            FROM vw_posts_paper_scope_quality_v4
+            FROM {paper_scope_view("posts")}
             WHERE post_date IS NOT NULL AND post_date != ''
 
             UNION ALL
 
-            SELECT COALESCE(c.comment_date, p.post_date) AS coverage_date
-            FROM vw_comments_paper_scope_quality_v4 c
-            JOIN vw_posts_paper_scope_quality_v4 p ON p.post_id = c.post_id
-            WHERE COALESCE(c.comment_date, p.post_date) IS NOT NULL
-              AND COALESCE(c.comment_date, p.post_date) != ''
+            SELECT c.comment_date AS coverage_date
+            FROM {paper_scope_view("comments")} c
+            JOIN {paper_scope_view("posts")} p ON p.post_id = c.post_id
+            WHERE c.comment_date IS NOT NULL
+              AND c.comment_date != ''
+
+            UNION ALL
+
+            SELECT post_date AS coverage_date
+            FROM posts
+            WHERE post_date IS NOT NULL AND post_date != ''
+
+            UNION ALL
+
+            SELECT comment_date AS coverage_date
+            FROM comments
+            WHERE comment_date IS NOT NULL
+              AND comment_date != ''
         )
         """
     ).fetchone()

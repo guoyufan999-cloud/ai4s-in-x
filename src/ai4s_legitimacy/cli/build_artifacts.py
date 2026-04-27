@@ -5,18 +5,24 @@ from pathlib import Path
 from typing import Any
 
 from ai4s_legitimacy.analysis.figure_generation import generate_submission_figures, write_figure_manifest
-from ai4s_legitimacy.analysis.quality_v4_consistency import (
-    evaluate_quality_v4_consistency,
-    write_quality_v4_consistency_report,
+from ai4s_legitimacy.analysis.quality_v5_consistency import (
+    evaluate_quality_v5_consistency,
+    write_quality_v5_consistency_report,
 )
 from ai4s_legitimacy.analysis.reporting import build_summary_payload, write_summary_payload
-from ai4s_legitimacy.analysis.figures.config import FIGURE_DIR
-from ai4s_legitimacy.config.settings import (
-    QUALITY_V4_CHECKPOINT,
-    QUALITY_V4_CONSISTENCY_REPORT_PATH,
-    RESEARCH_DB_PATH,
-    RESEARCH_DB_SUMMARY_PATH,
+from ai4s_legitimacy.collection.review_v2_artifacts import (
+    COMMENT_MASTER_PATH,
+    DELTA_REPORT_PATH,
+    POST_MASTER_PATH,
+    build_review_v2_artifacts,
 )
+from ai4s_legitimacy.analysis.figures.config import FIGURE_DIR
+from ai4s_legitimacy.config.formal_baseline import (
+    ACTIVE_CHECKPOINT_PATH,
+    ACTIVE_CONSISTENCY_REPORT_PATH,
+    ACTIVE_FORMAL_SUMMARY_KEY,
+)
+from ai4s_legitimacy.config.settings import RESEARCH_DB_PATH, RESEARCH_DB_SUMMARY_PATH
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -24,7 +30,7 @@ def build_parser() -> argparse.ArgumentParser:
         description="Rebuild all paper artifacts from the research DB."
     )
     parser.add_argument("--db", type=Path, default=RESEARCH_DB_PATH)
-    parser.add_argument("--checkpoint", type=Path, default=QUALITY_V4_CHECKPOINT)
+    parser.add_argument("--checkpoint", type=Path, default=ACTIVE_CHECKPOINT_PATH)
     parser.add_argument(
         "--summary-output",
         type=Path,
@@ -33,7 +39,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument(
         "--consistency-output",
         type=Path,
-        default=QUALITY_V4_CONSISTENCY_REPORT_PATH,
+        default=ACTIVE_CONSISTENCY_REPORT_PATH,
     )
     parser.add_argument("--figure-dir", type=Path, default=FIGURE_DIR)
     parser.add_argument(
@@ -47,10 +53,13 @@ def build_parser() -> argparse.ArgumentParser:
 def run_build(
     *,
     db_path: Path = RESEARCH_DB_PATH,
-    checkpoint_path: Path = QUALITY_V4_CHECKPOINT,
+    checkpoint_path: Path = ACTIVE_CHECKPOINT_PATH,
     summary_output: Path = RESEARCH_DB_SUMMARY_PATH,
-    consistency_output: Path = QUALITY_V4_CONSISTENCY_REPORT_PATH,
+    consistency_output: Path = ACTIVE_CONSISTENCY_REPORT_PATH,
     figure_dir: Path = FIGURE_DIR,
+    review_v2_post_output_path: Path = POST_MASTER_PATH,
+    review_v2_comment_output_path: Path = COMMENT_MASTER_PATH,
+    review_v2_delta_output_path: Path = DELTA_REPORT_PATH,
     skip_figures: bool = False,
 ) -> dict[str, Any]:
     if not db_path.exists():
@@ -59,23 +68,32 @@ def run_build(
     summary_payload = build_summary_payload(db_path=db_path)
     summary_path = write_summary_payload(summary_payload, summary_output)
 
-    consistency_report = evaluate_quality_v4_consistency(
+    consistency_report = evaluate_quality_v5_consistency(
         checkpoint_path=checkpoint_path,
         db_path=db_path,
     )
-    consistency_path = write_quality_v4_consistency_report(
+    consistency_path = write_quality_v5_consistency_report(
         consistency_report,
         consistency_output,
     )
+    formal_summary = summary_payload[ACTIVE_FORMAL_SUMMARY_KEY]
 
+    canonical_corpus = build_review_v2_artifacts(
+        db_path=db_path,
+        post_output_path=review_v2_post_output_path,
+        comment_output_path=review_v2_comment_output_path,
+        delta_output_path=review_v2_delta_output_path,
+    )
     result: dict[str, Any] = {
         "db_path": str(db_path),
         "summary": summary_payload,
         "summary_path": str(summary_path),
         "consistency": consistency_report,
         "consistency_path": str(consistency_path),
-        "coverage_end_date": summary_payload["paper_quality_v4"]["coverage_end_date"],
+        "coverage_end_date": formal_summary["coverage_end_date"],
         "figures_skipped": skip_figures,
+        "canonical_corpus": canonical_corpus,
+        "review_v2": canonical_corpus,
     }
     if skip_figures:
         return result
@@ -83,14 +101,14 @@ def run_build(
     figure_result = generate_submission_figures(
         db_path=db_path,
         figure_dir=figure_dir,
-        coverage_end_date=summary_payload["paper_quality_v4"]["coverage_end_date"],
+        coverage_end_date=formal_summary["coverage_end_date"],
     )
     figure_manifest_path = write_figure_manifest(
         figure_dir=Path(figure_result["figure_dir"]),
         generated_slugs=figure_result["generated_slugs"],
-        formal_posts=int(summary_payload["paper_quality_v4"]["formal_posts"]),
-        formal_comments=int(summary_payload["paper_quality_v4"]["formal_comments"]),
-        coverage_end_date=summary_payload["paper_quality_v4"]["coverage_end_date"],
+        formal_posts=int(formal_summary["formal_posts"]),
+        formal_comments=int(formal_summary["formal_comments"]),
+        coverage_end_date=formal_summary["coverage_end_date"],
     )
     result["figures"] = figure_result
     result["figure_manifest_path"] = str(figure_manifest_path)
@@ -122,6 +140,15 @@ def main() -> None:
         f"(status={consistency['status']}, "
         f"delta_posts={consistency['delta']['paper_posts_minus_checkpoint']})"
     )
+    review_v2 = result["canonical_corpus"]
+    print("  [canonical corpus]")
+    print(
+        "    -> "
+        f"{review_v2['post_master_path']}  "
+        f"(posts={review_v2['post_rows']}, included={review_v2['included_posts']})"
+    )
+    print(f"    -> {review_v2['comment_master_path']}  (comments={review_v2['comment_rows']})")
+    print(f"    -> {review_v2['delta_report_path']}")
 
     if result["figures_skipped"]:
         print("  [submission figures (skipped)]")

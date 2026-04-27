@@ -3,6 +3,7 @@ from __future__ import annotations
 from pathlib import Path
 from string import Template
 
+from ai4s_legitimacy.config.formal_baseline import ACTIVE_FORMAL_STAGE
 from ai4s_legitimacy.config.settings import VIEWS_PATH, VIEWS_TEMPLATE_PATH
 
 RESEARCH_WINDOW_START = "2024-01-01"
@@ -61,6 +62,7 @@ def render_views_sql(
 ) -> str:
     template = Template(VIEWS_TEMPLATE_PATH.read_text(encoding="utf-8"))
     return template.substitute(
+        formal_stage=ACTIVE_FORMAL_STAGE,
         research_window_start=start_date,
         research_window_end=end_date,
         research_scope_status_values=sql_string_list(RESEARCH_SCOPE_SAMPLE_STATUSES),
