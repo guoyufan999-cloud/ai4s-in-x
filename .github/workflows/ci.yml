@@ -34,3 +34,6 @@ jobs:
 
       - name: Run tests
         run: python -B -m pytest -q
+
+      - name: Run repo health
+        run: python -B scripts/repo_health.py --json --allow-missing-source-db
