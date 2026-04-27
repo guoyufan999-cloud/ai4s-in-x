@@ -79,7 +79,7 @@
 3. 阅读 `compliance_and_ethics.md`
 4. 查看 `data/data_schema.md`、`database/schema.sql`、`archive/legacy_collection_runtime/data/db/README.md` 与 `data/processed/README.md`
 5. 按上述两个 README 准备本地 legacy DB 与研究主库路径
-6. 首次拉起开发环境或完成包名迁移后，先执行 `./.venv/bin/pip install -e '.[dev]'`
+6. 首次拉起开发环境或完成包名迁移后，先执行 `./.venv/bin/pip install -e '.[dev]'`；如需严格复现当前 `quality_v5` post-only 验证环境，参考 `docs/runtime_environment_snapshot.md` 并使用 `requirements.lock.txt`
 7. 运行 `ai4s-import-legacy --mode rebaseline_quality_v5_staging --audit-snapshot outputs/reports/freeze_checkpoints/quality_v4_audit_snapshot.json`，重建 `quality_v5` 本地研究主库并保留 `quality_v4` 审计快照；当前 `REBASELINE_STAGING_DB_PATH` 指向 `data/processed/ai4s_legitimacy.sqlite3`
 8. 使用 `ai4s-prepare-review-batches --phase rescreen_posts` 生成全量 review queue、按批次切分的 JSONL、`batch_00` reviewed 模板与判例 memo，再通过 `ai4s-import-reviewed-decisions` 回写人工审核完成的 reviewed 结果
 9. 对正式编码使用 `ai4s-prepare-review-batches --phase post_review_v2`；本轮 `quality_v5` 已接受 post-only 正式基线，`comment_review_v2` 暂不进入正式编码，后续若启动评论层正式结果再单独生成和导入对应队列。review template、reviewed import 与 artifacts 都统一使用 canonical JSONL；帖子/评论层字段只是 `claim_units` 的归并摘要，发生冲突时以 `claim_units` 为准。
@@ -115,7 +115,7 @@
 开发验证建议：
 
 - 标准 `src-layout` 依赖 editable 安装；首次拉起环境或拉到本轮重命名后，先执行 `./.venv/bin/pip install -e '.[dev]'`。
-- `requirements.dev.txt` 与 `environment.yml` 仅作为本地开发 convenience wrappers，不是真正锁定依赖的 manifests。
+- `requirements.dev.txt` 与 `environment.yml` 仅作为本地开发 convenience wrappers；当前可复现版本快照见 `requirements.lock.txt` 与 `docs/runtime_environment_snapshot.md`。
 - 推荐使用 `./.venv/bin/python -B -m pytest -q`，避免在 `src/`、`tests/` 下生成 `__pycache__` / `.pyc`，让工作树更容易保持可提交态。
 - 如果此前已经运行过默认测试命令，可在收尾时执行一次 `find src tests -type d -name '__pycache__' -prune -exec rm -rf {} +` 清理本地缓存。
 
