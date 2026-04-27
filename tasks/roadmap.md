@@ -2,9 +2,9 @@
 
 ## 当前下一步入口
 
-- `quality_v5` 正式基线重建已经启动：先保留 `quality_v4` 审计快照，再通过 staging DB 重做样本边界与核心标签
-- 第一优先级是跑通 `review queue -> reviewed import -> rebuild artifacts`，而不是继续压 clean 稿
-- `quality_v5` reviewed 结果稳定后，再决定是回到终稿压缩，还是继续研究扩展第二轮
+- `quality_v5` 本轮已经锁定为 post-only 正式基线：正式帖子 `514`，正式评论 `0`
+- `quality_v4` 仅作为历史审计快照保留；active results、figures、manifest 与 freeze checkpoint 均以 `paper_scope_quality_v5` 为准
+- 当前第一优先级是维护 post-only artifacts 与 consistency delta `0 / 0`，同时避免把 deferred 的 `comment_review_v2` 误写成正式评论层结果
 
 ## 阶段 1：仓库重构与主库迁移
 
@@ -36,6 +36,7 @@
 ## 阶段 4：后续研究扩展
 
 - [已完成] 完成 `analysis/figures/queries.py` 与 `analysis/figures/render.py` 的可维护性收口，工程底座达到当前阶段稳定点
-- [进行中] 重建 `quality_v5` staging：导出 `quality_v4` 审计快照、清空旧标签/旧 codes 迁移、导出待审队列
-- [进行中] 通过 reviewed 导入逐步重建 `sample_status / actor_type / subject / workflow / stance / themes / codes`
-- `quality_v5` 正式 artifacts 重建完成后，再评估终稿压缩、grounded theory 或补充样本
+- [已完成] 重建 `quality_v5` post-only 正式基线：导出 `quality_v4` 审计快照、完成 rescreen 回灌、导入严格版 `post_review_v2`、刷新 active artifacts
+- [进行中] 维护 `quality_v5` post-only artifacts、README、manifest、paper materials 与 consistency checkpoint 的一致性
+- [后续] 如论文或扩展研究需要评论层正式结果，再单独启动 `comment_review_v2`；完成前 `formal_comments=0` 仍是设计选择
+- [后续] 在 post-only 投稿口径稳定后，再评估终稿压缩、grounded theory 或补充样本

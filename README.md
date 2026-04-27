@@ -132,7 +132,7 @@
 - 把 legacy 运行工程重构为研究工程仓库
 - 完成研究型主库迁移
 - 把编码框架、分析视图和输出路径全部研究问题化
-- 以 `quality_v5` staging 重建样本边界、主标签与细分编码，再重建正式结果与论文表述
+- 维护 `quality_v5` post-only 正式基线，并将 `comment_review_v2` 留作后续独立评论层工作流
 
 下一阶段的优先任务见 `tasks/backlog.md` 与 `tasks/roadmap.md`。
 

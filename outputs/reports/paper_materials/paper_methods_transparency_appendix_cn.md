@@ -9,5 +9,5 @@
 
 本附录记录 active baseline 的真实合同状态。当前 summary、consistency、canonical corpus、freeze checkpoint 与图表 manifest 全部对应 `paper_scope_quality_v5`；本轮正式基线采用帖子层 post-only 口径，正式样本为 `514 / 0`，评论层正式编码 deferred。
 历史 `quality_v4` 的 freeze、图包和 evidence matrix 继续保留，但只作为 `legacy_audit_snapshot` 使用。
-- pending contract：`outputs/reports/paper_materials/quality_v5_pending_contract.md`
+- post-only contract：`outputs/reports/paper_materials/quality_v5_post_only_contract.md`
 - backfill contract：`docs/canonical_backfill_contract.md`
