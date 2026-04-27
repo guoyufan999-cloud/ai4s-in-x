@@ -4,7 +4,7 @@
 
 本仓库服务于论文《社交媒体中AI4S科研工作流的实践与合法性讨论》。项目核心任务不是单纯抓取平台内容，而是围绕研究问题建立一套可复现、可审计、可持续迭代的研究工程：从公开讨论材料的整理入库、清洗标准化、编码支持，到合法性分析和论文输出，形成完整链路。
 
-当前仓库正在执行 `quality_v5` 正式基线重建。`quality_v4` 不再作为活跃编码主线，而是降级为一次性审计快照与历史对照；此前为自动采集、媒体补强、结构修补恢复服务的运行系统也已被压缩为 `archive/` 中的静态历史档案，只保留 legacy SQLite 历史事实源与最小索引说明，不再作为默认推荐路径。
+当前仓库的活跃正式交付链已经稳定在 `quality_v5` post-only formal baseline。`quality_v4` 不再作为活跃编码主线，而是降级为一次性审计快照与历史对照；此前为自动采集、媒体补强、结构修补恢复服务的运行系统也已被压缩为 `archive/` 中的静态历史档案，只保留 legacy SQLite 历史事实源与最小索引说明，不再作为默认推荐路径。
 
 ## 研究主题
 
@@ -94,7 +94,7 @@
 
 当前 `quality_v5` freeze checkpoint 明确采用 post-only formal scope：正式帖子为 `514` 条、正式评论为 `0` 条。评论层 `comment_review_v2` 的正式编码被延后，后续如需评论层正式结果，应重新准备评论队列、导入 reviewed 结果并重建 artifacts。
 
-当前活跃重建输出将逐步转入 `outputs/reports/paper_materials/` 与 `outputs/figures/paper_figures_submission/quality_v5/`；`quality_v4` 同路径内容保留为历史审计快照。工作稿和 LLM 中间稿统一放在 `docs/paper_working/`，不属于正式交付链。
+当前活跃正式输出已经统一到 `outputs/reports/paper_materials/` 与 `outputs/figures/paper_figures_submission/quality_v5/`；`quality_v4` 同路径内容保留为历史审计快照。工作稿和 LLM 中间稿统一放在 `docs/paper_working/`，不属于正式交付链。
 
 推荐入口：
 
@@ -117,6 +117,7 @@
 - 标准 `src-layout` 依赖 editable 安装；首次拉起环境或拉到本轮重命名后，先执行 `./.venv/bin/pip install -e '.[dev]'`。
 - `requirements.dev.txt` 与 `environment.yml` 仅作为本地开发 convenience wrappers；当前可复现版本快照见 `requirements.lock.txt` 与 `docs/runtime_environment_snapshot.md`。
 - 推荐使用 `./.venv/bin/python -B -m pytest -q`，避免在 `src/`、`tests/` 下生成 `__pycache__` / `.pyc`，让工作树更容易保持可提交态。
+- 正式交付链验收建议至少执行：`./.venv/bin/ruff check .`、`./.venv/bin/python -m mypy`、`./.venv/bin/python -B -m pytest -q`、`./.venv/bin/python -B scripts/repo_health.py --json --allow-missing-source-db`。
 - 如果此前已经运行过默认测试命令，可在收尾时执行一次 `find src tests -type d -name '__pycache__' -prune -exec rm -rf {} +` 清理本地缓存。
 
 本地历史备份说明：
