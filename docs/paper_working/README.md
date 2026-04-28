@@ -11,6 +11,7 @@
 - `framework_v2_chapter_3_research_design_draft.md`
 - `framework_v2_chapter_4_practice_map_draft.md`
 - `framework_v2_chapter_5_intervention_normative_evaluation_draft.md`
+- `framework_v2_chapter_6_boundary_negotiation_draft.md`
 - `paper_results_chapter_draft.md`
 - `paper_results_chapter_llm.md`
 - `paper_discussion_chapter_draft.md`
