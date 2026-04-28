@@ -14,6 +14,7 @@ def test_project_uses_project_specific_python_package_namespace() -> None:
     importlib.import_module("ai4s_legitimacy.cli.export_baseline_audit")
     importlib.import_module("ai4s_legitimacy.cli.export_review_queue")
     importlib.import_module("ai4s_legitimacy.cli.prepare_review_batches")
+    importlib.import_module("ai4s_legitimacy.cli.external_xhs_post_expansion")
     importlib.import_module("ai4s_legitimacy.cli.import_reviewed")
     importlib.import_module("ai4s_legitimacy.cli.llm_rescreen_posts")
     importlib.import_module("ai4s_legitimacy.cli.llm_prefill_post_review")
@@ -29,6 +30,10 @@ def test_project_uses_project_specific_python_package_namespace() -> None:
     assert scripts["ai4s-export-baseline-audit"] == "ai4s_legitimacy.cli.export_baseline_audit:main"
     assert scripts["ai4s-export-review-queue"] == "ai4s_legitimacy.cli.export_review_queue:main"
     assert scripts["ai4s-prepare-review-batches"] == "ai4s_legitimacy.cli.prepare_review_batches:main"
+    assert (
+        scripts["ai4s-external-xhs-post-expansion"]
+        == "ai4s_legitimacy.cli.external_xhs_post_expansion:main"
+    )
     assert scripts["ai4s-import-reviewed-decisions"] == "ai4s_legitimacy.cli.import_reviewed:main"
     assert scripts["ai4s-llm-rescreen-posts"] == "ai4s_legitimacy.cli.llm_rescreen_posts:main"
     assert scripts["ai4s-llm-prefill-post-review"] == "ai4s_legitimacy.cli.llm_prefill_post_review:main"
