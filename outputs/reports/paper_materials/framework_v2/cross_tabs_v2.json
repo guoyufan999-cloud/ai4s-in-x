@@ -1,0 +1,757 @@
+{
+  "metadata": {
+    "note": "新增 v2 字段尚未完成正式人工编码，因此本表仅显示已有字段或为空。"
+  },
+  "cross_tabs": {
+    "workflow_stage_x_ai_intervention_mode": [],
+    "ai_intervention_mode_x_normative_standard": [],
+    "ai_intervention_intensity_x_normative_tendency": [],
+    "normative_standard_x_boundary_type": [
+      {
+        "left_code": "C7",
+        "left_label": "人机分工",
+        "right_code": "D1.2",
+        "right_label": "人机分工边界",
+        "count": 324
+      },
+      {
+        "left_code": "C2",
+        "left_label": "能力补充",
+        "right_code": "D1.2",
+        "right_label": "人机分工边界",
+        "count": 300
+      },
+      {
+        "left_code": "C2",
+        "left_label": "能力补充",
+        "right_code": "D1.1",
+        "right_label": "辅助与替代边界",
+        "count": 221
+      },
+      {
+        "left_code": "C7",
+        "left_label": "人机分工",
+        "right_code": "D1.1",
+        "right_label": "辅助与替代边界",
+        "count": 217
+      },
+      {
+        "left_code": "C1",
+        "left_label": "效率提升",
+        "right_code": "D1.2",
+        "right_label": "人机分工边界",
+        "count": 185
+      },
+      {
+        "left_code": "C2",
+        "left_label": "能力补充",
+        "right_code": "D1.10",
+        "right_label": "验证/复核边界",
+        "count": 154
+      },
+      {
+        "left_code": "C8",
+        "left_label": "可靠性与可验证性",
+        "right_code": "D1.10",
+        "right_label": "验证/复核边界",
+        "count": 149
+      },
+      {
+        "left_code": "C1",
+        "left_label": "效率提升",
+        "right_code": "D1.1",
+        "right_label": "辅助与替代边界",
+        "count": 139
+      },
+      {
+        "left_code": "C5",
+        "left_label": "规范适配",
+        "right_code": "D1.2",
+        "right_label": "人机分工边界",
+        "count": 138
+      },
+      {
+        "left_code": "C8",
+        "left_label": "可靠性与可验证性",
+        "right_code": "D1.2",
+        "right_label": "人机分工边界",
+        "count": 138
+      },
+      {
+        "left_code": "C7",
+        "left_label": "人机分工",
+        "right_code": "D1.10",
+        "right_label": "验证/复核边界",
+        "count": 136
+      },
+      {
+        "left_code": "C5",
+        "left_label": "规范适配",
+        "right_code": "D1.1",
+        "right_label": "辅助与替代边界",
+        "count": 107
+      },
+      {
+        "left_code": "C10",
+        "left_label": "训练价值",
+        "right_code": "D1.2",
+        "right_label": "人机分工边界",
+        "count": 100
+      },
+      {
+        "left_code": "C1",
+        "left_label": "效率提升",
+        "right_code": "D1.10",
+        "right_label": "验证/复核边界",
+        "count": 99
+      },
+      {
+        "left_code": "C8",
+        "left_label": "可靠性与可验证性",
+        "right_code": "D1.1",
+        "right_label": "辅助与替代边界",
+        "count": 89
+      },
+      {
+        "left_code": "C5",
+        "left_label": "规范适配",
+        "right_code": "D1.10",
+        "right_label": "验证/复核边界",
+        "count": 73
+      },
+      {
+        "left_code": "C4",
+        "left_label": "原创性",
+        "right_code": "D1.2",
+        "right_label": "人机分工边界",
+        "count": 67
+      },
+      {
+        "left_code": "C14",
+        "left_label": "专业判断",
+        "right_code": "D1.2",
+        "right_label": "人机分工边界",
+        "count": 62
+      },
+      {
+        "left_code": "C2",
+        "left_label": "能力补充",
+        "right_code": "D1.9",
+        "right_label": "署名与贡献边界",
+        "count": 62
+      },
+      {
+        "left_code": "C6",
+        "left_label": "学术诚信",
+        "right_code": "D1.5",
+        "right_label": "学术诚信边界",
+        "count": 58
+      },
+      {
+        "left_code": "C4",
+        "left_label": "原创性",
+        "right_code": "D1.1",
+        "right_label": "辅助与替代边界",
+        "count": 56
+      },
+      {
+        "left_code": "C10",
+        "left_label": "训练价值",
+        "right_code": "D1.1",
+        "right_label": "辅助与替代边界",
+        "count": 55
+      },
+      {
+        "left_code": "C2",
+        "left_label": "能力补充",
+        "right_code": "D1.4",
+        "right_label": "原创性边界",
+        "count": 53
+      },
+      {
+        "left_code": "C5",
+        "left_label": "规范适配",
+        "right_code": "D1.4",
+        "right_label": "原创性边界",
+        "count": 53
+      },
+      {
+        "left_code": "C7",
+        "left_label": "人机分工",
+        "right_code": "D1.9",
+        "right_label": "署名与贡献边界",
+        "count": 51
+      },
+      {
+        "left_code": "C2",
+        "left_label": "能力补充",
+        "right_code": "D1.5",
+        "right_label": "学术诚信边界",
+        "count": 47
+      },
+      {
+        "left_code": "C6",
+        "left_label": "学术诚信",
+        "right_code": "D1.2",
+        "right_label": "人机分工边界",
+        "count": 47
+      },
+      {
+        "left_code": "C1",
+        "left_label": "效率提升",
+        "right_code": "D1.9",
+        "right_label": "署名与贡献边界",
+        "count": 39
+      },
+      {
+        "left_code": "C7",
+        "left_label": "人机分工",
+        "right_code": "D1.5",
+        "right_label": "学术诚信边界",
+        "count": 39
+      },
+      {
+        "left_code": "C7",
+        "left_label": "人机分工",
+        "right_code": "D1.4",
+        "right_label": "原创性边界",
+        "count": 38
+      },
+      {
+        "left_code": "C1",
+        "left_label": "效率提升",
+        "right_code": "D1.4",
+        "right_label": "原创性边界",
+        "count": 37
+      },
+      {
+        "left_code": "C4",
+        "left_label": "原创性",
+        "right_code": "D1.10",
+        "right_label": "验证/复核边界",
+        "count": 35
+      },
+      {
+        "left_code": "C10",
+        "left_label": "训练价值",
+        "right_code": "D1.10",
+        "right_label": "验证/复核边界",
+        "count": 34
+      },
+      {
+        "left_code": "C5",
+        "left_label": "规范适配",
+        "right_code": "D1.9",
+        "right_label": "署名与贡献边界",
+        "count": 33
+      },
+      {
+        "left_code": "C8",
+        "left_label": "可靠性与可验证性",
+        "right_code": "D1.9",
+        "right_label": "署名与贡献边界",
+        "count": 33
+      },
+      {
+        "left_code": "C12",
+        "left_label": "贡献归属",
+        "right_code": "D1.9",
+        "right_label": "署名与贡献边界",
+        "count": 32
+      },
+      {
+        "left_code": "C14",
+        "left_label": "专业判断",
+        "right_code": "D1.1",
+        "right_label": "辅助与替代边界",
+        "count": 31
+      },
+      {
+        "left_code": "C5",
+        "left_label": "规范适配",
+        "right_code": "D1.5",
+        "right_label": "学术诚信边界",
+        "count": 31
+      },
+      {
+        "left_code": "C6",
+        "left_label": "学术诚信",
+        "right_code": "D1.1",
+        "right_label": "辅助与替代边界",
+        "count": 31
+      },
+      {
+        "left_code": "C1",
+        "left_label": "效率提升",
+        "right_code": "D1.5",
+        "right_label": "学术诚信边界",
+        "count": 27
+      },
+      {
+        "left_code": "C6",
+        "left_label": "学术诚信",
+        "right_code": "D1.10",
+        "right_label": "验证/复核边界",
+        "count": 26
+      },
+      {
+        "left_code": "C12",
+        "left_label": "贡献归属",
+        "right_code": "D1.2",
+        "right_label": "人机分工边界",
+        "count": 24
+      },
+      {
+        "left_code": "C3",
+        "left_label": "责任归属",
+        "right_code": "D1.2",
+        "right_label": "人机分工边界",
+        "count": 23
+      },
+      {
+        "left_code": "C4",
+        "left_label": "原创性",
+        "right_code": "D1.4",
+        "right_label": "原创性边界",
+        "count": 20
+      },
+      {
+        "left_code": "C8",
+        "left_label": "可靠性与可验证性",
+        "right_code": "D1.4",
+        "right_label": "原创性边界",
+        "count": 20
+      },
+      {
+        "left_code": "C14",
+        "left_label": "专业判断",
+        "right_code": "D1.10",
+        "right_label": "验证/复核边界",
+        "count": 19
+      },
+      {
+        "left_code": "C4",
+        "left_label": "原创性",
+        "right_code": "D1.9",
+        "right_label": "署名与贡献边界",
+        "count": 19
+      },
+      {
+        "left_code": "C10",
+        "left_label": "训练价值",
+        "right_code": "D1.9",
+        "right_label": "署名与贡献边界",
+        "count": 17
+      },
+      {
+        "left_code": "C12",
+        "left_label": "贡献归属",
+        "right_code": "D1.10",
+        "right_label": "验证/复核边界",
+        "count": 15
+      },
+      {
+        "left_code": "C4",
+        "left_label": "原创性",
+        "right_code": "D1.5",
+        "right_label": "学术诚信边界",
+        "count": 15
+      },
+      {
+        "left_code": "C3",
+        "left_label": "责任归属",
+        "right_code": "D1.1",
+        "right_label": "辅助与替代边界",
+        "count": 13
+      },
+      {
+        "left_code": "C3",
+        "left_label": "责任归属",
+        "right_code": "D1.10",
+        "right_label": "验证/复核边界",
+        "count": 13
+      },
+      {
+        "left_code": "C6",
+        "left_label": "学术诚信",
+        "right_code": "D1.4",
+        "right_label": "原创性边界",
+        "count": 12
+      },
+      {
+        "left_code": "C12",
+        "left_label": "贡献归属",
+        "right_code": "D1.1",
+        "right_label": "辅助与替代边界",
+        "count": 11
+      },
+      {
+        "left_code": "C6",
+        "left_label": "学术诚信",
+        "right_code": "D1.9",
+        "right_label": "署名与贡献边界",
+        "count": 11
+      },
+      {
+        "left_code": "C8",
+        "left_label": "可靠性与可验证性",
+        "right_code": "D1.5",
+        "right_label": "学术诚信边界",
+        "count": 11
+      },
+      {
+        "left_code": "C2",
+        "left_label": "能力补充",
+        "right_code": "D1.7",
+        "right_label": "披露边界",
+        "count": 10
+      },
+      {
+        "left_code": "C1",
+        "left_label": "效率提升",
+        "right_code": "D1.7",
+        "right_label": "披露边界",
+        "count": 9
+      },
+      {
+        "left_code": "C14",
+        "left_label": "专业判断",
+        "right_code": "D1.4",
+        "right_label": "原创性边界",
+        "count": 9
+      },
+      {
+        "left_code": "C10",
+        "left_label": "训练价值",
+        "right_code": "D1.4",
+        "right_label": "原创性边界",
+        "count": 8
+      },
+      {
+        "left_code": "C2",
+        "left_label": "能力补充",
+        "right_code": "D1.11",
+        "right_label": "数据/隐私/知识资产使用边界",
+        "count": 8
+      },
+      {
+        "left_code": "C3",
+        "left_label": "责任归属",
+        "right_code": "D1.4",
+        "right_label": "原创性边界",
+        "count": 7
+      },
+      {
+        "left_code": "C5",
+        "left_label": "规范适配",
+        "right_code": "D1.7",
+        "right_label": "披露边界",
+        "count": 7
+      },
+      {
+        "left_code": "C6",
+        "left_label": "学术诚信",
+        "right_code": "D1.7",
+        "right_label": "披露边界",
+        "count": 7
+      },
+      {
+        "left_code": "C7",
+        "left_label": "人机分工",
+        "right_code": "D1.7",
+        "right_label": "披露边界",
+        "count": 7
+      },
+      {
+        "left_code": "C11",
+        "left_label": "披露要求",
+        "right_code": "D1.7",
+        "right_label": "披露边界",
+        "count": 6
+      },
+      {
+        "left_code": "C12",
+        "left_label": "贡献归属",
+        "right_code": "D1.5",
+        "right_label": "学术诚信边界",
+        "count": 6
+      },
+      {
+        "left_code": "C13",
+        "left_label": "数据合规",
+        "right_code": "D1.11",
+        "right_label": "数据/隐私/知识资产使用边界",
+        "count": 6
+      },
+      {
+        "left_code": "C14",
+        "left_label": "专业判断",
+        "right_code": "D1.5",
+        "right_label": "学术诚信边界",
+        "count": 5
+      },
+      {
+        "left_code": "C7",
+        "left_label": "人机分工",
+        "right_code": "D1.11",
+        "right_label": "数据/隐私/知识资产使用边界",
+        "count": 5
+      },
+      {
+        "left_code": "C8",
+        "left_label": "可靠性与可验证性",
+        "right_code": "D1.11",
+        "right_label": "数据/隐私/知识资产使用边界",
+        "count": 5
+      },
+      {
+        "left_code": "C9",
+        "left_label": "公平与透明",
+        "right_code": "D1.10",
+        "right_label": "验证/复核边界",
+        "count": 5
+      },
+      {
+        "left_code": "C9",
+        "left_label": "公平与透明",
+        "right_code": "D1.2",
+        "right_label": "人机分工边界",
+        "count": 5
+      },
+      {
+        "left_code": "C1",
+        "left_label": "效率提升",
+        "right_code": "D1.11",
+        "right_label": "数据/隐私/知识资产使用边界",
+        "count": 4
+      },
+      {
+        "left_code": "C10",
+        "left_label": "训练价值",
+        "right_code": "D1.5",
+        "right_label": "学术诚信边界",
+        "count": 4
+      },
+      {
+        "left_code": "C11",
+        "left_label": "披露要求",
+        "right_code": "D1.5",
+        "right_label": "学术诚信边界",
+        "count": 4
+      },
+      {
+        "left_code": "C13",
+        "left_label": "数据合规",
+        "right_code": "D1.10",
+        "right_label": "验证/复核边界",
+        "count": 4
+      },
+      {
+        "left_code": "C13",
+        "left_label": "数据合规",
+        "right_code": "D1.2",
+        "right_label": "人机分工边界",
+        "count": 4
+      },
+      {
+        "left_code": "C3",
+        "left_label": "责任归属",
+        "right_code": "D1.5",
+        "right_label": "学术诚信边界",
+        "count": 4
+      },
+      {
+        "left_code": "C3",
+        "left_label": "责任归属",
+        "right_code": "D1.9",
+        "right_label": "署名与贡献边界",
+        "count": 4
+      },
+      {
+        "left_code": "C9",
+        "left_label": "公平与透明",
+        "right_code": "D1.1",
+        "right_label": "辅助与替代边界",
+        "count": 4
+      },
+      {
+        "left_code": "C12",
+        "left_label": "贡献归属",
+        "right_code": "D1.4",
+        "right_label": "原创性边界",
+        "count": 3
+      },
+      {
+        "left_code": "C4",
+        "left_label": "原创性",
+        "right_code": "D1.11",
+        "right_label": "数据/隐私/知识资产使用边界",
+        "count": 3
+      },
+      {
+        "left_code": "C8",
+        "left_label": "可靠性与可验证性",
+        "right_code": "D1.7",
+        "right_label": "披露边界",
+        "count": 3
+      },
+      {
+        "left_code": "C10",
+        "left_label": "训练价值",
+        "right_code": "D1.7",
+        "right_label": "披露边界",
+        "count": 2
+      },
+      {
+        "left_code": "C13",
+        "left_label": "数据合规",
+        "right_code": "D1.4",
+        "right_label": "原创性边界",
+        "count": 2
+      },
+      {
+        "left_code": "C14",
+        "left_label": "专业判断",
+        "right_code": "D1.9",
+        "right_label": "署名与贡献边界",
+        "count": 2
+      },
+      {
+        "left_code": "C4",
+        "left_label": "原创性",
+        "right_code": "D1.7",
+        "right_label": "披露边界",
+        "count": 2
+      },
+      {
+        "left_code": "C5",
+        "left_label": "规范适配",
+        "right_code": "D1.11",
+        "right_label": "数据/隐私/知识资产使用边界",
+        "count": 2
+      },
+      {
+        "left_code": "C9",
+        "left_label": "公平与透明",
+        "right_code": "D1.9",
+        "right_label": "署名与贡献边界",
+        "count": 2
+      },
+      {
+        "left_code": "C1",
+        "left_label": "效率提升",
+        "right_code": "D1.6",
+        "right_label": "科研训练边界",
+        "count": 1
+      },
+      {
+        "left_code": "C10",
+        "left_label": "训练价值",
+        "right_code": "D1.11",
+        "right_label": "数据/隐私/知识资产使用边界",
+        "count": 1
+      },
+      {
+        "left_code": "C10",
+        "left_label": "训练价值",
+        "right_code": "D1.6",
+        "right_label": "科研训练边界",
+        "count": 1
+      },
+      {
+        "left_code": "C11",
+        "left_label": "披露要求",
+        "right_code": "D1.1",
+        "right_label": "辅助与替代边界",
+        "count": 1
+      },
+      {
+        "left_code": "C11",
+        "left_label": "披露要求",
+        "right_code": "D1.2",
+        "right_label": "人机分工边界",
+        "count": 1
+      },
+      {
+        "left_code": "C11",
+        "left_label": "披露要求",
+        "right_code": "D1.4",
+        "right_label": "原创性边界",
+        "count": 1
+      },
+      {
+        "left_code": "C11",
+        "left_label": "披露要求",
+        "right_code": "D1.9",
+        "right_label": "署名与贡献边界",
+        "count": 1
+      },
+      {
+        "left_code": "C12",
+        "left_label": "贡献归属",
+        "right_code": "D1.11",
+        "right_label": "数据/隐私/知识资产使用边界",
+        "count": 1
+      },
+      {
+        "left_code": "C12",
+        "left_label": "贡献归属",
+        "right_code": "D1.7",
+        "right_label": "披露边界",
+        "count": 1
+      },
+      {
+        "left_code": "C13",
+        "left_label": "数据合规",
+        "right_code": "D1.1",
+        "right_label": "辅助与替代边界",
+        "count": 1
+      },
+      {
+        "left_code": "C14",
+        "left_label": "专业判断",
+        "right_code": "D1.11",
+        "right_label": "数据/隐私/知识资产使用边界",
+        "count": 1
+      },
+      {
+        "left_code": "C14",
+        "left_label": "专业判断",
+        "right_code": "D1.7",
+        "right_label": "披露边界",
+        "count": 1
+      },
+      {
+        "left_code": "C2",
+        "left_label": "能力补充",
+        "right_code": "D1.6",
+        "right_label": "科研训练边界",
+        "count": 1
+      },
+      {
+        "left_code": "C3",
+        "left_label": "责任归属",
+        "right_code": "D1.11",
+        "right_label": "数据/隐私/知识资产使用边界",
+        "count": 1
+      },
+      {
+        "left_code": "C3",
+        "left_label": "责任归属",
+        "right_code": "D1.7",
+        "right_label": "披露边界",
+        "count": 1
+      },
+      {
+        "left_code": "C6",
+        "left_label": "学术诚信",
+        "right_code": "D1.11",
+        "right_label": "数据/隐私/知识资产使用边界",
+        "count": 1
+      }
+    ],
+    "evaluation_tension_x_boundary_mechanism": [],
+    "formal_norm_reference_x_boundary_type": [],
+    "boundary_mechanism_x_boundary_result": []
+  }
+}

@@ -4,9 +4,15 @@ import re
 from typing import Any
 
 from .canonical_constants import (
+    AI_INTERVENTION_INTENSITY_CODE_SET,
+    AI_INTERVENTION_MODE_CODE_SET,
     BOUNDARY_CONTENT_CODE_SET,
+    BOUNDARY_MECHANISM_CODE_SET,
     BOUNDARY_MODE_CODE_SET,
+    BOUNDARY_RESULT_CODE_SET,
     EVALUATION_CODE_SET,
+    EVALUATION_TENSION_CODE_SET,
+    FORMAL_NORM_REFERENCE_CODE_SET,
     LEGITIMACY_CODE_SET,
     OLD_BOUNDARY_TO_CONTENT_CODE,
     WORKFLOW_CODE_SET,
@@ -108,6 +114,30 @@ def normalize_claim_units(claim_units: Any) -> list[dict[str, Any]]:
             item.get("boundary_mode_codes"),
             allowed_codes=BOUNDARY_MODE_CODE_SET,
         )
+        ai_intervention_mode_codes = _normalize_code_entries(
+            item.get("ai_intervention_mode_codes"),
+            allowed_codes=AI_INTERVENTION_MODE_CODE_SET,
+        )
+        ai_intervention_intensity_codes = _normalize_code_entries(
+            item.get("ai_intervention_intensity_codes"),
+            allowed_codes=AI_INTERVENTION_INTENSITY_CODE_SET,
+        )
+        evaluation_tension_codes = _normalize_code_entries(
+            item.get("evaluation_tension_codes"),
+            allowed_codes=EVALUATION_TENSION_CODE_SET,
+        )
+        formal_norm_reference_codes = _normalize_code_entries(
+            item.get("formal_norm_reference_codes"),
+            allowed_codes=FORMAL_NORM_REFERENCE_CODE_SET,
+        )
+        boundary_mechanism_codes = _normalize_code_entries(
+            item.get("boundary_mechanism_codes"),
+            allowed_codes=BOUNDARY_MECHANISM_CODE_SET,
+        )
+        boundary_result_codes = _normalize_code_entries(
+            item.get("boundary_result_codes"),
+            allowed_codes=BOUNDARY_RESULT_CODE_SET,
+        )
         evidence = ensure_list_of_strings(item.get("evidence"))
         normalized_units.append(
             {
@@ -117,6 +147,12 @@ def normalize_claim_units(claim_units: Any) -> list[dict[str, Any]]:
                 "basis_codes": basis_codes,
                 "boundary_codes": boundary_codes,
                 "boundary_mode_codes": boundary_mode_codes,
+                "ai_intervention_mode_codes": ai_intervention_mode_codes,
+                "ai_intervention_intensity_codes": ai_intervention_intensity_codes,
+                "evaluation_tension_codes": evaluation_tension_codes,
+                "formal_norm_reference_codes": formal_norm_reference_codes,
+                "boundary_mechanism_codes": boundary_mechanism_codes,
+                "boundary_result_codes": boundary_result_codes,
                 "evidence": evidence,
             }
         )

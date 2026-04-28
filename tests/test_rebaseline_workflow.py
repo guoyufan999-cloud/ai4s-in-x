@@ -539,8 +539,12 @@ def test_prepare_review_batches_post_review_v2_includes_structured_template_and_
         "boundary_expression_mode_codes": [],
         "evidence": [],
     }
-    assert "A. 科研工作流环节识别" in memo_text
-    assert "是否能明确回到至少一个 A/B/D 研究问题" in memo_text
+    assert review_template_rows[0]["claim_unit_template"]["ai_intervention_mode_codes"] == []
+    assert review_template_rows[0]["claim_unit_template"]["boundary_result_codes"] == []
+    assert "1. 话语情境" in memo_text
+    assert "2. 实践位置" in memo_text
+    assert "5. 边界生成" in memo_text
+    assert "F/G/H/I/J/K 只能作为人工 reviewed draft/正式字段保留" in memo_text
 
 
 def test_quality_v4_audit_snapshot_falls_back_to_active_views_when_qv4_views_absent(

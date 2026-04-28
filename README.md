@@ -1,18 +1,24 @@
-# AI4S 合法性研究工程仓库
+# AI介入科研活动规范评价研究工程仓库
 
 ## 项目简介
 
-本仓库服务于论文《社交媒体中AI4S科研工作流的实践与合法性讨论》。项目核心任务不是单纯抓取平台内容，而是围绕研究问题建立一套可复现、可审计、可持续迭代的研究工程：从公开讨论材料的整理入库、清洗标准化、编码支持，到合法性分析和论文输出，形成完整链路。
+本仓库服务于论文《社交媒体中AI介入科研活动的实践呈现、规范评价与边界协商研究》。项目核心任务不是单纯抓取平台内容，而是围绕研究问题建立一套可复现、可审计、可持续迭代的研究工程：从公开讨论材料的整理入库、清洗标准化、编码支持，到规范评价分析和论文输出，形成完整链路。
+
+AI4S 是旧项目表述，主要保留在仓库命名、legacy 迁移和历史审计语境中。当前论文口径更接近宽义 AI4Research，不把 AI 科研实践限定为狭义“AI 用于科学发现”，而是关注 AI 进入科研生产、科研训练与能力建构、科研治理等活动场域的过程。
 
 当前仓库的活跃正式交付链已经稳定在 `quality_v5` post-only formal baseline。`quality_v4` 不再作为活跃编码主线，而是降级为一次性审计快照与历史对照；此前为自动采集、媒体补强、结构修补恢复服务的运行系统也已被压缩为 `archive/` 中的静态历史档案，只保留 legacy SQLite 历史事实源与最小索引说明，不再作为默认推荐路径。
 
 ## 研究主题
 
-本研究关注的不是泛化的“AI 与科研”，而是三个相互联动的分析主线：
+本研究关注的不是泛化的“AI 与科研”，而是五个递进分析层次：
 
-1. 科研工作流环节识别：AI 进入了科研生产、科研治理、科研训练与能力建构的哪些具体环节。
-2. 合法性评价识别：平台用户如何围绕这些具体实践形成正当性、可接受性与规范适配性的判断。
-3. 边界协商机制识别：讨论中如何划定合理辅助/不可接受替代、人机分工、科研规范与科研诚信边界。
+1. 话语情境：讨论以工具推荐、经验分享、教程展示、风险提醒、伦理批评、规范解读或评论争论等何种形式出现。
+2. 实践位置：AI 进入科研生产、科研治理、科研训练与能力建构的哪些具体位置。
+3. 介入方式：AI 以信息辅助、生成辅助、分析建模、判断建议、自动执行或治理监督等何种方式介入。
+4. 规范评价：平台用户如何围绕效率、可靠性、原创性、责任、披露、诚信、公平、训练价值等标准形成评价。
+5. 边界生成：讨论中如何通过条件化、责任化、规范化和风险化机制划定合理辅助/不可接受替代、人机分工、科研规范与科研诚信边界。
+
+旧“三线框架”仍保留为可追溯兼容层：科研工作流环节识别映射为实践位置，合法性评价识别映射为规范评价，边界协商机制识别映射为边界生成。
 
 ## 当前状态
 
@@ -61,14 +67,23 @@
 
 ## 编码分析流程概览
 
-当前活跃编码框架固定为四组：
+当前活跃编码框架保留旧 A/B/C/D/E 兼容层，并新增 framework v2 扩展组：
 
 1. `A` 科研工作流环节
 2. `B` 合法性评价
 3. `C` 评价标准
 4. `D` 边界协商
+5. `E` 评论/互动层边界协商
+6. `F` AI介入方式
+7. `G` AI介入强度
+8. `H` 评价张力
+9. `I` 正式规范参照
+10. `J` 边界协商机制
+11. `K` 边界协商结果
 
-编码顺序固定为：先判科研工作流环节，再判合法性评价，最后判边界协商。只要帖子能支持识别具体科研环节、合法性评价或边界协商之一，就进入研究候选；泛化“AI 与科研”讨论、纯产品介绍、普通学习办公和低信息帖子默认剔除。现阶段仓库保留了 `quality_v4` 历史编码结果与输出物用于审计追溯；`quality_v5` 主线则通过 staging DB、review queue 与 reviewed import 重新判定样本边界，并以 canonical JSONL、`reviewed_records.payload_json`、`claim_units` 归并摘要和 `outputs/tables/*.jsonl` 作为正式长期协议。
+编码顺序升级为：话语情境 -> 实践位置 -> 介入方式 -> 规范评价 -> 边界生成。只要帖子能支持识别具体科研实践位置、规范评价或边界生成之一，就进入研究候选；泛化“AI 与科研”讨论、纯产品介绍、普通学习办公和低信息帖子默认剔除。现阶段仓库保留了 `quality_v4` 历史编码结果与输出物用于审计追溯；`quality_v5` 主线则通过 staging DB、review queue 与 reviewed import 重新判定样本边界，并以 canonical JSONL、`reviewed_records.payload_json`、`claim_units` 归并摘要和 `outputs/tables/*.jsonl` 作为正式长期协议。
+
+新增 v2 字段优先由 canonical JSONL 和 `reviewed_records.payload_json` 承载；未完成人工编码时允许为空。程序不会自动推断 F/G/H/I/J/K 正式字段，DeepSeek/LLM 预填只生成 draft，人工 reviewed import 才能形成正式结果。
 
 ## 如何开始使用项目
 
@@ -85,8 +100,9 @@
 9. 对正式编码使用 `ai4s-prepare-review-batches --phase post_review_v2`；本轮 `quality_v5` 已接受 post-only 正式基线，`comment_review_v2` 暂不进入正式编码，后续若启动评论层正式结果再单独生成和导入对应队列。review template、reviewed import 与 artifacts 都统一使用 canonical JSONL；帖子/评论层字段只是 `claim_units` 的归并摘要，发生冲突时以 `claim_units` 为准。
 10. 对 `post_review_v2` 单个 batch 做 DeepSeek 预填时，先通过环境变量提供 `DEEPSEEK_API_KEY`，再执行 `ai4s-llm-prefill-post-review --queue data/interim/rebaseline_quality_v5/review_queues/post_review_v2.batch_00.jsonl`；输出会落到 `data/interim/rebaseline_quality_v5/reviewed/post_review_v2.batch_00.ai_draft.jsonl`，只生成 canonical 草稿，不会写库。
 11. 如需用 DeepSeek 做二次复筛，先通过环境变量提供 `DEEPSEEK_API_KEY`，再执行 `ai4s-llm-rescreen-posts --queue data/interim/rebaseline_quality_v5/review_queues/rescreen_posts.jsonl --shard-count 24 --shard-index 0` 跑单个 shard；全部 shard 完成后再执行 `ai4s-llm-rescreen-posts --queue data/interim/rebaseline_quality_v5/review_queues/rescreen_posts.jsonl --shard-count 24 --merge-only` 合并 full draft、delta、priority 包和分析报告。复筛口径固定为“AI + 具体科研环节 + 实践/评价/规范/边界信息之一”。
-12. 如需把版本化历史导出物统一回 canonical row，执行 `ai4s-backfill-canonical-history`
-13. 使用 `ai4s-build-artifacts` 或 `python -m ai4s_legitimacy.analysis.*` 入口重建 `quality_v5` 正式分析产物
+12. 如需启动 framework v2 的人工补码轮次，执行 `ai4s-prepare-framework-v2-review-batches`；该入口只导出 `quality_v5` 正式帖子，复制现有 `post_review_v2` 旧字段，并只开放 F/G/H/I/J/K 人工补填，不使用 LLM 预填。
+13. 如需把版本化历史导出物统一回 canonical row，执行 `ai4s-backfill-canonical-history`
+14. 使用 `ai4s-build-artifacts` 或 `python -m ai4s_legitimacy.analysis.*` 入口重建 `quality_v5` 正式分析产物
 
 `archive/` 当前不再保留 legacy 代码快照、旧测试或可直接运行的环境镜像；如需追溯历史运行来源，请查看 `archive/legacy_collection_runtime/README.md`、`archive/legacy_collection_runtime/PROVENANCE.md` 与 `archive/legacy_exports/README.md`。
 
@@ -102,12 +118,14 @@
 - `ai4s-export-baseline-audit`
 - `ai4s-export-review-queue`
 - `ai4s-prepare-review-batches`
+- `ai4s-prepare-framework-v2-review-batches`
 - `ai4s-import-reviewed-decisions`
 - `ai4s-llm-prefill-post-review`
 - `ai4s-llm-rescreen-posts`
 - `ai4s-backfill-canonical-history`
 - `ai4s-build-artifacts`
 - `python -m ai4s_legitimacy.analysis.reporting`
+- `python -m ai4s_legitimacy.analysis.framework_v2_materials`
 - `python -m ai4s_legitimacy.analysis.quality_v5_consistency`
 - `python -m ai4s_legitimacy.analysis.quality_v4_consistency`
 - `python -m ai4s_legitimacy.analysis.excerpt_extraction --batch`
@@ -135,6 +153,7 @@
 - 完成研究型主库迁移
 - 把编码框架、分析视图和输出路径全部研究问题化
 - 维护 `quality_v5` post-only 正式基线，并将 `comment_review_v2` 留作后续独立评论层工作流
+- 维护 framework v2 输出目录 `outputs/reports/paper_materials/framework_v2/`，只根据已有人工编码生成写作提示和空表说明，不自动生成论文结论
 
 下一阶段的优先任务见 `tasks/backlog.md` 与 `tasks/roadmap.md`。
 

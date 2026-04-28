@@ -39,7 +39,7 @@ def test_active_docs_treat_manual_coding_fields_as_future_reserve() -> None:
     assert "正式筛选与编码以 canonical JSONL 中的 `claim_units` 和帖子/评论层归并摘要为准" in legacy_mapping_text
 
 
-def test_active_docs_describe_abcd_baseline_instead_of_ai_practice_main_axis() -> None:
+def test_active_docs_describe_abcd_compatibility_and_framework_v2_extensions() -> None:
     readme_text = (ROOT / "README.md").read_text(encoding="utf-8")
     coding_rules_text = (ROOT / "codebook" / "coding_rules.md").read_text(encoding="utf-8")
     codebook_text = (ROOT / "codebook" / "codebook.md").read_text(encoding="utf-8")
@@ -48,10 +48,14 @@ def test_active_docs_describe_abcd_baseline_instead_of_ai_practice_main_axis() -
     assert "2. `B` 合法性评价" in readme_text
     assert "3. `C` 评价标准" in readme_text
     assert "4. `D` 边界协商" in readme_text
+    assert "6. `F` AI介入方式" in readme_text
+    assert "11. `K` 边界协商结果" in readme_text
+    assert "话语情境 -> 实践位置 -> 介入方式 -> 规范评价 -> 边界生成" in readme_text
     assert "再判 AI 实践方式" not in coding_rules_text
     assert "2. AI 实践方式" not in codebook_text
     assert "A. 科研工作流环节识别" in coding_rules_text
     assert "当前活跃框架" in codebook_text
+    assert "F/G/H/I/J/K 已进入 codebook seed 和 canonical JSONL 兼容层" in codebook_text
 
 
 def test_active_docs_describe_local_db_paths_as_ignored_assets() -> None:

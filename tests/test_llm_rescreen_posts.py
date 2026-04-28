@@ -364,9 +364,11 @@ def test_llm_rescreen_prompts_embed_active_research_baseline() -> None:
     stage2_prompt = _stage2_system_prompt()
 
     for prompt in (stage1_prompt, stage2_prompt):
-        assert "A. 科研工作流环节识别" in prompt
-        assert "B. 合法性评价识别" in prompt
-        assert "C. 边界协商机制识别" in prompt
+        assert "1. 话语情境" in prompt
+        assert "2. 实践位置" in prompt
+        assert "3. 介入方式" in prompt
+        assert "4. 规范评价" in prompt
+        assert "5. 边界生成" in prompt
         assert "帖子必须明确涉及 AI 或具体 AI 工具" in prompt
         assert "泛化趋势帖、科技新闻帖、纯产品介绍" in prompt
 

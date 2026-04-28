@@ -52,3 +52,12 @@ def test_framework_v2_docs_preserve_quality_v5_post_only_boundaries() -> None:
     assert "514 / 0" in combined
     assert "comment_review_v2 deferred" in combined
     assert "quality_v4 historical audit" in combined
+
+
+def test_framework_v2_docs_describe_extension_groups_without_obsolete_draft_prefixes() -> None:
+    combined = "\n".join(path.read_text(encoding="utf-8") for path in V2_FILES)
+
+    for token in ("F 组", "G 组", "H 组", "I 组", "J 组", "K 组"):
+        assert token in combined
+    assert "F/G/H/I/J/K" in combined
+    assert "S/P/I/N/G" not in combined

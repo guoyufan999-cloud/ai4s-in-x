@@ -4,9 +4,15 @@ from collections.abc import Iterable
 from dataclasses import dataclass
 
 from ai4s_legitimacy.collection.canonical_schema import (
+    AI_INTERVENTION_INTENSITY_LABELS,
+    AI_INTERVENTION_MODE_LABELS,
     BOUNDARY_CONTENT_LABELS,
+    BOUNDARY_MECHANISM_LABELS,
     BOUNDARY_MODE_LABELS,
+    BOUNDARY_RESULT_LABELS,
     EVALUATION_LABELS,
+    EVALUATION_TENSION_LABELS,
+    FORMAL_NORM_REFERENCE_LABELS,
     INTERACTION_BASIS_CODES,
     INTERACTION_EVENT_CODES,
     LEGITIMACY_LABELS,
@@ -25,371 +31,88 @@ class CodebookRow:
 
 
 FRAMEWORK_V2_GROUPS = (
-    "discursive_context",
-    "practice_position",
-    "intervention_mode",
-    "normative_evaluation",
-    "boundary_generation",
+    "practice_position_domain",
+    "practice_position_stage",
+    "normative_evaluation_tendency",
+    "normative_evaluation_standard",
+    "boundary_type",
+    "boundary_mode",
+    "interaction_action",
+    "interaction_basis",
+    "interaction_outcome",
+    "ai_intervention_mode",
+    "ai_intervention_intensity",
+    "evaluation_tension",
+    "formal_norm_reference",
+    "boundary_mechanism",
+    "boundary_result",
 )
 
-FRAMEWORK_V2_CODES = {
-    "discursive_context": (
-        (
-            "S1",
-            "自我实践叙述",
-            "发帖者以第一人称讲述自己如何在科研活动中使用 AI。",
-            "文本包含自己的任务、过程、工具选择或使用后感受。",
-            "只转述新闻、工具卖点或他人争议，未呈现自身实践。",
-        ),
-        (
-            "S2",
-            "求助诊断",
-            "发帖者围绕 AI 科研使用中的困惑、故障、风险或选择请求判断。",
-            "文本以求问、排错、能否这样用、该不该这样用为主要语境。",
-            "只有泛化观点输出，没有具体求助对象或诊断情境。",
-        ),
-        (
-            "S3",
-            "教程建议",
-            "文本以步骤、方法、清单或经验建议的形式教别人使用 AI 做科研。",
-            "文本明确提供操作路径、工具组合、提示词、流程建议或避坑说明。",
-            "只表达好用或不好用，没有可执行建议。",
-        ),
-        (
-            "S4",
-            "规范争议",
-            "文本围绕 AI 科研使用是否合适、是否越界、是否可信展开争议。",
-            "文本出现明显赞成、反对、质疑、辩护或边界争论。",
-            "只有实践展示，没有规范判断或争议对象。",
-        ),
-        (
-            "S5",
-            "制度规则转述",
-            "文本转述学校、期刊、导师、课程、平台或机构关于 AI 使用的规则。",
-            "文本重点是规则、要求、政策、通知、披露义务或禁止事项。",
-            "只是个人偏好或经验建议，未指向制度性规则来源。",
-        ),
-        (
-            "S6",
-            "工具服务推广",
-            "文本以介绍、推荐、比较或推广 AI 工具/服务为主要语境。",
-            "文本重点在工具能力、套餐、卖点、测评或服务引流。",
-            "工具只作为实践背景出现，重点仍是研究任务或规范判断。",
-        ),
-        (
-            "S7",
-            "同行经验协商",
-            "文本呈现同侪之间围绕 AI 科研使用的经验比较、互证或协商。",
-            "文本强调大家如何做、评论反馈、同学/同行/实验室成员的相互判断。",
-            "没有互动或同侪参照，只是单向陈述。",
-        ),
+FRAMEWORK_V2_EXTENSION_GROUPS = (
+    "ai_intervention_mode",
+    "ai_intervention_intensity",
+    "evaluation_tension",
+    "formal_norm_reference",
+    "boundary_mechanism",
+    "boundary_result",
+)
+
+V2_EXTENSION_DEFINITIONS = {
+    "ai_intervention_mode": (
+        ("F1", "AI帮助检索、摘要、翻译、整理和归纳信息。"),
+        ("F2", "AI生成文本、代码、提纲、图表、研究方案等。"),
+        ("F3", "AI参与数据清洗、统计分析、模型构建、仿真模拟等。"),
+        ("F4", "AI对研究方案、论文质量、结果解释或风险提出建议。"),
+        ("F5", "AI自动完成综述、写作、结论生成、审稿等核心任务。"),
+        ("F6", "AI用于检测、查重、合规审查、评审辅助、评价排序等。"),
     ),
-    "practice_position": (
-        (
-            "P1",
-            "选题定位",
-            "AI 介入研究问题、选题方向、创新点、假设或研究切口定位。",
-            "文本明确涉及想题目、找方向、拆问题、形成研究问题。",
-            "只是泛谈科研兴趣或工具推荐，未进入选题定位。",
-        ),
-        (
-            "P2",
-            "文献知识组织",
-            "AI 介入文献检索、阅读、筛选、综述、知识图谱或资料整合。",
-            "文本明确涉及论文、文献、综述、引用、知识整理。",
-            "只是普通信息搜索或学习资料整理，未回到科研文献任务。",
-        ),
-        (
-            "P3",
-            "研究设计",
-            "AI 介入研究方案、实验设计、方法选择、变量设计或任务拆解。",
-            "文本明确涉及研究设计、实验方案、方法路线、问卷/访谈/实验安排。",
-            "只有执行层面操作，未讨论方案或设计。",
-        ),
-        (
-            "P4",
-            "数据材料",
-            "AI 介入数据采集、资料获取、标注、清洗前准备或研究材料整理。",
-            "文本明确涉及数据源、抓取、采集、标注、语料或原始材料。",
-            "只讨论分析结果，不涉及数据或材料准备。",
-        ),
-        (
-            "P5",
-            "分析建模",
-            "AI 介入编码、统计、建模、程序实现、计算分析或结果生成过程。",
-            "文本明确涉及代码、模型、统计、计算、数据分析、质性编码。",
-            "只是解释工具功能，未进入具体分析建模任务。",
-        ),
-        (
-            "P6",
-            "结果核验解释",
-            "AI 介入结果复核、可重复性检查、错误排查、解释或理论提炼。",
-            "文本明确涉及核查、复现、验证、解释结果、发现提炼。",
-            "只是生成初稿或表达结果，未处理结果是否成立。",
-        ),
-        (
-            "P7",
-            "写作发表传播",
-            "AI 介入论文写作、润色、摘要、图表表达、投稿、返修、审稿回复或传播。",
-            "文本明确涉及写作、投稿、审稿、回复、答辩、成果表达。",
-            "只是文献摘要或学习笔记，不是成果写作发表。",
-        ),
-        (
-            "P8",
-            "组织治理评价",
-            "AI 介入科研组织管理、资源配置、伦理合规、评价、出版或制度治理。",
-            "文本明确涉及组会、项目管理、期刊规则、学校要求、评价治理。",
-            "只是个人任务执行，没有组织或制度维度。",
-        ),
-        (
-            "P9",
-            "学习训练",
-            "AI 介入科研入门、方法学习、工具训练、阅读写作训练或能力养成。",
-            "文本明确涉及学生训练、能力练习、方法学习、工具学习。",
-            "只是完成具体科研产出，未体现训练或能力养成。",
-        ),
+    "ai_intervention_intensity": (
+        ("G1", "AI只提供辅助信息，研究者主导判断。"),
+        ("G2", "AI生成部分内容或方案，研究者筛选、修改和验证。"),
+        ("G3", "AI完成核心产出、核心判断或规范决策。"),
     ),
-    "intervention_mode": (
-        (
-            "I1",
-            "检索定位",
-            "AI 用于定位信息、找文献、查资料、发现线索或缩小范围。",
-            "文本描述 AI 帮助找、搜、筛、定位、推荐资料。",
-            "AI 直接生成内容或分析结果，而不是检索定位。",
-        ),
-        (
-            "I2",
-            "摘要整理",
-            "AI 用于总结、归纳、分类、提取要点或组织材料。",
-            "文本描述 AI 做摘要、综述框架、表格整理、知识梳理。",
-            "AI 只是检索或直接生成正文，没有整理归纳动作。",
-        ),
-        (
-            "I3",
-            "草稿生成",
-            "AI 用于生成初稿、提纲、段落、代码草案、方案草案或回复草案。",
-            "文本出现初稿、生成、起草、先写一版、草案。",
-            "只是润色已有文本或检查错误，不生成草稿。",
-        ),
-        (
-            "I4",
-            "润色翻译",
-            "AI 用于语言润色、翻译、改写、语气调整或表达优化。",
-            "文本明确涉及润色、翻译、降重、改写、语言表达。",
-            "AI 生成核心内容、分析或决策，而非表达层处理。",
-        ),
-        (
-            "I5",
-            "分析计算",
-            "AI 用于统计、建模、编码、程序实现、计算或分析解释。",
-            "文本明确涉及分析、建模、跑代码、统计、分类编码。",
-            "AI 只是给学习建议或写作建议，没有实际分析计算。",
-        ),
-        (
-            "I6",
-            "规划拆解",
-            "AI 用于拆解任务、安排流程、规划路径、制定清单或项目节奏。",
-            "文本明确涉及计划、步骤、路线、任务拆分、日程安排。",
-            "AI 只执行单一任务，未承担规划拆解。",
-        ),
-        (
-            "I7",
-            "检查质控",
-            "AI 用于查错、核验、质检、发现漏洞、审阅或一致性检查。",
-            "文本明确涉及检查、复核、验证、纠错、质控。",
-            "AI 只是输出结果，没有检查或质控角色。",
-        ),
-        (
-            "I8",
-            "自动化替代",
-            "AI 被描述为自动完成原本由人执行的核心任务或流程。",
-            "文本强调代做、自动跑、全自动、替人完成、无需人工。",
-            "只是辅助、建议或初稿，不构成替代执行。",
-        ),
-        (
-            "I9",
-            "陪练支持",
-            "AI 作为导师、助教、模拟对象、问答伙伴或训练陪练。",
-            "文本明确涉及练习、问答、模拟、陪练、解释概念。",
-            "AI 用于正式产出执行，而不是训练支持。",
-        ),
+    "evaluation_tension": (
+        ("H1", "讨论在效率收益与原创性要求之间形成张力。"),
+        ("H2", "讨论在能力补充与能力替代之间形成张力。"),
+        ("H3", "讨论在使用便利性与结果可靠性之间形成张力。"),
+        ("H4", "讨论在技术可用性与规则不确定性之间形成张力。"),
+        ("H5", "讨论在人机共创与责任归属之间形成张力。"),
+        ("H6", "讨论在自动化治理与公平透明之间形成张力。"),
     ),
-    "normative_evaluation": (
-        (
-            "N0",
-            "未评价",
-            "文本主要展示或描述实践，未稳定表达规范评价。",
-            "没有明确正当化、担忧、限制、否定或责任要求。",
-            "文本已经出现清楚的接受、担忧、禁止或披露要求。",
-        ),
-        (
-            "N1",
-            "效率正当化",
-            "以省时、省力、提高效率、降低重复劳动作为正当化理由。",
-            "文本明确说 AI 使用因为更快、更省事、更高效而合理。",
-            "只是说工具快，但没有形成规范性判断。",
-        ),
-        (
-            "N2",
-            "条件接受",
-            "认为可以使用 AI，但需要限定范围、人工审核或保留最终判断。",
-            "文本出现可以但、前提是、只要、需要复核等条件接受结构。",
-            "无条件赞成或明确否定，不是条件接受。",
-        ),
-        (
-            "N3",
-            "可靠性担忧",
-            "担忧 AI 输出幻觉、错误、不可解释、不可复现或不可靠。",
-            "文本明确提到错、编造、幻觉、不能信、需验证。",
-            "担忧主要是诚信、原创、隐私或公平，而非可靠性。",
-        ),
-        (
-            "N4",
-            "原创/贡献担忧",
-            "担忧 AI 影响原创性、作者贡献、智识劳动或成果归属。",
-            "文本明确讨论原创、贡献、署名、核心观点是否属于人。",
-            "只是责任披露或诚信违规，未涉及原创/贡献。",
-        ),
-        (
-            "N5",
-            "诚信合规否定",
-            "认为某种 AI 使用触及学术不端、造假、违规或明确不可接受。",
-            "文本明确以诚信、合规、造假、违规为理由否定实践。",
-            "只是低风险担忧或条件接受，不构成否定。",
-        ),
-        (
-            "N6",
-            "责任披露要求",
-            "要求说明 AI 使用范围、保留人类责任或明确责任归属。",
-            "文本明确出现披露、说明、最终负责、责任不能外包。",
-            "只是泛泛说要谨慎，没有责任或披露要求。",
-        ),
-        (
-            "N7",
-            "训练价值担忧",
-            "担忧 AI 削弱学生、研究者或新手的能力训练与学习过程。",
-            "文本明确涉及能力退化、练不出来、偷懒、训练被替代。",
-            "担忧对象是结果可靠或诚信合规，不是训练价值。",
-        ),
-        (
-            "N8",
-            "公平/隐私/资源风险",
-            "担忧资源不平等、隐私泄露、数据安全或平台访问差异。",
-            "文本明确涉及付费模型、资源差距、隐私、敏感数据、数据安全。",
-            "只是一般风险表达，未落到公平、隐私或资源。",
-        ),
+    "formal_norm_reference": (
+        ("I0", "文本没有明确参照正式规范来源。"),
+        ("I1", "文本明确参照期刊或出版政策。"),
+        ("I2", "文本明确参照学校、学院或课程规定。"),
+        ("I3", "文本明确参照导师、课题组或实验室要求。"),
+        ("I4", "文本明确参照署名或作者贡献规则。"),
+        ("I5", "文本明确参照AI使用披露要求。"),
+        ("I6", "文本明确参照审稿或同行评议规范。"),
+        ("I7", "文本明确参照科研诚信或学术不端规则。"),
+        ("I8", "文本明确参照数据伦理、隐私或合规规则。"),
     ),
-    "boundary_generation": (
-        (
-            "G1",
-            "辅助/替代分界",
-            "围绕 AI 是辅助还是替代人类科研劳动生成边界。",
-            "文本明确区分帮忙、辅助、代做、替代。",
-            "没有划分辅助与替代，只是评价好坏。",
-        ),
-        (
-            "G2",
-            "人类最终责任",
-            "把最终判断、署名责任、错误后果或研究责任界定给人。",
-            "文本明确说最后由作者/研究者/学生自己负责。",
-            "只说需要复核，但没有责任归属。",
-        ),
-        (
-            "G3",
-            "任务风险分层",
-            "按照任务风险、科研环节或影响程度区分可用与不可用范围。",
-            "文本明确区分低风险/高风险、不同任务、不同环节。",
-            "只给单一规则，没有分层边界。",
-        ),
-        (
-            "G4",
-            "人工复核门槛",
-            "将人工审核、原文核查、结果复验设为 AI 使用的必要门槛。",
-            "文本明确要求人工复核、自己核查、不能直接信。",
-            "只是说人要负责，但未提出复核门槛。",
-        ),
-        (
-            "G5",
-            "披露说明边界",
-            "围绕是否、何时、如何披露 AI 使用生成边界。",
-            "文本明确讨论论文、投稿、作业或项目中说明 AI 使用。",
-            "只是内部使用建议，没有披露说明问题。",
-        ),
-        (
-            "G6",
-            "高风险禁止",
-            "对造假、虚构引用、敏感数据、核心结论代做等高风险实践给出禁止边界。",
-            "文本明确出现不能、禁止、绝对不行、踩线等禁止性规则。",
-            "只是建议谨慎或条件接受，没有禁止边界。",
-        ),
-        (
-            "G7",
-            "训练阶段保护",
-            "围绕学生、新手、课程作业或科研训练阶段限制 AI 使用。",
-            "文本明确保护训练过程、限制代做、强调能力养成。",
-            "只是一般科研实践边界，不涉及训练阶段。",
-        ),
-        (
-            "G8",
-            "数据/知识资产边界",
-            "围绕数据、隐私、实验室资料、知识库或未公开成果的输入输出边界。",
-            "文本明确限制敏感数据、内部资料、知识资产上传或外泄。",
-            "只是普通文献或公开资料使用，不涉及数据资产边界。",
-        ),
-        (
-            "G9",
-            "制度/期刊/学科规则边界",
-            "依据学校、期刊、导师、课程、平台或学科规范生成边界。",
-            "文本明确引用制度、期刊、课程、导师、学科规则。",
-            "只是个人经验判断，没有制度或规则来源。",
-        ),
+    "boundary_mechanism": (
+        ("J1", "通过限定任务、范围、前提或复核条件，使AI使用获得有限可接受性。"),
+        ("J2", "通过重申作者、学生、导师或机构责任，约束AI使用边界。"),
+        ("J3", "通过连接期刊、学校、审稿、披露、诚信等正式规则生成边界。"),
+        ("J4", "通过强调幻觉、造假、隐私、公平、训练损失等风险问题化AI实践。"),
+    ),
+    "boundary_result": (
+        ("K1", "AI被界定为合理辅助。"),
+        ("K2", "AI被界定为在特定条件下可接受。"),
+        ("K3", "AI实践被转化为需要警惕或治理的风险问题。"),
+        ("K4", "AI替代核心科研劳动被去合法化。"),
+        ("K5", "规范依据不足，讨论暂时悬置。"),
+        ("K6", "AI治理、监督或评审使用本身成为争议对象。"),
     ),
 }
 
-_FRAMEWORK_V2_EXAMPLES = {
-    "S1": "我最近写综述会先让 AI 帮我整理文献线索，再自己回去读原文。",
-    "S2": "投稿前用 AI 润色摘要到底要不要在 cover letter 里说明？",
-    "S3": "做文献综述可以先让 AI 按主题分组，再逐篇核对引用。",
-    "S4": "让 AI 直接生成研究结论是不是已经越过辅助边界了？",
-    "S5": "学院通知说毕业论文中使用生成式 AI 必须单独说明。",
-    "S6": "这个 AI 文献工具可以一键生成综述框架，适合科研新手试用。",
-    "S7": "评论区很多同学都说可以用 AI 查资料，但最后判断必须自己做。",
-    "P1": "我让 AI 帮我比较几个选题，看哪个更适合做博士开题。",
-    "P2": "AI 先把二十篇论文按理论脉络分组，我再逐篇精读。",
-    "P3": "让 AI 把访谈研究设计拆成样本、提纲和分析步骤。",
-    "P4": "用 AI 辅助整理公开帖子语料并标出需要人工复核的材料。",
-    "P5": "我用 Claude Code 写统计脚本并检查模型结果。",
-    "P6": "AI 复核出的异常结果提醒我重新检查了数据处理过程。",
-    "P7": "审稿回复先让 AI 起草，再由我逐条改成正式版本。",
-    "P8": "导师组开始讨论组会纪要和论文披露中的 AI 使用规则。",
-    "P9": "刚入门时我把 AI 当方法助教，让它解释回归和质性编码。",
-    "I1": "先让 AI 找出这个主题下最常被引用的几篇论文。",
-    "I2": "AI 把文献观点整理成表格，方便我比较不同流派。",
-    "I3": "我让 AI 先生成论文引言草稿，再按自己的材料重写。",
-    "I4": "英文摘要写完后只让 AI 做语言润色和语气调整。",
-    "I5": "AI 帮我写 R 代码跑回归，但结果我会自己复核。",
-    "I6": "AI 把开题任务拆成文献、方法、数据和写作四个阶段。",
-    "I7": "提交前让 AI 检查引用格式和论证漏洞。",
-    "I8": "有人想让智能体自动完成从检索到成稿的整套流程。",
-    "I9": "我用 AI 模拟答辩老师，不断追问我的研究设计。",
-    "N0": "我用 AI 把资料先归类，后面再看哪些能用。",
-    "N1": "重复整理材料交给 AI 很合理，能把时间留给真正的研究判断。",
-    "N2": "可以用 AI 写初稿，但每个引用和结论都要自己核查。",
-    "N3": "AI 经常编文献，所以文献综述不能直接相信它。",
-    "N4": "核心观点都由 AI 想出来，作者自己的贡献就说不清了。",
-    "N5": "让 AI 编造实验数据就是学术不端，不能接受。",
-    "N6": "论文里用了 AI 就应该说明范围，最后责任仍然是作者。",
-    "N7": "研究生一开始就让 AI 代做方法分析，能力根本练不出来。",
-    "N8": "把未公开访谈资料传给外部模型有隐私和数据安全风险。",
-    "G1": "润色是辅助，整篇代写就是替代，这两者不能混在一起。",
-    "G2": "AI 给错了也不能怪工具，最后负责的一定是作者本人。",
-    "G3": "查公开资料可以放宽，生成结论这种高风险任务要严格限制。",
-    "G4": "AI 找到的文献必须逐篇打开原文核对，不能直接引用。",
-    "G5": "投稿时至少要说明 AI 用在语言润色还是内容生成。",
-    "G6": "虚构引用和上传敏感数据这类用法应当直接禁止。",
-    "G7": "课程训练阶段可以问思路，但不能让 AI 代做作业和分析。",
-    "G8": "实验室内部数据和未公开论文不能随便喂给外部模型。",
-    "G9": "如果期刊明确要求披露，就不能只按个人习惯处理。",
+V2_EXTENSION_LABELS = {
+    "ai_intervention_mode": AI_INTERVENTION_MODE_LABELS,
+    "ai_intervention_intensity": AI_INTERVENTION_INTENSITY_LABELS,
+    "evaluation_tension": EVALUATION_TENSION_LABELS,
+    "formal_norm_reference": FORMAL_NORM_REFERENCE_LABELS,
+    "boundary_mechanism": BOUNDARY_MECHANISM_LABELS,
+    "boundary_result": BOUNDARY_RESULT_LABELS,
 }
 
 
@@ -596,6 +319,7 @@ _BOUNDARY_EXAMPLES = {
     "D1.9": "署名和贡献说明不能把工具使用写得含糊不清。",
     "D1.10": "模型可以先做草稿，但最终必须人工复核。",
     "D1.11": "组里的敏感资料和知识资产不能随便上传到外部模型。",
+    "D1.12": "用 AI 做审稿排序和合规筛查时，也要说明治理规则和申诉边界。",
     "D2.1": "文献检索这种环节，用 AI 完全没问题。",
     "D2.2": "可以用，但前提是你自己做最终核查。",
     "D2.3": "这个环节我允许辅助，但会限制它只做初稿。",
@@ -634,6 +358,43 @@ _INTERACTION_EXAMPLES = {
     "E4.3": "最后形成的共识是只能用于文献初筛和润色。",
     "E4.4": "最后大家都认为这种做法应该禁止。",
     "E4.5": "上下文不完整，看不出最后协商到了哪一步。",
+}
+
+_V2_EXTENSION_EXAMPLES = {
+    "F1": "我让 AI 先把几篇文献的核心观点整理出来，再自己读原文。",
+    "F2": "审稿回复先让 AI 起草一个版本，我再逐条改。",
+    "F3": "AI 帮我写了数据清洗脚本和回归模型代码。",
+    "F4": "我让 AI 检查研究设计有没有明显漏洞。",
+    "F5": "有人想让智能体自动完成从综述到论文初稿的整套流程。",
+    "F6": "期刊讨论用 AI 辅助查重、筛稿和合规审查。",
+    "G1": "AI 只帮我查资料，最终判断还是我自己做。",
+    "G2": "AI 生成一版分析方案，我会筛选、修改并重新验证。",
+    "G3": "如果核心结论直接由 AI 生成，这就接近替代研究判断。",
+    "H1": "AI 提效很明显，但如果核心观点都由它写，原创性就有问题。",
+    "H2": "它能补足编程能力，但也可能让学生跳过本该训练的能力。",
+    "H3": "用起来很方便，可是 AI 编文献的问题必须核查。",
+    "H4": "技术上能做到一键综述，但学校和期刊规则还不清楚。",
+    "H5": "人机一起写作时，最后成果和错误该由谁负责仍需说明。",
+    "H6": "AI 审稿能提效，但排序依据不透明会带来公平争议。",
+    "I0": "帖子只说自己会用 AI 整理资料，没有提到任何正式规定。",
+    "I1": "期刊政策要求作者说明生成式 AI 的使用范围。",
+    "I2": "学校规定毕业论文中使用 AI 必须单独申报。",
+    "I3": "导师要求组内论文不能把未公开数据上传到外部模型。",
+    "I4": "署名规则不能把工具使用写成作者贡献。",
+    "I5": "投稿时需要披露 AI 用在润色还是内容生成。",
+    "I6": "审稿规范要求评审不得把稿件内容直接上传到外部 AI。",
+    "I7": "虚构引用和编造数据触及科研诚信规则。",
+    "I8": "访谈资料包含隐私，不能直接喂给商业模型。",
+    "J1": "可以用 AI 查资料，但必须逐条核对原文。",
+    "J2": "用了 AI 也由作者承担最终责任。",
+    "J3": "如果期刊要求披露，就按期刊规则写清楚。",
+    "J4": "因为会幻觉和泄露数据，这类用法要先被当作风险处理。",
+    "K1": "大家基本认可 AI 做文献初筛属于辅助。",
+    "K2": "结论是可以用，但前提是人工复核并说明范围。",
+    "K3": "讨论最后把上传敏感数据视为需要治理的风险问题。",
+    "K4": "让 AI 直接代写核心章节被明确否定。",
+    "K5": "规则还没统一，暂时只能作为待讨论问题。",
+    "K6": "用 AI 做评审排序本身引发了治理争议。",
 }
 
 
@@ -684,23 +445,113 @@ def legacy_workflow_to_stage_name(legacy_label: str | None) -> str | None:
     return workflow_stage_name(stage_code)
 
 
+def _codebook_row(
+    *,
+    code_id: str,
+    code_group: str,
+    code_name: str,
+    definition: str,
+    examples: dict[str, str],
+    include_rule: str | None = None,
+    exclude_rule: str | None = None,
+) -> CodebookRow:
+    return CodebookRow(
+        code_id=code_id,
+        code_group=code_group,
+        code_name=code_name,
+        definition=definition,
+        include_rule=include_rule or f"原文证据能明确支持“{code_name}”。",
+        exclude_rule=exclude_rule or "仅凭工具名称、泛化背景或研究者推断无法支持时不编码。",
+        example=_require_example(examples, code_id=code_id, code_group=code_group),
+    )
+
+
 def iter_codebook_rows() -> Iterable[CodebookRow]:
-    for code_group in FRAMEWORK_V2_GROUPS:
-        for code_id, code_name, definition, include_rule, exclude_rule in FRAMEWORK_V2_CODES[
-            code_group
-        ]:
-            yield CodebookRow(
+    for code_id, _, code_name, _, definition in WORKFLOW_DOMAINS:
+        yield _codebook_row(
+            code_id=code_id,
+            code_group="practice_position_domain",
+            code_name=code_name,
+            definition=definition,
+            examples=_WORKFLOW_EXAMPLES,
+            include_rule="AI 介入科研生产、科研治理或科研训练三类实践位置之一。",
+            exclude_rule="不能稳定回到科研活动场域时不编码实践位置。",
+        )
+    for code_id, _, code_name, _, definition in WORKFLOW_STAGES:
+        yield _codebook_row(
+            code_id=code_id,
+            code_group="practice_position_stage",
+            code_name=code_name,
+            definition=definition,
+            examples=_WORKFLOW_EXAMPLES,
+        )
+    for code_id, code_name, _, definition in LEGITIMACY_DIRECTIONS:
+        yield _codebook_row(
+            code_id=code_id,
+            code_group="normative_evaluation_tendency",
+            code_name=code_name,
+            definition=definition,
+            examples=_LEGITIMACY_EXAMPLES,
+            include_rule="原文明确表达接受、条件接受、拒斥、冲突或无法判断的评价倾向。",
+            exclude_rule="只有事实描述且没有稳定评价时使用 B0，不强行推断态度。",
+        )
+    for code_id, code_name, _, definition in EVALUATION_CODES:
+        yield _codebook_row(
+            code_id=code_id,
+            code_group="normative_evaluation_standard",
+            code_name=code_name,
+            definition=definition,
+            examples=_EVALUATION_EXAMPLES,
+        )
+    for code_id, code_name, _, definition in BOUNDARY_CONTENT_CODES:
+        yield _codebook_row(
+            code_id=code_id,
+            code_group="boundary_type",
+            code_name=code_name,
+            definition=definition,
+            examples=_BOUNDARY_EXAMPLES,
+        )
+    for code_id, code_name, _, definition in BOUNDARY_MODE_CODES:
+        yield _codebook_row(
+            code_id=code_id,
+            code_group="boundary_mode",
+            code_name=code_name,
+            definition=definition,
+            examples=_BOUNDARY_EXAMPLES,
+        )
+    for code_id, code_name, _, definition in INTERACTION_ACTION_CODES:
+        yield _codebook_row(
+            code_id=code_id,
+            code_group="interaction_action",
+            code_name=code_name,
+            definition=definition,
+            examples=_INTERACTION_EXAMPLES,
+        )
+    for code_id, code_name, _, definition in INTERACTION_BASIS_LOOKUP:
+        yield _codebook_row(
+            code_id=code_id,
+            code_group="interaction_basis",
+            code_name=code_name,
+            definition=definition,
+            examples=_INTERACTION_EXAMPLES,
+        )
+    for code_id, code_name, _, definition in INTERACTION_OUTCOME_CODES:
+        yield _codebook_row(
+            code_id=code_id,
+            code_group="interaction_outcome",
+            code_name=code_name,
+            definition=definition,
+            examples=_INTERACTION_EXAMPLES,
+        )
+    for code_group in FRAMEWORK_V2_EXTENSION_GROUPS:
+        definitions = dict(V2_EXTENSION_DEFINITIONS[code_group])
+        for code_id, code_name in V2_EXTENSION_LABELS[code_group].items():
+            yield _codebook_row(
                 code_id=code_id,
                 code_group=code_group,
                 code_name=code_name,
-                definition=definition,
-                include_rule=include_rule,
-                exclude_rule=exclude_rule,
-                example=_require_example(
-                    _FRAMEWORK_V2_EXAMPLES,
-                    code_id=code_id,
-                    code_group=code_group,
-                ),
+                definition=definitions[code_id],
+                examples=_V2_EXTENSION_EXAMPLES,
             )
 
 

@@ -5,7 +5,7 @@
 1. [优先] 维护当前 `quality_v5` post-only 正式基线：正式帖子 `514`，正式评论 `0`
 2. [优先] 保持 `post_review_v2 -> reviewed import -> rebuild artifacts` 链路可复跑，并以 `quality_v5_consistency_report.json` 的 posts/comments delta `0 / 0` 作为核验门槛
 3. [优先] 将 `comment_review_v2` 作为后续独立工作流处理；本轮不把评论 corpus 写成正式评论结果
-4. [优先] 完成 framework_v2 第一轮：只升级理论框架、codebook、任务文档和测试，不改 schema、artifacts build、outputs 或数据
+4. [优先] 完成 framework_v2 编码支持层与 paper materials 支持：保留 A/B/C/D/E，扩展 F/G/H/I/J/K，不改 DB schema，不自动填充正式人工编码
 
 ## P0：当前必须完成
 
@@ -30,11 +30,11 @@
 2. [已完成] 精修摘要、引言、讨论与结论的第二轮措辞与论证密度
 3. [已完成] 形成补充材料说明与方法透明度附录（内部版 + clean 版）
 4. [进行中] 围绕 `quality_v5` post-only 口径复核 clean 稿，避免把 `quality_v4` 或评论层 corpus 写成当前正式结果
-5. [进行中] 用“话语情境—实践位置—介入方式—规范评价—边界生成”重写论文理论框架和 codebook
+5. [进行中] 用“话语情境—实践位置—介入方式—规范评价—边界生成”重写论文理论框架、codebook、canonical payload 兼容层与 paper materials
 
 ## P3：后续扩展
 
 1. [已完成] 完成 `analysis/figures/queries.py` 与 `analysis/figures/render.py` 的可维护性收口，工程底座达到当前阶段稳定点
 2. [后续] 如需正式评论层结果，单独启动 `comment_review_v2` 队列、人工 reviewed 导入与 artifacts 重建
 3. [后续] 在 post-only 投稿口径稳定后，再评估 clean 稿终稿压缩、grounded theory 或补充样本
-4. [后续] framework_v2 artifacts 升级需另起一轮，届时再处理 canonical schema、review 规则、reporting、figures 与 build 链路
+4. [后续] 如需 v2 字段进入正式统计，需单独启动人工编码并经 reviewed import 回灌；未编码前 F/G/H/I/J/K 表只显示为空或占位说明

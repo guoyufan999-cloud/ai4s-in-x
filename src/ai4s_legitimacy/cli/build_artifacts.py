@@ -13,6 +13,10 @@ from ai4s_legitimacy.analysis.figure_generation import (
     write_figure_manifest,
 )
 from ai4s_legitimacy.analysis.figures.config import FIGURE_DIR
+from ai4s_legitimacy.analysis.framework_v2_materials import (
+    FRAMEWORK_V2_OUTPUT_DIR,
+    generate_framework_v2_materials,
+)
 from ai4s_legitimacy.analysis.quality_v5_consistency import (
     evaluate_quality_v5_consistency,
     write_quality_v5_consistency_report,
@@ -55,6 +59,7 @@ def build_parser() -> argparse.ArgumentParser:
         default=ACTIVE_ARTIFACT_PROVENANCE_PATH,
     )
     parser.add_argument("--figure-dir", type=Path, default=FIGURE_DIR)
+    parser.add_argument("--framework-v2-dir", type=Path, default=None)
     parser.add_argument(
         "--skip-figures",
         action="store_true",
@@ -74,6 +79,7 @@ def run_build(
     review_v2_post_output_path: Path = POST_MASTER_PATH,
     review_v2_comment_output_path: Path = COMMENT_MASTER_PATH,
     review_v2_delta_output_path: Path = DELTA_REPORT_PATH,
+    framework_v2_output_dir: Path | None = None,
     skip_figures: bool = False,
 ) -> dict[str, Any]:
     if not db_path.exists():
@@ -100,6 +106,18 @@ def run_build(
         delta_output_path=review_v2_delta_output_path,
         immutable=True,
     )
+    resolved_framework_v2_dir = framework_v2_output_dir
+    if resolved_framework_v2_dir is None:
+        resolved_framework_v2_dir = (
+            FRAMEWORK_V2_OUTPUT_DIR
+            if summary_output == RESEARCH_DB_SUMMARY_PATH
+            else summary_output.parent / "framework_v2"
+        )
+    framework_v2 = generate_framework_v2_materials(
+        db_path=db_path,
+        output_dir=resolved_framework_v2_dir,
+        immutable=True,
+    )
     result: dict[str, Any] = {
         "db_path": str(db_path),
         "summary": summary_payload,
@@ -110,6 +128,7 @@ def run_build(
         "figures_skipped": skip_figures,
         "canonical_corpus": canonical_corpus,
         "review_v2": canonical_corpus,
+        "framework_v2": framework_v2,
     }
     figure_manifest_path = figure_dir / "paper_figures_submission_manifest.md"
 
@@ -156,6 +175,7 @@ def main() -> None:
         consistency_output=args.consistency_output,
         provenance_output=args.provenance_output,
         figure_dir=args.figure_dir,
+        framework_v2_output_dir=args.framework_v2_dir,
         skip_figures=args.skip_figures,
     )
 
@@ -182,6 +202,9 @@ def main() -> None:
     )
     print(f"    -> {review_v2['comment_master_path']}  (comments={review_v2['comment_rows']})")
     print(f"    -> {review_v2['delta_report_path']}")
+    framework_v2 = result["framework_v2"]
+    print("  [framework v2 materials]")
+    print(f"    -> {framework_v2['output_dir']}")
     print("  [artifact provenance]")
     print(f"    -> {result['provenance_path']}")
 

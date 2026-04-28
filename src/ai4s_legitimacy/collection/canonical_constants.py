@@ -63,34 +63,35 @@ LEGITIMACY_LABELS = {
 }
 
 EVALUATION_LABELS = {
-    "C1": "效率",
+    "C1": "效率提升",
     "C2": "能力补充",
     "C3": "责任归属",
     "C4": "原创性",
-    "C5": "科研规范",
+    "C5": "规范适配",
     "C6": "学术诚信",
     "C7": "人机分工",
-    "C8": "结果可靠性/可验证性",
-    "C9": "公平性",
-    "C10": "训练价值/能力养成",
-    "C11": "披露/透明性",
-    "C12": "署名/贡献归属",
-    "C13": "数据隐私/知识产权/合规风险",
-    "C14": "专业判断/领域知识门槛",
+    "C8": "可靠性与可验证性",
+    "C9": "公平与透明",
+    "C10": "训练价值",
+    "C11": "披露要求",
+    "C12": "贡献归属",
+    "C13": "数据合规",
+    "C14": "专业判断",
 }
 
 BOUNDARY_CONTENT_LABELS = {
-    "D1.1": "合理辅助 vs 不可接受替代",
+    "D1.1": "辅助与替代边界",
     "D1.2": "人机分工边界",
-    "D1.3": "科研主体责任边界",
-    "D1.4": "科研规范边界",
+    "D1.3": "责任边界",
+    "D1.4": "原创性边界",
     "D1.5": "学术诚信边界",
-    "D1.6": "训练与学习边界",
-    "D1.7": "披露/说明使用边界",
+    "D1.6": "科研训练边界",
+    "D1.7": "披露边界",
     "D1.8": "不同科研环节的差异化边界",
     "D1.9": "署名与贡献边界",
     "D1.10": "验证/复核边界",
     "D1.11": "数据/隐私/知识资产使用边界",
+    "D1.12": "科研治理边界",
 }
 
 BOUNDARY_MODE_LABELS = {
@@ -134,6 +135,58 @@ INTERACTION_BASIS_CODES = {
 
 INTERACTION_OUTCOME_VALUES = ("E4.1", "E4.2", "E4.3", "E4.4", "E4.5")
 
+AI_INTERVENTION_MODE_LABELS = {
+    "F1": "信息辅助",
+    "F2": "生成辅助",
+    "F3": "分析建模",
+    "F4": "判断建议",
+    "F5": "自动执行",
+    "F6": "治理监督",
+}
+
+AI_INTERVENTION_INTENSITY_LABELS = {
+    "G1": "低强度辅助",
+    "G2": "中强度共创",
+    "G3": "高强度替代",
+}
+
+EVALUATION_TENSION_LABELS = {
+    "H1": "效率提升 vs 原创性",
+    "H2": "能力补充 vs 能力替代",
+    "H3": "便利性 vs 可靠性",
+    "H4": "技术可用性 vs 规范不确定性",
+    "H5": "人机共创 vs 责任归属",
+    "H6": "自动化治理 vs 公平透明",
+}
+
+FORMAL_NORM_REFERENCE_LABELS = {
+    "I0": "未明确参照",
+    "I1": "期刊政策",
+    "I2": "学校规定",
+    "I3": "导师/课题组要求",
+    "I4": "署名规则",
+    "I5": "披露要求",
+    "I6": "审稿规范",
+    "I7": "科研诚信规则",
+    "I8": "数据伦理/隐私合规规则",
+}
+
+BOUNDARY_MECHANISM_LABELS = {
+    "J1": "条件化机制",
+    "J2": "责任化机制",
+    "J3": "规范化机制",
+    "J4": "风险化机制",
+}
+
+BOUNDARY_RESULT_LABELS = {
+    "K1": "辅助合法化",
+    "K2": "条件合法化",
+    "K3": "风险问题化",
+    "K4": "替代去合法化",
+    "K5": "规范悬置",
+    "K6": "治理争议化",
+}
+
 DECISION_REASON_CODES = {
     "R1": "未明确提及 AI/AI工具",
     "R2": "无具体科研工作流环节",
@@ -157,6 +210,12 @@ ALL_CODE_LABELS = (
     | BOUNDARY_MODE_LABELS
     | INTERACTION_EVENT_CODES
     | INTERACTION_BASIS_CODES
+    | AI_INTERVENTION_MODE_LABELS
+    | AI_INTERVENTION_INTENSITY_LABELS
+    | EVALUATION_TENSION_LABELS
+    | FORMAL_NORM_REFERENCE_LABELS
+    | BOUNDARY_MECHANISM_LABELS
+    | BOUNDARY_RESULT_LABELS
 )
 
 WORKFLOW_CODE_SET = set(WORKFLOW_STAGE_LABELS)
@@ -166,6 +225,12 @@ BOUNDARY_CONTENT_CODE_SET = set(BOUNDARY_CONTENT_LABELS)
 BOUNDARY_MODE_CODE_SET = set(BOUNDARY_MODE_LABELS)
 INTERACTION_EVENT_CODE_SET = set(INTERACTION_EVENT_CODES)
 INTERACTION_BASIS_CODE_SET = set(INTERACTION_BASIS_CODES)
+AI_INTERVENTION_MODE_CODE_SET = set(AI_INTERVENTION_MODE_LABELS)
+AI_INTERVENTION_INTENSITY_CODE_SET = set(AI_INTERVENTION_INTENSITY_LABELS)
+EVALUATION_TENSION_CODE_SET = set(EVALUATION_TENSION_LABELS)
+FORMAL_NORM_REFERENCE_CODE_SET = set(FORMAL_NORM_REFERENCE_LABELS)
+BOUNDARY_MECHANISM_CODE_SET = set(BOUNDARY_MECHANISM_LABELS)
+BOUNDARY_RESULT_CODE_SET = set(BOUNDARY_RESULT_LABELS)
 
 INTERNAL_METADATA_FIELDS = {
     "record_type",

@@ -68,6 +68,16 @@ def _normalize_interaction_codes(values: Any, *, allowed: set[str]) -> list[str]
     return codes
 
 
+V2_CLAIM_UNIT_FIELDS = (
+    "ai_intervention_mode_codes",
+    "ai_intervention_intensity_codes",
+    "evaluation_tension_codes",
+    "formal_norm_reference_codes",
+    "boundary_mechanism_codes",
+    "boundary_result_codes",
+)
+
+
 def _has_meaningful_claim_units(claim_units: Sequence[dict[str, Any]]) -> bool:
     for unit in claim_units:
         if not isinstance(unit, dict):
@@ -97,6 +107,8 @@ def _retain_formal_claim_units(claim_units: Sequence[dict[str, Any]]) -> list[di
             "boundary_mode_codes": unit.get("boundary_mode_codes") or [],
             "evidence": evidence,
         }
+        for field_name in V2_CLAIM_UNIT_FIELDS:
+            retained_unit[field_name] = ensure_list_of_strings(unit.get(field_name))
         retained.append(retained_unit)
     return retained
 

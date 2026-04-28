@@ -5,7 +5,7 @@ import json
 from pathlib import Path
 from typing import Any
 
-from ai4s_legitimacy.config.formal_baseline import REBASELINE_STAGING_DB_PATH
+from ai4s_legitimacy.config.formal_baseline import REBASELINE_STAGING_DB_PATH, paper_scope_view
 from ai4s_legitimacy.utils.db import connect_sqlite_writable
 
 from ._canonical_db import apply_canonical_row_to_db, ensure_canonical_schema
@@ -20,6 +20,14 @@ from .canonical_schema import DECISION_VALUES, canonical_record_identity, valida
 APPROVED_REVIEW_STATUSES = {"approved", "reviewed", "revised"}
 REVIEW_DECISION_SAMPLE_STATUSES = {"true", "false", "review_needed"}
 REVIEW_DECISION_INCLUSION_VALUES = {"纳入", "剔除", "待复核"}
+FRAMEWORK_V2_CLAIM_FIELDS = (
+    "ai_intervention_mode_codes",
+    "ai_intervention_intensity_codes",
+    "evaluation_tension_codes",
+    "formal_norm_reference_codes",
+    "boundary_mechanism_codes",
+    "boundary_result_codes",
+)
 
 
 def _load_jsonl(path: Path) -> list[dict[str, Any]]:
@@ -148,6 +156,131 @@ def _store_reviewed_record(
     )
 
 
+def _truthy(value: Any) -> bool:
+    if isinstance(value, bool):
+        return value
+    return str(value or "").strip().lower() in {"1", "true", "yes", "是"}
+
+
+def _load_latest_post_review_payload(
+    connection,
+    *,
+    record_id: str,
+    exclude_run_id: str,
+) -> dict[str, Any] | None:
+    row = connection.execute(
+        """
+        SELECT payload_json
+        FROM reviewed_records
+        WHERE review_phase = 'post_review_v2'
+          AND record_type = 'post'
+          AND record_id = ?
+          AND run_id != ?
+        ORDER BY id DESC
+        LIMIT 1
+        """,
+        (record_id, exclude_run_id),
+    ).fetchone()
+    if row is None:
+        return None
+    return json.loads(str(row["payload_json"]))
+
+
+def _is_formal_quality_v5_post(connection, record_id: str) -> bool:
+    scope_view = paper_scope_view("posts")
+    row = connection.execute(
+        f"SELECT 1 FROM {scope_view} WHERE post_id = ? LIMIT 1",
+        (record_id,),
+    ).fetchone()
+    return row is not None
+
+
+def _legacy_claim_unit_signature(row: dict[str, Any]) -> list[dict[str, Any]]:
+    signature: list[dict[str, Any]] = []
+    for unit in row.get("claim_units") or []:
+        signature.append(
+            {
+                "practice_unit": unit.get("practice_unit") or "",
+                "workflow_stage_codes": unit.get("workflow_stage_codes") or [],
+                "legitimacy_codes": unit.get("legitimacy_codes") or [],
+                "basis_codes": unit.get("basis_codes") or [],
+                "boundary_codes": unit.get("boundary_codes") or [],
+                "boundary_mode_codes": unit.get("boundary_mode_codes") or [],
+                "evidence": unit.get("evidence") or [],
+            }
+        )
+    return signature
+
+
+def _legacy_post_review_signature(row: dict[str, Any]) -> dict[str, Any]:
+    return {
+        "decision": row.get("decision") or "",
+        "workflow_dimension": row.get("workflow_dimension") or {},
+        "legitimacy_evaluation": row.get("legitimacy_evaluation") or {},
+        "boundary_expression": row.get("boundary_expression") or {},
+        "claim_units": _legacy_claim_unit_signature(row),
+    }
+
+
+def _validate_framework_v2_claim_units(row: dict[str, Any]) -> None:
+    claim_units = row.get("claim_units") or []
+    if not claim_units:
+        raise ValueError("framework_v2_update requires existing claim_units")
+    for index, unit in enumerate(claim_units):
+        prefix = f"framework_v2_update claim_units[{index}]"
+        if not unit.get("ai_intervention_mode_codes"):
+            raise ValueError(f"{prefix} requires ai_intervention_mode_codes")
+        if len(unit.get("ai_intervention_intensity_codes") or []) != 1:
+            raise ValueError(f"{prefix} requires exactly one ai_intervention_intensity_codes")
+        formal_refs = unit.get("formal_norm_reference_codes") or []
+        if not formal_refs:
+            raise ValueError(f"{prefix} requires formal_norm_reference_codes")
+        if "I0" in formal_refs and len(formal_refs) > 1:
+            raise ValueError(f"{prefix} cannot combine I0 with I1-I8")
+
+        has_boundary = bool(unit.get("boundary_codes") or unit.get("boundary_mode_codes"))
+        mechanism_count = len(unit.get("boundary_mechanism_codes") or [])
+        result_count = len(unit.get("boundary_result_codes") or [])
+        if has_boundary:
+            if mechanism_count < 1:
+                raise ValueError(f"{prefix} with boundary codes requires boundary_mechanism_codes")
+            if result_count != 1:
+                raise ValueError(f"{prefix} with boundary codes requires exactly one boundary_result_codes")
+        elif mechanism_count or result_count:
+            raise ValueError(f"{prefix} without boundary codes must leave J/K fields empty")
+
+
+def _validate_framework_v2_update(
+    connection,
+    *,
+    row: dict[str, Any],
+    source_file: Path,
+) -> dict[str, Any]:
+    if row["record_type"] != "post" or row["review_phase"] != "post_review_v2":
+        raise ValueError("framework_v2_update is only allowed for post_review_v2 post rows")
+    if row["decision"] != "纳入":
+        raise ValueError("framework_v2_update rows must keep decision=纳入")
+    if not _is_formal_quality_v5_post(connection, str(row["record_id"])):
+        raise ValueError("framework_v2_update row is not in quality_v5 formal post scope")
+
+    source_payload = _load_latest_post_review_payload(
+        connection,
+        record_id=str(row["record_id"]),
+        exclude_run_id=str(row["run_id"]),
+    )
+    if source_payload is None:
+        raise ValueError("framework_v2_update requires an existing post_review_v2 payload")
+
+    source_canonical = validate_canonical_row(source_payload)
+    if _legacy_post_review_signature(row) != _legacy_post_review_signature(source_canonical):
+        raise ValueError(
+            "framework_v2_update cannot modify existing A/B/C/D fields; "
+            f"check {source_file}"
+        )
+    _validate_framework_v2_claim_units(row)
+    return source_canonical
+
+
 def _load_base_row(
     connection,
     *,
@@ -238,8 +371,25 @@ def import_reviewed_file(
                 base_row=base_row,
                 review_phase=str(row.get("review_phase") or "").strip(),
             )
+            framework_v2_update = _truthy(row.get("framework_v2_update"))
+            if framework_v2_update:
+                canonical["framework_v2_update"] = True
+                canonical["framework_v2_reviewer_notes"] = row.get(
+                    "framework_v2_reviewer_notes",
+                    [],
+                )
             canonical["review_status"] = "revised" if review_status == "revised" else "reviewed"
             canonical = validate_canonical_row(canonical)
+            if framework_v2_update:
+                source_canonical = _validate_framework_v2_update(
+                    connection,
+                    row=canonical,
+                    source_file=reviewed_path,
+                )
+                canonical["framework_v2_update"] = True
+                canonical["framework_v2_source_run_id"] = str(
+                    source_canonical.get("run_id") or ""
+                )
 
             _upsert_review_run(connection, row=canonical, source_file=reviewed_path)
             _store_reviewed_record(

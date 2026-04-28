@@ -304,6 +304,12 @@ def validate_canonical_row(row: dict[str, Any]) -> dict[str, Any]:
             or unit["basis_codes"]
             or unit["boundary_codes"]
             or unit["boundary_mode_codes"]
+            or unit["ai_intervention_mode_codes"]
+            or unit["ai_intervention_intensity_codes"]
+            or unit["evaluation_tension_codes"]
+            or unit["formal_norm_reference_codes"]
+            or unit["boundary_mechanism_codes"]
+            or unit["boundary_result_codes"]
         )
         if has_codes and not unit["evidence"]:
             raise ValueError("claim_units entry has codes but no evidence")

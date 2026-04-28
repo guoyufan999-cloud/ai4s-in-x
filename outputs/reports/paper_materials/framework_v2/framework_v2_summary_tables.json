@@ -1,0 +1,272 @@
+{
+  "metadata": {
+    "formal_stage": "quality_v5",
+    "formal_posts": 514,
+    "formal_comments": 0,
+    "source_contract": "paper_scope_quality_v5",
+    "framework_v2_reviewed_posts": 0,
+    "framework_v2_missing_posts": 514,
+    "framework_v2_coding_complete": false,
+    "note": "新增 v2 字段尚未完成正式人工编码，因此本表仅显示已有字段或为空。"
+  },
+  "tables": {
+    "text_type_distribution": [
+      {
+        "code": "",
+        "label": "经验分享",
+        "count": 238
+      },
+      {
+        "code": "",
+        "label": "教程展示",
+        "count": 173
+      },
+      {
+        "code": "",
+        "label": "其他",
+        "count": 76
+      },
+      {
+        "code": "",
+        "label": "风险提醒",
+        "count": 16
+      },
+      {
+        "code": "",
+        "label": "规范解读",
+        "count": 11
+      }
+    ],
+    "research_activity_field_distribution": [
+      {
+        "code": "",
+        "label": "uncoded",
+        "count": 514
+      }
+    ],
+    "workflow_stage_distribution": [
+      {
+        "code": "",
+        "label": "文献调研与知识整合",
+        "count": 241
+      },
+      {
+        "code": "",
+        "label": "研究构思与问题定义",
+        "count": 127
+      },
+      {
+        "code": "",
+        "label": "数据处理与分析建模",
+        "count": 57
+      },
+      {
+        "code": "",
+        "label": "学术写作与成果表达",
+        "count": 39
+      },
+      {
+        "code": "",
+        "label": "数据获取",
+        "count": 10
+      },
+      {
+        "code": "",
+        "label": "研究设计与方案制定",
+        "count": 10
+      },
+      {
+        "code": "",
+        "label": "发表与知识扩散",
+        "count": 8
+      },
+      {
+        "code": "",
+        "label": "出版与评审治理",
+        "count": 6
+      },
+      {
+        "code": "",
+        "label": "研究方法学习",
+        "count": 5
+      },
+      {
+        "code": "",
+        "label": "实验实施与仿真执行",
+        "count": 4
+      },
+      {
+        "code": "",
+        "label": "结果验证与论文复现",
+        "count": 4
+      },
+      {
+        "code": "",
+        "label": "学术阅读与写作能力训练",
+        "count": 1
+      },
+      {
+        "code": "",
+        "label": "科研工具与技术技能训练",
+        "count": 1
+      },
+      {
+        "code": "",
+        "label": "结果解释与理论提炼",
+        "count": 1
+      }
+    ],
+    "normative_evaluation_standard_distribution": [
+      {
+        "code": "C2",
+        "label": "能力补充",
+        "count": 432
+      },
+      {
+        "code": "C7",
+        "label": "人机分工",
+        "count": 384
+      },
+      {
+        "code": "C1",
+        "label": "效率提升",
+        "count": 283
+      },
+      {
+        "code": "C8",
+        "label": "可靠性与可验证性",
+        "count": 198
+      },
+      {
+        "code": "C5",
+        "label": "规范适配",
+        "count": 192
+      },
+      {
+        "code": "C10",
+        "label": "训练价值",
+        "count": 137
+      },
+      {
+        "code": "C4",
+        "label": "原创性",
+        "count": 100
+      },
+      {
+        "code": "C14",
+        "label": "专业判断",
+        "count": 79
+      },
+      {
+        "code": "C6",
+        "label": "学术诚信",
+        "count": 73
+      },
+      {
+        "code": "C12",
+        "label": "贡献归属",
+        "count": 32
+      },
+      {
+        "code": "C3",
+        "label": "责任归属",
+        "count": 27
+      },
+      {
+        "code": "C13",
+        "label": "数据合规",
+        "count": 10
+      },
+      {
+        "code": "C11",
+        "label": "披露要求",
+        "count": 7
+      },
+      {
+        "code": "C9",
+        "label": "公平与透明",
+        "count": 5
+      }
+    ],
+    "normative_evaluation_tendency_distribution": [
+      {
+        "code": "B2",
+        "label": "有条件接受",
+        "count": 231
+      },
+      {
+        "code": "B4",
+        "label": "混合/冲突性评价",
+        "count": 219
+      },
+      {
+        "code": "B1",
+        "label": "正面接受/正当化",
+        "count": 33
+      },
+      {
+        "code": "B0",
+        "label": "未表达评价",
+        "count": 22
+      },
+      {
+        "code": "B3",
+        "label": "质疑/否定",
+        "count": 11
+      }
+    ],
+    "boundary_type_distribution": [
+      {
+        "code": "D1.2",
+        "label": "人机分工边界",
+        "count": 335
+      },
+      {
+        "code": "D1.1",
+        "label": "辅助与替代边界",
+        "count": 227
+      },
+      {
+        "code": "D1.10",
+        "label": "验证/复核边界",
+        "count": 175
+      },
+      {
+        "code": "D1.9",
+        "label": "署名与贡献边界",
+        "count": 68
+      },
+      {
+        "code": "D1.5",
+        "label": "学术诚信边界",
+        "count": 59
+      },
+      {
+        "code": "D1.4",
+        "label": "原创性边界",
+        "count": 56
+      },
+      {
+        "code": "D1.7",
+        "label": "披露边界",
+        "count": 13
+      },
+      {
+        "code": "D1.11",
+        "label": "数据/隐私/知识资产使用边界",
+        "count": 9
+      },
+      {
+        "code": "D1.6",
+        "label": "科研训练边界",
+        "count": 1
+      }
+    ],
+    "ai_intervention_mode_distribution": [],
+    "ai_intervention_intensity_distribution": [],
+    "evaluation_tension_distribution": [],
+    "formal_norm_reference_distribution": [],
+    "boundary_mechanism_distribution": [],
+    "boundary_result_distribution": []
+  }
+}

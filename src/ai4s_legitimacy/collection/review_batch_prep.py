@@ -25,6 +25,22 @@ DEFAULT_BATCH_SIZE = 250
 DEFAULT_REVIEWER = "guoyufan"
 DEFAULT_TEMPLATE_BATCH_INDEX = 0
 
+CLAIM_UNIT_TEMPLATE = {
+    "practice_unit": "",
+    "workflow_stage_codes": [],
+    "legitimacy_codes": [],
+    "basis_codes": [],
+    "boundary_codes": [],
+    "boundary_mode_codes": [],
+    "ai_intervention_mode_codes": [],
+    "ai_intervention_intensity_codes": [],
+    "evaluation_tension_codes": [],
+    "formal_norm_reference_codes": [],
+    "boundary_mechanism_codes": [],
+    "boundary_result_codes": [],
+    "evidence": [],
+}
+
 REVIEW_TEMPLATE_PHASES = frozenset(
     {
         "rescreen_posts",
@@ -46,7 +62,7 @@ REVIEW_MEMO_TEMPLATE = """# {phase}.batch_{batch_index:02d} 判例备忘
 
 - {analysis_axes}
 
-## 三项自检
+## 编码自检
 
 {self_checks}
 
@@ -168,6 +184,7 @@ def _build_review_template_row(
                     "evidence": [],
                 },
                 "claim_units": [],
+                "claim_unit_template": CLAIM_UNIT_TEMPLATE,
                 "mechanism_memo": {
                     "eligible_for_mechanism_analysis": "否",
                     "candidate_pattern_notes": [],

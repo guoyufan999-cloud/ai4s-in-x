@@ -28,11 +28,21 @@ def test_legacy_legitimacy_lookup_still_contains_core_dimensions() -> None:
 def test_codebook_seed_primary_output_is_framework_v2() -> None:
     groups = {row.code_group for row in iter_codebook_rows()}
     assert groups == {
-        "discursive_context",
-        "practice_position",
-        "intervention_mode",
-        "normative_evaluation",
-        "boundary_generation",
+        "practice_position_domain",
+        "practice_position_stage",
+        "normative_evaluation_tendency",
+        "normative_evaluation_standard",
+        "boundary_type",
+        "boundary_mode",
+        "interaction_action",
+        "interaction_basis",
+        "interaction_outcome",
+        "ai_intervention_mode",
+        "ai_intervention_intensity",
+        "evaluation_tension",
+        "formal_norm_reference",
+        "boundary_mechanism",
+        "boundary_result",
     }
 
 
@@ -44,14 +54,14 @@ def test_codebook_seed_examples_do_not_emit_placeholder_text() -> None:
 def test_codebook_seed_fails_fast_when_framework_v2_example_is_missing(
     monkeypatch: pytest.MonkeyPatch,
 ) -> None:
-    missing_code_id = "N3"
-    monkeypatch.delitem(codebook_seed._FRAMEWORK_V2_EXAMPLES, missing_code_id)
+    missing_code_id = "H3"
+    monkeypatch.delitem(codebook_seed._V2_EXTENSION_EXAMPLES, missing_code_id)
 
     with pytest.raises(ValueError, match="missing example") as exc_info:
         list(iter_codebook_rows())
     message = str(exc_info.value)
     assert "missing example" in message
-    assert "normative_evaluation" in message
+    assert "evaluation_tension" in message
     assert missing_code_id in message
 
 
