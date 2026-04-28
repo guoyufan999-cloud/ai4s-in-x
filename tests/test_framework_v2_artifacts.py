@@ -29,13 +29,13 @@ def _seed_quality_v5_post_only_db(db_path: Path) -> None:
             """
             INSERT INTO posts (
                 post_id, platform, legacy_crawl_status, post_date, sample_status,
-                actor_type, qs_broad_subject, workflow_domain, workflow_stage,
+                actor_type, qs_broad_subject, workflow_stage,
                 primary_legitimacy_stance, decision, review_status,
                 title, content_text, ai_tools_json, risk_themes_json, benefit_themes_json,
                 import_batch_id
             ) VALUES (
                 'p1', 'xiaohongshu', 'crawled', '2024-01-15', 'true',
-                'graduate_student', 'Engineering & Technology', 'P', '文献调研与知识整合',
+                'graduate_student', 'Engineering & Technology', '文献调研与知识整合',
                 '有条件接受', '纳入', 'reviewed',
                 '标题', '用AI梳理综述框架但人工复核', '["ChatGPT"]', '[]', '["efficiency"]',
                 1
@@ -86,6 +86,9 @@ def test_framework_v2_material_builder_handles_empty_new_fields(tmp_path: Path) 
     assert summary["tables"]["formal_norm_reference_distribution"] == []
     assert summary["tables"]["boundary_mechanism_distribution"] == []
     assert summary["tables"]["boundary_result_distribution"] == []
+    assert summary["tables"]["research_activity_field_distribution"] == [
+        {"code": "", "label": "A1 科研生产", "count": 1}
+    ]
     assert cross_tabs["cross_tabs"]["normative_standard_x_boundary_type"]
     assert cross_tabs["cross_tabs"]["workflow_stage_x_ai_intervention_mode"] == []
     assert MISSING_V2_FIELD_NOTE in (output_dir / "writing_memo_v2.md").read_text(

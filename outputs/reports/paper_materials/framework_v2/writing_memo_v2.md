@@ -2,7 +2,7 @@
 
 ## 可写主题
 
-- 第四章可写：话语情境与实践位置的描述性图谱。支持字段：`discursive_mode`、`workflow_domain`、`workflow_stage`。
+- 第四章可写：话语情境与实践位置的描述性图谱。支持字段：`discursive_mode`、`workflow_stage` 及由 A 组环节推导的 A1/A2/A3 场域。
 - 第五章可写：已有 B/C 组支持的规范评价倾向与评价标准。支持字段：`legitimacy_codes`、`basis_codes`。
 - 第六章可写：已有 D 组支持的边界类型。支持字段：`boundary_codes`、`boundary_mode_codes`。
 

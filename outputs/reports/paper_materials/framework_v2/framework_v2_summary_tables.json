@@ -40,8 +40,18 @@
     "research_activity_field_distribution": [
       {
         "code": "",
-        "label": "uncoded",
-        "count": 514
+        "label": "A1 科研生产",
+        "count": 501
+      },
+      {
+        "code": "",
+        "label": "A3 科研训练与能力建构",
+        "count": 7
+      },
+      {
+        "code": "",
+        "label": "A2 科研治理",
+        "count": 6
       }
     ],
     "workflow_stage_distribution": [

@@ -47,6 +47,16 @@ PRACTICE_DOMAIN_LABELS = {
     "P": "A1 科研生产",
     "G": "A2 科研治理",
     "T": "A3 科研训练与能力建构",
+    "A1": "A1 科研生产",
+    "A2": "A2 科研治理",
+    "A3": "A3 科研训练与能力建构",
+}
+
+WORKFLOW_STAGE_CODE_TO_DOMAIN = {
+    code: code.split(".", 1)[0] for code in WORKFLOW_STAGE_LABELS
+}
+WORKFLOW_STAGE_LABEL_TO_DOMAIN = {
+    label: code.split(".", 1)[0] for code, label in WORKFLOW_STAGE_LABELS.items()
 }
 
 SUMMARY_FIELD_SPECS = {
@@ -126,6 +136,18 @@ def _distribution(counter: Counter[str], labels: dict[str, str] | None = None) -
             }
         )
     return rows
+
+
+def _practice_domain_label(post: dict[str, Any]) -> str:
+    raw_domain = str(post.get("workflow_domain") or "").strip()
+    if raw_domain in PRACTICE_DOMAIN_LABELS:
+        return PRACTICE_DOMAIN_LABELS[raw_domain]
+
+    stage = str(post.get("workflow_stage") or "").strip()
+    domain_code = WORKFLOW_STAGE_CODE_TO_DOMAIN.get(stage) or WORKFLOW_STAGE_LABEL_TO_DOMAIN.get(stage)
+    if domain_code:
+        return PRACTICE_DOMAIN_LABELS[domain_code]
+    return "uncoded"
 
 
 def _cross_tab(
@@ -222,10 +244,7 @@ def _build_summary_tables(
         TEXT_TYPE_FROM_DISCURSIVE_MODE.get(str(post.get("discursive_mode") or ""), "其他")
         for post in posts
     )
-    domain_counts = Counter(
-        PRACTICE_DOMAIN_LABELS.get(str(post.get("workflow_domain") or ""), "uncoded")
-        for post in posts
-    )
+    domain_counts = Counter(_practice_domain_label(post) for post in posts)
     workflow_counts = Counter(str(post.get("workflow_stage") or "uncoded") for post in posts)
     legitimacy_counts = Counter(
         code for unit in claim_units for code in _codes_from_unit(unit, "legitimacy_codes")
@@ -437,7 +456,7 @@ def _write_writing_memo(output_dir: Path, *, note: str) -> Path:
 
 ## 可写主题
 
-- 第四章可写：话语情境与实践位置的描述性图谱。支持字段：`discursive_mode`、`workflow_domain`、`workflow_stage`。
+- 第四章可写：话语情境与实践位置的描述性图谱。支持字段：`discursive_mode`、`workflow_stage` 及由 A 组环节推导的 A1/A2/A3 场域。
 - 第五章可写：已有 B/C 组支持的规范评价倾向与评价标准。支持字段：`legitimacy_codes`、`basis_codes`。
 - 第六章可写：已有 D 组支持的边界类型。支持字段：`boundary_codes`、`boundary_mode_codes`。
 
