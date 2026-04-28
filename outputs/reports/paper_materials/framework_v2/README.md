@@ -11,4 +11,6 @@
 
 配套审计报告由 `ai4s-build-artifacts` 或 `ai4s_legitimacy.analysis.framework_v2_coding_audit` 生成，文件为 `framework_v2_coding_audit_report.md` 和 `framework_v2_coding_audit_report.json`。
 
+高风险复核附录为 `framework_v2_high_risk_recheck_appendix.md`，记录 `80` 条风险优先抽查对象；该附录用于方法可信度说明，不直接修改正式编码。
+
 本目录不启动评论层正式结果，不改写 `quality_v5` artifacts，不把 `quality_v4` 写作当前正式口径。

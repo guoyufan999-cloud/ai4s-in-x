@@ -23,6 +23,7 @@ SUMMARY_TABLES_PATH = FRAMEWORK_V2_OUTPUT_DIR / "framework_v2_summary_tables.jso
 CROSS_TABS_PATH = FRAMEWORK_V2_OUTPUT_DIR / "cross_tabs_v2.json"
 AUDIT_JSON_PATH = FRAMEWORK_V2_OUTPUT_DIR / "framework_v2_coding_audit_report.json"
 AUDIT_MD_PATH = FRAMEWORK_V2_OUTPUT_DIR / "framework_v2_coding_audit_report.md"
+AUDIT_APPENDIX_PATH = FRAMEWORK_V2_OUTPUT_DIR / "framework_v2_high_risk_recheck_appendix.md"
 
 V2_FIELD_TO_GROUP = {
     "ai_intervention_mode_codes": "F",
@@ -44,6 +45,19 @@ HIGH_RISK_LABELS = {
     "I8": "数据伦理/隐私合规规则",
     "multi_H": "多重评价张力",
     "no_D_strong_norm": "无 D 组边界但有强规范评价",
+}
+
+HIGH_RISK_RECHECK_NOTES = {
+    "G3": "核对高强度替代是否由具体使用方式支持。",
+    "F5": "核对自动执行是否涉及核心产出、核心判断或规范决策。",
+    "F6": "核对治理监督是否确有检测、查重、评审或合规治理含义。",
+    "K4": "核对替代去合法化是否确有禁止或不可接受替代表述。",
+    "K6": "核对治理争议化是否体现对检测、规则或制度执行的争议。",
+    "I2": "核对学校规定是否被明确提及或由文本直接指向。",
+    "I7": "核对科研诚信规则是否与文本中的诚信、撤稿、造假等风险相关。",
+    "I8": "核对数据伦理或隐私合规是否有明确文本依据。",
+    "multi_H": "核对多重评价张力是否均有文本依据。",
+    "no_D_strong_norm": "核对是否需要补充 D 组边界，或仅为评价而非边界表达。",
 }
 
 STRONG_NORMATIVE_B_CODES = {"B3", "B4"}
@@ -313,6 +327,15 @@ def _render_distribution(rows: list[dict[str, Any]], *, limit: int = 12) -> str:
     )
 
 
+def _escape_markdown_cell(value: Any) -> str:
+    return str(value or "").replace("\n", " ").replace("|", "/").strip()
+
+
+def _recheck_focus(flags: list[str]) -> str:
+    notes = [HIGH_RISK_RECHECK_NOTES.get(flag, flag) for flag in flags]
+    return " ".join(notes[:3])
+
+
 def render_audit_markdown(audit: dict[str, Any]) -> str:
     metadata = audit["metadata"]
     checks = audit["mechanical_checks"]
@@ -397,13 +420,89 @@ def render_audit_markdown(audit: dict[str, Any]) -> str:
 """
 
 
+def render_high_risk_recheck_appendix(
+    audit: dict[str, Any],
+    *,
+    sample_size: int = 80,
+) -> str:
+    metadata = audit["metadata"]
+    checks = audit["mechanical_checks"]
+    high_risk = audit["high_risk"]
+    rows = high_risk["sample_rows"][:sample_size]
+    flag_counter: Counter[str] = Counter(
+        flag for row in rows for flag in row.get("flags", [])
+    )
+    label_lookup = {
+        row["code"]: row["label"]
+        for row in high_risk["distribution"]
+    }
+    flag_rows = [
+        [f"`{flag}`", label_lookup.get(flag, flag), count]
+        for flag, count in flag_counter.most_common()
+    ]
+    sample_table_rows = [
+        [
+            index,
+            f"`{_escape_markdown_cell(row.get('record_id'))}`",
+            row.get("claim_index", ""),
+            ", ".join(f"`{flag}`" for flag in row.get("flags", [])),
+            _escape_markdown_cell(_recheck_focus(row.get("flags", []))),
+            _escape_markdown_cell(row.get("evidence")),
+            "机械规则通过；语义复核优先",
+        ]
+        for index, row in enumerate(rows, 1)
+    ]
+
+    return f"""# Framework v2 High-Risk Coding Recheck Appendix
+
+## 抽查目的
+
+本附录用于记录 framework_v2 coding audit 高风险队列的风险优先抽查对象，服务于论文方法可信度说明。它不替代逐条语义复核，也不直接修改正式编码。
+
+## 样本范围
+
+- 正式基线：`{metadata["formal_stage"]} post-only`
+- 正式帖子 / 正式评论：`{metadata["formal_posts"]} / {metadata["formal_comments"]}`
+- framework_v2 reviewed posts：`{metadata["framework_v2_reviewed_posts"]}`
+- framework_v2 missing posts：`{metadata["framework_v2_missing_posts"]}`
+- v2 claim units：`{metadata["claim_units_with_framework_v2_fields"]}`
+- 高风险队列总量：`{high_risk["sample_rows_total"]}`
+- 本附录抽查记录数：`{len(rows)}`
+- 机械一致性状态：`{checks["status"]}`，字段规则违规数：`{checks["violation_count"]}`，provenance 缺失数：`{checks["provenance_missing_count"]}`
+
+## 抽样规则
+
+- 抽样方式为风险优先抽样，不是随机代表性抽样。
+- 样本来自 `framework_v2_coding_audit_report.json` 中的 `high_risk.sample_rows`，该队列按高风险标记数量和记录编号排序。
+- 高风险标记包括 `G3`、`F5`、`F6`、`K4`、`K6`、`I2`、`I7`、`I8`、`multi_H`、`no_D_strong_norm`。
+- 本轮记录用于方法附录和后续人工语义复核；除非另行执行 reviewed import，否则不改变正式 v2 编码。
+
+## 抽查样本中的风险标记分布
+
+{_markdown_table(["标记", "含义", "样本内数量"], flag_rows)}
+
+## 抽查记录
+
+{_markdown_table(["#", "record_id", "claim", "风险标记", "复核关注点", "证据摘录", "处置状态"], sample_table_rows)}
+
+## 方法使用边界
+
+- 本附录证明高风险样本已经被显式列入方法复核记录，但不声称这些样本均已完成双人独立复核。
+- 当前正式统计仍以 framework_v2 reviewed payload 为准；本附录没有触发 DB schema migration，也没有改动 `quality_v5 514 / 0` formal boundary。
+- 论文中可据此说明：在正式统计完成后，研究者针对高强度替代、自动执行、治理监督、正式规范参照和多重评价张力等高风险编码建立了可追溯复核队列。
+- 如需进一步增强方法可信度，应在本附录基础上增加人工语义复核列，记录是否修正、修正前后代码和修正理由。
+"""
+
+
 def write_framework_v2_coding_audit(
     *,
     output_json_path: Path = AUDIT_JSON_PATH,
     output_md_path: Path = AUDIT_MD_PATH,
+    output_appendix_path: Path | None = None,
     post_master_path: Path = POST_MASTER_PATH,
     summary_tables_path: Path = SUMMARY_TABLES_PATH,
     cross_tabs_path: Path = CROSS_TABS_PATH,
+    appendix_sample_size: int = 80,
 ) -> dict[str, Any]:
     audit = build_framework_v2_coding_audit(
         post_master_path=post_master_path,
@@ -416,12 +515,22 @@ def write_framework_v2_coding_audit(
         encoding="utf-8",
     )
     output_md_path.write_text(render_audit_markdown(audit), encoding="utf-8")
-    return {
+    result = {
         "audit_json_path": str(output_json_path),
         "audit_markdown_path": str(output_md_path),
         "metadata": audit["metadata"],
         "mechanical_checks": audit["mechanical_checks"],
     }
+    if output_appendix_path is not None:
+        output_appendix_path.write_text(
+            render_high_risk_recheck_appendix(
+                audit,
+                sample_size=appendix_sample_size,
+            ),
+            encoding="utf-8",
+        )
+        result["high_risk_recheck_appendix_path"] = str(output_appendix_path)
+    return result
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -431,6 +540,8 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--cross-tabs", type=Path, default=CROSS_TABS_PATH)
     parser.add_argument("--output-json", type=Path, default=AUDIT_JSON_PATH)
     parser.add_argument("--output-md", type=Path, default=AUDIT_MD_PATH)
+    parser.add_argument("--output-appendix", type=Path, default=AUDIT_APPENDIX_PATH)
+    parser.add_argument("--appendix-sample-size", type=int, default=80)
     return parser
 
 
@@ -439,9 +550,11 @@ def main() -> None:
     result = write_framework_v2_coding_audit(
         output_json_path=args.output_json,
         output_md_path=args.output_md,
+        output_appendix_path=args.output_appendix,
         post_master_path=args.post_master,
         summary_tables_path=args.summary_tables,
         cross_tabs_path=args.cross_tabs,
+        appendix_sample_size=args.appendix_sample_size,
     )
     print(json.dumps(result, ensure_ascii=False, indent=2))
 

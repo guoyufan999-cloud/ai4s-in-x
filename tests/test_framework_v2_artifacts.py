@@ -139,6 +139,7 @@ def test_build_artifacts_can_route_framework_v2_outputs_to_custom_directory(
     assert result["framework_v2_coding_audit"]["metadata"]["formal_comments"] == 0
     assert (framework_v2_dir / "framework_v2_summary_tables.json").exists()
     assert (framework_v2_dir / "framework_v2_coding_audit_report.md").exists()
+    assert (framework_v2_dir / "framework_v2_high_risk_recheck_appendix.md").exists()
 
 
 def test_versioned_framework_v2_outputs_preserve_quality_v5_post_only_boundary() -> None:

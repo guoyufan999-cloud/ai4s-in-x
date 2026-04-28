@@ -72,12 +72,12 @@ def _reviewed_row() -> dict[str, object]:
                 "legitimacy_codes": ["B2"],
                 "basis_codes": [{"code": "C1", "evidence": "节省整理时间"}],
                 "boundary_codes": [{"code": "D1.10", "evidence": "人工复核"}],
-                "ai_intervention_mode_codes": ["F1"],
-                "ai_intervention_intensity_codes": ["G1"],
-                "evaluation_tension_codes": ["H3"],
-                "formal_norm_reference_codes": ["I0"],
+                "ai_intervention_mode_codes": ["F1", "F5"],
+                "ai_intervention_intensity_codes": ["G3"],
+                "evaluation_tension_codes": ["H3", "H5"],
+                "formal_norm_reference_codes": ["I7"],
                 "boundary_mechanism_codes": ["J1"],
-                "boundary_result_codes": ["K2"],
+                "boundary_result_codes": ["K4"],
                 "evidence": ["用AI梳理综述框架但人工复核。"],
             }
         ],
@@ -90,6 +90,7 @@ def test_framework_v2_coding_audit_writes_report_for_valid_rows(tmp_path: Path) 
     cross_tabs = tmp_path / "cross_tabs_v2.json"
     output_json = tmp_path / "framework_v2_coding_audit_report.json"
     output_md = tmp_path / "framework_v2_coding_audit_report.md"
+    output_appendix = tmp_path / "framework_v2_high_risk_recheck_appendix.md"
     _write_jsonl(post_master, [_reviewed_row()])
     _write_json(summary_tables, _summary_payload())
     _write_json(cross_tabs, _cross_tabs_payload())
@@ -97,6 +98,7 @@ def test_framework_v2_coding_audit_writes_report_for_valid_rows(tmp_path: Path) 
     result = write_framework_v2_coding_audit(
         output_json_path=output_json,
         output_md_path=output_md,
+        output_appendix_path=output_appendix,
         post_master_path=post_master,
         summary_tables_path=summary_tables,
         cross_tabs_path=cross_tabs,
@@ -111,6 +113,10 @@ def test_framework_v2_coding_audit_writes_report_for_valid_rows(tmp_path: Path) 
     assert audit["code_distributions"]["F"][0]["code"] == "F1"
     assert "不能替代逐条语义复核" in report
     assert "用户授权接受 AI 辅助编码草稿并保留 provenance" in report
+    appendix = output_appendix.read_text(encoding="utf-8")
+    assert result["high_risk_recheck_appendix_path"] == str(output_appendix)
+    assert "本附录抽查记录数：`1`" in appendix
+    assert "机械规则通过；语义复核优先" in appendix
 
 
 def test_framework_v2_coding_audit_flags_invalid_i0_mixed_reference(

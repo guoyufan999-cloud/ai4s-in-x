@@ -124,6 +124,8 @@ def run_build(
     framework_v2_audit = write_framework_v2_coding_audit(
         output_json_path=Path(framework_v2["output_dir"]) / "framework_v2_coding_audit_report.json",
         output_md_path=Path(framework_v2["output_dir"]) / "framework_v2_coding_audit_report.md",
+        output_appendix_path=Path(framework_v2["output_dir"])
+        / "framework_v2_high_risk_recheck_appendix.md",
         post_master_path=review_v2_post_output_path,
         summary_tables_path=Path(framework_v2["paths"]["summary_tables"]),
         cross_tabs_path=Path(framework_v2["paths"]["cross_tabs"]),
