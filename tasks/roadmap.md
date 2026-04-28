@@ -41,5 +41,5 @@
 - [进行中] 维护 `quality_v5` post-only artifacts、README、manifest、paper materials 与 consistency checkpoint 的一致性
 - [进行中] 完成 framework_v2：建立“话语情境—实践位置—介入方式—规范评价—边界生成”理论框架、codebook、payload 兼容层与 `outputs/reports/paper_materials/framework_v2/`
 - [后续] 如论文或扩展研究需要评论层正式结果，再单独启动 `comment_review_v2`；完成前 `formal_comments=0` 仍是设计选择
-- [后续] 在 post-only 投稿口径稳定后，再评估终稿压缩、grounded theory 或补充样本
+- [后续] 在 post-only 投稿口径稳定后，再评估终稿压缩、grounded theory 或补充样本；补充小红书帖子先走 `xhs_expansion_candidate_v1` 候选集链路，不直接导入 `quality_v5`
 - [后续] 如需 v2 字段进入正式 artifacts 的实证统计，需先完成 F/G/H/I/J/K 人工 reviewed 编码；未编码前相关表保持为空或占位提示

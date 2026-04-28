@@ -6,6 +6,7 @@
 2. [优先] 保持 `post_review_v2 -> reviewed import -> rebuild artifacts` 链路可复跑，并以 `quality_v5_consistency_report.json` 的 posts/comments delta `0 / 0` 作为核验门槛
 3. [优先] 将 `comment_review_v2` 作为后续独立工作流处理；本轮不把评论 corpus 写成正式评论结果
 4. [优先] 完成 framework_v2 编码支持层与 paper materials 支持：保留 A/B/C/D/E，扩展 F/G/H/I/J/K，不改 DB schema，不自动填充正式人工编码
+5. [新增] 若继续扩宽样本，先走 `xhs_expansion_candidate_v1` 小红书补充候选集链路；其输出只作为 supplemental / candidate，不污染 `quality_v5` formal baseline
 
 ## P0：当前必须完成
 
@@ -38,3 +39,4 @@
 2. [后续] 如需正式评论层结果，单独启动 `comment_review_v2` 队列、人工 reviewed 导入与 artifacts 重建
 3. [后续] 在 post-only 投稿口径稳定后，再评估 clean 稿终稿压缩、grounded theory 或补充样本
 4. [后续] 如需 v2 字段进入正式统计，需单独启动人工编码并经 reviewed import 回灌；未编码前 F/G/H/I/J/K 表只显示为空或占位说明
+5. [后续] 对 `xhs_expansion_candidate_v1` 候选帖子进行人工筛选、去重与 reviewed import 设计；正式纳入前必须另起 supplemental checkpoint 或新 formal checkpoint

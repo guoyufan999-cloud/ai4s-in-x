@@ -6,13 +6,13 @@ import tomllib
 from datetime import date
 from pathlib import Path
 
-from ai4s_legitimacy.collection import external_xhs_post_expansion as expansion
-from ai4s_legitimacy.collection.external_xhs_post_expansion import (
+from ai4s_legitimacy.collection import xhs_expansion_candidate_v1 as expansion
+from ai4s_legitimacy.collection.xhs_expansion_candidate_v1 import (
     TASK_BATCH_ID,
     DoctorStatus,
     PagePayload,
     SearchCandidate,
-    run_external_xhs_post_expansion,
+    run_xhs_expansion_candidate_v1,
 )
 from ai4s_legitimacy.config.research_scope import render_views_sql
 from ai4s_legitimacy.config.settings import SCHEMA_PATH
@@ -137,7 +137,7 @@ def _fake_comment_sidecar(
     ]
 
 
-def test_post_expansion_v1_runs_500_post_target_with_comment_sidecar(
+def test_xhs_expansion_candidate_v1_runs_500_post_target_with_comment_sidecar(
     tmp_path: Path,
     monkeypatch,
 ) -> None:
@@ -148,7 +148,7 @@ def test_post_expansion_v1_runs_500_post_target_with_comment_sidecar(
     monkeypatch.setattr(expansion, "_fetch_public_note_direct", _fake_fetch)
     monkeypatch.setattr(expansion, "_fetch_comments_with_browser_session", _fake_comment_sidecar)
 
-    post_path, comment_path, summary_path = run_external_xhs_post_expansion(
+    post_path, comment_path, summary_path = run_xhs_expansion_candidate_v1(
         post_output_path=tmp_path / "outputs" / "posts.jsonl",
         comment_output_path=tmp_path / "outputs" / "comments.jsonl",
         summary_path=tmp_path / "reports" / "summary.json",
@@ -159,6 +159,7 @@ def test_post_expansion_v1_runs_500_post_target_with_comment_sidecar(
         search_limit=30,
         per_query_cap=20,
         per_author_cap=99,
+        max_comment_probes=500,
         batch_size=100,
     )
 
@@ -170,12 +171,15 @@ def test_post_expansion_v1_runs_500_post_target_with_comment_sidecar(
     assert len(comments) == 500
     assert posts[0]["task_batch_id"] == TASK_BATCH_ID
     assert posts[0]["formal_result_scope"] is False
-    assert posts[0]["artifact_classification"]["status"] == "external_post_expansion_exploratory"
+    assert posts[0]["artifact_classification"]["status"] == "xhs_expansion_candidate_v1"
     assert comments[0]["parent_post_id"]
     assert comments[0]["comment_fetch_status"] == "ok"
     assert comments[0]["formal_result_scope"] is False
     assert summary["max_coded_target"] == 500
+    assert summary["max_comment_probes"] == 500
+    assert summary["comment_probe_count"] == 500
     assert summary["post_row_count"] == 500
+    assert summary["artifact_status"] == "xhs_expansion_candidate_v1"
     assert summary["comment_fetch_status_counts"] == {"ok": 500}
     assert summary["formal_baseline_guard_counts"]["paper_quality_v5_posts"] == 1
     assert summary["formal_baseline_guard_counts"]["paper_quality_v5_comments"] == 0
@@ -188,7 +192,7 @@ def test_post_expansion_v1_runs_500_post_target_with_comment_sidecar(
     assert counts["paper_quality_v5_comments"] == 0
 
 
-def test_post_expansion_v1_comment_failure_writes_status_row_without_blocking_post(
+def test_xhs_expansion_candidate_v1_comment_failure_writes_status_row_without_blocking_post(
     tmp_path: Path,
     monkeypatch,
 ) -> None:
@@ -202,7 +206,7 @@ def test_post_expansion_v1_comment_failure_writes_status_row_without_blocking_po
     monkeypatch.setattr(expansion, "_search_with_bing", _fake_search)
     monkeypatch.setattr(expansion, "_fetch_public_note_direct", _fake_fetch)
 
-    post_path, comment_path, summary_path = run_external_xhs_post_expansion(
+    post_path, comment_path, summary_path = run_xhs_expansion_candidate_v1(
         post_output_path=tmp_path / "outputs" / "posts.jsonl",
         comment_output_path=tmp_path / "outputs" / "comments.jsonl",
         summary_path=tmp_path / "reports" / "summary.json",
@@ -212,6 +216,7 @@ def test_post_expansion_v1_comment_failure_writes_status_row_without_blocking_po
         max_verified=1,
         search_limit=1,
         per_query_cap=1,
+        max_comment_probes=1,
         start_date=date(2024, 1, 1),
     )
 
@@ -227,10 +232,96 @@ def test_post_expansion_v1_comment_failure_writes_status_row_without_blocking_po
     assert summary["comment_fetch_status_counts"] == {"browser_session_unavailable": 1}
 
 
-def test_post_expansion_v1_replaces_aborted_comment_extension_registry() -> None:
+def test_xhs_expansion_candidate_v1_defers_comment_probe_after_limit(
+    tmp_path: Path,
+    monkeypatch,
+) -> None:
+    db_path = tmp_path / "research.sqlite3"
+    _seed_quality_v5_guard_db(db_path)
+    monkeypatch.setattr(expansion, "check_opencli_prerequisite", _fake_doctor)
+    monkeypatch.setattr(expansion, "_search_with_opencli", _fake_search)
+    monkeypatch.setattr(expansion, "_fetch_public_note_direct", _fake_fetch)
+    monkeypatch.setattr(expansion, "_fetch_comments_with_browser_session", _fake_comment_sidecar)
+
+    _, comment_path, summary_path = run_xhs_expansion_candidate_v1(
+        post_output_path=tmp_path / "outputs" / "posts.jsonl",
+        comment_output_path=tmp_path / "outputs" / "comments.jsonl",
+        summary_path=tmp_path / "reports" / "summary.json",
+        review_queue_dir=tmp_path / "queues",
+        db_path=db_path,
+        max_coded=3,
+        max_verified=3,
+        search_limit=3,
+        per_query_cap=3,
+        per_author_cap=99,
+        max_comment_probes=1,
+    )
+
+    comments = _read_jsonl(comment_path)
+    summary = json.loads(summary_path.read_text(encoding="utf-8"))
+
+    assert len(comments) == 3
+    assert summary["comment_probe_count"] == 1
+    assert summary["comment_fetch_status_counts"] == {
+        "ok": 1,
+        "comment_fetch_deferred_after_probe_limit": 2,
+    }
+
+
+def test_xhs_expansion_candidate_v1_strips_public_page_chrome_noise(
+    tmp_path: Path,
+    monkeypatch,
+) -> None:
+    db_path = tmp_path / "research.sqlite3"
+    _seed_quality_v5_guard_db(db_path)
+
+    def fake_fetch_with_page_chrome(url: str) -> PagePayload:
+        note_id = url.rstrip("/").rsplit("/", 1)[-1]
+        return PagePayload(
+            url=url,
+            note_id=note_id,
+            title="DeepSeek 文献综述",
+            source_text=(
+                "DeepSeek 文献综述 - 小红书 创作中心 业务合作 发现 直播 发布 通知 "
+                "沪ICP备13030189号 window.__SSR__={}"
+            ),
+            author_handle="author_noise",
+            created_at="2025-03-15",
+            status="ok",
+            fetched_via="test",
+            raw_excerpt="DeepSeek 文献综述 - 小红书 营业执照",
+        )
+
+    monkeypatch.setattr(expansion, "check_opencli_prerequisite", _fake_doctor)
+    monkeypatch.setattr(expansion, "_search_with_opencli", _fake_search)
+    monkeypatch.setattr(expansion, "_fetch_public_note_direct", fake_fetch_with_page_chrome)
+
+    post_path, _, summary_path = run_xhs_expansion_candidate_v1(
+        post_output_path=tmp_path / "outputs" / "posts.jsonl",
+        comment_output_path=tmp_path / "outputs" / "comments.jsonl",
+        summary_path=tmp_path / "reports" / "summary.json",
+        review_queue_dir=tmp_path / "queues",
+        db_path=db_path,
+        max_coded=1,
+        max_verified=1,
+        search_limit=1,
+        per_query_cap=1,
+        max_comment_probes=0,
+    )
+
+    post = _read_jsonl(post_path)[0]
+    summary = json.loads(summary_path.read_text(encoding="utf-8"))
+    assert "创作中心" not in post["source_text"]
+    assert "沪ICP备" not in post["source_text"]
+    assert "window.__SSR__" not in post["source_text"]
+    assert post["artifact_classification"]["quality_v5_formal_scope"] is False
+    assert summary["artifact_status"] == "xhs_expansion_candidate_v1"
+
+
+def test_xhs_expansion_candidate_v1_replaces_aborted_comment_extension_registry() -> None:
     pyproject = tomllib.loads((ROOT / "pyproject.toml").read_text(encoding="utf-8"))
     scripts = pyproject["project"]["scripts"]
 
-    assert "ai4s-external-xhs-post-expansion" in scripts
+    assert "ai4s-xhs-expansion-candidate-v1" in scripts
     assert "ai4s-prepare-comment-extension-v1-batches" not in scripts
     assert "ai4s-build-comment-extension-v1-materials" not in scripts

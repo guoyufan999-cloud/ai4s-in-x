@@ -31,9 +31,9 @@ from ai4s_legitimacy.config.formal_baseline import ACTIVE_FORMAL_STAGE
 from ai4s_legitimacy.config.settings import INTERIM_DIR, OUTPUTS_DIR, RESEARCH_DB_PATH
 from ai4s_legitimacy.utils.db import connect_sqlite_readonly
 
-TASK_BATCH_ID = "external_xhs_post_expansion_v1"
-CODER_VERSION = "codex_post_expansion_v1"
-PHASE = "post_expansion_v1"
+TASK_BATCH_ID = "xhs_expansion_candidate_v1"
+CODER_VERSION = "codex_xhs_expansion_candidate_v1"
+PHASE = "xhs_expansion_candidate_v1"
 
 DEFAULT_OUTPUT_DIR = OUTPUTS_DIR / "tables" / PHASE
 DEFAULT_POST_OUTPUT_PATH = DEFAULT_OUTPUT_DIR / "posts.jsonl"
@@ -48,8 +48,16 @@ DEFAULT_MAX_VERIFIED = 700
 DEFAULT_SEARCH_LIMIT = 30
 DEFAULT_PER_QUERY_CAP = 20
 DEFAULT_PER_AUTHOR_CAP = 3
+DEFAULT_MAX_COMMENT_PROBES = 25
 COMMENT_MODE_BROWSER_SESSION = "browser-session"
 COMMENT_MODE_OFF = "off"
+PUBLIC_PAGE_CHROME_MARKERS = (
+    "创作中心 业务合作 发现 直播 发布 通知",
+    "window.__INITIAL_STATE__",
+    "window.__SSR__",
+    "沪ICP备",
+    "营业执照",
+)
 
 
 def _write_jsonl(path: Path, rows: list[dict[str, Any]]) -> Path:
@@ -73,14 +81,31 @@ def _read_jsonl(path: Path) -> list[dict[str, Any]]:
 
 def _artifact_classification() -> dict[str, Any]:
     return {
-        "status": "external_post_expansion_exploratory",
+        "status": "xhs_expansion_candidate_v1",
         "formal_evidence_chain": False,
         "quality_v5_formal_scope": False,
         "reason": (
-            "Post expansion outputs are exploratory artifacts. They are not imported into "
+            "xhs_expansion_candidate_v1 outputs are exploratory artifacts. They are not imported into "
             "quality_v5 post-only formal results."
         ),
     }
+
+
+def _strip_public_page_chrome(text: str) -> str:
+    cleaned = str(text or "").strip()
+    for marker in PUBLIC_PAGE_CHROME_MARKERS:
+        if marker in cleaned:
+            cleaned = cleaned.split(marker, 1)[0].strip()
+    for suffix in (" - 小红书", "_小红书"):
+        if cleaned.endswith(suffix):
+            cleaned = cleaned[: -len(suffix)].strip()
+    return cleaned
+
+
+def _prepare_candidate_page(page: PagePayload) -> PagePayload:
+    page.source_text = _strip_public_page_chrome(page.source_text)
+    page.raw_excerpt = _strip_public_page_chrome(page.raw_excerpt)
+    return page
 
 
 def _formal_guard_counts(db_path: Path) -> dict[str, int]:
@@ -318,6 +343,7 @@ def _fetch_comment_sidecar(
     candidate: SearchCandidate,
     doctor_status: DoctorStatus,
     comment_mode: str,
+    probe_allowed: bool,
 ) -> list[dict[str, Any]]:
     if comment_mode == COMMENT_MODE_OFF:
         return [
@@ -326,6 +352,16 @@ def _fetch_comment_sidecar(
                 candidate=candidate,
                 status="comment_fetch_disabled",
                 source_strategy="disabled",
+            )
+        ]
+    if not probe_allowed:
+        return [
+            _comment_status_row(
+                page=page,
+                candidate=candidate,
+                status="comment_fetch_deferred_after_probe_limit",
+                source_strategy="browser_session_probe_limited",
+                note="Browser-session comment probing was deferred after the configured probe limit.",
             )
         ]
     return _fetch_comments_with_browser_session(
@@ -430,7 +466,7 @@ def _comment_status_counts(rows: list[dict[str, Any]]) -> dict[str, int]:
     return dict(Counter(str(row.get("comment_fetch_status") or "unknown") for row in rows))
 
 
-def run_external_xhs_post_expansion(
+def run_xhs_expansion_candidate_v1(
     *,
     post_output_path: Path = DEFAULT_POST_OUTPUT_PATH,
     comment_output_path: Path = DEFAULT_COMMENT_OUTPUT_PATH,
@@ -446,6 +482,7 @@ def run_external_xhs_post_expansion(
     end_date: date = DEFAULT_END_DATE,
     max_queries: int | None = None,
     comment_mode: str = COMMENT_MODE_BROWSER_SESSION,
+    max_comment_probes: int = DEFAULT_MAX_COMMENT_PROBES,
     batch_size: int = DEFAULT_BATCH_SIZE,
     reviewer: str = DEFAULT_REVIEWER,
 ) -> tuple[Path, Path, Path]:
@@ -453,6 +490,8 @@ def run_external_xhs_post_expansion(
         raise ValueError("max_coded must be positive")
     if max_verified <= 0:
         raise ValueError("max_verified must be positive")
+    if max_comment_probes < 0:
+        raise ValueError("max_comment_probes must be non-negative")
     if comment_mode not in {COMMENT_MODE_BROWSER_SESSION, COMMENT_MODE_OFF}:
         raise ValueError("comment_mode must be browser-session or off")
 
@@ -469,6 +508,7 @@ def run_external_xhs_post_expansion(
     comment_rows: list[dict[str, Any]] = []
     query_stats: list[dict[str, Any]] = []
     verified_count = 0
+    comment_probe_count = 0
 
     provider_name = "opencli_xiaohongshu" if doctor_status.extension_connected else "bing_fallback"
     for query in queries:
@@ -516,6 +556,7 @@ def run_external_xhs_post_expansion(
                 page = None
             if page is None:
                 continue
+            page = _prepare_candidate_page(page)
             if (not page.title or page.title.startswith("小红书_")) and candidate.title:
                 page.title = candidate.title
             if not page.author_handle and candidate.author:
@@ -533,12 +574,19 @@ def run_external_xhs_post_expansion(
             if title_hash in title_hash_seen:
                 continue
 
+            probe_allowed = (
+                comment_mode == COMMENT_MODE_BROWSER_SESSION
+                and comment_probe_count < max_comment_probes
+            )
             sidecar_rows = _fetch_comment_sidecar(
                 page=page,
                 candidate=candidate,
                 doctor_status=doctor_status,
                 comment_mode=comment_mode,
+                probe_allowed=probe_allowed,
             )
+            if probe_allowed:
+                comment_probe_count += 1
             row = _decorate_post_row(
                 encode_page(page=page, candidate=candidate, end_date=end_date),
                 comment_rows=sidecar_rows,
@@ -589,12 +637,15 @@ def run_external_xhs_post_expansion(
         "query_count": len(queries),
         "max_coded_target": max_coded,
         "max_verified_limit": max_verified,
+        "max_comment_probes": max_comment_probes,
+        "comment_probe_count": comment_probe_count,
         "post_row_count": len(post_rows),
         "comment_sidecar_row_count": len(comment_rows),
         "comment_fetch_status_counts": _comment_status_counts(comment_rows),
         "post_decision_counts": _decision_counts(post_rows),
         "query_stats": query_stats,
         "formal_baseline_guard_counts": formal_guard_counts,
+        "artifact_status": PHASE,
         "artifact_classification": _artifact_classification(),
         "quality_v5_formal_scope": False,
         "formal_result_scope": False,
@@ -602,7 +653,7 @@ def run_external_xhs_post_expansion(
         "comment_output_path": str(comment_output_path),
         "review_queue": review_queue,
         "limitations": [
-            "Post expansion artifacts are exploratory and require manual review before any formal use.",
+            "xhs_expansion_candidate_v1 artifacts are exploratory and require manual review before any formal use.",
             "Comment sidecar rows are contextual capture attempts, not comment_review_v2 formal results.",
         ],
     }
@@ -617,7 +668,7 @@ def run_external_xhs_post_expansion(
 
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
-        description="Harvest exploratory Xiaohongshu post expansion rows with comment sidecar."
+        description="Harvest xhs_expansion_candidate_v1 rows with comment sidecar."
     )
     parser.add_argument("--posts-output", type=Path, default=DEFAULT_POST_OUTPUT_PATH)
     parser.add_argument("--comments-output", type=Path, default=DEFAULT_COMMENT_OUTPUT_PATH)
@@ -637,6 +688,7 @@ def build_parser() -> argparse.ArgumentParser:
         choices=[COMMENT_MODE_BROWSER_SESSION, COMMENT_MODE_OFF],
         default=COMMENT_MODE_BROWSER_SESSION,
     )
+    parser.add_argument("--max-comment-probes", type=int, default=DEFAULT_MAX_COMMENT_PROBES)
     parser.add_argument("--batch-size", type=int, default=DEFAULT_BATCH_SIZE)
     parser.add_argument("--reviewer", default=DEFAULT_REVIEWER)
     return parser
@@ -646,7 +698,7 @@ def main() -> None:
     args = build_parser().parse_args()
     start_date = datetime.strptime(args.start_date, "%Y-%m-%d").date()
     end_date = datetime.strptime(args.end_date, "%Y-%m-%d").date()
-    post_output_path, comment_output_path, summary_path = run_external_xhs_post_expansion(
+    post_output_path, comment_output_path, summary_path = run_xhs_expansion_candidate_v1(
         post_output_path=args.posts_output,
         comment_output_path=args.comments_output,
         summary_path=args.summary,
@@ -661,6 +713,7 @@ def main() -> None:
         end_date=end_date,
         max_queries=args.max_queries,
         comment_mode=args.comment_mode,
+        max_comment_probes=args.max_comment_probes,
         batch_size=args.batch_size,
         reviewer=args.reviewer,
     )
@@ -674,7 +727,7 @@ __all__ = [
     "COMMENT_MODE_OFF",
     "DEFAULT_MAX_CODED",
     "PHASE",
-    "run_external_xhs_post_expansion",
+    "run_xhs_expansion_candidate_v1",
     "main",
 ]
 

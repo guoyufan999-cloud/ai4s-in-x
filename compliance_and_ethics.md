@@ -90,3 +90,5 @@
 - `quality_v4` 仅作为 historical audit，不作为当前正式结果
 
 历史审计中出现的排队、不可访问、媒体缺口和评论层材料，在当前阶段都被视为**残余限制或后续独立工作流**，而不是继续扩张采集行为的理由。研究主线优先聚焦编码分析、framework v2 支持层和论文写作材料。
+
+如需扩展样本，当前仅允许以 `xhs_expansion_candidate_v1` 这类 supplemental / candidate 工件形式先行保存公开可获取帖子材料及其评论 sidecar 状态；候选集不得自动进入 `quality_v5` formal baseline，也不得通过绕过登录、验证码、风控、限流或封禁机制来补齐不可访问内容。

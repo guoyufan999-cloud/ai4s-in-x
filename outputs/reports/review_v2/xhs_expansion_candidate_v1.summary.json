@@ -1,0 +1,119 @@
+{
+  "task_batch_id": "xhs_expansion_candidate_v1",
+  "coder_version": "codex_xhs_expansion_candidate_v1",
+  "generated_at": "2026-04-28T12:43:35.144305+00:00",
+  "provider_used": "opencli_xiaohongshu",
+  "comment_mode": "browser-session",
+  "opencli_doctor": {
+    "daemon_running": true,
+    "extension_connected": true,
+    "connectivity_ok": true,
+    "raw_output": "opencli v1.4.1 doctor\n\n[OK] Daemon: running on port 19825\n[OK] Extension: connected\n[OK] Connectivity: connected in 0.3s\n\nSessions:\n  • default → window 1817870683, tabs=1, idle=120s\n\nEverything looks good!\n"
+  },
+  "query_count": 36,
+  "max_coded_target": 20,
+  "max_verified_limit": 40,
+  "max_comment_probes": 3,
+  "comment_probe_count": 3,
+  "post_row_count": 20,
+  "comment_sidecar_row_count": 20,
+  "comment_fetch_status_counts": {
+    "comment_fetch_failed": 3,
+    "comment_fetch_deferred_after_probe_limit": 17
+  },
+  "post_decision_counts": {
+    "included": 11,
+    "review_needed": 3,
+    "excluded": 6
+  },
+  "query_stats": [
+    {
+      "query": "AI科研 文献综述",
+      "query_name": "practice_ai_lit_review",
+      "category": "practice",
+      "search_provider": "opencli_xiaohongshu",
+      "search_hits": 10,
+      "verified_kept": 2
+    },
+    {
+      "query": "AI辅助科研 文献检索",
+      "query_name": "practice_ai_lit_search",
+      "category": "practice",
+      "search_provider": "opencli_xiaohongshu",
+      "search_hits": 10,
+      "verified_kept": 2
+    },
+    {
+      "query": "ChatGPT 研究设计",
+      "query_name": "practice_chatgpt_design",
+      "category": "practice",
+      "search_provider": "opencli_xiaohongshu",
+      "search_hits": 10,
+      "verified_kept": 2
+    },
+    {
+      "query": "Claude 统计分析",
+      "query_name": "practice_claude_analysis",
+      "category": "practice",
+      "search_provider": "opencli_xiaohongshu",
+      "search_hits": 10,
+      "verified_kept": 1
+    },
+    {
+      "query": "Gemini 回复审稿",
+      "query_name": "practice_gemini_revision",
+      "category": "practice",
+      "search_provider": "opencli_xiaohongshu",
+      "search_hits": 10,
+      "verified_kept": 4
+    },
+    {
+      "query": "DeepSeek 文献综述",
+      "query_name": "practice_deepseek_review",
+      "category": "practice",
+      "search_provider": "opencli_xiaohongshu",
+      "search_hits": 10,
+      "verified_kept": 5
+    },
+    {
+      "query": "Cursor 代码生成 科研",
+      "query_name": "practice_cursor_code",
+      "category": "practice",
+      "search_provider": "opencli_xiaohongshu",
+      "search_hits": 10,
+      "verified_kept": 4
+    }
+  ],
+  "formal_baseline_guard_counts": {
+    "paper_quality_v5_comments": 0,
+    "paper_quality_v5_posts": 514
+  },
+  "artifact_status": "xhs_expansion_candidate_v1",
+  "artifact_classification": {
+    "status": "xhs_expansion_candidate_v1",
+    "formal_evidence_chain": false,
+    "quality_v5_formal_scope": false,
+    "reason": "xhs_expansion_candidate_v1 outputs are exploratory artifacts. They are not imported into quality_v5 post-only formal results."
+  },
+  "quality_v5_formal_scope": false,
+  "formal_result_scope": false,
+  "post_output_path": "/Users/guoyufan/ai4s in xhs/outputs/tables/xhs_expansion_candidate_v1/posts.jsonl",
+  "comment_output_path": "/Users/guoyufan/ai4s in xhs/outputs/tables/xhs_expansion_candidate_v1/comments.jsonl",
+  "review_queue": {
+    "queue_path": "/Users/guoyufan/ai4s in xhs/data/interim/xhs_expansion_candidate_v1/review_queues/xhs_expansion_candidate_v1.jsonl",
+    "batch_size": 20,
+    "batch_count": 1,
+    "batches": [
+      {
+        "batch_index": 0,
+        "run_id": "xhs_expansion_candidate_v1_batch_00",
+        "row_count": 20,
+        "review_template_path": "/Users/guoyufan/ai4s in xhs/data/interim/xhs_expansion_candidate_v1/review_queues/xhs_expansion_candidate_v1.batch_00.review_template.jsonl"
+      }
+    ]
+  },
+  "limitations": [
+    "xhs_expansion_candidate_v1 artifacts are exploratory and require manual review before any formal use.",
+    "Comment sidecar rows are contextual capture attempts, not comment_review_v2 formal results."
+  ]
+}

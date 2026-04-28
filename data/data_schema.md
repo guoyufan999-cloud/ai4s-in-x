@@ -170,6 +170,13 @@
 - 评论接口：`vw_comments_paper_scope_quality_v5`
 - 用途：`quality_v5` staging 经 reviewed 导入后，用于重建正式图表、结果与投稿写作主接口；`quality_v4` 仅保留为审计快照
 
+### supplemental / candidate 扩展口径
+
+- 当前小红书补充样本候选集命名为 `xhs_expansion_candidate_v1`
+- 输出位置默认为 `outputs/tables/xhs_expansion_candidate_v1/`、`outputs/reports/review_v2/xhs_expansion_candidate_v1.summary.json` 与 `data/interim/xhs_expansion_candidate_v1/review_queues/`
+- 用途：扩宽后续分析数据库的候选材料来源；进入正式分析前必须经过人工筛选、去重和单独 reviewed / checkpoint 设计
+- 边界：不写入 `vw_posts_paper_scope_quality_v5`，不启动 `comment_review_v2`，不改变 `quality_v5` 正式帖子 / 正式评论 `514 / 0`
+
 ## 七、清洗与标准化规则
 
 1. 日期统一为 `YYYY-MM-DD`
