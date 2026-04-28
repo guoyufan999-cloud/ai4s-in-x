@@ -5,220 +5,311 @@
   "cross_tabs": {
     "workflow_stage_x_ai_intervention_mode": [
       {
-        "left_code": "A1.2",
-        "left_label": "文献调研与知识整合",
-        "right_code": "F1",
-        "right_label": "信息辅助",
-        "count": 30
-      },
-      {
         "left_code": "A1.9",
         "left_label": "学术写作与成果表达",
         "right_code": "F2",
         "right_label": "生成辅助",
-        "count": 29
+        "count": 58
+      },
+      {
+        "left_code": "A1.2",
+        "left_label": "文献调研与知识整合",
+        "right_code": "F1",
+        "right_label": "信息辅助",
+        "count": 56
+      },
+      {
+        "left_code": "A1.2",
+        "left_label": "文献调研与知识整合",
+        "right_code": "F4",
+        "right_label": "判断建议",
+        "count": 52
       },
       {
         "left_code": "A1.2",
         "left_label": "文献调研与知识整合",
         "right_code": "F2",
         "right_label": "生成辅助",
-        "count": 26
+        "count": 50
       },
       {
-        "left_code": "A1.2",
-        "left_label": "文献调研与知识整合",
+        "left_code": "A1.9",
+        "left_label": "学术写作与成果表达",
+        "right_code": "F4",
+        "right_label": "判断建议",
+        "count": 44
+      },
+      {
+        "left_code": "A3.2",
+        "left_label": "研究方法学习",
+        "right_code": "F4",
+        "right_label": "判断建议",
+        "count": 40
+      },
+      {
+        "left_code": "A1.9",
+        "left_label": "学术写作与成果表达",
+        "right_code": "F1",
+        "right_label": "信息辅助",
+        "count": 35
+      },
+      {
+        "left_code": "A3.2",
+        "left_label": "研究方法学习",
+        "right_code": "F2",
+        "right_label": "生成辅助",
+        "count": 35
+      },
+      {
+        "left_code": "A3.2",
+        "left_label": "研究方法学习",
+        "right_code": "F1",
+        "right_label": "信息辅助",
+        "count": 32
+      },
+      {
+        "left_code": "A1.1",
+        "left_label": "研究构思与问题定义",
+        "right_code": "F2",
+        "right_label": "生成辅助",
+        "count": 25
+      },
+      {
+        "left_code": "A1.1",
+        "left_label": "研究构思与问题定义",
         "right_code": "F4",
         "right_label": "判断建议",
         "count": 24
       },
       {
-        "left_code": "A1.9",
-        "left_label": "学术写作与成果表达",
-        "right_code": "F4",
-        "right_label": "判断建议",
-        "count": 22
-      },
-      {
-        "left_code": "A3.2",
-        "left_label": "研究方法学习",
-        "right_code": "F4",
-        "right_label": "判断建议",
-        "count": 20
-      },
-      {
-        "left_code": "A1.9",
-        "left_label": "学术写作与成果表达",
+        "left_code": "A1.1",
+        "left_label": "研究构思与问题定义",
         "right_code": "F1",
         "right_label": "信息辅助",
-        "count": 19
+        "count": 21
       },
       {
-        "left_code": "A3.2",
-        "left_label": "研究方法学习",
-        "right_code": "F1",
-        "right_label": "信息辅助",
-        "count": 16
-      },
-      {
-        "left_code": "A3.2",
-        "left_label": "研究方法学习",
+        "left_code": "A1.6",
+        "left_label": "数据处理与分析建模",
         "right_code": "F2",
         "right_label": "生成辅助",
-        "count": 16
+        "count": 21
+      },
+      {
+        "left_code": "A1.6",
+        "left_label": "数据处理与分析建模",
+        "right_code": "F4",
+        "right_label": "判断建议",
+        "count": 18
+      },
+      {
+        "left_code": "A1.9",
+        "left_label": "学术写作与成果表达",
+        "right_code": "F5",
+        "right_label": "自动执行",
+        "count": 18
+      },
+      {
+        "left_code": "A1.2",
+        "left_label": "文献调研与知识整合",
+        "right_code": "F5",
+        "right_label": "自动执行",
+        "count": 17
+      },
+      {
+        "left_code": "A1.6",
+        "left_label": "数据处理与分析建模",
+        "right_code": "F3",
+        "right_label": "分析建模",
+        "count": 17
       },
       {
         "left_code": "A1.10",
         "left_label": "发表与知识扩散",
         "right_code": "F2",
         "right_label": "生成辅助",
+        "count": 16
+      },
+      {
+        "left_code": "A1.6",
+        "left_label": "数据处理与分析建模",
+        "right_code": "F1",
+        "right_label": "信息辅助",
+        "count": 15
+      },
+      {
+        "left_code": "A1.10",
+        "left_label": "发表与知识扩散",
+        "right_code": "F4",
+        "right_label": "判断建议",
         "count": 13
       },
       {
-        "left_code": "A1.1",
-        "left_label": "研究构思与问题定义",
-        "right_code": "F2",
-        "right_label": "生成辅助",
-        "count": 12
-      },
-      {
-        "left_code": "A1.1",
-        "left_label": "研究构思与问题定义",
+        "left_code": "A3.3",
+        "left_label": "科研工具与技术技能训练",
         "right_code": "F4",
         "right_label": "判断建议",
+        "count": 13
+      },
+      {
+        "left_code": "A1.2",
+        "left_label": "文献调研与知识整合",
+        "right_code": "F3",
+        "right_label": "分析建模",
         "count": 12
       },
       {
-        "left_code": "A1.1",
-        "left_label": "研究构思与问题定义",
+        "left_code": "A3.3",
+        "left_label": "科研工具与技术技能训练",
         "right_code": "F1",
         "right_label": "信息辅助",
         "count": 11
       },
       {
-        "left_code": "A1.10",
-        "left_label": "发表与知识扩散",
-        "right_code": "F4",
-        "right_label": "判断建议",
-        "count": 11
+        "left_code": "A1.3",
+        "left_label": "研究设计与方案制定",
+        "right_code": "F2",
+        "right_label": "生成辅助",
+        "count": 10
       },
       {
         "left_code": "A1.9",
         "left_label": "学术写作与成果表达",
+        "right_code": "F3",
+        "right_label": "分析建模",
+        "count": 10
+      },
+      {
+        "left_code": "A3.3",
+        "left_label": "科研工具与技术技能训练",
+        "right_code": "F2",
+        "right_label": "生成辅助",
+        "count": 10
+      },
+      {
+        "left_code": "A1.1",
+        "left_label": "研究构思与问题定义",
         "right_code": "F5",
         "right_label": "自动执行",
         "count": 9
       },
       {
-        "left_code": "A1.6",
-        "left_label": "数据处理与分析建模",
+        "left_code": "A1.4",
+        "left_label": "数据获取",
         "right_code": "F1",
         "right_label": "信息辅助",
-        "count": 8
-      },
-      {
-        "left_code": "A1.6",
-        "left_label": "数据处理与分析建模",
-        "right_code": "F4",
-        "right_label": "判断建议",
-        "count": 8
-      },
-      {
-        "left_code": "A1.2",
-        "left_label": "文献调研与知识整合",
-        "right_code": "F5",
-        "right_label": "自动执行",
-        "count": 7
-      },
-      {
-        "left_code": "A1.6",
-        "left_label": "数据处理与分析建模",
-        "right_code": "F2",
-        "right_label": "生成辅助",
-        "count": 7
+        "count": 9
       },
       {
         "left_code": "A1.10",
         "left_label": "发表与知识扩散",
         "right_code": "F1",
         "right_label": "信息辅助",
-        "count": 6
-      },
-      {
-        "left_code": "A1.3",
-        "left_label": "研究设计与方案制定",
-        "right_code": "F2",
-        "right_label": "生成辅助",
-        "count": 6
-      },
-      {
-        "left_code": "A1.6",
-        "left_label": "数据处理与分析建模",
-        "right_code": "F3",
-        "right_label": "分析建模",
-        "count": 6
+        "count": 8
       },
       {
         "left_code": "A1.3",
         "left_label": "研究设计与方案制定",
         "right_code": "F1",
         "right_label": "信息辅助",
-        "count": 5
+        "count": 8
       },
       {
         "left_code": "A1.3",
         "left_label": "研究设计与方案制定",
         "right_code": "F4",
         "right_label": "判断建议",
-        "count": 5
-      },
-      {
-        "left_code": "A1.4",
-        "left_label": "数据获取",
-        "right_code": "F1",
-        "right_label": "信息辅助",
-        "count": 5
-      },
-      {
-        "left_code": "A2.7",
-        "left_label": "出版与评审治理",
-        "right_code": "F2",
-        "right_label": "生成辅助",
-        "count": 5
-      },
-      {
-        "left_code": "A1.1",
-        "left_label": "研究构思与问题定义",
-        "right_code": "F5",
-        "right_label": "自动执行",
-        "count": 4
-      },
-      {
-        "left_code": "A1.2",
-        "left_label": "文献调研与知识整合",
-        "right_code": "F3",
-        "right_label": "分析建模",
-        "count": 4
-      },
-      {
-        "left_code": "A1.4",
-        "left_label": "数据获取",
-        "right_code": "F2",
-        "right_label": "生成辅助",
-        "count": 4
-      },
-      {
-        "left_code": "A2.7",
-        "left_label": "出版与评审治理",
-        "right_code": "F4",
-        "right_label": "判断建议",
-        "count": 4
+        "count": 8
       },
       {
         "left_code": "A3.2",
         "left_label": "研究方法学习",
         "right_code": "F3",
         "right_label": "分析建模",
+        "count": 8
+      },
+      {
+        "left_code": "A3.2",
+        "left_label": "研究方法学习",
+        "right_code": "F5",
+        "right_label": "自动执行",
+        "count": 8
+      },
+      {
+        "left_code": "A1.4",
+        "left_label": "数据获取",
+        "right_code": "F4",
+        "right_label": "判断建议",
+        "count": 7
+      },
+      {
+        "left_code": "A1.4",
+        "left_label": "数据获取",
+        "right_code": "F2",
+        "right_label": "生成辅助",
+        "count": 6
+      },
+      {
+        "left_code": "A2.7",
+        "left_label": "出版与评审治理",
+        "right_code": "F2",
+        "right_label": "生成辅助",
+        "count": 6
+      },
+      {
+        "left_code": "A1.1",
+        "left_label": "研究构思与问题定义",
+        "right_code": "F3",
+        "right_label": "分析建模",
+        "count": 5
+      },
+      {
+        "left_code": "A1.3",
+        "left_label": "研究设计与方案制定",
+        "right_code": "F5",
+        "right_label": "自动执行",
+        "count": 5
+      },
+      {
+        "left_code": "A1.6",
+        "left_label": "数据处理与分析建模",
+        "right_code": "F5",
+        "right_label": "自动执行",
+        "count": 5
+      },
+      {
+        "left_code": "A2.4",
+        "left_label": "数据治理与知识资产管理",
+        "right_code": "F1",
+        "right_label": "信息辅助",
+        "count": 5
+      },
+      {
+        "left_code": "A2.4",
+        "left_label": "数据治理与知识资产管理",
+        "right_code": "F4",
+        "right_label": "判断建议",
+        "count": 5
+      },
+      {
+        "left_code": "A2.7",
+        "left_label": "出版与评审治理",
+        "right_code": "F4",
+        "right_label": "判断建议",
+        "count": 5
+      },
+      {
+        "left_code": "A1.4",
+        "left_label": "数据获取",
+        "right_code": "F5",
+        "right_label": "自动执行",
+        "count": 4
+      },
+      {
+        "left_code": "A2.4",
+        "left_label": "数据治理与知识资产管理",
+        "right_code": "F2",
+        "right_label": "生成辅助",
         "count": 4
       },
       {
@@ -229,136 +320,136 @@
         "count": 3
       },
       {
-        "left_code": "A1.4",
-        "left_label": "数据获取",
-        "right_code": "F4",
-        "right_label": "判断建议",
+        "left_code": "A2.7",
+        "left_label": "出版与评审治理",
+        "right_code": "F6",
+        "right_label": "治理监督",
         "count": 3
+      },
+      {
+        "left_code": "A1.10",
+        "left_label": "发表与知识扩散",
+        "right_code": "F3",
+        "right_label": "分析建模",
+        "count": 2
+      },
+      {
+        "left_code": "A1.10",
+        "left_label": "发表与知识扩散",
+        "right_code": "F6",
+        "right_label": "治理监督",
+        "count": 2
+      },
+      {
+        "left_code": "A1.3",
+        "left_label": "研究设计与方案制定",
+        "right_code": "F3",
+        "right_label": "分析建模",
+        "count": 2
       },
       {
         "left_code": "A1.4",
         "left_label": "数据获取",
-        "right_code": "F5",
-        "right_label": "自动执行",
-        "count": 3
+        "right_code": "F3",
+        "right_label": "分析建模",
+        "count": 2
+      },
+      {
+        "left_code": "A1.6",
+        "left_label": "数据处理与分析建模",
+        "right_code": "F6",
+        "right_label": "治理监督",
+        "count": 2
       },
       {
         "left_code": "A1.9",
         "left_label": "学术写作与成果表达",
-        "right_code": "F3",
-        "right_label": "分析建模",
-        "count": 3
+        "right_code": "F6",
+        "right_label": "治理监督",
+        "count": 2
+      },
+      {
+        "left_code": "A2.7",
+        "left_label": "出版与评审治理",
+        "right_code": "F5",
+        "right_label": "自动执行",
+        "count": 2
       },
       {
         "left_code": "A3.2",
         "left_label": "研究方法学习",
-        "right_code": "F5",
-        "right_label": "自动执行",
-        "count": 3
+        "right_code": "F6",
+        "right_label": "治理监督",
+        "count": 2
       },
       {
         "left_code": "A3.3",
         "left_label": "科研工具与技术技能训练",
-        "right_code": "F1",
-        "right_label": "信息辅助",
-        "count": 3
+        "right_code": "F3",
+        "right_label": "分析建模",
+        "count": 2
+      },
+      {
+        "left_code": "A3.3",
+        "left_label": "科研工具与技术技能训练",
+        "right_code": "F5",
+        "right_label": "自动执行",
+        "count": 2
       },
       {
         "left_code": "A1.1",
         "left_label": "研究构思与问题定义",
-        "right_code": "F3",
-        "right_label": "分析建模",
-        "count": 2
-      },
-      {
-        "left_code": "A1.10",
-        "left_label": "发表与知识扩散",
         "right_code": "F6",
         "right_label": "治理监督",
-        "count": 2
+        "count": 1
       },
       {
-        "left_code": "A1.6",
-        "left_label": "数据处理与分析建模",
-        "right_code": "F5",
-        "right_label": "自动执行",
-        "count": 2
-      },
-      {
-        "left_code": "A2.7",
-        "left_label": "出版与评审治理",
-        "right_code": "F5",
-        "right_label": "自动执行",
-        "count": 2
-      },
-      {
-        "left_code": "A2.7",
-        "left_label": "出版与评审治理",
+        "left_code": "A1.3",
+        "left_label": "研究设计与方案制定",
         "right_code": "F6",
         "right_label": "治理监督",
-        "count": 2
+        "count": 1
       },
       {
-        "left_code": "A3.3",
-        "left_label": "科研工具与技术技能训练",
+        "left_code": "A1.8",
+        "left_label": "结果解释与理论提炼",
         "right_code": "F2",
         "right_label": "生成辅助",
-        "count": 2
+        "count": 1
       },
       {
-        "left_code": "A3.3",
-        "left_label": "科研工具与技术技能训练",
+        "left_code": "A1.8",
+        "left_label": "结果解释与理论提炼",
         "right_code": "F4",
         "right_label": "判断建议",
-        "count": 2
-      },
-      {
-        "left_code": "A1.3",
-        "left_label": "研究设计与方案制定",
-        "right_code": "F3",
-        "right_label": "分析建模",
         "count": 1
       },
       {
-        "left_code": "A1.3",
-        "left_label": "研究设计与方案制定",
-        "right_code": "F5",
-        "right_label": "自动执行",
-        "count": 1
-      },
-      {
-        "left_code": "A1.4",
-        "left_label": "数据获取",
-        "right_code": "F3",
-        "right_label": "分析建模",
+        "left_code": "A1.8",
+        "left_label": "结果解释与理论提炼",
+        "right_code": "F6",
+        "right_label": "治理监督",
         "count": 1
       },
       {
         "left_code": "A2.4",
         "left_label": "数据治理与知识资产管理",
+        "right_code": "F3",
+        "right_label": "分析建模",
+        "count": 1
+      },
+      {
+        "left_code": "A2.7",
+        "left_label": "出版与评审治理",
         "right_code": "F1",
         "right_label": "信息辅助",
         "count": 1
       },
       {
-        "left_code": "A2.4",
-        "left_label": "数据治理与知识资产管理",
-        "right_code": "F2",
-        "right_label": "生成辅助",
-        "count": 1
-      },
-      {
-        "left_code": "A2.4",
-        "left_label": "数据治理与知识资产管理",
-        "right_code": "F4",
-        "right_label": "判断建议",
-        "count": 1
-      },
-      {
-        "left_code": "A3.2",
-        "left_label": "研究方法学习",
-        "right_code": "F6",
-        "right_label": "治理监督",
+        "left_code": "A2.7",
+        "left_label": "出版与评审治理",
+        "right_code": "F3",
+        "right_label": "分析建模",
         "count": 1
       }
     ],
@@ -368,321 +459,419 @@
         "left_label": "判断建议",
         "right_code": "C2",
         "right_label": "能力补充",
-        "count": 27
+        "count": 58
       },
       {
         "left_code": "F2",
         "left_label": "生成辅助",
         "right_code": "C2",
         "right_label": "能力补充",
-        "count": 26
+        "count": 57
       },
       {
         "left_code": "F1",
         "left_label": "信息辅助",
         "right_code": "C2",
         "right_label": "能力补充",
-        "count": 24
+        "count": 49
       },
       {
         "left_code": "F4",
         "left_label": "判断建议",
         "right_code": "C1",
         "right_label": "效率提升",
-        "count": 23
+        "count": 48
       },
       {
         "left_code": "F1",
         "left_label": "信息辅助",
         "right_code": "C1",
         "right_label": "效率提升",
-        "count": 22
+        "count": 44
       },
       {
-        "left_code": "F2",
-        "left_label": "生成辅助",
-        "right_code": "C1",
-        "right_label": "效率提升",
-        "count": 22
+        "left_code": "F4",
+        "left_label": "判断建议",
+        "right_code": "C7",
+        "right_label": "人机分工",
+        "count": 44
       },
       {
         "left_code": "F2",
         "left_label": "生成辅助",
         "right_code": "C7",
         "right_label": "人机分工",
+        "count": 43
+      },
+      {
+        "left_code": "F2",
+        "left_label": "生成辅助",
+        "right_code": "C1",
+        "right_label": "效率提升",
+        "count": 42
+      },
+      {
+        "left_code": "F1",
+        "left_label": "信息辅助",
+        "right_code": "C7",
+        "right_label": "人机分工",
+        "count": 36
+      },
+      {
+        "left_code": "F2",
+        "left_label": "生成辅助",
+        "right_code": "C5",
+        "right_label": "规范适配",
+        "count": 32
+      },
+      {
+        "left_code": "F4",
+        "left_label": "判断建议",
+        "right_code": "C8",
+        "right_label": "可靠性与可验证性",
+        "count": 31
+      },
+      {
+        "left_code": "F1",
+        "left_label": "信息辅助",
+        "right_code": "C8",
+        "right_label": "可靠性与可验证性",
+        "count": 28
+      },
+      {
+        "left_code": "F4",
+        "left_label": "判断建议",
+        "right_code": "C5",
+        "right_label": "规范适配",
+        "count": 25
+      },
+      {
+        "left_code": "F1",
+        "left_label": "信息辅助",
+        "right_code": "C5",
+        "right_label": "规范适配",
+        "count": 24
+      },
+      {
+        "left_code": "F2",
+        "left_label": "生成辅助",
+        "right_code": "C6",
+        "right_label": "学术诚信",
+        "count": 22
+      },
+      {
+        "left_code": "F2",
+        "left_label": "生成辅助",
+        "right_code": "C8",
+        "right_label": "可靠性与可验证性",
+        "count": 21
+      },
+      {
+        "left_code": "F2",
+        "left_label": "生成辅助",
+        "right_code": "C4",
+        "right_label": "原创性",
         "count": 20
       },
       {
         "left_code": "F4",
         "left_label": "判断建议",
-        "right_code": "C7",
-        "right_label": "人机分工",
+        "right_code": "C4",
+        "right_label": "原创性",
         "count": 18
+      },
+      {
+        "left_code": "F5",
+        "left_label": "自动执行",
+        "right_code": "C2",
+        "right_label": "能力补充",
+        "count": 17
       },
       {
         "left_code": "F1",
         "left_label": "信息辅助",
-        "right_code": "C7",
-        "right_label": "人机分工",
+        "right_code": "C4",
+        "right_label": "原创性",
+        "count": 15
+      },
+      {
+        "left_code": "F3",
+        "left_label": "分析建模",
+        "right_code": "C2",
+        "right_label": "能力补充",
         "count": 15
       },
       {
         "left_code": "F1",
         "left_label": "信息辅助",
-        "right_code": "C8",
-        "right_label": "可靠性与可验证性",
-        "count": 14
-      },
-      {
-        "left_code": "F2",
-        "left_label": "生成辅助",
-        "right_code": "C5",
-        "right_label": "规范适配",
-        "count": 14
-      },
-      {
-        "left_code": "F2",
-        "left_label": "生成辅助",
         "right_code": "C6",
         "right_label": "学术诚信",
         "count": 14
       },
       {
-        "left_code": "F4",
-        "left_label": "判断建议",
-        "right_code": "C8",
-        "right_label": "可靠性与可验证性",
+        "left_code": "F5",
+        "left_label": "自动执行",
+        "right_code": "C6",
+        "right_label": "学术诚信",
         "count": 14
       },
       {
-        "left_code": "F1",
-        "left_label": "信息辅助",
-        "right_code": "C5",
-        "right_label": "规范适配",
+        "left_code": "F5",
+        "left_label": "自动执行",
+        "right_code": "C7",
+        "right_label": "人机分工",
         "count": 13
+      },
+      {
+        "left_code": "F3",
+        "left_label": "分析建模",
+        "right_code": "C7",
+        "right_label": "人机分工",
+        "count": 12
       },
       {
         "left_code": "F4",
         "left_label": "判断建议",
-        "right_code": "C5",
-        "right_label": "规范适配",
-        "count": 12
-      },
-      {
-        "left_code": "F2",
-        "left_label": "生成辅助",
-        "right_code": "C8",
-        "right_label": "可靠性与可验证性",
+        "right_code": "C10",
+        "right_label": "训练价值",
         "count": 11
       },
       {
         "left_code": "F4",
         "left_label": "判断建议",
-        "right_code": "C4",
-        "right_label": "原创性",
+        "right_code": "C6",
+        "right_label": "学术诚信",
+        "count": 11
+      },
+      {
+        "left_code": "F5",
+        "left_label": "自动执行",
+        "right_code": "C1",
+        "right_label": "效率提升",
         "count": 10
       },
       {
-        "left_code": "F1",
-        "left_label": "信息辅助",
-        "right_code": "C4",
-        "right_label": "原创性",
-        "count": 9
-      },
-      {
-        "left_code": "F1",
-        "left_label": "信息辅助",
-        "right_code": "C6",
-        "right_label": "学术诚信",
-        "count": 9
-      },
-      {
-        "left_code": "F2",
-        "left_label": "生成辅助",
-        "right_code": "C4",
-        "right_label": "原创性",
-        "count": 8
-      },
-      {
-        "left_code": "F5",
-        "left_label": "自动执行",
-        "right_code": "C2",
-        "right_label": "能力补充",
-        "count": 7
-      },
-      {
-        "left_code": "F5",
-        "left_label": "自动执行",
-        "right_code": "C6",
-        "right_label": "学术诚信",
-        "count": 7
-      },
-      {
-        "left_code": "F4",
-        "left_label": "判断建议",
-        "right_code": "C10",
-        "right_label": "训练价值",
-        "count": 6
-      },
-      {
-        "left_code": "F4",
-        "left_label": "判断建议",
-        "right_code": "C6",
-        "right_label": "学术诚信",
-        "count": 6
-      },
-      {
-        "left_code": "F5",
-        "left_label": "自动执行",
-        "right_code": "C7",
-        "right_label": "人机分工",
-        "count": 6
-      },
-      {
         "left_code": "F3",
         "left_label": "分析建模",
-        "right_code": "C2",
-        "right_label": "能力补充",
-        "count": 5
+        "right_code": "C1",
+        "right_label": "效率提升",
+        "count": 9
       },
       {
         "left_code": "F3",
         "left_label": "分析建模",
         "right_code": "C5",
         "right_label": "规范适配",
+        "count": 9
+      },
+      {
+        "left_code": "F5",
+        "left_label": "自动执行",
+        "right_code": "C5",
+        "right_label": "规范适配",
+        "count": 9
+      },
+      {
+        "left_code": "F1",
+        "left_label": "信息辅助",
+        "right_code": "C10",
+        "right_label": "训练价值",
+        "count": 7
+      },
+      {
+        "left_code": "F2",
+        "left_label": "生成辅助",
+        "right_code": "C14",
+        "right_label": "专业判断",
+        "count": 7
+      },
+      {
+        "left_code": "F4",
+        "left_label": "判断建议",
+        "right_code": "C14",
+        "right_label": "专业判断",
+        "count": 7
+      },
+      {
+        "left_code": "F5",
+        "left_label": "自动执行",
+        "right_code": "C8",
+        "right_label": "可靠性与可验证性",
+        "count": 7
+      },
+      {
+        "left_code": "F5",
+        "left_label": "自动执行",
+        "right_code": "C4",
+        "right_label": "原创性",
+        "count": 6
+      },
+      {
+        "left_code": "F1",
+        "left_label": "信息辅助",
+        "right_code": "C14",
+        "right_label": "专业判断",
         "count": 5
       },
       {
         "left_code": "F3",
         "left_label": "分析建模",
-        "right_code": "C7",
-        "right_label": "人机分工",
+        "right_code": "C8",
+        "right_label": "可靠性与可验证性",
+        "count": 5
+      },
+      {
+        "left_code": "F4",
+        "left_label": "判断建议",
+        "right_code": "C12",
+        "right_label": "贡献归属",
+        "count": 5
+      },
+      {
+        "left_code": "F1",
+        "left_label": "信息辅助",
+        "right_code": "C12",
+        "right_label": "贡献归属",
         "count": 4
       },
       {
-        "left_code": "F1",
-        "left_label": "信息辅助",
-        "right_code": "C10",
-        "right_label": "训练价值",
-        "count": 3
-      },
-      {
         "left_code": "F2",
         "left_label": "生成辅助",
-        "right_code": "C12",
-        "right_label": "贡献归属",
-        "count": 3
-      },
-      {
-        "left_code": "F2",
-        "left_label": "生成辅助",
-        "right_code": "C14",
-        "right_label": "专业判断",
-        "count": 3
-      },
-      {
-        "left_code": "F3",
-        "left_label": "分析建模",
-        "right_code": "C1",
-        "right_label": "效率提升",
-        "count": 3
-      },
-      {
-        "left_code": "F3",
-        "left_label": "分析建模",
         "right_code": "C10",
         "right_label": "训练价值",
-        "count": 3
-      },
-      {
-        "left_code": "F5",
-        "left_label": "自动执行",
-        "right_code": "C1",
-        "right_label": "效率提升",
-        "count": 3
+        "count": 4
       },
       {
         "left_code": "F2",
         "left_label": "生成辅助",
         "right_code": "C11",
         "right_label": "披露要求",
-        "count": 2
+        "count": 4
+      },
+      {
+        "left_code": "F2",
+        "left_label": "生成辅助",
+        "right_code": "C12",
+        "right_label": "贡献归属",
+        "count": 4
+      },
+      {
+        "left_code": "F3",
+        "left_label": "分析建模",
+        "right_code": "C10",
+        "right_label": "训练价值",
+        "count": 4
       },
       {
         "left_code": "F3",
         "left_label": "分析建模",
         "right_code": "C4",
         "right_label": "原创性",
-        "count": 2
+        "count": 4
       },
       {
         "left_code": "F3",
         "left_label": "分析建模",
         "right_code": "C6",
         "right_label": "学术诚信",
-        "count": 2
+        "count": 4
       },
       {
-        "left_code": "F4",
-        "left_label": "判断建议",
+        "left_code": "F5",
+        "left_label": "自动执行",
         "right_code": "C12",
         "right_label": "贡献归属",
-        "count": 2
+        "count": 4
       },
       {
-        "left_code": "F4",
-        "left_label": "判断建议",
+        "left_code": "F6",
+        "left_label": "治理监督",
+        "right_code": "C2",
+        "right_label": "能力补充",
+        "count": 4
+      },
+      {
+        "left_code": "F3",
+        "left_label": "分析建模",
         "right_code": "C14",
         "right_label": "专业判断",
-        "count": 2
+        "count": 3
       },
       {
-        "left_code": "F5",
-        "left_label": "自动执行",
-        "right_code": "C12",
-        "right_label": "贡献归属",
-        "count": 2
-      },
-      {
-        "left_code": "F5",
-        "left_label": "自动执行",
+        "left_code": "F6",
+        "left_label": "治理监督",
         "right_code": "C5",
         "right_label": "规范适配",
-        "count": 2
+        "count": 3
+      },
+      {
+        "left_code": "F6",
+        "left_label": "治理监督",
+        "right_code": "C6",
+        "right_label": "学术诚信",
+        "count": 3
       },
       {
         "left_code": "F5",
         "left_label": "自动执行",
-        "right_code": "C8",
-        "right_label": "可靠性与可验证性",
+        "right_code": "C11",
+        "right_label": "披露要求",
+        "count": 2
+      },
+      {
+        "left_code": "F6",
+        "left_label": "治理监督",
+        "right_code": "C4",
+        "right_label": "原创性",
+        "count": 2
+      },
+      {
+        "left_code": "F6",
+        "left_label": "治理监督",
+        "right_code": "C7",
+        "right_label": "人机分工",
         "count": 2
       },
       {
         "left_code": "F1",
         "left_label": "信息辅助",
-        "right_code": "C12",
-        "right_label": "贡献归属",
-        "count": 1
-      },
-      {
-        "left_code": "F1",
-        "left_label": "信息辅助",
-        "right_code": "C14",
-        "right_label": "专业判断",
+        "right_code": "C3",
+        "right_label": "责任归属",
         "count": 1
       },
       {
         "left_code": "F2",
         "left_label": "生成辅助",
-        "right_code": "C10",
-        "right_label": "训练价值",
+        "right_code": "C13",
+        "right_label": "数据合规",
+        "count": 1
+      },
+      {
+        "left_code": "F2",
+        "left_label": "生成辅助",
+        "right_code": "C3",
+        "right_label": "责任归属",
         "count": 1
       },
       {
         "left_code": "F3",
         "left_label": "分析建模",
-        "right_code": "C8",
-        "right_label": "可靠性与可验证性",
+        "right_code": "C12",
+        "right_label": "贡献归属",
+        "count": 1
+      },
+      {
+        "left_code": "F3",
+        "left_label": "分析建模",
+        "right_code": "C13",
+        "right_label": "数据合规",
+        "count": 1
+      },
+      {
+        "left_code": "F4",
+        "left_label": "判断建议",
+        "right_code": "C3",
+        "right_label": "责任归属",
         "count": 1
       },
       {
@@ -695,6 +884,27 @@
       {
         "left_code": "F5",
         "left_label": "自动执行",
+        "right_code": "C13",
+        "right_label": "数据合规",
+        "count": 1
+      },
+      {
+        "left_code": "F5",
+        "left_label": "自动执行",
+        "right_code": "C14",
+        "right_label": "专业判断",
+        "count": 1
+      },
+      {
+        "left_code": "F6",
+        "left_label": "治理监督",
+        "right_code": "C1",
+        "right_label": "效率提升",
+        "count": 1
+      },
+      {
+        "left_code": "F6",
+        "left_label": "治理监督",
         "right_code": "C11",
         "right_label": "披露要求",
         "count": 1
@@ -702,22 +912,15 @@
       {
         "left_code": "F6",
         "left_label": "治理监督",
-        "right_code": "C2",
-        "right_label": "能力补充",
+        "right_code": "C14",
+        "right_label": "专业判断",
         "count": 1
       },
       {
         "left_code": "F6",
         "left_label": "治理监督",
-        "right_code": "C6",
-        "right_label": "学术诚信",
-        "count": 1
-      },
-      {
-        "left_code": "F6",
-        "left_label": "治理监督",
-        "right_code": "C7",
-        "right_label": "人机分工",
+        "right_code": "C3",
+        "right_label": "责任归属",
         "count": 1
       }
     ],
@@ -727,63 +930,70 @@
         "left_label": "中强度共创",
         "right_code": "B2",
         "right_label": "有条件接受",
-        "count": 13
+        "count": 24
       },
       {
         "left_code": "G2",
         "left_label": "中强度共创",
         "right_code": "B4",
         "right_label": "混合/冲突性评价",
-        "count": 10
+        "count": 20
       },
       {
         "left_code": "G3",
         "left_label": "高强度替代",
         "right_code": "B4",
         "right_label": "混合/冲突性评价",
-        "count": 8
+        "count": 17
+      },
+      {
+        "left_code": "G1",
+        "left_label": "低强度辅助",
+        "right_code": "B2",
+        "right_label": "有条件接受",
+        "count": 9
+      },
+      {
+        "left_code": "G1",
+        "left_label": "低强度辅助",
+        "right_code": "B4",
+        "right_label": "混合/冲突性评价",
+        "count": 6
+      },
+      {
+        "left_code": "G3",
+        "left_label": "高强度替代",
+        "right_code": "B2",
+        "right_label": "有条件接受",
+        "count": 6
       },
       {
         "left_code": "G1",
         "left_label": "低强度辅助",
         "right_code": "B1",
         "right_label": "正面接受/正当化",
-        "count": 4
+        "count": 5
+      },
+      {
+        "left_code": "G2",
+        "left_label": "中强度共创",
+        "right_code": "B1",
+        "right_label": "正面接受/正当化",
+        "count": 5
       },
       {
         "left_code": "G3",
         "left_label": "高强度替代",
         "right_code": "B3",
         "right_label": "质疑/否定",
-        "count": 4
-      },
-      {
-        "left_code": "G1",
-        "left_label": "低强度辅助",
-        "right_code": "B2",
-        "right_label": "有条件接受",
-        "count": 3
-      },
-      {
-        "left_code": "G1",
-        "left_label": "低强度辅助",
-        "right_code": "B4",
-        "right_label": "混合/冲突性评价",
-        "count": 2
+        "count": 5
       },
       {
         "left_code": "G2",
         "left_label": "中强度共创",
-        "right_code": "B1",
-        "right_label": "正面接受/正当化",
-        "count": 2
-      },
-      {
-        "left_code": "G3",
-        "left_label": "高强度替代",
-        "right_code": "B2",
-        "right_label": "有条件接受",
-        "count": 2
+        "right_code": "B0",
+        "right_label": "未表达评价",
+        "count": 1
       },
       {
         "left_code": "G2",
@@ -797,6 +1007,13 @@
         "left_label": "高强度替代",
         "right_code": "B0",
         "right_label": "未表达评价",
+        "count": 1
+      },
+      {
+        "left_code": "G3",
+        "left_label": "高强度替代",
+        "right_code": "B1",
+        "right_label": "正面接受/正当化",
         "count": 1
       }
     ],
@@ -1550,70 +1767,98 @@
         "left_label": "便利性 vs 可靠性",
         "right_code": "J1",
         "right_label": "条件化机制",
-        "count": 10
+        "count": 31
+      },
+      {
+        "left_code": "H4",
+        "left_label": "技术可用性 vs 规范不确定性",
+        "right_code": "J4",
+        "right_label": "风险化机制",
+        "count": 19
       },
       {
         "left_code": "H3",
         "left_label": "便利性 vs 可靠性",
         "right_code": "J4",
         "right_label": "风险化机制",
-        "count": 10
+        "count": 18
+      },
+      {
+        "left_code": "H5",
+        "left_label": "人机共创 vs 责任归属",
+        "right_code": "J4",
+        "right_label": "风险化机制",
+        "count": 17
+      },
+      {
+        "left_code": "H2",
+        "left_label": "能力补充 vs 能力替代",
+        "right_code": "J1",
+        "right_label": "条件化机制",
+        "count": 13
       },
       {
         "left_code": "H4",
         "left_label": "技术可用性 vs 规范不确定性",
         "right_code": "J3",
         "right_label": "规范化机制",
+        "count": 13
+      },
+      {
+        "left_code": "H5",
+        "left_label": "人机共创 vs 责任归属",
+        "right_code": "J1",
+        "right_label": "条件化机制",
+        "count": 13
+      },
+      {
+        "left_code": "H2",
+        "left_label": "能力补充 vs 能力替代",
+        "right_code": "J2",
+        "right_label": "责任化机制",
+        "count": 10
+      },
+      {
+        "left_code": "H4",
+        "left_label": "技术可用性 vs 规范不确定性",
+        "right_code": "J1",
+        "right_label": "条件化机制",
+        "count": 10
+      },
+      {
+        "left_code": "H5",
+        "left_label": "人机共创 vs 责任归属",
+        "right_code": "J2",
+        "right_label": "责任化机制",
+        "count": 10
+      },
+      {
+        "left_code": "H1",
+        "left_label": "效率提升 vs 原创性",
+        "right_code": "J1",
+        "right_label": "条件化机制",
         "count": 9
       },
       {
         "left_code": "H2",
         "left_label": "能力补充 vs 能力替代",
-        "right_code": "J2",
-        "right_label": "责任化机制",
-        "count": 8
-      },
-      {
-        "left_code": "H4",
-        "left_label": "技术可用性 vs 规范不确定性",
         "right_code": "J4",
         "right_label": "风险化机制",
-        "count": 8
+        "count": 9
       },
       {
-        "left_code": "H2",
-        "left_label": "能力补充 vs 能力替代",
-        "right_code": "J1",
-        "right_label": "条件化机制",
-        "count": 6
-      },
-      {
-        "left_code": "H5",
-        "left_label": "人机共创 vs 责任归属",
-        "right_code": "J1",
-        "right_label": "条件化机制",
-        "count": 6
-      },
-      {
-        "left_code": "H5",
-        "left_label": "人机共创 vs 责任归属",
+        "left_code": "H3",
+        "left_label": "便利性 vs 可靠性",
         "right_code": "J2",
         "right_label": "责任化机制",
-        "count": 6
+        "count": 9
       },
       {
         "left_code": "H5",
         "left_label": "人机共创 vs 责任归属",
-        "right_code": "J4",
-        "right_label": "风险化机制",
+        "right_code": "J3",
+        "right_label": "规范化机制",
         "count": 6
-      },
-      {
-        "left_code": "H1",
-        "left_label": "效率提升 vs 原创性",
-        "right_code": "J1",
-        "right_label": "条件化机制",
-        "count": 5
       },
       {
         "left_code": "H3",
@@ -1623,53 +1868,46 @@
         "count": 5
       },
       {
-        "left_code": "H2",
-        "left_label": "能力补充 vs 能力替代",
-        "right_code": "J4",
-        "right_label": "风险化机制",
+        "left_code": "H1",
+        "left_label": "效率提升 vs 原创性",
+        "right_code": "J3",
+        "right_label": "规范化机制",
         "count": 4
       },
       {
         "left_code": "H1",
         "left_label": "效率提升 vs 原创性",
-        "right_code": "J3",
-        "right_label": "规范化机制",
+        "right_code": "J2",
+        "right_label": "责任化机制",
         "count": 3
       },
       {
         "left_code": "H4",
         "left_label": "技术可用性 vs 规范不确定性",
-        "right_code": "J1",
-        "right_label": "条件化机制",
+        "right_code": "J2",
+        "right_label": "责任化机制",
         "count": 3
       },
       {
-        "left_code": "H5",
-        "left_label": "人机共创 vs 责任归属",
+        "left_code": "H6",
+        "left_label": "自动化治理 vs 公平透明",
         "right_code": "J3",
         "right_label": "规范化机制",
         "count": 3
       },
       {
-        "left_code": "H1",
-        "left_label": "效率提升 vs 原创性",
-        "right_code": "J2",
-        "right_label": "责任化机制",
-        "count": 2
-      },
-      {
-        "left_code": "H3",
-        "left_label": "便利性 vs 可靠性",
-        "right_code": "J2",
-        "right_label": "责任化机制",
-        "count": 2
+        "left_code": "H6",
+        "left_label": "自动化治理 vs 公平透明",
+        "right_code": "J4",
+        "right_label": "风险化机制",
+        "count": 3
       },
       {
         "left_code": "H1",
         "left_label": "效率提升 vs 原创性",
         "right_code": "J4",
         "right_label": "风险化机制",
-        "count": 1
+        "count": 2
       },
       {
         "left_code": "H2",
@@ -1677,99 +1915,141 @@
         "right_code": "J3",
         "right_label": "规范化机制",
         "count": 1
-      },
-      {
-        "left_code": "H6",
-        "left_label": "自动化治理 vs 公平透明",
-        "right_code": "J3",
-        "right_label": "规范化机制",
-        "count": 1
-      },
-      {
-        "left_code": "H6",
-        "left_label": "自动化治理 vs 公平透明",
-        "right_code": "J4",
-        "right_label": "风险化机制",
-        "count": 1
       }
     ],
     "formal_norm_reference_x_boundary_type": [
       {
-        "left_code": "I7",
-        "left_label": "科研诚信规则",
-        "right_code": "D1.5",
-        "right_label": "学术诚信边界",
-        "count": 13
+        "left_code": "I0",
+        "left_label": "未明确参照",
+        "right_code": "D1.2",
+        "right_label": "人机分工边界",
+        "count": 35
       },
       {
         "left_code": "I0",
         "left_label": "未明确参照",
         "right_code": "D1.1",
         "right_label": "辅助与替代边界",
-        "count": 12
+        "count": 29
       },
       {
         "left_code": "I0",
         "left_label": "未明确参照",
         "right_code": "D1.10",
         "right_label": "验证/复核边界",
-        "count": 11
-      },
-      {
-        "left_code": "I0",
-        "left_label": "未明确参照",
-        "right_code": "D1.2",
-        "right_label": "人机分工边界",
-        "count": 11
+        "count": 28
       },
       {
         "left_code": "I7",
         "left_label": "科研诚信规则",
-        "right_code": "D1.2",
-        "right_label": "人机分工边界",
-        "count": 8
-      },
-      {
-        "left_code": "I1",
-        "left_label": "期刊政策",
-        "right_code": "D1.2",
-        "right_label": "人机分工边界",
-        "count": 5
-      },
-      {
-        "left_code": "I1",
-        "left_label": "期刊政策",
         "right_code": "D1.5",
         "right_label": "学术诚信边界",
-        "count": 5
+        "count": 19
       },
       {
         "left_code": "I7",
         "left_label": "科研诚信规则",
-        "right_code": "D1.10",
-        "right_label": "验证/复核边界",
-        "count": 5
+        "right_code": "D1.2",
+        "right_label": "人机分工边界",
+        "count": 14
       },
       {
         "left_code": "I0",
         "left_label": "未明确参照",
         "right_code": "D1.9",
         "right_label": "署名与贡献边界",
-        "count": 4
-      },
-      {
-        "left_code": "I6",
-        "left_label": "审稿规范",
-        "right_code": "D1.2",
-        "right_label": "人机分工边界",
-        "count": 4
+        "count": 8
       },
       {
         "left_code": "I7",
         "left_label": "科研诚信规则",
         "right_code": "D1.4",
         "right_label": "原创性边界",
+        "count": 8
+      },
+      {
+        "left_code": "I7",
+        "left_label": "科研诚信规则",
+        "right_code": "D1.10",
+        "right_label": "验证/复核边界",
+        "count": 7
+      },
+      {
+        "left_code": "I1",
+        "left_label": "期刊政策",
+        "right_code": "D1.2",
+        "right_label": "人机分工边界",
+        "count": 5
+      },
+      {
+        "left_code": "I1",
+        "left_label": "期刊政策",
+        "right_code": "D1.5",
+        "right_label": "学术诚信边界",
+        "count": 5
+      },
+      {
+        "left_code": "I2",
+        "left_label": "学校规定",
+        "right_code": "D1.2",
+        "right_label": "人机分工边界",
         "count": 4
+      },
+      {
+        "left_code": "I2",
+        "left_label": "学校规定",
+        "right_code": "D1.5",
+        "right_label": "学术诚信边界",
+        "count": 4
+      },
+      {
+        "left_code": "I3",
+        "left_label": "导师/课题组要求",
+        "right_code": "D1.5",
+        "right_label": "学术诚信边界",
+        "count": 4
+      },
+      {
+        "left_code": "I5",
+        "left_label": "披露要求",
+        "right_code": "D1.5",
+        "right_label": "学术诚信边界",
+        "count": 4
+      },
+      {
+        "left_code": "I5",
+        "left_label": "披露要求",
+        "right_code": "D1.7",
+        "right_label": "披露边界",
+        "count": 4
+      },
+      {
+        "left_code": "I6",
+        "left_label": "审稿规范",
+        "right_code": "D1.2",
+        "right_label": "人机分工边界",
+        "count": 4
+      },
+      {
+        "left_code": "I7",
+        "left_label": "科研诚信规则",
+        "right_code": "D1.7",
+        "right_label": "披露边界",
+        "count": 4
+      },
+      {
+        "left_code": "I0",
+        "left_label": "未明确参照",
+        "right_code": "D1.5",
+        "right_label": "学术诚信边界",
+        "count": 3
+      },
+      {
+        "left_code": "I1",
+        "left_label": "期刊政策",
+        "right_code": "D1.7",
+        "right_label": "披露边界",
+        "count": 3
       },
       {
         "left_code": "I1",
@@ -1786,13 +2066,6 @@
         "count": 3
       },
       {
-        "left_code": "I3",
-        "left_label": "导师/课题组要求",
-        "right_code": "D1.5",
-        "right_label": "学术诚信边界",
-        "count": 3
-      },
-      {
         "left_code": "I6",
         "left_label": "审稿规范",
         "right_code": "D1.5",
@@ -1800,8 +2073,29 @@
         "count": 3
       },
       {
-        "left_code": "I1",
-        "left_label": "期刊政策",
+        "left_code": "I7",
+        "left_label": "科研诚信规则",
+        "right_code": "D1.1",
+        "right_label": "辅助与替代边界",
+        "count": 3
+      },
+      {
+        "left_code": "I0",
+        "left_label": "未明确参照",
+        "right_code": "D1.4",
+        "right_label": "原创性边界",
+        "count": 2
+      },
+      {
+        "left_code": "I2",
+        "left_label": "学校规定",
+        "right_code": "D1.4",
+        "right_label": "原创性边界",
+        "count": 2
+      },
+      {
+        "left_code": "I2",
+        "left_label": "学校规定",
         "right_code": "D1.7",
         "right_label": "披露边界",
         "count": 2
@@ -1816,29 +2110,8 @@
       {
         "left_code": "I5",
         "left_label": "披露要求",
-        "right_code": "D1.5",
-        "right_label": "学术诚信边界",
-        "count": 2
-      },
-      {
-        "left_code": "I5",
-        "left_label": "披露要求",
-        "right_code": "D1.7",
-        "right_label": "披露边界",
-        "count": 2
-      },
-      {
-        "left_code": "I7",
-        "left_label": "科研诚信规则",
-        "right_code": "D1.1",
-        "right_label": "辅助与替代边界",
-        "count": 2
-      },
-      {
-        "left_code": "I7",
-        "left_label": "科研诚信规则",
-        "right_code": "D1.7",
-        "right_label": "披露边界",
+        "right_code": "D1.2",
+        "right_label": "人机分工边界",
         "count": 2
       },
       {
@@ -1846,6 +2119,20 @@
         "left_label": "科研诚信规则",
         "right_code": "D1.9",
         "right_label": "署名与贡献边界",
+        "count": 2
+      },
+      {
+        "left_code": "I8",
+        "left_label": "数据伦理/隐私合规规则",
+        "right_code": "D1.10",
+        "right_label": "验证/复核边界",
+        "count": 2
+      },
+      {
+        "left_code": "I8",
+        "left_label": "数据伦理/隐私合规规则",
+        "right_code": "D1.11",
+        "right_label": "数据/隐私/知识资产使用边界",
         "count": 2
       },
       {
@@ -1856,13 +2143,6 @@
         "count": 1
       },
       {
-        "left_code": "I0",
-        "left_label": "未明确参照",
-        "right_code": "D1.5",
-        "right_label": "学术诚信边界",
-        "count": 1
-      },
-      {
         "left_code": "I1",
         "left_label": "期刊政策",
         "right_code": "D1.1",
@@ -1886,22 +2166,22 @@
       {
         "left_code": "I2",
         "left_label": "学校规定",
-        "right_code": "D1.2",
-        "right_label": "人机分工边界",
-        "count": 1
-      },
-      {
-        "left_code": "I2",
-        "left_label": "学校规定",
-        "right_code": "D1.5",
-        "right_label": "学术诚信边界",
+        "right_code": "D1.10",
+        "right_label": "验证/复核边界",
         "count": 1
       },
       {
         "left_code": "I5",
         "left_label": "披露要求",
-        "right_code": "D1.2",
-        "right_label": "人机分工边界",
+        "right_code": "D1.1",
+        "right_label": "辅助与替代边界",
+        "count": 1
+      },
+      {
+        "left_code": "I5",
+        "left_label": "披露要求",
+        "right_code": "D1.4",
+        "right_label": "原创性边界",
         "count": 1
       },
       {
@@ -1931,6 +2211,20 @@
         "right_code": "D1.9",
         "right_label": "署名与贡献边界",
         "count": 1
+      },
+      {
+        "left_code": "I8",
+        "left_label": "数据伦理/隐私合规规则",
+        "right_code": "D1.1",
+        "right_label": "辅助与替代边界",
+        "count": 1
+      },
+      {
+        "left_code": "I8",
+        "left_label": "数据伦理/隐私合规规则",
+        "right_code": "D1.2",
+        "right_label": "人机分工边界",
+        "count": 1
       }
     ],
     "boundary_mechanism_x_boundary_result": [
@@ -1939,13 +2233,34 @@
         "left_label": "条件化机制",
         "right_code": "K2",
         "right_label": "条件合法化",
-        "count": 21
+        "count": 51
       },
       {
         "left_code": "J2",
         "left_label": "责任化机制",
         "right_code": "K2",
         "right_label": "条件合法化",
+        "count": 17
+      },
+      {
+        "left_code": "J4",
+        "left_label": "风险化机制",
+        "right_code": "K2",
+        "right_label": "条件合法化",
+        "count": 14
+      },
+      {
+        "left_code": "J4",
+        "left_label": "风险化机制",
+        "right_code": "K4",
+        "right_label": "替代去合法化",
+        "count": 10
+      },
+      {
+        "left_code": "J1",
+        "left_label": "条件化机制",
+        "right_code": "K1",
+        "right_label": "辅助合法化",
         "count": 8
       },
       {
@@ -1953,11 +2268,18 @@
         "left_label": "规范化机制",
         "right_code": "K2",
         "right_label": "条件合法化",
-        "count": 7
+        "count": 8
       },
       {
         "left_code": "J4",
         "left_label": "风险化机制",
+        "right_code": "K3",
+        "right_label": "风险问题化",
+        "count": 8
+      },
+      {
+        "left_code": "J3",
+        "left_label": "规范化机制",
         "right_code": "K4",
         "right_label": "替代去合法化",
         "count": 5
@@ -1965,27 +2287,6 @@
       {
         "left_code": "J1",
         "left_label": "条件化机制",
-        "right_code": "K1",
-        "right_label": "辅助合法化",
-        "count": 4
-      },
-      {
-        "left_code": "J4",
-        "left_label": "风险化机制",
-        "right_code": "K2",
-        "right_label": "条件合法化",
-        "count": 4
-      },
-      {
-        "left_code": "J4",
-        "left_label": "风险化机制",
-        "right_code": "K3",
-        "right_label": "风险问题化",
-        "count": 4
-      },
-      {
-        "left_code": "J3",
-        "left_label": "规范化机制",
         "right_code": "K4",
         "right_label": "替代去合法化",
         "count": 3
@@ -1995,28 +2296,21 @@
         "left_label": "规范化机制",
         "right_code": "K6",
         "right_label": "治理争议化",
-        "count": 2
+        "count": 3
       },
       {
         "left_code": "J4",
         "left_label": "风险化机制",
         "right_code": "K6",
         "right_label": "治理争议化",
-        "count": 2
-      },
-      {
-        "left_code": "J1",
-        "left_label": "条件化机制",
-        "right_code": "K4",
-        "right_label": "替代去合法化",
-        "count": 1
+        "count": 3
       },
       {
         "left_code": "J2",
         "left_label": "责任化机制",
         "right_code": "K4",
         "right_label": "替代去合法化",
-        "count": 1
+        "count": 2
       },
       {
         "left_code": "J2",
@@ -2030,6 +2324,13 @@
         "left_label": "规范化机制",
         "right_code": "K3",
         "right_label": "风险问题化",
+        "count": 1
+      },
+      {
+        "left_code": "J3",
+        "left_label": "规范化机制",
+        "right_code": "K5",
+        "right_label": "规范悬置",
         "count": 1
       },
       {

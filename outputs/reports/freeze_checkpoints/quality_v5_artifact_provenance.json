@@ -8,8 +8,8 @@
   "coverage_end_date": "2026-04-10",
   "source_db": {
     "path": "data/processed/ai4s_legitimacy.sqlite3",
-    "sha256": "5076ae1cde3b538c26304ae6f3dabadb3a1e8a2dbb5838e66d6bda060ea99566",
-    "bytes": 89862144
+    "sha256": "f1d6f6d78b00cc770fa0f79267edf557dc0dd6b0f41a5b86ad2e0514ccca30a3",
+    "bytes": 90386432
   },
   "build_command": {
     "entrypoint": "ai4s-build-artifacts",
@@ -34,8 +34,8 @@
     "post_review_v2_master": {
       "path": "outputs/tables/post_review_v2_master.jsonl",
       "exists": true,
-      "sha256": "42bb8c1aedc34a2230ff65f93dcec920b00e87111032a173de3b218cd1e8d34c",
-      "bytes": 38031240,
+      "sha256": "1fff07cfecafa20e6e9e9a943259fce3de5eff7d27ec920ca102d44ec84fdc91",
+      "bytes": 38060050,
       "line_count": 5535
     },
     "comment_review_v2_master": {

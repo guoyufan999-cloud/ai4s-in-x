@@ -4,8 +4,8 @@
     "formal_posts": 514,
     "formal_comments": 0,
     "source_contract": "paper_scope_quality_v5",
-    "framework_v2_reviewed_posts": 50,
-    "framework_v2_missing_posts": 464,
+    "framework_v2_reviewed_posts": 100,
+    "framework_v2_missing_posts": 414,
     "framework_v2_coding_complete": false,
     "note": "新增 v2 字段尚未完成正式人工编码，因此本表仅显示已有字段或为空。"
   },
@@ -276,98 +276,108 @@
       {
         "code": "F2",
         "label": "生成辅助",
-        "count": 35
-      },
-      {
-        "code": "F1",
-        "label": "信息辅助",
-        "count": 31
+        "count": 70
       },
       {
         "code": "F4",
         "label": "判断建议",
-        "count": 31
+        "count": 66
+      },
+      {
+        "code": "F1",
+        "label": "信息辅助",
+        "count": 60
       },
       {
         "code": "F5",
         "label": "自动执行",
-        "count": 11
+        "count": 25
       },
       {
         "code": "F3",
         "label": "分析建模",
-        "count": 6
+        "count": 18
       },
       {
         "code": "F6",
         "label": "治理监督",
-        "count": 2
+        "count": 5
       }
     ],
     "ai_intervention_intensity_distribution": [
       {
         "code": "G2",
         "label": "中强度共创",
-        "count": 26
+        "count": 51
       },
       {
         "code": "G3",
         "label": "高强度替代",
-        "count": 15
+        "count": 30
       },
       {
         "code": "G1",
         "label": "低强度辅助",
-        "count": 9
+        "count": 20
       }
     ],
     "evaluation_tension_distribution": [
       {
         "code": "H3",
         "label": "便利性 vs 可靠性",
-        "count": 17
+        "count": 39
       },
       {
         "code": "H4",
         "label": "技术可用性 vs 规范不确定性",
-        "count": 13
+        "count": 29
       },
       {
         "code": "H5",
         "label": "人机共创 vs 责任归属",
-        "count": 13
+        "count": 28
       },
       {
         "code": "H2",
         "label": "能力补充 vs 能力替代",
-        "count": 9
+        "count": 17
       },
       {
         "code": "H1",
         "label": "效率提升 vs 原创性",
-        "count": 7
+        "count": 12
       },
       {
         "code": "H6",
         "label": "自动化治理 vs 公平透明",
-        "count": 1
+        "count": 3
       }
     ],
     "formal_norm_reference_distribution": [
       {
         "code": "I0",
         "label": "未明确参照",
-        "count": 27
+        "count": 65
       },
       {
         "code": "I7",
         "label": "科研诚信规则",
-        "count": 17
+        "count": 26
       },
       {
         "code": "I1",
         "label": "期刊政策",
-        "count": 9
+        "count": 10
+      },
+      {
+        "code": "I2",
+        "label": "学校规定",
+        "count": 6
+      },
+      {
+        "code": "I5",
+        "label": "披露要求",
+        "count": 6
       },
       {
         "code": "I6",
@@ -377,16 +387,11 @@
       {
         "code": "I3",
         "label": "导师/课题组要求",
-        "count": 3
+        "count": 4
       },
       {
-        "code": "I2",
-        "label": "学校规定",
-        "count": 2
-      },
-      {
-        "code": "I5",
-        "label": "披露要求",
+        "code": "I8",
+        "label": "数据伦理/隐私合规规则",
         "count": 2
       }
     ],
@@ -394,54 +399,54 @@
       {
         "code": "J1",
         "label": "条件化机制",
-        "count": 26
+        "count": 62
       },
       {
         "code": "J4",
         "label": "风险化机制",
-        "count": 16
-      },
-      {
-        "code": "J3",
-        "label": "规范化机制",
-        "count": 13
+        "count": 36
       },
       {
         "code": "J2",
         "label": "责任化机制",
-        "count": 10
+        "count": 20
+      },
+      {
+        "code": "J3",
+        "label": "规范化机制",
+        "count": 18
       }
     ],
     "boundary_result_distribution": [
       {
         "code": "K2",
         "label": "条件合法化",
-        "count": 24
+        "count": 54
       },
       {
         "code": "K4",
         "label": "替代去合法化",
-        "count": 5
+        "count": 11
       },
       {
         "code": "K1",
         "label": "辅助合法化",
-        "count": 4
+        "count": 8
       },
       {
         "code": "K3",
         "label": "风险问题化",
-        "count": 4
+        "count": 8
       },
       {
         "code": "K6",
         "label": "治理争议化",
-        "count": 2
+        "count": 3
       },
       {
         "code": "K5",
         "label": "规范悬置",
-        "count": 1
+        "count": 2
       }
     ]
   }
