@@ -5,6 +5,7 @@ import sqlite3
 from pathlib import Path
 
 from ai4s_legitimacy.analysis.framework_v2_materials import (
+    COMPLETE_V2_FIELD_NOTE,
     MISSING_V2_FIELD_NOTE,
     generate_framework_v2_materials,
 )
@@ -147,4 +148,11 @@ def test_versioned_framework_v2_outputs_preserve_quality_v5_post_only_boundary()
     assert "comment_review_v2" not in readme_text or "不启动评论层正式结果" in readme_text
     assert summary["metadata"]["formal_posts"] == 514
     assert summary["metadata"]["formal_comments"] == 0
-    assert summary["metadata"]["note"] == MISSING_V2_FIELD_NOTE
+    if summary["metadata"]["framework_v2_coding_complete"]:
+        assert summary["metadata"]["framework_v2_reviewed_posts"] == 514
+        assert summary["metadata"]["framework_v2_missing_posts"] == 0
+        assert summary["metadata"]["note"] == COMPLETE_V2_FIELD_NOTE
+    else:
+        assert summary["metadata"]["framework_v2_reviewed_posts"] < 514
+        assert summary["metadata"]["framework_v2_missing_posts"] > 0
+        assert summary["metadata"]["note"] == MISSING_V2_FIELD_NOTE
