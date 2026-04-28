@@ -135,7 +135,10 @@ def test_build_artifacts_can_route_framework_v2_outputs_to_custom_directory(
     assert result["framework_v2"]["output_dir"] == str(framework_v2_dir)
     assert result["framework_v2"]["formal_posts"] == 1
     assert result["framework_v2"]["formal_comments"] == 0
+    assert result["framework_v2_coding_audit"]["metadata"]["formal_posts"] == 1
+    assert result["framework_v2_coding_audit"]["metadata"]["formal_comments"] == 0
     assert (framework_v2_dir / "framework_v2_summary_tables.json").exists()
+    assert (framework_v2_dir / "framework_v2_coding_audit_report.md").exists()
 
 
 def test_versioned_framework_v2_outputs_preserve_quality_v5_post_only_boundary() -> None:

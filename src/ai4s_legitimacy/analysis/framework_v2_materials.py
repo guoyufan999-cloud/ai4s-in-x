@@ -375,6 +375,8 @@ def _write_readme(output_dir: Path, summary: dict[str, Any]) -> Path:
 - framework_v2 是否完成：`{metadata["framework_v2_coding_complete"]}`
 - 说明：{metadata["note"]}
 
+配套审计报告由 `ai4s-build-artifacts` 或 `ai4s_legitimacy.analysis.framework_v2_coding_audit` 生成，文件为 `framework_v2_coding_audit_report.md` 和 `framework_v2_coding_audit_report.json`。
+
 本目录不启动评论层正式结果，不改写 `quality_v5` artifacts，不把 `quality_v4` 写作当前正式口径。
 """
     path = output_dir / "README.md"

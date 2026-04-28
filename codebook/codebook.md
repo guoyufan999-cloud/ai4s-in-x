@@ -136,5 +136,6 @@ D 组保留为边界类型，至少覆盖辅助与替代边界、人机分工边
 - 当前主输出以 `src/ai4s_legitimacy/coding/codebook_seed.py` 为准。
 - A/B/C/D/E 保留为 legacy mapping、historical audit 和旧 artifacts 解释层。
 - F/G/H/I/J/K 已进入 codebook seed 和 canonical JSONL 兼容层。
-- 新增 v2 字段尚未完成正式人工编码，因此当前 framework v2 统计表只显示已有字段或为空。
+- framework_v2 reviewed 补码已覆盖 `514/514` 条正式帖子，F/G/H/I/J/K 可作为正式 v2 描述性统计使用。
+- 方法表述需保留 provenance 边界：该补码轮次为用户授权接受 AI 辅助编码草稿并保留 provenance，不得写作“双人独立人工复核”。
 - `quality_v5 post-only`、正式帖子 `514`、正式评论 `0`、`comment_review_v2 deferred`、`quality_v4 historical audit` 均保持不变。

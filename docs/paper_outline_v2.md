@@ -113,4 +113,4 @@
 - 当前正式基线为 `quality_v5 post-only`，正式帖子 `514`、正式评论 `0`。
 - `comment_review_v2 deferred`，评论语料不得写成当前正式评论结果。
 - `quality_v4 historical audit` 只用于历史追溯，不作为当前正式结果。
-- 新增 v2 字段尚未完成正式人工编码，不得据此生成未经数据支持的论文结论。
+- framework_v2 reviewed 补码已覆盖 `514/514` 条正式帖子，F/G/H/I/J/K 可作为正式 v2 描述性统计使用；但其 provenance 是用户授权接受 AI 辅助编码草稿，不得写作“双人独立人工复核”。

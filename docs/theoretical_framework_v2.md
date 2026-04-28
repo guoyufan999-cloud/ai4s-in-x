@@ -89,7 +89,7 @@
 - 将旧“三线框架”升级为可追溯的五层框架。
 - 保留 A/B/C/D/E 旧代码的历史兼容性，同时新增 F/G/H/I/J/K 支持新论文结构。
 - 为第四章、第五章、第六章提供可复现的字段、表格和写作提示。
-- 不自动填充正式 v2 字段，不改变 `quality_v5 post-only` 正式基线。
+- 在不改变 `quality_v5 post-only` 正式基线的前提下，使用 framework_v2 reviewed 补码支持 F/G/H/I/J/K 描述性统计。
 
 ## 章节结构与编码对应关系
 
@@ -109,4 +109,4 @@
 - `comment_review_v2 deferred`
 - `quality_v4 historical audit`
 
-新增 v2 字段尚未完成正式人工编码，因此相关统计表只能显示已有字段或为空。
+framework_v2 reviewed 补码已覆盖 `514/514` 条正式帖子，新增 F/G/H/I/J/K 字段可作为正式 v2 描述性统计使用。其方法边界是“用户授权接受 AI 辅助编码草稿并保留 provenance”，不得表述为双人独立人工复核；后续若需要更强方法说服力，应结合 coding audit 的高风险队列继续抽查。

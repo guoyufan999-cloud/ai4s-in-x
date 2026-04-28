@@ -13,6 +13,9 @@ from ai4s_legitimacy.analysis.figure_generation import (
     write_figure_manifest,
 )
 from ai4s_legitimacy.analysis.figures.config import FIGURE_DIR
+from ai4s_legitimacy.analysis.framework_v2_coding_audit import (
+    write_framework_v2_coding_audit,
+)
 from ai4s_legitimacy.analysis.framework_v2_materials import (
     FRAMEWORK_V2_OUTPUT_DIR,
     generate_framework_v2_materials,
@@ -118,6 +121,13 @@ def run_build(
         output_dir=resolved_framework_v2_dir,
         immutable=True,
     )
+    framework_v2_audit = write_framework_v2_coding_audit(
+        output_json_path=Path(framework_v2["output_dir"]) / "framework_v2_coding_audit_report.json",
+        output_md_path=Path(framework_v2["output_dir"]) / "framework_v2_coding_audit_report.md",
+        post_master_path=review_v2_post_output_path,
+        summary_tables_path=Path(framework_v2["paths"]["summary_tables"]),
+        cross_tabs_path=Path(framework_v2["paths"]["cross_tabs"]),
+    )
     result: dict[str, Any] = {
         "db_path": str(db_path),
         "summary": summary_payload,
@@ -129,6 +139,7 @@ def run_build(
         "canonical_corpus": canonical_corpus,
         "review_v2": canonical_corpus,
         "framework_v2": framework_v2,
+        "framework_v2_coding_audit": framework_v2_audit,
     }
     figure_manifest_path = figure_dir / "paper_figures_submission_manifest.md"
 
@@ -205,6 +216,9 @@ def main() -> None:
     framework_v2 = result["framework_v2"]
     print("  [framework v2 materials]")
     print(f"    -> {framework_v2['output_dir']}")
+    framework_v2_audit = result["framework_v2_coding_audit"]
+    print("  [framework v2 coding audit]")
+    print(f"    -> {framework_v2_audit['audit_markdown_path']}")
     print("  [artifact provenance]")
     print(f"    -> {result['provenance_path']}")
 

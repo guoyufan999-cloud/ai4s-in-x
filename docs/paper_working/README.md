@@ -8,6 +8,8 @@
 
 当前收纳的工作稿包括：
 
+- `framework_v2_chapter_3_research_design_draft.md`
+- `framework_v2_chapter_4_practice_map_draft.md`
 - `paper_results_chapter_draft.md`
 - `paper_results_chapter_llm.md`
 - `paper_discussion_chapter_draft.md`
