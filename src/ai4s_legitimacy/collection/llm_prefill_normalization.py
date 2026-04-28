@@ -1,6 +1,7 @@
 from __future__ import annotations
 
-from typing import Any, Sequence
+from collections.abc import Sequence
+from typing import Any
 
 DISCURSIVE_MODE_VALUES = (
     "experience_share",

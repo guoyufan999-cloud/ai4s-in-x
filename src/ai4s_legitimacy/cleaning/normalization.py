@@ -2,8 +2,8 @@ from __future__ import annotations
 
 import hashlib
 import re
+from collections.abc import Iterable
 from datetime import datetime
-from typing import Iterable
 
 
 def normalize_text(value: str | None) -> str:

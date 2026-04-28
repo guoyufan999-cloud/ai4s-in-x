@@ -127,7 +127,7 @@ def _search_with_bing(query: PilotQuery, *, limit: int) -> list[SearchCandidate]
     display_pairs = re.findall(
         r"<h2><a[^>]+href=\"([^\"]+)\"[^>]*>(.*?)</a></h2>.*?<p>(.*?)</p>",
         html_text,
-        flags=re.S,
+        flags=re.DOTALL,
     )
 
     seen: set[str] = set()

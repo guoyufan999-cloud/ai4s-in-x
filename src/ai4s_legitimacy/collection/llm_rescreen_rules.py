@@ -295,9 +295,7 @@ def _is_high_signal_low_confidence_false(row: dict[str, Any], stage1_result: dic
         return False
     if not _has_strong_low_info_relevance(row) and not _has_research_ai_signal(row):
         return False
-    if _is_low_information_vendor_false(row, stage1_result):
-        return False
-    return True
+    return not _is_low_information_vendor_false(row, stage1_result)
 
 
 def _needs_reasoner_review(
@@ -309,9 +307,7 @@ def _needs_reasoner_review(
         return True
     if stage1_result["sample_status"] == "false" and current_status == "true":
         return True
-    if _is_high_signal_low_confidence_false(row, stage1_result):
-        return True
-    return False
+    return _is_high_signal_low_confidence_false(row, stage1_result)
 
 
 def _apply_guardrails(row: dict[str, Any], result: dict[str, Any]) -> dict[str, Any]:

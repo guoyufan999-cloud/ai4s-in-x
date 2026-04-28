@@ -2,8 +2,9 @@ from __future__ import annotations
 
 import json
 from collections import Counter
+from collections.abc import Sequence
 from pathlib import Path
-from typing import Any, Sequence
+from typing import Any
 
 from ai4s_legitimacy.collection._jsonl import write_jsonl as _write_jsonl
 from ai4s_legitimacy.collection.llm_rescreen_rules import (
@@ -243,18 +244,15 @@ def _build_analysis_markdown(
     for query, count in _top_query_patterns(final_positive):
         lines.append(f"- `{query}`: {count}")
     lines.extend(["", "Representative titles:"])
-    for title in _example_titles(final_positive):
-        lines.append(f"- {title}")
+    lines.extend(f"- {title}" for title in _example_titles(final_positive))
     lines.extend(["", "## 当前 true/review_needed -> false 的收紧类型"])
     for query, count in _top_query_patterns(reverted_positive):
         lines.append(f"- `{query}`: {count}")
     lines.extend(["", "Representative titles:"])
-    for title in _example_titles(reverted_positive):
-        lines.append(f"- {title}")
+    lines.extend(f"- {title}" for title in _example_titles(reverted_positive))
     lines.extend(["", "## 当前 false -> true/review_needed 的补回类型"])
     for query, count in _top_query_patterns(promoted_positive):
         lines.append(f"- `{query}`: {count}")
     lines.extend(["", "Representative titles:"])
-    for title in _example_titles(promoted_positive):
-        lines.append(f"- {title}")
+    lines.extend(f"- {title}" for title in _example_titles(promoted_positive))
     return "\n".join(lines) + "\n"

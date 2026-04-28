@@ -20,9 +20,9 @@
   "min_included_target": 50,
   "max_verified_limit": 140,
   "row_count": 100,
-  "included_count": 56,
-  "review_needed_count": 18,
-  "excluded_count": 26,
+  "included_count": 57,
+  "review_needed_count": 20,
+  "excluded_count": 23,
   "query_stats": [
     {
       "query": "AI科研 文献综述",
@@ -266,5 +266,82 @@
     }
   ],
   "limitations": [],
-  "output_path": "/Users/guoyufan/ai4s in xhs/outputs/tables/external_xhs_ai4s_2025plus_pilot100.jsonl"
+  "artifact_classification": {
+    "status": "external_pilot_exploratory",
+    "formal_evidence_chain": false,
+    "quality_v5_formal_scope": false,
+    "reason": "External XHS pilot outputs are exploratory review_v2 artifacts and are not part of the quality_v5 post-only formal evidence chain."
+  },
+  "output_path": "/Users/guoyufan/ai4s in xhs/outputs/tables/external_xhs_ai4s_2025plus_pilot100.jsonl",
+  "posthoc_corrections": {
+    "corrected_at": "2026-04-27T17:46:23.721991+00:00",
+    "reason": "Expanded external XHS AI term coverage for common GPT variants.",
+    "row_count": 3,
+    "rows": [
+      {
+        "post_id": "67764081000000000b00ea7a",
+        "old_decision": "剔除",
+        "new_decision": "纳入",
+        "old_decision_reason": [
+          "R1: 未明确提及 AI 或可识别 AI 工具。"
+        ],
+        "new_decision_reason": [
+          "R12: 纳入：明确 AI 进入具体科研工作流环节。"
+        ]
+      },
+      {
+        "post_id": "67aa94e0000000001902c4cc",
+        "old_decision": "剔除",
+        "new_decision": "纳入",
+        "old_decision_reason": [
+          "R1: 未明确提及 AI 或可识别 AI 工具。"
+        ],
+        "new_decision_reason": [
+          "R12: 纳入：明确 AI 进入具体科研工作流环节。"
+        ]
+      },
+      {
+        "post_id": "69d7a9be000000001a030a7e",
+        "old_decision": "剔除",
+        "new_decision": "纳入",
+        "old_decision_reason": [
+          "R1: 未明确提及 AI 或可识别 AI 工具。"
+        ],
+        "new_decision_reason": [
+          "R12: 纳入：明确 AI 进入具体科研工作流环节。"
+        ]
+      }
+    ]
+  },
+  "output_row_count": 100,
+  "output_preserved": false,
+  "posthoc_quality_adjustments": {
+    "corrected_at": "2026-04-27T20:08:30.358779+00:00",
+    "reason": "Demoted records with boundary/evaluation signals but no stable research workflow code.",
+    "row_count": 2,
+    "rows": [
+      {
+        "post_id": "6713b6570000000024017a58",
+        "old_decision": "纳入",
+        "new_decision": "待复核",
+        "old_decision_reason": [
+          "R12: 纳入：明确评价/边界对象指向具体科研实践。"
+        ],
+        "new_decision_reason": [
+          "R6: 存在评价/边界信号，但科研工作流环节识别不稳定。"
+        ]
+      },
+      {
+        "post_id": "69e04e0d0000000021004a3e",
+        "old_decision": "纳入",
+        "new_decision": "待复核",
+        "old_decision_reason": [
+          "R12: 纳入：明确评价/边界对象指向具体科研实践。"
+        ],
+        "new_decision_reason": [
+          "R6: 存在评价/边界信号，但科研工作流环节识别不稳定。"
+        ]
+      }
+    ]
+  }
 }

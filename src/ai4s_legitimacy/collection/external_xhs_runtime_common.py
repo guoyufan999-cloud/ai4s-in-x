@@ -3,10 +3,10 @@ from __future__ import annotations
 import hashlib
 import re
 import ssl
+from collections.abc import Iterable
 from dataclasses import dataclass
 from datetime import date, datetime
 from pathlib import Path
-from typing import Iterable
 from urllib.parse import urlparse
 
 import certifi

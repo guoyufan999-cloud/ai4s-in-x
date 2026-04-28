@@ -1,7 +1,8 @@
 from __future__ import annotations
 
 import re
-from typing import Any, Iterable
+from collections.abc import Iterable
+from typing import Any
 
 from .canonical_constants import ALL_CODE_LABELS, DECISION_REASON_CODES, WORKFLOW_DIMENSION_LABELS
 

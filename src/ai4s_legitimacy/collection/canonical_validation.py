@@ -2,7 +2,8 @@ from __future__ import annotations
 
 import copy
 import re
-from typing import Any, Iterable
+from collections.abc import Iterable
+from typing import Any
 
 from .canonical_aggregation import apply_claim_units_to_row
 from .canonical_claim_units import _normalize_code_entries, normalize_claim_units

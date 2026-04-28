@@ -1,10 +1,11 @@
 from __future__ import annotations
 
 import json
+from collections.abc import Callable, Sequence
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Any, Callable, Sequence
+from typing import Any
 
 from ai4s_legitimacy.collection.deepseek_client import DeepSeekClient
 from ai4s_legitimacy.collection.llm_rescreen_outputs import REVIEW_PHASE
@@ -200,9 +201,10 @@ def _run_classifier_batches(
     max_workers: int,
     log: Callable[[str], None],
 ) -> list[dict[str, Any]]:
-    batches: list[tuple[int, list[dict[str, Any]]]] = []
-    for start in range(0, len(rows), batch_size):
-        batches.append((start, list(rows[start : start + batch_size])))
+    batches = [
+        (start, list(rows[start : start + batch_size]))
+        for start in range(0, len(rows), batch_size)
+    ]
 
     results: list[dict[str, Any] | None] = [None] * len(rows)
 

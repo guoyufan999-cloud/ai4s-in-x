@@ -6,7 +6,7 @@ from pathlib import Path
 
 import pytest
 
-import ai4s_legitimacy.analysis.excerpt_extraction as excerpt_extraction
+from ai4s_legitimacy.analysis import excerpt_extraction
 from ai4s_legitimacy.analysis.excerpt_extraction import (
     EXCERPTS_DIR,
     MAX_CHARS_DEFAULT,

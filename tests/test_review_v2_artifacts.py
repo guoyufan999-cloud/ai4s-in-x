@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-import ai4s_legitimacy.collection.review_v2_artifacts as review_v2_artifacts
+from ai4s_legitimacy.collection import review_v2_artifacts
 
 
 def test_bootstrap_inclusion_handles_uppercase_ai_tokens() -> None:

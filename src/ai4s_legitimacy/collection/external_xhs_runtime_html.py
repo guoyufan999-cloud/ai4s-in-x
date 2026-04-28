@@ -38,7 +38,7 @@ def _extract_structured_note_fields(html_text: str, note_id: str) -> dict[str, s
     author_match = re.search(
         rf'"nickname":"([^"]+)".{{0,4000}}?"noteId":"{re.escape(note_id)}"',
         html_text,
-        flags=re.S,
+        flags=re.DOTALL,
     )
     if author_match:
         fields["author_handle"] = _unescape_xhs_text(author_match.group(1))
@@ -46,7 +46,7 @@ def _extract_structured_note_fields(html_text: str, note_id: str) -> dict[str, s
     section_match = re.search(
         rf'"noteId":"{re.escape(note_id)}".{{0,8000}}?"desc":"([^"]*)".{{0,2000}}?"time":(\d{{10,13}}).{{0,2000}}?"title":"([^"]*)"',
         html_text,
-        flags=re.S,
+        flags=re.DOTALL,
     )
     if section_match:
         fields["desc"] = _unescape_xhs_text(section_match.group(1))
@@ -57,7 +57,7 @@ def _extract_structured_note_fields(html_text: str, note_id: str) -> dict[str, s
     fallback_title = re.search(
         rf'"noteId":"{re.escape(note_id)}".{{0,4000}}?"title":"([^"]+)"',
         html_text,
-        flags=re.S,
+        flags=re.DOTALL,
     )
     if fallback_title:
         fields["title"] = _unescape_xhs_text(fallback_title.group(1))
@@ -65,7 +65,7 @@ def _extract_structured_note_fields(html_text: str, note_id: str) -> dict[str, s
     fallback_desc = re.search(
         rf'"noteId":"{re.escape(note_id)}".{{0,4000}}?"desc":"([^"]*)"',
         html_text,
-        flags=re.S,
+        flags=re.DOTALL,
     )
     if fallback_desc:
         fields["desc"] = _unescape_xhs_text(fallback_desc.group(1))
@@ -73,7 +73,7 @@ def _extract_structured_note_fields(html_text: str, note_id: str) -> dict[str, s
     fallback_time = re.search(
         rf'"noteId":"{re.escape(note_id)}".{{0,4000}}?"time":(\d{{10,13}})',
         html_text,
-        flags=re.S,
+        flags=re.DOTALL,
     )
     if fallback_time:
         fields["created_at"] = _normalize_timestamp(fallback_time.group(1))
@@ -87,14 +87,14 @@ def _extract_meta(html_text: str, attr_name: str, attr_value: str) -> str:
         rf"<meta[^>]+{attr_name}='{re.escape(attr_value)}'[^>]+content='([^']+)'",
     )
     for pattern in patterns:
-        match = re.search(pattern, html_text, flags=re.I)
+        match = re.search(pattern, html_text, flags=re.IGNORECASE)
         if match:
             return html.unescape(match.group(1))
     return ""
 
 
 def _extract_html_title(html_text: str) -> str:
-    match = re.search(r"<title>(.*?)</title>", html_text, flags=re.I | re.S)
+    match = re.search(r"<title>(.*?)</title>", html_text, flags=re.IGNORECASE | re.DOTALL)
     return html.unescape(_normalize_space(match.group(1))) if match else ""
 
 
@@ -141,7 +141,7 @@ def _extract_xhs_body_text(html_text: str) -> str:
         cleaned.sort(key=len, reverse=True)
         return cleaned[0]
 
-    body_match = re.search(r"<body[^>]*>(.*?)</body>", html_text, flags=re.I | re.S)
+    body_match = re.search(r"<body[^>]*>(.*?)</body>", html_text, flags=re.IGNORECASE | re.DOTALL)
     if not body_match:
         return ""
     body_text = _strip_html(body_match.group(1))

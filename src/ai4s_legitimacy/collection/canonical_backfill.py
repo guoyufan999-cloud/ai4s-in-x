@@ -4,9 +4,10 @@ import argparse
 import csv
 import hashlib
 import json
+from collections.abc import Iterable
 from datetime import UTC, datetime
 from pathlib import Path
-from typing import Any, Iterable
+from typing import Any
 
 from ai4s_legitimacy.coding.codebook_seed import LEGACY_WORKFLOW_TO_STAGE_CODE
 from ai4s_legitimacy.collection._canonical_review import canonicalize_review_row
@@ -217,17 +218,19 @@ def _looks_like_non_record_payload(path: Path, rows: list[dict[str, Any]]) -> bo
 
 def _iter_candidate_files(root_dirs: Iterable[Path]) -> list[Path]:
     files: list[Path] = []
-    for root in root_dirs:
-        root = Path(root)
+    for root_dir in root_dirs:
+        root = Path(root_dir)
         if not root.exists():
             continue
         if root.is_file():
             if root.suffix.lower() in SUPPORTED_SUFFIXES:
                 files.append(root)
             continue
-        for path in sorted(root.rglob("*")):
-            if path.is_file() and path.suffix.lower() in SUPPORTED_SUFFIXES:
-                files.append(path)
+        files.extend(
+            path
+            for path in sorted(root.rglob("*"))
+            if path.is_file() and path.suffix.lower() in SUPPORTED_SUFFIXES
+        )
     return files
 
 

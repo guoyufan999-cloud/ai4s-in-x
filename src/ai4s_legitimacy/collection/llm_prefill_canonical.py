@@ -1,6 +1,7 @@
 from __future__ import annotations
 
-from typing import Any, Sequence
+from collections.abc import Sequence
+from typing import Any
 
 from ai4s_legitimacy.collection._canonical_review import canonicalize_review_row
 from ai4s_legitimacy.collection.canonical_schema import (
@@ -366,7 +367,7 @@ def _model_item_to_canonical(
         decision = "待复核"
         reason_code = "R11"
         reason_note = "模型未能给出有效的 claim_units（缺少 workflow_stage_codes 或证据），需人工复核。"
-        review_points = review_points + ["模型未能给出有效的 claim_units（缺少 workflow_stage_codes 或证据），需人工复核。"]
+        review_points = [*review_points, "模型未能给出有效的 claim_units（缺少 workflow_stage_codes 或证据），需人工复核。"]
         claim_units = []
 
     if decision == "纳入":

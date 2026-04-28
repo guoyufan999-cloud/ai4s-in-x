@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from typing import Sequence
+from collections.abc import Sequence
 
 RESEARCH_CORE = (
     "社交媒体中呈现出哪些 AI4S 科研工作流实践",

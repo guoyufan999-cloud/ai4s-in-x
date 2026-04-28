@@ -172,14 +172,14 @@ def test_figure_manifest_preserves_slug_count_and_repo_relative_paths(tmp_path: 
         manifest_text = manifest_path.read_text(encoding="utf-8")
 
         assert len(generated_slugs) == 9
-        assert BODY_PRIORITY == {
+        assert {
             "posts_trend",
             "posts_by_quarter",
             "posts_heatmap",
             "comments_attitude",
             "tools_by_period",
             "risk_themes_by_period",
-        }
+        } == BODY_PRIORITY
         assert "- 已生成图表：`9 / 9`" in manifest_text
         assert manifest_text.count("- 来源标签：`paper_scope_quality_v5`") == 9
         for slug in generated_slugs:

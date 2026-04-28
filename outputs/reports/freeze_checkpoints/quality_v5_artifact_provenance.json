@@ -8,7 +8,7 @@
   "coverage_end_date": "2026-04-10",
   "source_db": {
     "path": "data/processed/ai4s_legitimacy.sqlite3",
-    "sha256": "aa0ecc5f9002ec7786d8e08ffc7cdc8f631c42036a4b84effa27fe2e8fb0a306",
+    "sha256": "5e56a567f045482751ee7d150ab5760770d15c05b354eef1e86c6a300b719668",
     "bytes": 89395200
   },
   "build_command": {

@@ -2,8 +2,9 @@ from __future__ import annotations
 
 import hashlib
 import json
+from collections.abc import Mapping
 from pathlib import Path
-from typing import Any, Mapping
+from typing import Any
 
 from ai4s_legitimacy.config.formal_baseline import (
     ACTIVE_ARTIFACT_PROVENANCE_PATH,

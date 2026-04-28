@@ -192,6 +192,45 @@ def _write_jsonl(path: Path, rows: list[dict[str, Any]]) -> Path:
     return path
 
 
+def _decision_counts(rows: list[dict[str, Any]]) -> dict[str, int]:
+    return {
+        "included": sum(1 for row in rows if row.get("decision") == "纳入"),
+        "review_needed": sum(1 for row in rows if row.get("decision") == "待复核"),
+        "excluded": sum(1 for row in rows if row.get("decision") == "剔除"),
+    }
+
+
+def _read_jsonl_rows(path: Path) -> list[dict[str, Any]]:
+    rows: list[dict[str, Any]] = []
+    with path.open("r", encoding="utf-8") as handle:
+        for line in handle:
+            if line.strip():
+                rows.append(json.loads(line))
+    return rows
+
+
+def _artifact_classification(*, output_preserved: bool, new_row_count: int) -> dict[str, Any]:
+    if output_preserved and new_row_count == 0:
+        return {
+            "status": "diagnostic_failed_run_preserved_output",
+            "formal_evidence_chain": False,
+            "quality_v5_formal_scope": False,
+            "reason": (
+                "This run harvested no new rows and preserved an existing non-empty JSONL; "
+                "keep it for diagnostics only, not paper_scope_quality_v5 evidence."
+            ),
+        }
+    return {
+        "status": "external_pilot_exploratory",
+        "formal_evidence_chain": False,
+        "quality_v5_formal_scope": False,
+        "reason": (
+            "External XHS pilot outputs are exploratory review_v2 artifacts and are not part "
+            "of the quality_v5 post-only formal evidence chain."
+        ),
+    }
+
+
 def _load_query_template_metadata() -> dict[str, Any]:
     if not LEGACY_QUERY_TEMPLATE.exists():
         return {}
@@ -336,7 +375,16 @@ def run_external_xhs_pilot(
         )
 
     rows.sort(key=lambda item: (item["created_at"] or "9999-99-99", item["post_id"]))
-    _write_jsonl(output_path, rows)
+    output_preserved = False
+    output_rows = rows
+    if rows or not output_path.exists() or output_path.stat().st_size == 0:
+        _write_jsonl(output_path, rows)
+    else:
+        output_preserved = True
+        output_rows = _read_jsonl_rows(output_path)
+    output_row_count = len(output_rows)
+    row_decision_counts = _decision_counts(rows)
+    output_decision_counts = _decision_counts(output_rows)
 
     summary = {
         "task_batch_id": TASK_BATCH_ID,
@@ -356,9 +404,13 @@ def run_external_xhs_pilot(
         "min_included_target": min_included,
         "max_verified_limit": max_verified,
         "row_count": len(rows),
+        "output_row_count": output_row_count,
         "included_count": included_count,
-        "review_needed_count": sum(1 for row in rows if row["decision"] == "待复核"),
-        "excluded_count": sum(1 for row in rows if row["decision"] == "剔除"),
+        "review_needed_count": row_decision_counts["review_needed"],
+        "excluded_count": row_decision_counts["excluded"],
+        "output_included_count": output_decision_counts["included"],
+        "output_review_needed_count": output_decision_counts["review_needed"],
+        "output_excluded_count": output_decision_counts["excluded"],
         "query_stats": query_stats,
         "limitations": (
             [
@@ -367,8 +419,19 @@ def run_external_xhs_pilot(
             if not doctor_status.extension_connected
             else []
         ),
+        "artifact_classification": _artifact_classification(
+            output_preserved=output_preserved,
+            new_row_count=len(rows),
+        ),
+        "output_preserved": output_preserved,
         "output_path": str(output_path),
     }
+    if output_preserved:
+        summary["preserved_existing_row_count"] = output_row_count
+        summary["preserved_existing_decision_counts"] = output_decision_counts
+        summary["limitations"].append(
+            "No rows were harvested in this run; existing non-empty JSONL output was preserved."
+        )
     summary_path.parent.mkdir(parents=True, exist_ok=True)
     summary_path.write_text(json.dumps(summary, ensure_ascii=False, indent=2), encoding="utf-8")
     return output_path, summary_path

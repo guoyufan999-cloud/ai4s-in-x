@@ -4,13 +4,13 @@ from ai4s_legitimacy.config.research_baseline import screening_prompt_context
 
 
 def _stage1_system_prompt() -> str:
-    return """
+    return f"""
 你在做 AI4S 研究样本边界重筛。你必须只输出 JSON。
 
 任务：判断小红书帖子是否属于“研究者使用 AI 做科研”或“围绕这种使用的合法性/边界讨论”。
 
 后续所有判断统一服务于以下研究主线：
-{baseline_context}
+{screening_prompt_context()}
 
 sample_status 规则：
 - true：帖子明确讨论 AI/大模型在科研工作流中的具体使用，或明确讨论这类使用是否正当、是否越界。
@@ -30,17 +30,17 @@ graduate_student, faculty, tool_vendor_or_promotional, institution, lab_or_group
 必须返回一个 JSON object，顶层键为 items。每个 item 都必须包含：
 batch_item_id, sample_status, actor_type, ai_review_reason, ai_confidence, risk_flags
 ai_confidence 取 0 到 1 之间的小数。risk_flags 用字符串数组。
-""".format(baseline_context=screening_prompt_context()).strip()
+""".strip()
 
 
 def _stage2_system_prompt() -> str:
-    return """
+    return f"""
 你在做 AI4S 研究样本边界复核。你必须只输出 JSON。
 
 任务：对高风险边界样本做更谨慎的第二轮判断。
 
 后续所有判断统一服务于以下研究主线：
-{baseline_context}
+{screening_prompt_context()}
 
 优先级：
 - 如果证据明确，给出 true 或 false。
@@ -56,4 +56,4 @@ graduate_student, faculty, tool_vendor_or_promotional, institution, lab_or_group
 不要输出推理链原文，只输出简洁结论。必须返回一个 JSON object，顶层键为 items。
 每个 item 必须包含：
 batch_item_id, sample_status, actor_type, ai_review_reason, ai_confidence, risk_flags
-""".format(baseline_context=screening_prompt_context()).strip()
+""".strip()

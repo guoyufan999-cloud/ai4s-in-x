@@ -22,7 +22,7 @@ ARTIFACT_CHECK_NAMES = (
     "zero_byte_tracked_files",
     "wal_shm",
 )
-REPO_CHECK_NAMES = ARTIFACT_CHECK_NAMES + ("ignored_cache_size",)
+REPO_CHECK_NAMES = (*ARTIFACT_CHECK_NAMES, "ignored_cache_size")
 
 
 class IgnoredEntry(TypedDict):

@@ -70,8 +70,8 @@ _structured_record = structured_record
 
 
 __all__ = [
-    "build_review_v2_artifacts",
     "COMMENT_MASTER_PATH",
     "DELTA_REPORT_PATH",
     "POST_MASTER_PATH",
+    "build_review_v2_artifacts",
 ]

@@ -4,11 +4,12 @@ import argparse
 import json
 import re
 from collections import Counter
+from collections.abc import Callable, Sequence
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from dataclasses import dataclass
 from datetime import date
 from pathlib import Path
-from typing import Any, Callable, Sequence
+from typing import Any
 
 from ai4s_legitimacy.collection._jsonl import (
     load_jsonl as _load_jsonl,
@@ -192,9 +193,10 @@ def _run_prefill_batches(
     max_workers: int,
     log: Callable[[str], None],
 ) -> tuple[list[dict[str, Any]], list[str]]:
-    batches: list[tuple[int, list[dict[str, Any]]]] = []
-    for start in range(0, len(rows), batch_size):
-        batches.append((start, list(rows[start : start + batch_size])))
+    batches = [
+        (start, list(rows[start : start + batch_size]))
+        for start in range(0, len(rows), batch_size)
+    ]
 
     results: list[dict[str, Any] | None] = [None] * len(rows)
     batch_errors: list[str] = []

@@ -96,7 +96,7 @@ def test_codes_triggers_enforce_record_integrity_and_cleanup(tmp_path: Path) -> 
 
         with pytest.raises(
             sqlite3.IntegrityError,
-            match="codes.record_id must reference an existing comment",
+            match=r"codes\.record_id must reference an existing comment",
         ):
             connection.execute(
                 """

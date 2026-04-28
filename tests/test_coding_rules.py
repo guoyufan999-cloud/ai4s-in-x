@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import pytest
 
-import ai4s_legitimacy.coding.codebook_seed as codebook_seed
+from ai4s_legitimacy.coding import codebook_seed
 from ai4s_legitimacy.coding.codebook_seed import (
     LEGACY_WORKFLOW_TO_STAGE_CODE,
     iter_codebook_rows,
@@ -46,7 +46,7 @@ def test_codebook_seed_fails_fast_when_workflow_example_is_missing(monkeypatch: 
     missing_code_id = "A1.1"
     monkeypatch.delitem(codebook_seed._WORKFLOW_EXAMPLES, missing_code_id)
 
-    with pytest.raises(ValueError) as exc_info:
+    with pytest.raises(ValueError, match="missing example") as exc_info:
         list(iter_codebook_rows())
     message = str(exc_info.value)
     assert "missing example" in message
@@ -58,7 +58,7 @@ def test_codebook_seed_fails_fast_when_legitimacy_example_is_missing(monkeypatch
     missing_code_id = "B4"
     monkeypatch.delitem(codebook_seed._LEGITIMACY_EXAMPLES, missing_code_id)
 
-    with pytest.raises(ValueError) as exc_info:
+    with pytest.raises(ValueError, match="missing example") as exc_info:
         list(iter_codebook_rows())
     message = str(exc_info.value)
     assert "missing example" in message

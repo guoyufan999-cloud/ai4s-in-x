@@ -1,7 +1,8 @@
 from __future__ import annotations
 
+from collections.abc import Callable, Mapping
 from pathlib import Path
-from typing import Any, Callable, Mapping
+from typing import Any
 
 from ai4s_legitimacy.analysis.figures.config import (
     ATTITUDE_COLORS,

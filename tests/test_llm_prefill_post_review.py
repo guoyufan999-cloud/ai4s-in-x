@@ -32,6 +32,7 @@ class _TransportSequence:
         self.requests: list[Any] = []
 
     def __call__(self, request, timeout: float, context=None):
+        _ = context
         self.requests.append((request, timeout))
         if not self.responses:
             raise AssertionError("transport called too many times")

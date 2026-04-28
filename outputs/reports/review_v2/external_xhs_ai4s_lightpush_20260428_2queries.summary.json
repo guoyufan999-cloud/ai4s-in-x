@@ -1,0 +1,66 @@
+{
+  "task_batch_id": "external_xhs_opencli_2025plus_pilot100_v1",
+  "coder_version": "codex_ai4s_schema_v1",
+  "generated_at": "2026-04-27T23:07:52.114778+00:00",
+  "opencli_doctor": {
+    "daemon_running": false,
+    "extension_connected": false,
+    "connectivity_ok": false,
+    "raw_output": "opencli v1.4.1 doctor\n\n[MISSING] Daemon: not running\n[MISSING] Extension: not connected\n[FAIL] Connectivity: failed (Failed to start opencli daemon. Try running manually:\n  node /usr/local/lib/node_modules/@jackwener/opencli/dist/daemon.js\nMake sure port 19825 is available.)\n\nIssues:\n  • Daemon is not running. It should start automatically when you run an opencli browser command.\n  • Browser connectivity test failed: Failed to start opencli daemon. Try running manually:\n  node /usr/local/lib/node_modules/@jackwener/opencli/dist/daemon.js\nMake sure port 19825 is available.\n"
+  },
+  "provider_used": "bing_fallback",
+  "fallback_used": true,
+  "query_template_metadata": {
+    "name": "ai4s_xiaohongshu_query_dictionary",
+    "version": "2026-03-30",
+    "notes": "Public template only. Extend locally after each harvest round."
+  },
+  "query_count": 2,
+  "max_coded_target": 6,
+  "min_included_target": 2,
+  "max_verified_limit": 10,
+  "row_count": 0,
+  "output_row_count": 2,
+  "included_count": 0,
+  "review_needed_count": 0,
+  "excluded_count": 0,
+  "output_included_count": 2,
+  "output_review_needed_count": 0,
+  "output_excluded_count": 0,
+  "query_stats": [
+    {
+      "query": "AI科研 文献综述",
+      "query_name": "practice_ai_lit_review",
+      "category": "practice",
+      "search_provider": "bing_fallback",
+      "status": "search_failed",
+      "error": "<urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "query": "AI辅助科研 文献检索",
+      "query_name": "practice_ai_lit_search",
+      "category": "practice",
+      "search_provider": "bing_fallback",
+      "status": "search_failed",
+      "error": "<urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    }
+  ],
+  "limitations": [
+    "OpenCLI Browser Bridge was not connected; the run fell back to Bing discovery plus direct public-note fetch.",
+    "No rows were harvested in this run; existing non-empty JSONL output was preserved."
+  ],
+  "artifact_classification": {
+    "status": "diagnostic_failed_run_preserved_output",
+    "formal_evidence_chain": false,
+    "quality_v5_formal_scope": false,
+    "reason": "This run harvested no new rows and preserved an existing non-empty JSONL; keep it for diagnostics only, not paper_scope_quality_v5 evidence."
+  },
+  "output_preserved": true,
+  "output_path": "outputs/tables/external_xhs_ai4s_lightpush_20260428_2queries.jsonl",
+  "preserved_existing_row_count": 2,
+  "preserved_existing_decision_counts": {
+    "included": 2,
+    "review_needed": 0,
+    "excluded": 0
+  }
+}

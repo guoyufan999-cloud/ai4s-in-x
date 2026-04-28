@@ -66,8 +66,7 @@ def _choose_workflow_codes(text: str) -> list[str]:
             codes.append("A3.2")
     if any(token in text for token in ("审稿人", "期刊要求", "同行评议")) and "A2.7" not in codes:
         codes.append("A2.7")
-    ordered = sorted(dict.fromkeys(codes))
-    return ordered
+    return sorted(dict.fromkeys(codes))
 
 
 def _choose_legitimacy(text: str) -> list[str]:
@@ -200,8 +199,23 @@ def _make_claim_units(
         evidence_map[workflow_codes[0]] = (
             _split_sentences(source_text)[0] if _split_sentences(source_text) else source_text[:160]
         )
+    fallback_evidence = ""
+    if not workflow_codes:
+        fallback_patterns = (
+            *[BASIS_PATTERNS[code] for code in basis_codes],
+            *[BOUNDARY_CONTENT_PATTERNS[code] for code in boundary_codes],
+            *[BOUNDARY_MODE_PATTERNS[code] for code in boundary_mode_codes],
+            POSITIVE_TERMS,
+            NEGATIVE_TERMS,
+            CONDITIONAL_TERMS,
+            EVALUATIVE_QUESTION_TERMS,
+        )
+        for patterns in fallback_patterns:
+            fallback_evidence = _sentence_for_keywords(source_text, patterns)
+            if fallback_evidence:
+                break
     for index, code in enumerate(workflow_codes or [""]):
-        evidence = evidence_map.get(code, "")
+        evidence = evidence_map.get(code, "") or fallback_evidence
         if not evidence:
             continue
         unit_basis = [
@@ -291,8 +305,9 @@ def _collect_evidence(
     }
 
 
-def _decision_for_page(page: PagePayload) -> tuple[str, list[str]]:
-    text = f"{page.title}\n{page.source_text}".strip()
+def _decision_for_page(page: PagePayload, *, title: str | None = None) -> tuple[str, list[str]]:
+    page_title = page.title if title is None else title
+    text = f"{page_title}\n{page.source_text}".strip()
     has_ai = _contains_any(text, AI_CORE_TERMS)
     if not has_ai:
         return "剔除", _format_decision_reason("R1", "未明确提及 AI 或可识别 AI 工具。")
@@ -301,6 +316,7 @@ def _decision_for_page(page: PagePayload) -> tuple[str, list[str]]:
 
     workflow_codes = _choose_workflow_codes(text)
     has_research_context = _contains_any(text, RESEARCH_STAGE_TERMS)
+    has_strong_research_practice = _contains_any(text, STRONG_RESEARCH_PRACTICE_TERMS)
     has_non_research = _contains_any(text, NON_RESEARCH_TERMS) and not has_research_context
     has_boundary_or_basis = bool(_choose_basis_codes(text) or _choose_boundary_codes(text))
 
@@ -308,8 +324,10 @@ def _decision_for_page(page: PagePayload) -> tuple[str, list[str]]:
         return "剔除", _format_decision_reason("R4", "文本更像学习/办公/求职/一般开发场景。")
     if workflow_codes:
         return "纳入", _format_decision_reason("R12", "纳入：明确 AI 进入具体科研工作流环节。")
-    if has_research_context and has_boundary_or_basis:
+    if has_research_context and has_boundary_or_basis and has_strong_research_practice:
         return "纳入", _format_decision_reason("R12", "纳入：明确评价/边界对象指向具体科研实践。")
+    if has_research_context and has_boundary_or_basis:
+        return "待复核", _format_decision_reason("R6", "存在评价/边界信号，但科研工作流环节识别不稳定。")
     if has_research_context:
         return "待复核", _format_decision_reason("R6", "科研环节可能相关，但环节识别不稳定。")
     if len(page.source_text) < 140:
@@ -361,7 +379,7 @@ def encode_page(
     basis_codes = _choose_basis_codes(combined_text)
     boundary_codes = _choose_boundary_codes(combined_text)
     boundary_mode_codes = _choose_boundary_mode_codes(combined_text)
-    decision, decision_reason = _decision_for_page(page)
+    decision, decision_reason = _decision_for_page(page, title=page_title)
     if decision != "纳入":
         workflow_codes = workflow_codes if decision == "待复核" else []
         legitimacy_codes = legitimacy_codes if decision == "待复核" else []
@@ -414,6 +432,8 @@ def encode_page(
 
     return {
         "post_id": page.note_id,
+        "record_type": "post",
+        "record_id": page.note_id,
         "task_batch_id": TASK_BATCH_ID,
         "coder_version": CODER_VERSION,
         "platform": "xiaohongshu",

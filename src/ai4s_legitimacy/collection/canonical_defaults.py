@@ -122,10 +122,7 @@ def build_empty_canonical_row(
 def canonical_record_identity(row: dict[str, Any]) -> tuple[str, str]:
     record_type = str(row.get("record_type") or "").strip()
     if record_type not in RECORD_TYPE_VALUES:
-        if str(row.get("comment_id") or "").strip():
-            record_type = "comment"
-        else:
-            record_type = "post"
+        record_type = "comment" if str(row.get("comment_id") or "").strip() else "post"
     record_id = str(row.get("record_id") or "").strip()
     if not record_id:
         record_id = str(row.get(RECORD_ID_FIELD[record_type]) or "").strip()

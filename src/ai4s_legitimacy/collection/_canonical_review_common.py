@@ -21,9 +21,7 @@ def resolve_identity(
 ) -> tuple[str, str]:
     record_type = str(row.get("record_type") or "").strip()
     if not record_type:
-        if str(row.get("comment_id") or "").strip():
-            record_type = "comment"
-        elif base_row and str(base_row.get("comment_id") or "").strip():
+        if str(row.get("comment_id") or "").strip() or (base_row and str(base_row.get("comment_id") or "").strip()):
             record_type = "comment"
         else:
             record_type = "post"

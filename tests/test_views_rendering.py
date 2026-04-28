@@ -1,11 +1,11 @@
 from __future__ import annotations
 
-import ai4s_legitimacy.config.research_scope as research_scope
 from ai4s_legitimacy.analysis.figures.config import (
     format_halfyear_sequence_text,
     format_month_window_text,
     format_quarter_sequence_text,
 )
+from ai4s_legitimacy.config import research_scope
 from ai4s_legitimacy.config.research_scope import render_views_sql
 from ai4s_legitimacy.config.settings import VIEWS_PATH, VIEWS_TEMPLATE_PATH
 

@@ -1,10 +1,15 @@
 from __future__ import annotations
 
+import json
 from datetime import date
+from pathlib import Path
 
+from ai4s_legitimacy.collection import external_xhs_opencli_pilot as pilot
 from ai4s_legitimacy.collection.external_xhs_opencli_pilot import (
     TASK_BATCH_ID,
+    DoctorStatus,
     PagePayload,
+    PilotQuery,
     SearchCandidate,
     _canonical_url,
     _extract_note_id,
@@ -61,9 +66,11 @@ def test_encode_page_builds_strict_record_shape_for_included_post() -> None:
         source="opencli_xiaohongshu",
     )
 
-    row = encode_page(page=page, candidate=candidate, end_date=page.created_at and __import__("datetime").date(2026, 4, 21))
+    row = encode_page(page=page, candidate=candidate, end_date=date(2026, 4, 21))
 
     assert row["task_batch_id"] == TASK_BATCH_ID
+    assert row["record_type"] == "post"
+    assert row["record_id"] == page.note_id
     assert row["decision"] == "纳入"
     assert row["platform"] == "xiaohongshu"
     assert row["context_available"] == "否"
@@ -101,6 +108,125 @@ def test_encode_page_excludes_non_research_post() -> None:
     assert row["decision"] == "剔除"
     assert row["decision_reason"][0].startswith("R4")
     assert row["workflow_dimension"]["secondary_stage"] == []
+
+
+def test_encode_page_recognizes_common_gpt_variants() -> None:
+    page = PagePayload(
+        url="https://www.xiaohongshu.com/explore/gptvariant1",
+        note_id="gptvariant1",
+        title="Peer reviewer是用chat gpt的要怎么办",
+        source_text=(
+            "第三个peer review明显是直接chat gpt生成。"
+            "他让我加几篇和研究不相关的reference，我写response letter越写越无语。"
+            "这算不算学术不端？"
+        ),
+        author_handle="review_demo",
+        created_at="2025-02-11",
+        status="ok",
+        fetched_via="direct_http",
+    )
+    candidate = SearchCandidate(
+        query_name="salience_chatgpt_peer_review",
+        query_text="ChatGPT 审稿",
+        title=page.title,
+        url=page.url,
+        author="review_demo",
+        snippet="",
+        source="opencli_xiaohongshu",
+    )
+
+    row = encode_page(page=page, candidate=candidate, end_date=date(2026, 4, 21))
+
+    assert row["decision"] == "纳入"
+    assert row["decision_reason"][0].startswith("R12")
+    assert "A2.7" in row["workflow_dimension"]["secondary_stage"]
+
+
+def test_encode_page_uses_search_title_for_decision_when_page_title_is_placeholder() -> None:
+    page = PagePayload(
+        url="https://www.xiaohongshu.com/explore/fallbacktitle1",
+        note_id="fallbacktitle1",
+        title="小红书_精选笔记",
+        source_text="我现在只把它当作文献检索辅助，最后会自己核查原文和引用。",
+        author_handle="researcher_demo",
+        created_at="2025-03-15",
+        status="ok",
+        fetched_via="direct_http",
+    )
+    candidate = SearchCandidate(
+        query_name="practice_ai_lit_search",
+        query_text="AI辅助科研 文献检索",
+        title="DeepSeek 辅助科研文献检索的人工复核流程",
+        url=page.url,
+        author="researcher_demo",
+        snippet="",
+        source="opencli_xiaohongshu",
+    )
+
+    row = encode_page(page=page, candidate=candidate, end_date=date(2026, 4, 21))
+
+    assert row["decision"] == "纳入"
+    assert row["theme_summary"] == candidate.title
+    assert "A1.2" in row["workflow_dimension"]["secondary_stage"]
+
+
+def test_encode_page_demotes_boundary_signal_without_stable_research_workflow() -> None:
+    page = PagePayload(
+        url="https://www.xiaohongshu.com/explore/platformrisk1",
+        note_id="platformrisk1",
+        title="Claude开始查护照了，用户担心账号风险",
+        source_text=(
+            "Anthropic上线身份验证功能，要求用户提供护照和实时自拍。"
+            "Persona KYC系统引发用户担忧，尤其是数据安全和隐私问题。"
+        ),
+        author_handle="platform_demo",
+        created_at="2026-04-16",
+        status="ok",
+        fetched_via="direct_http",
+    )
+    candidate = SearchCandidate(
+        query_name="boundary_claude_review",
+        query_text="Claude 数据分析 人工审核",
+        title=page.title,
+        url=page.url,
+        author="platform_demo",
+        snippet="",
+        source="opencli_xiaohongshu",
+    )
+
+    row = encode_page(page=page, candidate=candidate, end_date=date(2026, 4, 21))
+
+    assert row["decision"] == "待复核"
+    assert row["claim_units"] == []
+    assert row["decision_reason"][0].startswith("R6")
+
+
+def test_encode_page_maps_result_verification_to_reproduction_workflow() -> None:
+    page = PagePayload(
+        url="https://www.xiaohongshu.com/explore/verifyresult1",
+        note_id="verifyresult1",
+        title="AI科研结果验证必须人工复核",
+        source_text="我用AI辅助科研做结果验证，但最终必须人工复核，不能直接相信模型结论。",
+        author_handle="verify_demo",
+        created_at="2026-03-20",
+        status="ok",
+        fetched_via="direct_http",
+    )
+    candidate = SearchCandidate(
+        query_name="boundary_ai_verification",
+        query_text="AI科研 结果验证 人工复核",
+        title=page.title,
+        url=page.url,
+        author="verify_demo",
+        snippet="",
+        source="opencli_xiaohongshu",
+    )
+
+    row = encode_page(page=page, candidate=candidate, end_date=date(2026, 4, 21))
+
+    assert row["decision"] == "纳入"
+    assert "A1.7" in row["workflow_dimension"]["secondary_stage"]
+    assert row["claim_units"]
 
 
 def test_encode_page_excludes_generic_ai_tool_roundup() -> None:
@@ -153,3 +279,72 @@ def test_parse_search_author_and_date_extracts_visible_result_date() -> None:
     )
     assert author2 == "UU的百宝箱"
     assert created_at2 == "2025-02-04"
+
+
+def test_run_external_xhs_pilot_preserves_existing_output_on_empty_failed_run(
+    tmp_path: Path,
+    monkeypatch,
+) -> None:
+    output_path = tmp_path / "existing.jsonl"
+    summary_path = tmp_path / "summary.json"
+    existing_payload = (
+        '{"post_id": "existing", "record_type": "post", "record_id": "existing", '
+        '"decision": "纳入"}\n'
+    )
+    output_path.write_text(existing_payload, encoding="utf-8")
+
+    monkeypatch.setattr(
+        pilot,
+        "check_opencli_prerequisite",
+        lambda: DoctorStatus(
+            daemon_running=False,
+            extension_connected=False,
+            connectivity_ok=False,
+            raw_output="offline",
+        ),
+    )
+    monkeypatch.setattr(
+        pilot,
+        "build_fixed_queries",
+        lambda: [PilotQuery("practice_ai_lit_review", "AI科研 文献综述", "practice")],
+    )
+
+    def fail_search(_query: PilotQuery, *, limit: int) -> list[SearchCandidate]:
+        raise RuntimeError(f"offline limit={limit}")
+
+    monkeypatch.setattr(pilot, "_search_with_bing", fail_search)
+
+    pilot.run_external_xhs_pilot(
+        output_path=output_path,
+        summary_path=summary_path,
+        db_path=tmp_path / "missing.sqlite3",
+        max_coded=2,
+        min_included=1,
+        max_verified=2,
+        search_limit=1,
+        max_queries=1,
+    )
+
+    summary = json.loads(summary_path.read_text(encoding="utf-8"))
+    assert output_path.read_text(encoding="utf-8") == existing_payload
+    assert summary["row_count"] == 0
+    assert summary["output_row_count"] == 1
+    assert summary["output_preserved"] is True
+    assert summary["preserved_existing_row_count"] == 1
+    assert summary["included_count"] == 0
+    assert summary["output_included_count"] == 1
+    assert summary["preserved_existing_decision_counts"] == {
+        "included": 1,
+        "review_needed": 0,
+        "excluded": 0,
+    }
+    assert summary["artifact_classification"] == {
+        "status": "diagnostic_failed_run_preserved_output",
+        "formal_evidence_chain": False,
+        "quality_v5_formal_scope": False,
+        "reason": (
+            "This run harvested no new rows and preserved an existing non-empty JSONL; "
+            "keep it for diagnostics only, not paper_scope_quality_v5 evidence."
+        ),
+    }
+    assert "existing non-empty JSONL output was preserved" in summary["limitations"][-1]

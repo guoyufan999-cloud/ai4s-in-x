@@ -241,24 +241,20 @@ def bootstrap_claim_units(
         return []
     evidence = split_sentences(source_text)[:1] or [source_text[:220]]
     unit_codes = workflow_codes or [""]
-    claim_units: list[dict[str, Any]] = []
-    for workflow_code in unit_codes:
-        claim_units.append(
-            {
-                "practice_unit": code_label(workflow_code) if workflow_code else "AI科研相关实践单元",
-                "workflow_stage_codes": [workflow_code] if workflow_code else [],
-                "legitimacy_codes": legitimacy_codes,
-                "basis_codes": [{"code": code, "evidence": evidence[0]} for code in basis_codes],
-                "boundary_codes": [
-                    {"code": code, "evidence": evidence[0]} for code in boundary_content_codes
-                ],
-                "boundary_mode_codes": [
-                    {"code": code, "evidence": evidence[0]} for code in boundary_mode_codes
-                ],
-                "evidence": evidence,
-            }
-        )
-    return claim_units
+    return [
+        {
+            "practice_unit": code_label(workflow_code) if workflow_code else "AI科研相关实践单元",
+            "workflow_stage_codes": [workflow_code] if workflow_code else [],
+            "legitimacy_codes": legitimacy_codes,
+            "basis_codes": [{"code": code, "evidence": evidence[0]} for code in basis_codes],
+            "boundary_codes": [{"code": code, "evidence": evidence[0]} for code in boundary_content_codes],
+            "boundary_mode_codes": [
+                {"code": code, "evidence": evidence[0]} for code in boundary_mode_codes
+            ],
+            "evidence": evidence,
+        }
+        for workflow_code in unit_codes
+    ]
 
 
 def evidence_master_for_row(row: dict[str, Any]) -> list[str]:

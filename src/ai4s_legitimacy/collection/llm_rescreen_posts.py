@@ -2,8 +2,8 @@ from __future__ import annotations
 
 import argparse
 import json
+from collections.abc import Callable
 from pathlib import Path
-from typing import Callable
 
 from ai4s_legitimacy.collection import llm_rescreen_batching as _batching
 from ai4s_legitimacy.collection import llm_rescreen_outputs as _outputs
@@ -225,7 +225,6 @@ def main() -> None:
 
 
 __all__ = [
-    "BatchClassifier",
     "DEFAULT_FALSE_SAMPLE_SIZE",
     "DEFAULT_MAX_WORKERS",
     "DEFAULT_REVIEWER",
@@ -234,6 +233,7 @@ __all__ = [
     "DEFAULT_STAGE2_BATCH_SIZE",
     "MAX_STAGE2_COVERAGE_RATIO",
     "REVIEW_PHASE",
+    "BatchClassifier",
     "_apply_guardrails",
     "_stage1_system_prompt",
     "_stage2_system_prompt",

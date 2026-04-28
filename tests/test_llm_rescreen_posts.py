@@ -37,6 +37,7 @@ class _TransportSequence:
         self.requests: list[Any] = []
 
     def __call__(self, request, timeout: float, context=None):
+        _ = context
         self.requests.append((request, timeout))
         if not self.responses:
             raise AssertionError("transport called too many times")
@@ -64,6 +65,7 @@ class _FakeClassifier:
 
 class _ExplodingClassifier:
     def classify_batch(self, rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
+        _ = rows
         raise AssertionError("resume path should not invoke classifier")
 
 

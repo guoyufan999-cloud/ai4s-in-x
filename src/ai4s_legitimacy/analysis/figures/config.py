@@ -2,8 +2,9 @@ from __future__ import annotations
 
 import json
 from calendar import monthrange
+from collections.abc import Mapping, Sequence
 from datetime import date, datetime
-from typing import Any, Mapping, Optional, Sequence
+from typing import Any
 
 from ai4s_legitimacy.config.formal_baseline import ACTIVE_FIGURE_DIR, paper_scope_view
 from ai4s_legitimacy.config.research_scope import (
@@ -64,7 +65,7 @@ RISK_COLORS = {
 TOOL_PALETTE = ["#355070", "#6D597A", "#B56576", "#E56B6F", "#EAAC8B", "#A7B0BE"]
 
 
-def normalize_date_only(value: Optional[str]) -> str:
+def normalize_date_only(value: str | None) -> str:
     if not value:
         return ""
     normalized = str(value).strip().replace("/", "-")

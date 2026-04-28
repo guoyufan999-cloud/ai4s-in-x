@@ -1,7 +1,7 @@
 from __future__ import annotations
 
+from collections.abc import Sequence
 from pathlib import Path
-from typing import Sequence
 
 from ai4s_legitimacy.analysis.figures._manifest_entries import FIGURE_ENTRIES
 from ai4s_legitimacy.analysis.figures.config import (

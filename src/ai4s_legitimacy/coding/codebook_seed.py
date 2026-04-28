@@ -1,7 +1,7 @@
 from __future__ import annotations
 
+from collections.abc import Iterable
 from dataclasses import dataclass
-from typing import Iterable
 
 from ai4s_legitimacy.collection.canonical_schema import (
     BOUNDARY_CONTENT_LABELS,
@@ -455,5 +455,4 @@ def iter_workflow_lookup_rows() -> Iterable[tuple[str, str, str, int, str]]:
 
 
 def iter_legitimacy_lookup_rows() -> Iterable[tuple[str, str, int, str]]:
-    for code_id, code_name, order_index, definition in LEGITIMACY_DIRECTIONS:
-        yield code_id, code_name, order_index, definition
+    yield from LEGITIMACY_DIRECTIONS

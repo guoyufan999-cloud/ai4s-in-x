@@ -1,9 +1,10 @@
 from __future__ import annotations
 
 import json
+from collections.abc import Callable, Sequence
 from datetime import date
 from pathlib import Path
-from typing import Any, Callable, Sequence
+from typing import Any
 
 from ai4s_legitimacy.collection._canonical_review import canonicalize_review_row
 from ai4s_legitimacy.collection._jsonl import (

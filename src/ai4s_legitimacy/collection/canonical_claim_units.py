@@ -39,9 +39,7 @@ def _normalize_code_token(raw_code: str, *, allowed_codes: set[str]) -> str:
     for code in sorted(allowed_codes, key=len, reverse=True):
         if text == code or text.startswith(f"{code} "):
             return code
-        if text.startswith(f"{code}：") or text.startswith(f"{code}:"):
-            return code
-        if text.startswith(f"{code}-") or text.startswith(f"{code}_"):
+        if text.startswith((f"{code}：", f"{code}:", f"{code}-", f"{code}_")):
             return code
     match = re.match(r"^([A-Z]\d(?:\.\d+)?)\b", text)
     if match:

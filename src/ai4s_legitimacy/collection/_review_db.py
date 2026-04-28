@@ -2,7 +2,8 @@ from __future__ import annotations
 
 import json
 import sqlite3
-from typing import Any, Iterable
+from collections.abc import Iterable
+from typing import Any
 
 
 def table_columns(connection: sqlite3.Connection, table_name: str) -> set[str]:
