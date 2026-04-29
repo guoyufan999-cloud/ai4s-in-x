@@ -16,6 +16,7 @@
 - `outputs/reports/paper_materials/quality_v6/framework_v2/framework_v2_summary_tables.json`
 - `outputs/reports/paper_materials/quality_v6/framework_v2/cross_tabs_v2.json`
 - `outputs/reports/paper_materials/paper_master_manuscript_quality_v6_submission_cn_clean.md`
+- `outputs/reports/paper_materials/quality_v6/quality_v6_coding_audit_limitations_memo.md`
 - `docs/paper_working/quality_v6_source_of_truth_note.md`
 
 ## Positive Findings
@@ -34,7 +35,7 @@
 - v6 结果章目前是材料表摘要，不是完整论文结果章节；需要把第四章、第五章、第六章的叙述段落补齐。
 - framework_v2 的部分表是 code occurrence / claim-unit occurrence，不是 post-level count；主稿切换时必须明确计数单位，避免把多选编码次数误读为帖子数。
 - v6 中仍有 `uncoded` / `uncertain` 项，例如科研活动场域 `uncoded=32`、工作流环节 `uncertain=32`、学科宽口径 `uncertain=485`。这些可以保留，但主稿必须解释其来源与限制。
-- v6 framework README 提到 audit report 可由 builder 生成，但当前 v6 framework 目录未包含单独的 v6 coding audit report；若主稿正式切换，建议补一份 v6 coding audit/limitations memo。
+- 当前已补充 `quality_v6_coding_audit_limitations_memo.md`，用于投稿写作层的可信度说明；它不是逐条语义复核报告，后续如需更强证据可继续生成行级 audit report 或抽查 appendix。
 
 ## Decision
 
@@ -50,8 +51,8 @@
 6. 保留评论层 deferred 的边界表述，不把 sidecar comments 写入正式结论。
 7. 补入基础外部文献引用、参考文献表和正文统计表。
 
-仍建议后续补充 `quality_v6` coding audit / limitations memo，并按导师或期刊要求扩展中文社交媒体和小红书平台文献。
+仍建议按导师或期刊要求扩展中文社交媒体和小红书平台文献，并在需要时对高风险组合补做行级抽查复核。
 
 ## Bottom Line
 
-`quality_v6` 可以作为当前主结果层。当前优先入口为 `paper_master_manuscript_quality_v6_submission_cn_clean.md`；后续重点是方法审计补充、参考文献格式统一和期刊格式排版。
+`quality_v6` 可以作为当前主结果层。当前优先入口为 `paper_master_manuscript_quality_v6_submission_cn_clean.md`；后续重点是期刊格式排版、目标期刊参考文献样式统一和必要的高风险组合抽查。

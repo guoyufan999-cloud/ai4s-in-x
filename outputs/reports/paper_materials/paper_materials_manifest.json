@@ -59,6 +59,7 @@
     "outputs/figures/paper_figures_submission/quality_v6/posts_heatmap.png"
   ],
   "framework_v2_materials_dir": "outputs/reports/paper_materials/quality_v6/framework_v2",
+  "quality_v6_coding_audit_limitations_memo_path": "outputs/reports/paper_materials/quality_v6/quality_v6_coding_audit_limitations_memo.md",
   "framework_v2_summary_tables_path": "outputs/reports/paper_materials/quality_v6/framework_v2/framework_v2_summary_tables.json",
   "framework_v2_cross_tabs_path": "outputs/reports/paper_materials/quality_v6/framework_v2/cross_tabs_v2.json",
   "comment_scope_note": "comment_review_v2 is intentionally deferred for this post-only quality_v6 submission layer; formal_comments=0 is a design choice."

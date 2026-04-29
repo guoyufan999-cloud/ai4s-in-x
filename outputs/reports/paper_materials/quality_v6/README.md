@@ -7,3 +7,4 @@
 - 评论层：`comment_review_v2 deferred`
 - consistency status：`aligned`
 - framework_v2 materials：`outputs/reports/paper_materials/quality_v6/framework_v2`
+- coding audit / limitations memo：`outputs/reports/paper_materials/quality_v6/quality_v6_coding_audit_limitations_memo.md`

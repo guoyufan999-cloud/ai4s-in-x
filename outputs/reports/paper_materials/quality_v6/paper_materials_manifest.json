@@ -14,6 +14,7 @@
   "figure_dir": "outputs/figures/paper_figures_submission/quality_v6",
   "figure_manifest_path": "outputs/figures/paper_figures_submission/quality_v6/paper_figures_submission_manifest.md",
   "framework_v2_dir": "outputs/reports/paper_materials/quality_v6/framework_v2",
+  "coding_audit_limitations_memo_path": "outputs/reports/paper_materials/quality_v6/quality_v6_coding_audit_limitations_memo.md",
   "submission_master_clean_path": "outputs/reports/paper_materials/paper_master_manuscript_quality_v6_submission_cn_clean.md",
   "table_paths": {
     "workflow_distribution": "outputs/tables/quality_v6/workflow_distribution.json",
