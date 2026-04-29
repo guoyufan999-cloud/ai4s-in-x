@@ -1,0 +1,1128 @@
+{
+  "task_batch_id": "external_xhs_opencli_2025plus_pilot100_v1",
+  "coder_version": "codex_ai4s_schema_v1",
+  "generated_at": "2026-04-28T13:56:02.055670+00:00",
+  "opencli_doctor": {
+    "daemon_running": true,
+    "extension_connected": true,
+    "connectivity_ok": true,
+    "raw_output": "opencli v1.4.1 doctor\n\n[OK] Daemon: running on port 19825\n[OK] Extension: connected\n[OK] Connectivity: connected in 0.0s\n\nSessions:\n  • default → window 1817870703, tabs=1, idle=120s\n\nEverything looks good!\n"
+  },
+  "provider_used": "opencli_xiaohongshu",
+  "fallback_used": false,
+  "query_source": "query_file",
+  "query_file_path": "data/external/xhs_expansion_candidate_v1_queries.json",
+  "comparison_summary_path": "outputs/reports/xhs_expansion_candidate_v1/pilot50.summary.json",
+  "query_template_metadata": {
+    "dictionary_id": "xhs_expansion_candidate_v1_queries",
+    "version": "2026-04-28",
+    "platform": "xiaohongshu",
+    "scope": "supplemental_candidate_only",
+    "quality_v5_formal_scope": false,
+    "formal_baseline_policy": "This query dictionary only supports xhs_expansion_candidate_v1 exploratory candidate harvesting. It must not be treated as a quality_v5 formal result source without later manual review and a separate checkpoint.",
+    "paper_title": "社交媒体中AI介入科研活动的实践呈现、规范评价与边界协商研究"
+  },
+  "query_count": 56,
+  "executed_query_count": 56,
+  "max_coded_target": 300,
+  "min_included_target": 150,
+  "max_verified_limit": 450,
+  "row_count": 115,
+  "output_row_count": 115,
+  "included_count": 67,
+  "review_needed_count": 29,
+  "excluded_count": 19,
+  "output_included_count": 67,
+  "output_review_needed_count": 29,
+  "output_excluded_count": 19,
+  "query_stats": [
+    {
+      "query": "AI科研",
+      "query_name": "query_file_a_01",
+      "category": "A. AI科研总体类",
+      "search_provider": "opencli_xiaohongshu",
+      "search_hits": 15,
+      "verified_kept": 1,
+      "skip_counts": {
+        "duplicate_existing_db": 8,
+        "duplicate_current_run": 0,
+        "author_cap": 0,
+        "fetch_unavailable": 0,
+        "login_or_access_restricted": 0,
+        "empty_body": 1,
+        "date_out_of_range": 5,
+        "duplicate_title": 0,
+        "invalid_url": 0
+      }
+    },
+    {
+      "query": "AI辅助科研",
+      "query_name": "query_file_a_02",
+      "category": "A. AI科研总体类",
+      "search_provider": "opencli_xiaohongshu",
+      "search_hits": 15,
+      "verified_kept": 2,
+      "skip_counts": {
+        "duplicate_existing_db": 8,
+        "duplicate_current_run": 0,
+        "author_cap": 0,
+        "fetch_unavailable": 0,
+        "login_or_access_restricted": 0,
+        "empty_body": 1,
+        "date_out_of_range": 4,
+        "duplicate_title": 0,
+        "invalid_url": 0
+      }
+    },
+    {
+      "query": "ChatGPT科研",
+      "query_name": "query_file_a_03",
+      "category": "A. AI科研总体类",
+      "search_provider": "opencli_xiaohongshu",
+      "search_hits": 14,
+      "verified_kept": 4,
+      "skip_counts": {
+        "duplicate_existing_db": 5,
+        "duplicate_current_run": 0,
+        "author_cap": 0,
+        "fetch_unavailable": 0,
+        "login_or_access_restricted": 0,
+        "empty_body": 1,
+        "date_out_of_range": 4,
+        "duplicate_title": 0,
+        "invalid_url": 0
+      }
+    },
+    {
+      "query": "生成式AI科研",
+      "query_name": "query_file_a_04",
+      "category": "A. AI科研总体类",
+      "search_provider": "opencli_xiaohongshu",
+      "search_hits": 15,
+      "verified_kept": 0,
+      "skip_counts": {
+        "duplicate_existing_db": 7,
+        "duplicate_current_run": 1,
+        "author_cap": 0,
+        "fetch_unavailable": 0,
+        "login_or_access_restricted": 0,
+        "empty_body": 0,
+        "date_out_of_range": 7,
+        "duplicate_title": 0,
+        "invalid_url": 0
+      }
+    },
+    {
+      "query": "AI研究助手",
+      "query_name": "query_file_a_05",
+      "category": "A. AI科研总体类",
+      "search_provider": "opencli_xiaohongshu",
+      "search_hits": 15,
+      "verified_kept": 4,
+      "skip_counts": {
+        "duplicate_existing_db": 6,
+        "duplicate_current_run": 0,
+        "author_cap": 0,
+        "fetch_unavailable": 0,
+        "login_or_access_restricted": 0,
+        "empty_body": 0,
+        "date_out_of_range": 5,
+        "duplicate_title": 0,
+        "invalid_url": 0
+      }
+    },
+    {
+      "query": "AI4Research",
+      "query_name": "query_file_a_06",
+      "category": "A. AI科研总体类",
+      "search_provider": "opencli_xiaohongshu",
+      "search_hits": 17,
+      "verified_kept": 7,
+      "skip_counts": {
+        "duplicate_existing_db": 4,
+        "duplicate_current_run": 1,
+        "author_cap": 0,
+        "fetch_unavailable": 0,
+        "login_or_access_restricted": 0,
+        "empty_body": 1,
+        "date_out_of_range": 4,
+        "duplicate_title": 0,
+        "invalid_url": 0
+      }
+    },
+    {
+      "query": "AI4S",
+      "query_name": "query_file_a_07",
+      "category": "A. AI科研总体类",
+      "search_provider": "opencli_xiaohongshu",
+      "search_hits": 14,
+      "verified_kept": 8,
+      "skip_counts": {
+        "duplicate_existing_db": 0,
+        "duplicate_current_run": 0,
+        "author_cap": 0,
+        "fetch_unavailable": 0,
+        "login_or_access_restricted": 0,
+        "empty_body": 0,
+        "date_out_of_range": 1,
+        "duplicate_title": 0,
+        "invalid_url": 0
+      }
+    },
+    {
+      "query": "科研AI工具",
+      "query_name": "query_file_a_08",
+      "category": "A. AI科研总体类",
+      "search_provider": "opencli_xiaohongshu",
+      "search_hits": 13,
+      "verified_kept": 3,
+      "skip_counts": {
+        "duplicate_existing_db": 6,
+        "duplicate_current_run": 1,
+        "author_cap": 0,
+        "fetch_unavailable": 0,
+        "login_or_access_restricted": 0,
+        "empty_body": 1,
+        "date_out_of_range": 2,
+        "duplicate_title": 0,
+        "invalid_url": 0
+      }
+    },
+    {
+      "query": "AI文献阅读",
+      "query_name": "query_file_b_09",
+      "category": "B. 文献处理与知识整合类",
+      "search_provider": "opencli_xiaohongshu",
+      "search_hits": 16,
+      "verified_kept": 4,
+      "skip_counts": {
+        "duplicate_existing_db": 5,
+        "duplicate_current_run": 1,
+        "author_cap": 0,
+        "fetch_unavailable": 0,
+        "login_or_access_restricted": 0,
+        "empty_body": 1,
+        "date_out_of_range": 5,
+        "duplicate_title": 0,
+        "invalid_url": 0
+      }
+    },
+    {
+      "query": "AI读文献",
+      "query_name": "query_file_b_10",
+      "category": "B. 文献处理与知识整合类",
+      "search_provider": "opencli_xiaohongshu",
+      "search_hits": 17,
+      "verified_kept": 6,
+      "skip_counts": {
+        "duplicate_existing_db": 5,
+        "duplicate_current_run": 2,
+        "author_cap": 0,
+        "fetch_unavailable": 0,
+        "login_or_access_restricted": 0,
+        "empty_body": 0,
+        "date_out_of_range": 4,
+        "duplicate_title": 0,
+        "invalid_url": 0
+      }
+    },
+    {
+      "query": "AI文献综述",
+      "query_name": "query_file_b_11",
+      "category": "B. 文献处理与知识整合类",
+      "search_provider": "opencli_xiaohongshu",
+      "search_hits": 16,
+      "verified_kept": 6,
+      "skip_counts": {
+        "duplicate_existing_db": 8,
+        "duplicate_current_run": 0,
+        "author_cap": 0,
+        "fetch_unavailable": 0,
+        "login_or_access_restricted": 0,
+        "empty_body": 2,
+        "date_out_of_range": 0,
+        "duplicate_title": 0,
+        "invalid_url": 0
+      }
+    },
+    {
+      "query": "ChatGPT文献综述",
+      "query_name": "query_file_b_12",
+      "category": "B. 文献处理与知识整合类",
+      "search_provider": "opencli_xiaohongshu",
+      "search_hits": 15,
+      "verified_kept": 7,
+      "skip_counts": {
+        "duplicate_existing_db": 5,
+        "duplicate_current_run": 0,
+        "author_cap": 0,
+        "fetch_unavailable": 0,
+        "login_or_access_restricted": 0,
+        "empty_body": 0,
+        "date_out_of_range": 3,
+        "duplicate_title": 0,
+        "invalid_url": 0
+      }
+    },
+    {
+      "query": "AI总结论文",
+      "query_name": "query_file_b_13",
+      "category": "B. 文献处理与知识整合类",
+      "search_provider": "opencli_xiaohongshu",
+      "search_hits": 14,
+      "verified_kept": 3,
+      "skip_counts": {
+        "duplicate_existing_db": 5,
+        "duplicate_current_run": 1,
+        "author_cap": 0,
+        "fetch_unavailable": 0,
+        "login_or_access_restricted": 0,
+        "empty_body": 0,
+        "date_out_of_range": 5,
+        "duplicate_title": 0,
+        "invalid_url": 0
+      }
+    },
+    {
+      "query": "AI论文阅读",
+      "query_name": "query_file_b_14",
+      "category": "B. 文献处理与知识整合类",
+      "search_provider": "opencli_xiaohongshu",
+      "search_hits": 15,
+      "verified_kept": 5,
+      "skip_counts": {
+        "duplicate_existing_db": 6,
+        "duplicate_current_run": 2,
+        "author_cap": 0,
+        "fetch_unavailable": 0,
+        "login_or_access_restricted": 0,
+        "empty_body": 0,
+        "date_out_of_range": 2,
+        "duplicate_title": 0,
+        "invalid_url": 0
+      }
+    },
+    {
+      "query": "AI文献管理",
+      "query_name": "query_file_b_15",
+      "category": "B. 文献处理与知识整合类",
+      "search_provider": "opencli_xiaohongshu",
+      "search_hits": 17,
+      "verified_kept": 4,
+      "skip_counts": {
+        "duplicate_existing_db": 9,
+        "duplicate_current_run": 1,
+        "author_cap": 0,
+        "fetch_unavailable": 0,
+        "login_or_access_restricted": 0,
+        "empty_body": 2,
+        "date_out_of_range": 1,
+        "duplicate_title": 0,
+        "invalid_url": 0
+      }
+    },
+    {
+      "query": "AI翻译文献",
+      "query_name": "query_file_b_16",
+      "category": "B. 文献处理与知识整合类",
+      "search_provider": "opencli_xiaohongshu",
+      "search_hits": 17,
+      "verified_kept": 8,
+      "skip_counts": {
+        "duplicate_existing_db": 0,
+        "duplicate_current_run": 0,
+        "author_cap": 0,
+        "fetch_unavailable": 0,
+        "login_or_access_restricted": 0,
+        "empty_body": 1,
+        "date_out_of_range": 0,
+        "duplicate_title": 0,
+        "invalid_url": 0
+      }
+    },
+    {
+      "query": "AI研究设计",
+      "query_name": "query_file_c_17",
+      "category": "C. 研究设计与方法学习类",
+      "search_provider": "opencli_xiaohongshu",
+      "search_hits": 14,
+      "verified_kept": 8,
+      "skip_counts": {
+        "duplicate_existing_db": 5,
+        "duplicate_current_run": 0,
+        "author_cap": 0,
+        "fetch_unavailable": 0,
+        "login_or_access_restricted": 0,
+        "empty_body": 0,
+        "date_out_of_range": 1,
+        "duplicate_title": 0,
+        "invalid_url": 0
+      }
+    },
+    {
+      "query": "ChatGPT研究设计",
+      "query_name": "query_file_c_18",
+      "category": "C. 研究设计与方法学习类",
+      "search_provider": "opencli_xiaohongshu",
+      "search_hits": 14,
+      "verified_kept": 1,
+      "skip_counts": {
+        "duplicate_existing_db": 8,
+        "duplicate_current_run": 2,
+        "author_cap": 0,
+        "fetch_unavailable": 0,
+        "login_or_access_restricted": 0,
+        "empty_body": 0,
+        "date_out_of_range": 3,
+        "duplicate_title": 0,
+        "invalid_url": 0
+      }
+    },
+    {
+      "query": "AI生成研究问题",
+      "query_name": "query_file_c_19",
+      "category": "C. 研究设计与方法学习类",
+      "search_provider": "opencli_xiaohongshu",
+      "search_hits": 15,
+      "verified_kept": 1,
+      "skip_counts": {
+        "duplicate_existing_db": 6,
+        "duplicate_current_run": 1,
+        "author_cap": 0,
+        "fetch_unavailable": 0,
+        "login_or_access_restricted": 0,
+        "empty_body": 0,
+        "date_out_of_range": 7,
+        "duplicate_title": 0,
+        "invalid_url": 0
+      }
+    },
+    {
+      "query": "AI访谈提纲",
+      "query_name": "query_file_c_20",
+      "category": "C. 研究设计与方法学习类",
+      "search_provider": "opencli_xiaohongshu",
+      "search_hits": 16,
+      "verified_kept": 6,
+      "skip_counts": {
+        "duplicate_existing_db": 3,
+        "duplicate_current_run": 0,
+        "author_cap": 0,
+        "fetch_unavailable": 0,
+        "login_or_access_restricted": 0,
+        "empty_body": 1,
+        "date_out_of_range": 6,
+        "duplicate_title": 0,
+        "invalid_url": 0
+      }
+    },
+    {
+      "query": "AI问卷设计",
+      "query_name": "query_file_c_21",
+      "category": "C. 研究设计与方法学习类",
+      "search_provider": "opencli_xiaohongshu",
+      "search_hits": 16,
+      "verified_kept": 8,
+      "skip_counts": {
+        "duplicate_existing_db": 0,
+        "duplicate_current_run": 0,
+        "author_cap": 0,
+        "fetch_unavailable": 0,
+        "login_or_access_restricted": 0,
+        "empty_body": 1,
+        "date_out_of_range": 3,
+        "duplicate_title": 0,
+        "invalid_url": 0
+      }
+    },
+    {
+      "query": "AI研究方法",
+      "query_name": "query_file_c_22",
+      "category": "C. 研究设计与方法学习类",
+      "search_provider": "opencli_xiaohongshu",
+      "search_hits": 16,
+      "verified_kept": 3,
+      "skip_counts": {
+        "duplicate_existing_db": 10,
+        "duplicate_current_run": 0,
+        "author_cap": 0,
+        "fetch_unavailable": 0,
+        "login_or_access_restricted": 0,
+        "empty_body": 0,
+        "date_out_of_range": 3,
+        "duplicate_title": 0,
+        "invalid_url": 0
+      }
+    },
+    {
+      "query": "AI方法学习",
+      "query_name": "query_file_c_23",
+      "category": "C. 研究设计与方法学习类",
+      "search_provider": "opencli_xiaohongshu",
+      "search_hits": 15,
+      "verified_kept": 5,
+      "skip_counts": {
+        "duplicate_existing_db": 4,
+        "duplicate_current_run": 0,
+        "author_cap": 0,
+        "fetch_unavailable": 0,
+        "login_or_access_restricted": 0,
+        "empty_body": 0,
+        "date_out_of_range": 6,
+        "duplicate_title": 0,
+        "invalid_url": 0
+      }
+    },
+    {
+      "query": "研究生AI科研",
+      "query_name": "query_file_c_24",
+      "category": "C. 研究设计与方法学习类",
+      "search_provider": "opencli_xiaohongshu",
+      "search_hits": 15,
+      "verified_kept": 0,
+      "skip_counts": {
+        "duplicate_existing_db": 8,
+        "duplicate_current_run": 1,
+        "author_cap": 0,
+        "fetch_unavailable": 0,
+        "login_or_access_restricted": 0,
+        "empty_body": 0,
+        "date_out_of_range": 6,
+        "duplicate_title": 0,
+        "invalid_url": 0
+      }
+    },
+    {
+      "query": "AI数据分析",
+      "query_name": "query_file_d_25",
+      "category": "D. 数据分析与代码类",
+      "search_provider": "opencli_xiaohongshu",
+      "search_hits": 16,
+      "verified_kept": 8,
+      "skip_counts": {
+        "duplicate_existing_db": 1,
+        "duplicate_current_run": 1,
+        "author_cap": 0,
+        "fetch_unavailable": 0,
+        "login_or_access_restricted": 0,
+        "empty_body": 0,
+        "date_out_of_range": 6,
+        "duplicate_title": 0,
+        "invalid_url": 0
+      }
+    },
+    {
+      "query": "ChatGPT数据分析",
+      "query_name": "query_file_d_26",
+      "category": "D. 数据分析与代码类",
+      "search_provider": "opencli_xiaohongshu",
+      "search_hits": 14,
+      "verified_kept": 0,
+      "skip_counts": {
+        "duplicate_existing_db": 9,
+        "duplicate_current_run": 3,
+        "author_cap": 0,
+        "fetch_unavailable": 0,
+        "login_or_access_restricted": 0,
+        "empty_body": 1,
+        "date_out_of_range": 1,
+        "duplicate_title": 0,
+        "invalid_url": 0
+      }
+    },
+    {
+      "query": "AI写代码科研",
+      "query_name": "query_file_d_27",
+      "category": "D. 数据分析与代码类",
+      "search_provider": "opencli_xiaohongshu",
+      "search_hits": 15,
+      "verified_kept": 1,
+      "skip_counts": {
+        "duplicate_existing_db": 9,
+        "duplicate_current_run": 1,
+        "author_cap": 0,
+        "fetch_unavailable": 0,
+        "login_or_access_restricted": 0,
+        "empty_body": 0,
+        "date_out_of_range": 4,
+        "duplicate_title": 0,
+        "invalid_url": 0
+      }
+    },
+    {
+      "query": "AI统计分析",
+      "query_name": "query_file_d_28",
+      "category": "D. 数据分析与代码类",
+      "search_provider": "opencli_xiaohongshu",
+      "search_hits": 15,
+      "verified_kept": 2,
+      "skip_counts": {
+        "duplicate_existing_db": 5,
+        "duplicate_current_run": 6,
+        "author_cap": 0,
+        "fetch_unavailable": 0,
+        "login_or_access_restricted": 0,
+        "empty_body": 0,
+        "date_out_of_range": 2,
+        "duplicate_title": 0,
+        "invalid_url": 0
+      }
+    },
+    {
+      "query": "AI辅助建模",
+      "query_name": "query_file_d_29",
+      "category": "D. 数据分析与代码类",
+      "search_provider": "opencli_xiaohongshu",
+      "search_hits": 0,
+      "verified_kept": 0,
+      "skip_counts": {
+        "duplicate_existing_db": 0,
+        "duplicate_current_run": 0,
+        "author_cap": 0,
+        "fetch_unavailable": 0,
+        "login_or_access_restricted": 0,
+        "empty_body": 0,
+        "date_out_of_range": 0,
+        "duplicate_title": 0,
+        "invalid_url": 0
+      }
+    },
+    {
+      "query": "AI结果解释",
+      "query_name": "query_file_d_30",
+      "category": "D. 数据分析与代码类",
+      "search_provider": "opencli_xiaohongshu",
+      "search_hits": 0,
+      "verified_kept": 0,
+      "skip_counts": {
+        "duplicate_existing_db": 0,
+        "duplicate_current_run": 0,
+        "author_cap": 0,
+        "fetch_unavailable": 0,
+        "login_or_access_restricted": 0,
+        "empty_body": 0,
+        "date_out_of_range": 0,
+        "duplicate_title": 0,
+        "invalid_url": 0
+      }
+    },
+    {
+      "query": "AI科研代码",
+      "query_name": "query_file_d_31",
+      "category": "D. 数据分析与代码类",
+      "search_provider": "opencli_xiaohongshu",
+      "search_hits": 0,
+      "verified_kept": 0,
+      "skip_counts": {
+        "duplicate_existing_db": 0,
+        "duplicate_current_run": 0,
+        "author_cap": 0,
+        "fetch_unavailable": 0,
+        "login_or_access_restricted": 0,
+        "empty_body": 0,
+        "date_out_of_range": 0,
+        "duplicate_title": 0,
+        "invalid_url": 0
+      }
+    },
+    {
+      "query": "AI分析论文数据",
+      "query_name": "query_file_d_32",
+      "category": "D. 数据分析与代码类",
+      "search_provider": "opencli_xiaohongshu",
+      "search_hits": 0,
+      "verified_kept": 0,
+      "skip_counts": {
+        "duplicate_existing_db": 0,
+        "duplicate_current_run": 0,
+        "author_cap": 0,
+        "fetch_unavailable": 0,
+        "login_or_access_restricted": 0,
+        "empty_body": 0,
+        "date_out_of_range": 0,
+        "duplicate_title": 0,
+        "invalid_url": 0
+      }
+    },
+    {
+      "query": "AI写论文",
+      "query_name": "query_file_e_33",
+      "category": "E. 论文写作与成果表达类",
+      "search_provider": "opencli_xiaohongshu",
+      "search_hits": 0,
+      "verified_kept": 0,
+      "skip_counts": {
+        "duplicate_existing_db": 0,
+        "duplicate_current_run": 0,
+        "author_cap": 0,
+        "fetch_unavailable": 0,
+        "login_or_access_restricted": 0,
+        "empty_body": 0,
+        "date_out_of_range": 0,
+        "duplicate_title": 0,
+        "invalid_url": 0
+      }
+    },
+    {
+      "query": "ChatGPT写论文",
+      "query_name": "query_file_e_34",
+      "category": "E. 论文写作与成果表达类",
+      "search_provider": "opencli_xiaohongshu",
+      "search_hits": 0,
+      "verified_kept": 0,
+      "skip_counts": {
+        "duplicate_existing_db": 0,
+        "duplicate_current_run": 0,
+        "author_cap": 0,
+        "fetch_unavailable": 0,
+        "login_or_access_restricted": 0,
+        "empty_body": 0,
+        "date_out_of_range": 0,
+        "duplicate_title": 0,
+        "invalid_url": 0
+      }
+    },
+    {
+      "query": "AI论文润色",
+      "query_name": "query_file_e_35",
+      "category": "E. 论文写作与成果表达类",
+      "search_provider": "opencli_xiaohongshu",
+      "search_hits": 0,
+      "verified_kept": 0,
+      "skip_counts": {
+        "duplicate_existing_db": 0,
+        "duplicate_current_run": 0,
+        "author_cap": 0,
+        "fetch_unavailable": 0,
+        "login_or_access_restricted": 0,
+        "empty_body": 0,
+        "date_out_of_range": 0,
+        "duplicate_title": 0,
+        "invalid_url": 0
+      }
+    },
+    {
+      "query": "AI论文修改",
+      "query_name": "query_file_e_36",
+      "category": "E. 论文写作与成果表达类",
+      "search_provider": "opencli_xiaohongshu",
+      "search_hits": 0,
+      "verified_kept": 0,
+      "skip_counts": {
+        "duplicate_existing_db": 0,
+        "duplicate_current_run": 0,
+        "author_cap": 0,
+        "fetch_unavailable": 0,
+        "login_or_access_restricted": 0,
+        "empty_body": 0,
+        "date_out_of_range": 0,
+        "duplicate_title": 0,
+        "invalid_url": 0
+      }
+    },
+    {
+      "query": "AI论文摘要",
+      "query_name": "query_file_e_37",
+      "category": "E. 论文写作与成果表达类",
+      "search_provider": "opencli_xiaohongshu",
+      "search_hits": 0,
+      "verified_kept": 0,
+      "skip_counts": {
+        "duplicate_existing_db": 0,
+        "duplicate_current_run": 0,
+        "author_cap": 0,
+        "fetch_unavailable": 0,
+        "login_or_access_restricted": 0,
+        "empty_body": 0,
+        "date_out_of_range": 0,
+        "duplicate_title": 0,
+        "invalid_url": 0
+      }
+    },
+    {
+      "query": "AI学术写作",
+      "query_name": "query_file_e_38",
+      "category": "E. 论文写作与成果表达类",
+      "search_provider": "opencli_xiaohongshu",
+      "search_hits": 0,
+      "verified_kept": 0,
+      "skip_counts": {
+        "duplicate_existing_db": 0,
+        "duplicate_current_run": 0,
+        "author_cap": 0,
+        "fetch_unavailable": 0,
+        "login_or_access_restricted": 0,
+        "empty_body": 0,
+        "date_out_of_range": 0,
+        "duplicate_title": 0,
+        "invalid_url": 0
+      }
+    },
+    {
+      "query": "AI论文初稿",
+      "query_name": "query_file_e_39",
+      "category": "E. 论文写作与成果表达类",
+      "search_provider": "opencli_xiaohongshu",
+      "search_hits": 0,
+      "verified_kept": 0,
+      "skip_counts": {
+        "duplicate_existing_db": 0,
+        "duplicate_current_run": 0,
+        "author_cap": 0,
+        "fetch_unavailable": 0,
+        "login_or_access_restricted": 0,
+        "empty_body": 0,
+        "date_out_of_range": 0,
+        "duplicate_title": 0,
+        "invalid_url": 0
+      }
+    },
+    {
+      "query": "AI投稿信",
+      "query_name": "query_file_e_40",
+      "category": "E. 论文写作与成果表达类",
+      "search_provider": "opencli_xiaohongshu",
+      "search_hits": 0,
+      "verified_kept": 0,
+      "skip_counts": {
+        "duplicate_existing_db": 0,
+        "duplicate_current_run": 0,
+        "author_cap": 0,
+        "fetch_unavailable": 0,
+        "login_or_access_restricted": 0,
+        "empty_body": 0,
+        "date_out_of_range": 0,
+        "duplicate_title": 0,
+        "invalid_url": 0
+      }
+    },
+    {
+      "query": "AI代写论文",
+      "query_name": "query_file_f_41",
+      "category": "F. 科研规范与诚信类",
+      "search_provider": "opencli_xiaohongshu",
+      "search_hits": 0,
+      "verified_kept": 0,
+      "skip_counts": {
+        "duplicate_existing_db": 0,
+        "duplicate_current_run": 0,
+        "author_cap": 0,
+        "fetch_unavailable": 0,
+        "login_or_access_restricted": 0,
+        "empty_body": 0,
+        "date_out_of_range": 0,
+        "duplicate_title": 0,
+        "invalid_url": 0
+      }
+    },
+    {
+      "query": "AI学术不端",
+      "query_name": "query_file_f_42",
+      "category": "F. 科研规范与诚信类",
+      "search_provider": "opencli_xiaohongshu",
+      "search_hits": 0,
+      "verified_kept": 0,
+      "skip_counts": {
+        "duplicate_existing_db": 0,
+        "duplicate_current_run": 0,
+        "author_cap": 0,
+        "fetch_unavailable": 0,
+        "login_or_access_restricted": 0,
+        "empty_body": 0,
+        "date_out_of_range": 0,
+        "duplicate_title": 0,
+        "invalid_url": 0
+      }
+    },
+    {
+      "query": "AI科研诚信",
+      "query_name": "query_file_f_43",
+      "category": "F. 科研规范与诚信类",
+      "search_provider": "opencli_xiaohongshu",
+      "search_hits": 0,
+      "verified_kept": 0,
+      "skip_counts": {
+        "duplicate_existing_db": 0,
+        "duplicate_current_run": 0,
+        "author_cap": 0,
+        "fetch_unavailable": 0,
+        "login_or_access_restricted": 0,
+        "empty_body": 0,
+        "date_out_of_range": 0,
+        "duplicate_title": 0,
+        "invalid_url": 0
+      }
+    },
+    {
+      "query": "AI使用披露",
+      "query_name": "query_file_f_44",
+      "category": "F. 科研规范与诚信类",
+      "search_provider": "opencli_xiaohongshu",
+      "search_hits": 0,
+      "verified_kept": 0,
+      "skip_counts": {
+        "duplicate_existing_db": 0,
+        "duplicate_current_run": 0,
+        "author_cap": 0,
+        "fetch_unavailable": 0,
+        "login_or_access_restricted": 0,
+        "empty_body": 0,
+        "date_out_of_range": 0,
+        "duplicate_title": 0,
+        "invalid_url": 0
+      }
+    },
+    {
+      "query": "AI论文查重",
+      "query_name": "query_file_f_45",
+      "category": "F. 科研规范与诚信类",
+      "search_provider": "opencli_xiaohongshu",
+      "search_hits": 0,
+      "verified_kept": 0,
+      "skip_counts": {
+        "duplicate_existing_db": 0,
+        "duplicate_current_run": 0,
+        "author_cap": 0,
+        "fetch_unavailable": 0,
+        "login_or_access_restricted": 0,
+        "empty_body": 0,
+        "date_out_of_range": 0,
+        "duplicate_title": 0,
+        "invalid_url": 0
+      }
+    },
+    {
+      "query": "AI检测",
+      "query_name": "query_file_f_46",
+      "category": "F. 科研规范与诚信类",
+      "search_provider": "opencli_xiaohongshu",
+      "search_hits": 0,
+      "verified_kept": 0,
+      "skip_counts": {
+        "duplicate_existing_db": 0,
+        "duplicate_current_run": 0,
+        "author_cap": 0,
+        "fetch_unavailable": 0,
+        "login_or_access_restricted": 0,
+        "empty_body": 0,
+        "date_out_of_range": 0,
+        "duplicate_title": 0,
+        "invalid_url": 0
+      }
+    },
+    {
+      "query": "AI审稿",
+      "query_name": "query_file_f_47",
+      "category": "F. 科研规范与诚信类",
+      "search_provider": "opencli_xiaohongshu",
+      "search_hits": 0,
+      "verified_kept": 0,
+      "skip_counts": {
+        "duplicate_existing_db": 0,
+        "duplicate_current_run": 0,
+        "author_cap": 0,
+        "fetch_unavailable": 0,
+        "login_or_access_restricted": 0,
+        "empty_body": 0,
+        "date_out_of_range": 0,
+        "duplicate_title": 0,
+        "invalid_url": 0
+      }
+    },
+    {
+      "query": "AI生成内容检测",
+      "query_name": "query_file_f_48",
+      "category": "F. 科研规范与诚信类",
+      "search_provider": "opencli_xiaohongshu",
+      "search_hits": 0,
+      "verified_kept": 0,
+      "skip_counts": {
+        "duplicate_existing_db": 0,
+        "duplicate_current_run": 0,
+        "author_cap": 0,
+        "fetch_unavailable": 0,
+        "login_or_access_restricted": 0,
+        "empty_body": 0,
+        "date_out_of_range": 0,
+        "duplicate_title": 0,
+        "invalid_url": 0
+      }
+    },
+    {
+      "query": "AI科研入门",
+      "query_name": "query_file_g_49",
+      "category": "G. 科研训练与效率类",
+      "search_provider": "opencli_xiaohongshu",
+      "search_hits": 0,
+      "verified_kept": 0,
+      "skip_counts": {
+        "duplicate_existing_db": 0,
+        "duplicate_current_run": 0,
+        "author_cap": 0,
+        "fetch_unavailable": 0,
+        "login_or_access_restricted": 0,
+        "empty_body": 0,
+        "date_out_of_range": 0,
+        "duplicate_title": 0,
+        "invalid_url": 0
+      }
+    },
+    {
+      "query": "AI研究生工具",
+      "query_name": "query_file_g_50",
+      "category": "G. 科研训练与效率类",
+      "search_provider": "opencli_xiaohongshu",
+      "search_hits": 0,
+      "verified_kept": 0,
+      "skip_counts": {
+        "duplicate_existing_db": 0,
+        "duplicate_current_run": 0,
+        "author_cap": 0,
+        "fetch_unavailable": 0,
+        "login_or_access_restricted": 0,
+        "empty_body": 0,
+        "date_out_of_range": 0,
+        "duplicate_title": 0,
+        "invalid_url": 0
+      }
+    },
+    {
+      "query": "AI提升科研效率",
+      "query_name": "query_file_g_51",
+      "category": "G. 科研训练与效率类",
+      "search_provider": "opencli_xiaohongshu",
+      "search_hits": 0,
+      "verified_kept": 0,
+      "skip_counts": {
+        "duplicate_existing_db": 0,
+        "duplicate_current_run": 0,
+        "author_cap": 0,
+        "fetch_unavailable": 0,
+        "login_or_access_restricted": 0,
+        "empty_body": 0,
+        "date_out_of_range": 0,
+        "duplicate_title": 0,
+        "invalid_url": 0
+      }
+    },
+    {
+      "query": "AI学术阅读",
+      "query_name": "query_file_g_52",
+      "category": "G. 科研训练与效率类",
+      "search_provider": "opencli_xiaohongshu",
+      "search_hits": 0,
+      "verified_kept": 0,
+      "skip_counts": {
+        "duplicate_existing_db": 0,
+        "duplicate_current_run": 0,
+        "author_cap": 0,
+        "fetch_unavailable": 0,
+        "login_or_access_restricted": 0,
+        "empty_body": 0,
+        "date_out_of_range": 0,
+        "duplicate_title": 0,
+        "invalid_url": 0
+      }
+    },
+    {
+      "query": "AI写作训练",
+      "query_name": "query_file_g_53",
+      "category": "G. 科研训练与效率类",
+      "search_provider": "opencli_xiaohongshu",
+      "search_hits": 0,
+      "verified_kept": 0,
+      "skip_counts": {
+        "duplicate_existing_db": 0,
+        "duplicate_current_run": 0,
+        "author_cap": 0,
+        "fetch_unavailable": 0,
+        "login_or_access_restricted": 0,
+        "empty_body": 0,
+        "date_out_of_range": 0,
+        "duplicate_title": 0,
+        "invalid_url": 0
+      }
+    },
+    {
+      "query": "AI科研效率",
+      "query_name": "query_file_g_54",
+      "category": "G. 科研训练与效率类",
+      "search_provider": "opencli_xiaohongshu",
+      "search_hits": 0,
+      "verified_kept": 0,
+      "skip_counts": {
+        "duplicate_existing_db": 0,
+        "duplicate_current_run": 0,
+        "author_cap": 0,
+        "fetch_unavailable": 0,
+        "login_or_access_restricted": 0,
+        "empty_body": 0,
+        "date_out_of_range": 0,
+        "duplicate_title": 0,
+        "invalid_url": 0
+      }
+    },
+    {
+      "query": "AI博士",
+      "query_name": "query_file_g_55",
+      "category": "G. 科研训练与效率类",
+      "search_provider": "opencli_xiaohongshu",
+      "search_hits": 0,
+      "verified_kept": 0,
+      "skip_counts": {
+        "duplicate_existing_db": 0,
+        "duplicate_current_run": 0,
+        "author_cap": 0,
+        "fetch_unavailable": 0,
+        "login_or_access_restricted": 0,
+        "empty_body": 0,
+        "date_out_of_range": 0,
+        "duplicate_title": 0,
+        "invalid_url": 0
+      }
+    },
+    {
+      "query": "AI硕士论文",
+      "query_name": "query_file_g_56",
+      "category": "G. 科研训练与效率类",
+      "search_provider": "opencli_xiaohongshu",
+      "search_hits": 0,
+      "verified_kept": 0,
+      "skip_counts": {
+        "duplicate_existing_db": 0,
+        "duplicate_current_run": 0,
+        "author_cap": 0,
+        "fetch_unavailable": 0,
+        "login_or_access_restricted": 0,
+        "empty_body": 0,
+        "date_out_of_range": 0,
+        "duplicate_title": 0,
+        "invalid_url": 0
+      }
+    }
+  ],
+  "skip_counts": {
+    "duplicate_existing_db": 155,
+    "duplicate_current_run": 25,
+    "author_cap": 0,
+    "fetch_unavailable": 0,
+    "login_or_access_restricted": 0,
+    "empty_body": 14,
+    "date_out_of_range": 100,
+    "duplicate_title": 0,
+    "invalid_url": 0
+  },
+  "duplicate_existing_db_count": 155,
+  "formal_result_scope": false,
+  "quality_v5_formal_scope": false,
+  "limitations": [],
+  "artifact_classification": {
+    "status": "xhs_expansion_candidate_v1_candidate300",
+    "formal_evidence_chain": false,
+    "quality_v5_formal_scope": false,
+    "reason": "xhs_expansion_candidate_v1 outputs are supplemental candidate artifacts. They are not imported into quality_v5 post-only formal results."
+  },
+  "output_preserved": false,
+  "output_path": "outputs/tables/xhs_expansion_candidate_v1/candidate300.jsonl",
+  "report_path": "outputs/reports/xhs_expansion_candidate_v1/candidate300.report.md"
+}

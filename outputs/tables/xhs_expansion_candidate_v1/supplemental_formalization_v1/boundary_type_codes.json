@@ -1,0 +1,44 @@
+[
+  {
+    "code": "D1.1",
+    "count": 22,
+    "formalization_scope": "supplemental_formalization_v1",
+    "share": 0.1068,
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "code": "D1.10",
+    "count": 22,
+    "formalization_scope": "supplemental_formalization_v1",
+    "share": 0.1068,
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "code": "D1.2",
+    "count": 22,
+    "formalization_scope": "supplemental_formalization_v1",
+    "share": 0.1068,
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "code": "D1.5",
+    "count": 6,
+    "formalization_scope": "supplemental_formalization_v1",
+    "share": 0.0291,
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "code": "D1.7",
+    "count": 5,
+    "formalization_scope": "supplemental_formalization_v1",
+    "share": 0.0243,
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "code": "",
+    "count": 173,
+    "formalization_scope": "supplemental_formalization_v1",
+    "share": 0.8398,
+    "source_scope": "xhs_expansion_candidate_v1"
+  }
+]

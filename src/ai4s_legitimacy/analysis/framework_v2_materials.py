@@ -21,9 +21,8 @@ from ai4s_legitimacy.collection.canonical_schema import (
     normalize_claim_units,
 )
 from ai4s_legitimacy.config.formal_baseline import (
-    ACTIVE_FORMAL_SCOPE_COMMENTS_KEY,
-    ACTIVE_FORMAL_SCOPE_POSTS_KEY,
     ACTIVE_FORMAL_STAGE,
+    paper_scope_contract_name,
     paper_scope_view,
 )
 from ai4s_legitimacy.config.settings import OUTPUTS_DIR, RESEARCH_DB_PATH
@@ -208,8 +207,8 @@ def _load_db_claim_units(connection, formal_post_ids: set[str]) -> dict[str, lis
     return {record_id: normalize_claim_units(units) for record_id, units in grouped.items()}
 
 
-def _load_formal_posts(connection) -> list[dict[str, Any]]:
-    scope_view = paper_scope_view("posts")
+def _load_formal_posts(connection, *, stage: str = ACTIVE_FORMAL_STAGE) -> list[dict[str, Any]]:
+    scope_view = paper_scope_view("posts", stage)
     return [
         dict(row)
         for row in connection.execute(
@@ -239,6 +238,7 @@ def _build_summary_tables(
     scope_counts: dict[str, int],
     framework_v2_reviewed_posts: int,
     framework_v2_coding_complete: bool,
+    stage: str = ACTIVE_FORMAL_STAGE,
 ) -> dict[str, Any]:
     text_type_counts = Counter(
         TEXT_TYPE_FROM_DISCURSIVE_MODE.get(str(post.get("discursive_mode") or ""), "其他")
@@ -274,14 +274,14 @@ def _build_summary_tables(
         counter = Counter(code for unit in claim_units for code in _codes_from_unit(unit, field_name))
         tables[table_name] = _distribution(counter, labels)
 
-    formal_posts = int(scope_counts.get(ACTIVE_FORMAL_SCOPE_POSTS_KEY, 0))
+    formal_posts = int(scope_counts.get(f"paper_{stage}_posts", 0))
     note = COMPLETE_V2_FIELD_NOTE if framework_v2_coding_complete else MISSING_V2_FIELD_NOTE
     return {
         "metadata": {
-            "formal_stage": ACTIVE_FORMAL_STAGE,
+            "formal_stage": stage,
             "formal_posts": formal_posts,
-            "formal_comments": int(scope_counts.get(ACTIVE_FORMAL_SCOPE_COMMENTS_KEY, 0)),
-            "source_contract": f"paper_scope_{ACTIVE_FORMAL_STAGE}",
+            "formal_comments": int(scope_counts.get(f"paper_{stage}_comments", 0)),
+            "source_contract": paper_scope_contract_name(stage),
             "framework_v2_reviewed_posts": framework_v2_reviewed_posts,
             "framework_v2_missing_posts": max(formal_posts - framework_v2_reviewed_posts, 0),
             "framework_v2_coding_complete": framework_v2_coding_complete,
@@ -368,7 +368,7 @@ def _write_readme(output_dir: Path, summary: dict[str, Any]) -> Path:
 
 本目录服务于论文新框架：“话语情境 -> 实践位置 -> 介入方式 -> 规范评价 -> 边界生成”。
 
-- 正式基线：`{ACTIVE_FORMAL_STAGE} post-only`
+- 正式基线：`{metadata["formal_stage"]} post-only`
 - 正式帖子 / 正式评论：`{metadata["formal_posts"]} / {metadata["formal_comments"]}`
 - 数据来源：`{metadata["source_contract"]}`
 - framework_v2 已 reviewed 正式帖子：`{metadata["framework_v2_reviewed_posts"]}`
@@ -543,9 +543,10 @@ def generate_framework_v2_materials(
     db_path: Path = RESEARCH_DB_PATH,
     output_dir: Path = FRAMEWORK_V2_OUTPUT_DIR,
     immutable: bool = False,
+    stage: str = ACTIVE_FORMAL_STAGE,
 ) -> dict[str, Any]:
     with connect_sqlite_readonly(db_path, immutable=immutable) as connection:
-        posts = _load_formal_posts(connection)
+        posts = _load_formal_posts(connection, stage=stage)
         scope_counts = _load_scope_counts(connection)
         formal_post_ids = {str(post["post_id"]) for post in posts}
         reviewed_payloads = _load_reviewed_payloads(connection)
@@ -574,6 +575,7 @@ def generate_framework_v2_materials(
         scope_counts=scope_counts,
         framework_v2_reviewed_posts=len(framework_v2_reviewed_post_ids),
         framework_v2_coding_complete=framework_v2_coding_complete,
+        stage=stage,
     )
     cross_tabs = _build_cross_tabs(claim_units, note=summary["metadata"]["note"])
 
@@ -603,12 +605,17 @@ def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description="Build framework v2 paper materials.")
     parser.add_argument("--db", type=Path, default=RESEARCH_DB_PATH)
     parser.add_argument("--output-dir", type=Path, default=FRAMEWORK_V2_OUTPUT_DIR)
+    parser.add_argument("--stage", default=ACTIVE_FORMAL_STAGE)
     return parser
 
 
 def main() -> None:
     args = build_parser().parse_args()
-    result = generate_framework_v2_materials(db_path=args.db, output_dir=args.output_dir)
+    result = generate_framework_v2_materials(
+        db_path=args.db,
+        output_dir=args.output_dir,
+        stage=args.stage,
+    )
     print(json.dumps(result, ensure_ascii=False, indent=2))
 
 

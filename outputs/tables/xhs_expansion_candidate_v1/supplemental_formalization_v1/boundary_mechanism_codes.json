@@ -1,0 +1,37 @@
+[
+  {
+    "code": "J2",
+    "count": 26,
+    "formalization_scope": "supplemental_formalization_v1",
+    "share": 0.1262,
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "code": "J4",
+    "count": 24,
+    "formalization_scope": "supplemental_formalization_v1",
+    "share": 0.1165,
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "code": "J1",
+    "count": 23,
+    "formalization_scope": "supplemental_formalization_v1",
+    "share": 0.1117,
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "code": "J3",
+    "count": 22,
+    "formalization_scope": "supplemental_formalization_v1",
+    "share": 0.1068,
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "code": "",
+    "count": 173,
+    "formalization_scope": "supplemental_formalization_v1",
+    "share": 0.8398,
+    "source_scope": "xhs_expansion_candidate_v1"
+  }
+]

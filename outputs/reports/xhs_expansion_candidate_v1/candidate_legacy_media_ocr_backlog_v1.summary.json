@@ -1,0 +1,32 @@
+{
+  "artifact_scope": "xhs_expansion_candidate_v1_supplemental_candidate",
+  "body_fetch_status_counts": {
+    "body_present_from_legacy_media_ocr": 68
+  },
+  "body_present_rows": 68,
+  "existing_v9_rows_enriched_with_ocr": 40,
+  "formal_guard_comments": 0,
+  "formal_guard_posts": 514,
+  "formal_scope_changed": false,
+  "generated_at": "2026-04-28T18:13:18Z",
+  "metadata_only_rows": 0,
+  "notes": [
+    "OCR-derived text is supplemental public-media text and must be manually verified due to OCR noise.",
+    "No live fetch and no formal DB write was performed."
+  ],
+  "query_group_counts": {
+    "A. AI科研总体类": 24,
+    "B. 文献处理与知识整合类": 2,
+    "C. 研究设计与方法学习类": 1,
+    "D. 数据分析与代码类": 27,
+    "E. 论文写作与成果表达类": 2,
+    "F. 科研规范与诚信类": 12
+  },
+  "row_count": 68,
+  "run_id": "candidate_legacy_media_ocr_backlog_v1",
+  "skipped_counts": {
+    "already_in_candidate_expanded_v9": 1021,
+    "ocr_filter_not_ai_research": 166,
+    "quality_v5_formal_post": 138
+  }
+}

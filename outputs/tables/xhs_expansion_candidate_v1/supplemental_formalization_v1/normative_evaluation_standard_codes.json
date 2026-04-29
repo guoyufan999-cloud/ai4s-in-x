@@ -1,0 +1,107 @@
+[
+  {
+    "code": "C10",
+    "count": 112,
+    "formalization_scope": "supplemental_formalization_v1",
+    "share": 0.5437,
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "code": "C2",
+    "count": 88,
+    "formalization_scope": "supplemental_formalization_v1",
+    "share": 0.4272,
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "code": "C1",
+    "count": 70,
+    "formalization_scope": "supplemental_formalization_v1",
+    "share": 0.3398,
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "code": "C3",
+    "count": 69,
+    "formalization_scope": "supplemental_formalization_v1",
+    "share": 0.335,
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "code": "C8",
+    "count": 54,
+    "formalization_scope": "supplemental_formalization_v1",
+    "share": 0.2621,
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "code": "C5",
+    "count": 50,
+    "formalization_scope": "supplemental_formalization_v1",
+    "share": 0.2427,
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "code": "C7",
+    "count": 44,
+    "formalization_scope": "supplemental_formalization_v1",
+    "share": 0.2136,
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "code": "C6",
+    "count": 37,
+    "formalization_scope": "supplemental_formalization_v1",
+    "share": 0.1796,
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "code": "C14",
+    "count": 27,
+    "formalization_scope": "supplemental_formalization_v1",
+    "share": 0.1311,
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "code": "C4",
+    "count": 11,
+    "formalization_scope": "supplemental_formalization_v1",
+    "share": 0.0534,
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "code": "C11",
+    "count": 8,
+    "formalization_scope": "supplemental_formalization_v1",
+    "share": 0.0388,
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "code": "C12",
+    "count": 6,
+    "formalization_scope": "supplemental_formalization_v1",
+    "share": 0.0291,
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "code": "C13",
+    "count": 3,
+    "formalization_scope": "supplemental_formalization_v1",
+    "share": 0.0146,
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "code": "C9",
+    "count": 2,
+    "formalization_scope": "supplemental_formalization_v1",
+    "share": 0.0097,
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "code": "",
+    "count": 24,
+    "formalization_scope": "supplemental_formalization_v1",
+    "share": 0.1165,
+    "source_scope": "xhs_expansion_candidate_v1"
+  }
+]

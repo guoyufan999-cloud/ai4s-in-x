@@ -1,0 +1,51 @@
+[
+  {
+    "code": "F1",
+    "count": 157,
+    "formalization_scope": "supplemental_formalization_v1",
+    "share": 0.7621,
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "code": "F2",
+    "count": 110,
+    "formalization_scope": "supplemental_formalization_v1",
+    "share": 0.534,
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "code": "F3",
+    "count": 64,
+    "formalization_scope": "supplemental_formalization_v1",
+    "share": 0.3107,
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "code": "F5",
+    "count": 51,
+    "formalization_scope": "supplemental_formalization_v1",
+    "share": 0.2476,
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "code": "F6",
+    "count": 26,
+    "formalization_scope": "supplemental_formalization_v1",
+    "share": 0.1262,
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "code": "F4",
+    "count": 14,
+    "formalization_scope": "supplemental_formalization_v1",
+    "share": 0.068,
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "code": "",
+    "count": 6,
+    "formalization_scope": "supplemental_formalization_v1",
+    "share": 0.0291,
+    "source_scope": "xhs_expansion_candidate_v1"
+  }
+]

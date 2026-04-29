@@ -17,7 +17,9 @@ from ai4s_legitimacy.analysis.figures.config import (
 from ai4s_legitimacy.config.formal_baseline import (
     ACTIVE_FORMAL_LABEL,
     ACTIVE_FORMAL_SOURCE_CONTRACT,
+    ACTIVE_FORMAL_STAGE,
     paper_scope_contract_name,
+    paper_scope_view,
 )
 from ai4s_legitimacy.utils.paths import project_relative_path
 
@@ -37,8 +39,11 @@ def _latest_quarter_label(coverage_end_date: str) -> str:
     return quarter_display(quarter_labels[-1], resolved_coverage_end_date)
 
 
-def _manifest_context(coverage_end_date: str) -> dict[str, str]:
+def _manifest_context(coverage_end_date: str, *, stage: str, source_contract: str) -> dict[str, str]:
     return {
+        "source_contract": source_contract,
+        "posts_scope_view": paper_scope_view("posts", stage=stage),
+        "comments_scope_view": paper_scope_view("comments", stage=stage),
         "month_window_text": format_month_window_text(),
         "halfyear_sequence_text": format_halfyear_sequence_text(
             coverage_end_date=coverage_end_date
@@ -51,8 +56,16 @@ def _manifest_context(coverage_end_date: str) -> dict[str, str]:
     }
 
 
-def _render_entry_template(template: str, coverage_end_date: str) -> str:
-    return template.format(**_manifest_context(coverage_end_date))
+def _render_entry_template(
+    template: str, coverage_end_date: str, *, stage: str, source_contract: str
+) -> str:
+    return template.format(
+        **_manifest_context(
+            coverage_end_date,
+            stage=stage,
+            source_contract=source_contract,
+        )
+    )
 
 
 def _skip_reason(slug: str, formal_comments: int) -> str:
@@ -67,14 +80,21 @@ def write_figure_manifest(
     formal_posts: int,
     formal_comments: int,
     coverage_end_date: str,
+    stage: str = ACTIVE_FORMAL_STAGE,
 ) -> Path:
     manifest_path = figure_dir / "paper_figures_submission_manifest.md"
     generated_set = set(generated_slugs)
     figure_dir_display = project_relative_path(figure_dir)
+    formal_label = ACTIVE_FORMAL_LABEL if stage == ACTIVE_FORMAL_STAGE else f"{stage} 正式结果层"
+    source_contract = (
+        ACTIVE_FORMAL_SOURCE_CONTRACT
+        if stage == ACTIVE_FORMAL_STAGE
+        else paper_scope_contract_name(stage)
+    )
     lines = [
-        f"# 投稿版图表包（{ACTIVE_FORMAL_LABEL}）",
+        f"# 投稿版图表包（{formal_label}）",
         "",
-        f"- 当前正式基线：`{ACTIVE_FORMAL_LABEL}`",
+        f"- 当前正式基线：`{formal_label}`",
         f"- 正式帖子 / 正式评论：`{formal_posts} / {formal_comments}`",
         f"- 正式覆盖截止日：`{resolve_coverage_end_date(coverage_end_date)}`",
         f"- 图表输出目录：`{figure_dir_display}`",
@@ -83,7 +103,7 @@ def write_figure_manifest(
         "",
         "## 统一来源约定",
         "",
-        f"- `{paper_scope_contract_name()}`：可由研究主库正式口径直接复现的图表；"
+        f"- `{paper_scope_contract_name(stage)}`：可由研究主库正式口径直接复现的图表；"
         f"当前生成 {len(generated_set)} 张，未生成图只登记口径，不进入本轮正式图件。",
         "- 本轮为帖子层 post-only artifact refresh；`formal_comments=0` 是设计选择，不是评论队列遗漏。",
         "",
@@ -95,13 +115,25 @@ def write_figure_manifest(
         lines.append(f"- 建议图题：{entry.title}")
         lines.append(f"- 建议放置：{entry.placement}")
         lines.append(f"- 状态：`{status}`")
-        lines.append(f"- 来源标签：`{ACTIVE_FORMAL_SOURCE_CONTRACT}`")
+        lines.append(f"- 来源标签：`{source_contract}`")
         lines.append(
-            f"- 数据口径：{_render_entry_template(entry.data_basis_template, coverage_end_date)}"
+            "- 数据口径："
+            + _render_entry_template(
+                entry.data_basis_template,
+                coverage_end_date,
+                stage=stage,
+                source_contract=source_contract,
+            )
         )
         if status == "generated":
             lines.append(
-                f"- 正文可用结论句：{_render_entry_template(entry.takeaway_template, coverage_end_date)}"
+                "- 正文可用结论句："
+                + _render_entry_template(
+                    entry.takeaway_template,
+                    coverage_end_date,
+                    stage=stage,
+                    source_contract=source_contract,
+                )
             )
             lines.append(f"- PNG：`{project_relative_path(figure_dir / (slug + '.png'))}`")
             lines.append(f"- SVG：`{project_relative_path(figure_dir / (slug + '.svg'))}`")

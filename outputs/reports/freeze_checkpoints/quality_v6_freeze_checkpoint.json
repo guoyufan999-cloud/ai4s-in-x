@@ -1,0 +1,30 @@
+{
+  "checkpoint_stage": "quality_v6",
+  "previous_formal_stage": "quality_v5",
+  "status": "post_only_formalized",
+  "formal_source_contract": "paper_scope_quality_v6",
+  "formal_posts": 714,
+  "formal_comments": 0,
+  "source_composition": {
+    "quality_v5_posts": 514,
+    "supplemental_formalized_posts": 200,
+    "comment_review_v2": "deferred"
+  },
+  "quality_v5_guard": {
+    "formal_posts": 514,
+    "formal_comments": 0
+  },
+  "comment_scope_note": "comment_review_v2 remains deferred; quality_v6 formal comments are 0 by design.",
+  "supplemental_source": {
+    "source_scope": "xhs_expansion_candidate_v1",
+    "formalization_scope": "supplemental_formalization_v1",
+    "reviewed_jsonl": "data/interim/xhs_expansion_candidate_v1/supplemental_formalization_v1/supplemental_formalization_v1.codex_reviewed.jsonl",
+    "include_posts": 200,
+    "excluded_posts": 6
+  },
+  "staging_db_path": "data/interim/quality_v6/ai4s_legitimacy_quality_v6.sqlite3",
+  "paper_materials": {
+    "output_dir": "outputs/reports/paper_materials/quality_v6",
+    "figure_dir": "outputs/figures/paper_figures_submission/quality_v6"
+  }
+}

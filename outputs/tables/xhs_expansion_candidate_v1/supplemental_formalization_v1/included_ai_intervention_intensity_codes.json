@@ -1,0 +1,26 @@
+[
+  {
+    "code": "G2",
+    "count": 97,
+    "count_base": "included_rows",
+    "formalization_scope": "supplemental_formalization_v1",
+    "share": 0.485,
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "code": "G3",
+    "count": 53,
+    "count_base": "included_rows",
+    "formalization_scope": "supplemental_formalization_v1",
+    "share": 0.265,
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "code": "G1",
+    "count": 50,
+    "count_base": "included_rows",
+    "formalization_scope": "supplemental_formalization_v1",
+    "share": 0.25,
+    "source_scope": "xhs_expansion_candidate_v1"
+  }
+]

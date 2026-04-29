@@ -1,0 +1,44 @@
+[
+  {
+    "value": "generation_assistance",
+    "label": "生成辅助",
+    "count": 71,
+    "share": 0.3447,
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "value": "unclear",
+    "label": "其他/无法判断",
+    "count": 42,
+    "share": 0.2039,
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "value": "analysis_modeling",
+    "label": "分析建模",
+    "count": 39,
+    "share": 0.1893,
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "value": "information_assistance",
+    "label": "信息辅助",
+    "count": 25,
+    "share": 0.1214,
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "value": "governance_or_supervision",
+    "label": "治理监督",
+    "count": 15,
+    "share": 0.0728,
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "value": "judgment_suggestion",
+    "label": "判断建议",
+    "count": 14,
+    "share": 0.068,
+    "source_scope": "xhs_expansion_candidate_v1"
+  }
+]

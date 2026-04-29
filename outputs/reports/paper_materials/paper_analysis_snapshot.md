@@ -1,13 +1,15 @@
-# quality_v5 活跃分析快照
+# quality_v6 活跃投稿分析快照
 
-- 当前正式基线：`quality_v5 正式重建基线`
+- 当前投稿结果层：`quality_v6 post-only formalized result layer`
+- 前一冻结基线：`quality_v5 post-only 514 / 0`
 - 研究时间窗：`2024-01-01` 至 `2026-06-30`
-- 正式覆盖截止日：`2026-04-10`
-- 当前状态：`post_review_v2_imported_post_only`
-- 当前正式帖子 / 正式评论：`514 / 0`
-- 当前 canonical corpus：帖子 `5535` 条，评论 `12362` 条
+- 正式覆盖截止日：`2026-04-26`
+- 当前状态：`post_only_formalized`
+- 当前正式帖子 / 正式评论：`714 / 0`
+- 当前 v6 staging research DB：帖子 `5735` 条，评论 `106543` 条
 
-当前活跃交付链已经切到 `quality_v5`。本轮正式基线采用帖子层 post-only 口径：严格版 `post_review_v2` 已导入，正式帖子为 `514` 条；`comment_review_v2` 暂不进入正式编码，因此正式评论为 `0`。`formal_comments=0` 是本轮设计选择，不是评论队列或导入遗漏；`quality_v4` 仅作为历史审计快照保留。
+当前投稿交付链已经切到 `quality_v6`。v6 由 `quality_v5` 的 514 条正式帖子与 `supplemental_formalization_v1` 的 200 条补充正式帖子组成；`comment_review_v2` 继续 deferred，正式评论为 0。`quality_v5` 保留为前一冻结基线和 artifact health guard，`quality_v4` 仅保留为历史审计快照。
 
-- canonical corpus：`5535` 条帖子，`12362` 条评论
-- 下一步：维持 post-only artifact refresh；后续如需评论层正式结果，再单独准备并导入 `comment_review_v2`。
+- v6 source contract：`paper_scope_quality_v6`
+- v6 framework materials：`outputs/reports/paper_materials/quality_v6/framework_v2/`
+- 下一步：围绕 714 条帖子层正式结果完成主稿压缩和图表引用，不把 sidecar 评论写成正式结论。

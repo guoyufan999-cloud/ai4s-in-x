@@ -1,0 +1,30 @@
+[
+  {
+    "count": 157,
+    "formalization_scope": "supplemental_formalization_v1",
+    "share": 0.7621,
+    "source_scope": "xhs_expansion_candidate_v1",
+    "value": "A1"
+  },
+  {
+    "count": 36,
+    "formalization_scope": "supplemental_formalization_v1",
+    "share": 0.1748,
+    "source_scope": "xhs_expansion_candidate_v1",
+    "value": "unclear"
+  },
+  {
+    "count": 10,
+    "formalization_scope": "supplemental_formalization_v1",
+    "share": 0.0485,
+    "source_scope": "xhs_expansion_candidate_v1",
+    "value": "A3"
+  },
+  {
+    "count": 3,
+    "formalization_scope": "supplemental_formalization_v1",
+    "share": 0.0146,
+    "source_scope": "xhs_expansion_candidate_v1",
+    "value": "A2"
+  }
+]

@@ -1,0 +1,65 @@
+[
+  {
+    "code": "I0",
+    "count": 115,
+    "formalization_scope": "supplemental_formalization_v1",
+    "share": 0.5583,
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "code": "I1",
+    "count": 45,
+    "formalization_scope": "supplemental_formalization_v1",
+    "share": 0.2184,
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "code": "I7",
+    "count": 37,
+    "formalization_scope": "supplemental_formalization_v1",
+    "share": 0.1796,
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "code": "I6",
+    "count": 23,
+    "formalization_scope": "supplemental_formalization_v1",
+    "share": 0.1117,
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "code": "I3",
+    "count": 16,
+    "formalization_scope": "supplemental_formalization_v1",
+    "share": 0.0777,
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "code": "I2",
+    "count": 9,
+    "formalization_scope": "supplemental_formalization_v1",
+    "share": 0.0437,
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "code": "I5",
+    "count": 8,
+    "formalization_scope": "supplemental_formalization_v1",
+    "share": 0.0388,
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "code": "I4",
+    "count": 6,
+    "formalization_scope": "supplemental_formalization_v1",
+    "share": 0.0291,
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "code": "I8",
+    "count": 3,
+    "formalization_scope": "supplemental_formalization_v1",
+    "share": 0.0146,
+    "source_scope": "xhs_expansion_candidate_v1"
+  }
+]

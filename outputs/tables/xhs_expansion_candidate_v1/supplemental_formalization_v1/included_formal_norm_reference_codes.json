@@ -1,0 +1,74 @@
+[
+  {
+    "code": "I0",
+    "count": 111,
+    "count_base": "included_rows",
+    "formalization_scope": "supplemental_formalization_v1",
+    "share": 0.555,
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "code": "I1",
+    "count": 43,
+    "count_base": "included_rows",
+    "formalization_scope": "supplemental_formalization_v1",
+    "share": 0.215,
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "code": "I7",
+    "count": 37,
+    "count_base": "included_rows",
+    "formalization_scope": "supplemental_formalization_v1",
+    "share": 0.185,
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "code": "I6",
+    "count": 23,
+    "count_base": "included_rows",
+    "formalization_scope": "supplemental_formalization_v1",
+    "share": 0.115,
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "code": "I3",
+    "count": 15,
+    "count_base": "included_rows",
+    "formalization_scope": "supplemental_formalization_v1",
+    "share": 0.075,
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "code": "I2",
+    "count": 9,
+    "count_base": "included_rows",
+    "formalization_scope": "supplemental_formalization_v1",
+    "share": 0.045,
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "code": "I5",
+    "count": 8,
+    "count_base": "included_rows",
+    "formalization_scope": "supplemental_formalization_v1",
+    "share": 0.04,
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "code": "I4",
+    "count": 6,
+    "count_base": "included_rows",
+    "formalization_scope": "supplemental_formalization_v1",
+    "share": 0.03,
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "code": "I8",
+    "count": 3,
+    "count_base": "included_rows",
+    "formalization_scope": "supplemental_formalization_v1",
+    "share": 0.015,
+    "source_scope": "xhs_expansion_candidate_v1"
+  }
+]

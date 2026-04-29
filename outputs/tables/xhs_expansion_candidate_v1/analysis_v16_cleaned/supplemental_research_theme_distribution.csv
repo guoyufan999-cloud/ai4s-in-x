@@ -1,0 +1,8 @@
+count,label,share,source_scope,value
+99,AI文献阅读与知识整合,0.4806,xhs_expansion_candidate_v1,literature_processing
+36,其他/无法判断,0.1748,xhs_expansion_candidate_v1,unclear
+31,AI数据分析与代码,0.1505,xhs_expansion_candidate_v1,data_analysis_or_code
+14,AI研究设计与方法学习,0.068,xhs_expansion_candidate_v1,research_design
+13,AI论文写作与成果表达,0.0631,xhs_expansion_candidate_v1,paper_writing
+10,AI科研训练与效率,0.0485,xhs_expansion_candidate_v1,research_training
+3,AI科研规范与治理,0.0146,xhs_expansion_candidate_v1,research_governance

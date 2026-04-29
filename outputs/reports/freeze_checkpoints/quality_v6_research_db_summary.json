@@ -1,0 +1,1928 @@
+{
+  "research_db": {
+    "posts": 5735,
+    "comments": 106543,
+    "scope_counts": {
+      "candidate_comments": 106543,
+      "candidate_posts": 5735,
+      "paper_quality_v5_comments": 0,
+      "paper_quality_v5_posts": 514,
+      "paper_quality_v6_comments": 0,
+      "paper_quality_v6_posts": 714,
+      "research_comments": 30640,
+      "research_posts": 1494
+    },
+    "staging_db_path": "data/interim/quality_v6/ai4s_legitimacy_quality_v6.sqlite3"
+  },
+  "paper_quality_v5_guard": {
+    "formal_posts": 514,
+    "formal_comments": 0
+  },
+  "paper_quality_v6": {
+    "formal_posts": 714,
+    "formal_comments": 0,
+    "coverage_end_date": "2026-04-26",
+    "source_contract": "paper_scope_quality_v6",
+    "source_composition": {
+      "quality_v5_posts": 514,
+      "supplemental_formalized_posts": 200,
+      "comment_review_v2": "deferred"
+    },
+    "monthly_posts_by_workflow": [
+      {
+        "period_month": "2024-01",
+        "workflow_stage": "数据处理与分析建模",
+        "post_count": 1
+      },
+      {
+        "period_month": "2024-01",
+        "workflow_stage": "文献调研与知识整合",
+        "post_count": 1
+      },
+      {
+        "period_month": "2024-02",
+        "workflow_stage": "uncertain",
+        "post_count": 1
+      },
+      {
+        "period_month": "2024-02",
+        "workflow_stage": "文献调研与知识整合",
+        "post_count": 2
+      },
+      {
+        "period_month": "2024-03",
+        "workflow_stage": "数据获取",
+        "post_count": 1
+      },
+      {
+        "period_month": "2024-03",
+        "workflow_stage": "文献调研与知识整合",
+        "post_count": 1
+      },
+      {
+        "period_month": "2024-03",
+        "workflow_stage": "研究构思与问题定义",
+        "post_count": 1
+      },
+      {
+        "period_month": "2024-05",
+        "workflow_stage": "数据处理与分析建模",
+        "post_count": 1
+      },
+      {
+        "period_month": "2024-05",
+        "workflow_stage": "文献调研与知识整合",
+        "post_count": 4
+      },
+      {
+        "period_month": "2024-06",
+        "workflow_stage": "uncertain",
+        "post_count": 1
+      },
+      {
+        "period_month": "2024-06",
+        "workflow_stage": "发表与知识扩散",
+        "post_count": 1
+      },
+      {
+        "period_month": "2024-06",
+        "workflow_stage": "研究构思与问题定义",
+        "post_count": 1
+      },
+      {
+        "period_month": "2024-06",
+        "workflow_stage": "研究设计与方案制定",
+        "post_count": 1
+      },
+      {
+        "period_month": "2024-07",
+        "workflow_stage": "文献调研与知识整合",
+        "post_count": 1
+      },
+      {
+        "period_month": "2024-07",
+        "workflow_stage": "研究构思与问题定义",
+        "post_count": 1
+      },
+      {
+        "period_month": "2024-08",
+        "workflow_stage": "发表与知识扩散",
+        "post_count": 1
+      },
+      {
+        "period_month": "2024-09",
+        "workflow_stage": "学术写作与成果表达",
+        "post_count": 1
+      },
+      {
+        "period_month": "2024-09",
+        "workflow_stage": "文献调研与知识整合",
+        "post_count": 3
+      },
+      {
+        "period_month": "2024-09",
+        "workflow_stage": "研究构思与问题定义",
+        "post_count": 2
+      },
+      {
+        "period_month": "2024-10",
+        "workflow_stage": "uncertain",
+        "post_count": 1
+      },
+      {
+        "period_month": "2024-10",
+        "workflow_stage": "数据处理与分析建模",
+        "post_count": 1
+      },
+      {
+        "period_month": "2024-10",
+        "workflow_stage": "文献调研与知识整合",
+        "post_count": 2
+      },
+      {
+        "period_month": "2024-10",
+        "workflow_stage": "研究构思与问题定义",
+        "post_count": 2
+      },
+      {
+        "period_month": "2024-11",
+        "workflow_stage": "学术写作与成果表达",
+        "post_count": 1
+      },
+      {
+        "period_month": "2024-11",
+        "workflow_stage": "文献调研与知识整合",
+        "post_count": 5
+      },
+      {
+        "period_month": "2024-11",
+        "workflow_stage": "研究构思与问题定义",
+        "post_count": 2
+      },
+      {
+        "period_month": "2024-12",
+        "workflow_stage": "学术写作与成果表达",
+        "post_count": 1
+      },
+      {
+        "period_month": "2024-12",
+        "workflow_stage": "文献调研与知识整合",
+        "post_count": 9
+      },
+      {
+        "period_month": "2024-12",
+        "workflow_stage": "研究构思与问题定义",
+        "post_count": 5
+      },
+      {
+        "period_month": "2025-01",
+        "workflow_stage": "学术写作与成果表达",
+        "post_count": 1
+      },
+      {
+        "period_month": "2025-01",
+        "workflow_stage": "数据处理与分析建模",
+        "post_count": 2
+      },
+      {
+        "period_month": "2025-01",
+        "workflow_stage": "文献调研与知识整合",
+        "post_count": 9
+      },
+      {
+        "period_month": "2025-01",
+        "workflow_stage": "研究构思与问题定义",
+        "post_count": 2
+      },
+      {
+        "period_month": "2025-01",
+        "workflow_stage": "研究设计与方案制定",
+        "post_count": 1
+      },
+      {
+        "period_month": "2025-02",
+        "workflow_stage": "学术写作与成果表达",
+        "post_count": 4
+      },
+      {
+        "period_month": "2025-02",
+        "workflow_stage": "数据处理与分析建模",
+        "post_count": 3
+      },
+      {
+        "period_month": "2025-02",
+        "workflow_stage": "文献调研与知识整合",
+        "post_count": 15
+      },
+      {
+        "period_month": "2025-02",
+        "workflow_stage": "研究构思与问题定义",
+        "post_count": 6
+      },
+      {
+        "period_month": "2025-03",
+        "workflow_stage": "uncertain",
+        "post_count": 1
+      },
+      {
+        "period_month": "2025-03",
+        "workflow_stage": "出版与评审治理",
+        "post_count": 1
+      },
+      {
+        "period_month": "2025-03",
+        "workflow_stage": "学术写作与成果表达",
+        "post_count": 1
+      },
+      {
+        "period_month": "2025-03",
+        "workflow_stage": "数据处理与分析建模",
+        "post_count": 6
+      },
+      {
+        "period_month": "2025-03",
+        "workflow_stage": "文献调研与知识整合",
+        "post_count": 25
+      },
+      {
+        "period_month": "2025-03",
+        "workflow_stage": "研究构思与问题定义",
+        "post_count": 6
+      },
+      {
+        "period_month": "2025-03",
+        "workflow_stage": "研究设计与方案制定",
+        "post_count": 1
+      },
+      {
+        "period_month": "2025-04",
+        "workflow_stage": "学术写作与成果表达",
+        "post_count": 2
+      },
+      {
+        "period_month": "2025-04",
+        "workflow_stage": "数据处理与分析建模",
+        "post_count": 1
+      },
+      {
+        "period_month": "2025-04",
+        "workflow_stage": "数据获取",
+        "post_count": 1
+      },
+      {
+        "period_month": "2025-04",
+        "workflow_stage": "文献调研与知识整合",
+        "post_count": 10
+      },
+      {
+        "period_month": "2025-04",
+        "workflow_stage": "研究构思与问题定义",
+        "post_count": 4
+      },
+      {
+        "period_month": "2025-04",
+        "workflow_stage": "研究设计与方案制定",
+        "post_count": 1
+      },
+      {
+        "period_month": "2025-05",
+        "workflow_stage": "uncertain",
+        "post_count": 2
+      },
+      {
+        "period_month": "2025-05",
+        "workflow_stage": "数据处理与分析建模",
+        "post_count": 7
+      },
+      {
+        "period_month": "2025-05",
+        "workflow_stage": "文献调研与知识整合",
+        "post_count": 6
+      },
+      {
+        "period_month": "2025-05",
+        "workflow_stage": "研究构思与问题定义",
+        "post_count": 4
+      },
+      {
+        "period_month": "2025-05",
+        "workflow_stage": "研究设计与方案制定",
+        "post_count": 4
+      },
+      {
+        "period_month": "2025-05",
+        "workflow_stage": "科研效率提升与习惯养成",
+        "post_count": 1
+      },
+      {
+        "period_month": "2025-06",
+        "workflow_stage": "出版与评审治理",
+        "post_count": 1
+      },
+      {
+        "period_month": "2025-06",
+        "workflow_stage": "学术写作与成果表达",
+        "post_count": 1
+      },
+      {
+        "period_month": "2025-06",
+        "workflow_stage": "数据获取",
+        "post_count": 3
+      },
+      {
+        "period_month": "2025-06",
+        "workflow_stage": "文献调研与知识整合",
+        "post_count": 11
+      },
+      {
+        "period_month": "2025-06",
+        "workflow_stage": "研究方法学习",
+        "post_count": 1
+      },
+      {
+        "period_month": "2025-07",
+        "workflow_stage": "uncertain",
+        "post_count": 2
+      },
+      {
+        "period_month": "2025-07",
+        "workflow_stage": "学术写作与成果表达",
+        "post_count": 4
+      },
+      {
+        "period_month": "2025-07",
+        "workflow_stage": "数据获取",
+        "post_count": 2
+      },
+      {
+        "period_month": "2025-07",
+        "workflow_stage": "文献调研与知识整合",
+        "post_count": 12
+      },
+      {
+        "period_month": "2025-07",
+        "workflow_stage": "研究方法学习",
+        "post_count": 1
+      },
+      {
+        "period_month": "2025-07",
+        "workflow_stage": "研究构思与问题定义",
+        "post_count": 3
+      },
+      {
+        "period_month": "2025-07",
+        "workflow_stage": "研究设计与方案制定",
+        "post_count": 2
+      },
+      {
+        "period_month": "2025-07",
+        "workflow_stage": "科研效率提升与习惯养成",
+        "post_count": 1
+      },
+      {
+        "period_month": "2025-08",
+        "workflow_stage": "uncertain",
+        "post_count": 5
+      },
+      {
+        "period_month": "2025-08",
+        "workflow_stage": "发表与知识扩散",
+        "post_count": 1
+      },
+      {
+        "period_month": "2025-08",
+        "workflow_stage": "学术写作与成果表达",
+        "post_count": 2
+      },
+      {
+        "period_month": "2025-08",
+        "workflow_stage": "文献调研与知识整合",
+        "post_count": 5
+      },
+      {
+        "period_month": "2025-08",
+        "workflow_stage": "研究方法学习",
+        "post_count": 2
+      },
+      {
+        "period_month": "2025-08",
+        "workflow_stage": "研究构思与问题定义",
+        "post_count": 4
+      },
+      {
+        "period_month": "2025-08",
+        "workflow_stage": "科研效率提升与习惯养成",
+        "post_count": 1
+      },
+      {
+        "period_month": "2025-08",
+        "workflow_stage": "结果验证与论文复现",
+        "post_count": 2
+      },
+      {
+        "period_month": "2025-09",
+        "workflow_stage": "uncertain",
+        "post_count": 1
+      },
+      {
+        "period_month": "2025-09",
+        "workflow_stage": "出版与评审治理",
+        "post_count": 1
+      },
+      {
+        "period_month": "2025-09",
+        "workflow_stage": "学术写作与成果表达",
+        "post_count": 2
+      },
+      {
+        "period_month": "2025-09",
+        "workflow_stage": "学术阅读与写作能力训练",
+        "post_count": 1
+      },
+      {
+        "period_month": "2025-09",
+        "workflow_stage": "文献调研与知识整合",
+        "post_count": 15
+      },
+      {
+        "period_month": "2025-09",
+        "workflow_stage": "研究构思与问题定义",
+        "post_count": 4
+      },
+      {
+        "period_month": "2025-10",
+        "workflow_stage": "出版与评审治理",
+        "post_count": 1
+      },
+      {
+        "period_month": "2025-10",
+        "workflow_stage": "学术写作与成果表达",
+        "post_count": 1
+      },
+      {
+        "period_month": "2025-10",
+        "workflow_stage": "数据处理与分析建模",
+        "post_count": 3
+      },
+      {
+        "period_month": "2025-10",
+        "workflow_stage": "文献调研与知识整合",
+        "post_count": 7
+      },
+      {
+        "period_month": "2025-10",
+        "workflow_stage": "研究方法学习",
+        "post_count": 1
+      },
+      {
+        "period_month": "2025-10",
+        "workflow_stage": "研究构思与问题定义",
+        "post_count": 2
+      },
+      {
+        "period_month": "2025-10",
+        "workflow_stage": "研究设计与方案制定",
+        "post_count": 2
+      },
+      {
+        "period_month": "2025-11",
+        "workflow_stage": "出版与评审治理",
+        "post_count": 3
+      },
+      {
+        "period_month": "2025-11",
+        "workflow_stage": "学术写作与成果表达",
+        "post_count": 4
+      },
+      {
+        "period_month": "2025-11",
+        "workflow_stage": "数据处理与分析建模",
+        "post_count": 5
+      },
+      {
+        "period_month": "2025-11",
+        "workflow_stage": "数据获取",
+        "post_count": 2
+      },
+      {
+        "period_month": "2025-11",
+        "workflow_stage": "文献调研与知识整合",
+        "post_count": 20
+      },
+      {
+        "period_month": "2025-11",
+        "workflow_stage": "研究构思与问题定义",
+        "post_count": 7
+      },
+      {
+        "period_month": "2025-11",
+        "workflow_stage": "科研工具与技术技能训练",
+        "post_count": 1
+      },
+      {
+        "period_month": "2025-11",
+        "workflow_stage": "科研效率提升与习惯养成",
+        "post_count": 1
+      },
+      {
+        "period_month": "2025-12",
+        "workflow_stage": "uncertain",
+        "post_count": 3
+      },
+      {
+        "period_month": "2025-12",
+        "workflow_stage": "出版与评审治理",
+        "post_count": 1
+      },
+      {
+        "period_month": "2025-12",
+        "workflow_stage": "发表与知识扩散",
+        "post_count": 1
+      },
+      {
+        "period_month": "2025-12",
+        "workflow_stage": "学术写作与成果表达",
+        "post_count": 5
+      },
+      {
+        "period_month": "2025-12",
+        "workflow_stage": "数据处理与分析建模",
+        "post_count": 8
+      },
+      {
+        "period_month": "2025-12",
+        "workflow_stage": "文献调研与知识整合",
+        "post_count": 15
+      },
+      {
+        "period_month": "2025-12",
+        "workflow_stage": "研究构思与问题定义",
+        "post_count": 6
+      },
+      {
+        "period_month": "2025-12",
+        "workflow_stage": "研究设计与方案制定",
+        "post_count": 3
+      },
+      {
+        "period_month": "2026-01",
+        "workflow_stage": "uncertain",
+        "post_count": 1
+      },
+      {
+        "period_month": "2026-01",
+        "workflow_stage": "发表与知识扩散",
+        "post_count": 2
+      },
+      {
+        "period_month": "2026-01",
+        "workflow_stage": "学术写作与成果表达",
+        "post_count": 5
+      },
+      {
+        "period_month": "2026-01",
+        "workflow_stage": "实验实施与仿真执行",
+        "post_count": 1
+      },
+      {
+        "period_month": "2026-01",
+        "workflow_stage": "数据处理与分析建模",
+        "post_count": 3
+      },
+      {
+        "period_month": "2026-01",
+        "workflow_stage": "文献调研与知识整合",
+        "post_count": 20
+      },
+      {
+        "period_month": "2026-01",
+        "workflow_stage": "研究构思与问题定义",
+        "post_count": 11
+      },
+      {
+        "period_month": "2026-01",
+        "workflow_stage": "研究设计与方案制定",
+        "post_count": 1
+      },
+      {
+        "period_month": "2026-01",
+        "workflow_stage": "结果解释与理论提炼",
+        "post_count": 1
+      },
+      {
+        "period_month": "2026-02",
+        "workflow_stage": "uncertain",
+        "post_count": 2
+      },
+      {
+        "period_month": "2026-02",
+        "workflow_stage": "学术写作与成果表达",
+        "post_count": 5
+      },
+      {
+        "period_month": "2026-02",
+        "workflow_stage": "实验实施与仿真执行",
+        "post_count": 1
+      },
+      {
+        "period_month": "2026-02",
+        "workflow_stage": "数据处理与分析建模",
+        "post_count": 2
+      },
+      {
+        "period_month": "2026-02",
+        "workflow_stage": "文献调研与知识整合",
+        "post_count": 43
+      },
+      {
+        "period_month": "2026-02",
+        "workflow_stage": "研究构思与问题定义",
+        "post_count": 17
+      },
+      {
+        "period_month": "2026-02",
+        "workflow_stage": "研究设计与方案制定",
+        "post_count": 1
+      },
+      {
+        "period_month": "2026-03",
+        "workflow_stage": "uncertain",
+        "post_count": 7
+      },
+      {
+        "period_month": "2026-03",
+        "workflow_stage": "出版与评审治理",
+        "post_count": 1
+      },
+      {
+        "period_month": "2026-03",
+        "workflow_stage": "发表与知识扩散",
+        "post_count": 2
+      },
+      {
+        "period_month": "2026-03",
+        "workflow_stage": "学术写作与成果表达",
+        "post_count": 10
+      },
+      {
+        "period_month": "2026-03",
+        "workflow_stage": "实验实施与仿真执行",
+        "post_count": 2
+      },
+      {
+        "period_month": "2026-03",
+        "workflow_stage": "数据处理与分析建模",
+        "post_count": 35
+      },
+      {
+        "period_month": "2026-03",
+        "workflow_stage": "数据获取",
+        "post_count": 1
+      },
+      {
+        "period_month": "2026-03",
+        "workflow_stage": "文献调研与知识整合",
+        "post_count": 73
+      },
+      {
+        "period_month": "2026-03",
+        "workflow_stage": "研究构思与问题定义",
+        "post_count": 33
+      },
+      {
+        "period_month": "2026-03",
+        "workflow_stage": "研究设计与方案制定",
+        "post_count": 5
+      },
+      {
+        "period_month": "2026-03",
+        "workflow_stage": "科研效率提升与习惯养成",
+        "post_count": 1
+      },
+      {
+        "period_month": "2026-03",
+        "workflow_stage": "结果验证与论文复现",
+        "post_count": 2
+      },
+      {
+        "period_month": "2026-04",
+        "workflow_stage": "uncertain",
+        "post_count": 5
+      },
+      {
+        "period_month": "2026-04",
+        "workflow_stage": "学术写作与成果表达",
+        "post_count": 2
+      },
+      {
+        "period_month": "2026-04",
+        "workflow_stage": "数据处理与分析建模",
+        "post_count": 10
+      },
+      {
+        "period_month": "2026-04",
+        "workflow_stage": "文献调研与知识整合",
+        "post_count": 25
+      },
+      {
+        "period_month": "2026-04",
+        "workflow_stage": "研究构思与问题定义",
+        "post_count": 4
+      },
+      {
+        "period_month": "2026-04",
+        "workflow_stage": "研究设计与方案制定",
+        "post_count": 2
+      },
+      {
+        "period_month": "2026-04",
+        "workflow_stage": "科研效率提升与习惯养成",
+        "post_count": 4
+      }
+    ],
+    "subject_distribution": [
+      {
+        "subject_label": "uncertain",
+        "post_count": 485
+      },
+      {
+        "subject_label": "Life Sciences & Medicine",
+        "post_count": 66
+      },
+      {
+        "subject_label": "Engineering & Technology",
+        "post_count": 64
+      },
+      {
+        "subject_label": "Social Sciences & Management",
+        "post_count": 59
+      },
+      {
+        "subject_label": "Natural Sciences",
+        "post_count": 26
+      },
+      {
+        "subject_label": "Arts & Humanities",
+        "post_count": 14
+      }
+    ],
+    "workflow_distribution": [
+      {
+        "workflow_stage": "文献调研与知识整合",
+        "post_count": 339
+      },
+      {
+        "workflow_stage": "研究构思与问题定义",
+        "post_count": 127
+      },
+      {
+        "workflow_stage": "数据处理与分析建模",
+        "post_count": 88
+      },
+      {
+        "workflow_stage": "学术写作与成果表达",
+        "post_count": 52
+      },
+      {
+        "workflow_stage": "uncertain",
+        "post_count": 32
+      },
+      {
+        "workflow_stage": "研究设计与方案制定",
+        "post_count": 24
+      },
+      {
+        "workflow_stage": "数据获取",
+        "post_count": 10
+      },
+      {
+        "workflow_stage": "出版与评审治理",
+        "post_count": 9
+      },
+      {
+        "workflow_stage": "科研效率提升与习惯养成",
+        "post_count": 9
+      },
+      {
+        "workflow_stage": "发表与知识扩散",
+        "post_count": 8
+      },
+      {
+        "workflow_stage": "研究方法学习",
+        "post_count": 5
+      },
+      {
+        "workflow_stage": "实验实施与仿真执行",
+        "post_count": 4
+      },
+      {
+        "workflow_stage": "结果验证与论文复现",
+        "post_count": 4
+      },
+      {
+        "workflow_stage": "学术阅读与写作能力训练",
+        "post_count": 1
+      },
+      {
+        "workflow_stage": "科研工具与技术技能训练",
+        "post_count": 1
+      },
+      {
+        "workflow_stage": "结果解释与理论提炼",
+        "post_count": 1
+      }
+    ],
+    "cross_tabs": {
+      "workflow_legitimacy": [
+        {
+          "workflow_stage": "uncertain",
+          "legitimacy_stance": "中性经验帖",
+          "post_count": 23
+        },
+        {
+          "workflow_stage": "uncertain",
+          "legitimacy_stance": "积极但保留",
+          "post_count": 6
+        },
+        {
+          "workflow_stage": "uncertain",
+          "legitimacy_stance": "积极采用",
+          "post_count": 3
+        },
+        {
+          "workflow_stage": "出版与评审治理",
+          "legitimacy_stance": "中性经验帖",
+          "post_count": 3
+        },
+        {
+          "workflow_stage": "出版与评审治理",
+          "legitimacy_stance": "有条件接受",
+          "post_count": 2
+        },
+        {
+          "workflow_stage": "出版与评审治理",
+          "legitimacy_stance": "未表达评价",
+          "post_count": 1
+        },
+        {
+          "workflow_stage": "出版与评审治理",
+          "legitimacy_stance": "混合/冲突性评价",
+          "post_count": 1
+        },
+        {
+          "workflow_stage": "出版与评审治理",
+          "legitimacy_stance": "质疑/否定",
+          "post_count": 2
+        },
+        {
+          "workflow_stage": "发表与知识扩散",
+          "legitimacy_stance": "有条件接受",
+          "post_count": 1
+        },
+        {
+          "workflow_stage": "发表与知识扩散",
+          "legitimacy_stance": "未表达评价",
+          "post_count": 1
+        },
+        {
+          "workflow_stage": "发表与知识扩散",
+          "legitimacy_stance": "混合/冲突性评价",
+          "post_count": 5
+        },
+        {
+          "workflow_stage": "发表与知识扩散",
+          "legitimacy_stance": "质疑/否定",
+          "post_count": 1
+        },
+        {
+          "workflow_stage": "学术写作与成果表达",
+          "legitimacy_stance": "中性经验帖",
+          "post_count": 7
+        },
+        {
+          "workflow_stage": "学术写作与成果表达",
+          "legitimacy_stance": "有条件接受",
+          "post_count": 19
+        },
+        {
+          "workflow_stage": "学术写作与成果表达",
+          "legitimacy_stance": "未表达评价",
+          "post_count": 3
+        },
+        {
+          "workflow_stage": "学术写作与成果表达",
+          "legitimacy_stance": "正面接受/正当化",
+          "post_count": 1
+        },
+        {
+          "workflow_stage": "学术写作与成果表达",
+          "legitimacy_stance": "混合/冲突性评价",
+          "post_count": 14
+        },
+        {
+          "workflow_stage": "学术写作与成果表达",
+          "legitimacy_stance": "积极但保留",
+          "post_count": 1
+        },
+        {
+          "workflow_stage": "学术写作与成果表达",
+          "legitimacy_stance": "积极采用",
+          "post_count": 1
+        },
+        {
+          "workflow_stage": "学术写作与成果表达",
+          "legitimacy_stance": "质疑/否定",
+          "post_count": 6
+        },
+        {
+          "workflow_stage": "学术阅读与写作能力训练",
+          "legitimacy_stance": "混合/冲突性评价",
+          "post_count": 1
+        },
+        {
+          "workflow_stage": "实验实施与仿真执行",
+          "legitimacy_stance": "有条件接受",
+          "post_count": 2
+        },
+        {
+          "workflow_stage": "实验实施与仿真执行",
+          "legitimacy_stance": "未表达评价",
+          "post_count": 1
+        },
+        {
+          "workflow_stage": "实验实施与仿真执行",
+          "legitimacy_stance": "混合/冲突性评价",
+          "post_count": 1
+        },
+        {
+          "workflow_stage": "数据处理与分析建模",
+          "legitimacy_stance": "中性经验帖",
+          "post_count": 14
+        },
+        {
+          "workflow_stage": "数据处理与分析建模",
+          "legitimacy_stance": "有条件接受",
+          "post_count": 27
+        },
+        {
+          "workflow_stage": "数据处理与分析建模",
+          "legitimacy_stance": "未表达评价",
+          "post_count": 3
+        },
+        {
+          "workflow_stage": "数据处理与分析建模",
+          "legitimacy_stance": "正面接受/正当化",
+          "post_count": 5
+        },
+        {
+          "workflow_stage": "数据处理与分析建模",
+          "legitimacy_stance": "混合/冲突性评价",
+          "post_count": 20
+        },
+        {
+          "workflow_stage": "数据处理与分析建模",
+          "legitimacy_stance": "积极但保留",
+          "post_count": 6
+        },
+        {
+          "workflow_stage": "数据处理与分析建模",
+          "legitimacy_stance": "积极采用",
+          "post_count": 10
+        },
+        {
+          "workflow_stage": "数据处理与分析建模",
+          "legitimacy_stance": "质疑/否定",
+          "post_count": 3
+        },
+        {
+          "workflow_stage": "数据获取",
+          "legitimacy_stance": "有条件接受",
+          "post_count": 2
+        },
+        {
+          "workflow_stage": "数据获取",
+          "legitimacy_stance": "未表达评价",
+          "post_count": 1
+        },
+        {
+          "workflow_stage": "数据获取",
+          "legitimacy_stance": "混合/冲突性评价",
+          "post_count": 7
+        },
+        {
+          "workflow_stage": "文献调研与知识整合",
+          "legitimacy_stance": "中性经验帖",
+          "post_count": 60
+        },
+        {
+          "workflow_stage": "文献调研与知识整合",
+          "legitimacy_stance": "有条件接受",
+          "post_count": 110
+        },
+        {
+          "workflow_stage": "文献调研与知识整合",
+          "legitimacy_stance": "未表达评价",
+          "post_count": 10
+        },
+        {
+          "workflow_stage": "文献调研与知识整合",
+          "legitimacy_stance": "正面接受/正当化",
+          "post_count": 19
+        },
+        {
+          "workflow_stage": "文献调研与知识整合",
+          "legitimacy_stance": "混合/冲突性评价",
+          "post_count": 99
+        },
+        {
+          "workflow_stage": "文献调研与知识整合",
+          "legitimacy_stance": "积极但保留",
+          "post_count": 18
+        },
+        {
+          "workflow_stage": "文献调研与知识整合",
+          "legitimacy_stance": "积极采用",
+          "post_count": 14
+        },
+        {
+          "workflow_stage": "文献调研与知识整合",
+          "legitimacy_stance": "质疑/否定",
+          "post_count": 9
+        },
+        {
+          "workflow_stage": "研究方法学习",
+          "legitimacy_stance": "有条件接受",
+          "post_count": 3
+        },
+        {
+          "workflow_stage": "研究方法学习",
+          "legitimacy_stance": "混合/冲突性评价",
+          "post_count": 2
+        },
+        {
+          "workflow_stage": "研究构思与问题定义",
+          "legitimacy_stance": "有条件接受",
+          "post_count": 58
+        },
+        {
+          "workflow_stage": "研究构思与问题定义",
+          "legitimacy_stance": "未表达评价",
+          "post_count": 2
+        },
+        {
+          "workflow_stage": "研究构思与问题定义",
+          "legitimacy_stance": "正面接受/正当化",
+          "post_count": 5
+        },
+        {
+          "workflow_stage": "研究构思与问题定义",
+          "legitimacy_stance": "混合/冲突性评价",
+          "post_count": 61
+        },
+        {
+          "workflow_stage": "研究构思与问题定义",
+          "legitimacy_stance": "质疑/否定",
+          "post_count": 1
+        },
+        {
+          "workflow_stage": "研究设计与方案制定",
+          "legitimacy_stance": "中性经验帖",
+          "post_count": 10
+        },
+        {
+          "workflow_stage": "研究设计与方案制定",
+          "legitimacy_stance": "有条件接受",
+          "post_count": 6
+        },
+        {
+          "workflow_stage": "研究设计与方案制定",
+          "legitimacy_stance": "正面接受/正当化",
+          "post_count": 2
+        },
+        {
+          "workflow_stage": "研究设计与方案制定",
+          "legitimacy_stance": "混合/冲突性评价",
+          "post_count": 2
+        },
+        {
+          "workflow_stage": "研究设计与方案制定",
+          "legitimacy_stance": "积极但保留",
+          "post_count": 2
+        },
+        {
+          "workflow_stage": "研究设计与方案制定",
+          "legitimacy_stance": "积极采用",
+          "post_count": 2
+        },
+        {
+          "workflow_stage": "科研工具与技术技能训练",
+          "legitimacy_stance": "混合/冲突性评价",
+          "post_count": 1
+        },
+        {
+          "workflow_stage": "科研效率提升与习惯养成",
+          "legitimacy_stance": "中性经验帖",
+          "post_count": 6
+        },
+        {
+          "workflow_stage": "科研效率提升与习惯养成",
+          "legitimacy_stance": "积极但保留",
+          "post_count": 1
+        },
+        {
+          "workflow_stage": "科研效率提升与习惯养成",
+          "legitimacy_stance": "积极采用",
+          "post_count": 2
+        },
+        {
+          "workflow_stage": "结果解释与理论提炼",
+          "legitimacy_stance": "混合/冲突性评价",
+          "post_count": 1
+        },
+        {
+          "workflow_stage": "结果验证与论文复现",
+          "legitimacy_stance": "混合/冲突性评价",
+          "post_count": 4
+        }
+      ],
+      "subject_workflow": [
+        {
+          "subject_label": "uncertain",
+          "workflow_stage": "文献调研与知识整合",
+          "post_count": 255
+        },
+        {
+          "subject_label": "uncertain",
+          "workflow_stage": "研究构思与问题定义",
+          "post_count": 64
+        },
+        {
+          "subject_label": "uncertain",
+          "workflow_stage": "数据处理与分析建模",
+          "post_count": 48
+        },
+        {
+          "subject_label": "Life Sciences & Medicine",
+          "workflow_stage": "文献调研与知识整合",
+          "post_count": 42
+        },
+        {
+          "subject_label": "uncertain",
+          "workflow_stage": "学术写作与成果表达",
+          "post_count": 37
+        },
+        {
+          "subject_label": "uncertain",
+          "workflow_stage": "uncertain",
+          "post_count": 32
+        },
+        {
+          "subject_label": "Social Sciences & Management",
+          "workflow_stage": "研究构思与问题定义",
+          "post_count": 31
+        },
+        {
+          "subject_label": "Engineering & Technology",
+          "workflow_stage": "文献调研与知识整合",
+          "post_count": 20
+        },
+        {
+          "subject_label": "uncertain",
+          "workflow_stage": "研究设计与方案制定",
+          "post_count": 18
+        },
+        {
+          "subject_label": "Engineering & Technology",
+          "workflow_stage": "研究构思与问题定义",
+          "post_count": 15
+        },
+        {
+          "subject_label": "Social Sciences & Management",
+          "workflow_stage": "数据处理与分析建模",
+          "post_count": 14
+        },
+        {
+          "subject_label": "Engineering & Technology",
+          "workflow_stage": "数据处理与分析建模",
+          "post_count": 11
+        },
+        {
+          "subject_label": "Social Sciences & Management",
+          "workflow_stage": "文献调研与知识整合",
+          "post_count": 11
+        },
+        {
+          "subject_label": "Life Sciences & Medicine",
+          "workflow_stage": "数据处理与分析建模",
+          "post_count": 10
+        },
+        {
+          "subject_label": "uncertain",
+          "workflow_stage": "科研效率提升与习惯养成",
+          "post_count": 9
+        },
+        {
+          "subject_label": "Life Sciences & Medicine",
+          "workflow_stage": "研究构思与问题定义",
+          "post_count": 7
+        },
+        {
+          "subject_label": "Natural Sciences",
+          "workflow_stage": "文献调研与知识整合",
+          "post_count": 7
+        },
+        {
+          "subject_label": "Natural Sciences",
+          "workflow_stage": "研究构思与问题定义",
+          "post_count": 7
+        },
+        {
+          "subject_label": "uncertain",
+          "workflow_stage": "出版与评审治理",
+          "post_count": 6
+        },
+        {
+          "subject_label": "Arts & Humanities",
+          "workflow_stage": "学术写作与成果表达",
+          "post_count": 5
+        },
+        {
+          "subject_label": "Natural Sciences",
+          "workflow_stage": "数据处理与分析建模",
+          "post_count": 5
+        },
+        {
+          "subject_label": "Arts & Humanities",
+          "workflow_stage": "文献调研与知识整合",
+          "post_count": 4
+        },
+        {
+          "subject_label": "Engineering & Technology",
+          "workflow_stage": "发表与知识扩散",
+          "post_count": 4
+        },
+        {
+          "subject_label": "Natural Sciences",
+          "workflow_stage": "学术写作与成果表达",
+          "post_count": 4
+        },
+        {
+          "subject_label": "uncertain",
+          "workflow_stage": "数据获取",
+          "post_count": 4
+        },
+        {
+          "subject_label": "Arts & Humanities",
+          "workflow_stage": "研究构思与问题定义",
+          "post_count": 3
+        },
+        {
+          "subject_label": "Engineering & Technology",
+          "workflow_stage": "学术写作与成果表达",
+          "post_count": 3
+        },
+        {
+          "subject_label": "Life Sciences & Medicine",
+          "workflow_stage": "研究设计与方案制定",
+          "post_count": 3
+        },
+        {
+          "subject_label": "uncertain",
+          "workflow_stage": "发表与知识扩散",
+          "post_count": 3
+        },
+        {
+          "subject_label": "uncertain",
+          "workflow_stage": "研究方法学习",
+          "post_count": 3
+        },
+        {
+          "subject_label": "Engineering & Technology",
+          "workflow_stage": "实验实施与仿真执行",
+          "post_count": 2
+        },
+        {
+          "subject_label": "Engineering & Technology",
+          "workflow_stage": "数据获取",
+          "post_count": 2
+        },
+        {
+          "subject_label": "Engineering & Technology",
+          "workflow_stage": "研究方法学习",
+          "post_count": 2
+        },
+        {
+          "subject_label": "Engineering & Technology",
+          "workflow_stage": "结果验证与论文复现",
+          "post_count": 2
+        },
+        {
+          "subject_label": "Life Sciences & Medicine",
+          "workflow_stage": "学术写作与成果表达",
+          "post_count": 2
+        },
+        {
+          "subject_label": "Natural Sciences",
+          "workflow_stage": "数据获取",
+          "post_count": 2
+        },
+        {
+          "subject_label": "Social Sciences & Management",
+          "workflow_stage": "研究设计与方案制定",
+          "post_count": 2
+        },
+        {
+          "subject_label": "uncertain",
+          "workflow_stage": "实验实施与仿真执行",
+          "post_count": 2
+        },
+        {
+          "subject_label": "uncertain",
+          "workflow_stage": "结果验证与论文复现",
+          "post_count": 2
+        },
+        {
+          "subject_label": "Arts & Humanities",
+          "workflow_stage": "发表与知识扩散",
+          "post_count": 1
+        },
+        {
+          "subject_label": "Arts & Humanities",
+          "workflow_stage": "数据获取",
+          "post_count": 1
+        },
+        {
+          "subject_label": "Engineering & Technology",
+          "workflow_stage": "出版与评审治理",
+          "post_count": 1
+        },
+        {
+          "subject_label": "Engineering & Technology",
+          "workflow_stage": "学术阅读与写作能力训练",
+          "post_count": 1
+        },
+        {
+          "subject_label": "Engineering & Technology",
+          "workflow_stage": "研究设计与方案制定",
+          "post_count": 1
+        },
+        {
+          "subject_label": "Life Sciences & Medicine",
+          "workflow_stage": "出版与评审治理",
+          "post_count": 1
+        },
+        {
+          "subject_label": "Life Sciences & Medicine",
+          "workflow_stage": "数据获取",
+          "post_count": 1
+        },
+        {
+          "subject_label": "Natural Sciences",
+          "workflow_stage": "出版与评审治理",
+          "post_count": 1
+        },
+        {
+          "subject_label": "Social Sciences & Management",
+          "workflow_stage": "学术写作与成果表达",
+          "post_count": 1
+        },
+        {
+          "subject_label": "uncertain",
+          "workflow_stage": "科研工具与技术技能训练",
+          "post_count": 1
+        },
+        {
+          "subject_label": "uncertain",
+          "workflow_stage": "结果解释与理论提炼",
+          "post_count": 1
+        }
+      ],
+      "subject_legitimacy": [
+        {
+          "subject_label": "uncertain",
+          "legitimacy_stance": "混合/冲突性评价",
+          "post_count": 124
+        },
+        {
+          "subject_label": "uncertain",
+          "legitimacy_stance": "中性经验帖",
+          "post_count": 123
+        },
+        {
+          "subject_label": "uncertain",
+          "legitimacy_stance": "有条件接受",
+          "post_count": 117
+        },
+        {
+          "subject_label": "Life Sciences & Medicine",
+          "legitimacy_stance": "有条件接受",
+          "post_count": 37
+        },
+        {
+          "subject_label": "uncertain",
+          "legitimacy_stance": "积极但保留",
+          "post_count": 34
+        },
+        {
+          "subject_label": "uncertain",
+          "legitimacy_stance": "积极采用",
+          "post_count": 32
+        },
+        {
+          "subject_label": "Engineering & Technology",
+          "legitimacy_stance": "有条件接受",
+          "post_count": 31
+        },
+        {
+          "subject_label": "Social Sciences & Management",
+          "legitimacy_stance": "混合/冲突性评价",
+          "post_count": 29
+        },
+        {
+          "subject_label": "Social Sciences & Management",
+          "legitimacy_stance": "有条件接受",
+          "post_count": 27
+        },
+        {
+          "subject_label": "Life Sciences & Medicine",
+          "legitimacy_stance": "混合/冲突性评价",
+          "post_count": 24
+        },
+        {
+          "subject_label": "Engineering & Technology",
+          "legitimacy_stance": "混合/冲突性评价",
+          "post_count": 22
+        },
+        {
+          "subject_label": "uncertain",
+          "legitimacy_stance": "正面接受/正当化",
+          "post_count": 22
+        },
+        {
+          "subject_label": "uncertain",
+          "legitimacy_stance": "质疑/否定",
+          "post_count": 19
+        },
+        {
+          "subject_label": "uncertain",
+          "legitimacy_stance": "未表达评价",
+          "post_count": 14
+        },
+        {
+          "subject_label": "Natural Sciences",
+          "legitimacy_stance": "有条件接受",
+          "post_count": 13
+        },
+        {
+          "subject_label": "Natural Sciences",
+          "legitimacy_stance": "混合/冲突性评价",
+          "post_count": 12
+        },
+        {
+          "subject_label": "Arts & Humanities",
+          "legitimacy_stance": "混合/冲突性评价",
+          "post_count": 8
+        },
+        {
+          "subject_label": "Engineering & Technology",
+          "legitimacy_stance": "正面接受/正当化",
+          "post_count": 6
+        },
+        {
+          "subject_label": "Arts & Humanities",
+          "legitimacy_stance": "有条件接受",
+          "post_count": 5
+        },
+        {
+          "subject_label": "Engineering & Technology",
+          "legitimacy_stance": "未表达评价",
+          "post_count": 4
+        },
+        {
+          "subject_label": "Life Sciences & Medicine",
+          "legitimacy_stance": "未表达评价",
+          "post_count": 2
+        },
+        {
+          "subject_label": "Life Sciences & Medicine",
+          "legitimacy_stance": "质疑/否定",
+          "post_count": 2
+        },
+        {
+          "subject_label": "Social Sciences & Management",
+          "legitimacy_stance": "正面接受/正当化",
+          "post_count": 2
+        },
+        {
+          "subject_label": "Arts & Humanities",
+          "legitimacy_stance": "未表达评价",
+          "post_count": 1
+        },
+        {
+          "subject_label": "Engineering & Technology",
+          "legitimacy_stance": "质疑/否定",
+          "post_count": 1
+        },
+        {
+          "subject_label": "Life Sciences & Medicine",
+          "legitimacy_stance": "正面接受/正当化",
+          "post_count": 1
+        },
+        {
+          "subject_label": "Natural Sciences",
+          "legitimacy_stance": "正面接受/正当化",
+          "post_count": 1
+        },
+        {
+          "subject_label": "Social Sciences & Management",
+          "legitimacy_stance": "未表达评价",
+          "post_count": 1
+        }
+      ],
+      "halfyear_workflow": [
+        {
+          "half_year": "2024H1",
+          "workflow_stage": "uncertain",
+          "post_count": 2
+        },
+        {
+          "half_year": "2024H1",
+          "workflow_stage": "发表与知识扩散",
+          "post_count": 1
+        },
+        {
+          "half_year": "2024H1",
+          "workflow_stage": "数据处理与分析建模",
+          "post_count": 2
+        },
+        {
+          "half_year": "2024H1",
+          "workflow_stage": "数据获取",
+          "post_count": 1
+        },
+        {
+          "half_year": "2024H1",
+          "workflow_stage": "文献调研与知识整合",
+          "post_count": 8
+        },
+        {
+          "half_year": "2024H1",
+          "workflow_stage": "研究构思与问题定义",
+          "post_count": 2
+        },
+        {
+          "half_year": "2024H1",
+          "workflow_stage": "研究设计与方案制定",
+          "post_count": 1
+        },
+        {
+          "half_year": "2024H2",
+          "workflow_stage": "uncertain",
+          "post_count": 1
+        },
+        {
+          "half_year": "2024H2",
+          "workflow_stage": "发表与知识扩散",
+          "post_count": 1
+        },
+        {
+          "half_year": "2024H2",
+          "workflow_stage": "学术写作与成果表达",
+          "post_count": 3
+        },
+        {
+          "half_year": "2024H2",
+          "workflow_stage": "数据处理与分析建模",
+          "post_count": 1
+        },
+        {
+          "half_year": "2024H2",
+          "workflow_stage": "文献调研与知识整合",
+          "post_count": 20
+        },
+        {
+          "half_year": "2024H2",
+          "workflow_stage": "研究构思与问题定义",
+          "post_count": 12
+        },
+        {
+          "half_year": "2025H1",
+          "workflow_stage": "uncertain",
+          "post_count": 3
+        },
+        {
+          "half_year": "2025H1",
+          "workflow_stage": "出版与评审治理",
+          "post_count": 2
+        },
+        {
+          "half_year": "2025H1",
+          "workflow_stage": "学术写作与成果表达",
+          "post_count": 9
+        },
+        {
+          "half_year": "2025H1",
+          "workflow_stage": "数据处理与分析建模",
+          "post_count": 19
+        },
+        {
+          "half_year": "2025H1",
+          "workflow_stage": "数据获取",
+          "post_count": 4
+        },
+        {
+          "half_year": "2025H1",
+          "workflow_stage": "文献调研与知识整合",
+          "post_count": 76
+        },
+        {
+          "half_year": "2025H1",
+          "workflow_stage": "研究方法学习",
+          "post_count": 1
+        },
+        {
+          "half_year": "2025H1",
+          "workflow_stage": "研究构思与问题定义",
+          "post_count": 22
+        },
+        {
+          "half_year": "2025H1",
+          "workflow_stage": "研究设计与方案制定",
+          "post_count": 7
+        },
+        {
+          "half_year": "2025H1",
+          "workflow_stage": "科研效率提升与习惯养成",
+          "post_count": 1
+        },
+        {
+          "half_year": "2025H2",
+          "workflow_stage": "uncertain",
+          "post_count": 11
+        },
+        {
+          "half_year": "2025H2",
+          "workflow_stage": "出版与评审治理",
+          "post_count": 6
+        },
+        {
+          "half_year": "2025H2",
+          "workflow_stage": "发表与知识扩散",
+          "post_count": 2
+        },
+        {
+          "half_year": "2025H2",
+          "workflow_stage": "学术写作与成果表达",
+          "post_count": 18
+        },
+        {
+          "half_year": "2025H2",
+          "workflow_stage": "学术阅读与写作能力训练",
+          "post_count": 1
+        },
+        {
+          "half_year": "2025H2",
+          "workflow_stage": "数据处理与分析建模",
+          "post_count": 16
+        },
+        {
+          "half_year": "2025H2",
+          "workflow_stage": "数据获取",
+          "post_count": 4
+        },
+        {
+          "half_year": "2025H2",
+          "workflow_stage": "文献调研与知识整合",
+          "post_count": 74
+        },
+        {
+          "half_year": "2025H2",
+          "workflow_stage": "研究方法学习",
+          "post_count": 4
+        },
+        {
+          "half_year": "2025H2",
+          "workflow_stage": "研究构思与问题定义",
+          "post_count": 26
+        },
+        {
+          "half_year": "2025H2",
+          "workflow_stage": "研究设计与方案制定",
+          "post_count": 7
+        },
+        {
+          "half_year": "2025H2",
+          "workflow_stage": "科研工具与技术技能训练",
+          "post_count": 1
+        },
+        {
+          "half_year": "2025H2",
+          "workflow_stage": "科研效率提升与习惯养成",
+          "post_count": 3
+        },
+        {
+          "half_year": "2025H2",
+          "workflow_stage": "结果验证与论文复现",
+          "post_count": 2
+        },
+        {
+          "half_year": "2026H1",
+          "workflow_stage": "uncertain",
+          "post_count": 15
+        },
+        {
+          "half_year": "2026H1",
+          "workflow_stage": "出版与评审治理",
+          "post_count": 1
+        },
+        {
+          "half_year": "2026H1",
+          "workflow_stage": "发表与知识扩散",
+          "post_count": 4
+        },
+        {
+          "half_year": "2026H1",
+          "workflow_stage": "学术写作与成果表达",
+          "post_count": 22
+        },
+        {
+          "half_year": "2026H1",
+          "workflow_stage": "实验实施与仿真执行",
+          "post_count": 4
+        },
+        {
+          "half_year": "2026H1",
+          "workflow_stage": "数据处理与分析建模",
+          "post_count": 50
+        },
+        {
+          "half_year": "2026H1",
+          "workflow_stage": "数据获取",
+          "post_count": 1
+        },
+        {
+          "half_year": "2026H1",
+          "workflow_stage": "文献调研与知识整合",
+          "post_count": 161
+        },
+        {
+          "half_year": "2026H1",
+          "workflow_stage": "研究构思与问题定义",
+          "post_count": 65
+        },
+        {
+          "half_year": "2026H1",
+          "workflow_stage": "研究设计与方案制定",
+          "post_count": 9
+        },
+        {
+          "half_year": "2026H1",
+          "workflow_stage": "科研效率提升与习惯养成",
+          "post_count": 5
+        },
+        {
+          "half_year": "2026H1",
+          "workflow_stage": "结果解释与理论提炼",
+          "post_count": 1
+        },
+        {
+          "half_year": "2026H1",
+          "workflow_stage": "结果验证与论文复现",
+          "post_count": 2
+        }
+      ],
+      "halfyear_subject": [
+        {
+          "half_year": "2024H1",
+          "subject_label": "Life Sciences & Medicine",
+          "post_count": 2
+        },
+        {
+          "half_year": "2024H1",
+          "subject_label": "Natural Sciences",
+          "post_count": 1
+        },
+        {
+          "half_year": "2024H1",
+          "subject_label": "Social Sciences & Management",
+          "post_count": 2
+        },
+        {
+          "half_year": "2024H1",
+          "subject_label": "uncertain",
+          "post_count": 12
+        },
+        {
+          "half_year": "2024H2",
+          "subject_label": "Engineering & Technology",
+          "post_count": 1
+        },
+        {
+          "half_year": "2024H2",
+          "subject_label": "Life Sciences & Medicine",
+          "post_count": 2
+        },
+        {
+          "half_year": "2024H2",
+          "subject_label": "Social Sciences & Management",
+          "post_count": 3
+        },
+        {
+          "half_year": "2024H2",
+          "subject_label": "uncertain",
+          "post_count": 32
+        },
+        {
+          "half_year": "2025H1",
+          "subject_label": "Arts & Humanities",
+          "post_count": 2
+        },
+        {
+          "half_year": "2025H1",
+          "subject_label": "Engineering & Technology",
+          "post_count": 8
+        },
+        {
+          "half_year": "2025H1",
+          "subject_label": "Life Sciences & Medicine",
+          "post_count": 11
+        },
+        {
+          "half_year": "2025H1",
+          "subject_label": "Natural Sciences",
+          "post_count": 3
+        },
+        {
+          "half_year": "2025H1",
+          "subject_label": "Social Sciences & Management",
+          "post_count": 7
+        },
+        {
+          "half_year": "2025H1",
+          "subject_label": "uncertain",
+          "post_count": 113
+        },
+        {
+          "half_year": "2025H2",
+          "subject_label": "Arts & Humanities",
+          "post_count": 5
+        },
+        {
+          "half_year": "2025H2",
+          "subject_label": "Engineering & Technology",
+          "post_count": 12
+        },
+        {
+          "half_year": "2025H2",
+          "subject_label": "Life Sciences & Medicine",
+          "post_count": 11
+        },
+        {
+          "half_year": "2025H2",
+          "subject_label": "Natural Sciences",
+          "post_count": 6
+        },
+        {
+          "half_year": "2025H2",
+          "subject_label": "Social Sciences & Management",
+          "post_count": 13
+        },
+        {
+          "half_year": "2025H2",
+          "subject_label": "uncertain",
+          "post_count": 128
+        },
+        {
+          "half_year": "2026H1",
+          "subject_label": "Arts & Humanities",
+          "post_count": 7
+        },
+        {
+          "half_year": "2026H1",
+          "subject_label": "Engineering & Technology",
+          "post_count": 43
+        },
+        {
+          "half_year": "2026H1",
+          "subject_label": "Life Sciences & Medicine",
+          "post_count": 40
+        },
+        {
+          "half_year": "2026H1",
+          "subject_label": "Natural Sciences",
+          "post_count": 16
+        },
+        {
+          "half_year": "2026H1",
+          "subject_label": "Social Sciences & Management",
+          "post_count": 34
+        },
+        {
+          "half_year": "2026H1",
+          "subject_label": "uncertain",
+          "post_count": 200
+        }
+      ]
+    }
+  }
+}

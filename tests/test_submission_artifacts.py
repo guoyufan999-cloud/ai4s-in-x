@@ -35,10 +35,11 @@ def test_submission_manuscript_and_results_chapter_figure_paths_exist() -> None:
 
 def test_active_delivery_manifests_no_longer_point_to_data_exports() -> None:
     text_targets = [
-        ROOT / "outputs" / "figures" / "paper_figures_submission" / "quality_v5" / "paper_figures_submission_manifest.md",
+        ROOT / "outputs" / "figures" / "paper_figures_submission" / "quality_v6" / "paper_figures_submission_manifest.md",
+        FREEZE_CHECKPOINTS_DIR / "quality_v6_freeze_checkpoint.md",
         FREEZE_CHECKPOINTS_DIR / "quality_v5_freeze_checkpoint.md",
         ROOT / "outputs" / "reports" / "paper_materials" / "paper_results_snapshot.md",
-        ROOT / "outputs" / "reports" / "paper_materials" / "quality_v5_post_only_contract.md",
+        ROOT / "outputs" / "reports" / "paper_materials" / "quality_v6" / "quality_v6_post_only_contract.md",
     ]
     for path in text_targets:
         text = path.read_text(encoding="utf-8")
@@ -49,9 +50,13 @@ def test_paper_materials_manifest_uses_outputs_paths_and_source_contract() -> No
     manifest_path = ROOT / "outputs" / "reports" / "paper_materials" / "paper_materials_manifest.json"
     manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
 
-    assert manifest["coverage_end_date"] == "2026-04-10"
-    assert manifest["formal_stage"] == "quality_v5"
-    assert manifest["status"] == "post_only_formal_scope"
+    assert manifest["coverage_end_date"] == "2026-04-26"
+    assert manifest["formal_stage"] == "quality_v6"
+    assert manifest["previous_formal_stage"] == "quality_v5"
+    assert manifest["status"] == "post_only_formalized"
+    assert manifest["formal_posts"] == 714
+    assert manifest["formal_comments"] == 0
+    assert manifest["quality_v5_guard_counts"] == {"posts": 514, "comments": 0}
     assert "comment_review_v2" in manifest["comment_scope_note"]
     assert "deferred" in manifest["comment_scope_note"]
     assert "generated_at" not in manifest
@@ -61,8 +66,10 @@ def test_paper_materials_manifest_uses_outputs_paths_and_source_contract() -> No
     assert "master_draft_path" not in manifest
     assert "llm_enabled" not in manifest
     assert "llm_manifest_path" not in manifest
-    assert manifest["formal_source_contract"]["core_results"] == "paper_scope_quality_v5"
-    assert manifest["formal_source_contract"]["tools_and_risk_figures"] == "paper_scope_quality_v5"
+    assert manifest["formal_source_contract"]["core_results"] == "paper_scope_quality_v6"
+    assert manifest["formal_source_contract"]["figures"] == "paper_scope_quality_v6"
+    assert manifest["formal_source_contract"]["tools_and_risk_figures"] == "paper_scope_quality_v6"
+    assert manifest["formal_source_contract"]["framework_v2"] == "paper_scope_quality_v6"
     assert not Path(manifest["submission_figure_dir"]).is_absolute()
     assert not Path(manifest["submission_figure_manifest_path"]).is_absolute()
     assert not Path(manifest["evidence_matrix_path"]).is_absolute()
@@ -96,9 +103,10 @@ def test_paper_materials_manifest_uses_outputs_paths_and_source_contract() -> No
 
 
 def test_figure_manifest_all_sources_are_paper_scope() -> None:
-    manifest_path = ROOT / "outputs" / "figures" / "paper_figures_submission" / "quality_v5" / "paper_figures_submission_manifest.md"
+    manifest_path = ROOT / "outputs" / "figures" / "paper_figures_submission" / "quality_v6" / "paper_figures_submission_manifest.md"
     text = manifest_path.read_text(encoding="utf-8")
-    assert "`paper_scope_quality_v5`" in text
+    assert text.count("- 来源标签：`paper_scope_quality_v6`") == 9
+    assert "`paper_scope_quality_v5`" not in text
     assert "`legacy_bridge_temp`" not in text
 
 
@@ -116,6 +124,7 @@ def test_clean_submission_files_remove_internal_source_labels() -> None:
     for path in targets:
         text = path.read_text(encoding="utf-8")
         assert "paper_scope_quality_v5" not in text
+        assert "paper_scope_quality_v6" not in text
         assert "legacy_bridge_temp" not in text
         assert "data/exports" not in text
 
@@ -147,46 +156,39 @@ def test_reproducible_versioned_outputs_share_same_coverage_end_date() -> None:
             encoding="utf-8"
         )
     )
-    collection_snapshot = json.loads(
-        (ROOT / "outputs" / "reports" / "paper_materials" / "collection_status.snapshot.json").read_text(
-            encoding="utf-8"
-        )
-    )
     figure_manifest_text = (
         ROOT
         / "outputs"
         / "figures"
         / "paper_figures_submission"
-        / "quality_v5"
+        / "quality_v6"
         / "paper_figures_submission_manifest.md"
     ).read_text(encoding="utf-8")
     summary_payload = json.loads(
-        (FREEZE_CHECKPOINTS_DIR / "research_db_summary.json").read_text(encoding="utf-8")
+        (FREEZE_CHECKPOINTS_DIR / "quality_v6_research_db_summary.json").read_text(encoding="utf-8")
     )
     consistency_report = json.loads(
-        (FREEZE_CHECKPOINTS_DIR / "quality_v5_consistency_report.json").read_text(encoding="utf-8")
+        (FREEZE_CHECKPOINTS_DIR / "quality_v6_consistency_report.json").read_text(encoding="utf-8")
     )
 
-    assert materials_manifest["coverage_end_date"] == "2026-04-10"
-    assert summary_payload["paper_quality_v5"]["coverage_end_date"] == "2026-04-10"
-    assert analysis_snapshot["coverage_end_date"] == "2026-04-10"
-    assert collection_snapshot["coverage_end_date"] == "2026-04-10"
-    assert collection_snapshot["research_window"]["coverage_end_date"] == "2026-04-10"
-    assert analysis_snapshot["status"] == "post_review_v2_imported_post_only"
-    assert analysis_snapshot["formal_scope_counts"] == {"posts": 514, "comments": 0}
-    assert collection_snapshot["status"] == "post_review_v2_imported_post_only"
-    assert collection_snapshot["formal_scope"] == {"posts": 514, "comments": 0}
-    assert collection_snapshot["canonical_corpus"] == {"posts": 5535, "comments": 12362}
+    assert materials_manifest["coverage_end_date"] == "2026-04-26"
+    assert summary_payload["paper_quality_v6"]["coverage_end_date"] == "2026-04-26"
+    assert analysis_snapshot["coverage_end_date"] == "2026-04-26"
+    assert analysis_snapshot["status"] == "post_only_formalized"
+    assert analysis_snapshot["formal_stage"] == "quality_v6"
+    assert analysis_snapshot["formal_scope_counts"] == {"posts": 714, "comments": 0}
+    assert analysis_snapshot["quality_v5_guard_counts"] == {"posts": 514, "comments": 0}
     assert "generated_at" not in analysis_snapshot
-    assert "as_of_date" not in analysis_snapshot
-    assert "as_of_date" not in collection_snapshot
     assert "generated_at_utc" not in consistency_report
-    assert "- 正式覆盖截止日：`2026-04-10`" in figure_manifest_text
+    assert consistency_report["status"] == "aligned"
+    assert "- 正式覆盖截止日：`2026-04-26`" in figure_manifest_text
 
 
 def test_active_artifacts_use_repo_relative_paths_and_new_freeze_checkpoint_locations() -> None:
     assert (FREEZE_CHECKPOINTS_DIR / "research_db_summary.json").exists()
     assert (FREEZE_CHECKPOINTS_DIR / "quality_v5_consistency_report.json").exists()
+    assert (FREEZE_CHECKPOINTS_DIR / "quality_v6_research_db_summary.json").exists()
+    assert (FREEZE_CHECKPOINTS_DIR / "quality_v6_consistency_report.json").exists()
     assert not (ROOT / "data" / "processed" / "research_db_summary.json").exists()
     assert not (ROOT / "data" / "interim" / "quality_v5_consistency_report.json").exists()
 
@@ -211,6 +213,18 @@ def test_active_artifacts_use_repo_relative_paths_and_new_freeze_checkpoint_loca
     assert "master_draft_path" not in freeze_checkpoint_json["paper_materials"]
     assert "llm_enabled" not in freeze_checkpoint_json["paper_materials"]
 
+    quality_v6_checkpoint_json = json.loads(
+        (FREEZE_CHECKPOINTS_DIR / "quality_v6_freeze_checkpoint.json").read_text(encoding="utf-8")
+    )
+    assert quality_v6_checkpoint_json["status"] == "post_only_formalized"
+    assert quality_v6_checkpoint_json["formal_posts"] == 714
+    assert quality_v6_checkpoint_json["formal_comments"] == 0
+    assert quality_v6_checkpoint_json["quality_v5_guard"] == {
+        "formal_posts": 514,
+        "formal_comments": 0,
+    }
+    assert not Path(quality_v6_checkpoint_json["staging_db_path"]).is_absolute()
+
 
 def test_active_artifacts_do_not_embed_workspace_absolute_paths() -> None:
     targets = [
@@ -218,7 +232,11 @@ def test_active_artifacts_do_not_embed_workspace_absolute_paths() -> None:
         FREEZE_CHECKPOINTS_DIR / "quality_v5_consistency_report.json",
         FREEZE_CHECKPOINTS_DIR / "quality_v5_freeze_checkpoint.json",
         FREEZE_CHECKPOINTS_DIR / "quality_v5_freeze_checkpoint.md",
-        ROOT / "outputs" / "figures" / "paper_figures_submission" / "quality_v5" / "paper_figures_submission_manifest.md",
+        FREEZE_CHECKPOINTS_DIR / "quality_v6_research_db_summary.json",
+        FREEZE_CHECKPOINTS_DIR / "quality_v6_consistency_report.json",
+        FREEZE_CHECKPOINTS_DIR / "quality_v6_freeze_checkpoint.json",
+        FREEZE_CHECKPOINTS_DIR / "quality_v6_freeze_checkpoint.md",
+        ROOT / "outputs" / "figures" / "paper_figures_submission" / "quality_v6" / "paper_figures_submission_manifest.md",
         ROOT / "outputs" / "reports" / "paper_materials" / "paper_materials_manifest.json",
         ROOT / "outputs" / "reports" / "paper_materials" / "paper_results_snapshot.md",
         ROOT / "docs" / "canonical_backfill_contract.md",
@@ -236,9 +254,8 @@ def test_freeze_checkpoint_markdown_is_stable_and_formal_only() -> None:
     assert "`formal_comments=0` 是本轮设计选择" in text
 
 
-def test_active_quality_v5_materials_use_post_only_contract() -> None:
+def test_active_quality_v6_materials_use_post_only_contract() -> None:
     targets = [
-        ROOT / "outputs" / "figures" / "paper_figures_submission" / "quality_v5" / "README.md",
         ROOT / "outputs" / "reports" / "paper_materials" / "paper_abstract_submission_cn.md",
         ROOT / "outputs" / "reports" / "paper_materials" / "paper_abstract_submission_cn_clean.md",
         ROOT / "outputs" / "reports" / "paper_materials" / "paper_analysis_snapshot.md",
@@ -288,19 +305,18 @@ def test_active_quality_v5_materials_use_post_only_contract() -> None:
         / "reports"
         / "paper_materials"
         / "paper_conclusion_chapter_submission_cn_clean.md",
-        ROOT / "outputs" / "reports" / "paper_materials" / "quality_v5_post_only_contract.md",
     ]
     for path in targets:
         text = path.read_text(encoding="utf-8")
-        assert "当前状态：`post_review_v2_imported_post_only`" in text
-        assert "当前正式帖子 / 正式评论：`514 / 0`" in text
+        assert "quality_v6" in text
+        assert "当前正式帖子 / 正式评论：`714 / 0`" in text or "当前正式帖子 / 正式评论：714 / 0" in text
         assert "pending_reviewed_import" not in text
         assert "当前正式帖子 / 正式评论：`0 / 0`" not in text
         assert "评论 `27408` 条" not in text
         assert "尚未完成前" not in text
 
 
-def test_active_text_materials_keep_current_canonical_corpus_counts() -> None:
+def test_active_text_materials_keep_current_v6_staging_corpus_counts() -> None:
     targets = [
         ROOT / "outputs" / "reports" / "paper_materials" / "paper_abstract_submission_cn.md",
         ROOT / "outputs" / "reports" / "paper_materials" / "paper_abstract_submission_cn_clean.md",
@@ -319,11 +335,13 @@ def test_active_text_materials_keep_current_canonical_corpus_counts() -> None:
         ROOT / "outputs" / "reports" / "paper_materials" / "paper_results_snapshot.md",
         ROOT / "outputs" / "reports" / "paper_materials" / "paper_discussion_chapter_submission_cn_clean.md",
         ROOT / "outputs" / "reports" / "paper_materials" / "paper_conclusion_chapter_submission_cn_clean.md",
-        ROOT / "outputs" / "reports" / "paper_materials" / "quality_v5_post_only_contract.md",
     ]
     for path in targets:
         text = path.read_text(encoding="utf-8")
-        assert "当前 canonical corpus：帖子 `5535` 条，评论 `12362` 条" in text
+        assert (
+            "当前 v6 staging research DB：帖子 `5735` 条，评论 `106543` 条" in text
+            or "当前 v6 staging research DB：帖子 5735 条，评论 106543 条" in text
+        )
 
 
 def test_zero_byte_smoke_outputs_are_moved_out_of_formal_tables() -> None:
@@ -368,7 +386,7 @@ def test_active_paper_materials_distinguish_research_window_and_coverage_cutoff(
         text = path.read_text(encoding="utf-8")
         assert "2024-01-01" in text
         assert "2026-06-30" in text
-        assert "2026-04-10" in text
+        assert "2026-04-26" in text
         assert "正式覆盖截止日" in text
 
 

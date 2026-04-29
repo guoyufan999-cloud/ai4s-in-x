@@ -1,0 +1,254 @@
+{
+  "task_batch_id": "xhs_expansion_candidate_v1",
+  "coder_version": "codex_xhs_expansion_candidate_v1",
+  "generated_at": "2026-04-28T16:15:41.288005+00:00",
+  "provider_used": "opencli_xiaohongshu",
+  "comment_mode": "browser-session",
+  "opencli_doctor": {
+    "daemon_running": true,
+    "extension_connected": true,
+    "connectivity_ok": true,
+    "raw_output": "opencli v1.4.1 doctor\n\n[OK] Daemon: running on port 19825\n[OK] Extension: connected\n[OK] Connectivity: connected in 0.3s\n\nSessions:\n  • default → window 1817870742, tabs=1, idle=120s\n\nEverything looks good!\n"
+  },
+  "query_count": 24,
+  "max_coded_target": 250,
+  "max_verified_limit": 450,
+  "max_comment_probes": 25,
+  "comment_probe_count": 1,
+  "post_row_count": 1,
+  "comment_sidecar_row_count": 1,
+  "comment_fetch_status_counts": {
+    "comment_fetch_failed": 1
+  },
+  "post_decision_counts": {
+    "included": 0,
+    "review_needed": 0,
+    "excluded": 1
+  },
+  "query_stats": [
+    {
+      "query": "AI科研 文献综述",
+      "query_name": "practice_ai_lit_review",
+      "category": "practice",
+      "search_provider": "opencli_xiaohongshu",
+      "search_hits": 14,
+      "verified_kept": 1
+    },
+    {
+      "query": "AI辅助科研 文献检索",
+      "query_name": "practice_ai_lit_search",
+      "category": "practice",
+      "search_provider": "opencli_xiaohongshu",
+      "search_hits": 15,
+      "verified_kept": 0
+    },
+    {
+      "query": "ChatGPT 研究设计",
+      "query_name": "practice_chatgpt_design",
+      "category": "practice",
+      "search_provider": "opencli_xiaohongshu",
+      "search_hits": 16,
+      "verified_kept": 0
+    },
+    {
+      "query": "Claude 统计分析",
+      "query_name": "practice_claude_analysis",
+      "category": "practice",
+      "search_provider": "opencli_xiaohongshu",
+      "search_hits": 16,
+      "verified_kept": 0
+    },
+    {
+      "query": "Gemini 回复审稿",
+      "query_name": "practice_gemini_revision",
+      "category": "practice",
+      "search_provider": "opencli_xiaohongshu",
+      "search_hits": 13,
+      "verified_kept": 0
+    },
+    {
+      "query": "DeepSeek 文献综述",
+      "query_name": "practice_deepseek_review",
+      "category": "practice",
+      "search_provider": "opencli_xiaohongshu",
+      "search_hits": 17,
+      "verified_kept": 0
+    },
+    {
+      "query": "Cursor 代码生成 科研",
+      "query_name": "practice_cursor_code",
+      "category": "practice",
+      "search_provider": "opencli_xiaohongshu",
+      "search_hits": 14,
+      "verified_kept": 0
+    },
+    {
+      "query": "Copilot 统计分析",
+      "query_name": "practice_copilot_stats",
+      "category": "practice",
+      "search_provider": "opencli_xiaohongshu",
+      "search_hits": 16,
+      "verified_kept": 0
+    },
+    {
+      "query": "Perplexity 文献检索",
+      "query_name": "practice_perplexity_search",
+      "category": "practice",
+      "search_provider": "opencli_xiaohongshu",
+      "search_hits": 15,
+      "verified_kept": 0
+    },
+    {
+      "query": "Elicit 文献综述",
+      "query_name": "practice_elicit_review",
+      "category": "practice",
+      "search_provider": "opencli_xiaohongshu",
+      "search_hits": 14,
+      "verified_kept": 0
+    },
+    {
+      "query": "NotebookLM 组会",
+      "query_name": "practice_notebooklm_group",
+      "category": "practice",
+      "search_provider": "opencli_xiaohongshu",
+      "search_hits": 17,
+      "verified_kept": 0
+    },
+    {
+      "query": "Scite 论文复现",
+      "query_name": "practice_scite_repro",
+      "category": "practice",
+      "search_provider": "opencli_xiaohongshu",
+      "search_hits": 11,
+      "verified_kept": 0
+    },
+    {
+      "query": "AI科研 文献综述 幻觉",
+      "query_name": "boundary_ai_hallucination",
+      "category": "boundary",
+      "search_provider": "opencli_xiaohongshu",
+      "search_hits": 17,
+      "verified_kept": 0
+    },
+    {
+      "query": "DeepSeek 文献综述 瞎编文献",
+      "query_name": "boundary_deepseek_fake_refs",
+      "category": "boundary",
+      "search_provider": "opencli_xiaohongshu",
+      "search_hits": 17,
+      "verified_kept": 0
+    },
+    {
+      "query": "ChatGPT 论文写作 学术不端",
+      "query_name": "boundary_chatgpt_misconduct",
+      "category": "boundary",
+      "search_provider": "opencli_xiaohongshu",
+      "search_hits": 16,
+      "verified_kept": 0
+    },
+    {
+      "query": "Claude 数据分析 人工审核",
+      "query_name": "boundary_claude_review",
+      "category": "boundary",
+      "search_provider": "opencli_xiaohongshu",
+      "search_hits": 16,
+      "verified_kept": 0
+    },
+    {
+      "query": "AI辅助科研 研究设计 责任",
+      "query_name": "boundary_ai_design_resp",
+      "category": "boundary",
+      "search_provider": "opencli_xiaohongshu",
+      "search_hits": 17,
+      "verified_kept": 0
+    },
+    {
+      "query": "AI科研 投稿 披露",
+      "query_name": "boundary_ai_submission_disclose",
+      "category": "boundary",
+      "search_provider": "opencli_xiaohongshu",
+      "search_hits": 15,
+      "verified_kept": 0
+    },
+    {
+      "query": "Cursor 代码生成 不能替代",
+      "query_name": "boundary_cursor_not_replace",
+      "category": "boundary",
+      "search_provider": "opencli_xiaohongshu",
+      "search_hits": 16,
+      "verified_kept": 0
+    },
+    {
+      "query": "Copilot 统计分析 可以吗",
+      "query_name": "boundary_copilot_ok",
+      "category": "boundary",
+      "search_provider": "opencli_xiaohongshu",
+      "search_hits": 15,
+      "verified_kept": 0
+    },
+    {
+      "query": "ChatGPT 审稿",
+      "query_name": "salience_chatgpt_peer_review",
+      "category": "salience",
+      "search_provider": "opencli_xiaohongshu",
+      "search_hits": 14,
+      "verified_kept": 0
+    },
+    {
+      "query": "Gemini 写作",
+      "query_name": "salience_gemini_writing",
+      "category": "salience",
+      "search_provider": "opencli_xiaohongshu",
+      "search_hits": 16,
+      "verified_kept": 0
+    },
+    {
+      "query": "Cursor 复现",
+      "query_name": "salience_cursor_repro",
+      "category": "salience",
+      "search_provider": "opencli_xiaohongshu",
+      "search_hits": 14,
+      "verified_kept": 0
+    },
+    {
+      "query": "DeepSeek 文献综述 幻觉",
+      "query_name": "salience_deepseek_review_risk",
+      "category": "salience",
+      "search_provider": "opencli_xiaohongshu",
+      "search_hits": 15,
+      "verified_kept": 0
+    }
+  ],
+  "formal_baseline_guard_counts": {
+    "paper_quality_v5_comments": 0,
+    "paper_quality_v5_posts": 514
+  },
+  "artifact_status": "xhs_expansion_candidate_v1",
+  "artifact_classification": {
+    "status": "xhs_expansion_candidate_v1",
+    "formal_evidence_chain": false,
+    "quality_v5_formal_scope": false,
+    "reason": "xhs_expansion_candidate_v1 outputs are exploratory artifacts. They are not imported into quality_v5 post-only formal results."
+  },
+  "quality_v5_formal_scope": false,
+  "formal_result_scope": false,
+  "post_output_path": "outputs/tables/xhs_expansion_candidate_v1/candidate500_live_sidecar_posts.jsonl",
+  "comment_output_path": "outputs/tables/xhs_expansion_candidate_v1/candidate500_live_sidecar_comments.jsonl",
+  "review_queue": {
+    "queue_path": "data/interim/xhs_expansion_candidate_v1/review_queues/candidate500_live_sidecar/xhs_expansion_candidate_v1.jsonl",
+    "batch_size": 100,
+    "batch_count": 1,
+    "batches": [
+      {
+        "batch_index": 0,
+        "run_id": "xhs_expansion_candidate_v1_batch_00",
+        "row_count": 1,
+        "review_template_path": "data/interim/xhs_expansion_candidate_v1/review_queues/candidate500_live_sidecar/xhs_expansion_candidate_v1.batch_00.review_template.jsonl"
+      }
+    ]
+  },
+  "limitations": [
+    "xhs_expansion_candidate_v1 artifacts are exploratory and require manual review before any formal use.",
+    "Comment sidecar rows are contextual capture attempts, not comment_review_v2 formal results."
+  ]
+}

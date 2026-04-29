@@ -1,0 +1,58 @@
+[
+  {
+    "count": 80,
+    "count_base": "included_rows",
+    "formalization_scope": "supplemental_formalization_v1",
+    "query_group": "B. 文献处理与知识整合类",
+    "share": 0.4,
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "count": 33,
+    "count_base": "included_rows",
+    "formalization_scope": "supplemental_formalization_v1",
+    "query_group": "A. AI科研总体类",
+    "share": 0.165,
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "count": 33,
+    "count_base": "included_rows",
+    "formalization_scope": "supplemental_formalization_v1",
+    "query_group": "F. 科研规范与诚信类",
+    "share": 0.165,
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "count": 30,
+    "count_base": "included_rows",
+    "formalization_scope": "supplemental_formalization_v1",
+    "query_group": "C. 研究设计与方法学习类",
+    "share": 0.15,
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "count": 21,
+    "count_base": "included_rows",
+    "formalization_scope": "supplemental_formalization_v1",
+    "query_group": "D. 数据分析与代码类",
+    "share": 0.105,
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "count": 2,
+    "count_base": "included_rows",
+    "formalization_scope": "supplemental_formalization_v1",
+    "query_group": "E. 论文写作与成果表达类",
+    "share": 0.01,
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "count": 1,
+    "count_base": "included_rows",
+    "formalization_scope": "supplemental_formalization_v1",
+    "query_group": "G. 科研训练与效率类",
+    "share": 0.005,
+    "source_scope": "xhs_expansion_candidate_v1"
+  }
+]

@@ -281,6 +281,230 @@ def test_parse_search_author_and_date_extracts_visible_result_date() -> None:
     assert created_at2 == "2025-02-04"
 
 
+def test_run_external_xhs_pilot_accepts_supplemental_query_file_and_writes_report(
+    tmp_path: Path,
+    monkeypatch,
+) -> None:
+    query_file = tmp_path / "xhs_expansion_candidate_v1_queries.json"
+    query_file.write_text(
+        json.dumps(
+            {
+                "metadata": {
+                    "dictionary_id": "xhs_expansion_candidate_v1_queries",
+                    "quality_v5_formal_scope": False,
+                },
+                "queries": [
+                    {
+                        "query": "AI文献综述",
+                        "query_group": "B. 文献处理与知识整合类",
+                        "intent": "test",
+                        "expected_workflow_stage": "A1",
+                        "notes": "test",
+                    },
+                    {
+                        "query": "AI统计分析",
+                        "query_group": "D. 数据分析与代码类",
+                        "intent": "test",
+                        "expected_workflow_stage": "A1",
+                        "notes": "test",
+                    },
+                ],
+            },
+            ensure_ascii=False,
+        ),
+        encoding="utf-8",
+    )
+    monkeypatch.setattr(
+        pilot,
+        "check_opencli_prerequisite",
+        lambda: DoctorStatus(True, True, True, "opencli ok"),
+    )
+    monkeypatch.setattr(
+        pilot,
+        "build_fixed_queries",
+        lambda: (_ for _ in ()).throw(AssertionError("default queries should not be used")),
+    )
+
+    def fake_search(query: PilotQuery, *, limit: int) -> list[SearchCandidate]:
+        query_slug = "".join(ch for ch in query.name if ch.isalnum())
+        return [
+            SearchCandidate(
+                query_name=query.name,
+                query_text=query.query,
+                title=f"{query.query} test {index}",
+                url=f"https://www.xiaohongshu.com/explore/{query_slug}{index}",
+                author=f"author_{query.name}_{index}",
+                snippet="",
+                source="opencli_xiaohongshu",
+                result_date="2025-03-15",
+            )
+            for index in range(2)
+        ]
+
+    def fake_fetch(url: str) -> PagePayload:
+        note_id = url.rstrip("/").rsplit("/", 1)[-1]
+        if note_id.endswith("1"):
+            return PagePayload(
+                url=url,
+                note_id=note_id,
+                title="AI科研空正文",
+                source_text="",
+                author_handle="author_empty",
+                created_at="2025-03-15",
+                status="ok",
+                fetched_via="test",
+            )
+        return PagePayload(
+            url=url,
+            note_id=note_id,
+            title=f"AI辅助科研文献综述 {note_id}",
+            source_text=f"我用AI辅助科研做文献综述 {note_id}，但最后必须自己核查原文和引用。",
+            author_handle="author_ok",
+            created_at="2025-03-15",
+            status="ok",
+            fetched_via="test",
+        )
+
+    monkeypatch.setattr(pilot, "_search_with_opencli", fake_search)
+    monkeypatch.setattr(pilot, "_fetch_public_note_direct", fake_fetch)
+
+    output_path, summary_path = pilot.run_external_xhs_pilot(
+        output_path=tmp_path / "pilot50.jsonl",
+        summary_path=tmp_path / "pilot50.summary.json",
+        report_path=tmp_path / "pilot50.report.md",
+        db_path=tmp_path / "missing.sqlite3",
+        query_file=query_file,
+        max_coded=4,
+        min_included=4,
+        max_verified=4,
+        search_limit=2,
+        per_query_cap=2,
+        max_queries=2,
+    )
+
+    rows = [json.loads(line) for line in output_path.read_text(encoding="utf-8").splitlines()]
+    summary = json.loads(summary_path.read_text(encoding="utf-8"))
+    report = (tmp_path / "pilot50.report.md").read_text(encoding="utf-8")
+
+    assert len(rows) == 2
+    assert rows[0]["formal_result_scope"] is False
+    assert rows[0]["quality_v5_formal_scope"] is False
+    assert rows[0]["artifact_classification"]["status"] == "xhs_expansion_candidate_v1_pilot50"
+    assert rows[0]["query"] in {"AI文献综述", "AI统计分析"}
+    assert rows[0]["query_group"] in {"B. 文献处理与知识整合类", "D. 数据分析与代码类"}
+    assert rows[0]["source_method"] == "opencli_xiaohongshu"
+    assert summary["query_source"] == "query_file"
+    assert summary["query_count"] == 2
+    assert summary["executed_query_count"] == 2
+    assert summary["query_template_metadata"]["dictionary_id"] == "xhs_expansion_candidate_v1_queries"
+    assert summary["skip_counts"]["empty_body"] == 2
+    assert summary["formal_result_scope"] is False
+    assert summary["quality_v5_formal_scope"] is False
+    assert summary["artifact_classification"]["status"] == "xhs_expansion_candidate_v1_pilot50"
+    assert "载入查询词数量：`2`" in report
+    assert "实际执行检索的查询词数量：`2`" in report
+    assert "不构成论文发现" in report
+
+
+def test_run_external_xhs_pilot_report_compares_with_previous_summary(
+    tmp_path: Path,
+    monkeypatch,
+) -> None:
+    query_file = tmp_path / "xhs_expansion_candidate_v1_queries.json"
+    query_file.write_text(
+        json.dumps(
+            {
+                "metadata": {"dictionary_id": "xhs_expansion_candidate_v1_queries"},
+                "queries": [
+                    {
+                        "query": "AI文献综述",
+                        "query_group": "B. 文献处理与知识整合类",
+                        "intent": "test",
+                        "expected_workflow_stage": "A1",
+                        "notes": "test",
+                    }
+                ],
+            },
+            ensure_ascii=False,
+        ),
+        encoding="utf-8",
+    )
+    comparison_summary = tmp_path / "pilot50.summary.json"
+    comparison_summary.write_text(
+        json.dumps(
+            {
+                "output_path": "outputs/tables/xhs_expansion_candidate_v1/pilot50.jsonl",
+                "row_count": 1,
+                "included_count": 1,
+                "query_stats": [
+                    {"query": "AI文献综述", "search_hits": 2, "verified_kept": 1, "skip_counts": {}}
+                ],
+            },
+            ensure_ascii=False,
+        ),
+        encoding="utf-8",
+    )
+    monkeypatch.setattr(
+        pilot,
+        "check_opencli_prerequisite",
+        lambda: DoctorStatus(True, True, True, "opencli ok"),
+    )
+
+    def fake_search(query: PilotQuery, *, limit: int) -> list[SearchCandidate]:
+        return [
+            SearchCandidate(
+                query_name=query.name,
+                query_text=query.query,
+                title=f"{query.query} test {index}",
+                url=f"https://www.xiaohongshu.com/explore/compare{index}",
+                author=f"author_{index}",
+                snippet="",
+                source="opencli_xiaohongshu",
+                result_date="2025-03-15",
+            )
+            for index in range(3)
+        ]
+
+    def fake_fetch(url: str) -> PagePayload:
+        note_id = url.rstrip("/").rsplit("/", 1)[-1]
+        return PagePayload(
+            url=url,
+            note_id=note_id,
+            title=f"AI文献综述 {note_id}",
+            source_text=f"我用AI读文献并写文献综述 {note_id}，这是经验分享，也提醒要人工核查。",
+            author_handle=f"author_{note_id}",
+            created_at="2025-03-15",
+            status="ok",
+            fetched_via="test",
+        )
+
+    monkeypatch.setattr(pilot, "_search_with_opencli", fake_search)
+    monkeypatch.setattr(pilot, "_fetch_public_note_direct", fake_fetch)
+
+    _, summary_path = pilot.run_external_xhs_pilot(
+        output_path=tmp_path / "candidate300.jsonl",
+        summary_path=tmp_path / "candidate300.summary.json",
+        report_path=tmp_path / "candidate300.report.md",
+        comparison_summary_path=comparison_summary,
+        db_path=tmp_path / "missing.sqlite3",
+        query_file=query_file,
+        max_coded=3,
+        min_included=2,
+        max_verified=3,
+        search_limit=3,
+        per_query_cap=3,
+    )
+
+    summary = json.loads(summary_path.read_text(encoding="utf-8"))
+    report = (tmp_path / "candidate300.report.md").read_text(encoding="utf-8")
+    assert summary["artifact_classification"]["status"] == "xhs_expansion_candidate_v1_candidate300"
+    assert summary["comparison_summary_path"] == str(comparison_summary)
+    assert "查询词表现与 pilot 对比" in report
+    assert "表现更好的查询词" in report
+    assert "主题覆盖" in report
+    assert "话语类型初步判断" in report
+
+
 def test_run_external_xhs_pilot_preserves_existing_output_on_empty_failed_run(
     tmp_path: Path,
     monkeypatch,

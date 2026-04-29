@@ -1,0 +1,44 @@
+[
+  {
+    "count": 81,
+    "formalization_scope": "supplemental_formalization_v1",
+    "share": 0.3932,
+    "source_scope": "xhs_expansion_candidate_v1",
+    "value": "工具推荐"
+  },
+  {
+    "count": 49,
+    "formalization_scope": "supplemental_formalization_v1",
+    "share": 0.2379,
+    "source_scope": "xhs_expansion_candidate_v1",
+    "value": "经验分享"
+  },
+  {
+    "count": 29,
+    "formalization_scope": "supplemental_formalization_v1",
+    "share": 0.1408,
+    "source_scope": "xhs_expansion_candidate_v1",
+    "value": "教程展示"
+  },
+  {
+    "count": 26,
+    "formalization_scope": "supplemental_formalization_v1",
+    "share": 0.1262,
+    "source_scope": "xhs_expansion_candidate_v1",
+    "value": "风险提醒"
+  },
+  {
+    "count": 14,
+    "formalization_scope": "supplemental_formalization_v1",
+    "share": 0.068,
+    "source_scope": "xhs_expansion_candidate_v1",
+    "value": "规范解读"
+  },
+  {
+    "count": 7,
+    "formalization_scope": "supplemental_formalization_v1",
+    "share": 0.034,
+    "source_scope": "xhs_expansion_candidate_v1",
+    "value": "评论争论"
+  }
+]

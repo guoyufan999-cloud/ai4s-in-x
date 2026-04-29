@@ -1,0 +1,58 @@
+[
+  {
+    "text_type": "工具推荐",
+    "supplemental_count": 30,
+    "supplemental_share": 0.3846,
+    "quality_v5_count": 0,
+    "quality_v5_share": 0.0,
+    "share_delta_supplemental_minus_quality_v5": 0.3846
+  },
+  {
+    "text_type": "经验分享",
+    "supplemental_count": 11,
+    "supplemental_share": 0.141,
+    "quality_v5_count": 265,
+    "quality_v5_share": 0.5156,
+    "share_delta_supplemental_minus_quality_v5": -0.3745
+  },
+  {
+    "text_type": "教程展示/经验教程",
+    "supplemental_count": 23,
+    "supplemental_share": 0.2949,
+    "quality_v5_count": 208,
+    "quality_v5_share": 0.4047,
+    "share_delta_supplemental_minus_quality_v5": -0.1098
+  },
+  {
+    "text_type": "风险提醒",
+    "supplemental_count": 9,
+    "supplemental_share": 0.1154,
+    "quality_v5_count": 16,
+    "quality_v5_share": 0.0311,
+    "share_delta_supplemental_minus_quality_v5": 0.0843
+  },
+  {
+    "text_type": "其他/无法判断",
+    "supplemental_count": 0,
+    "supplemental_share": 0.0,
+    "quality_v5_count": 14,
+    "quality_v5_share": 0.0272,
+    "share_delta_supplemental_minus_quality_v5": -0.0272
+  },
+  {
+    "text_type": "评论争论",
+    "supplemental_count": 2,
+    "supplemental_share": 0.0256,
+    "quality_v5_count": 0,
+    "quality_v5_share": 0.0,
+    "share_delta_supplemental_minus_quality_v5": 0.0256
+  },
+  {
+    "text_type": "规范解读",
+    "supplemental_count": 3,
+    "supplemental_share": 0.0385,
+    "quality_v5_count": 11,
+    "quality_v5_share": 0.0214,
+    "share_delta_supplemental_minus_quality_v5": 0.0171
+  }
+]

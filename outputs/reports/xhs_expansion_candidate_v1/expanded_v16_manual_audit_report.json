@@ -1,0 +1,69 @@
+{
+  "audit_decision_by_query_group": {
+    "A. AI科研总体类": {
+      "needs_human_review": 4,
+      "pass": 15
+    },
+    "B. 文献处理与知识整合类": {
+      "needs_human_review": 9,
+      "pass": 34
+    },
+    "C. 研究设计与方法学习类": {
+      "needs_human_review": 1,
+      "pass": 10
+    },
+    "D. 数据分析与代码类": {
+      "pass": 6
+    },
+    "E. 论文写作与成果表达类": {
+      "pass": 2
+    },
+    "F. 科研规范与诚信类": {
+      "pass": 8
+    },
+    "G. 科研训练与效率类": {
+      "pass": 2
+    }
+  },
+  "audit_decision_counts": {
+    "needs_human_review": 14,
+    "pass": 77
+  },
+  "audit_sample_total": 91,
+  "formal_scope": false,
+  "generated_at": "2026-04-29T00:40:31.704838+00:00",
+  "include_sample_decision_counts": {
+    "exclude": 0,
+    "needs_human_review": 3,
+    "pass": 77
+  },
+  "include_sample_pass_rate": 0.9625,
+  "include_sample_total": 80,
+  "method_notes": [
+    "Audited all 11 review_needed rows and a deterministic stratified sample of 80 include rows.",
+    "Codex-assisted method appendix audit; not a quality_v5 formal coding decision.",
+    "No writes to research DB, no update to freeze checkpoint, no comment_review_v2 activation."
+  ],
+  "outputs": {
+    "report_json": "outputs/reports/xhs_expansion_candidate_v1/expanded_v16_manual_audit_report.json",
+    "report_md": "outputs/reports/xhs_expansion_candidate_v1/expanded_v16_manual_audit_report.md",
+    "sample_csv": "outputs/tables/xhs_expansion_candidate_v1/analysis_v16_cleaned/manual_audit_sample.csv",
+    "sample_json": "outputs/tables/xhs_expansion_candidate_v1/analysis_v16_cleaned/manual_audit_sample.json",
+    "sample_jsonl": "data/interim/xhs_expansion_candidate_v1/reviewed/xhs_expansion_candidate_v1.expanded_v16_cleaned.manual_audit_sample.jsonl"
+  },
+  "quality_v5_formal_scope": false,
+  "quality_v5_guard": {
+    "comments": 0,
+    "posts": 514
+  },
+  "recommendation": "start_supplemental_formalization_not_quality_v6",
+  "review_needed_audited_total": 11,
+  "review_needed_total": 11,
+  "reviewed_total": 6221,
+  "risk_tag_counts": {
+    "ad_or_service_noise": 13,
+    "weak_ai_research_signal": 1
+  },
+  "source_scope": "xhs_expansion_candidate_v1",
+  "staged_accepted_total": 206
+}

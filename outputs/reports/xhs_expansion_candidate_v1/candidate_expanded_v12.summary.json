@@ -1,0 +1,50 @@
+{
+  "artifact_scope": "xhs_expansion_candidate_v1_supplemental_candidate",
+  "comment_review_v2_changed": false,
+  "formal_guard_comments": 0,
+  "formal_guard_posts": 514,
+  "formal_scope_changed": false,
+  "generated_at": "2026-04-28T18:25:21Z",
+  "metadata_only_by_text_rows": 1795,
+  "new_rescreen_promoted_rows": 16,
+  "new_sidecar_comments": 128,
+  "notes": [
+    "v12 adds only high-signal rescreen promoted candidates not already present in v11.",
+    "These rows are suggestion artifacts and require manual public-page verification before inclusion.",
+    "No formal DB write, no quality_v5 checkpoint update, and no formal comment layer update were performed."
+  ],
+  "posts_with_sidecar_comments": 2576,
+  "query_group_counts": {
+    "A. AI科研总体类": 624,
+    "B. 文献处理与知识整合类": 606,
+    "C. 研究设计与方法学习类": 309,
+    "D. 数据分析与代码类": 1815,
+    "E. 论文写作与成果表达类": 372,
+    "F. 科研规范与诚信类": 609,
+    "G. 科研训练与效率类": 965,
+    "boundary": 298,
+    "practice": 62,
+    "salience": 17
+  },
+  "rescreen_source_counts": {
+    "01_legitimacy_and_boundary.jsonl": 6,
+    "02_ideation_and_research_design.jsonl": 4,
+    "04_paper_writing_and_prompting.jsonl": 2,
+    "06_other_positive_candidates.jsonl": 4
+  },
+  "row_count": 5677,
+  "run_id": "candidate_expanded_v12",
+  "sidecar_comment_count": 78133,
+  "sidecar_comments_artifact": "outputs/tables/xhs_expansion_candidate_v1/candidate_expanded_v12_sidecar_comments.jsonl",
+  "skipped_counts": {
+    "already_in_candidate_expanded_v11": 654,
+    "not_ai_research": 6,
+    "quality_v5_formal_post": 78
+  },
+  "source_counts": {
+    "candidate_expanded_v11": 5661,
+    "candidate_rescreen_promoted_backlog_v1": 16
+  },
+  "source_post_artifact": "outputs/tables/xhs_expansion_candidate_v1/candidate_expanded_v11.jsonl",
+  "text_context_rows": 3882
+}

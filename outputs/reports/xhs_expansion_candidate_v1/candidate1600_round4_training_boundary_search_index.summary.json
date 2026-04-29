@@ -1,0 +1,1398 @@
+{
+  "artifact_id": "candidate1600_round4_training_boundary_search_index",
+  "scope": "xhs_expansion_candidate_v1",
+  "generated_at": "2026-04-28T17:49:45.547553+00:00",
+  "mode": "opencli_search_result_metadata_only",
+  "quality_v5_formal_scope": false,
+  "formal_scope": false,
+  "query_count": 152,
+  "executed_query_count": 152,
+  "search_limit": 50,
+  "target_new": 500,
+  "row_count": 467,
+  "decision_counts": {
+    "review_needed": 467
+  },
+  "query_group_counts": {
+    "G. 科研训练与效率类": 191,
+    "boundary": 253,
+    "A. AI科研总体类": 23
+  },
+  "skip_counts": {
+    "duplicate_existing_db": 319,
+    "duplicate_previous_candidate": 517,
+    "duplicate_current_run": 75
+  },
+  "errors": [],
+  "query_stats": [
+    {
+      "query": "AI科研 workflow",
+      "query_group": "G. 科研训练与效率类",
+      "search_hits": 17,
+      "kept": 6,
+      "skips": {
+        "duplicate_existing_db": 6,
+        "duplicate_previous_candidate": 5
+      }
+    },
+    {
+      "query": "AI科研流程",
+      "query_group": "G. 科研训练与效率类",
+      "search_hits": 14,
+      "kept": 2,
+      "skips": {
+        "duplicate_existing_db": 2,
+        "duplicate_previous_candidate": 10
+      }
+    },
+    {
+      "query": "AI科研路线图",
+      "query_group": "G. 科研训练与效率类",
+      "search_hits": 15,
+      "kept": 14,
+      "skips": {
+        "duplicate_existing_db": 1
+      }
+    },
+    {
+      "query": "AI科研模板",
+      "query_group": "G. 科研训练与效率类",
+      "search_hits": 16,
+      "kept": 9,
+      "skips": {
+        "duplicate_previous_candidate": 4,
+        "duplicate_existing_db": 3
+      }
+    },
+    {
+      "query": "AI科研prompt",
+      "query_group": "G. 科研训练与效率类",
+      "search_hits": 17,
+      "kept": 4,
+      "skips": {
+        "duplicate_previous_candidate": 10,
+        "duplicate_existing_db": 3
+      }
+    },
+    {
+      "query": "科研prompt",
+      "query_group": "G. 科研训练与效率类",
+      "search_hits": 15,
+      "kept": 6,
+      "skips": {
+        "duplicate_previous_candidate": 3,
+        "duplicate_existing_db": 5,
+        "duplicate_current_run": 1
+      }
+    },
+    {
+      "query": "学术prompt",
+      "query_group": "G. 科研训练与效率类",
+      "search_hits": 17,
+      "kept": 3,
+      "skips": {
+        "duplicate_existing_db": 5,
+        "duplicate_previous_candidate": 7,
+        "duplicate_current_run": 2
+      }
+    },
+    {
+      "query": "论文prompt",
+      "query_group": "G. 科研训练与效率类",
+      "search_hits": 17,
+      "kept": 5,
+      "skips": {
+        "duplicate_previous_candidate": 8,
+        "duplicate_existing_db": 3,
+        "duplicate_current_run": 1
+      }
+    },
+    {
+      "query": "研究生AI工作流",
+      "query_group": "G. 科研训练与效率类",
+      "search_hits": 16,
+      "kept": 7,
+      "skips": {
+        "duplicate_previous_candidate": 3,
+        "duplicate_existing_db": 5,
+        "duplicate_current_run": 1
+      }
+    },
+    {
+      "query": "博士AI工作流",
+      "query_group": "G. 科研训练与效率类",
+      "search_hits": 15,
+      "kept": 7,
+      "skips": {
+        "duplicate_existing_db": 3,
+        "duplicate_previous_candidate": 4,
+        "duplicate_current_run": 1
+      }
+    },
+    {
+      "query": "硕士AI工作流",
+      "query_group": "G. 科研训练与效率类",
+      "search_hits": 15,
+      "kept": 6,
+      "skips": {
+        "duplicate_existing_db": 3,
+        "duplicate_previous_candidate": 2,
+        "duplicate_current_run": 4
+      }
+    },
+    {
+      "query": "AI科研日常",
+      "query_group": "G. 科研训练与效率类",
+      "search_hits": 16,
+      "kept": 0,
+      "skips": {
+        "duplicate_existing_db": 6,
+        "duplicate_previous_candidate": 10
+      }
+    },
+    {
+      "query": "AI科研经验",
+      "query_group": "G. 科研训练与效率类",
+      "search_hits": 16,
+      "kept": 1,
+      "skips": {
+        "duplicate_previous_candidate": 12,
+        "duplicate_existing_db": 3
+      }
+    },
+    {
+      "query": "AI科研避坑",
+      "query_group": "G. 科研训练与效率类",
+      "search_hits": 15,
+      "kept": 2,
+      "skips": {
+        "duplicate_previous_candidate": 8,
+        "duplicate_existing_db": 5
+      }
+    },
+    {
+      "query": "AI科研神器合集",
+      "query_group": "G. 科研训练与效率类",
+      "search_hits": 15,
+      "kept": 1,
+      "skips": {
+        "duplicate_existing_db": 6,
+        "duplicate_previous_candidate": 8
+      }
+    },
+    {
+      "query": "科研效率工具合集",
+      "query_group": "G. 科研训练与效率类",
+      "search_hits": 15,
+      "kept": 7,
+      "skips": {
+        "duplicate_existing_db": 5,
+        "duplicate_previous_candidate": 3
+      }
+    },
+    {
+      "query": "AI开题报告模板",
+      "query_group": "G. 科研训练与效率类",
+      "search_hits": 16,
+      "kept": 9,
+      "skips": {
+        "duplicate_previous_candidate": 5,
+        "duplicate_existing_db": 2
+      }
+    },
+    {
+      "query": "AI开题报告prompt",
+      "query_group": "G. 科研训练与效率类",
+      "search_hits": 17,
+      "kept": 1,
+      "skips": {
+        "duplicate_previous_candidate": 7,
+        "duplicate_current_run": 3,
+        "duplicate_existing_db": 6
+      }
+    },
+    {
+      "query": "ChatGPT开题报告",
+      "query_group": "G. 科研训练与效率类",
+      "search_hits": 16,
+      "kept": 6,
+      "skips": {
+        "duplicate_current_run": 1,
+        "duplicate_existing_db": 7,
+        "duplicate_previous_candidate": 2
+      }
+    },
+    {
+      "query": "DeepSeek开题报告",
+      "query_group": "G. 科研训练与效率类",
+      "search_hits": 15,
+      "kept": 3,
+      "skips": {
+        "duplicate_previous_candidate": 7,
+        "duplicate_current_run": 2,
+        "duplicate_existing_db": 3
+      }
+    },
+    {
+      "query": "AI文献汇报",
+      "query_group": "G. 科研训练与效率类",
+      "search_hits": 14,
+      "kept": 7,
+      "skips": {
+        "duplicate_existing_db": 2,
+        "duplicate_previous_candidate": 5
+      }
+    },
+    {
+      "query": "AI组会PPT",
+      "query_group": "G. 科研训练与效率类",
+      "search_hits": 15,
+      "kept": 8,
+      "skips": {
+        "duplicate_existing_db": 3,
+        "duplicate_current_run": 3,
+        "duplicate_previous_candidate": 1
+      }
+    },
+    {
+      "query": "AI学术汇报",
+      "query_group": "G. 科研训练与效率类",
+      "search_hits": 14,
+      "kept": 5,
+      "skips": {
+        "duplicate_existing_db": 3,
+        "duplicate_current_run": 4,
+        "duplicate_previous_candidate": 2
+      }
+    },
+    {
+      "query": "AI论文答辩PPT",
+      "query_group": "G. 科研训练与效率类",
+      "search_hits": 15,
+      "kept": 10,
+      "skips": {
+        "duplicate_current_run": 3,
+        "duplicate_previous_candidate": 2
+      }
+    },
+    {
+      "query": "AI写文献笔记",
+      "query_group": "G. 科研训练与效率类",
+      "search_hits": 16,
+      "kept": 3,
+      "skips": {
+        "duplicate_existing_db": 4,
+        "duplicate_previous_candidate": 9
+      }
+    },
+    {
+      "query": "AI整理读书笔记",
+      "query_group": "G. 科研训练与效率类",
+      "search_hits": 15,
+      "kept": 13,
+      "skips": {
+        "duplicate_previous_candidate": 2
+      }
+    },
+    {
+      "query": "AI读论文笔记",
+      "query_group": "G. 科研训练与效率类",
+      "search_hits": 14,
+      "kept": 3,
+      "skips": {
+        "duplicate_previous_candidate": 6,
+        "duplicate_existing_db": 5
+      }
+    },
+    {
+      "query": "AI科研笔记",
+      "query_group": "G. 科研训练与效率类",
+      "search_hits": 13,
+      "kept": 2,
+      "skips": {
+        "duplicate_existing_db": 7,
+        "duplicate_previous_candidate": 3,
+        "duplicate_current_run": 1
+      }
+    },
+    {
+      "query": "AI做PPT科研",
+      "query_group": "G. 科研训练与效率类",
+      "search_hits": 15,
+      "kept": 8,
+      "skips": {
+        "duplicate_previous_candidate": 1,
+        "duplicate_existing_db": 3,
+        "duplicate_current_run": 3
+      }
+    },
+    {
+      "query": "AI论文PPT",
+      "query_group": "G. 科研训练与效率类",
+      "search_hits": 17,
+      "kept": 1,
+      "skips": {
+        "duplicate_current_run": 10,
+        "duplicate_existing_db": 4,
+        "duplicate_previous_candidate": 2
+      }
+    },
+    {
+      "query": "AI课题申报",
+      "query_group": "G. 科研训练与效率类",
+      "search_hits": 13,
+      "kept": 5,
+      "skips": {
+        "duplicate_existing_db": 3,
+        "duplicate_previous_candidate": 5
+      }
+    },
+    {
+      "query": "AI基金申请",
+      "query_group": "G. 科研训练与效率类",
+      "search_hits": 13,
+      "kept": 8,
+      "skips": {
+        "duplicate_current_run": 1,
+        "duplicate_previous_candidate": 3,
+        "duplicate_existing_db": 1
+      }
+    },
+    {
+      "query": "AI科研新手",
+      "query_group": "G. 科研训练与效率类",
+      "search_hits": 16,
+      "kept": 0,
+      "skips": {
+        "duplicate_previous_candidate": 8,
+        "duplicate_existing_db": 8
+      }
+    },
+    {
+      "query": "研一AI科研",
+      "query_group": "G. 科研训练与效率类",
+      "search_hits": 14,
+      "kept": 1,
+      "skips": {
+        "duplicate_previous_candidate": 6,
+        "duplicate_existing_db": 7
+      }
+    },
+    {
+      "query": "研一读文献AI",
+      "query_group": "G. 科研训练与效率类",
+      "search_hits": 16,
+      "kept": 2,
+      "skips": {
+        "duplicate_previous_candidate": 8,
+        "duplicate_existing_db": 6
+      }
+    },
+    {
+      "query": "博士读文献AI",
+      "query_group": "G. 科研训练与效率类",
+      "search_hits": 13,
+      "kept": 0,
+      "skips": {
+        "duplicate_previous_candidate": 9,
+        "duplicate_existing_db": 4
+      }
+    },
+    {
+      "query": "研究生文献综述AI",
+      "query_group": "G. 科研训练与效率类",
+      "search_hits": 13,
+      "kept": 0,
+      "skips": {
+        "duplicate_previous_candidate": 4,
+        "duplicate_existing_db": 9
+      }
+    },
+    {
+      "query": "毕业论文AI流程",
+      "query_group": "G. 科研训练与效率类",
+      "search_hits": 18,
+      "kept": 3,
+      "skips": {
+        "duplicate_existing_db": 6,
+        "duplicate_previous_candidate": 9
+      }
+    },
+    {
+      "query": "AI科研能力",
+      "query_group": "G. 科研训练与效率类",
+      "search_hits": 14,
+      "kept": 0,
+      "skips": {
+        "duplicate_previous_candidate": 8,
+        "duplicate_existing_db": 6
+      }
+    },
+    {
+      "query": "AI学术训练",
+      "query_group": "G. 科研训练与效率类",
+      "search_hits": 16,
+      "kept": 0,
+      "skips": {
+        "duplicate_previous_candidate": 11,
+        "duplicate_existing_db": 5
+      }
+    },
+    {
+      "query": "AI论文训练",
+      "query_group": "G. 科研训练与效率类",
+      "search_hits": 18,
+      "kept": 1,
+      "skips": {
+        "duplicate_previous_candidate": 12,
+        "duplicate_current_run": 1,
+        "duplicate_existing_db": 4
+      }
+    },
+    {
+      "query": "AI科研学习",
+      "query_group": "G. 科研训练与效率类",
+      "search_hits": 16,
+      "kept": 0,
+      "skips": {
+        "duplicate_previous_candidate": 9,
+        "duplicate_existing_db": 6,
+        "duplicate_current_run": 1
+      }
+    },
+    {
+      "query": "AI辅助学习研究方法",
+      "query_group": "G. 科研训练与效率类",
+      "search_hits": 15,
+      "kept": 4,
+      "skips": {
+        "duplicate_existing_db": 5,
+        "duplicate_previous_candidate": 5,
+        "duplicate_current_run": 1
+      }
+    },
+    {
+      "query": "AI帮我学统计",
+      "query_group": "G. 科研训练与效率类",
+      "search_hits": 16,
+      "kept": 8,
+      "skips": {
+        "duplicate_existing_db": 2,
+        "duplicate_previous_candidate": 5,
+        "duplicate_current_run": 1
+      }
+    },
+    {
+      "query": "AI辅助不是代写",
+      "query_group": "boundary",
+      "search_hits": 17,
+      "kept": 2,
+      "skips": {
+        "duplicate_previous_candidate": 11,
+        "duplicate_existing_db": 4
+      }
+    },
+    {
+      "query": "AI写作边界",
+      "query_group": "boundary",
+      "search_hits": 16,
+      "kept": 10,
+      "skips": {
+        "duplicate_previous_candidate": 4,
+        "duplicate_existing_db": 2
+      }
+    },
+    {
+      "query": "AI润色边界",
+      "query_group": "boundary",
+      "search_hits": 17,
+      "kept": 3,
+      "skips": {
+        "duplicate_existing_db": 7,
+        "duplicate_previous_candidate": 7
+      }
+    },
+    {
+      "query": "AI论文边界",
+      "query_group": "boundary",
+      "search_hits": 15,
+      "kept": 0,
+      "skips": {
+        "duplicate_existing_db": 6,
+        "duplicate_previous_candidate": 8,
+        "duplicate_current_run": 1
+      }
+    },
+    {
+      "query": "AI科研边界感",
+      "query_group": "boundary",
+      "search_hits": 16,
+      "kept": 10,
+      "skips": {
+        "duplicate_previous_candidate": 2,
+        "duplicate_existing_db": 4
+      }
+    },
+    {
+      "query": "AI辅助科研边界",
+      "query_group": "boundary",
+      "search_hits": 15,
+      "kept": 5,
+      "skips": {
+        "duplicate_previous_candidate": 8,
+        "duplicate_current_run": 2
+      }
+    },
+    {
+      "query": "AI代写和润色区别",
+      "query_group": "boundary",
+      "search_hits": 18,
+      "kept": 4,
+      "skips": {
+        "duplicate_existing_db": 6,
+        "duplicate_previous_candidate": 8
+      }
+    },
+    {
+      "query": "AI润色算代写吗",
+      "query_group": "boundary",
+      "search_hits": 17,
+      "kept": 3,
+      "skips": {
+        "duplicate_previous_candidate": 8,
+        "duplicate_current_run": 2,
+        "duplicate_existing_db": 4
+      }
+    },
+    {
+      "query": "AI生成内容原创性",
+      "query_group": "boundary",
+      "search_hits": 15,
+      "kept": 11,
+      "skips": {
+        "duplicate_existing_db": 1,
+        "duplicate_previous_candidate": 3
+      }
+    },
+    {
+      "query": "AI写论文原创性",
+      "query_group": "boundary",
+      "search_hits": 16,
+      "kept": 3,
+      "skips": {
+        "duplicate_previous_candidate": 8,
+        "duplicate_current_run": 1,
+        "duplicate_existing_db": 4
+      }
+    },
+    {
+      "query": "AI论文原创性争议",
+      "query_group": "boundary",
+      "search_hits": 16,
+      "kept": 1,
+      "skips": {
+        "duplicate_existing_db": 5,
+        "duplicate_previous_candidate": 10
+      }
+    },
+    {
+      "query": "AI论文责任归属",
+      "query_group": "boundary",
+      "search_hits": 18,
+      "kept": 3,
+      "skips": {
+        "duplicate_previous_candidate": 10,
+        "duplicate_existing_db": 5
+      }
+    },
+    {
+      "query": "AI辅助论文责任",
+      "query_group": "boundary",
+      "search_hits": 16,
+      "kept": 3,
+      "skips": {
+        "duplicate_previous_candidate": 6,
+        "duplicate_existing_db": 7
+      }
+    },
+    {
+      "query": "AI共创论文责任",
+      "query_group": "boundary",
+      "search_hits": 16,
+      "kept": 2,
+      "skips": {
+        "duplicate_previous_candidate": 10,
+        "duplicate_current_run": 1,
+        "duplicate_existing_db": 3
+      }
+    },
+    {
+      "query": "AI生成内容责任",
+      "query_group": "boundary",
+      "search_hits": 16,
+      "kept": 3,
+      "skips": {
+        "duplicate_previous_candidate": 11,
+        "duplicate_existing_db": 1,
+        "duplicate_current_run": 1
+      }
+    },
+    {
+      "query": "AI科研主体性",
+      "query_group": "boundary",
+      "search_hits": 17,
+      "kept": 14,
+      "skips": {
+        "duplicate_existing_db": 3
+      }
+    },
+    {
+      "query": "AI替代研究者",
+      "query_group": "boundary",
+      "search_hits": 14,
+      "kept": 6,
+      "skips": {
+        "duplicate_previous_candidate": 7,
+        "duplicate_existing_db": 1
+      }
+    },
+    {
+      "query": "AI替代科研",
+      "query_group": "boundary",
+      "search_hits": 15,
+      "kept": 2,
+      "skips": {
+        "duplicate_existing_db": 9,
+        "duplicate_previous_candidate": 4
+      }
+    },
+    {
+      "query": "AI不能替代思考",
+      "query_group": "boundary",
+      "search_hits": 16,
+      "kept": 16,
+      "skips": {}
+    },
+    {
+      "query": "AI不能替代阅读",
+      "query_group": "boundary",
+      "search_hits": 15,
+      "kept": 14,
+      "skips": {
+        "duplicate_previous_candidate": 1
+      }
+    },
+    {
+      "query": "AI不能替代写作",
+      "query_group": "boundary",
+      "search_hits": 17,
+      "kept": 5,
+      "skips": {
+        "duplicate_previous_candidate": 7,
+        "duplicate_existing_db": 5
+      }
+    },
+    {
+      "query": "AI不能替代实验",
+      "query_group": "boundary",
+      "search_hits": 15,
+      "kept": 10,
+      "skips": {
+        "duplicate_existing_db": 2,
+        "duplicate_previous_candidate": 3
+      }
+    },
+    {
+      "query": "AI不能替代数据分析",
+      "query_group": "boundary",
+      "search_hits": 13,
+      "kept": 8,
+      "skips": {
+        "duplicate_existing_db": 2,
+        "duplicate_previous_candidate": 3
+      }
+    },
+    {
+      "query": "AI不能替代导师",
+      "query_group": "boundary",
+      "search_hits": 15,
+      "kept": 10,
+      "skips": {
+        "duplicate_previous_candidate": 4,
+        "duplicate_existing_db": 1
+      }
+    },
+    {
+      "query": "AI科研人工审核",
+      "query_group": "boundary",
+      "search_hits": 15,
+      "kept": 2,
+      "skips": {
+        "duplicate_existing_db": 3,
+        "duplicate_previous_candidate": 10
+      }
+    },
+    {
+      "query": "AI论文人工审核",
+      "query_group": "boundary",
+      "search_hits": 15,
+      "kept": 3,
+      "skips": {
+        "duplicate_existing_db": 2,
+        "duplicate_previous_candidate": 10
+      }
+    },
+    {
+      "query": "AI结果人工复核",
+      "query_group": "boundary",
+      "search_hits": 14,
+      "kept": 7,
+      "skips": {
+        "duplicate_previous_candidate": 5,
+        "duplicate_current_run": 2
+      }
+    },
+    {
+      "query": "AI生成内容人工复核",
+      "query_group": "boundary",
+      "search_hits": 15,
+      "kept": 5,
+      "skips": {
+        "duplicate_current_run": 3,
+        "duplicate_previous_candidate": 6,
+        "duplicate_existing_db": 1
+      }
+    },
+    {
+      "query": "AI辅助判断",
+      "query_group": "boundary",
+      "search_hits": 16,
+      "kept": 10,
+      "skips": {
+        "duplicate_previous_candidate": 4,
+        "duplicate_existing_db": 2
+      }
+    },
+    {
+      "query": "AI建议不能直接用",
+      "query_group": "boundary",
+      "search_hits": 14,
+      "kept": 4,
+      "skips": {
+        "duplicate_previous_candidate": 9,
+        "duplicate_existing_db": 1
+      }
+    },
+    {
+      "query": "AI幻觉怎么避免",
+      "query_group": "boundary",
+      "search_hits": 16,
+      "kept": 12,
+      "skips": {
+        "duplicate_previous_candidate": 2,
+        "duplicate_current_run": 1,
+        "duplicate_existing_db": 1
+      }
+    },
+    {
+      "query": "AI参考文献核查",
+      "query_group": "boundary",
+      "search_hits": 14,
+      "kept": 6,
+      "skips": {
+        "duplicate_existing_db": 6,
+        "duplicate_previous_candidate": 2
+      }
+    },
+    {
+      "query": "AI数据分析核查",
+      "query_group": "boundary",
+      "search_hits": 16,
+      "kept": 5,
+      "skips": {
+        "duplicate_existing_db": 4,
+        "duplicate_current_run": 1,
+        "duplicate_previous_candidate": 6
+      }
+    },
+    {
+      "query": "AI论文核查",
+      "query_group": "boundary",
+      "search_hits": 16,
+      "kept": 4,
+      "skips": {
+        "duplicate_existing_db": 4,
+        "duplicate_previous_candidate": 7,
+        "duplicate_current_run": 1
+      }
+    },
+    {
+      "query": "AI可靠性科研",
+      "query_group": "boundary",
+      "search_hits": 16,
+      "kept": 2,
+      "skips": {
+        "duplicate_previous_candidate": 7,
+        "duplicate_existing_db": 7
+      }
+    },
+    {
+      "query": "AI可验证性论文",
+      "query_group": "boundary",
+      "search_hits": 17,
+      "kept": 3,
+      "skips": {
+        "duplicate_previous_candidate": 9,
+        "duplicate_current_run": 1,
+        "duplicate_existing_db": 4
+      }
+    },
+    {
+      "query": "AI辅助合法",
+      "query_group": "boundary",
+      "search_hits": 16,
+      "kept": 9,
+      "skips": {
+        "duplicate_previous_candidate": 4,
+        "duplicate_current_run": 1,
+        "duplicate_existing_db": 2
+      }
+    },
+    {
+      "query": "AI使用条件",
+      "query_group": "boundary",
+      "search_hits": 16,
+      "kept": 6,
+      "skips": {
+        "duplicate_current_run": 1,
+        "duplicate_previous_candidate": 9
+      }
+    },
+    {
+      "query": "AI使用规范边界",
+      "query_group": "boundary",
+      "search_hits": 17,
+      "kept": 5,
+      "skips": {
+        "duplicate_previous_candidate": 5,
+        "duplicate_current_run": 4,
+        "duplicate_existing_db": 3
+      }
+    },
+    {
+      "query": "AI披露边界",
+      "query_group": "boundary",
+      "search_hits": 16,
+      "kept": 6,
+      "skips": {
+        "duplicate_previous_candidate": 6,
+        "duplicate_existing_db": 2,
+        "duplicate_current_run": 2
+      }
+    },
+    {
+      "query": "AI署名边界",
+      "query_group": "boundary",
+      "search_hits": 17,
+      "kept": 13,
+      "skips": {
+        "duplicate_previous_candidate": 4
+      }
+    },
+    {
+      "query": "AI审稿边界",
+      "query_group": "boundary",
+      "search_hits": 14,
+      "kept": 3,
+      "skips": {
+        "duplicate_previous_candidate": 6,
+        "duplicate_current_run": 3,
+        "duplicate_existing_db": 2
+      }
+    },
+    {
+      "query": "DeepSeek科研",
+      "query_group": "A. AI科研总体类",
+      "search_hits": 15,
+      "kept": 14,
+      "skips": {
+        "duplicate_current_run": 1
+      }
+    },
+    {
+      "query": "Kimi科研",
+      "query_group": "A. AI科研总体类",
+      "search_hits": 13,
+      "kept": 5,
+      "skips": {
+        "duplicate_existing_db": 4,
+        "duplicate_previous_candidate": 4
+      }
+    },
+    {
+      "query": "Claude科研",
+      "query_group": "A. AI科研总体类",
+      "search_hits": 15,
+      "kept": 4,
+      "skips": {
+        "duplicate_existing_db": 4,
+        "duplicate_previous_candidate": 6,
+        "duplicate_current_run": 1
+      }
+    },
+    {
+      "query": "Gemini科研",
+      "query_group": "A. AI科研总体类",
+      "search_hits": 0,
+      "kept": 0,
+      "skips": {}
+    },
+    {
+      "query": "Perplexity科研",
+      "query_group": "A. AI科研总体类",
+      "search_hits": 0,
+      "kept": 0,
+      "skips": {}
+    },
+    {
+      "query": "NotebookLM科研",
+      "query_group": "A. AI科研总体类",
+      "search_hits": 0,
+      "kept": 0,
+      "skips": {}
+    },
+    {
+      "query": "Elicit科研",
+      "query_group": "A. AI科研总体类",
+      "search_hits": 0,
+      "kept": 0,
+      "skips": {}
+    },
+    {
+      "query": "Scispace科研",
+      "query_group": "A. AI科研总体类",
+      "search_hits": 0,
+      "kept": 0,
+      "skips": {}
+    },
+    {
+      "query": "AI for research",
+      "query_group": "A. AI科研总体类",
+      "search_hits": 0,
+      "kept": 0,
+      "skips": {}
+    },
+    {
+      "query": "AI academic research",
+      "query_group": "A. AI科研总体类",
+      "search_hits": 0,
+      "kept": 0,
+      "skips": {}
+    },
+    {
+      "query": "科研大模型",
+      "query_group": "A. AI科研总体类",
+      "search_hits": 0,
+      "kept": 0,
+      "skips": {}
+    },
+    {
+      "query": "科研智能体",
+      "query_group": "A. AI科研总体类",
+      "search_hits": 0,
+      "kept": 0,
+      "skips": {}
+    },
+    {
+      "query": "AI Agent 科研",
+      "query_group": "A. AI科研总体类",
+      "search_hits": 0,
+      "kept": 0,
+      "skips": {}
+    },
+    {
+      "query": "学术AI助手",
+      "query_group": "A. AI科研总体类",
+      "search_hits": 0,
+      "kept": 0,
+      "skips": {}
+    },
+    {
+      "query": "论文AI助手",
+      "query_group": "A. AI科研总体类",
+      "search_hits": 0,
+      "kept": 0,
+      "skips": {}
+    },
+    {
+      "query": "科研助手工具",
+      "query_group": "A. AI科研总体类",
+      "search_hits": 0,
+      "kept": 0,
+      "skips": {}
+    },
+    {
+      "query": "AI科研工具推荐",
+      "query_group": "A. AI科研总体类",
+      "search_hits": 0,
+      "kept": 0,
+      "skips": {}
+    },
+    {
+      "query": "AI科研工具测评",
+      "query_group": "A. AI科研总体类",
+      "search_hits": 0,
+      "kept": 0,
+      "skips": {}
+    },
+    {
+      "query": "AI科研工具合集",
+      "query_group": "A. AI科研总体类",
+      "search_hits": 0,
+      "kept": 0,
+      "skips": {}
+    },
+    {
+      "query": "AI研究工具",
+      "query_group": "A. AI科研总体类",
+      "search_hits": 0,
+      "kept": 0,
+      "skips": {}
+    },
+    {
+      "query": "AI学术工具",
+      "query_group": "A. AI科研总体类",
+      "search_hits": 0,
+      "kept": 0,
+      "skips": {}
+    },
+    {
+      "query": "研究生必备AI工具",
+      "query_group": "A. AI科研总体类",
+      "search_hits": 0,
+      "kept": 0,
+      "skips": {}
+    },
+    {
+      "query": "博士必备AI工具",
+      "query_group": "A. AI科研总体类",
+      "search_hits": 0,
+      "kept": 0,
+      "skips": {}
+    },
+    {
+      "query": "科研人AI工具",
+      "query_group": "A. AI科研总体类",
+      "search_hits": 0,
+      "kept": 0,
+      "skips": {}
+    },
+    {
+      "query": "AI论文声明模板",
+      "query_group": "F. 科研规范与诚信类",
+      "search_hits": 0,
+      "kept": 0,
+      "skips": {}
+    },
+    {
+      "query": "AI使用声明模板",
+      "query_group": "F. 科研规范与诚信类",
+      "search_hits": 0,
+      "kept": 0,
+      "skips": {}
+    },
+    {
+      "query": "生成式AI使用声明",
+      "query_group": "F. 科研规范与诚信类",
+      "search_hits": 0,
+      "kept": 0,
+      "skips": {}
+    },
+    {
+      "query": "AIGC使用声明",
+      "query_group": "F. 科研规范与诚信类",
+      "search_hits": 0,
+      "kept": 0,
+      "skips": {}
+    },
+    {
+      "query": "论文致谢AI",
+      "query_group": "F. 科研规范与诚信类",
+      "search_hits": 0,
+      "kept": 0,
+      "skips": {}
+    },
+    {
+      "query": "AI工具署名",
+      "query_group": "F. 科研规范与诚信类",
+      "search_hits": 0,
+      "kept": 0,
+      "skips": {}
+    },
+    {
+      "query": "AI不能署名论文",
+      "query_group": "F. 科研规范与诚信类",
+      "search_hits": 0,
+      "kept": 0,
+      "skips": {}
+    },
+    {
+      "query": "AI作者署名",
+      "query_group": "F. 科研规范与诚信类",
+      "search_hits": 0,
+      "kept": 0,
+      "skips": {}
+    },
+    {
+      "query": "ChatGPT署名",
+      "query_group": "F. 科研规范与诚信类",
+      "search_hits": 0,
+      "kept": 0,
+      "skips": {}
+    },
+    {
+      "query": "AI写作披露模板",
+      "query_group": "F. 科研规范与诚信类",
+      "search_hits": 0,
+      "kept": 0,
+      "skips": {}
+    },
+    {
+      "query": "投稿AI披露",
+      "query_group": "F. 科研规范与诚信类",
+      "search_hits": 0,
+      "kept": 0,
+      "skips": {}
+    },
+    {
+      "query": "期刊AI披露模板",
+      "query_group": "F. 科研规范与诚信类",
+      "search_hits": 0,
+      "kept": 0,
+      "skips": {}
+    },
+    {
+      "query": "AI审稿披露",
+      "query_group": "F. 科研规范与诚信类",
+      "search_hits": 0,
+      "kept": 0,
+      "skips": {}
+    },
+    {
+      "query": "AI辅助审稿披露",
+      "query_group": "F. 科研规范与诚信类",
+      "search_hits": 0,
+      "kept": 0,
+      "skips": {}
+    },
+    {
+      "query": "AI检测误判",
+      "query_group": "F. 科研规范与诚信类",
+      "search_hits": 0,
+      "kept": 0,
+      "skips": {}
+    },
+    {
+      "query": "AI检测不准",
+      "query_group": "F. 科研规范与诚信类",
+      "search_hits": 0,
+      "kept": 0,
+      "skips": {}
+    },
+    {
+      "query": "AIGC检测误判",
+      "query_group": "F. 科研规范与诚信类",
+      "search_hits": 0,
+      "kept": 0,
+      "skips": {}
+    },
+    {
+      "query": "论文AI检测误判",
+      "query_group": "F. 科研规范与诚信类",
+      "search_hits": 0,
+      "kept": 0,
+      "skips": {}
+    },
+    {
+      "query": "AI率过高怎么办",
+      "query_group": "F. 科研规范与诚信类",
+      "search_hits": 0,
+      "kept": 0,
+      "skips": {}
+    },
+    {
+      "query": "论文AI率降低",
+      "query_group": "F. 科研规范与诚信类",
+      "search_hits": 0,
+      "kept": 0,
+      "skips": {}
+    },
+    {
+      "query": "AIGC率降低",
+      "query_group": "F. 科研规范与诚信类",
+      "search_hits": 0,
+      "kept": 0,
+      "skips": {}
+    },
+    {
+      "query": "AI降重风险",
+      "query_group": "F. 科研规范与诚信类",
+      "search_hits": 0,
+      "kept": 0,
+      "skips": {}
+    },
+    {
+      "query": "AI改写风险",
+      "query_group": "F. 科研规范与诚信类",
+      "search_hits": 0,
+      "kept": 0,
+      "skips": {}
+    },
+    {
+      "query": "AI润色风险",
+      "query_group": "F. 科研规范与诚信类",
+      "search_hits": 0,
+      "kept": 0,
+      "skips": {}
+    },
+    {
+      "query": "ChatGPT NVivo",
+      "query_group": "D. 数据分析与代码类",
+      "search_hits": 0,
+      "kept": 0,
+      "skips": {}
+    },
+    {
+      "query": "AI NVivo",
+      "query_group": "D. 数据分析与代码类",
+      "search_hits": 0,
+      "kept": 0,
+      "skips": {}
+    },
+    {
+      "query": "AI质性编码",
+      "query_group": "D. 数据分析与代码类",
+      "search_hits": 0,
+      "kept": 0,
+      "skips": {}
+    },
+    {
+      "query": "AI访谈编码",
+      "query_group": "D. 数据分析与代码类",
+      "search_hits": 0,
+      "kept": 0,
+      "skips": {}
+    },
+    {
+      "query": "AI主题分析",
+      "query_group": "D. 数据分析与代码类",
+      "search_hits": 0,
+      "kept": 0,
+      "skips": {}
+    },
+    {
+      "query": "AI内容分析",
+      "query_group": "D. 数据分析与代码类",
+      "search_hits": 0,
+      "kept": 0,
+      "skips": {}
+    },
+    {
+      "query": "AI论文复现",
+      "query_group": "D. 数据分析与代码类",
+      "search_hits": 0,
+      "kept": 0,
+      "skips": {}
+    },
+    {
+      "query": "AI代码复现",
+      "query_group": "D. 数据分析与代码类",
+      "search_hits": 0,
+      "kept": 0,
+      "skips": {}
+    },
+    {
+      "query": "AI实验复现",
+      "query_group": "D. 数据分析与代码类",
+      "search_hits": 0,
+      "kept": 0,
+      "skips": {}
+    },
+    {
+      "query": "AI帮我debug",
+      "query_group": "D. 数据分析与代码类",
+      "search_hits": 0,
+      "kept": 0,
+      "skips": {}
+    },
+    {
+      "query": "AI科研debug",
+      "query_group": "D. 数据分析与代码类",
+      "search_hits": 0,
+      "kept": 0,
+      "skips": {}
+    },
+    {
+      "query": "AI帮我画图表",
+      "query_group": "D. 数据分析与代码类",
+      "search_hits": 0,
+      "kept": 0,
+      "skips": {}
+    },
+    {
+      "query": "DeepSeek R语言",
+      "query_group": "D. 数据分析与代码类",
+      "search_hits": 0,
+      "kept": 0,
+      "skips": {}
+    },
+    {
+      "query": "DeepSeek Stata",
+      "query_group": "D. 数据分析与代码类",
+      "search_hits": 0,
+      "kept": 0,
+      "skips": {}
+    },
+    {
+      "query": "DeepSeek SPSS",
+      "query_group": "D. 数据分析与代码类",
+      "search_hits": 0,
+      "kept": 0,
+      "skips": {}
+    },
+    {
+      "query": "DeepSeek Matlab",
+      "query_group": "D. 数据分析与代码类",
+      "search_hits": 0,
+      "kept": 0,
+      "skips": {}
+    },
+    {
+      "query": "Cursor R语言",
+      "query_group": "D. 数据分析与代码类",
+      "search_hits": 0,
+      "kept": 0,
+      "skips": {}
+    },
+    {
+      "query": "Cursor Python论文",
+      "query_group": "D. 数据分析与代码类",
+      "search_hits": 0,
+      "kept": 0,
+      "skips": {}
+    }
+  ],
+  "formal_baseline_guard_counts": {
+    "quality_v5_posts": 514,
+    "quality_v5_comments": 0
+  },
+  "limitations": [
+    "Rows contain public search-result metadata only, not verified full post bodies.",
+    "All rows are review_needed and must not be treated as formal evidence before manual public-page review.",
+    "The run does not import into the research database and does not alter quality_v5 formal scope."
+  ],
+  "output_path": "outputs/tables/xhs_expansion_candidate_v1/candidate1600_round4_training_boundary_search_index.jsonl",
+  "query_manifest_path": "outputs/reports/xhs_expansion_candidate_v1/candidate1600_round4_training_boundary.query_manifest.json",
+  "review_queue_path": "data/interim/xhs_expansion_candidate_v1/review_queues/candidate1600_round4_training_boundary_search_index.review_queue.jsonl",
+  "review_template_path": "data/interim/xhs_expansion_candidate_v1/reviewed/candidate1600_round4_training_boundary_search_index.review_template.jsonl"
+}

@@ -1,0 +1,65 @@
+[
+  {
+    "theme_code": "research_design",
+    "theme_label": "AI研究设计与方法学习",
+    "supplemental_count": 14,
+    "supplemental_share": 0.068,
+    "quality_v5_count": 137,
+    "quality_v5_share": 0.2665,
+    "share_delta_supplemental_minus_quality_v5": -0.1986
+  },
+  {
+    "theme_code": "unclear",
+    "theme_label": "其他/无法判断",
+    "supplemental_count": 36,
+    "supplemental_share": 0.1748,
+    "quality_v5_count": 0,
+    "quality_v5_share": 0.0,
+    "share_delta_supplemental_minus_quality_v5": 0.1748
+  },
+  {
+    "theme_code": "research_training",
+    "theme_label": "AI科研训练与效率",
+    "supplemental_count": 10,
+    "supplemental_share": 0.0485,
+    "quality_v5_count": 7,
+    "quality_v5_share": 0.0136,
+    "share_delta_supplemental_minus_quality_v5": 0.0349
+  },
+  {
+    "theme_code": "paper_writing",
+    "theme_label": "AI论文写作与成果表达",
+    "supplemental_count": 13,
+    "supplemental_share": 0.0631,
+    "quality_v5_count": 47,
+    "quality_v5_share": 0.0914,
+    "share_delta_supplemental_minus_quality_v5": -0.0283
+  },
+  {
+    "theme_code": "literature_processing",
+    "theme_label": "AI文献阅读与知识整合",
+    "supplemental_count": 99,
+    "supplemental_share": 0.4806,
+    "quality_v5_count": 241,
+    "quality_v5_share": 0.4689,
+    "share_delta_supplemental_minus_quality_v5": 0.0117
+  },
+  {
+    "theme_code": "research_governance",
+    "theme_label": "AI科研规范与治理",
+    "supplemental_count": 3,
+    "supplemental_share": 0.0146,
+    "quality_v5_count": 6,
+    "quality_v5_share": 0.0117,
+    "share_delta_supplemental_minus_quality_v5": 0.0029
+  },
+  {
+    "theme_code": "data_analysis_or_code",
+    "theme_label": "AI数据分析与代码",
+    "supplemental_count": 31,
+    "supplemental_share": 0.1505,
+    "quality_v5_count": 76,
+    "quality_v5_share": 0.1479,
+    "share_delta_supplemental_minus_quality_v5": 0.0026
+  }
+]

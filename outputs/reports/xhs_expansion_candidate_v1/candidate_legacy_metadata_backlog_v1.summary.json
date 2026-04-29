@@ -1,0 +1,41 @@
+{
+  "artifact_scope": "xhs_expansion_candidate_v1_supplemental_candidate",
+  "body_fetch_status_counts": {
+    "not_attempted_legacy_metadata_only": 28
+  },
+  "body_present_rows": 0,
+  "collapsed_source_rows": 28,
+  "formal_guard_comments": 0,
+  "formal_guard_posts": 514,
+  "formal_scope_changed": false,
+  "generated_at": "2026-04-28T18:10:12Z",
+  "input_database": "archive/legacy_collection_runtime/data/db/ai4s_xhs.sqlite3",
+  "metadata_only_rows": 28,
+  "notes": [
+    "This backlog is metadata-only and requires manual public-page body review before inclusion.",
+    "Generated because live XHS search is blocked by platform safety restriction.",
+    "Author names from legacy candidates are not copied; only masked/hash placeholders are emitted."
+  ],
+  "post_date_status_counts": {
+    "missing_in_legacy_note_candidates": 28
+  },
+  "query_group_counts": {
+    "A. AI科研总体类": 3,
+    "B. 文献处理与知识整合类": 2,
+    "C. 研究设计与方法学习类": 3,
+    "D. 数据分析与代码类": 3,
+    "G. 科研训练与效率类": 17
+  },
+  "row_count": 28,
+  "run_id": "candidate_legacy_metadata_backlog_v1",
+  "skipped_counts": {
+    "already_in_candidate_expanded_v8": 5902,
+    "keyword_filter_not_ai_research": 1333,
+    "quality_v5_formal_post": 1339
+  },
+  "source_kind_counts": {
+    "search": 25,
+    "user": 3
+  },
+  "source_table": "note_candidates"
+}

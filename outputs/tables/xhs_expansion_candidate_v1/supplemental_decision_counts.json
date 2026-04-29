@@ -1,0 +1,23 @@
+[
+  {
+    "final_decision": "include",
+    "count": 78,
+    "share": 0.6783,
+    "count_source": "reviewed_jsonl",
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "final_decision": "review_needed",
+    "count": 0,
+    "share": 0.0,
+    "count_source": "reviewed_jsonl",
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "final_decision": "exclude",
+    "count": 37,
+    "share": 0.3217,
+    "count_source": "reviewed_jsonl",
+    "source_scope": "xhs_expansion_candidate_v1"
+  }
+]

@@ -2,11 +2,11 @@
 
 ## 当前下一步入口
 
-1. [优先] 维护当前 `quality_v5` post-only 正式基线：正式帖子 `514`，正式评论 `0`
-2. [优先] 保持 `post_review_v2 -> reviewed import -> rebuild artifacts` 链路可复跑，并以 `quality_v5_consistency_report.json` 的 posts/comments delta `0 / 0` 作为核验门槛
-3. [优先] 将 `comment_review_v2` 作为后续独立工作流处理；本轮不把评论 corpus 写成正式评论结果
-4. [优先] 完成 framework_v2 编码支持层与 paper materials 支持：保留 A/B/C/D/E，扩展 F/G/H/I/J/K，不改 DB schema，不自动填充正式人工编码
-5. [新增] 若继续扩宽样本，先走 `xhs_expansion_candidate_v1` 小红书补充候选集链路；其输出只作为 supplemental / candidate，不污染 `quality_v5` formal baseline
+1. [优先] 维护 `quality_v5` post-only 冻结基线作为工程 guard：正式帖子 `514`，正式评论 `0`
+2. [优先] 以 `quality_v6` 作为当前投稿结果层：`quality_v5 514` + `supplemental_formalization_v1 200`，正式帖子 / 评论为 `714 / 0`
+3. [优先] 保持 `post_review_v2 -> reviewed import -> rebuild artifacts` 链路可复跑，并以 `quality_v5_consistency_report.json` 的 posts/comments delta `0 / 0` 作为 guard 核验门槛
+4. [优先] 将 `comment_review_v2` 作为后续独立工作流处理；本轮不把评论 corpus 写成正式评论结果
+5. [优先] 用 `quality_v6` 统一投稿 manifest、clean 主稿、方法附录、第四至第六章材料与图表包
 
 ## P0：当前必须完成
 
@@ -30,8 +30,9 @@
 1. [已完成] 在统一交付链上完成论文精修第一轮，形成 clean 版投稿阅读稿
 2. [已完成] 精修摘要、引言、讨论与结论的第二轮措辞与论证密度
 3. [已完成] 形成补充材料说明与方法透明度附录（内部版 + clean 版）
-4. [进行中] 围绕 `quality_v5` post-only 口径复核 clean 稿，避免把 `quality_v4` 或评论层 corpus 写成当前正式结果
+4. [已完成] 围绕 `quality_v6` post-only 口径复核 clean 稿，避免把 `quality_v4`、候选样本或评论层 corpus 写成当前正式结果
 5. [进行中] 用“话语情境—实践位置—介入方式—规范评价—边界生成”重写论文理论框架、codebook、canonical payload 兼容层与 paper materials
+6. [已完成] 将论文主稿口径切换到 `quality_v6`；`quality_v5` 仍保留为工程 guard
 
 ## P3：后续扩展
 
@@ -39,4 +40,4 @@
 2. [后续] 如需正式评论层结果，单独启动 `comment_review_v2` 队列、人工 reviewed 导入与 artifacts 重建
 3. [后续] 在 post-only 投稿口径稳定后，再评估 clean 稿终稿压缩、grounded theory 或补充样本
 4. [后续] 如需 v2 字段进入正式统计，需单独启动人工编码并经 reviewed import 回灌；未编码前 F/G/H/I/J/K 表只显示为空或占位说明
-5. [后续] 对 `xhs_expansion_candidate_v1` 候选帖子进行人工筛选、去重与 reviewed import 设计；正式纳入前必须另起 supplemental checkpoint 或新 formal checkpoint
+5. [已完成] 对 `xhs_expansion_candidate_v1` 候选帖子完成 supplemental formalization，并以 staging DB 方式进入 `quality_v6`，不污染 `quality_v5`

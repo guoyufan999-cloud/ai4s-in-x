@@ -1,0 +1,30 @@
+[
+  {
+    "value": "medium_cocreation",
+    "label": "中强度共创",
+    "count": 91,
+    "share": 0.4417,
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "value": "unclear",
+    "label": "其他/无法判断",
+    "count": 72,
+    "share": 0.3495,
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "value": "low_assistance",
+    "label": "低强度辅助",
+    "count": 40,
+    "share": 0.1942,
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "value": "high_substitution",
+    "label": "高强度替代",
+    "count": 3,
+    "share": 0.0146,
+    "source_scope": "xhs_expansion_candidate_v1"
+  }
+]

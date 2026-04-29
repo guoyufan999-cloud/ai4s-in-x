@@ -1,0 +1,84 @@
+{
+  "artifact_status": "xhs_expansion_candidate_v1_expanded_v16_cleaned",
+  "comment_fix_counts": {},
+  "content_lt_80_rows_marked_exclude": 2221,
+  "existing_db_duplicate_rows_marked_exclude": 4336,
+  "fix_counts": {
+    "post_url_normalized": 1886,
+    "query_group_reclassified": 377,
+    "query_normalized": 2210,
+    "token_or_query_url_removed": 1886
+  },
+  "formal_baseline_guard_counts": {
+    "comments": 0,
+    "posts": 514
+  },
+  "generated_at": "2026-04-28T18:53:07.576049+00:00",
+  "input_rows": 6221,
+  "input_sidecar_comment_count": 90027,
+  "issue_counts_after_cleaning": {
+    "content_lt_30": 1799,
+    "content_lt_80": 2221
+  },
+  "orphan_sidecar_comments_dropped": 0,
+  "outputs": {
+    "audit_report_md": "outputs/reports/xhs_expansion_candidate_v1/candidate_expanded_v16_cleaned.audit_report.md",
+    "candidate_jsonl": "outputs/tables/xhs_expansion_candidate_v1/candidate_expanded_v16_cleaned.jsonl",
+    "review_queue_jsonl": "data/interim/xhs_expansion_candidate_v1/review_queues/xhs_expansion_candidate_v1.expanded_v16_cleaned.review_queue.jsonl",
+    "review_template_jsonl": "data/interim/xhs_expansion_candidate_v1/reviewed/xhs_expansion_candidate_v1.expanded_v16_cleaned.review_template.jsonl",
+    "sidecar_comments_jsonl": "outputs/tables/xhs_expansion_candidate_v1/candidate_expanded_v16_cleaned_sidecar_comments.jsonl",
+    "summary_json": "outputs/reports/xhs_expansion_candidate_v1/candidate_expanded_v16_cleaned.summary.json"
+  },
+  "page_chrome_fix_counts": {
+    "page_chrome_stripped_from_content_text": 6,
+    "page_chrome_stripped_from_raw_source_text": 6
+  },
+  "policy": {
+    "starts_comment_review_v2": false,
+    "supplemental_candidate_only": true,
+    "updates_quality_v5": false,
+    "writes_research_db": false
+  },
+  "preliminary_decision_counts_after_queue_normalization": {
+    "prelim_exclude": 5990,
+    "prelim_include": 231
+  },
+  "quality_v5_formal_scope": false,
+  "query_group_after_top": {
+    "A. AI科研总体类": 763,
+    "B. 文献处理与知识整合类": 894,
+    "C. 研究设计与方法学习类": 337,
+    "D. 数据分析与代码类": 1951,
+    "E. 论文写作与成果表达类": 398,
+    "F. 科研规范与诚信类": 901,
+    "G. 科研训练与效率类": 977
+  },
+  "query_group_before_top": {
+    "A. AI科研总体类": 626,
+    "B. 文献处理与知识整合类": 845,
+    "C. 研究设计与方法学习类": 335,
+    "D. 数据分析与代码类": 1915,
+    "E. 论文写作与成果表达类": 393,
+    "F. 科研规范与诚信类": 760,
+    "G. 科研训练与效率类": 970,
+    "boundary": 298,
+    "practice": 62,
+    "salience": 17
+  },
+  "reviewed_output": "data/interim/xhs_expansion_candidate_v1/reviewed/xhs_expansion_candidate_v1.expanded_v16_cleaned.codex_reviewed.jsonl",
+  "row_count": 6221,
+  "sidecar_comment_count": 90027,
+  "source_scope": "xhs_expansion_candidate_v1",
+  "validation": {
+    "bad_comment_formal_flags": 0,
+    "bad_or_tokenized_url_rows": 0,
+    "bad_post_formal_flags": 0,
+    "bad_query_group_rows": 0,
+    "duplicate_candidate_ids": 0,
+    "duplicate_note_ids": 0,
+    "missing_post_url": 0,
+    "missing_query_group": 0,
+    "raw_unmasked_author_key_rows": 0,
+    "unmasked_author_name_rows": 0
+  }
+}

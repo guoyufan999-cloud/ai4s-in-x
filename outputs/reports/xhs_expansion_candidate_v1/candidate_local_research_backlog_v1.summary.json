@@ -1,0 +1,36 @@
+{
+  "artifact_id": "candidate_local_research_backlog_v1",
+  "scope": "xhs_expansion_candidate_v1",
+  "generated_at": "2026-04-28T17:59:46.612950+00:00",
+  "mode": "local_research_db_nonformal_full_text_backlog",
+  "quality_v5_formal_scope": false,
+  "formal_scope": false,
+  "source_view": "vw_posts_research_scope minus vw_posts_paper_scope_quality_v5",
+  "source_row_count": 780,
+  "row_count": 780,
+  "skip_counts": {},
+  "query_group_counts": {
+    "G. 科研训练与效率类": 452,
+    "D. 数据分析与代码类": 57,
+    "A. AI科研总体类": 92,
+    "C. 研究设计与方法学习类": 32,
+    "E. 论文写作与成果表达类": 53,
+    "F. 科研规范与诚信类": 50,
+    "boundary": 13,
+    "B. 文献处理与知识整合类": 31
+  },
+  "body_present_rows": 758,
+  "formal_baseline_guard_counts": {
+    "quality_v5_posts": 514,
+    "quality_v5_comments": 0
+  },
+  "outputs": {
+    "jsonl": "outputs/tables/xhs_expansion_candidate_v1/candidate_local_research_backlog_v1.jsonl",
+    "review_queue": "data/interim/xhs_expansion_candidate_v1/review_queues/candidate_local_research_backlog_v1.review_queue.jsonl",
+    "review_template": "data/interim/xhs_expansion_candidate_v1/reviewed/candidate_local_research_backlog_v1.review_template.jsonl"
+  },
+  "limitations": [
+    "This is a local supplemental candidate backlog from existing public research DB records, not new live XHS crawling.",
+    "Rows are outside quality_v5 formal scope and require manual review before any supplemental formalization."
+  ]
+}

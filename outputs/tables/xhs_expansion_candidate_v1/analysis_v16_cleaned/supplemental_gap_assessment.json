@@ -1,0 +1,37 @@
+[
+  {
+    "gap_direction": "科研训练材料",
+    "supplemental_count": 10,
+    "quality_v5_comparable_count": 7,
+    "assessment": "有一定补充价值，建议进入人工编码评估。",
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "gap_direction": "AI数据分析材料",
+    "supplemental_count": 31,
+    "quality_v5_comparable_count": 76,
+    "assessment": "有一定补充价值，建议进入人工编码评估。",
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "gap_direction": "AI使用披露讨论",
+    "supplemental_count": 5,
+    "quality_v5_comparable_count": null,
+    "assessment": "有少量补充，但不足以直接支撑主结果。",
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "gap_direction": "AI学术诚信讨论",
+    "supplemental_count": 11,
+    "quality_v5_comparable_count": null,
+    "assessment": "有一定补充价值，建议进入人工编码评估。",
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "gap_direction": "AI审稿/检测讨论",
+    "supplemental_count": 15,
+    "quality_v5_comparable_count": 6,
+    "assessment": "有一定补充价值，建议进入人工编码评估。",
+    "source_scope": "xhs_expansion_candidate_v1"
+  }
+]

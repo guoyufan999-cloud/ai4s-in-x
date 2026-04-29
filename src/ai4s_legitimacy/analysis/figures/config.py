@@ -6,7 +6,11 @@ from collections.abc import Mapping, Sequence
 from datetime import date, datetime
 from typing import Any
 
-from ai4s_legitimacy.config.formal_baseline import ACTIVE_FIGURE_DIR, paper_scope_view
+from ai4s_legitimacy.config.formal_baseline import (
+    ACTIVE_FIGURE_DIR,
+    ACTIVE_FORMAL_STAGE,
+    paper_scope_view,
+)
 from ai4s_legitimacy.config.research_scope import (
     RESEARCH_WINDOW_END,
     RESEARCH_WINDOW_START,
@@ -98,20 +102,24 @@ def resolve_coverage_end_date(
     return normalized
 
 
-def resolve_paper_scope_coverage_end_date(connection) -> str:
+def resolve_paper_scope_coverage_end_date(
+    connection,
+    *,
+    stage: str = ACTIVE_FORMAL_STAGE,
+) -> str:
     row = connection.execute(
         f"""
         SELECT MAX(coverage_date) AS coverage_end_date
         FROM (
             SELECT post_date AS coverage_date
-            FROM {paper_scope_view("posts")}
+            FROM {paper_scope_view("posts", stage)}
             WHERE post_date IS NOT NULL AND post_date != ''
 
             UNION ALL
 
             SELECT c.comment_date AS coverage_date
-            FROM {paper_scope_view("comments")} c
-            JOIN {paper_scope_view("posts")} p ON p.post_id = c.post_id
+            FROM {paper_scope_view("comments", stage)} c
+            JOIN {paper_scope_view("posts", stage)} p ON p.post_id = c.post_id
             WHERE c.comment_date IS NOT NULL
               AND c.comment_date != ''
 

@@ -1,0 +1,37 @@
+{
+  "status": "pass_with_warnings",
+  "reviewed_path": "/Users/guoyufan/ai4s in xhs/data/interim/xhs_expansion_candidate_v1/reviewed/xhs_expansion_candidate_v1.reviewed.jsonl",
+  "staged_accepted_path": "/Users/guoyufan/ai4s in xhs/data/interim/xhs_expansion_candidate_v1/staged_import/xhs_expansion_candidate_v1.accepted_posts.jsonl",
+  "row_count": 115,
+  "accepted_count": 78,
+  "json_error_count": 0,
+  "critical_issue_count": 0,
+  "warning_count": 1,
+  "final_decision_counts": {
+    "include": 78,
+    "exclude": 37
+  },
+  "issue_counts": {},
+  "warning_counts": {
+    "public_boundary_issue": 1
+  },
+  "json_errors": [],
+  "issues": [],
+  "warnings": [
+    {
+      "candidate_id": "xhs_expansion_candidate_v1:69ad1fd0000000001a0361ca",
+      "note_id": "69ad1fd0000000001a0361ca",
+      "issue_type": "public_boundary_issue",
+      "detail": "possible_non_public_content_marker"
+    }
+  ],
+  "policy": {
+    "source_scope": "xhs_expansion_candidate_v1",
+    "formal_scope": false,
+    "quality_v5_formal": false,
+    "supplemental_candidate": true,
+    "writes_research_db": false,
+    "updates_freeze_checkpoint": false,
+    "updates_quality_v5_consistency_report": false
+  }
+}

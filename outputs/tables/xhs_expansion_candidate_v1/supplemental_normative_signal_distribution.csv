@@ -1,0 +1,5 @@
+count,label,share,source_scope,value
+34,无明确规范评价,0.4359,xhs_expansion_candidate_v1,none_or_unclear
+25,效率认可,0.3205,xhs_expansion_candidate_v1,efficiency_positive
+15,条件/边界信号,0.1923,xhs_expansion_candidate_v1,conditional_or_boundary_signal
+4,学术诚信风险,0.0513,xhs_expansion_candidate_v1,integrity_risk

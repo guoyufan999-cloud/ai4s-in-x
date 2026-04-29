@@ -1,0 +1,712 @@
+[
+  {
+    "period_month": "2024-01",
+    "workflow_stage": "数据处理与分析建模",
+    "post_count": 1
+  },
+  {
+    "period_month": "2024-01",
+    "workflow_stage": "文献调研与知识整合",
+    "post_count": 1
+  },
+  {
+    "period_month": "2024-02",
+    "workflow_stage": "uncertain",
+    "post_count": 1
+  },
+  {
+    "period_month": "2024-02",
+    "workflow_stage": "文献调研与知识整合",
+    "post_count": 2
+  },
+  {
+    "period_month": "2024-03",
+    "workflow_stage": "数据获取",
+    "post_count": 1
+  },
+  {
+    "period_month": "2024-03",
+    "workflow_stage": "文献调研与知识整合",
+    "post_count": 1
+  },
+  {
+    "period_month": "2024-03",
+    "workflow_stage": "研究构思与问题定义",
+    "post_count": 1
+  },
+  {
+    "period_month": "2024-05",
+    "workflow_stage": "数据处理与分析建模",
+    "post_count": 1
+  },
+  {
+    "period_month": "2024-05",
+    "workflow_stage": "文献调研与知识整合",
+    "post_count": 4
+  },
+  {
+    "period_month": "2024-06",
+    "workflow_stage": "uncertain",
+    "post_count": 1
+  },
+  {
+    "period_month": "2024-06",
+    "workflow_stage": "发表与知识扩散",
+    "post_count": 1
+  },
+  {
+    "period_month": "2024-06",
+    "workflow_stage": "研究构思与问题定义",
+    "post_count": 1
+  },
+  {
+    "period_month": "2024-06",
+    "workflow_stage": "研究设计与方案制定",
+    "post_count": 1
+  },
+  {
+    "period_month": "2024-07",
+    "workflow_stage": "文献调研与知识整合",
+    "post_count": 1
+  },
+  {
+    "period_month": "2024-07",
+    "workflow_stage": "研究构思与问题定义",
+    "post_count": 1
+  },
+  {
+    "period_month": "2024-08",
+    "workflow_stage": "发表与知识扩散",
+    "post_count": 1
+  },
+  {
+    "period_month": "2024-09",
+    "workflow_stage": "学术写作与成果表达",
+    "post_count": 1
+  },
+  {
+    "period_month": "2024-09",
+    "workflow_stage": "文献调研与知识整合",
+    "post_count": 3
+  },
+  {
+    "period_month": "2024-09",
+    "workflow_stage": "研究构思与问题定义",
+    "post_count": 2
+  },
+  {
+    "period_month": "2024-10",
+    "workflow_stage": "uncertain",
+    "post_count": 1
+  },
+  {
+    "period_month": "2024-10",
+    "workflow_stage": "数据处理与分析建模",
+    "post_count": 1
+  },
+  {
+    "period_month": "2024-10",
+    "workflow_stage": "文献调研与知识整合",
+    "post_count": 2
+  },
+  {
+    "period_month": "2024-10",
+    "workflow_stage": "研究构思与问题定义",
+    "post_count": 2
+  },
+  {
+    "period_month": "2024-11",
+    "workflow_stage": "学术写作与成果表达",
+    "post_count": 1
+  },
+  {
+    "period_month": "2024-11",
+    "workflow_stage": "文献调研与知识整合",
+    "post_count": 5
+  },
+  {
+    "period_month": "2024-11",
+    "workflow_stage": "研究构思与问题定义",
+    "post_count": 2
+  },
+  {
+    "period_month": "2024-12",
+    "workflow_stage": "学术写作与成果表达",
+    "post_count": 1
+  },
+  {
+    "period_month": "2024-12",
+    "workflow_stage": "文献调研与知识整合",
+    "post_count": 9
+  },
+  {
+    "period_month": "2024-12",
+    "workflow_stage": "研究构思与问题定义",
+    "post_count": 5
+  },
+  {
+    "period_month": "2025-01",
+    "workflow_stage": "学术写作与成果表达",
+    "post_count": 1
+  },
+  {
+    "period_month": "2025-01",
+    "workflow_stage": "数据处理与分析建模",
+    "post_count": 2
+  },
+  {
+    "period_month": "2025-01",
+    "workflow_stage": "文献调研与知识整合",
+    "post_count": 9
+  },
+  {
+    "period_month": "2025-01",
+    "workflow_stage": "研究构思与问题定义",
+    "post_count": 2
+  },
+  {
+    "period_month": "2025-01",
+    "workflow_stage": "研究设计与方案制定",
+    "post_count": 1
+  },
+  {
+    "period_month": "2025-02",
+    "workflow_stage": "学术写作与成果表达",
+    "post_count": 4
+  },
+  {
+    "period_month": "2025-02",
+    "workflow_stage": "数据处理与分析建模",
+    "post_count": 3
+  },
+  {
+    "period_month": "2025-02",
+    "workflow_stage": "文献调研与知识整合",
+    "post_count": 15
+  },
+  {
+    "period_month": "2025-02",
+    "workflow_stage": "研究构思与问题定义",
+    "post_count": 6
+  },
+  {
+    "period_month": "2025-03",
+    "workflow_stage": "uncertain",
+    "post_count": 1
+  },
+  {
+    "period_month": "2025-03",
+    "workflow_stage": "出版与评审治理",
+    "post_count": 1
+  },
+  {
+    "period_month": "2025-03",
+    "workflow_stage": "学术写作与成果表达",
+    "post_count": 1
+  },
+  {
+    "period_month": "2025-03",
+    "workflow_stage": "数据处理与分析建模",
+    "post_count": 6
+  },
+  {
+    "period_month": "2025-03",
+    "workflow_stage": "文献调研与知识整合",
+    "post_count": 25
+  },
+  {
+    "period_month": "2025-03",
+    "workflow_stage": "研究构思与问题定义",
+    "post_count": 6
+  },
+  {
+    "period_month": "2025-03",
+    "workflow_stage": "研究设计与方案制定",
+    "post_count": 1
+  },
+  {
+    "period_month": "2025-04",
+    "workflow_stage": "学术写作与成果表达",
+    "post_count": 2
+  },
+  {
+    "period_month": "2025-04",
+    "workflow_stage": "数据处理与分析建模",
+    "post_count": 1
+  },
+  {
+    "period_month": "2025-04",
+    "workflow_stage": "数据获取",
+    "post_count": 1
+  },
+  {
+    "period_month": "2025-04",
+    "workflow_stage": "文献调研与知识整合",
+    "post_count": 10
+  },
+  {
+    "period_month": "2025-04",
+    "workflow_stage": "研究构思与问题定义",
+    "post_count": 4
+  },
+  {
+    "period_month": "2025-04",
+    "workflow_stage": "研究设计与方案制定",
+    "post_count": 1
+  },
+  {
+    "period_month": "2025-05",
+    "workflow_stage": "uncertain",
+    "post_count": 2
+  },
+  {
+    "period_month": "2025-05",
+    "workflow_stage": "数据处理与分析建模",
+    "post_count": 7
+  },
+  {
+    "period_month": "2025-05",
+    "workflow_stage": "文献调研与知识整合",
+    "post_count": 6
+  },
+  {
+    "period_month": "2025-05",
+    "workflow_stage": "研究构思与问题定义",
+    "post_count": 4
+  },
+  {
+    "period_month": "2025-05",
+    "workflow_stage": "研究设计与方案制定",
+    "post_count": 4
+  },
+  {
+    "period_month": "2025-05",
+    "workflow_stage": "科研效率提升与习惯养成",
+    "post_count": 1
+  },
+  {
+    "period_month": "2025-06",
+    "workflow_stage": "出版与评审治理",
+    "post_count": 1
+  },
+  {
+    "period_month": "2025-06",
+    "workflow_stage": "学术写作与成果表达",
+    "post_count": 1
+  },
+  {
+    "period_month": "2025-06",
+    "workflow_stage": "数据获取",
+    "post_count": 3
+  },
+  {
+    "period_month": "2025-06",
+    "workflow_stage": "文献调研与知识整合",
+    "post_count": 11
+  },
+  {
+    "period_month": "2025-06",
+    "workflow_stage": "研究方法学习",
+    "post_count": 1
+  },
+  {
+    "period_month": "2025-07",
+    "workflow_stage": "uncertain",
+    "post_count": 2
+  },
+  {
+    "period_month": "2025-07",
+    "workflow_stage": "学术写作与成果表达",
+    "post_count": 4
+  },
+  {
+    "period_month": "2025-07",
+    "workflow_stage": "数据获取",
+    "post_count": 2
+  },
+  {
+    "period_month": "2025-07",
+    "workflow_stage": "文献调研与知识整合",
+    "post_count": 12
+  },
+  {
+    "period_month": "2025-07",
+    "workflow_stage": "研究方法学习",
+    "post_count": 1
+  },
+  {
+    "period_month": "2025-07",
+    "workflow_stage": "研究构思与问题定义",
+    "post_count": 3
+  },
+  {
+    "period_month": "2025-07",
+    "workflow_stage": "研究设计与方案制定",
+    "post_count": 2
+  },
+  {
+    "period_month": "2025-07",
+    "workflow_stage": "科研效率提升与习惯养成",
+    "post_count": 1
+  },
+  {
+    "period_month": "2025-08",
+    "workflow_stage": "uncertain",
+    "post_count": 5
+  },
+  {
+    "period_month": "2025-08",
+    "workflow_stage": "发表与知识扩散",
+    "post_count": 1
+  },
+  {
+    "period_month": "2025-08",
+    "workflow_stage": "学术写作与成果表达",
+    "post_count": 2
+  },
+  {
+    "period_month": "2025-08",
+    "workflow_stage": "文献调研与知识整合",
+    "post_count": 5
+  },
+  {
+    "period_month": "2025-08",
+    "workflow_stage": "研究方法学习",
+    "post_count": 2
+  },
+  {
+    "period_month": "2025-08",
+    "workflow_stage": "研究构思与问题定义",
+    "post_count": 4
+  },
+  {
+    "period_month": "2025-08",
+    "workflow_stage": "科研效率提升与习惯养成",
+    "post_count": 1
+  },
+  {
+    "period_month": "2025-08",
+    "workflow_stage": "结果验证与论文复现",
+    "post_count": 2
+  },
+  {
+    "period_month": "2025-09",
+    "workflow_stage": "uncertain",
+    "post_count": 1
+  },
+  {
+    "period_month": "2025-09",
+    "workflow_stage": "出版与评审治理",
+    "post_count": 1
+  },
+  {
+    "period_month": "2025-09",
+    "workflow_stage": "学术写作与成果表达",
+    "post_count": 2
+  },
+  {
+    "period_month": "2025-09",
+    "workflow_stage": "学术阅读与写作能力训练",
+    "post_count": 1
+  },
+  {
+    "period_month": "2025-09",
+    "workflow_stage": "文献调研与知识整合",
+    "post_count": 15
+  },
+  {
+    "period_month": "2025-09",
+    "workflow_stage": "研究构思与问题定义",
+    "post_count": 4
+  },
+  {
+    "period_month": "2025-10",
+    "workflow_stage": "出版与评审治理",
+    "post_count": 1
+  },
+  {
+    "period_month": "2025-10",
+    "workflow_stage": "学术写作与成果表达",
+    "post_count": 1
+  },
+  {
+    "period_month": "2025-10",
+    "workflow_stage": "数据处理与分析建模",
+    "post_count": 3
+  },
+  {
+    "period_month": "2025-10",
+    "workflow_stage": "文献调研与知识整合",
+    "post_count": 7
+  },
+  {
+    "period_month": "2025-10",
+    "workflow_stage": "研究方法学习",
+    "post_count": 1
+  },
+  {
+    "period_month": "2025-10",
+    "workflow_stage": "研究构思与问题定义",
+    "post_count": 2
+  },
+  {
+    "period_month": "2025-10",
+    "workflow_stage": "研究设计与方案制定",
+    "post_count": 2
+  },
+  {
+    "period_month": "2025-11",
+    "workflow_stage": "出版与评审治理",
+    "post_count": 3
+  },
+  {
+    "period_month": "2025-11",
+    "workflow_stage": "学术写作与成果表达",
+    "post_count": 4
+  },
+  {
+    "period_month": "2025-11",
+    "workflow_stage": "数据处理与分析建模",
+    "post_count": 5
+  },
+  {
+    "period_month": "2025-11",
+    "workflow_stage": "数据获取",
+    "post_count": 2
+  },
+  {
+    "period_month": "2025-11",
+    "workflow_stage": "文献调研与知识整合",
+    "post_count": 20
+  },
+  {
+    "period_month": "2025-11",
+    "workflow_stage": "研究构思与问题定义",
+    "post_count": 7
+  },
+  {
+    "period_month": "2025-11",
+    "workflow_stage": "科研工具与技术技能训练",
+    "post_count": 1
+  },
+  {
+    "period_month": "2025-11",
+    "workflow_stage": "科研效率提升与习惯养成",
+    "post_count": 1
+  },
+  {
+    "period_month": "2025-12",
+    "workflow_stage": "uncertain",
+    "post_count": 3
+  },
+  {
+    "period_month": "2025-12",
+    "workflow_stage": "出版与评审治理",
+    "post_count": 1
+  },
+  {
+    "period_month": "2025-12",
+    "workflow_stage": "发表与知识扩散",
+    "post_count": 1
+  },
+  {
+    "period_month": "2025-12",
+    "workflow_stage": "学术写作与成果表达",
+    "post_count": 5
+  },
+  {
+    "period_month": "2025-12",
+    "workflow_stage": "数据处理与分析建模",
+    "post_count": 8
+  },
+  {
+    "period_month": "2025-12",
+    "workflow_stage": "文献调研与知识整合",
+    "post_count": 15
+  },
+  {
+    "period_month": "2025-12",
+    "workflow_stage": "研究构思与问题定义",
+    "post_count": 6
+  },
+  {
+    "period_month": "2025-12",
+    "workflow_stage": "研究设计与方案制定",
+    "post_count": 3
+  },
+  {
+    "period_month": "2026-01",
+    "workflow_stage": "uncertain",
+    "post_count": 1
+  },
+  {
+    "period_month": "2026-01",
+    "workflow_stage": "发表与知识扩散",
+    "post_count": 2
+  },
+  {
+    "period_month": "2026-01",
+    "workflow_stage": "学术写作与成果表达",
+    "post_count": 5
+  },
+  {
+    "period_month": "2026-01",
+    "workflow_stage": "实验实施与仿真执行",
+    "post_count": 1
+  },
+  {
+    "period_month": "2026-01",
+    "workflow_stage": "数据处理与分析建模",
+    "post_count": 3
+  },
+  {
+    "period_month": "2026-01",
+    "workflow_stage": "文献调研与知识整合",
+    "post_count": 20
+  },
+  {
+    "period_month": "2026-01",
+    "workflow_stage": "研究构思与问题定义",
+    "post_count": 11
+  },
+  {
+    "period_month": "2026-01",
+    "workflow_stage": "研究设计与方案制定",
+    "post_count": 1
+  },
+  {
+    "period_month": "2026-01",
+    "workflow_stage": "结果解释与理论提炼",
+    "post_count": 1
+  },
+  {
+    "period_month": "2026-02",
+    "workflow_stage": "uncertain",
+    "post_count": 2
+  },
+  {
+    "period_month": "2026-02",
+    "workflow_stage": "学术写作与成果表达",
+    "post_count": 5
+  },
+  {
+    "period_month": "2026-02",
+    "workflow_stage": "实验实施与仿真执行",
+    "post_count": 1
+  },
+  {
+    "period_month": "2026-02",
+    "workflow_stage": "数据处理与分析建模",
+    "post_count": 2
+  },
+  {
+    "period_month": "2026-02",
+    "workflow_stage": "文献调研与知识整合",
+    "post_count": 43
+  },
+  {
+    "period_month": "2026-02",
+    "workflow_stage": "研究构思与问题定义",
+    "post_count": 17
+  },
+  {
+    "period_month": "2026-02",
+    "workflow_stage": "研究设计与方案制定",
+    "post_count": 1
+  },
+  {
+    "period_month": "2026-03",
+    "workflow_stage": "uncertain",
+    "post_count": 7
+  },
+  {
+    "period_month": "2026-03",
+    "workflow_stage": "出版与评审治理",
+    "post_count": 1
+  },
+  {
+    "period_month": "2026-03",
+    "workflow_stage": "发表与知识扩散",
+    "post_count": 2
+  },
+  {
+    "period_month": "2026-03",
+    "workflow_stage": "学术写作与成果表达",
+    "post_count": 10
+  },
+  {
+    "period_month": "2026-03",
+    "workflow_stage": "实验实施与仿真执行",
+    "post_count": 2
+  },
+  {
+    "period_month": "2026-03",
+    "workflow_stage": "数据处理与分析建模",
+    "post_count": 35
+  },
+  {
+    "period_month": "2026-03",
+    "workflow_stage": "数据获取",
+    "post_count": 1
+  },
+  {
+    "period_month": "2026-03",
+    "workflow_stage": "文献调研与知识整合",
+    "post_count": 73
+  },
+  {
+    "period_month": "2026-03",
+    "workflow_stage": "研究构思与问题定义",
+    "post_count": 33
+  },
+  {
+    "period_month": "2026-03",
+    "workflow_stage": "研究设计与方案制定",
+    "post_count": 5
+  },
+  {
+    "period_month": "2026-03",
+    "workflow_stage": "科研效率提升与习惯养成",
+    "post_count": 1
+  },
+  {
+    "period_month": "2026-03",
+    "workflow_stage": "结果验证与论文复现",
+    "post_count": 2
+  },
+  {
+    "period_month": "2026-04",
+    "workflow_stage": "uncertain",
+    "post_count": 5
+  },
+  {
+    "period_month": "2026-04",
+    "workflow_stage": "学术写作与成果表达",
+    "post_count": 2
+  },
+  {
+    "period_month": "2026-04",
+    "workflow_stage": "数据处理与分析建模",
+    "post_count": 10
+  },
+  {
+    "period_month": "2026-04",
+    "workflow_stage": "文献调研与知识整合",
+    "post_count": 25
+  },
+  {
+    "period_month": "2026-04",
+    "workflow_stage": "研究构思与问题定义",
+    "post_count": 4
+  },
+  {
+    "period_month": "2026-04",
+    "workflow_stage": "研究设计与方案制定",
+    "post_count": 2
+  },
+  {
+    "period_month": "2026-04",
+    "workflow_stage": "科研效率提升与习惯养成",
+    "post_count": 4
+  }
+]

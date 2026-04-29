@@ -1,0 +1,100 @@
+[
+  {
+    "count": 65,
+    "formalization_scope": "supplemental_formalization_v1",
+    "left": "G2",
+    "right": "B0",
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "count": 37,
+    "formalization_scope": "supplemental_formalization_v1",
+    "left": "G1",
+    "right": "B0",
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "count": 22,
+    "formalization_scope": "supplemental_formalization_v1",
+    "left": "G3",
+    "right": "B0",
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "count": 15,
+    "formalization_scope": "supplemental_formalization_v1",
+    "left": "G2",
+    "right": "B1",
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "count": 14,
+    "formalization_scope": "supplemental_formalization_v1",
+    "left": "G2",
+    "right": "B2",
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "count": 13,
+    "formalization_scope": "supplemental_formalization_v1",
+    "left": "G3",
+    "right": "B1",
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "count": 13,
+    "formalization_scope": "supplemental_formalization_v1",
+    "left": "G3",
+    "right": "B2",
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "count": 6,
+    "formalization_scope": "supplemental_formalization_v1",
+    "left": "G1",
+    "right": "B2",
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "count": 5,
+    "formalization_scope": "supplemental_formalization_v1",
+    "left": "",
+    "right": "B0",
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "count": 4,
+    "formalization_scope": "supplemental_formalization_v1",
+    "left": "G1",
+    "right": "B1",
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "count": 4,
+    "formalization_scope": "supplemental_formalization_v1",
+    "left": "G2",
+    "right": "B3",
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "count": 4,
+    "formalization_scope": "supplemental_formalization_v1",
+    "left": "G3",
+    "right": "B3",
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "count": 3,
+    "formalization_scope": "supplemental_formalization_v1",
+    "left": "G1",
+    "right": "B3",
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "count": 1,
+    "formalization_scope": "supplemental_formalization_v1",
+    "left": "",
+    "right": "B1",
+    "source_scope": "xhs_expansion_candidate_v1"
+  }
+]

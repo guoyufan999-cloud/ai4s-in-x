@@ -1,0 +1,51 @@
+post_count,subject_label,workflow_stage
+255,uncertain,文献调研与知识整合
+64,uncertain,研究构思与问题定义
+48,uncertain,数据处理与分析建模
+42,Life Sciences & Medicine,文献调研与知识整合
+37,uncertain,学术写作与成果表达
+32,uncertain,uncertain
+31,Social Sciences & Management,研究构思与问题定义
+20,Engineering & Technology,文献调研与知识整合
+18,uncertain,研究设计与方案制定
+15,Engineering & Technology,研究构思与问题定义
+14,Social Sciences & Management,数据处理与分析建模
+11,Engineering & Technology,数据处理与分析建模
+11,Social Sciences & Management,文献调研与知识整合
+10,Life Sciences & Medicine,数据处理与分析建模
+9,uncertain,科研效率提升与习惯养成
+7,Life Sciences & Medicine,研究构思与问题定义
+7,Natural Sciences,文献调研与知识整合
+7,Natural Sciences,研究构思与问题定义
+6,uncertain,出版与评审治理
+5,Arts & Humanities,学术写作与成果表达
+5,Natural Sciences,数据处理与分析建模
+4,Arts & Humanities,文献调研与知识整合
+4,Engineering & Technology,发表与知识扩散
+4,Natural Sciences,学术写作与成果表达
+4,uncertain,数据获取
+3,Arts & Humanities,研究构思与问题定义
+3,Engineering & Technology,学术写作与成果表达
+3,Life Sciences & Medicine,研究设计与方案制定
+3,uncertain,发表与知识扩散
+3,uncertain,研究方法学习
+2,Engineering & Technology,实验实施与仿真执行
+2,Engineering & Technology,数据获取
+2,Engineering & Technology,研究方法学习
+2,Engineering & Technology,结果验证与论文复现
+2,Life Sciences & Medicine,学术写作与成果表达
+2,Natural Sciences,数据获取
+2,Social Sciences & Management,研究设计与方案制定
+2,uncertain,实验实施与仿真执行
+2,uncertain,结果验证与论文复现
+1,Arts & Humanities,发表与知识扩散
+1,Arts & Humanities,数据获取
+1,Engineering & Technology,出版与评审治理
+1,Engineering & Technology,学术阅读与写作能力训练
+1,Engineering & Technology,研究设计与方案制定
+1,Life Sciences & Medicine,出版与评审治理
+1,Life Sciences & Medicine,数据获取
+1,Natural Sciences,出版与评审治理
+1,Social Sciences & Management,学术写作与成果表达
+1,uncertain,科研工具与技术技能训练
+1,uncertain,结果解释与理论提炼

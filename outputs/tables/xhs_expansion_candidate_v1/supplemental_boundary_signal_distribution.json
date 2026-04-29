@@ -1,0 +1,30 @@
+[
+  {
+    "value": "none_or_unclear",
+    "label": "无明确边界信号",
+    "count": 61,
+    "share": 0.7821,
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "value": "assistance_vs_substitution",
+    "label": "辅助与替代边界",
+    "count": 14,
+    "share": 0.1795,
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "value": "academic_integrity_boundary",
+    "label": "学术诚信边界",
+    "count": 2,
+    "share": 0.0256,
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "value": "disclosure_boundary",
+    "label": "披露边界",
+    "count": 1,
+    "share": 0.0128,
+    "source_scope": "xhs_expansion_candidate_v1"
+  }
+]

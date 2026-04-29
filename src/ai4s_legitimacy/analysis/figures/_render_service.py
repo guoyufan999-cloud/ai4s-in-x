@@ -5,6 +5,7 @@ from pathlib import Path
 from typing import Any
 
 from ai4s_legitimacy.analysis.figures.config import (
+    ACTIVE_FORMAL_STAGE,
     ATTITUDE_COLORS,
     FIGURE_DIR,
     RESEARCH_WINDOW_START,
@@ -29,14 +30,16 @@ def _load_figure_datasets(
     db_path: Path,
     coverage_end_date: str | None,
     immutable: bool,
+    stage: str,
 ) -> tuple[str, dict[str, dict[str, Any]]]:
     with connect_sqlite_readonly(db_path, immutable=immutable) as connection:
         resolved_coverage_end_date = (
-            coverage_end_date or resolve_paper_scope_coverage_end_date(connection)
+            coverage_end_date or resolve_paper_scope_coverage_end_date(connection, stage=stage)
         )
         datasets = load_submission_figure_data(
             connection,
             coverage_end_date=resolved_coverage_end_date,
+            stage=stage,
         )
     return resolved_coverage_end_date, datasets
 
@@ -215,6 +218,7 @@ def generate_submission_figures(
     figure_dir: Path = FIGURE_DIR,
     coverage_end_date: str | None = None,
     immutable: bool = False,
+    stage: str = ACTIVE_FORMAL_STAGE,
 ) -> dict[str, Any]:
     plt, np = configure_matplotlib()
     figure_dir.mkdir(parents=True, exist_ok=True)
@@ -222,6 +226,7 @@ def generate_submission_figures(
         db_path=db_path,
         coverage_end_date=coverage_end_date,
         immutable=immutable,
+        stage=stage,
     )
     generated = _render_generated_figures(
         plt,

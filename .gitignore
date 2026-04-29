@@ -4,6 +4,8 @@ __pycache__/
 .pytest_cache/
 .mypy_cache/
 .ruff_cache/
+.opencli/
+web-articles/
 *.pyc
 *.pyo
 *.sqlite3
@@ -32,6 +34,10 @@ outputs/figures/*
 !data/processed/README.md
 !outputs/figures/paper_figures_submission/
 !outputs/figures/paper_figures_submission/**
+
+# Local exploratory XHS raw captures are too large/noisy for GitHub commits.
+# Keep derived reports, summaries, formalized tables and quality_v6 artifacts tracked.
+outputs/tables/xhs_expansion_candidate_v1/*.jsonl
 
 archive/legacy_collection_runtime/data/chrome-profile/
 archive/legacy_collection_runtime/data/runtime_state/

@@ -1,0 +1,58 @@
+[
+  {
+    "count": 98,
+    "count_base": "included_rows",
+    "formalization_scope": "supplemental_formalization_v1",
+    "share": 0.49,
+    "source_scope": "xhs_expansion_candidate_v1",
+    "workflow_stage": "文献处理与知识整合"
+  },
+  {
+    "count": 32,
+    "count_base": "included_rows",
+    "formalization_scope": "supplemental_formalization_v1",
+    "share": 0.16,
+    "source_scope": "xhs_expansion_candidate_v1",
+    "workflow_stage": "待人工判定"
+  },
+  {
+    "count": 31,
+    "count_base": "included_rows",
+    "formalization_scope": "supplemental_formalization_v1",
+    "share": 0.155,
+    "source_scope": "xhs_expansion_candidate_v1",
+    "workflow_stage": "数据分析与代码"
+  },
+  {
+    "count": 14,
+    "count_base": "included_rows",
+    "formalization_scope": "supplemental_formalization_v1",
+    "share": 0.07,
+    "source_scope": "xhs_expansion_candidate_v1",
+    "workflow_stage": "研究设计与方法学习"
+  },
+  {
+    "count": 13,
+    "count_base": "included_rows",
+    "formalization_scope": "supplemental_formalization_v1",
+    "share": 0.065,
+    "source_scope": "xhs_expansion_candidate_v1",
+    "workflow_stage": "论文写作与成果表达"
+  },
+  {
+    "count": 9,
+    "count_base": "included_rows",
+    "formalization_scope": "supplemental_formalization_v1",
+    "share": 0.045,
+    "source_scope": "xhs_expansion_candidate_v1",
+    "workflow_stage": "科研训练与效率"
+  },
+  {
+    "count": 3,
+    "count_base": "included_rows",
+    "formalization_scope": "supplemental_formalization_v1",
+    "share": 0.015,
+    "source_scope": "xhs_expansion_candidate_v1",
+    "workflow_stage": "科研规范与治理"
+  }
+]

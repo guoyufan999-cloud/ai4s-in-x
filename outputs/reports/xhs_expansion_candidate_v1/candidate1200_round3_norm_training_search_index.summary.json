@@ -1,0 +1,539 @@
+{
+  "artifact_id": "candidate1200_round3_norm_training_search_index",
+  "scope": "xhs_expansion_candidate_v1",
+  "generated_at": "2026-04-28T17:09:28.999805+00:00",
+  "mode": "opencli_search_result_metadata_only",
+  "quality_v5_formal_scope": false,
+  "formal_scope": false,
+  "query_count": 88,
+  "executed_query_count": 48,
+  "search_limit": 50,
+  "target_new": 300,
+  "row_count": 300,
+  "decision_counts": {
+    "review_needed": 300
+  },
+  "query_group_counts": {
+    "F. 科研规范与诚信类": 274,
+    "G. 科研训练与效率类": 26
+  },
+  "skip_counts": {
+    "duplicate_previous_candidate": 232,
+    "duplicate_existing_db": 167,
+    "duplicate_current_run": 50
+  },
+  "errors": [],
+  "query_stats": [
+    {
+      "query": "AI论文披露要求",
+      "query_group": "F. 科研规范与诚信类",
+      "search_hits": 18,
+      "kept": 6,
+      "skips": {
+        "duplicate_previous_candidate": 6,
+        "duplicate_existing_db": 6
+      }
+    },
+    {
+      "query": "论文AI使用说明",
+      "query_group": "F. 科研规范与诚信类",
+      "search_hits": 17,
+      "kept": 10,
+      "skips": {
+        "duplicate_existing_db": 3,
+        "duplicate_previous_candidate": 4
+      }
+    },
+    {
+      "query": "论文使用AI声明",
+      "query_group": "F. 科研规范与诚信类",
+      "search_hits": 17,
+      "kept": 4,
+      "skips": {
+        "duplicate_current_run": 9,
+        "duplicate_previous_candidate": 2,
+        "duplicate_existing_db": 2
+      }
+    },
+    {
+      "query": "AI辅助写作声明",
+      "query_group": "F. 科研规范与诚信类",
+      "search_hits": 15,
+      "kept": 6,
+      "skips": {
+        "duplicate_current_run": 5,
+        "duplicate_previous_candidate": 2,
+        "duplicate_existing_db": 2
+      }
+    },
+    {
+      "query": "生成式AI论文披露",
+      "query_group": "F. 科研规范与诚信类",
+      "search_hits": 16,
+      "kept": 5,
+      "skips": {
+        "duplicate_previous_candidate": 10,
+        "duplicate_existing_db": 1
+      }
+    },
+    {
+      "query": "AIGC论文披露",
+      "query_group": "F. 科研规范与诚信类",
+      "search_hits": 17,
+      "kept": 7,
+      "skips": {
+        "duplicate_previous_candidate": 4,
+        "duplicate_current_run": 1,
+        "duplicate_existing_db": 5
+      }
+    },
+    {
+      "query": "AI写论文 学术诚信",
+      "query_group": "F. 科研规范与诚信类",
+      "search_hits": 18,
+      "kept": 8,
+      "skips": {
+        "duplicate_current_run": 1,
+        "duplicate_existing_db": 3,
+        "duplicate_previous_candidate": 6
+      }
+    },
+    {
+      "query": "AI代写 学术不端",
+      "query_group": "F. 科研规范与诚信类",
+      "search_hits": 17,
+      "kept": 4,
+      "skips": {
+        "duplicate_previous_candidate": 7,
+        "duplicate_existing_db": 6
+      }
+    },
+    {
+      "query": "AI代写论文 后果",
+      "query_group": "F. 科研规范与诚信类",
+      "search_hits": 17,
+      "kept": 0,
+      "skips": {
+        "duplicate_current_run": 3,
+        "duplicate_previous_candidate": 8,
+        "duplicate_existing_db": 6
+      }
+    },
+    {
+      "query": "AI论文造假",
+      "query_group": "F. 科研规范与诚信类",
+      "search_hits": 17,
+      "kept": 6,
+      "skips": {
+        "duplicate_existing_db": 6,
+        "duplicate_previous_candidate": 4,
+        "duplicate_current_run": 1
+      }
+    },
+    {
+      "query": "AI生成参考文献 幻觉",
+      "query_group": "F. 科研规范与诚信类",
+      "search_hits": 16,
+      "kept": 10,
+      "skips": {
+        "duplicate_current_run": 2,
+        "duplicate_previous_candidate": 2,
+        "duplicate_existing_db": 2
+      }
+    },
+    {
+      "query": "AI瞎编文献",
+      "query_group": "F. 科研规范与诚信类",
+      "search_hits": 14,
+      "kept": 2,
+      "skips": {
+        "duplicate_existing_db": 10,
+        "duplicate_previous_candidate": 2
+      }
+    },
+    {
+      "query": "ChatGPT 瞎编文献",
+      "query_group": "F. 科研规范与诚信类",
+      "search_hits": 16,
+      "kept": 4,
+      "skips": {
+        "duplicate_existing_db": 6,
+        "duplicate_previous_candidate": 6
+      }
+    },
+    {
+      "query": "DeepSeek 瞎编文献",
+      "query_group": "F. 科研规范与诚信类",
+      "search_hits": 17,
+      "kept": 7,
+      "skips": {
+        "duplicate_previous_candidate": 6,
+        "duplicate_existing_db": 4
+      }
+    },
+    {
+      "query": "AI论文查重率",
+      "query_group": "F. 科研规范与诚信类",
+      "search_hits": 18,
+      "kept": 3,
+      "skips": {
+        "duplicate_previous_candidate": 12,
+        "duplicate_existing_db": 3
+      }
+    },
+    {
+      "query": "AIGC检测率",
+      "query_group": "F. 科研规范与诚信类",
+      "search_hits": 15,
+      "kept": 13,
+      "skips": {
+        "duplicate_previous_candidate": 2
+      }
+    },
+    {
+      "query": "AI检测论文怎么办",
+      "query_group": "F. 科研规范与诚信类",
+      "search_hits": 16,
+      "kept": 11,
+      "skips": {
+        "duplicate_existing_db": 2,
+        "duplicate_previous_candidate": 2,
+        "duplicate_current_run": 1
+      }
+    },
+    {
+      "query": "论文AI率",
+      "query_group": "F. 科研规范与诚信类",
+      "search_hits": 18,
+      "kept": 5,
+      "skips": {
+        "duplicate_existing_db": 7,
+        "duplicate_previous_candidate": 6
+      }
+    },
+    {
+      "query": "学校禁止AI写论文",
+      "query_group": "F. 科研规范与诚信类",
+      "search_hits": 18,
+      "kept": 7,
+      "skips": {
+        "duplicate_previous_candidate": 7,
+        "duplicate_existing_db": 2,
+        "duplicate_current_run": 2
+      }
+    },
+    {
+      "query": "高校AI论文规定",
+      "query_group": "F. 科研规范与诚信类",
+      "search_hits": 16,
+      "kept": 5,
+      "skips": {
+        "duplicate_existing_db": 2,
+        "duplicate_previous_candidate": 8,
+        "duplicate_current_run": 1
+      }
+    },
+    {
+      "query": "导师不让用ChatGPT",
+      "query_group": "F. 科研规范与诚信类",
+      "search_hits": 16,
+      "kept": 11,
+      "skips": {
+        "duplicate_existing_db": 4,
+        "duplicate_previous_candidate": 1
+      }
+    },
+    {
+      "query": "导师允许用AI吗",
+      "query_group": "F. 科研规范与诚信类",
+      "search_hits": 15,
+      "kept": 6,
+      "skips": {
+        "duplicate_previous_candidate": 4,
+        "duplicate_existing_db": 5
+      }
+    },
+    {
+      "query": "期刊不允许AI署名",
+      "query_group": "F. 科研规范与诚信类",
+      "search_hits": 15,
+      "kept": 5,
+      "skips": {
+        "duplicate_previous_candidate": 4,
+        "duplicate_current_run": 4,
+        "duplicate_existing_db": 2
+      }
+    },
+    {
+      "query": "期刊AI政策",
+      "query_group": "F. 科研规范与诚信类",
+      "search_hits": 16,
+      "kept": 13,
+      "skips": {
+        "duplicate_existing_db": 1,
+        "duplicate_previous_candidate": 1,
+        "duplicate_current_run": 1
+      }
+    },
+    {
+      "query": "AI审稿伦理",
+      "query_group": "F. 科研规范与诚信类",
+      "search_hits": 17,
+      "kept": 14,
+      "skips": {
+        "duplicate_existing_db": 3
+      }
+    },
+    {
+      "query": "AI审稿可以吗",
+      "query_group": "F. 科研规范与诚信类",
+      "search_hits": 11,
+      "kept": 4,
+      "skips": {
+        "duplicate_existing_db": 1,
+        "duplicate_previous_candidate": 5,
+        "duplicate_current_run": 1
+      }
+    },
+    {
+      "query": "AI同行评审",
+      "query_group": "F. 科研规范与诚信类",
+      "search_hits": 14,
+      "kept": 6,
+      "skips": {
+        "duplicate_previous_candidate": 5,
+        "duplicate_existing_db": 2,
+        "duplicate_current_run": 1
+      }
+    },
+    {
+      "query": "AI辅助审稿",
+      "query_group": "F. 科研规范与诚信类",
+      "search_hits": 12,
+      "kept": 3,
+      "skips": {
+        "duplicate_existing_db": 2,
+        "duplicate_previous_candidate": 4,
+        "duplicate_current_run": 3
+      }
+    },
+    {
+      "query": "AI生成内容检测论文",
+      "query_group": "F. 科研规范与诚信类",
+      "search_hits": 15,
+      "kept": 8,
+      "skips": {
+        "duplicate_current_run": 2,
+        "duplicate_existing_db": 2,
+        "duplicate_previous_candidate": 3
+      }
+    },
+    {
+      "query": "Turnitin AI论文检测",
+      "query_group": "F. 科研规范与诚信类",
+      "search_hits": 15,
+      "kept": 12,
+      "skips": {
+        "duplicate_existing_db": 1,
+        "duplicate_previous_candidate": 2
+      }
+    },
+    {
+      "query": "知网AIGC检测",
+      "query_group": "F. 科研规范与诚信类",
+      "search_hits": 15,
+      "kept": 8,
+      "skips": {
+        "duplicate_previous_candidate": 4,
+        "duplicate_current_run": 2,
+        "duplicate_existing_db": 1
+      }
+    },
+    {
+      "query": "维普AIGC检测",
+      "query_group": "F. 科研规范与诚信类",
+      "search_hits": 16,
+      "kept": 15,
+      "skips": {
+        "duplicate_existing_db": 1
+      }
+    },
+    {
+      "query": "格子达AI检测",
+      "query_group": "F. 科研规范与诚信类",
+      "search_hits": 14,
+      "kept": 13,
+      "skips": {
+        "duplicate_existing_db": 1
+      }
+    },
+    {
+      "query": "论文降AI率",
+      "query_group": "F. 科研规范与诚信类",
+      "search_hits": 18,
+      "kept": 7,
+      "skips": {
+        "duplicate_existing_db": 3,
+        "duplicate_previous_candidate": 6,
+        "duplicate_current_run": 2
+      }
+    },
+    {
+      "query": "AI润色算学术不端吗",
+      "query_group": "F. 科研规范与诚信类",
+      "search_hits": 14,
+      "kept": 2,
+      "skips": {
+        "duplicate_previous_candidate": 5,
+        "duplicate_existing_db": 5,
+        "duplicate_current_run": 2
+      }
+    },
+    {
+      "query": "ChatGPT润色要披露吗",
+      "query_group": "F. 科研规范与诚信类",
+      "search_hits": 14,
+      "kept": 7,
+      "skips": {
+        "duplicate_existing_db": 4,
+        "duplicate_previous_candidate": 3
+      }
+    },
+    {
+      "query": "DeepSeek写论文会被发现吗",
+      "query_group": "F. 科研规范与诚信类",
+      "search_hits": 16,
+      "kept": 5,
+      "skips": {
+        "duplicate_existing_db": 3,
+        "duplicate_previous_candidate": 6,
+        "duplicate_current_run": 2
+      }
+    },
+    {
+      "query": "ChatGPT写论文会被查吗",
+      "query_group": "F. 科研规范与诚信类",
+      "search_hits": 16,
+      "kept": 4,
+      "skips": {
+        "duplicate_previous_candidate": 7,
+        "duplicate_existing_db": 5
+      }
+    },
+    {
+      "query": "AI写论文能毕业吗",
+      "query_group": "F. 科研规范与诚信类",
+      "search_hits": 15,
+      "kept": 5,
+      "skips": {
+        "duplicate_existing_db": 3,
+        "duplicate_previous_candidate": 7
+      }
+    },
+    {
+      "query": "AI写作 学术规范",
+      "query_group": "F. 科研规范与诚信类",
+      "search_hits": 15,
+      "kept": 3,
+      "skips": {
+        "duplicate_current_run": 2,
+        "duplicate_previous_candidate": 7,
+        "duplicate_existing_db": 3
+      }
+    },
+    {
+      "query": "研究生AI科研工具",
+      "query_group": "G. 科研训练与效率类",
+      "search_hits": 16,
+      "kept": 1,
+      "skips": {
+        "duplicate_previous_candidate": 7,
+        "duplicate_existing_db": 8
+      }
+    },
+    {
+      "query": "研究生DeepSeek工具",
+      "query_group": "G. 科研训练与效率类",
+      "search_hits": 15,
+      "kept": 6,
+      "skips": {
+        "duplicate_previous_candidate": 6,
+        "duplicate_existing_db": 3
+      }
+    },
+    {
+      "query": "研究生ChatGPT工具",
+      "query_group": "G. 科研训练与效率类",
+      "search_hits": 15,
+      "kept": 5,
+      "skips": {
+        "duplicate_existing_db": 7,
+        "duplicate_previous_candidate": 3
+      }
+    },
+    {
+      "query": "博士AI科研工具",
+      "query_group": "G. 科研训练与效率类",
+      "search_hits": 15,
+      "kept": 2,
+      "skips": {
+        "duplicate_previous_candidate": 6,
+        "duplicate_existing_db": 7
+      }
+    },
+    {
+      "query": "博士DeepSeek写论文",
+      "query_group": "G. 科研训练与效率类",
+      "search_hits": 17,
+      "kept": 9,
+      "skips": {
+        "duplicate_previous_candidate": 7,
+        "duplicate_current_run": 1
+      }
+    },
+    {
+      "query": "博士ChatGPT科研",
+      "query_group": "G. 科研训练与效率类",
+      "search_hits": 15,
+      "kept": 2,
+      "skips": {
+        "duplicate_existing_db": 6,
+        "duplicate_previous_candidate": 7
+      }
+    },
+    {
+      "query": "硕士论文AI工具",
+      "query_group": "G. 科研训练与效率类",
+      "search_hits": 16,
+      "kept": 0,
+      "skips": {
+        "duplicate_existing_db": 5,
+        "duplicate_previous_candidate": 10,
+        "duplicate_current_run": 1
+      }
+    },
+    {
+      "query": "硕士论文DeepSeek",
+      "query_group": "G. 科研训练与效率类",
+      "search_hits": 16,
+      "kept": 1,
+      "skips": {
+        "duplicate_previous_candidate": 6,
+        "duplicate_existing_db": 1
+      }
+    }
+  ],
+  "formal_baseline_guard_counts": {
+    "quality_v5_posts": 514,
+    "quality_v5_comments": 0
+  },
+  "limitations": [
+    "Rows contain public search-result metadata only, not verified full post bodies.",
+    "All rows are review_needed and must not be treated as formal evidence before manual public-page review.",
+    "The run does not import into the research database and does not alter quality_v5 formal scope."
+  ],
+  "output_path": "outputs/tables/xhs_expansion_candidate_v1/candidate1200_round3_norm_training_search_index.jsonl",
+  "query_manifest_path": "outputs/reports/xhs_expansion_candidate_v1/candidate1200_round3_norm_training.query_manifest.json",
+  "review_queue_path": "data/interim/xhs_expansion_candidate_v1/review_queues/candidate1200_round3_norm_training_search_index.review_queue.jsonl",
+  "review_template_path": "data/interim/xhs_expansion_candidate_v1/reviewed/candidate1200_round3_norm_training_search_index.review_template.jsonl"
+}

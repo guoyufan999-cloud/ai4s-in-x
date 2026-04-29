@@ -1,19 +1,27 @@
 {
-  "coverage_end_date": "2026-04-10",
-  "status": "post_review_v2_imported_post_only",
-  "formal_stage": "quality_v5",
+  "coverage_end_date": "2026-04-26",
+  "status": "post_only_formalized",
+  "formal_stage": "quality_v6",
+  "previous_formal_stage": "quality_v5",
   "formal_scope_counts": {
+    "posts": 714,
+    "comments": 0
+  },
+  "quality_v5_guard_counts": {
     "posts": 514,
     "comments": 0
   },
-  "canonical_corpus": {
-    "posts": 5535,
-    "comments": 12362
+  "staging_research_db": {
+    "posts": 5735,
+    "comments": 106543
   },
+  "framework_v2_reviewed_posts": 714,
+  "framework_v2_missing_posts": 0,
   "notes": [
-    "quality_v5 活跃主线已经 canonical 化。",
-    "严格版 post_review_v2 已导入，本轮正式基线采用帖子层 post-only 口径。",
-    "comment_review_v2 暂不进入正式编码；formal_comments=0 是本轮设计选择，不是导入遗漏。",
-    "quality_v4 仅保留为历史审计快照。"
+    "quality_v6 is the active submission result layer.",
+    "quality_v6 combines 514 quality_v5 formal posts and 200 supplemental_formalization_v1 include posts.",
+    "comment_review_v2 remains deferred; formal_comments=0 is intentional.",
+    "quality_v5 remains the previous frozen baseline and artifact health guard.",
+    "quality_v4 remains a historical audit snapshot."
   ]
 }

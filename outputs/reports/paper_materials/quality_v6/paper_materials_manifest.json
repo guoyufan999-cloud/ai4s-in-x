@@ -1,0 +1,24 @@
+{
+  "formal_stage": "quality_v6",
+  "status": "post_only_formalized",
+  "formal_source_contract": {
+    "core_results": "paper_scope_quality_v6",
+    "figures": "paper_scope_quality_v6"
+  },
+  "formal_posts": 714,
+  "formal_comments": 0,
+  "comment_scope_note": "comment_review_v2 deferred; formal_comments=0 is intentional.",
+  "summary_path": "outputs/reports/freeze_checkpoints/quality_v6_research_db_summary.json",
+  "consistency_path": "outputs/reports/freeze_checkpoints/quality_v6_consistency_report.json",
+  "freeze_checkpoint_path": "outputs/reports/freeze_checkpoints/quality_v6_freeze_checkpoint.json",
+  "figure_dir": "outputs/figures/paper_figures_submission/quality_v6",
+  "figure_manifest_path": "outputs/figures/paper_figures_submission/quality_v6/paper_figures_submission_manifest.md",
+  "framework_v2_dir": "outputs/reports/paper_materials/quality_v6/framework_v2",
+  "table_paths": {
+    "workflow_distribution": "outputs/tables/quality_v6/workflow_distribution.json",
+    "subject_distribution": "outputs/tables/quality_v6/subject_distribution.json",
+    "monthly_posts_by_workflow": "outputs/tables/quality_v6/monthly_posts_by_workflow.json",
+    "workflow_legitimacy": "outputs/tables/quality_v6/workflow_legitimacy.json",
+    "subject_workflow": "outputs/tables/quality_v6/subject_workflow.json"
+  }
+}

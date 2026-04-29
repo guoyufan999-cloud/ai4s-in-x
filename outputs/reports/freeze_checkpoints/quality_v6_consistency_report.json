@@ -1,0 +1,35 @@
+{
+  "reference_source": "outputs/reports/freeze_checkpoints/quality_v6_freeze_checkpoint.json",
+  "research_db_path": "data/interim/quality_v6/ai4s_legitimacy_quality_v6.sqlite3",
+  "matching_rule": "compare quality_v6 checkpoint counts with staging paper-scope views",
+  "reference": {
+    "checkpoint_stage": "quality_v6",
+    "formal_posts": 714,
+    "formal_comments": 0
+  },
+  "scope_counts": {
+    "candidate_comments": 106543,
+    "candidate_posts": 5735,
+    "paper_quality_v5_comments": 0,
+    "paper_quality_v5_posts": 514,
+    "paper_quality_v6_comments": 0,
+    "paper_quality_v6_posts": 714,
+    "research_comments": 30640,
+    "research_posts": 1494
+  },
+  "observed_paper_scope": {
+    "formal_posts": 714,
+    "formal_comments": 0
+  },
+  "quality_v5_guard": {
+    "formal_posts": 514,
+    "formal_comments": 0
+  },
+  "delta": {
+    "paper_posts_minus_checkpoint": 0,
+    "paper_comments_minus_checkpoint": 0
+  },
+  "excluded_rows_in_v6": 0,
+  "status": "aligned",
+  "failures": []
+}

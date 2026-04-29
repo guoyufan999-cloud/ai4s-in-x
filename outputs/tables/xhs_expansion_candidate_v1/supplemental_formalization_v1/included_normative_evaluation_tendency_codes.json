@@ -1,0 +1,34 @@
+[
+  {
+    "code": "B0",
+    "count": 123,
+    "count_base": "included_rows",
+    "formalization_scope": "supplemental_formalization_v1",
+    "share": 0.615,
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "code": "B2",
+    "count": 34,
+    "count_base": "included_rows",
+    "formalization_scope": "supplemental_formalization_v1",
+    "share": 0.17,
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "code": "B1",
+    "count": 32,
+    "count_base": "included_rows",
+    "formalization_scope": "supplemental_formalization_v1",
+    "share": 0.16,
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "code": "B3",
+    "count": 11,
+    "count_base": "included_rows",
+    "formalization_scope": "supplemental_formalization_v1",
+    "share": 0.055,
+    "source_scope": "xhs_expansion_candidate_v1"
+  }
+]

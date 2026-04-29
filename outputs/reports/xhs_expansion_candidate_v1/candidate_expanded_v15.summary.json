@@ -1,0 +1,80 @@
+{
+  "artifact_status": "xhs_expansion_candidate_v1_expanded_v15",
+  "formal_baseline_guard_counts": {
+    "comments": 0,
+    "posts": 514
+  },
+  "generated_at": "2026-04-28T18:45:48.482771+00:00",
+  "legacy_not_in_v14_scanned": 1740,
+  "metadata_only_by_text_rows": 1793,
+  "new_content_source_counts": {
+    "full_text": 389,
+    "full_text_plus_media_excerpt_if_needed": 152
+  },
+  "new_post_rows": 541,
+  "new_query_counts_top20": {
+    "AI数据分析": 37,
+    "AI文献阅读": 68,
+    "AI科研 哲学 论文写作": 7,
+    "AI科研 回复审稿": 10,
+    "AI科研 实验设计": 8,
+    "AI科研 投稿": 10,
+    "AI科研 数据清洗": 9,
+    "AI科研 文献检索": 10,
+    "AI科研 文献综述": 7,
+    "AI科研 计算机 论文写作": 7,
+    "AI科研 论文写作": 11,
+    "AI科研 选题": 7,
+    "AI科研诚信": 30,
+    "AI辅助科研 人工智能 文献检索": 8,
+    "AI辅助科研 历史 文献检索": 13,
+    "AI辅助科研 物理 统计分析": 6,
+    "ChatGPT 哲学 文献综述": 6,
+    "ChatGPT 数学 文献综述": 8,
+    "Claude 哲学 实验设计": 7,
+    "Gemini 历史 实验设计": 9
+  },
+  "new_query_group_counts": {
+    "A. AI科研总体类": 1,
+    "B. 文献处理与知识整合类": 239,
+    "C. 研究设计与方法学习类": 26,
+    "D. 数据分析与代码类": 98,
+    "E. 论文写作与成果表达类": 21,
+    "F. 科研规范与诚信类": 151,
+    "G. 科研训练与效率类": 5
+  },
+  "new_sidecar_comment_rows": 11850,
+  "notes": [
+    "Live XHS/OpenCLI remained unavailable due safety restriction; no bypass attempted.",
+    "v15 adds only supplemental candidates from existing public legacy note cache and media extracted text.",
+    "Rows require human review before any formal import or quality_v6/supplemental formalization."
+  ],
+  "outputs": {
+    "backlog_jsonl": "outputs/tables/xhs_expansion_candidate_v1/candidate_legacy_rescreen_backlog_v15.jsonl",
+    "candidate_jsonl": "outputs/tables/xhs_expansion_candidate_v1/candidate_expanded_v15.jsonl",
+    "report_md": "outputs/reports/xhs_expansion_candidate_v1/candidate_expanded_v15.report.md",
+    "review_queue_jsonl": "data/interim/xhs_expansion_candidate_v1/review_queues/xhs_expansion_candidate_v1.expanded_v15.review_queue.jsonl",
+    "review_template_jsonl": "data/interim/xhs_expansion_candidate_v1/reviewed/xhs_expansion_candidate_v1.expanded_v15.review_template.jsonl",
+    "sidecar_comments_jsonl": "outputs/tables/xhs_expansion_candidate_v1/candidate_expanded_v15_sidecar_comments.jsonl",
+    "summary_json": "outputs/reports/xhs_expansion_candidate_v1/candidate_expanded_v15.summary.json"
+  },
+  "quality_v5_formal_scope": false,
+  "row_count": 6221,
+  "sidecar_comment_count": 90027,
+  "skip_counts": {
+    "date_out_of_range": 179,
+    "insufficient_text": 1,
+    "missing_ai_or_research_signal": 1019
+  },
+  "source_scope": "xhs_expansion_candidate_v1",
+  "text_context_rows": 4428,
+  "v14_row_count": 5680,
+  "validation": {
+    "duplicate_candidate_ids": 0,
+    "duplicate_note_ids": 0,
+    "formal_flagged_post_rows": 0,
+    "formal_flagged_sidecar_comment_rows": 0,
+    "missing_post_url": 0,
+    "missing_query_group": 0
+  }
+}

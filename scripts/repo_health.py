@@ -11,9 +11,13 @@ from typing import Any, TypedDict
 FORMAL_STAGE = "quality_v5"
 FORMAL_POSTS = 514
 FORMAL_COMMENTS = 0
+ACTIVE_SUBMISSION_STAGE = "quality_v6"
+ACTIVE_SUBMISSION_POSTS = 714
+ACTIVE_SUBMISSION_COMMENTS = 0
 SUMMARY_PATH = Path("outputs/reports/freeze_checkpoints/research_db_summary.json")
 CONSISTENCY_PATH = Path("outputs/reports/freeze_checkpoints/quality_v5_consistency_report.json")
 PROVENANCE_PATH = Path("outputs/reports/freeze_checkpoints/quality_v5_artifact_provenance.json")
+ACTIVE_SUBMISSION_MANIFEST_PATH = Path("outputs/reports/paper_materials/paper_materials_manifest.json")
 SMOKE_RESIDUE_MANIFEST_PATH = Path("outputs/reports/review_v2/smoke_residue_manifest.json")
 PRUNE_DIR_NAMES = {".git", ".venv", "venv", "__pycache__", ".pytest_cache", ".ruff_cache"}
 ARTIFACT_CHECK_NAMES = (
@@ -147,6 +151,39 @@ def _check_file_record(root: Path, record: dict[str, Any]) -> list[str]:
     return failures
 
 
+def _check_expected_submission_manifest_switch(root: Path) -> list[str]:
+    manifest_path = _project_path(root, ACTIVE_SUBMISSION_MANIFEST_PATH)
+    if not manifest_path.exists():
+        return [f"{ACTIVE_SUBMISSION_MANIFEST_PATH}: active submission manifest missing"]
+
+    manifest = _load_json(manifest_path)
+    failures: list[str] = []
+    if manifest.get("formal_stage") != ACTIVE_SUBMISSION_STAGE:
+        failures.append(
+            f"{ACTIVE_SUBMISSION_MANIFEST_PATH}: formal_stage={manifest.get('formal_stage')!r}"
+        )
+    if manifest.get("previous_formal_stage") != FORMAL_STAGE:
+        failures.append(
+            f"{ACTIVE_SUBMISSION_MANIFEST_PATH}: previous_formal_stage="
+            f"{manifest.get('previous_formal_stage')!r}"
+        )
+    if int(manifest.get("formal_posts", -1)) != ACTIVE_SUBMISSION_POSTS:
+        failures.append(f"{ACTIVE_SUBMISSION_MANIFEST_PATH}: formal_posts={manifest.get('formal_posts')}")
+    if int(manifest.get("formal_comments", -1)) != ACTIVE_SUBMISSION_COMMENTS:
+        failures.append(
+            f"{ACTIVE_SUBMISSION_MANIFEST_PATH}: formal_comments={manifest.get('formal_comments')}"
+        )
+    if manifest.get("quality_v5_guard_counts") != {
+        "posts": FORMAL_POSTS,
+        "comments": FORMAL_COMMENTS,
+    }:
+        failures.append(
+            f"{ACTIVE_SUBMISSION_MANIFEST_PATH}: quality_v5_guard_counts="
+            f"{manifest.get('quality_v5_guard_counts')!r}"
+        )
+    return failures
+
+
 def _check_provenance(root: Path, *, allow_missing_source_db: bool) -> dict[str, Any]:
     provenance = _load_json(_project_path(root, PROVENANCE_PATH))
     failures: list[str] = []
@@ -171,6 +208,14 @@ def _check_provenance(root: Path, *, allow_missing_source_db: bool) -> dict[str,
         failures.append(f"{source_db['path']}: source DB missing")
 
     for record in provenance.get("files", {}).values():
+        relative_path = Path(str(record["path"]))
+        if relative_path == ACTIVE_SUBMISSION_MANIFEST_PATH:
+            active_manifest = _project_path(root, ACTIVE_SUBMISSION_MANIFEST_PATH)
+            if active_manifest.exists():
+                active_payload = _load_json(active_manifest)
+                if active_payload.get("formal_stage") != FORMAL_STAGE:
+                    failures.extend(_check_expected_submission_manifest_switch(root))
+                    continue
         failures.extend(_check_file_record(root, record))
 
     return {

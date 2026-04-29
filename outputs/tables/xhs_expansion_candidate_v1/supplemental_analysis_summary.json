@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-04-28T15:02:26.227375+00:00",
+  "source_scope": "xhs_expansion_candidate_v1",
+  "formal_scope": false,
+  "quality_v5_formal": false,
+  "supplemental_candidate": true,
+  "staged_path": "/Users/guoyufan/ai4s in xhs/data/interim/xhs_expansion_candidate_v1/staged_import/xhs_expansion_candidate_v1.accepted_posts.jsonl",
+  "reviewed_path": "/Users/guoyufan/ai4s in xhs/data/interim/xhs_expansion_candidate_v1/reviewed/xhs_expansion_candidate_v1.reviewed.jsonl",
+  "report_path": "/Users/guoyufan/ai4s in xhs/outputs/reports/xhs_expansion_candidate_v1/supplemental_analysis.md",
+  "summary_path": "/Users/guoyufan/ai4s in xhs/outputs/tables/xhs_expansion_candidate_v1/supplemental_analysis_summary.json",
+  "staged_accepted_count": 78,
+  "reviewed_count": 115,
+  "quality_v5_comparison_count": 514,
+  "table_files": {
+    "supplemental_decision_counts": {
+      "json": "/Users/guoyufan/ai4s in xhs/outputs/tables/xhs_expansion_candidate_v1/supplemental_decision_counts.json",
+      "csv": "/Users/guoyufan/ai4s in xhs/outputs/tables/xhs_expansion_candidate_v1/supplemental_decision_counts.csv"
+    },
+    "supplemental_query_group_distribution": {
+      "json": "/Users/guoyufan/ai4s in xhs/outputs/tables/xhs_expansion_candidate_v1/supplemental_query_group_distribution.json",
+      "csv": "/Users/guoyufan/ai4s in xhs/outputs/tables/xhs_expansion_candidate_v1/supplemental_query_group_distribution.csv"
+    },
+    "supplemental_post_month_distribution": {
+      "json": "/Users/guoyufan/ai4s in xhs/outputs/tables/xhs_expansion_candidate_v1/supplemental_post_month_distribution.json",
+      "csv": "/Users/guoyufan/ai4s in xhs/outputs/tables/xhs_expansion_candidate_v1/supplemental_post_month_distribution.csv"
+    },
+    "supplemental_text_type_distribution": {
+      "json": "/Users/guoyufan/ai4s in xhs/outputs/tables/xhs_expansion_candidate_v1/supplemental_text_type_distribution.json",
+      "csv": "/Users/guoyufan/ai4s in xhs/outputs/tables/xhs_expansion_candidate_v1/supplemental_text_type_distribution.csv"
+    },
+    "supplemental_research_theme_distribution": {
+      "json": "/Users/guoyufan/ai4s in xhs/outputs/tables/xhs_expansion_candidate_v1/supplemental_research_theme_distribution.json",
+      "csv": "/Users/guoyufan/ai4s in xhs/outputs/tables/xhs_expansion_candidate_v1/supplemental_research_theme_distribution.csv"
+    },
+    "supplemental_ai_intervention_mode_distribution": {
+      "json": "/Users/guoyufan/ai4s in xhs/outputs/tables/xhs_expansion_candidate_v1/supplemental_ai_intervention_mode_distribution.json",
+      "csv": "/Users/guoyufan/ai4s in xhs/outputs/tables/xhs_expansion_candidate_v1/supplemental_ai_intervention_mode_distribution.csv"
+    },
+    "supplemental_ai_intervention_intensity_distribution": {
+      "json": "/Users/guoyufan/ai4s in xhs/outputs/tables/xhs_expansion_candidate_v1/supplemental_ai_intervention_intensity_distribution.json",
+      "csv": "/Users/guoyufan/ai4s in xhs/outputs/tables/xhs_expansion_candidate_v1/supplemental_ai_intervention_intensity_distribution.csv"
+    },
+    "supplemental_normative_signal_distribution": {
+      "json": "/Users/guoyufan/ai4s in xhs/outputs/tables/xhs_expansion_candidate_v1/supplemental_normative_signal_distribution.json",
+      "csv": "/Users/guoyufan/ai4s in xhs/outputs/tables/xhs_expansion_candidate_v1/supplemental_normative_signal_distribution.csv"
+    },
+    "supplemental_boundary_signal_distribution": {
+      "json": "/Users/guoyufan/ai4s in xhs/outputs/tables/xhs_expansion_candidate_v1/supplemental_boundary_signal_distribution.json",
+      "csv": "/Users/guoyufan/ai4s in xhs/outputs/tables/xhs_expansion_candidate_v1/supplemental_boundary_signal_distribution.csv"
+    },
+    "supplemental_quality_v5_theme_comparison": {
+      "json": "/Users/guoyufan/ai4s in xhs/outputs/tables/xhs_expansion_candidate_v1/supplemental_quality_v5_theme_comparison.json",
+      "csv": "/Users/guoyufan/ai4s in xhs/outputs/tables/xhs_expansion_candidate_v1/supplemental_quality_v5_theme_comparison.csv"
+    },
+    "supplemental_quality_v5_text_type_comparison": {
+      "json": "/Users/guoyufan/ai4s in xhs/outputs/tables/xhs_expansion_candidate_v1/supplemental_quality_v5_text_type_comparison.json",
+      "csv": "/Users/guoyufan/ai4s in xhs/outputs/tables/xhs_expansion_candidate_v1/supplemental_quality_v5_text_type_comparison.csv"
+    },
+    "supplemental_gap_assessment": {
+      "json": "/Users/guoyufan/ai4s in xhs/outputs/tables/xhs_expansion_candidate_v1/supplemental_gap_assessment.json",
+      "csv": "/Users/guoyufan/ai4s in xhs/outputs/tables/xhs_expansion_candidate_v1/supplemental_gap_assessment.csv"
+    }
+  },
+  "notes": [
+    "Only describes xhs_expansion_candidate_v1 sample structure.",
+    "Does not write to research DB or quality_v5 formal scope.",
+    "Does not generate theoretical findings or paper conclusions."
+  ]
+}

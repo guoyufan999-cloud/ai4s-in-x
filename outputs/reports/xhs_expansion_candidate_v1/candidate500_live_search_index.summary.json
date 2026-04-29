@@ -1,0 +1,633 @@
+{
+  "artifact_id": "candidate500_live_search_index",
+  "scope": "xhs_expansion_candidate_v1",
+  "generated_at": "2026-04-28T16:33:21.978905+00:00",
+  "mode": "opencli_search_result_metadata_only",
+  "quality_v5_formal_scope": false,
+  "formal_scope": false,
+  "query_file": "data/external/xhs_expansion_candidate_v1_queries.json",
+  "query_count": 56,
+  "executed_query_count": 56,
+  "search_limit": 50,
+  "target": 500,
+  "row_count": 362,
+  "decision_counts": {
+    "review_needed": 362
+  },
+  "query_group_counts": {
+    "A. AI科研总体类": 47,
+    "B. 文献处理与知识整合类": 31,
+    "C. 研究设计与方法学习类": 38,
+    "D. 数据分析与代码类": 48,
+    "E. 论文写作与成果表达类": 77,
+    "F. 科研规范与诚信类": 79,
+    "G. 科研训练与效率类": 42
+  },
+  "post_date_missing_count": 49,
+  "skip_counts": {
+    "duplicate_existing_db": 276,
+    "duplicate_existing_candidate": 137,
+    "duplicate_current_run": 91
+  },
+  "errors": [],
+  "query_stats": [
+    {
+      "query": "AI科研",
+      "query_group": "A. AI科研总体类",
+      "search_hits": 16,
+      "kept": 3,
+      "skips": {
+        "duplicate_existing_db": 9,
+        "duplicate_existing_candidate": 4
+      }
+    },
+    {
+      "query": "AI辅助科研",
+      "query_group": "A. AI科研总体类",
+      "search_hits": 15,
+      "kept": 6,
+      "skips": {
+        "duplicate_existing_db": 7,
+        "duplicate_existing_candidate": 2
+      }
+    },
+    {
+      "query": "ChatGPT科研",
+      "query_group": "A. AI科研总体类",
+      "search_hits": 12,
+      "kept": 3,
+      "skips": {
+        "duplicate_current_run": 2,
+        "duplicate_existing_db": 7
+      }
+    },
+    {
+      "query": "生成式AI科研",
+      "query_group": "A. AI科研总体类",
+      "search_hits": 16,
+      "kept": 6,
+      "skips": {
+        "duplicate_existing_candidate": 6,
+        "duplicate_existing_db": 4
+      }
+    },
+    {
+      "query": "AI研究助手",
+      "query_group": "A. AI科研总体类",
+      "search_hits": 16,
+      "kept": 7,
+      "skips": {
+        "duplicate_existing_db": 7,
+        "duplicate_existing_candidate": 2
+      }
+    },
+    {
+      "query": "AI4Research",
+      "query_group": "A. AI科研总体类",
+      "search_hits": 16,
+      "kept": 12,
+      "skips": {
+        "duplicate_existing_db": 3,
+        "duplicate_existing_candidate": 1
+      }
+    },
+    {
+      "query": "AI4S",
+      "query_group": "A. AI科研总体类",
+      "search_hits": 14,
+      "kept": 10,
+      "skips": {
+        "duplicate_current_run": 2,
+        "duplicate_existing_candidate": 2
+      }
+    },
+    {
+      "query": "科研AI工具",
+      "query_group": "A. AI科研总体类",
+      "search_hits": 15,
+      "kept": 0,
+      "skips": {
+        "duplicate_existing_db": 6,
+        "duplicate_current_run": 7,
+        "duplicate_existing_candidate": 2
+      }
+    },
+    {
+      "query": "AI文献阅读",
+      "query_group": "B. 文献处理与知识整合类",
+      "search_hits": 14,
+      "kept": 1,
+      "skips": {
+        "duplicate_existing_candidate": 7,
+        "duplicate_existing_db": 5,
+        "duplicate_current_run": 1
+      }
+    },
+    {
+      "query": "AI读文献",
+      "query_group": "B. 文献处理与知识整合类",
+      "search_hits": 14,
+      "kept": 2,
+      "skips": {
+        "duplicate_existing_candidate": 4,
+        "duplicate_existing_db": 7,
+        "duplicate_current_run": 1
+      }
+    },
+    {
+      "query": "AI文献综述",
+      "query_group": "B. 文献处理与知识整合类",
+      "search_hits": 15,
+      "kept": 2,
+      "skips": {
+        "duplicate_existing_db": 11,
+        "duplicate_existing_candidate": 1,
+        "duplicate_current_run": 1
+      }
+    },
+    {
+      "query": "ChatGPT文献综述",
+      "query_group": "B. 文献处理与知识整合类",
+      "search_hits": 15,
+      "kept": 2,
+      "skips": {
+        "duplicate_existing_db": 9,
+        "duplicate_existing_candidate": 2,
+        "duplicate_current_run": 2
+      }
+    },
+    {
+      "query": "AI总结论文",
+      "query_group": "B. 文献处理与知识整合类",
+      "search_hits": 16,
+      "kept": 2,
+      "skips": {
+        "duplicate_current_run": 1,
+        "duplicate_existing_db": 9,
+        "duplicate_existing_candidate": 4
+      }
+    },
+    {
+      "query": "AI论文阅读",
+      "query_group": "B. 文献处理与知识整合类",
+      "search_hits": 17,
+      "kept": 2,
+      "skips": {
+        "duplicate_existing_db": 10,
+        "duplicate_current_run": 2,
+        "duplicate_existing_candidate": 3
+      }
+    },
+    {
+      "query": "AI文献管理",
+      "query_group": "B. 文献处理与知识整合类",
+      "search_hits": 16,
+      "kept": 8,
+      "skips": {
+        "duplicate_existing_candidate": 4,
+        "duplicate_existing_db": 4
+      }
+    },
+    {
+      "query": "AI翻译文献",
+      "query_group": "B. 文献处理与知识整合类",
+      "search_hits": 16,
+      "kept": 12,
+      "skips": {
+        "duplicate_existing_db": 2,
+        "duplicate_existing_candidate": 2
+      }
+    },
+    {
+      "query": "AI研究设计",
+      "query_group": "C. 研究设计与方法学习类",
+      "search_hits": 14,
+      "kept": 2,
+      "skips": {
+        "duplicate_existing_candidate": 3,
+        "duplicate_existing_db": 9
+      }
+    },
+    {
+      "query": "ChatGPT研究设计",
+      "query_group": "C. 研究设计与方法学习类",
+      "search_hits": 17,
+      "kept": 7,
+      "skips": {
+        "duplicate_existing_candidate": 3,
+        "duplicate_existing_db": 6,
+        "duplicate_current_run": 1
+      }
+    },
+    {
+      "query": "AI生成研究问题",
+      "query_group": "C. 研究设计与方法学习类",
+      "search_hits": 14,
+      "kept": 2,
+      "skips": {
+        "duplicate_existing_candidate": 3,
+        "duplicate_existing_db": 7,
+        "duplicate_current_run": 2
+      }
+    },
+    {
+      "query": "AI访谈提纲",
+      "query_group": "C. 研究设计与方法学习类",
+      "search_hits": 15,
+      "kept": 8,
+      "skips": {
+        "duplicate_existing_candidate": 5,
+        "duplicate_existing_db": 2
+      }
+    },
+    {
+      "query": "AI问卷设计",
+      "query_group": "C. 研究设计与方法学习类",
+      "search_hits": 15,
+      "kept": 9,
+      "skips": {
+        "duplicate_existing_candidate": 6
+      }
+    },
+    {
+      "query": "AI研究方法",
+      "query_group": "C. 研究设计与方法学习类",
+      "search_hits": 16,
+      "kept": 2,
+      "skips": {
+        "duplicate_existing_candidate": 5,
+        "duplicate_existing_db": 7,
+        "duplicate_current_run": 2
+      }
+    },
+    {
+      "query": "AI方法学习",
+      "query_group": "C. 研究设计与方法学习类",
+      "search_hits": 15,
+      "kept": 8,
+      "skips": {
+        "duplicate_existing_candidate": 3,
+        "duplicate_existing_db": 3,
+        "duplicate_current_run": 1
+      }
+    },
+    {
+      "query": "研究生AI科研",
+      "query_group": "C. 研究设计与方法学习类",
+      "search_hits": 15,
+      "kept": 0,
+      "skips": {
+        "duplicate_existing_candidate": 3,
+        "duplicate_existing_db": 9,
+        "duplicate_current_run": 3
+      }
+    },
+    {
+      "query": "AI数据分析",
+      "query_group": "D. 数据分析与代码类",
+      "search_hits": 16,
+      "kept": 4,
+      "skips": {
+        "duplicate_existing_candidate": 8,
+        "duplicate_current_run": 1,
+        "duplicate_existing_db": 3
+      }
+    },
+    {
+      "query": "ChatGPT数据分析",
+      "query_group": "D. 数据分析与代码类",
+      "search_hits": 15,
+      "kept": 1,
+      "skips": {
+        "duplicate_existing_db": 11,
+        "duplicate_existing_candidate": 3
+      }
+    },
+    {
+      "query": "AI写代码科研",
+      "query_group": "D. 数据分析与代码类",
+      "search_hits": 15,
+      "kept": 4,
+      "skips": {
+        "duplicate_existing_db": 10,
+        "duplicate_existing_candidate": 1
+      }
+    },
+    {
+      "query": "AI统计分析",
+      "query_group": "D. 数据分析与代码类",
+      "search_hits": 16,
+      "kept": 5,
+      "skips": {
+        "duplicate_existing_db": 4,
+        "duplicate_existing_candidate": 6,
+        "duplicate_current_run": 1
+      }
+    },
+    {
+      "query": "AI辅助建模",
+      "query_group": "D. 数据分析与代码类",
+      "search_hits": 16,
+      "kept": 12,
+      "skips": {
+        "duplicate_existing_db": 1,
+        "duplicate_current_run": 1,
+        "duplicate_existing_candidate": 2
+      }
+    },
+    {
+      "query": "AI结果解释",
+      "query_group": "D. 数据分析与代码类",
+      "search_hits": 16,
+      "kept": 11,
+      "skips": {
+        "duplicate_current_run": 2,
+        "duplicate_existing_db": 3
+      }
+    },
+    {
+      "query": "AI科研代码",
+      "query_group": "D. 数据分析与代码类",
+      "search_hits": 14,
+      "kept": 3,
+      "skips": {
+        "duplicate_existing_db": 9,
+        "duplicate_current_run": 2
+      }
+    },
+    {
+      "query": "AI分析论文数据",
+      "query_group": "D. 数据分析与代码类",
+      "search_hits": 17,
+      "kept": 8,
+      "skips": {
+        "duplicate_current_run": 3,
+        "duplicate_existing_db": 5,
+        "duplicate_existing_candidate": 1
+      }
+    },
+    {
+      "query": "AI写论文",
+      "query_group": "E. 论文写作与成果表达类",
+      "search_hits": 16,
+      "kept": 9,
+      "skips": {
+        "duplicate_existing_db": 3,
+        "duplicate_existing_candidate": 3,
+        "duplicate_current_run": 1
+      }
+    },
+    {
+      "query": "ChatGPT写论文",
+      "query_group": "E. 论文写作与成果表达类",
+      "search_hits": 16,
+      "kept": 10,
+      "skips": {
+        "duplicate_existing_db": 3,
+        "duplicate_existing_candidate": 2,
+        "duplicate_current_run": 1
+      }
+    },
+    {
+      "query": "AI论文润色",
+      "query_group": "E. 论文写作与成果表达类",
+      "search_hits": 17,
+      "kept": 12,
+      "skips": {
+        "duplicate_existing_db": 5
+      }
+    },
+    {
+      "query": "AI论文修改",
+      "query_group": "E. 论文写作与成果表达类",
+      "search_hits": 17,
+      "kept": 16,
+      "skips": {
+        "duplicate_existing_db": 1
+      }
+    },
+    {
+      "query": "AI论文摘要",
+      "query_group": "E. 论文写作与成果表达类",
+      "search_hits": 15,
+      "kept": 6,
+      "skips": {
+        "duplicate_existing_db": 3,
+        "duplicate_existing_candidate": 3,
+        "duplicate_current_run": 3
+      }
+    },
+    {
+      "query": "AI学术写作",
+      "query_group": "E. 论文写作与成果表达类",
+      "search_hits": 15,
+      "kept": 4,
+      "skips": {
+        "duplicate_current_run": 3,
+        "duplicate_existing_candidate": 3,
+        "duplicate_existing_db": 5
+      }
+    },
+    {
+      "query": "AI论文初稿",
+      "query_group": "E. 论文写作与成果表达类",
+      "search_hits": 16,
+      "kept": 9,
+      "skips": {
+        "duplicate_existing_db": 1,
+        "duplicate_existing_candidate": 3,
+        "duplicate_current_run": 3
+      }
+    },
+    {
+      "query": "AI投稿信",
+      "query_group": "E. 论文写作与成果表达类",
+      "search_hits": 15,
+      "kept": 11,
+      "skips": {
+        "duplicate_existing_candidate": 2,
+        "duplicate_existing_db": 2
+      }
+    },
+    {
+      "query": "AI代写论文",
+      "query_group": "F. 科研规范与诚信类",
+      "search_hits": 15,
+      "kept": 7,
+      "skips": {
+        "duplicate_existing_db": 5,
+        "duplicate_current_run": 3
+      }
+    },
+    {
+      "query": "AI学术不端",
+      "query_group": "F. 科研规范与诚信类",
+      "search_hits": 15,
+      "kept": 10,
+      "skips": {
+        "duplicate_existing_db": 4,
+        "duplicate_existing_candidate": 1
+      }
+    },
+    {
+      "query": "AI科研诚信",
+      "query_group": "F. 科研规范与诚信类",
+      "search_hits": 16,
+      "kept": 11,
+      "skips": {
+        "duplicate_current_run": 2,
+        "duplicate_existing_db": 3
+      }
+    },
+    {
+      "query": "AI使用披露",
+      "query_group": "F. 科研规范与诚信类",
+      "search_hits": 17,
+      "kept": 9,
+      "skips": {
+        "duplicate_existing_candidate": 1,
+        "duplicate_current_run": 6,
+        "duplicate_existing_db": 1
+      }
+    },
+    {
+      "query": "AI论文查重",
+      "query_group": "F. 科研规范与诚信类",
+      "search_hits": 18,
+      "kept": 9,
+      "skips": {
+        "duplicate_existing_db": 5,
+        "duplicate_current_run": 4
+      }
+    },
+    {
+      "query": "AI检测",
+      "query_group": "F. 科研规范与诚信类",
+      "search_hits": 17,
+      "kept": 14,
+      "skips": {
+        "duplicate_current_run": 1,
+        "duplicate_existing_db": 2
+      }
+    },
+    {
+      "query": "AI审稿",
+      "query_group": "F. 科研规范与诚信类",
+      "search_hits": 15,
+      "kept": 12,
+      "skips": {
+        "duplicate_existing_db": 3
+      }
+    },
+    {
+      "query": "AI生成内容检测",
+      "query_group": "F. 科研规范与诚信类",
+      "search_hits": 15,
+      "kept": 7,
+      "skips": {
+        "duplicate_current_run": 4,
+        "duplicate_existing_db": 2,
+        "duplicate_existing_candidate": 2
+      }
+    },
+    {
+      "query": "AI科研入门",
+      "query_group": "G. 科研训练与效率类",
+      "search_hits": 16,
+      "kept": 7,
+      "skips": {
+        "duplicate_existing_candidate": 3,
+        "duplicate_current_run": 2,
+        "duplicate_existing_db": 4
+      }
+    },
+    {
+      "query": "AI研究生工具",
+      "query_group": "G. 科研训练与效率类",
+      "search_hits": 13,
+      "kept": 7,
+      "skips": {
+        "duplicate_existing_db": 3,
+        "duplicate_current_run": 3
+      }
+    },
+    {
+      "query": "AI提升科研效率",
+      "query_group": "G. 科研训练与效率类",
+      "search_hits": 16,
+      "kept": 2,
+      "skips": {
+        "duplicate_current_run": 3,
+        "duplicate_existing_db": 7,
+        "duplicate_existing_candidate": 4
+      }
+    },
+    {
+      "query": "AI学术阅读",
+      "query_group": "G. 科研训练与效率类",
+      "search_hits": 15,
+      "kept": 4,
+      "skips": {
+        "duplicate_existing_db": 4,
+        "duplicate_existing_candidate": 5,
+        "duplicate_current_run": 2
+      }
+    },
+    {
+      "query": "AI写作训练",
+      "query_group": "G. 科研训练与效率类",
+      "search_hits": 17,
+      "kept": 9,
+      "skips": {
+        "duplicate_existing_db": 3,
+        "duplicate_current_run": 4,
+        "duplicate_existing_candidate": 1
+      }
+    },
+    {
+      "query": "AI科研效率",
+      "query_group": "G. 科研训练与效率类",
+      "search_hits": 13,
+      "kept": 1,
+      "skips": {
+        "duplicate_existing_db": 9,
+        "duplicate_existing_candidate": 2,
+        "duplicate_current_run": 1
+      }
+    },
+    {
+      "query": "AI博士",
+      "query_group": "G. 科研训练与效率类",
+      "search_hits": 14,
+      "kept": 9,
+      "skips": {
+        "duplicate_existing_candidate": 1,
+        "duplicate_existing_db": 3,
+        "duplicate_current_run": 1
+      }
+    },
+    {
+      "query": "AI硕士论文",
+      "query_group": "G. 科研训练与效率类",
+      "search_hits": 18,
+      "kept": 3,
+      "skips": {
+        "duplicate_existing_db": 6,
+        "duplicate_current_run": 6,
+        "duplicate_existing_candidate": 3
+      }
+    }
+  ],
+  "formal_baseline_guard_counts": {
+    "quality_v5_posts": 514,
+    "quality_v5_comments": 0
+  },
+  "limitations": [
+    "Rows contain public search-result metadata only, not verified full post bodies.",
+    "All rows are review_needed and must not be treated as formal evidence before manual public-page review.",
+    "The run does not import into the research database and does not alter quality_v5 formal scope."
+  ],
+  "output_path": "outputs/tables/xhs_expansion_candidate_v1/candidate500_live_search_index.jsonl",
+  "review_queue_path": "data/interim/xhs_expansion_candidate_v1/review_queues/candidate500_live_search_index.review_queue.jsonl",
+  "review_template_path": "data/interim/xhs_expansion_candidate_v1/reviewed/candidate500_live_search_index.review_template.jsonl"
+}

@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-04-28T18:53:29.152829+00:00",
+  "source_scope": "xhs_expansion_candidate_v1",
+  "formal_scope": false,
+  "quality_v5_formal": false,
+  "supplemental_candidate": true,
+  "staged_path": "data/interim/xhs_expansion_candidate_v1/staged_import/xhs_expansion_candidate_v1.expanded_v16_cleaned.accepted_posts.jsonl",
+  "reviewed_path": "data/interim/xhs_expansion_candidate_v1/reviewed/xhs_expansion_candidate_v1.expanded_v16_cleaned.codex_reviewed.jsonl",
+  "report_path": "outputs/reports/xhs_expansion_candidate_v1/supplemental_analysis_v16_cleaned.md",
+  "summary_path": "outputs/tables/xhs_expansion_candidate_v1/analysis_v16_cleaned/supplemental_analysis_summary.json",
+  "staged_accepted_count": 206,
+  "reviewed_count": 6221,
+  "quality_v5_comparison_count": 514,
+  "table_files": {
+    "supplemental_decision_counts": {
+      "json": "outputs/tables/xhs_expansion_candidate_v1/analysis_v16_cleaned/supplemental_decision_counts.json",
+      "csv": "outputs/tables/xhs_expansion_candidate_v1/analysis_v16_cleaned/supplemental_decision_counts.csv"
+    },
+    "supplemental_query_group_distribution": {
+      "json": "outputs/tables/xhs_expansion_candidate_v1/analysis_v16_cleaned/supplemental_query_group_distribution.json",
+      "csv": "outputs/tables/xhs_expansion_candidate_v1/analysis_v16_cleaned/supplemental_query_group_distribution.csv"
+    },
+    "supplemental_post_month_distribution": {
+      "json": "outputs/tables/xhs_expansion_candidate_v1/analysis_v16_cleaned/supplemental_post_month_distribution.json",
+      "csv": "outputs/tables/xhs_expansion_candidate_v1/analysis_v16_cleaned/supplemental_post_month_distribution.csv"
+    },
+    "supplemental_text_type_distribution": {
+      "json": "outputs/tables/xhs_expansion_candidate_v1/analysis_v16_cleaned/supplemental_text_type_distribution.json",
+      "csv": "outputs/tables/xhs_expansion_candidate_v1/analysis_v16_cleaned/supplemental_text_type_distribution.csv"
+    },
+    "supplemental_research_theme_distribution": {
+      "json": "outputs/tables/xhs_expansion_candidate_v1/analysis_v16_cleaned/supplemental_research_theme_distribution.json",
+      "csv": "outputs/tables/xhs_expansion_candidate_v1/analysis_v16_cleaned/supplemental_research_theme_distribution.csv"
+    },
+    "supplemental_ai_intervention_mode_distribution": {
+      "json": "outputs/tables/xhs_expansion_candidate_v1/analysis_v16_cleaned/supplemental_ai_intervention_mode_distribution.json",
+      "csv": "outputs/tables/xhs_expansion_candidate_v1/analysis_v16_cleaned/supplemental_ai_intervention_mode_distribution.csv"
+    },
+    "supplemental_ai_intervention_intensity_distribution": {
+      "json": "outputs/tables/xhs_expansion_candidate_v1/analysis_v16_cleaned/supplemental_ai_intervention_intensity_distribution.json",
+      "csv": "outputs/tables/xhs_expansion_candidate_v1/analysis_v16_cleaned/supplemental_ai_intervention_intensity_distribution.csv"
+    },
+    "supplemental_normative_signal_distribution": {
+      "json": "outputs/tables/xhs_expansion_candidate_v1/analysis_v16_cleaned/supplemental_normative_signal_distribution.json",
+      "csv": "outputs/tables/xhs_expansion_candidate_v1/analysis_v16_cleaned/supplemental_normative_signal_distribution.csv"
+    },
+    "supplemental_boundary_signal_distribution": {
+      "json": "outputs/tables/xhs_expansion_candidate_v1/analysis_v16_cleaned/supplemental_boundary_signal_distribution.json",
+      "csv": "outputs/tables/xhs_expansion_candidate_v1/analysis_v16_cleaned/supplemental_boundary_signal_distribution.csv"
+    },
+    "supplemental_quality_v5_theme_comparison": {
+      "json": "outputs/tables/xhs_expansion_candidate_v1/analysis_v16_cleaned/supplemental_quality_v5_theme_comparison.json",
+      "csv": "outputs/tables/xhs_expansion_candidate_v1/analysis_v16_cleaned/supplemental_quality_v5_theme_comparison.csv"
+    },
+    "supplemental_quality_v5_text_type_comparison": {
+      "json": "outputs/tables/xhs_expansion_candidate_v1/analysis_v16_cleaned/supplemental_quality_v5_text_type_comparison.json",
+      "csv": "outputs/tables/xhs_expansion_candidate_v1/analysis_v16_cleaned/supplemental_quality_v5_text_type_comparison.csv"
+    },
+    "supplemental_gap_assessment": {
+      "json": "outputs/tables/xhs_expansion_candidate_v1/analysis_v16_cleaned/supplemental_gap_assessment.json",
+      "csv": "outputs/tables/xhs_expansion_candidate_v1/analysis_v16_cleaned/supplemental_gap_assessment.csv"
+    }
+  },
+  "notes": [
+    "Only describes xhs_expansion_candidate_v1 sample structure.",
+    "Does not write to research DB or quality_v5 formal scope.",
+    "Does not generate theoretical findings or paper conclusions."
+  ]
+}

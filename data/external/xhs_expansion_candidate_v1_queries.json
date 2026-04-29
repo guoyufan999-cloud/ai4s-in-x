@@ -1,0 +1,405 @@
+{
+  "metadata": {
+    "dictionary_id": "xhs_expansion_candidate_v1_queries",
+    "version": "2026-04-28",
+    "platform": "xiaohongshu",
+    "scope": "supplemental_candidate_only",
+    "quality_v5_formal_scope": false,
+    "formal_baseline_policy": "This query dictionary only supports xhs_expansion_candidate_v1 exploratory candidate harvesting. It must not be treated as a quality_v5 formal result source without later manual review and a separate checkpoint.",
+    "paper_title": "社交媒体中AI介入科研活动的实践呈现、规范评价与边界协商研究"
+  },
+  "queries": [
+    {
+      "query": "AI科研",
+      "query_group": "A. AI科研总体类",
+      "intent": "捕捉宽口径AI介入科研活动讨论，作为补充样本入口。",
+      "expected_workflow_stage": "跨场域/待人工判定",
+      "notes": "高召回；可能混入泛AI工具、课程和营销内容，需人工筛选科研活动指向。"
+    },
+    {
+      "query": "AI辅助科研",
+      "query_group": "A. AI科研总体类",
+      "intent": "检索明确把AI定位为科研辅助工具的帖子。",
+      "expected_workflow_stage": "跨场域/待人工判定",
+      "notes": "较高精度；适合发现科研工作流中的辅助性使用场景。"
+    },
+    {
+      "query": "ChatGPT科研",
+      "query_group": "A. AI科研总体类",
+      "intent": "捕捉以ChatGPT为代表的生成式AI科研实践讨论。",
+      "expected_workflow_stage": "跨场域/待人工判定",
+      "notes": "高召回；可能混入工具教程、账号推广和一般学习场景。"
+    },
+    {
+      "query": "生成式AI科研",
+      "query_group": "A. AI科研总体类",
+      "intent": "检索围绕生成式AI进入科研活动的概念性和实践性讨论。",
+      "expected_workflow_stage": "跨场域/待人工判定",
+      "notes": "偏高精度但样本可能较少；适合补充规范评价和边界讨论。"
+    },
+    {
+      "query": "AI研究助手",
+      "query_group": "A. AI科研总体类",
+      "intent": "捕捉用户将AI拟人化或工具化为研究助手的实践呈现。",
+      "expected_workflow_stage": "跨场域/待人工判定",
+      "notes": "中等召回；可能混入产品广告和效率工具推荐。"
+    },
+    {
+      "query": "AI4Research",
+      "query_group": "A. AI科研总体类",
+      "intent": "补充英文术语下的AI介入科研活动讨论。",
+      "expected_workflow_stage": "跨场域/待人工判定",
+      "notes": "偏高精度但召回较低；适合识别较专业的研究者表达。"
+    },
+    {
+      "query": "AI4S",
+      "query_group": "A. AI科研总体类",
+      "intent": "保留旧项目表述与科学智能相关入口，支持历史口径追踪。",
+      "expected_workflow_stage": "跨场域/待人工判定",
+      "notes": "召回可能较低；可能偏向AI for Science技术讨论而非社交媒体科研实践。"
+    },
+    {
+      "query": "科研AI工具",
+      "query_group": "A. AI科研总体类",
+      "intent": "检索以工具清单、工具推荐形式出现的科研AI实践材料。",
+      "expected_workflow_stage": "跨场域/待人工判定",
+      "notes": "高召回；广告、工具合集和低实践密度内容较多。"
+    },
+    {
+      "query": "AI文献阅读",
+      "query_group": "B. 文献处理与知识整合类",
+      "intent": "捕捉AI用于阅读、理解和整理学术文献的实践。",
+      "expected_workflow_stage": "A1 科研生产：文献处理与知识整合",
+      "notes": "较高精度；适合识别F1信息辅助和G1低强度辅助场景。"
+    },
+    {
+      "query": "AI读文献",
+      "query_group": "B. 文献处理与知识整合类",
+      "intent": "检索用户关于AI辅助读论文、读文献的经验分享。",
+      "expected_workflow_stage": "A1 科研生产：文献处理与知识整合",
+      "notes": "高召回；可能混入学生学习、备考和知识付费内容。"
+    },
+    {
+      "query": "AI文献综述",
+      "query_group": "B. 文献处理与知识整合类",
+      "intent": "捕捉AI参与综述整理、综述框架生成和文献整合的帖子。",
+      "expected_workflow_stage": "A1 科研生产：文献综述/知识整合",
+      "notes": "高精度；同时可能引出原创性、核查和责任归属评价。"
+    },
+    {
+      "query": "ChatGPT文献综述",
+      "query_group": "B. 文献处理与知识整合类",
+      "intent": "检索ChatGPT用于文献综述写作或辅助整理的具体实践。",
+      "expected_workflow_stage": "A1 科研生产：文献综述/知识整合",
+      "notes": "高精度；可能混入论文代写广告，需审查是否有真实实践证据。"
+    },
+    {
+      "query": "AI总结论文",
+      "query_group": "B. 文献处理与知识整合类",
+      "intent": "捕捉AI摘要论文、提炼贡献和整理要点的使用场景。",
+      "expected_workflow_stage": "A1 科研生产：文献处理与知识整合",
+      "notes": "较高召回；常见于工具教程，需区分科研实践和一般阅读。"
+    },
+    {
+      "query": "AI论文阅读",
+      "query_group": "B. 文献处理与知识整合类",
+      "intent": "检索围绕论文阅读效率、理解辅助和文献输入的AI使用。",
+      "expected_workflow_stage": "A1 科研生产：文献处理与知识整合",
+      "notes": "较高精度；有助于补充科研训练与能力建构材料。"
+    },
+    {
+      "query": "AI文献管理",
+      "query_group": "B. 文献处理与知识整合类",
+      "intent": "捕捉AI进入文献管理、标签整理和资料库组织的实践。",
+      "expected_workflow_stage": "A1 科研生产：文献管理/知识组织",
+      "notes": "中等召回；可能偏工具推荐，需关注是否呈现科研工作流。"
+    },
+    {
+      "query": "AI翻译文献",
+      "query_group": "B. 文献处理与知识整合类",
+      "intent": "检索AI用于外文文献翻译和跨语言理解的帖子。",
+      "expected_workflow_stage": "A1 科研生产：文献处理与知识整合",
+      "notes": "较高精度；通常对应低强度辅助，但需核查是否涉及理解偏差风险。"
+    },
+    {
+      "query": "AI研究设计",
+      "query_group": "C. 研究设计与方法学习类",
+      "intent": "捕捉AI参与选题、研究方案、变量或方法设计的实践。",
+      "expected_workflow_stage": "A1 科研生产：研究设计；A3 科研训练",
+      "notes": "较高精度；适合观察F4判断建议和责任边界。"
+    },
+    {
+      "query": "ChatGPT研究设计",
+      "query_group": "C. 研究设计与方法学习类",
+      "intent": "检索ChatGPT辅助研究设计和方案构思的具体案例。",
+      "expected_workflow_stage": "A1 科研生产：研究设计；A3 科研训练",
+      "notes": "较高精度；需区分辅助构思和替代核心判断。"
+    },
+    {
+      "query": "AI生成研究问题",
+      "query_group": "C. 研究设计与方法学习类",
+      "intent": "捕捉AI生成研究问题、假设和选题方向的实践。",
+      "expected_workflow_stage": "A1 科研生产：研究设计",
+      "notes": "高精度但样本可能少；容易触发原创性和主体责任评价。"
+    },
+    {
+      "query": "AI访谈提纲",
+      "query_group": "C. 研究设计与方法学习类",
+      "intent": "检索AI参与质性研究访谈提纲设计的材料。",
+      "expected_workflow_stage": "A1 科研生产：研究设计/资料采集准备",
+      "notes": "较高精度；可能补充人文社科科研实践样本。"
+    },
+    {
+      "query": "AI问卷设计",
+      "query_group": "C. 研究设计与方法学习类",
+      "intent": "捕捉AI辅助问卷题项、量表和调研设计的实践。",
+      "expected_workflow_stage": "A1 科研生产：研究设计/资料采集准备",
+      "notes": "较高精度；需注意教育培训、营销调研等非科研噪声。"
+    },
+    {
+      "query": "AI研究方法",
+      "query_group": "C. 研究设计与方法学习类",
+      "intent": "检索AI辅助理解、选择或学习研究方法的帖子。",
+      "expected_workflow_stage": "A3 科研训练与能力建构；A1 研究设计",
+      "notes": "高召回；可能混入课程广告和学习笔记。"
+    },
+    {
+      "query": "AI方法学习",
+      "query_group": "C. 研究设计与方法学习类",
+      "intent": "捕捉AI作为方法学习教练或解释工具的使用。",
+      "expected_workflow_stage": "A3 科研训练与能力建构",
+      "notes": "中等召回；需筛除一般学习场景。"
+    },
+    {
+      "query": "研究生AI科研",
+      "query_group": "C. 研究设计与方法学习类",
+      "intent": "检索研究生群体围绕AI科研训练、效率和方法学习的讨论。",
+      "expected_workflow_stage": "A3 科研训练与能力建构；A1 科研生产",
+      "notes": "高召回；用户身份较清晰，但可能混入升学、课程和工具推广。"
+    },
+    {
+      "query": "AI数据分析",
+      "query_group": "D. 数据分析与代码类",
+      "intent": "捕捉AI用于数据清洗、分析和结果处理的实践。",
+      "expected_workflow_stage": "A1 科研生产：数据分析",
+      "notes": "高召回；需排除商业数据分析和运营分析噪声。"
+    },
+    {
+      "query": "ChatGPT数据分析",
+      "query_group": "D. 数据分析与代码类",
+      "intent": "检索ChatGPT辅助数据分析、代码解释和分析流程设计的帖子。",
+      "expected_workflow_stage": "A1 科研生产：数据分析",
+      "notes": "较高精度；适合识别F3分析建模和可验证性评价。"
+    },
+    {
+      "query": "AI写代码科研",
+      "query_group": "D. 数据分析与代码类",
+      "intent": "捕捉AI在科研代码、脚本、数据处理程序中的使用。",
+      "expected_workflow_stage": "A1 科研生产：代码生成/数据处理",
+      "notes": "较高精度；可能混入一般软件开发，需检查科研语境。"
+    },
+    {
+      "query": "AI统计分析",
+      "query_group": "D. 数据分析与代码类",
+      "intent": "检索AI辅助统计方法选择、统计代码和结果解释的帖子。",
+      "expected_workflow_stage": "A1 科研生产：统计分析",
+      "notes": "高精度；适合观察可靠性、专业判断和责任归属问题。"
+    },
+    {
+      "query": "AI辅助建模",
+      "query_group": "D. 数据分析与代码类",
+      "intent": "捕捉AI参与模型构建、建模建议和仿真分析的讨论。",
+      "expected_workflow_stage": "A1 科研生产：建模/分析",
+      "notes": "中等精度；可能混入AI模型开发教程，需要人工判定科研活动对象。"
+    },
+    {
+      "query": "AI结果解释",
+      "query_group": "D. 数据分析与代码类",
+      "intent": "检索AI辅助解释实验结果、统计结果或模型输出的帖子。",
+      "expected_workflow_stage": "A1 科研生产：结果解释",
+      "notes": "高精度但样本可能少；适合识别F4判断建议和专业判断边界。"
+    },
+    {
+      "query": "AI科研代码",
+      "query_group": "D. 数据分析与代码类",
+      "intent": "捕捉科研代码生成、调试和复现中的AI使用。",
+      "expected_workflow_stage": "A1 科研生产：代码生成/复现",
+      "notes": "较高精度；需区分科研代码与一般开发项目。"
+    },
+    {
+      "query": "AI分析论文数据",
+      "query_group": "D. 数据分析与代码类",
+      "intent": "检索AI分析论文数据、实验数据或调研数据的实践材料。",
+      "expected_workflow_stage": "A1 科研生产：数据分析",
+      "notes": "高精度；适合补充分析建模与结果解释场景。"
+    },
+    {
+      "query": "AI写论文",
+      "query_group": "E. 论文写作与成果表达类",
+      "intent": "捕捉AI参与论文写作、初稿生成和表达优化的实践。",
+      "expected_workflow_stage": "A1 科研生产：论文写作",
+      "notes": "高召回；代写广告和模板营销噪声较多。"
+    },
+    {
+      "query": "ChatGPT写论文",
+      "query_group": "E. 论文写作与成果表达类",
+      "intent": "检索ChatGPT用于论文写作的经验、教程和争议。",
+      "expected_workflow_stage": "A1 科研生产：论文写作",
+      "notes": "高召回；强规范风险词，需人工区分辅助写作与不可接受替代。"
+    },
+    {
+      "query": "AI论文润色",
+      "query_group": "E. 论文写作与成果表达类",
+      "intent": "捕捉AI用于语言润色、表达优化和英文修改的实践。",
+      "expected_workflow_stage": "A1 科研生产：成果表达",
+      "notes": "高精度；常对应较低或中等介入强度，但可能混入商业润色服务。"
+    },
+    {
+      "query": "AI论文修改",
+      "query_group": "E. 论文写作与成果表达类",
+      "intent": "检索AI参与论文结构、段落、逻辑和修改建议的帖子。",
+      "expected_workflow_stage": "A1 科研生产：论文修改",
+      "notes": "较高精度；适合观察共创便利与原创性担忧。"
+    },
+    {
+      "query": "AI论文摘要",
+      "query_group": "E. 论文写作与成果表达类",
+      "intent": "捕捉AI生成或优化论文摘要的具体实践。",
+      "expected_workflow_stage": "A1 科研生产：成果表达",
+      "notes": "较高精度；需关注是否为核心产出替代。"
+    },
+    {
+      "query": "AI学术写作",
+      "query_group": "E. 论文写作与成果表达类",
+      "intent": "检索学术写作场景下AI使用、训练和规范评价。",
+      "expected_workflow_stage": "A1 科研生产：成果表达；A3 写作训练",
+      "notes": "高召回；可能混入英语学习、课程和写作产品广告。"
+    },
+    {
+      "query": "AI论文初稿",
+      "query_group": "E. 论文写作与成果表达类",
+      "intent": "捕捉AI生成论文初稿、草稿和框架的实践。",
+      "expected_workflow_stage": "A1 科研生产：论文写作",
+      "notes": "高精度；容易触发替代边界、原创性和披露要求问题。"
+    },
+    {
+      "query": "AI投稿信",
+      "query_group": "E. 论文写作与成果表达类",
+      "intent": "检索AI辅助投稿信、cover letter和投稿材料表达的帖子。",
+      "expected_workflow_stage": "A1 科研生产：投稿与成果表达",
+      "notes": "高精度但样本可能少；适合补充成果传播环节。"
+    },
+    {
+      "query": "AI代写论文",
+      "query_group": "F. 科研规范与诚信类",
+      "intent": "捕捉AI替代写作、代写风险和不可接受使用边界。",
+      "expected_workflow_stage": "A2 科研治理/规范评价；A1 论文写作风险",
+      "notes": "高精度风险词；广告和违规服务推广噪声很高，需严格筛除。"
+    },
+    {
+      "query": "AI学术不端",
+      "query_group": "F. 科研规范与诚信类",
+      "intent": "检索AI使用与学术不端、诚信风险相关的评价材料。",
+      "expected_workflow_stage": "A2 科研治理/规范评价",
+      "notes": "高精度；适合补充规范评价、边界生成和风险化机制。"
+    },
+    {
+      "query": "AI科研诚信",
+      "query_group": "F. 科研规范与诚信类",
+      "intent": "捕捉AI介入科研活动中的诚信规范和责任讨论。",
+      "expected_workflow_stage": "A2 科研治理/规范评价",
+      "notes": "高精度但召回较低；有助于连接正式规范参照。"
+    },
+    {
+      "query": "AI使用披露",
+      "query_group": "F. 科研规范与诚信类",
+      "intent": "检索关于论文、投稿或研究过程中披露AI使用的讨论。",
+      "expected_workflow_stage": "A2 科研治理/披露规则",
+      "notes": "高精度；适合识别I5披露要求、责任化和规范化机制。"
+    },
+    {
+      "query": "AI论文查重",
+      "query_group": "F. 科研规范与诚信类",
+      "intent": "捕捉AI生成内容与查重、重复率、检测风险相关讨论。",
+      "expected_workflow_stage": "A2 科研治理/学术诚信",
+      "notes": "高召回；商业检测服务广告较多，需要过滤。"
+    },
+    {
+      "query": "AI检测",
+      "query_group": "F. 科研规范与诚信类",
+      "intent": "检索AI生成内容检测、检测误差和治理争议。",
+      "expected_workflow_stage": "A2 科研治理/检测与监督",
+      "notes": "高召回但泛化严重；可能混入教育作业检测和产品营销。"
+    },
+    {
+      "query": "AI审稿",
+      "query_group": "F. 科研规范与诚信类",
+      "intent": "捕捉AI用于审稿、评审辅助或审稿回复的规范讨论。",
+      "expected_workflow_stage": "A2 科研治理；A1 投稿与审稿回应",
+      "notes": "中高精度；需区分审稿辅助、回复审稿和平台治理场景。"
+    },
+    {
+      "query": "AI生成内容检测",
+      "query_group": "F. 科研规范与诚信类",
+      "intent": "检索AIGC检测、误判、公平透明和治理监督讨论。",
+      "expected_workflow_stage": "A2 科研治理/检测与监督",
+      "notes": "高精度；适合观察自动化治理 vs 公平透明张力。"
+    },
+    {
+      "query": "AI科研入门",
+      "query_group": "G. 科研训练与效率类",
+      "intent": "捕捉初学者如何使用AI进入科研流程的训练性材料。",
+      "expected_workflow_stage": "A3 科研训练与能力建构",
+      "notes": "高召回；课程、工具包和广告噪声较多。"
+    },
+    {
+      "query": "AI研究生工具",
+      "query_group": "G. 科研训练与效率类",
+      "intent": "检索研究生群体使用AI工具提升科研效率的经验分享。",
+      "expected_workflow_stage": "A3 科研训练与能力建构；A1 科研生产",
+      "notes": "高召回；身份场景清晰，但工具合集噪声高。"
+    },
+    {
+      "query": "AI提升科研效率",
+      "query_group": "G. 科研训练与效率类",
+      "intent": "捕捉AI效率提升叙事及其对应工作流位置。",
+      "expected_workflow_stage": "A1 科研生产；A3 科研训练",
+      "notes": "较高精度；适合观察效率提升与可靠性/原创性张力。"
+    },
+    {
+      "query": "AI学术阅读",
+      "query_group": "G. 科研训练与效率类",
+      "intent": "检索AI辅助学术阅读、阅读训练和效率提升材料。",
+      "expected_workflow_stage": "A3 科研训练；A1 文献处理",
+      "notes": "中高召回；可能混入语言学习和课程推广。"
+    },
+    {
+      "query": "AI写作训练",
+      "query_group": "G. 科研训练与效率类",
+      "intent": "捕捉AI用于学术写作训练、表达训练和能力建构的帖子。",
+      "expected_workflow_stage": "A3 科研训练与能力建构",
+      "notes": "中等精度；需区分能力训练与成果替代。"
+    },
+    {
+      "query": "AI科研效率",
+      "query_group": "G. 科研训练与效率类",
+      "intent": "检索围绕AI提高科研效率的实践和评价。",
+      "expected_workflow_stage": "A1 科研生产；A3 科研训练",
+      "notes": "高召回；可能泛化为工具榜单，需要人工判断具体使用方式。"
+    },
+    {
+      "query": "AI博士",
+      "query_group": "G. 科研训练与效率类",
+      "intent": "捕捉博士群体关于AI科研、写作、阅读和训练的讨论。",
+      "expected_workflow_stage": "A3 科研训练；A1 科研生产",
+      "notes": "高召回；可能混入个人成长、求职和学习经验内容。"
+    },
+    {
+      "query": "AI硕士论文",
+      "query_group": "G. 科研训练与效率类",
+      "intent": "检索硕士论文场景下AI写作、分析和规范风险讨论。",
+      "expected_workflow_stage": "A3 科研训练；A1 论文写作",
+      "notes": "较高精度；适合观察训练价值、替代边界和学术诚信评价。"
+    }
+  ]
+}

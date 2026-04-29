@@ -175,3 +175,44 @@ def test_artifact_health_runs_only_artifact_checks(tmp_path: Path) -> None:
         "wal_shm",
     }
     assert "ignored_cache_size" not in payload["checks"]
+
+
+def test_artifact_health_accepts_quality_v6_submission_manifest_with_quality_v5_guard(
+    tmp_path: Path,
+) -> None:
+    _create_health_fixture(tmp_path)
+    manifest_relative = "outputs/reports/paper_materials/paper_materials_manifest.json"
+    manifest_path = tmp_path / manifest_relative
+    _write_json(
+        manifest_path,
+        {
+            "formal_stage": "quality_v5",
+            "formal_posts": 514,
+            "formal_comments": 0,
+        },
+    )
+    provenance_path = (
+        tmp_path / "outputs" / "reports" / "freeze_checkpoints" / "quality_v5_artifact_provenance.json"
+    )
+    provenance = json.loads(provenance_path.read_text(encoding="utf-8"))
+    provenance["files"]["paper_materials_manifest"] = _file_record(tmp_path, manifest_relative)
+    _write_json(provenance_path, provenance)
+    _write_json(
+        manifest_path,
+        {
+            "formal_stage": "quality_v6",
+            "previous_formal_stage": "quality_v5",
+            "formal_posts": 714,
+            "formal_comments": 0,
+            "quality_v5_guard_counts": {"posts": 514, "comments": 0},
+            "comment_scope_note": "comment_review_v2 deferred",
+        },
+    )
+    subprocess.run(["git", "add", "."], cwd=tmp_path, check=True)
+
+    process = _run_artifact_health(tmp_path)
+    payload = json.loads(process.stdout)
+
+    assert process.returncode == 0
+    assert payload["status"] == "ok"
+    assert payload["checks"]["provenance"]["status"] == "ok"

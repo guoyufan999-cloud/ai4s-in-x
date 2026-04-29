@@ -1,0 +1,312 @@
+[
+  {
+    "workflow_stage": "uncertain",
+    "legitimacy_stance": "中性经验帖",
+    "post_count": 23
+  },
+  {
+    "workflow_stage": "uncertain",
+    "legitimacy_stance": "积极但保留",
+    "post_count": 6
+  },
+  {
+    "workflow_stage": "uncertain",
+    "legitimacy_stance": "积极采用",
+    "post_count": 3
+  },
+  {
+    "workflow_stage": "出版与评审治理",
+    "legitimacy_stance": "中性经验帖",
+    "post_count": 3
+  },
+  {
+    "workflow_stage": "出版与评审治理",
+    "legitimacy_stance": "有条件接受",
+    "post_count": 2
+  },
+  {
+    "workflow_stage": "出版与评审治理",
+    "legitimacy_stance": "未表达评价",
+    "post_count": 1
+  },
+  {
+    "workflow_stage": "出版与评审治理",
+    "legitimacy_stance": "混合/冲突性评价",
+    "post_count": 1
+  },
+  {
+    "workflow_stage": "出版与评审治理",
+    "legitimacy_stance": "质疑/否定",
+    "post_count": 2
+  },
+  {
+    "workflow_stage": "发表与知识扩散",
+    "legitimacy_stance": "有条件接受",
+    "post_count": 1
+  },
+  {
+    "workflow_stage": "发表与知识扩散",
+    "legitimacy_stance": "未表达评价",
+    "post_count": 1
+  },
+  {
+    "workflow_stage": "发表与知识扩散",
+    "legitimacy_stance": "混合/冲突性评价",
+    "post_count": 5
+  },
+  {
+    "workflow_stage": "发表与知识扩散",
+    "legitimacy_stance": "质疑/否定",
+    "post_count": 1
+  },
+  {
+    "workflow_stage": "学术写作与成果表达",
+    "legitimacy_stance": "中性经验帖",
+    "post_count": 7
+  },
+  {
+    "workflow_stage": "学术写作与成果表达",
+    "legitimacy_stance": "有条件接受",
+    "post_count": 19
+  },
+  {
+    "workflow_stage": "学术写作与成果表达",
+    "legitimacy_stance": "未表达评价",
+    "post_count": 3
+  },
+  {
+    "workflow_stage": "学术写作与成果表达",
+    "legitimacy_stance": "正面接受/正当化",
+    "post_count": 1
+  },
+  {
+    "workflow_stage": "学术写作与成果表达",
+    "legitimacy_stance": "混合/冲突性评价",
+    "post_count": 14
+  },
+  {
+    "workflow_stage": "学术写作与成果表达",
+    "legitimacy_stance": "积极但保留",
+    "post_count": 1
+  },
+  {
+    "workflow_stage": "学术写作与成果表达",
+    "legitimacy_stance": "积极采用",
+    "post_count": 1
+  },
+  {
+    "workflow_stage": "学术写作与成果表达",
+    "legitimacy_stance": "质疑/否定",
+    "post_count": 6
+  },
+  {
+    "workflow_stage": "学术阅读与写作能力训练",
+    "legitimacy_stance": "混合/冲突性评价",
+    "post_count": 1
+  },
+  {
+    "workflow_stage": "实验实施与仿真执行",
+    "legitimacy_stance": "有条件接受",
+    "post_count": 2
+  },
+  {
+    "workflow_stage": "实验实施与仿真执行",
+    "legitimacy_stance": "未表达评价",
+    "post_count": 1
+  },
+  {
+    "workflow_stage": "实验实施与仿真执行",
+    "legitimacy_stance": "混合/冲突性评价",
+    "post_count": 1
+  },
+  {
+    "workflow_stage": "数据处理与分析建模",
+    "legitimacy_stance": "中性经验帖",
+    "post_count": 14
+  },
+  {
+    "workflow_stage": "数据处理与分析建模",
+    "legitimacy_stance": "有条件接受",
+    "post_count": 27
+  },
+  {
+    "workflow_stage": "数据处理与分析建模",
+    "legitimacy_stance": "未表达评价",
+    "post_count": 3
+  },
+  {
+    "workflow_stage": "数据处理与分析建模",
+    "legitimacy_stance": "正面接受/正当化",
+    "post_count": 5
+  },
+  {
+    "workflow_stage": "数据处理与分析建模",
+    "legitimacy_stance": "混合/冲突性评价",
+    "post_count": 20
+  },
+  {
+    "workflow_stage": "数据处理与分析建模",
+    "legitimacy_stance": "积极但保留",
+    "post_count": 6
+  },
+  {
+    "workflow_stage": "数据处理与分析建模",
+    "legitimacy_stance": "积极采用",
+    "post_count": 10
+  },
+  {
+    "workflow_stage": "数据处理与分析建模",
+    "legitimacy_stance": "质疑/否定",
+    "post_count": 3
+  },
+  {
+    "workflow_stage": "数据获取",
+    "legitimacy_stance": "有条件接受",
+    "post_count": 2
+  },
+  {
+    "workflow_stage": "数据获取",
+    "legitimacy_stance": "未表达评价",
+    "post_count": 1
+  },
+  {
+    "workflow_stage": "数据获取",
+    "legitimacy_stance": "混合/冲突性评价",
+    "post_count": 7
+  },
+  {
+    "workflow_stage": "文献调研与知识整合",
+    "legitimacy_stance": "中性经验帖",
+    "post_count": 60
+  },
+  {
+    "workflow_stage": "文献调研与知识整合",
+    "legitimacy_stance": "有条件接受",
+    "post_count": 110
+  },
+  {
+    "workflow_stage": "文献调研与知识整合",
+    "legitimacy_stance": "未表达评价",
+    "post_count": 10
+  },
+  {
+    "workflow_stage": "文献调研与知识整合",
+    "legitimacy_stance": "正面接受/正当化",
+    "post_count": 19
+  },
+  {
+    "workflow_stage": "文献调研与知识整合",
+    "legitimacy_stance": "混合/冲突性评价",
+    "post_count": 99
+  },
+  {
+    "workflow_stage": "文献调研与知识整合",
+    "legitimacy_stance": "积极但保留",
+    "post_count": 18
+  },
+  {
+    "workflow_stage": "文献调研与知识整合",
+    "legitimacy_stance": "积极采用",
+    "post_count": 14
+  },
+  {
+    "workflow_stage": "文献调研与知识整合",
+    "legitimacy_stance": "质疑/否定",
+    "post_count": 9
+  },
+  {
+    "workflow_stage": "研究方法学习",
+    "legitimacy_stance": "有条件接受",
+    "post_count": 3
+  },
+  {
+    "workflow_stage": "研究方法学习",
+    "legitimacy_stance": "混合/冲突性评价",
+    "post_count": 2
+  },
+  {
+    "workflow_stage": "研究构思与问题定义",
+    "legitimacy_stance": "有条件接受",
+    "post_count": 58
+  },
+  {
+    "workflow_stage": "研究构思与问题定义",
+    "legitimacy_stance": "未表达评价",
+    "post_count": 2
+  },
+  {
+    "workflow_stage": "研究构思与问题定义",
+    "legitimacy_stance": "正面接受/正当化",
+    "post_count": 5
+  },
+  {
+    "workflow_stage": "研究构思与问题定义",
+    "legitimacy_stance": "混合/冲突性评价",
+    "post_count": 61
+  },
+  {
+    "workflow_stage": "研究构思与问题定义",
+    "legitimacy_stance": "质疑/否定",
+    "post_count": 1
+  },
+  {
+    "workflow_stage": "研究设计与方案制定",
+    "legitimacy_stance": "中性经验帖",
+    "post_count": 10
+  },
+  {
+    "workflow_stage": "研究设计与方案制定",
+    "legitimacy_stance": "有条件接受",
+    "post_count": 6
+  },
+  {
+    "workflow_stage": "研究设计与方案制定",
+    "legitimacy_stance": "正面接受/正当化",
+    "post_count": 2
+  },
+  {
+    "workflow_stage": "研究设计与方案制定",
+    "legitimacy_stance": "混合/冲突性评价",
+    "post_count": 2
+  },
+  {
+    "workflow_stage": "研究设计与方案制定",
+    "legitimacy_stance": "积极但保留",
+    "post_count": 2
+  },
+  {
+    "workflow_stage": "研究设计与方案制定",
+    "legitimacy_stance": "积极采用",
+    "post_count": 2
+  },
+  {
+    "workflow_stage": "科研工具与技术技能训练",
+    "legitimacy_stance": "混合/冲突性评价",
+    "post_count": 1
+  },
+  {
+    "workflow_stage": "科研效率提升与习惯养成",
+    "legitimacy_stance": "中性经验帖",
+    "post_count": 6
+  },
+  {
+    "workflow_stage": "科研效率提升与习惯养成",
+    "legitimacy_stance": "积极但保留",
+    "post_count": 1
+  },
+  {
+    "workflow_stage": "科研效率提升与习惯养成",
+    "legitimacy_stance": "积极采用",
+    "post_count": 2
+  },
+  {
+    "workflow_stage": "结果解释与理论提炼",
+    "legitimacy_stance": "混合/冲突性评价",
+    "post_count": 1
+  },
+  {
+    "workflow_stage": "结果验证与论文复现",
+    "legitimacy_stance": "混合/冲突性评价",
+    "post_count": 4
+  }
+]

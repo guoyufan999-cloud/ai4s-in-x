@@ -15,6 +15,10 @@ def test_project_uses_project_specific_python_package_namespace() -> None:
     importlib.import_module("ai4s_legitimacy.cli.export_review_queue")
     importlib.import_module("ai4s_legitimacy.cli.prepare_review_batches")
     importlib.import_module("ai4s_legitimacy.cli.xhs_expansion_candidate_v1")
+    importlib.import_module("ai4s_legitimacy.cli.xhs_expansion_review_queue")
+    importlib.import_module("ai4s_legitimacy.cli.xhs_expansion_review_precheck")
+    importlib.import_module("ai4s_legitimacy.analysis.xhs_expansion_supplemental_analysis")
+    importlib.import_module("ai4s_legitimacy.analysis.quality_v6_formalization")
     importlib.import_module("ai4s_legitimacy.cli.import_reviewed")
     importlib.import_module("ai4s_legitimacy.cli.llm_rescreen_posts")
     importlib.import_module("ai4s_legitimacy.cli.llm_prefill_post_review")
@@ -33,6 +37,22 @@ def test_project_uses_project_specific_python_package_namespace() -> None:
     assert (
         scripts["ai4s-xhs-expansion-candidate-v1"]
         == "ai4s_legitimacy.cli.xhs_expansion_candidate_v1:main"
+    )
+    assert (
+        scripts["ai4s-prepare-xhs-expansion-review-queue"]
+        == "ai4s_legitimacy.cli.xhs_expansion_review_queue:main"
+    )
+    assert (
+        scripts["ai4s-precheck-xhs-expansion-reviewed"]
+        == "ai4s_legitimacy.cli.xhs_expansion_review_precheck:main"
+    )
+    assert (
+        scripts["ai4s-build-xhs-expansion-supplemental-analysis"]
+        == "ai4s_legitimacy.analysis.xhs_expansion_supplemental_analysis:main"
+    )
+    assert (
+        scripts["ai4s-build-quality-v6-artifacts"]
+        == "ai4s_legitimacy.analysis.quality_v6_formalization:main"
     )
     assert scripts["ai4s-import-reviewed-decisions"] == "ai4s_legitimacy.cli.import_reviewed:main"
     assert scripts["ai4s-llm-rescreen-posts"] == "ai4s_legitimacy.cli.llm_rescreen_posts:main"

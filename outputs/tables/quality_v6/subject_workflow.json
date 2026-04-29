@@ -1,0 +1,252 @@
+[
+  {
+    "subject_label": "uncertain",
+    "workflow_stage": "文献调研与知识整合",
+    "post_count": 255
+  },
+  {
+    "subject_label": "uncertain",
+    "workflow_stage": "研究构思与问题定义",
+    "post_count": 64
+  },
+  {
+    "subject_label": "uncertain",
+    "workflow_stage": "数据处理与分析建模",
+    "post_count": 48
+  },
+  {
+    "subject_label": "Life Sciences & Medicine",
+    "workflow_stage": "文献调研与知识整合",
+    "post_count": 42
+  },
+  {
+    "subject_label": "uncertain",
+    "workflow_stage": "学术写作与成果表达",
+    "post_count": 37
+  },
+  {
+    "subject_label": "uncertain",
+    "workflow_stage": "uncertain",
+    "post_count": 32
+  },
+  {
+    "subject_label": "Social Sciences & Management",
+    "workflow_stage": "研究构思与问题定义",
+    "post_count": 31
+  },
+  {
+    "subject_label": "Engineering & Technology",
+    "workflow_stage": "文献调研与知识整合",
+    "post_count": 20
+  },
+  {
+    "subject_label": "uncertain",
+    "workflow_stage": "研究设计与方案制定",
+    "post_count": 18
+  },
+  {
+    "subject_label": "Engineering & Technology",
+    "workflow_stage": "研究构思与问题定义",
+    "post_count": 15
+  },
+  {
+    "subject_label": "Social Sciences & Management",
+    "workflow_stage": "数据处理与分析建模",
+    "post_count": 14
+  },
+  {
+    "subject_label": "Engineering & Technology",
+    "workflow_stage": "数据处理与分析建模",
+    "post_count": 11
+  },
+  {
+    "subject_label": "Social Sciences & Management",
+    "workflow_stage": "文献调研与知识整合",
+    "post_count": 11
+  },
+  {
+    "subject_label": "Life Sciences & Medicine",
+    "workflow_stage": "数据处理与分析建模",
+    "post_count": 10
+  },
+  {
+    "subject_label": "uncertain",
+    "workflow_stage": "科研效率提升与习惯养成",
+    "post_count": 9
+  },
+  {
+    "subject_label": "Life Sciences & Medicine",
+    "workflow_stage": "研究构思与问题定义",
+    "post_count": 7
+  },
+  {
+    "subject_label": "Natural Sciences",
+    "workflow_stage": "文献调研与知识整合",
+    "post_count": 7
+  },
+  {
+    "subject_label": "Natural Sciences",
+    "workflow_stage": "研究构思与问题定义",
+    "post_count": 7
+  },
+  {
+    "subject_label": "uncertain",
+    "workflow_stage": "出版与评审治理",
+    "post_count": 6
+  },
+  {
+    "subject_label": "Arts & Humanities",
+    "workflow_stage": "学术写作与成果表达",
+    "post_count": 5
+  },
+  {
+    "subject_label": "Natural Sciences",
+    "workflow_stage": "数据处理与分析建模",
+    "post_count": 5
+  },
+  {
+    "subject_label": "Arts & Humanities",
+    "workflow_stage": "文献调研与知识整合",
+    "post_count": 4
+  },
+  {
+    "subject_label": "Engineering & Technology",
+    "workflow_stage": "发表与知识扩散",
+    "post_count": 4
+  },
+  {
+    "subject_label": "Natural Sciences",
+    "workflow_stage": "学术写作与成果表达",
+    "post_count": 4
+  },
+  {
+    "subject_label": "uncertain",
+    "workflow_stage": "数据获取",
+    "post_count": 4
+  },
+  {
+    "subject_label": "Arts & Humanities",
+    "workflow_stage": "研究构思与问题定义",
+    "post_count": 3
+  },
+  {
+    "subject_label": "Engineering & Technology",
+    "workflow_stage": "学术写作与成果表达",
+    "post_count": 3
+  },
+  {
+    "subject_label": "Life Sciences & Medicine",
+    "workflow_stage": "研究设计与方案制定",
+    "post_count": 3
+  },
+  {
+    "subject_label": "uncertain",
+    "workflow_stage": "发表与知识扩散",
+    "post_count": 3
+  },
+  {
+    "subject_label": "uncertain",
+    "workflow_stage": "研究方法学习",
+    "post_count": 3
+  },
+  {
+    "subject_label": "Engineering & Technology",
+    "workflow_stage": "实验实施与仿真执行",
+    "post_count": 2
+  },
+  {
+    "subject_label": "Engineering & Technology",
+    "workflow_stage": "数据获取",
+    "post_count": 2
+  },
+  {
+    "subject_label": "Engineering & Technology",
+    "workflow_stage": "研究方法学习",
+    "post_count": 2
+  },
+  {
+    "subject_label": "Engineering & Technology",
+    "workflow_stage": "结果验证与论文复现",
+    "post_count": 2
+  },
+  {
+    "subject_label": "Life Sciences & Medicine",
+    "workflow_stage": "学术写作与成果表达",
+    "post_count": 2
+  },
+  {
+    "subject_label": "Natural Sciences",
+    "workflow_stage": "数据获取",
+    "post_count": 2
+  },
+  {
+    "subject_label": "Social Sciences & Management",
+    "workflow_stage": "研究设计与方案制定",
+    "post_count": 2
+  },
+  {
+    "subject_label": "uncertain",
+    "workflow_stage": "实验实施与仿真执行",
+    "post_count": 2
+  },
+  {
+    "subject_label": "uncertain",
+    "workflow_stage": "结果验证与论文复现",
+    "post_count": 2
+  },
+  {
+    "subject_label": "Arts & Humanities",
+    "workflow_stage": "发表与知识扩散",
+    "post_count": 1
+  },
+  {
+    "subject_label": "Arts & Humanities",
+    "workflow_stage": "数据获取",
+    "post_count": 1
+  },
+  {
+    "subject_label": "Engineering & Technology",
+    "workflow_stage": "出版与评审治理",
+    "post_count": 1
+  },
+  {
+    "subject_label": "Engineering & Technology",
+    "workflow_stage": "学术阅读与写作能力训练",
+    "post_count": 1
+  },
+  {
+    "subject_label": "Engineering & Technology",
+    "workflow_stage": "研究设计与方案制定",
+    "post_count": 1
+  },
+  {
+    "subject_label": "Life Sciences & Medicine",
+    "workflow_stage": "出版与评审治理",
+    "post_count": 1
+  },
+  {
+    "subject_label": "Life Sciences & Medicine",
+    "workflow_stage": "数据获取",
+    "post_count": 1
+  },
+  {
+    "subject_label": "Natural Sciences",
+    "workflow_stage": "出版与评审治理",
+    "post_count": 1
+  },
+  {
+    "subject_label": "Social Sciences & Management",
+    "workflow_stage": "学术写作与成果表达",
+    "post_count": 1
+  },
+  {
+    "subject_label": "uncertain",
+    "workflow_stage": "科研工具与技术技能训练",
+    "post_count": 1
+  },
+  {
+    "subject_label": "uncertain",
+    "workflow_stage": "结果解释与理论提炼",
+    "post_count": 1
+  }
+]

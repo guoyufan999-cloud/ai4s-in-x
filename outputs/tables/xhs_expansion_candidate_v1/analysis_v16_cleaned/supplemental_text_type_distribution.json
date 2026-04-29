@@ -1,0 +1,44 @@
+[
+  {
+    "value": "tool_recommendation",
+    "label": "工具推荐",
+    "count": 81,
+    "share": 0.3932,
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "value": "experience_sharing",
+    "label": "经验分享",
+    "count": 49,
+    "share": 0.2379,
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "value": "tutorial_or_experience",
+    "label": "教程展示/经验教程",
+    "count": 29,
+    "share": 0.1408,
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "value": "risk_warning",
+    "label": "风险提醒",
+    "count": 26,
+    "share": 0.1262,
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "value": "norm_interpretation",
+    "label": "规范解读",
+    "count": 14,
+    "share": 0.068,
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "value": "comment_dispute",
+    "label": "评论争论",
+    "count": 7,
+    "share": 0.034,
+    "source_scope": "xhs_expansion_candidate_v1"
+  }
+]

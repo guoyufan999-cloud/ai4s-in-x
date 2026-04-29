@@ -1,0 +1,30 @@
+[
+  {
+    "value": "none_or_unclear",
+    "label": "无明确规范评价",
+    "count": 34,
+    "share": 0.4359,
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "value": "efficiency_positive",
+    "label": "效率认可",
+    "count": 25,
+    "share": 0.3205,
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "value": "conditional_or_boundary_signal",
+    "label": "条件/边界信号",
+    "count": 15,
+    "share": 0.1923,
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "value": "integrity_risk",
+    "label": "学术诚信风险",
+    "count": 4,
+    "share": 0.0513,
+    "source_scope": "xhs_expansion_candidate_v1"
+  }
+]

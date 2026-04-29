@@ -1,0 +1,7 @@
+count,label,share,source_scope,value
+71,生成辅助,0.3447,xhs_expansion_candidate_v1,generation_assistance
+42,其他/无法判断,0.2039,xhs_expansion_candidate_v1,unclear
+39,分析建模,0.1893,xhs_expansion_candidate_v1,analysis_modeling
+25,信息辅助,0.1214,xhs_expansion_candidate_v1,information_assistance
+15,治理监督,0.0728,xhs_expansion_candidate_v1,governance_or_supervision
+14,判断建议,0.068,xhs_expansion_candidate_v1,judgment_suggestion

@@ -1,0 +1,25 @@
+{
+  "artifact_scope": "xhs_expansion_candidate_v1_supplemental_candidate",
+  "formal_guard_comments": 0,
+  "formal_guard_posts": 514,
+  "formal_scope_changed": false,
+  "generated_at": "2026-04-28T18:25:21Z",
+  "query_group_counts": {
+    "A. AI科研总体类": 7,
+    "D. 数据分析与代码类": 5,
+    "F. 科研规范与诚信类": 4
+  },
+  "row_count": 16,
+  "run_id": "candidate_rescreen_promoted_backlog_v1",
+  "skipped_counts": {
+    "already_in_candidate_expanded_v11": 654,
+    "not_ai_research": 6,
+    "quality_v5_formal_post": 78
+  },
+  "source_counts": {
+    "01_legitimacy_and_boundary.jsonl": 6,
+    "02_ideation_and_research_design.jsonl": 4,
+    "04_paper_writing_and_prompting.jsonl": 2,
+    "06_other_positive_candidates.jsonl": 4
+  }
+}

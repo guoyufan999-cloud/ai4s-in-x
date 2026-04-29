@@ -1,0 +1,39 @@
+{
+  "chapter_materials": "outputs/reports/xhs_expansion_candidate_v1/supplemental_formalization_v1/supplemental_formalization_v1.chapter_materials.md",
+  "exclude_count": 6,
+  "formal_scope": false,
+  "formalization_rows": 206,
+  "formalization_scope": "supplemental_formalization_v1",
+  "generated_at": "2026-04-29T00:59:19.891712+00:00",
+  "include_count": 200,
+  "policy": {
+    "ready_for_quality_v6": false,
+    "starts_comment_review_v2": false,
+    "updates_quality_v5": false,
+    "writes_research_db": false
+  },
+  "quality_v5_formal_scope": false,
+  "quality_v5_guard": {
+    "comments": 0,
+    "posts": 514
+  },
+  "report_path": "outputs/reports/xhs_expansion_candidate_v1/supplemental_formalization_v1/supplemental_formalization_v1.report.md",
+  "review_needed_count": 0,
+  "reviewed_jsonl": "data/interim/xhs_expansion_candidate_v1/supplemental_formalization_v1/supplemental_formalization_v1.codex_reviewed.jsonl",
+  "risk_decisions_jsonl": "data/interim/xhs_expansion_candidate_v1/supplemental_formalization_v1/supplemental_formalization_v1.risk_review_decisions.jsonl",
+  "risk_review_decisions": {
+    "exclude": 6,
+    "include": 3
+  },
+  "risk_review_report": "outputs/reports/xhs_expansion_candidate_v1/supplemental_formalization_v1/supplemental_formalization_v1.risk_review_report.md",
+  "source_scope": "xhs_expansion_candidate_v1",
+  "table_dir": "outputs/tables/xhs_expansion_candidate_v1/supplemental_formalization_v1",
+  "validation": {
+    "bad_formal_flags": 0,
+    "claim_units": 206,
+    "i0_mixed_with_other_i": 0,
+    "included_missing_mode_or_intensity": 0,
+    "review_needed_rows": 0
+  },
+  "writing_memo": "outputs/reports/xhs_expansion_candidate_v1/supplemental_formalization_v1/supplemental_formalization_v1.writing_memo.md"
+}

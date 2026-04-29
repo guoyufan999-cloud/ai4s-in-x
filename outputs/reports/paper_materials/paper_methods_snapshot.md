@@ -1,11 +1,11 @@
-# quality_v5 方法快照
+# quality_v6 方法快照
 
-- 当前正式基线：`quality_v5 正式重建基线`
+- 当前投稿结果层：`quality_v6 post-only formalized result layer`
+- 前一冻结基线：`quality_v5 post-only 514 / 0`
 - 研究时间窗：`2024-01-01` 至 `2026-06-30`
-- 正式覆盖截止日：`2026-04-10`
-- 当前状态：`post_review_v2_imported_post_only`
-- 当前正式帖子 / 正式评论：`514 / 0`
-- 当前 canonical corpus：帖子 `5535` 条，评论 `12362` 条
+- 正式覆盖截止日：`2026-04-26`
+- 当前状态：`post_only_formalized`
+- 当前正式帖子 / 正式评论：`714 / 0`
+- 当前 v6 staging research DB：帖子 `5735` 条，评论 `106543` 条
 
-当前方法状态不是重新定义研究问题，而是完成从旧 `quality_v4` 到 canonical `quality_v5` 的活跃迁移。
-严格版 `post_review_v2` reviewed 结果已经导入并刷新 artifacts；本轮方法口径只承认帖子层 post-only 正式结果，评论层正式编码 deferred。
+当前方法状态是从 `quality_v5` 前一冻结基线升级到 `quality_v6` 投稿结果层。补充帖子通过 `xhs_expansion_candidate_v1 -> supplemental_formalization_v1 -> quality_v6 staging DB` 链路进入正式范围；评论层没有启动正式 reviewed import。

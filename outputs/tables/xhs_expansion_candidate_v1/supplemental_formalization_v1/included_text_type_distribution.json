@@ -1,0 +1,50 @@
+[
+  {
+    "count": 78,
+    "count_base": "included_rows",
+    "formalization_scope": "supplemental_formalization_v1",
+    "share": 0.39,
+    "source_scope": "xhs_expansion_candidate_v1",
+    "text_type": "工具推荐"
+  },
+  {
+    "count": 46,
+    "count_base": "included_rows",
+    "formalization_scope": "supplemental_formalization_v1",
+    "share": 0.23,
+    "source_scope": "xhs_expansion_candidate_v1",
+    "text_type": "经验分享"
+  },
+  {
+    "count": 29,
+    "count_base": "included_rows",
+    "formalization_scope": "supplemental_formalization_v1",
+    "share": 0.145,
+    "source_scope": "xhs_expansion_candidate_v1",
+    "text_type": "教程展示"
+  },
+  {
+    "count": 26,
+    "count_base": "included_rows",
+    "formalization_scope": "supplemental_formalization_v1",
+    "share": 0.13,
+    "source_scope": "xhs_expansion_candidate_v1",
+    "text_type": "风险提醒"
+  },
+  {
+    "count": 14,
+    "count_base": "included_rows",
+    "formalization_scope": "supplemental_formalization_v1",
+    "share": 0.07,
+    "source_scope": "xhs_expansion_candidate_v1",
+    "text_type": "规范解读"
+  },
+  {
+    "count": 7,
+    "count_base": "included_rows",
+    "formalization_scope": "supplemental_formalization_v1",
+    "share": 0.035,
+    "source_scope": "xhs_expansion_candidate_v1",
+    "text_type": "评论争论"
+  }
+]

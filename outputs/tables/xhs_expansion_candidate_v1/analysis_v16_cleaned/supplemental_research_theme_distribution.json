@@ -1,0 +1,51 @@
+[
+  {
+    "value": "literature_processing",
+    "label": "AI文献阅读与知识整合",
+    "count": 99,
+    "share": 0.4806,
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "value": "unclear",
+    "label": "其他/无法判断",
+    "count": 36,
+    "share": 0.1748,
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "value": "data_analysis_or_code",
+    "label": "AI数据分析与代码",
+    "count": 31,
+    "share": 0.1505,
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "value": "research_design",
+    "label": "AI研究设计与方法学习",
+    "count": 14,
+    "share": 0.068,
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "value": "paper_writing",
+    "label": "AI论文写作与成果表达",
+    "count": 13,
+    "share": 0.0631,
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "value": "research_training",
+    "label": "AI科研训练与效率",
+    "count": 10,
+    "share": 0.0485,
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "value": "research_governance",
+    "label": "AI科研规范与治理",
+    "count": 3,
+    "share": 0.0146,
+    "source_scope": "xhs_expansion_candidate_v1"
+  }
+]

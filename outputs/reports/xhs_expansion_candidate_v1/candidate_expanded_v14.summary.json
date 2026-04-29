@@ -1,0 +1,23 @@
+{
+  "artifact_scope": "xhs_expansion_candidate_v1_supplemental_candidate",
+  "comment_review_v2_changed": false,
+  "formal_guard_comments": 0,
+  "formal_guard_posts": 514,
+  "formal_scope_changed": false,
+  "generated_at": "2026-04-28T18:37:47Z",
+  "metadata_only_by_text_rows": 1793,
+  "new_post_rows": 0,
+  "new_sidecar_comments": 0,
+  "notes": [
+    "v14 does not add new post URLs; it enriches existing metadata-only candidates with local public media OCR where AI+research filter passes.",
+    "OCR text is noisy and must be manually verified before formal use."
+  ],
+  "ocr_candidate_notes": 6,
+  "ocr_enriched_existing_rows": 2,
+  "ocr_filter_pass_notes": 2,
+  "row_count": 5680,
+  "run_id": "candidate_expanded_v14",
+  "sidecar_comment_count": 78177,
+  "source_post_artifact": "outputs/tables/xhs_expansion_candidate_v1/candidate_expanded_v13.jsonl",
+  "text_context_rows": 3887
+}

@@ -1,0 +1,12 @@
+{
+  "aggregated_note_rows": 6,
+  "artifact_scope": "xhs_expansion_candidate_v1_supplemental_candidate",
+  "formal_scope_changed": false,
+  "generated_at": "2026-04-28T18:37:47Z",
+  "ocr_filter_pass_notes": 2,
+  "ocr_status_counts": {
+    "ok": 19
+  },
+  "raw_ocr_rows": 19,
+  "run_id": "candidate_media_ocr_vision_v1"
+}

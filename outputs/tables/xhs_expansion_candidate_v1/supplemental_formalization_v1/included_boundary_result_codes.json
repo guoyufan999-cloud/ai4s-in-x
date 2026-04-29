@@ -1,0 +1,50 @@
+[
+  {
+    "code": "K3",
+    "count": 24,
+    "count_base": "included_rows",
+    "formalization_scope": "supplemental_formalization_v1",
+    "share": 0.12,
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "code": "K2",
+    "count": 22,
+    "count_base": "included_rows",
+    "formalization_scope": "supplemental_formalization_v1",
+    "share": 0.11,
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "code": "K4",
+    "count": 9,
+    "count_base": "included_rows",
+    "formalization_scope": "supplemental_formalization_v1",
+    "share": 0.045,
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "code": "K6",
+    "count": 8,
+    "count_base": "included_rows",
+    "formalization_scope": "supplemental_formalization_v1",
+    "share": 0.04,
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "code": "K1",
+    "count": 2,
+    "count_base": "included_rows",
+    "formalization_scope": "supplemental_formalization_v1",
+    "share": 0.01,
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "code": "",
+    "count": 165,
+    "count_base": "included_rows",
+    "formalization_scope": "supplemental_formalization_v1",
+    "share": 0.825,
+    "source_scope": "xhs_expansion_candidate_v1"
+  }
+]

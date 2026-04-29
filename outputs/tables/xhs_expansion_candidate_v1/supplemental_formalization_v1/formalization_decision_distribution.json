@@ -1,0 +1,18 @@
+[
+  {
+    "count": 200,
+    "count_base": "all_formalization_rows",
+    "formalization_scope": "supplemental_formalization_v1",
+    "share": 0.9709,
+    "source_scope": "xhs_expansion_candidate_v1",
+    "value": "include"
+  },
+  {
+    "count": 6,
+    "count_base": "all_formalization_rows",
+    "formalization_scope": "supplemental_formalization_v1",
+    "share": 0.0291,
+    "source_scope": "xhs_expansion_candidate_v1",
+    "value": "exclude"
+  }
+]

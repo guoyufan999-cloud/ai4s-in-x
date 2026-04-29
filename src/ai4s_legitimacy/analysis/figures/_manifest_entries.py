@@ -18,33 +18,33 @@ FIGURE_ENTRIES = (
         title="月度正式帖子趋势",
         placement="正文",
         data_basis_template=(
-            "研究主库 `paper_scope_quality_v5` 正式口径；基于 "
-            "`vw_posts_paper_scope_quality_v5` 按月聚合；时间窗 "
+            "研究主库 `{source_contract}` 正式口径；基于 "
+            "`{posts_scope_view}` 按月聚合；时间窗 "
             "{month_window_text}；按月补零并绘制 3 个月滚动均值。"
         ),
         takeaway_template=(
-            "AI4S 讨论在 2025H2 后明显提速，并在 "
+            "AI介入科研活动讨论在 2025H2 后明显提速，并在 "
             "{latest_halfyear_label}达到当前样本内的最高活跃度。"
         ),
     ),
     FigureManifestEntry(
         slug="posts_by_period",
-        title="半年度帖子与评论规模",
+        title="半年度正式帖子规模",
         placement="补充材料",
         data_basis_template=(
-            "研究主库 `paper_scope_quality_v5` 正式口径；帖子与评论在半年度尺度上的规模变化；"
+            "研究主库 `{source_contract}` 正式口径；正式帖子在半年度尺度上的规模变化；"
             "时间顺序固定为 {halfyear_sequence_text}。"
         ),
         takeaway_template=(
-            "半年度尺度上，帖子与评论规模在 2025H2 之后同步抬升，平台讨论进入稳定扩张阶段。"
+            "半年度尺度上，正式帖子规模在 2025H2 之后抬升，平台讨论进入稳定扩张阶段。"
         ),
     ),
     FigureManifestEntry(
         slug="posts_by_quarter",
-        title="季度帖子与评论规模",
+        title="季度正式帖子规模",
         placement="正文",
         data_basis_template=(
-            "研究主库 `paper_scope_quality_v5` 正式口径；帖子与评论在季度尺度上的规模变化；"
+            "研究主库 `{source_contract}` 正式口径；正式帖子在季度尺度上的规模变化；"
             "时间顺序固定为 {quarter_sequence_text}。"
         ),
         takeaway_template=(
@@ -57,11 +57,11 @@ FIGURE_ENTRIES = (
         title="时间—学科—流程高频组合热力图",
         placement="正文",
         data_basis_template=(
-            "研究主库 `paper_scope_quality_v5` 正式口径；高频“学科 × 流程”组合在半年度尺度上的帖子数；"
+            "研究主库 `{source_contract}` 正式口径；高频“学科 × 流程”组合在半年度尺度上的帖子数；"
             "仅保留总量最高的 24 个组合并按固定学科/流程顺序排列。"
         ),
         takeaway_template=(
-            "AI4S 并未均匀进入科研全流程，而是优先在工程技术与艺术人文的高频任务环节中形成可见扩散。"
+            "AI介入科研活动并未均匀进入科研全流程，而是优先在高频任务环节中形成可见扩散。"
         ),
     ),
     FigureManifestEntry(
@@ -69,7 +69,7 @@ FIGURE_ENTRIES = (
         title="半年度评论态度结构",
         placement="正文",
         data_basis_template=(
-            "研究主库 `paper_scope_quality_v5` 正式口径；正式评论在半年度尺度上的态度占比，"
+            "研究主库 `{source_contract}` 正式口径；正式评论在半年度尺度上的态度占比，"
             "使用 100% 堆叠柱图呈现结构变化。"
         ),
         takeaway_template=(
@@ -81,8 +81,8 @@ FIGURE_ENTRIES = (
         title="半年度 AI 工具构成",
         placement="正文",
         data_basis_template=(
-            "研究主库 `paper_scope_quality_v5` 正式口径；基于 "
-            "`vw_posts_paper_scope_quality_v5` 的 `ai_tools_json` 字段按半年度聚合；"
+            "研究主库 `{source_contract}` 正式口径；基于 "
+            "`{posts_scope_view}` 的 `ai_tools_json` 字段按半年度聚合；"
             "仅保留全局 Top 5 工具，其余合并为「其他」。"
         ),
         takeaway_template=(
@@ -94,8 +94,8 @@ FIGURE_ENTRIES = (
         title="季度 AI 工具构成",
         placement="补充材料",
         data_basis_template=(
-            "研究主库 `paper_scope_quality_v5` 正式口径；基于 "
-            "`vw_posts_paper_scope_quality_v5` 的 `ai_tools_json` 字段按季度聚合；"
+            "研究主库 `{source_contract}` 正式口径；基于 "
+            "`{posts_scope_view}` 的 `ai_tools_json` 字段按季度聚合；"
             "仅保留全局 Top 5 工具，其余合并为「其他」。"
         ),
         takeaway_template=(
@@ -107,8 +107,8 @@ FIGURE_ENTRIES = (
         title="半年度风险主题构成",
         placement="正文",
         data_basis_template=(
-            "研究主库 `paper_scope_quality_v5` 正式口径；基于 "
-            "`vw_posts_paper_scope_quality_v5` 的 `risk_themes_json` 字段按半年度聚合；"
+            "研究主库 `{source_contract}` 正式口径；基于 "
+            "`{posts_scope_view}` 的 `risk_themes_json` 字段按半年度聚合；"
             "风险类别按论文叙述优先顺序固定。"
         ),
         takeaway_template=(
@@ -120,8 +120,8 @@ FIGURE_ENTRIES = (
         title="季度风险主题构成",
         placement="补充材料",
         data_basis_template=(
-            "研究主库 `paper_scope_quality_v5` 正式口径；基于 "
-            "`vw_posts_paper_scope_quality_v5` 的 `risk_themes_json` 字段按季度聚合；"
+            "研究主库 `{source_contract}` 正式口径；基于 "
+            "`{posts_scope_view}` 的 `risk_themes_json` 字段按季度聚合；"
             "风险类别按论文叙述优先顺序固定。"
         ),
         takeaway_template=(

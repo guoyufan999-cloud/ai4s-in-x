@@ -1,0 +1,54 @@
+{
+  "artifact_scope": "xhs_expansion_candidate_v1_supplemental_candidate",
+  "comment_review_v2_changed": false,
+  "formal_guard_comments": 0,
+  "formal_guard_posts": 514,
+  "formal_scope_changed": false,
+  "generated_at": "2026-04-28T18:20:30Z",
+  "metadata_only_by_text_rows": 1795,
+  "notes": [
+    "v11 preserves v10 post candidates and adds local existing public comments as sidecar context.",
+    "Sidecar comments are not formal comment_review_v2 results and do not change quality_v5 514/0.",
+    "Comment text may support manual review context but must not be cited as formal comment corpus unless a future formal checkpoint is created."
+  ],
+  "posts_with_sidecar_comments": 2567,
+  "row_count": 5661,
+  "run_id": "candidate_expanded_v11",
+  "sidecar_comment_count": 78005,
+  "sidecar_comment_count_buckets": {
+    "0": 3094,
+    "1-5": 1114,
+    "100+": 171,
+    "21-100": 586,
+    "6-20": 696
+  },
+  "sidecar_comments_artifact": "outputs/tables/xhs_expansion_candidate_v1/candidate_expanded_v11_sidecar_comments.jsonl",
+  "sidecar_reply_counts": {
+    "reply": 27232,
+    "top_level_comment": 50773
+  },
+  "source_post_artifact": "outputs/tables/xhs_expansion_candidate_v1/candidate_expanded_v10.jsonl",
+  "text_context_rows": 3866,
+  "top_sidecar_comment_months": {
+    "2024-05": 468,
+    "2024-08": 560,
+    "2024-11": 533,
+    "2024-12": 499,
+    "2025-01": 448,
+    "2025-02": 1270,
+    "2025-03": 3181,
+    "2025-04": 3581,
+    "2025-05": 2385,
+    "2025-06": 1457,
+    "2025-07": 1054,
+    "2025-08": 2681,
+    "2025-09": 2451,
+    "2025-10": 2284,
+    "2025-11": 3669,
+    "2025-12": 4801,
+    "2026-01": 5805,
+    "2026-02": 9338,
+    "2026-03": 26238,
+    "2026-04": 4262
+  }
+}

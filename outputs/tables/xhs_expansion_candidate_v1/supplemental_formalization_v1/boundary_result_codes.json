@@ -1,0 +1,44 @@
+[
+  {
+    "code": "K3",
+    "count": 24,
+    "formalization_scope": "supplemental_formalization_v1",
+    "share": 0.1165,
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "code": "K2",
+    "count": 20,
+    "formalization_scope": "supplemental_formalization_v1",
+    "share": 0.0971,
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "code": "K4",
+    "count": 9,
+    "formalization_scope": "supplemental_formalization_v1",
+    "share": 0.0437,
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "code": "K6",
+    "count": 8,
+    "formalization_scope": "supplemental_formalization_v1",
+    "share": 0.0388,
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "code": "K1",
+    "count": 2,
+    "formalization_scope": "supplemental_formalization_v1",
+    "share": 0.0097,
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "code": "",
+    "count": 173,
+    "formalization_scope": "supplemental_formalization_v1",
+    "share": 0.8398,
+    "source_scope": "xhs_expansion_candidate_v1"
+  }
+]

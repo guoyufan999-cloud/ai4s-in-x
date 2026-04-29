@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "formal_stage": "quality_v6",
+  "formal_posts": 714,
+  "formal_comments": 0,
+  "source_db": {
+    "path": "data/interim/quality_v6/ai4s_legitimacy_quality_v6.sqlite3",
+    "sha256": "383102ac110f9c711894566d4fe9fc04668f08071a22008af3b4ea2099cde3c7",
+    "bytes": 98344960
+  },
+  "build_command": {
+    "entrypoint": "ai4s-build-quality-v6-artifacts",
+    "module": "ai4s_legitimacy.analysis.quality_v6_formalization"
+  },
+  "files": {
+    "summary": {
+      "path": "outputs/reports/freeze_checkpoints/quality_v6_research_db_summary.json",
+      "exists": true,
+      "sha256": "c5c454356fbe1d72a0467459961c03f1686d61506483d9165a5316c0d02fb7b1",
+      "bytes": 53480,
+      "line_count": 1928
+    },
+    "consistency": {
+      "path": "outputs/reports/freeze_checkpoints/quality_v6_consistency_report.json",
+      "exists": true,
+      "sha256": "5e9e90df05184630ac14c8a43898086e3274904362294a7257c844b10dd774c5",
+      "bytes": 998,
+      "line_count": 35
+    },
+    "freeze_checkpoint": {
+      "path": "outputs/reports/freeze_checkpoints/quality_v6_freeze_checkpoint.json",
+      "exists": true,
+      "sha256": "8cd1eb9743dc8e0e416508bca990cf882ba84bff624c21377fa69bbce8ffed10",
+      "bytes": 1125,
+      "line_count": 30
+    },
+    "paper_material_readme": {
+      "path": "outputs/reports/paper_materials/quality_v6/README.md",
+      "exists": true,
+      "sha256": "38b393e6d5506f838df00c1253befcb7a9c056f72bacdfe6ae6a986636613075",
+      "bytes": 401,
+      "line_count": 9
+    },
+    "paper_material_results": {
+      "path": "outputs/reports/paper_materials/quality_v6/paper_results_chapter_quality_v6.md",
+      "exists": true,
+      "sha256": "591e66cc4b7402c2df306e191a776138d450fa534eed00898285d18dd596c15d",
+      "bytes": 1558,
+      "line_count": 42
+    },
+    "paper_material_methods": {
+      "path": "outputs/reports/paper_materials/quality_v6/paper_methods_transparency_appendix_quality_v6.md",
+      "exists": true,
+      "sha256": "3748d3c2b4a111034c0c6546014715f34edbcfbbc9dac659d713298ebf5a1917",
+      "bytes": 631,
+      "line_count": 20
+    },
+    "paper_material_contract": {
+      "path": "outputs/reports/paper_materials/quality_v6/quality_v6_post_only_contract.md",
+      "exists": true,
+      "sha256": "eb7a8349c537fc673f021e57982b688d4b280470979f8581592d5aa3ed1aa835",
+      "bytes": 371,
+      "line_count": 8
+    },
+    "paper_material_manifest": {
+      "path": "outputs/reports/paper_materials/quality_v6/paper_materials_manifest.json",
+      "exists": true,
+      "sha256": "7419e154df8487dbe244965460b913064f6e4c0924a8624e4ab34d12ae6801de",
+      "bytes": 1324,
+      "line_count": 24
+    },
+    "figure_manifest": {
+      "path": "outputs/figures/paper_figures_submission/quality_v6/paper_figures_submission_manifest.md",
+      "exists": true,
+      "sha256": "bda8812efadd2bd8fe1689c20187a78037c1e9601f4b486d4b83694778636a1f",
+      "bytes": 5962,
+      "line_count": 93
+    }
+  }
+}

@@ -1,0 +1,98 @@
+[
+  {
+    "count": 64,
+    "count_base": "included_rows",
+    "formalization_scope": "supplemental_formalization_v1",
+    "left": "G2",
+    "right": "B0",
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "count": 37,
+    "count_base": "included_rows",
+    "formalization_scope": "supplemental_formalization_v1",
+    "left": "G1",
+    "right": "B0",
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "count": 22,
+    "count_base": "included_rows",
+    "formalization_scope": "supplemental_formalization_v1",
+    "left": "G3",
+    "right": "B0",
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "count": 15,
+    "count_base": "included_rows",
+    "formalization_scope": "supplemental_formalization_v1",
+    "left": "G2",
+    "right": "B2",
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "count": 14,
+    "count_base": "included_rows",
+    "formalization_scope": "supplemental_formalization_v1",
+    "left": "G2",
+    "right": "B1",
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "count": 14,
+    "count_base": "included_rows",
+    "formalization_scope": "supplemental_formalization_v1",
+    "left": "G3",
+    "right": "B1",
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "count": 13,
+    "count_base": "included_rows",
+    "formalization_scope": "supplemental_formalization_v1",
+    "left": "G3",
+    "right": "B2",
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "count": 6,
+    "count_base": "included_rows",
+    "formalization_scope": "supplemental_formalization_v1",
+    "left": "G1",
+    "right": "B2",
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "count": 4,
+    "count_base": "included_rows",
+    "formalization_scope": "supplemental_formalization_v1",
+    "left": "G1",
+    "right": "B1",
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "count": 4,
+    "count_base": "included_rows",
+    "formalization_scope": "supplemental_formalization_v1",
+    "left": "G2",
+    "right": "B3",
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "count": 4,
+    "count_base": "included_rows",
+    "formalization_scope": "supplemental_formalization_v1",
+    "left": "G3",
+    "right": "B3",
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "count": 3,
+    "count_base": "included_rows",
+    "formalization_scope": "supplemental_formalization_v1",
+    "left": "G1",
+    "right": "B3",
+    "source_scope": "xhs_expansion_candidate_v1"
+  }
+]

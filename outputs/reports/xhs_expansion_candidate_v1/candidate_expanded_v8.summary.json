@@ -1,0 +1,45 @@
+{
+  "artifact_scope": "xhs_expansion_candidate_v1_supplemental_candidate",
+  "body_fetch_status_counts": {
+    "body_missing_or_too_short_in_existing_research_db": 95,
+    "body_present_from_existing_research_db": 3585,
+    "body_present_or_prior_artifact": 256,
+    "not_attempted_in_search_index_mode": 1629
+  },
+  "body_present_rows": 3841,
+  "formal_guard_comments": 0,
+  "formal_guard_posts": 514,
+  "formal_scope_changed": false,
+  "generated_at": "2026-04-28T18:05:34Z",
+  "local_broad_backlog_rows": 2900,
+  "local_research_backlog_rows": 0,
+  "notes": [
+    "candidate_expanded_v8 merges candidate_expanded_v7 with candidate_local_broad_backlog_v1.",
+    "The broad backlog is higher recall and must be manually reviewed before inclusion.",
+    "Live XHS collection is not extended in this run because current page state shows platform safety restriction."
+  ],
+  "public_access_status_counts": {
+    "candidate_artifact_public_context": 256,
+    "existing_public_research_db_record": 3680,
+    "search_result_metadata_only": 1629
+  },
+  "query_group_counts": {
+    "A. AI科研总体类": 590,
+    "B. 文献处理与知识整合类": 602,
+    "C. 研究设计与方法学习类": 305,
+    "D. 数据分析与代码类": 1780,
+    "E. 论文写作与成果表达类": 370,
+    "F. 科研规范与诚信类": 593,
+    "G. 科研训练与效率类": 948,
+    "boundary": 298,
+    "practice": 62,
+    "salience": 17
+  },
+  "row_count": 5565,
+  "run_id": "candidate_expanded_v8",
+  "search_index_rows": 1629,
+  "source_counts": {
+    "candidate_expanded_v7": 2665,
+    "candidate_local_broad_backlog_v1": 2900
+  }
+}

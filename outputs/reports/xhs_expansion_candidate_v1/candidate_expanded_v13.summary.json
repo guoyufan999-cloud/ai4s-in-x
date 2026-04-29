@@ -1,0 +1,49 @@
+{
+  "artifact_scope": "xhs_expansion_candidate_v1_supplemental_candidate",
+  "backlog_source_counts": {
+    "reviewed_approved_strict": 3
+  },
+  "comment_review_v2_changed": false,
+  "formal_guard_comments": 0,
+  "formal_guard_posts": 514,
+  "formal_scope_changed": false,
+  "generated_at": "2026-04-28T18:31:02Z",
+  "metadata_only_by_text_rows": 1795,
+  "new_reviewed_rescreen_rows": 3,
+  "new_sidecar_comments": 44,
+  "notes": [
+    "v13 adds only strict reviewed/priority original-text candidates not already present in v12.",
+    "Expansion yield is now very low; further safe local expansion should pause unless live XHS access recovers or new public data is supplied."
+  ],
+  "posts_with_sidecar_comments": 2579,
+  "query_group_counts": {
+    "A. AI科研总体类": 625,
+    "B. 文献处理与知识整合类": 606,
+    "C. 研究设计与方法学习类": 309,
+    "D. 数据分析与代码类": 1817,
+    "E. 论文写作与成果表达类": 372,
+    "F. 科研规范与诚信类": 609,
+    "G. 科研训练与效率类": 965,
+    "boundary": 298,
+    "practice": 62,
+    "salience": 17
+  },
+  "row_count": 5680,
+  "run_id": "candidate_expanded_v13",
+  "sidecar_comment_count": 78177,
+  "sidecar_comments_artifact": "outputs/tables/xhs_expansion_candidate_v1/candidate_expanded_v13_sidecar_comments.jsonl",
+  "skipped_counts": {
+    "already_in_candidate_expanded_v12": 4894,
+    "duplicate_within_source_kind": 8763,
+    "excluded_decision": 1216,
+    "lower_priority_duplicate": 2,
+    "not_ai_research_original_text": 20,
+    "quality_v5_formal_post": 986
+  },
+  "source_counts": {
+    "candidate_expanded_v12": 5677,
+    "candidate_reviewed_rescreen_backlog_v1": 3
+  },
+  "source_post_artifact": "outputs/tables/xhs_expansion_candidate_v1/candidate_expanded_v12.jsonl",
+  "text_context_rows": 3885
+}

@@ -1,0 +1,58 @@
+[
+  {
+    "code": "H5",
+    "count": 42,
+    "count_base": "included_rows",
+    "formalization_scope": "supplemental_formalization_v1",
+    "share": 0.21,
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "code": "H4",
+    "count": 26,
+    "count_base": "included_rows",
+    "formalization_scope": "supplemental_formalization_v1",
+    "share": 0.13,
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "code": "H2",
+    "count": 22,
+    "count_base": "included_rows",
+    "formalization_scope": "supplemental_formalization_v1",
+    "share": 0.11,
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "code": "H3",
+    "count": 21,
+    "count_base": "included_rows",
+    "formalization_scope": "supplemental_formalization_v1",
+    "share": 0.105,
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "code": "H1",
+    "count": 5,
+    "count_base": "included_rows",
+    "formalization_scope": "supplemental_formalization_v1",
+    "share": 0.025,
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "code": "H6",
+    "count": 1,
+    "count_base": "included_rows",
+    "formalization_scope": "supplemental_formalization_v1",
+    "share": 0.005,
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "code": "",
+    "count": 122,
+    "count_base": "included_rows",
+    "formalization_scope": "supplemental_formalization_v1",
+    "share": 0.61,
+    "source_scope": "xhs_expansion_candidate_v1"
+  }
+]

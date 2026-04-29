@@ -1,0 +1,891 @@
+{
+  "artifact_id": "candidate1000_round2_search_index",
+  "scope": "xhs_expansion_candidate_v1",
+  "generated_at": "2026-04-28T16:56:54.829623+00:00",
+  "mode": "opencli_search_result_metadata_only",
+  "quality_v5_formal_scope": false,
+  "formal_scope": false,
+  "query_count": 122,
+  "executed_query_count": 80,
+  "search_limit": 50,
+  "target_new": 500,
+  "row_count": 500,
+  "decision_counts": {
+    "review_needed": 500
+  },
+  "query_group_counts": {
+    "B. 文献处理与知识整合类": 119,
+    "C. 研究设计与方法学习类": 121,
+    "D. 数据分析与代码类": 138,
+    "E. 论文写作与成果表达类": 122
+  },
+  "post_date_missing_count": 56,
+  "skip_counts": {
+    "duplicate_previous_candidate": 293,
+    "duplicate_existing_db": 329,
+    "duplicate_current_run": 131
+  },
+  "errors": [],
+  "query_stats": [
+    {
+      "query": "ChatGPT 读论文",
+      "query_group": "B. 文献处理与知识整合类",
+      "search_hits": 14,
+      "kept": 3,
+      "skips": {
+        "duplicate_previous_candidate": 5,
+        "duplicate_existing_db": 6
+      }
+    },
+    {
+      "query": "ChatGPT 总结论文",
+      "query_group": "B. 文献处理与知识整合类",
+      "search_hits": 17,
+      "kept": 6,
+      "skips": {
+        "duplicate_previous_candidate": 7,
+        "duplicate_existing_db": 4
+      }
+    },
+    {
+      "query": "ChatGPT 文献阅读",
+      "query_group": "B. 文献处理与知识整合类",
+      "search_hits": 16,
+      "kept": 5,
+      "skips": {
+        "duplicate_previous_candidate": 6,
+        "duplicate_existing_db": 5
+      }
+    },
+    {
+      "query": "ChatGPT 文献管理",
+      "query_group": "B. 文献处理与知识整合类",
+      "search_hits": 13,
+      "kept": 5,
+      "skips": {
+        "duplicate_existing_db": 7,
+        "duplicate_previous_candidate": 1
+      }
+    },
+    {
+      "query": "DeepSeek 读论文",
+      "query_group": "B. 文献处理与知识整合类",
+      "search_hits": 16,
+      "kept": 6,
+      "skips": {
+        "duplicate_existing_db": 7,
+        "duplicate_previous_candidate": 3
+      }
+    },
+    {
+      "query": "DeepSeek 总结论文",
+      "query_group": "B. 文献处理与知识整合类",
+      "search_hits": 16,
+      "kept": 4,
+      "skips": {
+        "duplicate_current_run": 3,
+        "duplicate_existing_db": 8,
+        "duplicate_previous_candidate": 1
+      }
+    },
+    {
+      "query": "DeepSeek 文献综述",
+      "query_group": "B. 文献处理与知识整合类",
+      "search_hits": 17,
+      "kept": 9,
+      "skips": {
+        "duplicate_existing_db": 3,
+        "duplicate_previous_candidate": 4,
+        "duplicate_current_run": 1
+      }
+    },
+    {
+      "query": "DeepSeek 文献阅读",
+      "query_group": "B. 文献处理与知识整合类",
+      "search_hits": 17,
+      "kept": 5,
+      "skips": {
+        "duplicate_current_run": 3,
+        "duplicate_existing_db": 4,
+        "duplicate_previous_candidate": 5
+      }
+    },
+    {
+      "query": "Kimi 读论文",
+      "query_group": "B. 文献处理与知识整合类",
+      "search_hits": 17,
+      "kept": 6,
+      "skips": {
+        "duplicate_previous_candidate": 5,
+        "duplicate_existing_db": 6
+      }
+    },
+    {
+      "query": "Kimi 总结论文",
+      "query_group": "B. 文献处理与知识整合类",
+      "search_hits": 15,
+      "kept": 4,
+      "skips": {
+        "duplicate_existing_db": 6,
+        "duplicate_previous_candidate": 3,
+        "duplicate_current_run": 2
+      }
+    },
+    {
+      "query": "Kimi 文献综述",
+      "query_group": "B. 文献处理与知识整合类",
+      "search_hits": 16,
+      "kept": 9,
+      "skips": {
+        "duplicate_existing_db": 3,
+        "duplicate_current_run": 3,
+        "duplicate_previous_candidate": 1
+      }
+    },
+    {
+      "query": "Kimi 论文阅读",
+      "query_group": "B. 文献处理与知识整合类",
+      "search_hits": 17,
+      "kept": 6,
+      "skips": {
+        "duplicate_current_run": 6,
+        "duplicate_existing_db": 3,
+        "duplicate_previous_candidate": 2
+      }
+    },
+    {
+      "query": "NotebookLM 文献综述",
+      "query_group": "B. 文献处理与知识整合类",
+      "search_hits": 14,
+      "kept": 8,
+      "skips": {
+        "duplicate_existing_db": 2,
+        "duplicate_previous_candidate": 4
+      }
+    },
+    {
+      "query": "NotebookLM 读论文",
+      "query_group": "B. 文献处理与知识整合类",
+      "search_hits": 16,
+      "kept": 4,
+      "skips": {
+        "duplicate_previous_candidate": 4,
+        "duplicate_existing_db": 5,
+        "duplicate_current_run": 3
+      }
+    },
+    {
+      "query": "NotebookLM 论文总结",
+      "query_group": "B. 文献处理与知识整合类",
+      "search_hits": 17,
+      "kept": 8,
+      "skips": {
+        "duplicate_existing_db": 2,
+        "duplicate_current_run": 2,
+        "duplicate_previous_candidate": 5
+      }
+    },
+    {
+      "query": "Elicit 文献综述",
+      "query_group": "B. 文献处理与知识整合类",
+      "search_hits": 15,
+      "kept": 6,
+      "skips": {
+        "duplicate_previous_candidate": 3,
+        "duplicate_existing_db": 6
+      }
+    },
+    {
+      "query": "Elicit 论文阅读",
+      "query_group": "B. 文献处理与知识整合类",
+      "search_hits": 16,
+      "kept": 5,
+      "skips": {
+        "duplicate_previous_candidate": 4,
+        "duplicate_existing_db": 5,
+        "duplicate_current_run": 2
+      }
+    },
+    {
+      "query": "Consensus 文献综述",
+      "query_group": "B. 文献处理与知识整合类",
+      "search_hits": 15,
+      "kept": 6,
+      "skips": {
+        "duplicate_previous_candidate": 1,
+        "duplicate_existing_db": 7,
+        "duplicate_current_run": 1
+      }
+    },
+    {
+      "query": "Perplexity 文献检索",
+      "query_group": "B. 文献处理与知识整合类",
+      "search_hits": 15,
+      "kept": 5,
+      "skips": {
+        "duplicate_existing_db": 9,
+        "duplicate_previous_candidate": 1
+      }
+    },
+    {
+      "query": "AI读论文神器",
+      "query_group": "B. 文献处理与知识整合类",
+      "search_hits": 17,
+      "kept": 3,
+      "skips": {
+        "duplicate_previous_candidate": 9,
+        "duplicate_existing_db": 4,
+        "duplicate_current_run": 1
+      }
+    },
+    {
+      "query": "AI文献综述工具",
+      "query_group": "B. 文献处理与知识整合类",
+      "search_hits": 16,
+      "kept": 0,
+      "skips": {
+        "duplicate_previous_candidate": 7,
+        "duplicate_existing_db": 9
+      }
+    },
+    {
+      "query": "AI论文总结工具",
+      "query_group": "B. 文献处理与知识整合类",
+      "search_hits": 17,
+      "kept": 3,
+      "skips": {
+        "duplicate_previous_candidate": 7,
+        "duplicate_current_run": 1,
+        "duplicate_existing_db": 6
+      }
+    },
+    {
+      "query": "AI翻译论文",
+      "query_group": "B. 文献处理与知识整合类",
+      "search_hits": 12,
+      "kept": 3,
+      "skips": {
+        "duplicate_existing_db": 2,
+        "duplicate_previous_candidate": 6,
+        "duplicate_current_run": 1
+      }
+    },
+    {
+      "query": "ChatGPT 研究问题",
+      "query_group": "C. 研究设计与方法学习类",
+      "search_hits": 15,
+      "kept": 3,
+      "skips": {
+        "duplicate_existing_db": 8,
+        "duplicate_previous_candidate": 4
+      }
+    },
+    {
+      "query": "ChatGPT 研究方法",
+      "query_group": "C. 研究设计与方法学习类",
+      "search_hits": 15,
+      "kept": 6,
+      "skips": {
+        "duplicate_existing_db": 3,
+        "duplicate_previous_candidate": 5,
+        "duplicate_current_run": 1
+      }
+    },
+    {
+      "query": "ChatGPT 问卷设计",
+      "query_group": "C. 研究设计与方法学习类",
+      "search_hits": 18,
+      "kept": 9,
+      "skips": {
+        "duplicate_previous_candidate": 6,
+        "duplicate_existing_db": 1,
+        "duplicate_current_run": 2
+      }
+    },
+    {
+      "query": "ChatGPT 访谈提纲",
+      "query_group": "C. 研究设计与方法学习类",
+      "search_hits": 16,
+      "kept": 6,
+      "skips": {
+        "duplicate_current_run": 3,
+        "duplicate_previous_candidate": 4,
+        "duplicate_existing_db": 3
+      }
+    },
+    {
+      "query": "DeepSeek 研究设计",
+      "query_group": "C. 研究设计与方法学习类",
+      "search_hits": 17,
+      "kept": 4,
+      "skips": {
+        "duplicate_current_run": 4,
+        "duplicate_previous_candidate": 5,
+        "duplicate_existing_db": 4
+      }
+    },
+    {
+      "query": "DeepSeek 研究方法",
+      "query_group": "C. 研究设计与方法学习类",
+      "search_hits": 17,
+      "kept": 7,
+      "skips": {
+        "duplicate_existing_db": 4,
+        "duplicate_previous_candidate": 3,
+        "duplicate_current_run": 3
+      }
+    },
+    {
+      "query": "DeepSeek 问卷设计",
+      "query_group": "C. 研究设计与方法学习类",
+      "search_hits": 15,
+      "kept": 9,
+      "skips": {
+        "duplicate_previous_candidate": 4,
+        "duplicate_current_run": 2
+      }
+    },
+    {
+      "query": "DeepSeek 访谈提纲",
+      "query_group": "C. 研究设计与方法学习类",
+      "search_hits": 14,
+      "kept": 8,
+      "skips": {
+        "duplicate_current_run": 3,
+        "duplicate_previous_candidate": 2,
+        "duplicate_existing_db": 1
+      }
+    },
+    {
+      "query": "AI生成研究假设",
+      "query_group": "C. 研究设计与方法学习类",
+      "search_hits": 14,
+      "kept": 1,
+      "skips": {
+        "duplicate_previous_candidate": 6,
+        "duplicate_current_run": 1,
+        "duplicate_existing_db": 6
+      }
+    },
+    {
+      "query": "AI选题 研究生",
+      "query_group": "C. 研究设计与方法学习类",
+      "search_hits": 16,
+      "kept": 8,
+      "skips": {
+        "duplicate_previous_candidate": 4,
+        "duplicate_existing_db": 3,
+        "duplicate_current_run": 1
+      }
+    },
+    {
+      "query": "AI科研选题",
+      "query_group": "C. 研究设计与方法学习类",
+      "search_hits": 15,
+      "kept": 4,
+      "skips": {
+        "duplicate_existing_db": 9,
+        "duplicate_previous_candidate": 2
+      }
+    },
+    {
+      "query": "AI论文选题",
+      "query_group": "C. 研究设计与方法学习类",
+      "search_hits": 17,
+      "kept": 8,
+      "skips": {
+        "duplicate_previous_candidate": 2,
+        "duplicate_existing_db": 6,
+        "duplicate_current_run": 1
+      }
+    },
+    {
+      "query": "AI质性研究",
+      "query_group": "C. 研究设计与方法学习类",
+      "search_hits": 16,
+      "kept": 5,
+      "skips": {
+        "duplicate_previous_candidate": 4,
+        "duplicate_current_run": 4,
+        "duplicate_existing_db": 3
+      }
+    },
+    {
+      "query": "AI访谈分析",
+      "query_group": "C. 研究设计与方法学习类",
+      "search_hits": 16,
+      "kept": 8,
+      "skips": {
+        "duplicate_previous_candidate": 3,
+        "duplicate_existing_db": 4,
+        "duplicate_current_run": 1
+      }
+    },
+    {
+      "query": "AI扎根理论",
+      "query_group": "C. 研究设计与方法学习类",
+      "search_hits": 14,
+      "kept": 6,
+      "skips": {
+        "duplicate_previous_candidate": 2,
+        "duplicate_existing_db": 5,
+        "duplicate_current_run": 1
+      }
+    },
+    {
+      "query": "AI问卷量表",
+      "query_group": "C. 研究设计与方法学习类",
+      "search_hits": 15,
+      "kept": 12,
+      "skips": {
+        "duplicate_previous_candidate": 2,
+        "duplicate_current_run": 1
+      }
+    },
+    {
+      "query": "研究生 ChatGPT 科研",
+      "query_group": "C. 研究设计与方法学习类",
+      "search_hits": 10,
+      "kept": 3,
+      "skips": {
+        "duplicate_existing_db": 4,
+        "duplicate_previous_candidate": 3
+      }
+    },
+    {
+      "query": "博士 ChatGPT 科研",
+      "query_group": "C. 研究设计与方法学习类",
+      "search_hits": 16,
+      "kept": 8,
+      "skips": {
+        "duplicate_existing_db": 5,
+        "duplicate_current_run": 1,
+        "duplicate_previous_candidate": 2
+      }
+    },
+    {
+      "query": "硕士论文 AI 研究方法",
+      "query_group": "C. 研究设计与方法学习类",
+      "search_hits": 16,
+      "kept": 6,
+      "skips": {
+        "duplicate_existing_db": 5,
+        "duplicate_previous_candidate": 5
+      }
+    },
+    {
+      "query": "ChatGPT SPSS",
+      "query_group": "D. 数据分析与代码类",
+      "search_hits": 15,
+      "kept": 6,
+      "skips": {
+        "duplicate_existing_db": 4,
+        "duplicate_previous_candidate": 4,
+        "duplicate_current_run": 1
+      }
+    },
+    {
+      "query": "ChatGPT stata",
+      "query_group": "D. 数据分析与代码类",
+      "search_hits": 15,
+      "kept": 3,
+      "skips": {
+        "duplicate_existing_db": 8,
+        "duplicate_previous_candidate": 2,
+        "duplicate_current_run": 2
+      }
+    },
+    {
+      "query": "ChatGPT R语言",
+      "query_group": "D. 数据分析与代码类",
+      "search_hits": 15,
+      "kept": 4,
+      "skips": {
+        "duplicate_existing_db": 4,
+        "duplicate_previous_candidate": 6,
+        "duplicate_current_run": 1
+      }
+    },
+    {
+      "query": "ChatGPT Python 数据分析",
+      "query_group": "D. 数据分析与代码类",
+      "search_hits": 16,
+      "kept": 6,
+      "skips": {
+        "duplicate_existing_db": 5,
+        "duplicate_previous_candidate": 5
+      }
+    },
+    {
+      "query": "DeepSeek 数据分析",
+      "query_group": "D. 数据分析与代码类",
+      "search_hits": 15,
+      "kept": 5,
+      "skips": {
+        "duplicate_current_run": 4,
+        "duplicate_previous_candidate": 5,
+        "duplicate_existing_db": 1
+      }
+    },
+    {
+      "query": "DeepSeek 统计分析",
+      "query_group": "D. 数据分析与代码类",
+      "search_hits": 15,
+      "kept": 9,
+      "skips": {
+        "duplicate_existing_db": 3,
+        "duplicate_previous_candidate": 2,
+        "duplicate_current_run": 1
+      }
+    },
+    {
+      "query": "DeepSeek 写代码 科研",
+      "query_group": "D. 数据分析与代码类",
+      "search_hits": 14,
+      "kept": 6,
+      "skips": {
+        "duplicate_previous_candidate": 3,
+        "duplicate_existing_db": 4,
+        "duplicate_current_run": 1
+      }
+    },
+    {
+      "query": "DeepSeek Python 科研",
+      "query_group": "D. 数据分析与代码类",
+      "search_hits": 16,
+      "kept": 8,
+      "skips": {
+        "duplicate_current_run": 5,
+        "duplicate_previous_candidate": 2,
+        "duplicate_existing_db": 1
+      }
+    },
+    {
+      "query": "Cursor 科研代码",
+      "query_group": "D. 数据分析与代码类",
+      "search_hits": 15,
+      "kept": 13,
+      "skips": {
+        "duplicate_existing_db": 1,
+        "duplicate_previous_candidate": 1
+      }
+    },
+    {
+      "query": "Cursor 数据分析",
+      "query_group": "D. 数据分析与代码类",
+      "search_hits": 17,
+      "kept": 12,
+      "skips": {
+        "duplicate_previous_candidate": 4,
+        "duplicate_existing_db": 1
+      }
+    },
+    {
+      "query": "Cursor 论文代码",
+      "query_group": "D. 数据分析与代码类",
+      "search_hits": 16,
+      "kept": 11,
+      "skips": {
+        "duplicate_previous_candidate": 1,
+        "duplicate_current_run": 3,
+        "duplicate_existing_db": 1
+      }
+    },
+    {
+      "query": "Copilot 科研代码",
+      "query_group": "D. 数据分析与代码类",
+      "search_hits": 17,
+      "kept": 5,
+      "skips": {
+        "duplicate_previous_candidate": 5,
+        "duplicate_current_run": 3,
+        "duplicate_existing_db": 4
+      }
+    },
+    {
+      "query": "AI跑数据",
+      "query_group": "D. 数据分析与代码类",
+      "search_hits": 15,
+      "kept": 7,
+      "skips": {
+        "duplicate_previous_candidate": 5,
+        "duplicate_current_run": 1,
+        "duplicate_existing_db": 2
+      }
+    },
+    {
+      "query": "AI分析访谈资料",
+      "query_group": "D. 数据分析与代码类",
+      "search_hits": 16,
+      "kept": 2,
+      "skips": {
+        "duplicate_existing_db": 3,
+        "duplicate_current_run": 8,
+        "duplicate_previous_candidate": 3
+      }
+    },
+    {
+      "query": "AI统计建模",
+      "query_group": "D. 数据分析与代码类",
+      "search_hits": 12,
+      "kept": 9,
+      "skips": {
+        "duplicate_existing_db": 3
+      }
+    },
+    {
+      "query": "AI回归分析",
+      "query_group": "D. 数据分析与代码类",
+      "search_hits": 16,
+      "kept": 7,
+      "skips": {
+        "duplicate_existing_db": 4,
+        "duplicate_previous_candidate": 4,
+        "duplicate_current_run": 1
+      }
+    },
+    {
+      "query": "AI结果解释 论文",
+      "query_group": "D. 数据分析与代码类",
+      "search_hits": 18,
+      "kept": 4,
+      "skips": {
+        "duplicate_current_run": 3,
+        "duplicate_previous_candidate": 10,
+        "duplicate_existing_db": 1
+      }
+    },
+    {
+      "query": "AI复现论文代码",
+      "query_group": "D. 数据分析与代码类",
+      "search_hits": 12,
+      "kept": 3,
+      "skips": {
+        "duplicate_existing_db": 7,
+        "duplicate_previous_candidate": 2
+      }
+    },
+    {
+      "query": "AI清洗数据",
+      "query_group": "D. 数据分析与代码类",
+      "search_hits": 16,
+      "kept": 7,
+      "skips": {
+        "duplicate_previous_candidate": 6,
+        "duplicate_existing_db": 2,
+        "duplicate_current_run": 1
+      }
+    },
+    {
+      "query": "AI绘制论文图表",
+      "query_group": "D. 数据分析与代码类",
+      "search_hits": 17,
+      "kept": 11,
+      "skips": {
+        "duplicate_existing_db": 3,
+        "duplicate_previous_candidate": 3
+      }
+    },
+    {
+      "query": "ChatGPT 论文润色",
+      "query_group": "E. 论文写作与成果表达类",
+      "search_hits": 16,
+      "kept": 10,
+      "skips": {
+        "duplicate_existing_db": 6
+      }
+    },
+    {
+      "query": "ChatGPT 论文修改",
+      "query_group": "E. 论文写作与成果表达类",
+      "search_hits": 18,
+      "kept": 13,
+      "skips": {
+        "duplicate_previous_candidate": 4,
+        "duplicate_existing_db": 1
+      }
+    },
+    {
+      "query": "ChatGPT 论文摘要",
+      "query_group": "E. 论文写作与成果表达类",
+      "search_hits": 15,
+      "kept": 7,
+      "skips": {
+        "duplicate_current_run": 1,
+        "duplicate_previous_candidate": 5,
+        "duplicate_existing_db": 2
+      }
+    },
+    {
+      "query": "ChatGPT 学术写作",
+      "query_group": "E. 论文写作与成果表达类",
+      "search_hits": 16,
+      "kept": 0,
+      "skips": {
+        "duplicate_previous_candidate": 7,
+        "duplicate_existing_db": 6,
+        "duplicate_current_run": 3
+      }
+    },
+    {
+      "query": "DeepSeek 写论文",
+      "query_group": "E. 论文写作与成果表达类",
+      "search_hits": 18,
+      "kept": 4,
+      "skips": {
+        "duplicate_previous_candidate": 6,
+        "duplicate_existing_db": 3,
+        "duplicate_current_run": 5
+      }
+    },
+    {
+      "query": "DeepSeek 论文润色",
+      "query_group": "E. 论文写作与成果表达类",
+      "search_hits": 17,
+      "kept": 16,
+      "skips": {
+        "duplicate_current_run": 1
+      }
+    },
+    {
+      "query": "DeepSeek 论文修改",
+      "query_group": "E. 论文写作与成果表达类",
+      "search_hits": 16,
+      "kept": 15,
+      "skips": {
+        "duplicate_existing_db": 1
+      }
+    },
+    {
+      "query": "DeepSeek 学术写作",
+      "query_group": "E. 论文写作与成果表达类",
+      "search_hits": 17,
+      "kept": 1,
+      "skips": {
+        "duplicate_existing_db": 4,
+        "duplicate_current_run": 5,
+        "duplicate_previous_candidate": 7
+      }
+    },
+    {
+      "query": "Kimi 写论文",
+      "query_group": "E. 论文写作与成果表达类",
+      "search_hits": 16,
+      "kept": 7,
+      "skips": {
+        "duplicate_current_run": 3,
+        "duplicate_existing_db": 5,
+        "duplicate_previous_candidate": 1
+      }
+    },
+    {
+      "query": "Kimi 论文润色",
+      "query_group": "E. 论文写作与成果表达类",
+      "search_hits": 17,
+      "kept": 5,
+      "skips": {
+        "duplicate_previous_candidate": 1,
+        "duplicate_existing_db": 8,
+        "duplicate_current_run": 3
+      }
+    },
+    {
+      "query": "Claude 写论文",
+      "query_group": "E. 论文写作与成果表达类",
+      "search_hits": 14,
+      "kept": 4,
+      "skips": {
+        "duplicate_existing_db": 3,
+        "duplicate_previous_candidate": 5,
+        "duplicate_current_run": 2
+      }
+    },
+    {
+      "query": "Claude 论文润色",
+      "query_group": "E. 论文写作与成果表达类",
+      "search_hits": 18,
+      "kept": 6,
+      "skips": {
+        "duplicate_current_run": 5,
+        "duplicate_previous_candidate": 3,
+        "duplicate_existing_db": 4
+      }
+    },
+    {
+      "query": "AI论文降重",
+      "query_group": "E. 论文写作与成果表达类",
+      "search_hits": 17,
+      "kept": 4,
+      "skips": {
+        "duplicate_current_run": 3,
+        "duplicate_existing_db": 8,
+        "duplicate_previous_candidate": 2
+      }
+    },
+    {
+      "query": "AI论文改写",
+      "query_group": "E. 论文写作与成果表达类",
+      "search_hits": 17,
+      "kept": 5,
+      "skips": {
+        "duplicate_previous_candidate": 7,
+        "duplicate_existing_db": 5
+      }
+    },
+    {
+      "query": "AI英文润色",
+      "query_group": "E. 论文写作与成果表达类",
+      "search_hits": 18,
+      "kept": 1,
+      "skips": {
+        "duplicate_previous_candidate": 2,
+        "duplicate_current_run": 3,
+        "duplicate_existing_db": 12
+      }
+    },
+    {
+      "query": "AI学术英语写作",
+      "query_group": "E. 论文写作与成果表达类",
+      "search_hits": 16,
+      "kept": 3,
+      "skips": {
+        "duplicate_previous_candidate": 6,
+        "duplicate_existing_db": 3,
+        "duplicate_current_run": 4
+      }
+    },
+    {
+      "query": "AI回复审稿意见",
+      "query_group": "E. 论文写作与成果表达类",
+      "search_hits": 14,
+      "kept": 11,
+      "skips": {
+        "duplicate_previous_candidate": 1,
+        "duplicate_existing_db": 2
+      }
+    },
+    {
+      "query": "AI投稿信",
+      "query_group": "E. 论文写作与成果表达类",
+      "search_hits": 15,
+      "kept": 10,
+      "skips": {
+        "duplicate_previous_candidate": 1,
+        "duplicate_existing_db": 1
+      }
+    }
+  ],
+  "formal_baseline_guard_counts": {
+    "quality_v5_posts": 514,
+    "quality_v5_comments": 0
+  },
+  "limitations": [
+    "Rows contain public search-result metadata only, not verified full post bodies.",
+    "All rows are review_needed and must not be treated as formal evidence before manual public-page review.",
+    "The run does not import into the research database and does not alter quality_v5 formal scope."
+  ],
+  "output_path": "outputs/tables/xhs_expansion_candidate_v1/candidate1000_round2_search_index.jsonl",
+  "query_manifest_path": "outputs/reports/xhs_expansion_candidate_v1/candidate1000_round2.query_manifest.json",
+  "review_queue_path": "data/interim/xhs_expansion_candidate_v1/review_queues/candidate1000_round2_search_index.review_queue.jsonl",
+  "review_template_path": "data/interim/xhs_expansion_candidate_v1/reviewed/candidate1000_round2_search_index.review_template.jsonl"
+}

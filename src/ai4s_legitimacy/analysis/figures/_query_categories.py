@@ -15,7 +15,7 @@ from ai4s_legitimacy.analysis.figures.config import (
     parse_json_list,
     share_matrix,
 )
-from ai4s_legitimacy.config.formal_baseline import paper_scope_view
+from ai4s_legitimacy.config.formal_baseline import ACTIVE_FORMAL_STAGE, paper_scope_view
 
 from ._query_context import PeriodContext
 
@@ -140,13 +140,14 @@ def build_posts_heatmap_dataset(
     connection: sqlite3.Connection,
     *,
     context: PeriodContext,
+    stage: str = ACTIVE_FORMAL_STAGE,
 ) -> dict[str, Any] | None:
     heatmap_rows = connection.execute(
         f"SELECT {context.halfyear_case_post} AS period_label, "
         "COALESCE(qs_broad_subject, 'uncertain') AS subject_label, "
         "COALESCE(workflow_stage, 'uncertain') AS workflow_stage, "
         "COUNT(*) AS row_count "
-        f"FROM {paper_scope_view('posts')} "
+        f"FROM {paper_scope_view('posts', stage)} "
         "WHERE post_date IS NOT NULL "
         "GROUP BY period_label, subject_label, workflow_stage"
     ).fetchall()
@@ -212,13 +213,14 @@ def build_comments_attitude_dataset(
     connection: sqlite3.Connection,
     *,
     context: PeriodContext,
+    stage: str = ACTIVE_FORMAL_STAGE,
 ) -> dict[str, Any] | None:
     attitude_rows = connection.execute(
         f"SELECT {context.halfyear_case_comment} AS period_label, "
         "COALESCE(c.stance, '其他') AS attitude_label, "
         "COUNT(*) AS row_count "
-        f"FROM {paper_scope_view('comments')} c "
-        f"JOIN {paper_scope_view('posts')} p ON p.post_id = c.post_id "
+        f"FROM {paper_scope_view('comments', stage)} c "
+        f"JOIN {paper_scope_view('posts', stage)} p ON p.post_id = c.post_id "
         "GROUP BY period_label, attitude_label HAVING period_label IS NOT NULL"
     ).fetchall()
     attitude_counts: dict[str, dict[str, int]] = defaultdict(lambda: defaultdict(int))
@@ -248,10 +250,11 @@ def build_tools_datasets(
     connection: sqlite3.Connection,
     *,
     context: PeriodContext,
+    stage: str = ACTIVE_FORMAL_STAGE,
 ) -> dict[str, dict[str, Any]]:
     tool_rows = connection.execute(
         f"SELECT {context.halfyear_case_post} AS period_label, post_date, ai_tools_json "
-        f"FROM {paper_scope_view('posts')} "
+        f"FROM {paper_scope_view('posts', stage)} "
         "WHERE post_date IS NOT NULL AND ai_tools_json IS NOT NULL AND ai_tools_json != '[]'"
     ).fetchall()
     tools_by_period, tools_by_quarter, total_tools = _accumulate_json_category_counts(
@@ -293,10 +296,11 @@ def build_risk_theme_datasets(
     connection: sqlite3.Connection,
     *,
     context: PeriodContext,
+    stage: str = ACTIVE_FORMAL_STAGE,
 ) -> dict[str, dict[str, Any]]:
     risk_rows = connection.execute(
         f"SELECT {context.halfyear_case_post} AS period_label, post_date, risk_themes_json "
-        f"FROM {paper_scope_view('posts')} "
+        f"FROM {paper_scope_view('posts', stage)} "
         "WHERE post_date IS NOT NULL AND risk_themes_json IS NOT NULL AND risk_themes_json != '[]'"
     ).fetchall()
     risks_by_period, risks_by_quarter, total_risks = _accumulate_json_category_counts(

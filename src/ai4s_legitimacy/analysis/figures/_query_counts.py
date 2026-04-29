@@ -9,7 +9,7 @@ from ai4s_legitimacy.analysis.figures.config import (
     month_sequence,
     rolling_mean,
 )
-from ai4s_legitimacy.config.formal_baseline import paper_scope_view
+from ai4s_legitimacy.config.formal_baseline import ACTIVE_FORMAL_STAGE, paper_scope_view
 
 from ._query_context import PeriodContext
 
@@ -44,10 +44,14 @@ def _build_dual_count_dataset(
     }
 
 
-def build_posts_trend_dataset(connection: sqlite3.Connection) -> dict[str, Any] | None:
+def build_posts_trend_dataset(
+    connection: sqlite3.Connection,
+    *,
+    stage: str = ACTIVE_FORMAL_STAGE,
+) -> dict[str, Any] | None:
     rows = connection.execute(
         "SELECT substr(post_date, 1, 7) AS period_month, COUNT(*) AS row_count "
-        f"FROM {paper_scope_view('posts')} "
+        f"FROM {paper_scope_view('posts', stage)} "
         "WHERE post_date IS NOT NULL AND post_date != '' "
         "GROUP BY period_month ORDER BY period_month"
     ).fetchall()
@@ -68,17 +72,18 @@ def _build_posts_by_period_dataset(
     connection: sqlite3.Connection,
     *,
     context: PeriodContext,
+    stage: str = ACTIVE_FORMAL_STAGE,
 ) -> dict[str, Any] | None:
     post_rows = connection.execute(
         f"SELECT {context.halfyear_case_post} AS period_label, COUNT(*) AS row_count "
-        f"FROM {paper_scope_view('posts')} "
+        f"FROM {paper_scope_view('posts', stage)} "
         "WHERE post_date IS NOT NULL "
         "GROUP BY period_label HAVING period_label IS NOT NULL"
     ).fetchall()
     comment_rows = connection.execute(
         f"SELECT {context.halfyear_case_comment} AS period_label, COUNT(*) AS row_count "
-        f"FROM {paper_scope_view('comments')} c "
-        f"JOIN {paper_scope_view('posts')} p ON p.post_id = c.post_id "
+        f"FROM {paper_scope_view('comments', stage)} c "
+        f"JOIN {paper_scope_view('posts', stage)} p ON p.post_id = c.post_id "
         "GROUP BY period_label HAVING period_label IS NOT NULL"
     ).fetchall()
     return _build_dual_count_dataset(
@@ -95,13 +100,14 @@ def _build_posts_by_quarter_dataset(
     connection: sqlite3.Connection,
     *,
     context: PeriodContext,
+    stage: str = ACTIVE_FORMAL_STAGE,
 ) -> dict[str, Any] | None:
     quarter_post_rows = connection.execute(
         "SELECT "
         "(substr(post_date, 1, 4) || 'Q' || "
         "(CAST(((CAST(substr(post_date, 6, 2) AS INTEGER) - 1) / 3) AS INTEGER) + 1)) AS period_label, "
         "COUNT(*) AS row_count "
-        f"FROM {paper_scope_view('posts')} "
+        f"FROM {paper_scope_view('posts', stage)} "
         "WHERE post_date IS NOT NULL AND post_date != '' "
         "GROUP BY period_label ORDER BY period_label"
     ).fetchall()
@@ -110,8 +116,8 @@ def _build_posts_by_quarter_dataset(
         "(substr(c.comment_date, 1, 4) || 'Q' || "
         "(CAST(((CAST(substr(c.comment_date, 6, 2) AS INTEGER) - 1) / 3) AS INTEGER) + 1)) AS period_label, "
         "COUNT(*) AS row_count "
-        f"FROM {paper_scope_view('comments')} c "
-        f"JOIN {paper_scope_view('posts')} p ON p.post_id = c.post_id "
+        f"FROM {paper_scope_view('comments', stage)} c "
+        f"JOIN {paper_scope_view('posts', stage)} p ON p.post_id = c.post_id "
         "GROUP BY period_label ORDER BY period_label"
     ).fetchall()
     return _build_dual_count_dataset(
@@ -128,14 +134,15 @@ def build_post_count_datasets(
     connection: sqlite3.Connection,
     *,
     context: PeriodContext,
+    stage: str = ACTIVE_FORMAL_STAGE,
 ) -> dict[str, dict[str, Any]]:
     datasets: dict[str, dict[str, Any]] = {}
 
-    dataset = _build_posts_by_period_dataset(connection, context=context)
+    dataset = _build_posts_by_period_dataset(connection, context=context, stage=stage)
     if dataset:
         datasets["posts_by_period"] = dataset
 
-    dataset = _build_posts_by_quarter_dataset(connection, context=context)
+    dataset = _build_posts_by_quarter_dataset(connection, context=context, stage=stage)
     if dataset:
         datasets["posts_by_quarter"] = dataset
 

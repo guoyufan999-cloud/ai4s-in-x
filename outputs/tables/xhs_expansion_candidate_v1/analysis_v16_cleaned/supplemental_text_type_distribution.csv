@@ -1,0 +1,7 @@
+count,label,share,source_scope,value
+81,工具推荐,0.3932,xhs_expansion_candidate_v1,tool_recommendation
+49,经验分享,0.2379,xhs_expansion_candidate_v1,experience_sharing
+29,教程展示/经验教程,0.1408,xhs_expansion_candidate_v1,tutorial_or_experience
+26,风险提醒,0.1262,xhs_expansion_candidate_v1,risk_warning
+14,规范解读,0.068,xhs_expansion_candidate_v1,norm_interpretation
+7,评论争论,0.034,xhs_expansion_candidate_v1,comment_dispute

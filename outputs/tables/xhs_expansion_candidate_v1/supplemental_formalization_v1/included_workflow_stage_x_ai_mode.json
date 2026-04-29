@@ -1,0 +1,274 @@
+[
+  {
+    "count": 97,
+    "count_base": "included_rows",
+    "formalization_scope": "supplemental_formalization_v1",
+    "left": "文献处理与知识整合",
+    "right": "F1",
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "count": 59,
+    "count_base": "included_rows",
+    "formalization_scope": "supplemental_formalization_v1",
+    "left": "文献处理与知识整合",
+    "right": "F2",
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "count": 31,
+    "count_base": "included_rows",
+    "formalization_scope": "supplemental_formalization_v1",
+    "left": "数据分析与代码",
+    "right": "F3",
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "count": 22,
+    "count_base": "included_rows",
+    "formalization_scope": "supplemental_formalization_v1",
+    "left": "文献处理与知识整合",
+    "right": "F5",
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "count": 21,
+    "count_base": "included_rows",
+    "formalization_scope": "supplemental_formalization_v1",
+    "left": "文献处理与知识整合",
+    "right": "F3",
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "count": 19,
+    "count_base": "included_rows",
+    "formalization_scope": "supplemental_formalization_v1",
+    "left": "待人工判定",
+    "right": "F1",
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "count": 15,
+    "count_base": "included_rows",
+    "formalization_scope": "supplemental_formalization_v1",
+    "left": "数据分析与代码",
+    "right": "F1",
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "count": 15,
+    "count_base": "included_rows",
+    "formalization_scope": "supplemental_formalization_v1",
+    "left": "数据分析与代码",
+    "right": "F2",
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "count": 13,
+    "count_base": "included_rows",
+    "formalization_scope": "supplemental_formalization_v1",
+    "left": "数据分析与代码",
+    "right": "F5",
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "count": 12,
+    "count_base": "included_rows",
+    "formalization_scope": "supplemental_formalization_v1",
+    "left": "研究设计与方法学习",
+    "right": "F2",
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "count": 12,
+    "count_base": "included_rows",
+    "formalization_scope": "supplemental_formalization_v1",
+    "left": "论文写作与成果表达",
+    "right": "F2",
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "count": 11,
+    "count_base": "included_rows",
+    "formalization_scope": "supplemental_formalization_v1",
+    "left": "研究设计与方法学习",
+    "right": "F1",
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "count": 9,
+    "count_base": "included_rows",
+    "formalization_scope": "supplemental_formalization_v1",
+    "left": "文献处理与知识整合",
+    "right": "F6",
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "count": 8,
+    "count_base": "included_rows",
+    "formalization_scope": "supplemental_formalization_v1",
+    "left": "待人工判定",
+    "right": "F2",
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "count": 7,
+    "count_base": "included_rows",
+    "formalization_scope": "supplemental_formalization_v1",
+    "left": "待人工判定",
+    "right": "F5",
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "count": 7,
+    "count_base": "included_rows",
+    "formalization_scope": "supplemental_formalization_v1",
+    "left": "文献处理与知识整合",
+    "right": "F4",
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "count": 7,
+    "count_base": "included_rows",
+    "formalization_scope": "supplemental_formalization_v1",
+    "left": "论文写作与成果表达",
+    "right": "F6",
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "count": 6,
+    "count_base": "included_rows",
+    "formalization_scope": "supplemental_formalization_v1",
+    "left": "科研训练与效率",
+    "right": "F1",
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "count": 6,
+    "count_base": "included_rows",
+    "formalization_scope": "supplemental_formalization_v1",
+    "left": "论文写作与成果表达",
+    "right": "F1",
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "count": 5,
+    "count_base": "included_rows",
+    "formalization_scope": "supplemental_formalization_v1",
+    "left": "待人工判定",
+    "right": "F3",
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "count": 5,
+    "count_base": "included_rows",
+    "formalization_scope": "supplemental_formalization_v1",
+    "left": "待人工判定",
+    "right": "F4",
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "count": 5,
+    "count_base": "included_rows",
+    "formalization_scope": "supplemental_formalization_v1",
+    "left": "研究设计与方法学习",
+    "right": "F5",
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "count": 4,
+    "count_base": "included_rows",
+    "formalization_scope": "supplemental_formalization_v1",
+    "left": "待人工判定",
+    "right": "F6",
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "count": 4,
+    "count_base": "included_rows",
+    "formalization_scope": "supplemental_formalization_v1",
+    "left": "科研训练与效率",
+    "right": "F2",
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "count": 3,
+    "count_base": "included_rows",
+    "formalization_scope": "supplemental_formalization_v1",
+    "left": "数据分析与代码",
+    "right": "F6",
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "count": 3,
+    "count_base": "included_rows",
+    "formalization_scope": "supplemental_formalization_v1",
+    "left": "科研规范与治理",
+    "right": "F6",
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "count": 3,
+    "count_base": "included_rows",
+    "formalization_scope": "supplemental_formalization_v1",
+    "left": "论文写作与成果表达",
+    "right": "F5",
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "count": 2,
+    "count_base": "included_rows",
+    "formalization_scope": "supplemental_formalization_v1",
+    "left": "研究设计与方法学习",
+    "right": "F3",
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "count": 2,
+    "count_base": "included_rows",
+    "formalization_scope": "supplemental_formalization_v1",
+    "left": "科研规范与治理",
+    "right": "F1",
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "count": 2,
+    "count_base": "included_rows",
+    "formalization_scope": "supplemental_formalization_v1",
+    "left": "科研训练与效率",
+    "right": "F3",
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "count": 2,
+    "count_base": "included_rows",
+    "formalization_scope": "supplemental_formalization_v1",
+    "left": "科研训练与效率",
+    "right": "F5",
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "count": 2,
+    "count_base": "included_rows",
+    "formalization_scope": "supplemental_formalization_v1",
+    "left": "论文写作与成果表达",
+    "right": "F3",
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "count": 1,
+    "count_base": "included_rows",
+    "formalization_scope": "supplemental_formalization_v1",
+    "left": "研究设计与方法学习",
+    "right": "F4",
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "count": 1,
+    "count_base": "included_rows",
+    "formalization_scope": "supplemental_formalization_v1",
+    "left": "科研训练与效率",
+    "right": "F4",
+    "source_scope": "xhs_expansion_candidate_v1"
+  }
+]

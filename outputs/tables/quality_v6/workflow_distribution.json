@@ -1,0 +1,66 @@
+[
+  {
+    "workflow_stage": "文献调研与知识整合",
+    "post_count": 339
+  },
+  {
+    "workflow_stage": "研究构思与问题定义",
+    "post_count": 127
+  },
+  {
+    "workflow_stage": "数据处理与分析建模",
+    "post_count": 88
+  },
+  {
+    "workflow_stage": "学术写作与成果表达",
+    "post_count": 52
+  },
+  {
+    "workflow_stage": "uncertain",
+    "post_count": 32
+  },
+  {
+    "workflow_stage": "研究设计与方案制定",
+    "post_count": 24
+  },
+  {
+    "workflow_stage": "数据获取",
+    "post_count": 10
+  },
+  {
+    "workflow_stage": "出版与评审治理",
+    "post_count": 9
+  },
+  {
+    "workflow_stage": "科研效率提升与习惯养成",
+    "post_count": 9
+  },
+  {
+    "workflow_stage": "发表与知识扩散",
+    "post_count": 8
+  },
+  {
+    "workflow_stage": "研究方法学习",
+    "post_count": 5
+  },
+  {
+    "workflow_stage": "实验实施与仿真执行",
+    "post_count": 4
+  },
+  {
+    "workflow_stage": "结果验证与论文复现",
+    "post_count": 4
+  },
+  {
+    "workflow_stage": "学术阅读与写作能力训练",
+    "post_count": 1
+  },
+  {
+    "workflow_stage": "科研工具与技术技能训练",
+    "post_count": 1
+  },
+  {
+    "workflow_stage": "结果解释与理论提炼",
+    "post_count": 1
+  }
+]

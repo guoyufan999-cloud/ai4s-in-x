@@ -1,0 +1,8 @@
+quality_v5_count,quality_v5_share,share_delta_supplemental_minus_quality_v5,supplemental_count,supplemental_share,theme_code,theme_label
+137,0.2665,-0.1383,10,0.1282,research_design,AI研究设计与方法学习
+241,0.4689,0.1337,47,0.6026,literature_processing,AI文献阅读与知识整合
+47,0.0914,-0.0402,4,0.0513,paper_writing,AI论文写作与成果表达
+7,0.0136,0.0377,4,0.0513,research_training,AI科研训练与效率
+0,0.0,0.0256,2,0.0256,unclear,其他/无法判断
+6,0.0117,-0.0117,0,0.0,research_governance,AI科研规范与治理
+76,0.1479,-0.0068,11,0.141,data_analysis_or_code,AI数据分析与代码

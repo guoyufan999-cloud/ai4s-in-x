@@ -1,0 +1,53 @@
+{
+  "artifact_id": "candidate_expanded_v7",
+  "scope": "xhs_expansion_candidate_v1",
+  "generated_at": "2026-04-28T18:00:21.557749+00:00",
+  "quality_v5_formal_scope": false,
+  "formal_scope": false,
+  "row_count": 2665,
+  "source_counts": {
+    "candidate_expanded_v6": 1885,
+    "candidate_local_research_backlog_v1": 780
+  },
+  "skip_counts": {},
+  "query_group_counts": {
+    "A. AI科研总体类": 202,
+    "practice": 62,
+    "B. 文献处理与知识整合类": 238,
+    "boundary": 298,
+    "C. 研究设计与方法学习类": 228,
+    "salience": 17,
+    "D. 数据分析与代码类": 254,
+    "E. 论文写作与成果表达类": 252,
+    "F. 科研规范与诚信类": 403,
+    "G. 科研训练与效率类": 711
+  },
+  "public_access_status_counts": {
+    "candidate_artifact_public_context": 256,
+    "search_result_metadata_only": 1629,
+    "existing_public_research_db_record": 780
+  },
+  "body_fetch_status_counts": {
+    "body_present_or_prior_artifact": 256,
+    "not_attempted_in_search_index_mode": 1629,
+    "body_present_from_existing_research_db": 780
+  },
+  "search_index_rows": 1629,
+  "body_present_rows": 1036,
+  "local_research_backlog_rows": 780,
+  "formal_baseline_guard_counts": {
+    "quality_v5_posts": 514,
+    "quality_v5_comments": 0
+  },
+  "outputs": {
+    "jsonl": "outputs/tables/xhs_expansion_candidate_v1/candidate_expanded_v7.jsonl",
+    "review_queue": "data/interim/xhs_expansion_candidate_v1/review_queues/xhs_expansion_candidate_v1.expanded_v7.review_queue.jsonl",
+    "review_template": "data/interim/xhs_expansion_candidate_v1/reviewed/xhs_expansion_candidate_v1.expanded_v7.review_template.jsonl"
+  },
+  "limitations": [
+    "candidate_expanded_v7 is a supplemental candidate pool only.",
+    "Search-index rows contain no verified full body and require manual public-page review before any formal use.",
+    "Local research backlog rows come from existing public research DB records outside quality_v5 formal scope, not new live XHS crawling.",
+    "The artifact does not alter quality_v5 514/0 formal baseline."
+  ]
+}

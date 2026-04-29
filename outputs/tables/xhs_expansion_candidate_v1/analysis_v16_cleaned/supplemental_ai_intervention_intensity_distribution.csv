@@ -1,0 +1,5 @@
+count,label,share,source_scope,value
+91,中强度共创,0.4417,xhs_expansion_candidate_v1,medium_cocreation
+72,其他/无法判断,0.3495,xhs_expansion_candidate_v1,unclear
+40,低强度辅助,0.1942,xhs_expansion_candidate_v1,low_assistance
+3,高强度替代,0.0146,xhs_expansion_candidate_v1,high_substitution

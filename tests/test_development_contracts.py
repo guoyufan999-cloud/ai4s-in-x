@@ -53,8 +53,9 @@ def test_dependency_helper_files_and_lock_snapshot_are_documented() -> None:
     assert "artifact_health ok" in runtime_snapshot_text
     assert "repo_health ok" in runtime_snapshot_text
 
-    assert "活跃正式交付链已经稳定在 `quality_v5` post-only formal baseline" in readme_text
-    assert "当前活跃正式输出已经统一到" in readme_text
+    assert "工程 guard 仍保留 `quality_v5` post-only frozen baseline" in readme_text
+    assert "投稿主稿和 active paper materials 已切换到 `quality_v6`" in readme_text
+    assert "当前投稿正式输出已经统一到" in readme_text
     assert "scripts/artifact_health.py --json --allow-missing-source-db" in readme_text
     assert "scripts/repo_health.py --json --allow-missing-source-db" in readme_text
     assert "只检查 formal counts、provenance、0B tracked files 与 WAL/SHM" in readme_text
@@ -116,8 +117,10 @@ def test_planning_docs_keep_current_next_steps_in_sync_with_latest_head() -> Non
     roadmap_current = roadmap_text.split("## 当前下一步入口", 1)[1].split("## 阶段 1", 1)[0]
 
     for current_entry in (backlog_current, roadmap_current):
+        assert "quality_v6" in current_entry
         assert "quality_v5" in current_entry
         assert "post-only" in current_entry
+        assert "714" in current_entry
         assert "514" in current_entry
         assert "正式评论 `0`" in current_entry
         assert "comment_review_v2" in current_entry

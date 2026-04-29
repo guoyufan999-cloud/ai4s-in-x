@@ -1,0 +1,4 @@
+count,count_source,final_decision,share,source_scope
+78,reviewed_jsonl,include,0.6783,xhs_expansion_candidate_v1
+0,reviewed_jsonl,review_needed,0.0,xhs_expansion_candidate_v1
+37,reviewed_jsonl,exclude,0.3217,xhs_expansion_candidate_v1

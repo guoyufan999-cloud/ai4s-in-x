@@ -1,0 +1,51 @@
+{
+  "artifact_id": "candidate_expanded_v6",
+  "scope": "xhs_expansion_candidate_v1",
+  "generated_at": "2026-04-28T17:53:44.051257+00:00",
+  "quality_v5_formal_scope": false,
+  "formal_scope": false,
+  "row_count": 1885,
+  "source_counts": {
+    "candidate_expanded_v5": 1418,
+    "candidate1600_round4_training_boundary_search_index": 467
+  },
+  "skip_counts": {},
+  "query_group_counts": {
+    "A. AI科研总体类": 110,
+    "practice": 62,
+    "B. 文献处理与知识整合类": 207,
+    "boundary": 285,
+    "C. 研究设计与方法学习类": 196,
+    "salience": 17,
+    "D. 数据分析与代码类": 197,
+    "E. 论文写作与成果表达类": 199,
+    "F. 科研规范与诚信类": 353,
+    "G. 科研训练与效率类": 259
+  },
+  "public_access_status_counts": {
+    "candidate_artifact_public_context": 256,
+    "search_result_metadata_only": 1629
+  },
+  "body_fetch_status_counts": {
+    "body_present_or_prior_artifact": 256,
+    "not_attempted_in_search_index_mode": 1629
+  },
+  "search_index_rows": 1629,
+  "body_present_rows": 256,
+  "round4_zero_hit_queries": 63,
+  "formal_baseline_guard_counts": {
+    "quality_v5_posts": 514,
+    "quality_v5_comments": 0
+  },
+  "outputs": {
+    "jsonl": "outputs/tables/xhs_expansion_candidate_v1/candidate_expanded_v6.jsonl",
+    "review_queue": "data/interim/xhs_expansion_candidate_v1/review_queues/xhs_expansion_candidate_v1.expanded_v6.review_queue.jsonl",
+    "review_template": "data/interim/xhs_expansion_candidate_v1/reviewed/xhs_expansion_candidate_v1.expanded_v6.review_template.jsonl"
+  },
+  "limitations": [
+    "candidate_expanded_v6 is a supplemental candidate pool only.",
+    "Search-index rows contain no verified full body and require manual public-page review before any formal use.",
+    "The artifact does not alter quality_v5 514/0 formal baseline.",
+    "Round4 encountered a Xiaohongshu OpenCLI soft-zero state after productive queries; zero-hit tail queries should be treated as runtime limitation, not substantive absence."
+  ]
+}

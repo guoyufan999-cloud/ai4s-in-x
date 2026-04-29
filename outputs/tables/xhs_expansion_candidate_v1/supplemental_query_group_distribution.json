@@ -1,0 +1,30 @@
+[
+  {
+    "value": "B. 文献处理与知识整合类",
+    "label": "B. 文献处理与知识整合类",
+    "count": 25,
+    "share": 0.3205,
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "value": "C. 研究设计与方法学习类",
+    "label": "C. 研究设计与方法学习类",
+    "count": 23,
+    "share": 0.2949,
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "value": "A. AI科研总体类",
+    "label": "A. AI科研总体类",
+    "count": 22,
+    "share": 0.2821,
+    "source_scope": "xhs_expansion_candidate_v1"
+  },
+  {
+    "value": "D. 数据分析与代码类",
+    "label": "D. 数据分析与代码类",
+    "count": 8,
+    "share": 0.1026,
+    "source_scope": "xhs_expansion_candidate_v1"
+  }
+]
