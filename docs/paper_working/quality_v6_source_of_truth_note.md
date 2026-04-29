@@ -15,7 +15,7 @@
 
 ## 与旧材料的冲突处理
 
-`research_brief.md`、`analysis_plan.md`、`compliance_and_ethics.md` 以及 `docs/paper_working/` 下多份旧工作稿仍保留 `quality_v5 514 / 0` 或 `quality_v4` 口径。这些文件可作为研究问题、理论框架和章节结构参考，但不能作为当前投稿主稿的数据口径来源。
+`research_brief.md`、`analysis_plan.md`、`compliance_and_ethics.md` 已更新为当前边界：`quality_v6 714 / 0` 是投稿结果层，`quality_v5 514 / 0` 是工程 guard。`docs/paper_working/` 下多份旧工作稿仍保留 `quality_v5 514 / 0` 或 `quality_v4` 口径，这些历史稿件可作为研究问题、理论框架和章节结构参考，但不能作为当前投稿主稿的数据口径来源。
 
 旧稿中涉及 `quality_v4` 的正式帖子、正式评论、评论区规范协商、工具生态扩散、候选样本规模等内容，不进入当前 `quality_v6` 主稿正式结论。`quality_v5` 在当前主稿中只作为前一冻结基线和工程 guard 出现，不写成当前投稿结果层。
 

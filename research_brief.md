@@ -24,13 +24,15 @@
 
 ## 三、当前基线边界
 
-本轮框架升级不改变任何正式数据事实：
+当前论文主稿已经切换到 `quality_v6 post-only formalized result layer`，但工程 guard 仍保留 `quality_v5`，以保证前一冻结链路可复核：
 
-- 当前正式基线：`quality_v5 post-only`
-- 正式帖子 / 正式评论：`514 / 0`
+- 当前投稿结果层：`quality_v6 post-only`
+- 当前投稿正式帖子 / 正式评论：`714 / 0`
+- 来源组合：`quality_v5 514` + `supplemental_formalization_v1 200`
+- 当前工程 guard：`quality_v5 post-only 514 / 0`
 - `comment_review_v2 deferred`
 - `quality_v4 historical audit`
-- `formal_comments=0` 是本轮 post-only 设计选择，不是导入遗漏
+- `formal_comments=0` 是当前 post-only 设计选择，不是导入遗漏
 
 评论层正式结果只有在后续单独启动 `comment_review_v2` 后才能进入论文主结果。
 
@@ -54,7 +56,7 @@
 2. 区分平台话语情境，避免把教程、求助、推广和规范争议混为同一种材料。
 3. 细化 AI 的介入方式与介入强度，避免只按宏观科研流程计数。
 4. 将“合法性”从唯一主术语调整为“规范评价”的历史来源与操作化对象。
-5. 生成 framework v2 paper materials，但不自动生成未经数据支持的论文结论。
+5. 生成并维护 `quality_v6` framework v2 paper materials，但不自动生成未经数据支持的论文结论。
 
 ## 六、方法路径
 
@@ -62,7 +64,7 @@
 2. 更新 codebook、coding rules 和 codebook seed。
 3. 通过 canonical JSONL 和 `reviewed_records.payload_json` 支持 v2 新字段。
 4. 不做数据库 schema migration，不自动推断或填充正式 v2 字段。
-5. 在 `outputs/reports/paper_materials/framework_v2/` 生成对论文第四、五、六章有用的材料、表格和写作提示。
+5. 在 `outputs/reports/paper_materials/quality_v6/framework_v2/` 生成对论文第四、五、六章有用的材料、表格和写作提示。
 
 ## 七、预期产出
 
@@ -71,5 +73,6 @@
 - v2 版 `research_brief.md`、`analysis_plan.md`
 - v2 版 `codebook/codebook.md`、`codebook/coding_rules.md`
 - 支持 F/G/H/I/J/K 的 `src/ai4s_legitimacy/coding/codebook_seed.py`
-- `outputs/reports/paper_materials/framework_v2/`
+- `outputs/reports/paper_materials/quality_v6/framework_v2/`
+- `outputs/reports/paper_materials/paper_master_manuscript_quality_v6_submission_cn_clean.md`
 - framework v2 测试与任务文档更新

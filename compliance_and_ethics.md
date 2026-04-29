@@ -28,7 +28,7 @@
 - 评论文本
 - 时间信息
 - 查询词与来源说明
-- 工作流与合法性相关标签
+- 工作流、规范评价与边界生成相关标签
 
 不在研究主库中保留与研究问题无直接关系的冗余个人信息。
 
@@ -82,13 +82,15 @@
 
 ## 七、当前边界说明
 
-当前正式研究基线为 `quality_v5 post-only`：
+当前投稿主稿采用 `quality_v6 post-only formalized result layer`：
 
-- 正式帖子 / 正式评论：`514 / 0`
+- 当前投稿正式帖子 / 正式评论：`714 / 0`
+- 来源组合：`quality_v5 514` + `supplemental_formalization_v1 200`
+- `quality_v5 post-only 514 / 0` 仍作为工程 guard 和前一冻结基线保留
 - `comment_review_v2 deferred`
-- `formal_comments=0` 是本轮设计选择，不是导入遗漏
+- `formal_comments=0` 是当前投稿口径的设计选择，不是导入遗漏
 - `quality_v4` 仅作为 historical audit，不作为当前正式结果
 
 历史审计中出现的排队、不可访问、媒体缺口和评论层材料，在当前阶段都被视为**残余限制或后续独立工作流**，而不是继续扩张采集行为的理由。研究主线优先聚焦编码分析、framework v2 支持层和论文写作材料。
 
-如需扩展样本，当前仅允许以 `xhs_expansion_candidate_v1` 这类 supplemental / candidate 工件形式先行保存公开可获取帖子材料及其评论 sidecar 状态；候选集不得自动进入 `quality_v5` formal baseline，也不得通过绕过登录、验证码、风控、限流或封禁机制来补齐不可访问内容。
+如需继续扩展样本，当前仅允许以 supplemental / candidate 工件形式先行保存公开可获取帖子材料及其评论 sidecar 状态；候选集不得自动进入 `quality_v6` formal result layer，也不得通过绕过登录、验证码、风控、限流或封禁机制来补齐不可访问内容。任何补充材料进入正式结果层，都必须经过单独 formalization、source contract、consistency report 和 paper materials 更新。

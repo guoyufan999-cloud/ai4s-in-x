@@ -36,6 +36,7 @@
   "methods_transparency_appendix_clean_path": "outputs/reports/paper_materials/paper_methods_transparency_appendix_cn_clean.md",
   "submission_master_path": "outputs/reports/paper_materials/paper_master_manuscript_submission_cn.md",
   "submission_master_clean_path": "outputs/reports/paper_materials/paper_master_manuscript_submission_cn_clean.md",
+  "quality_v6_submission_master_clean_path": "outputs/reports/paper_materials/paper_master_manuscript_quality_v6_submission_cn_clean.md",
   "discussion_submission_clean_path": "outputs/reports/paper_materials/paper_discussion_chapter_submission_cn_clean.md",
   "conclusion_submission_clean_path": "outputs/reports/paper_materials/paper_conclusion_chapter_submission_cn_clean.md",
   "submission_figure_dir": "outputs/figures/paper_figures_submission/quality_v6",

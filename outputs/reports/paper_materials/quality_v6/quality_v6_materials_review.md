@@ -2,9 +2,9 @@
 
 ## Review Decision
 
-建议将 `quality_v6` 作为下一版论文主结果层，但不建议直接覆盖当前 `quality_v5` clean 主稿。
+`quality_v6` 已可作为当前论文主结果层；本轮已新增并修订独立的 v6 clean 主稿，不直接覆盖前一轮 clean 主稿。
 
-更稳妥的切换方式是：先生成一套 `quality_v6` 主稿集成稿，再把正式投稿主稿指针从 `quality_v5` 切到 `quality_v6`。当前 v6 数据契约已经成立，但现有 clean 主稿仍停留在 `quality_v5 514 / 0` 的简短占位口径，尚未吸收 v6 的方法说明、结果表述和边界说明。
+当前 v6 数据契约已经成立，`outputs/reports/paper_materials/paper_master_manuscript_quality_v6_submission_cn_clean.md` 已吸收 v6 的方法说明、结果表述、边界说明、基础外部文献引用和正文统计表。前一轮 `paper_master_manuscript_submission_cn_clean.md` 可继续作为历史短稿保留，但不再作为 v6 主稿的唯一入口。
 
 ## Evidence Checked
 
@@ -15,6 +15,8 @@
 - `outputs/reports/paper_materials/quality_v6/paper_methods_transparency_appendix_quality_v6.md`
 - `outputs/reports/paper_materials/quality_v6/framework_v2/framework_v2_summary_tables.json`
 - `outputs/reports/paper_materials/quality_v6/framework_v2/cross_tabs_v2.json`
+- `outputs/reports/paper_materials/paper_master_manuscript_quality_v6_submission_cn_clean.md`
+- `docs/paper_working/quality_v6_source_of_truth_note.md`
 
 ## Positive Findings
 
@@ -27,7 +29,7 @@
 
 ## Switch Risks
 
-- 当前 `paper_master_manuscript_submission_cn_clean.md`、`paper_results_chapter_submission_cn_clean.md` 与方法透明度 clean 版仍写作 `quality_v5 514 / 0`，不能直接视为 v6 主稿。
+- 前一轮 `paper_master_manuscript_submission_cn_clean.md`、分章 clean 版和方法透明度 clean 版仍保留前一冻结基线说明；当前 v6 clean 主稿应优先使用 `paper_master_manuscript_quality_v6_submission_cn_clean.md`。
 - v6 方法附录目前是透明度摘要，尚未充分展开补充样本的采集、预筛、formalization、排除 6 条、风险复核和 staging DB 策略。
 - v6 结果章目前是材料表摘要，不是完整论文结果章节；需要把第四章、第五章、第六章的叙述段落补齐。
 - framework_v2 的部分表是 code occurrence / claim-unit occurrence，不是 post-level count；主稿切换时必须明确计数单位，避免把多选编码次数误读为帖子数。
@@ -36,18 +38,20 @@
 
 ## Decision
 
-不建议现在直接把现有 clean 主稿原地切换为 `quality_v6`。
+不建议原地覆盖前一轮 clean 主稿；建议以独立 v6 clean 主稿作为当前投稿主稿入口。
 
-建议下一步执行“v6 主稿集成轮次”：
+本轮已完成的集成项：
 
-1. 新增或生成 `quality_v6` 版主稿、结果章和方法透明度附录。
+1. 新增 `quality_v6` 版 clean 主稿。
 2. 在主稿中明确 `quality_v6 714 / 0` 是新的 post-only 正式结果层，`quality_v5 514 / 0` 是前一冻结基线。
 3. 将第四章使用 v6 的话语情境、实践位置和工作流分布。
 4. 将第五章使用 v6 的 F/G/H/I 与 B/C 统计，并注明多选编码的计数单位。
 5. 将第六章使用 v6 的 D/J/K 统计，并衔接边界协商机制。
 6. 保留评论层 deferred 的边界表述，不把 sidecar comments 写入正式结论。
-7. 补一份 `quality_v6` coding audit / limitations memo 后，再把正式投稿 manifest 从 `quality_v5` 切到 `quality_v6`。
+7. 补入基础外部文献引用、参考文献表和正文统计表。
+
+仍建议后续补充 `quality_v6` coding audit / limitations memo，并按导师或期刊要求扩展中文社交媒体和小红书平台文献。
 
 ## Bottom Line
 
-`quality_v6` 可以作为主结果层，但当前还不应“直接切换主稿”。应先完成 v6 主稿集成稿与方法审计补充，然后再正式替换投稿主稿口径。
+`quality_v6` 可以作为当前主结果层。当前优先入口为 `paper_master_manuscript_quality_v6_submission_cn_clean.md`；后续重点是方法审计补充、参考文献格式统一和期刊格式排版。

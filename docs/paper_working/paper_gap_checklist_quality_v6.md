@@ -11,28 +11,25 @@
 - 讨论和结论：可围绕环节化、条件化和边界化判断展开，但不得超出帖子层材料。
 - 附录：数据口径、编码框架和主要统计表说明已具备基础。
 
-## 还需要补充图表的地方
+## 图表与表格状态
 
-- 第四章建议补表：文本类型、科研活动场域、工作流环节三张合并描述表。
-- 第五章建议补表：AI 介入方式与强度、规范评价标准与倾向、评价张力与正式规范参照。
-- 第六章建议补表：边界类型、边界机制、边界结果。
+- 已在 `outputs/reports/paper_materials/paper_master_manuscript_quality_v6_submission_cn_clean.md` 和 `docs/paper_working/paper_master_manuscript_quality_v6_cn.md` 中补入表1、表2、表3。
+- 表1覆盖文本类型、科研活动场域和工作流环节。
+- 表2覆盖 AI 介入方式与强度、规范评价标准与倾向、评价张力与正式规范参照。
+- 表3覆盖边界类型、边界机制、边界结果。
 - 可选图：五层框架示意图；工作流环节到规范评价再到边界生成的证据链图。
-- 现有 `outputs/figures/paper_figures_submission/quality_v6/` 可作为图表来源，但本轮未重新渲染图件。
+- 现有 `outputs/figures/paper_figures_submission/quality_v6/` 可作为趋势图来源；本轮未重新渲染图件。
 
-## 需要补充外部文献引用的地方
+## 外部文献引用状态
 
-- 社交媒体中的生成式 AI 与学术/教育讨论研究。
-- AI 介入科研工作流与 AI4Research / AI for Research 研究。
-- 生成式 AI 与学术规范、科研诚信、作者身份、披露政策和出版政策研究。
-- AI 合法性、规范评价、边界工作与专业边界协商理论。
-- 参考文献部分目前应保留占位，不得虚构作者、题名、期刊或年份。
+- 已补入基础外部文献与政策来源：Bender et al. 2021、Bommasani et al. 2021、Messeri & Crockett 2024、ICMJE 2024、Elsevier n.d.、Nature Editorial 2023、Gieryn 1983、Suchman 1995。
+- 仍建议后续按导师或投稿期刊要求补充中文社交媒体研究、小红书平台研究和目标学科期刊规范文献。
+- 正式投稿前应统一参考文献格式，并核对期刊要求的 DOI、访问日期和中文译名。
 
 ## v5/v6 口径冲突
 
-- `research_brief.md` 仍写 `quality_v5 post-only 514/0`，只能用于研究问题与框架背景。
-- `analysis_plan.md` 仍写 `quality_v5 post-only 514/0` 和 514 条 framework_v2 补码，不能作为当前主稿结果口径。
-- `compliance_and_ethics.md` 仍写 `quality_v5 post-only 514/0`，伦理原则可用，正式基线需替换为 v6。
-- `docs/paper_working/paper_master_manuscript_draft.md`、`framework_v2_chapter_4/5/6_*` 多处含 v5 数字和 v5 claim units，不能直接复制。
+- `research_brief.md`、`analysis_plan.md`、`compliance_and_ethics.md` 已更新为：`quality_v6 714/0` 是当前投稿结果层，`quality_v5 514/0` 是工程 guard。
+- `docs/paper_working/paper_master_manuscript_draft.md`、`framework_v2_chapter_4/5/6_*` 多处含 v5 数字和 v5 claim units，保留为历史工作稿，不能直接复制。
 - `docs/paper_working/paper_results_chapter_draft.md`、`paper_discussion_chapter_draft.md`、`paper_conclusion_chapter_draft.md` 为 quality_v4 旧稿，涉及 3067 帖、69880 评论和评论区结论，不能进入 v6 主稿。
 
 ## 评论层误用风险
@@ -54,7 +51,7 @@
 ## 需要人工复查的段落
 
 - 摘要中对核心发现的压缩是否过度概括。
-- 文献综述中的外部文献占位是否需要替换为导师指定文献。
+- 文献综述中当前基础文献是否需要替换或增补为导师指定文献。
 - 方法章节对 reviewed 编码与 framework_v2 补码流程的表述是否与实际项目记录完全一致。
 - 第四章对 A3 科研训练和 A2 科研治理低频结果的解释是否足够克制。
 - 第五章对高强度替代和自动执行的规范含义是否避免了把技术能力等同正当性。
